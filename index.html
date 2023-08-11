@@ -1,2 +1,137 @@
-<h1> este es elprimer commit </h1>
- <p> y fue creado por mi </p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Interfaz de entrenamiento</title>
+    <link rel="stylesheet" href="./Matriz.css">      
+  </head>
+  <body>
+
+    <video id="videoBackground" autoplay loop muted>
+      <source src="./assets/Rotatek.mp4" type="video/mp4">
+    </video>
+
+    <div class="contene-1">
+      <button class="boton-g" id="bot-inic" style="display: none;text-align: center;" onclick="volverInicio('videos', 'mostrar-cont')">PANEL PRINCIPAL</button> 
+      <button class="boton-a" id="iniciar" onclick="changeButtonStyles()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
+    </div><br>
+
+
+    <div class="cont-ppal" id="contenedorInic"> 
+      <div>
+        <div class="segundo-bloque">
+          <div class="desbobinador mostrar-cont" >
+            <button class="boton-b" onclick="cierraContenedores('alimentador','uTeñido','contTorrImp'  )">DESBOBINADOR</button><br>   
+            <div class="contene-3">
+              <button class="boton-c">Pulsadores</button>
+              <button class="boton-c">Freno</button>
+              <button class="boton-c">Bailarina</button>
+              <button class="boton-c">Ensarte</button>
+              <button class="boton-c">Regulación neumática</button> 
+            </div>
+          </div>  
+
+          <div class="uTeñido mostrar-cont">
+            <button class="boton-b" onclick="cierraContenedores('alimentador','desbobinador','contTorrImp')">UNIDAD TEÑIDO</button><br> 
+            <div class="contene-5">
+              <button class="boton-c">Sistema neumatico</button>
+              <button class="boton-c">Rodillería</button>
+              <button class="boton-c">Circuito de alimentacion</button>
+              <button class="boton-c">Bomba de succión</button>
+              <button class="boton-c">Depositos de anilina</button>
+            </div>
+          </div>
+
+          <div class="alimentador mostrar-cont">
+            <button class="boton-b" onclick="cierraContenedores('uTeñido','desbobinador','contTorrImp')">ALIMENTADOR</button><br>  
+            <div class="contene-7">
+              <button class="boton-c">Estructura</button>
+              <button class="boton-c">Sistema planetario</button>
+              <button class="boton-c">Ajuste mecanico</button>
+              <button class="boton-c">Transmision</button>
+              <button class="boton-c">Ajuste neumatico</button>   
+            </div>          
+          </div>
+
+          <div class="unidProceso mostrar-cont">
+            <button class="boton-b" onclick="cierraContenedores('uTeñido','desbobinador','contTorrImp')">UNIDAD DE PROCESO</button><br><br>  
+            <div class="contene-7">
+              <button class="boton-c">Estructura</button>
+              <button class="boton-c">Sistema planetario</button>
+              <button class="boton-c">Ajuste mecanico</button>
+              <button class="boton-c">Transmision</button>
+              <button class="boton-c">Ajuste neumatico</button>   
+            </div>          
+          </div>
+
+          <div class="rebobinador mostrar-cont">
+            <button class="boton-b" onclick="cierraContenedores('uTeñido','desbobinador','contTorrImp')">REBOBINADOR</button><br><br>  
+            <div class="contene-7">
+              <button class="boton-c">Estructura</button>
+              <button class="boton-c">Sistema planetario</button>
+              <button class="boton-c">Ajuste mecanico</button>
+              <button class="boton-c">Transmision</button>
+              <button class="boton-c">Ajuste neumatico</button>   
+            </div>          
+          </div>          
+
+
+          <div class="contTorrImp mostrar-cont" id="rotatek-1">
+            <button id="toggleVideoButton" class="boton-b" style="margin-left: -197px;width: 500px;" onclick="cambioContenedor('alimentador','uTeñido','desbobinador', 'videos','contTorrImp')">TORRE DE IMPRESIÓN</button>                
+            <div class="torre-imp">
+  
+              <div class="tintero">
+                <button class="boton-d" onclick="changeButtonStyles()">TINTERO</button>
+                <div class="sub-bancada">
+                  <button class="boton-c">Estructura</button>
+                  <button class="boton-c">Ajuste en el cierre</button>
+                  <button class="boton-c">Geometría de unidad</button>
+                  <button class="boton-c">Ajustes de cuchilla</button>
+                  <button class="boton-c">Ajustes en topes</button>
+                  <button class="boton-c">Ajuste neumático</button>
+                </div>
+              </div>
+  
+              <div class="bateria">
+                <button class="boton-d" onclick="changeButtonStyles()">BATERIA DE ENTINTADO</button>
+                <div class="sub-bancada">
+                  <button class="boton-e boton-c">Diámetros y durezas</button>
+                  <button class="boton-e boton-c">Contacto entre rodillos</button>
+                  <button class="boton-e boton-c">Ajuste  rodillo tomador</button>
+                  <button class="boton-e boton-c">Ajuste  rodillos distribuidores</button>
+                  <button class="boton-e boton-c">Ajuste rodillos de forma</button>
+                </div>              
+              </div>
+  
+              <div>
+                <button class="boton-d" onclick="changeButtonStyles()">BANCADA DE TORRE</button>
+                <div class="sub-bancada">
+                  <button class="boton-e boton-c" >Contacto entre rodillos</button>
+                  <button class="boton-e boton-c">Ajuste  rodillo tomador</button>
+                  <button class="boton-e boton-c">Ajuste  rodillos distribuidores</button>
+                  <button class="boton-e boton-c">Ajuste rodillos de forma</button>
+                </div>         
+              </div> 
+
+              <div class="sistHumedad">  
+                <button class="boton-d" onclick="changeButtonStyles()">SISTEMA HUMEDAD</button>
+                <div class="sub-bancada">
+                  <button class="boton-e boton-c">Composición</button>
+                  <button class="boton-e boton-c">Graduación</button>
+                  <button class="boton-e boton-c">Ajustes</button>
+                </div>
+              </div>
+
+            </div> 
+          </div>  
+        </div>
+      </div>
+    </div>
+
+    <div class="videos" style="display: none;">
+      <video id="videoElement" src="./assets/aumento.mp4" height="400px"></video>
+    </div>
+
+    <script src="./Matriz.js"></script>    
+  </body>
+</html>

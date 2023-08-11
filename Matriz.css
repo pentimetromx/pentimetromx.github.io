@@ -1,0 +1,188 @@
+@font-face {
+  font-family: "GothamRounded"; /* Nombre de la familia de fuentes personalizada */
+  src: url('C:\Users\Juan\Documentos\programacion\programar\Pruebas\fonts\Mukta-Medium.ttf') format('ttf'), /* Ruta hacia el archivo .woff2 de la fuente */
+}
+body {
+  font-family: "GothamRounded";
+  background-color:#333333;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* Ajusta la altura del body para que cubra toda la pantalla */
+  margin: 0; /* Elimina los márgenes predeterminados del body */
+  padding: 0; /* Elimina los rellenos predeterminados del body */
+}
+#videoBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.1; /* Cambia este valor para ajustar la opacidad */
+}
+
+h1, h2, h3 {
+  font-family: "GothamRounded";
+}
+.boton-a{
+  height: 47px;
+  width: 477px;
+  margin-top: 17px;
+  background-color: #ff1837;
+  color: white;
+  border-radius: 7px;
+  }
+.boton-b{
+  height: 47px;
+  width: 120px;
+  background-color: #ff1837;
+  color: white;
+  border-radius: 7px;
+  margin-right: 24px;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.1s; /* Aplica una transición al efecto de escalamiento */
+}
+.boton-b:hover {
+  transform: scale(1.1); /* Aumenta el tamaño 1.3 veces al pasar el mouse */
+}
+.boton-c{
+  height: 40px;
+  width: 87px;
+  background-color: #1897ff;
+  color: black;
+  border-radius: 5px;
+  margin-right: 21px;
+  margin-bottom: 17px; 
+  text-align: left;   
+  cursor: pointer; 
+  transition: transform 0.1s;   
+}
+.boton-c:hover {
+  transform: scale(1.1); /* Aumenta el tamaño 1.3 veces al pasar el mouse */
+}
+.boton-d{
+  height: 47px;
+  width: 107px;
+  background-color: hwb(56 6% 2%);
+  color: rgb(0, 0, 0);
+  border-radius: 7px;
+  margin-right: 27px;
+  margin-bottom: 17px; 
+  text-align: center;    
+  cursor: pointer; 
+  transition: transform 0.1s;
+}
+.boton-d:hover {
+  transform: scale(1.1); /* Aumenta el tamaño 1.3 veces al pasar el mouse */
+}
+.boton-e{
+  height: 40px;
+  width: 101px;
+  background-color: #1897ff;
+  color: black;
+  border-radius: 5px;
+  margin-right: 21px;
+  margin-bottom: 17px;
+  text-align: left;    
+  cursor: pointer; 
+  transition: transform 0.1s; 
+}
+.boton-g{
+  height: 47px;
+  width: 177px;
+  margin-top: 17px;
+  background-color: #ffae18f3;
+  background-color: #ff1837;
+  color: white;
+  border-radius: 7px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.boton-e:hover {
+  transform: scale(1.1); /* Aumenta el tamaño 1.3 veces al pasar el mouse */
+}
+.segundo-bloque{
+  display: flex;
+}
+.contTorrImp{
+  display: flex; 
+  flex-direction: column; 
+  align-items:center;
+  margin-left: 247px;  
+}
+.tintero{
+  display: flex; 
+  flex-direction: column; 
+}
+.sub-bancada{
+  display: flex; 
+  flex-direction: column;
+}
+
+.torre-imp{
+  display: flex;
+  flex-direction: row;
+  margin-top: 17px;
+  margin-left: -227px;
+}
+.cont-ppal{
+  display: flex;
+  flex-direction: row;
+}
+.contene-1{
+  display: flex;
+  justify-content: space-evenly;
+
+  perspective: 1000px;
+}
+.desbobinador{
+  display: flex;
+  flex-direction: column;
+  margin-left: 7px;
+}
+.contene-3{
+  display: flex;
+  flex-direction: column;
+  /* margin-left: 41px; */
+}
+.uTeñido{
+  display: flex;
+  flex-direction: column;
+}
+.contene-5{
+  display: flex;
+  flex-direction: column;
+}
+.alimentador{
+  display: flex;
+  flex-direction: column;
+}
+.contene-7{
+  display: flex;
+  flex-direction: column;
+}
+.cont-ppal-2{
+  display: flex;
+  justify-content: space-evenly;
+}
+.boton-f{
+  background-color: #ff1837;
+  color: white;
+  height: 37px;
+  width: 550px;
+  border-radius: 7px;
+  margin-right: 24px;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.1s; 
+}
+.videos{
+  display: flex;
+  flex-direction: column;
+}
