@@ -44,24 +44,13 @@ h1, h2, h3 {
   margin-right: 24px;
   cursor: pointer;
   text-align: center;
-  transition: transform 0.1s; /* Aplica una transición al efecto de escalamiento */
+  transition: transform 0.1s; /* Aplica una transición al efecto de escalamiento */   
 }
-.boton-b:hover {
-  transform: scale(1.1); /* Aumenta el tamaño 1.3 veces al pasar el mouse */
-}
-.boton-c{
-  height: 40px;
-  width: 87px;
-  background-color: #1897ff;
-  color: black;
-  border-radius: 5px;
-  margin-right: 21px;
-  margin-bottom: 17px; 
-  text-align: left;   
-  cursor: pointer; 
-  transition: transform 0.1s;   
-}
-.boton-c:hover {
+
+.boton-a:hover,
+.boton-b:hover,
+.boton-c:hover,
+.boton-g:hover{
   transform: scale(1.1); /* Aumenta el tamaño 1.3 veces al pasar el mouse */
 }
 .boton-d{
@@ -79,18 +68,6 @@ h1, h2, h3 {
 .boton-d:hover {
   transform: scale(1.1); /* Aumenta el tamaño 1.3 veces al pasar el mouse */
 }
-.boton-e{
-  height: 40px;
-  width: 101px;
-  background-color: #1897ff;
-  color: black;
-  border-radius: 5px;
-  margin-right: 21px;
-  margin-bottom: 17px;
-  text-align: left;    
-  cursor: pointer; 
-  transition: transform 0.1s; 
-}
 .boton-g{
   height: 47px;
   width: 177px;
@@ -103,6 +80,7 @@ h1, h2, h3 {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.1s; /* Aplica una transición al efecto de escalamiento */ 
 }
 .boton-e:hover {
   transform: scale(1.1); /* Aumenta el tamaño 1.3 veces al pasar el mouse */
@@ -120,11 +98,6 @@ h1, h2, h3 {
   display: flex; 
   flex-direction: column; 
 }
-.sub-bancada{
-  display: flex; 
-  flex-direction: column;
-}
-
 .torre-imp{
   display: flex;
   flex-direction: row;
@@ -138,7 +111,6 @@ h1, h2, h3 {
 .contene-1{
   display: flex;
   justify-content: space-evenly;
-
   perspective: 1000px;
 }
 .desbobinador{
@@ -146,16 +118,7 @@ h1, h2, h3 {
   flex-direction: column;
   margin-left: 7px;
 }
-.contene-3{
-  display: flex;
-  flex-direction: column;
-  /* margin-left: 41px; */
-}
 .uTeñido{
-  display: flex;
-  flex-direction: column;
-}
-.contene-5{
   display: flex;
   flex-direction: column;
 }
@@ -163,26 +126,112 @@ h1, h2, h3 {
   display: flex;
   flex-direction: column;
 }
-.contene-7{
+.unidProceso{
   display: flex;
   flex-direction: column;
 }
-.cont-ppal-2{
+.rebobinador{
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
 }
-.boton-f{
-  background-color: #ff1837;
-  color: white;
-  height: 37px;
-  width: 550px;
-  border-radius: 7px;
-  margin-right: 24px;
+.videosTraining{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.video-training {
+  display: none;
+}
+.images-training{  
+  padding-left: 20px;
+  margin-top: -14px;
+   display: flex;
+  flex-wrap: wrap;   
+} 
+.image-training{
+  height: 80px;
+  display: none;
+  margin: 10px;
   cursor: pointer;
-  text-align: center;
+}
+.bot-entre{
+  display: none;
+}
+.contene-7 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 20px;
+}
+.linea-vertical {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: white;
+  content: "";
+}
+.linea-horizontal {
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 2px;
+  background-color: white;
+  content: "";
+}
+.boton-c {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 43px;
+  width: 87px;
+  background-color: #1897ff;
+  color: black;
+  border-radius: 5px;
+  margin-right: 21px;
+  margin-bottom: 17px;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+.boton-e{
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 47px;
+  width: 95px;
+  background-color: #1897ff; 
+  color: black;
+  border-radius: 5px;
+  margin-right: 21px;
+  margin-bottom: 10px;
+  text-align: left;    
+  cursor: pointer; 
   transition: transform 0.1s; 
 }
-.videos{
-  display: flex;
-  flex-direction: column;
+.boton-f{
+  position: relative;
+  align-items: center;
+  height: 57px;
+  width: 95px;
+  background-color: #1897ff;
+  color: black;
+  border-radius: 5px;
+  margin-right: 21px;
+  margin-bottom: 10px;
+  text-align: left;    
+  cursor: pointer; 
+  transition: transform 0.1s; 
 }
+.boton-c > span {
+  margin-left: 20px;
+}
+.mostrar-cont {
+  display: flex;
+}
+.ocultar-cont {
+  display: none;
+} 
