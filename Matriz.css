@@ -142,13 +142,14 @@ h1, h2, h3 {
 .video-training {
   display: none;
 }
-.images-training{  
+.images-training{ /*clase del contenedor */ 
   padding-left: 20px;
   margin-top: -14px;
-   display: flex;
-  flex-wrap: wrap;   
+  display: flex;
+  flex-wrap: wrap; 
+  align-content: flex-start;  
 } 
-.image-training{
+.image-training{ /*clase de c/imagen*/
   height: 80px;
   display: none;
   margin: 10px;

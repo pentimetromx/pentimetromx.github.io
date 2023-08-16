@@ -138,27 +138,34 @@
     <div class="videosTraining">  
 
       <div class="contene-7">
-        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement2')">Montaje distribuidor<div class="linea-horizontal"></div></button>                
-        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement3')">Montaje entintador delantero <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement2','imageElement1')">Montaje distribuidor<div class="linea-horizontal"></div></button>                
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement3','imageElement2')">Montaje entintador delantero <div class="linea-horizontal"></div></button>  
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement4')">Montaje entintador medio <div class="linea-horizontal"></div></button>  
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement5')">Montaje entintador trasero<div class="linea-horizontal"></div></button>                
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement6')">Montaje tomador <div class="linea-horizontal"></div></button>  
-        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement7')">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="applyImageEffects()">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
       </div>
       <div class="videos-training" id="videos-training">
-        <video class="video-training" id="videoElement1" src="./assets/bateria completa.mp4" height="400px"></video>
+        <video class="video-training" id="videoElement1" src="./assets/Finalizado.mp4" height="400px"></video>
         <video class="video-training" id="videoElement2" src="./assets/Montaje rodillo 2.mp4" height="400px"></video>
         <video class="video-training" id="videoElement3" src="./assets/Montaje entintador1.mp4" height="400px"></video>
         <video class="video-training" id="videoElement4" src="./assets/2.full velocidad2.mp4" height="400px"></video>
         <video class="video-training" id="videoElement5" src="./assets/1.Rodillo a rodillo.mp4" height="400px"></video>
       </div>
-      <div class="images-training" id="images-training">
-        <image class="image-training" id="imageElement1" src="./assets/Entintador.png"></image><br>
+      <div id="contene-images">
+        <div class="images-training" id="images-training-id">
+          <image class="image-training" id="imageElement1" src="./assets/Entintador.png"></image><br>
+          <image class="image-training" id="imageElement1" src="./assets/Rodamiento entintador.png"></image><br>
+          <image class="image-training" id="imageElement1" src="./assets/Lupa.png"></image><br>
+          <image class="image-training" id="imageElement1" src="./assets/Tornillo lupa.png"></image><br>
+          <image class="image-training" id="imageElement1" src="./assets/Tuerca lupa.png"></image><br>
+        </div>
+      </div>  
+      <div class="images-training" id="images-training-id">
+        <image class="image-training" id="imageElement2" src="./assets/Entintador.png"></image><br>
         <image class="image-training" id="imageElement2" src="./assets/Rodamiento entintador.png"></image><br>
-        <image class="image-training" id="imageElement3" src="./assets/Lupa.png"></image><br>
-        <image class="image-training" id="imageElement4" src="./assets/Tornillo lupa.png"></image><br>
-        <image class="image-training" id="imageElement5" src="./assets/Tuerca lupa.png"></image><br>
-      </div>      
+      </div>
+    </div>      
 
     </div>
 

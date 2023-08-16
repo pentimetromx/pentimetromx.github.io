@@ -42,10 +42,10 @@ function changeButtonStyles(videoId) {
   elemento.style.display = 'block';
   });
 
-  var imageElements = document.querySelectorAll('.image-training');  
-  for (var i= 0; i< imageElements.length; i++) {
-    imageElements[i].style.display='block'
-  }
+  /*   var imageElements = document.querySelectorAll('.image-training');  
+    for (var i= 0; i< imageElements.length; i++) {
+      imageElements[i].style.display='block'
+    } */
 
   var button = document.querySelector('.boton-a');
   // Guardar estilos originales
@@ -65,6 +65,11 @@ function changeButtonStyles(videoId) {
 
   var videoBackground = document.getElementById('videoBackground');
   videoBackground.style.display = 'none'; // Oculta el video
+
+  /*   var elementosToHide = document.getElementsByClassName('images-training');
+    for (var i=0; i< elementosToHide.length; i++ ) {
+      elementosToHide[i].style.display='none'
+    } */
 }
  
 function cambioContenedor() {
@@ -95,9 +100,9 @@ function cierraContenedores(desbobClas,teñiClas,alimClas,uniProClas,rebobClas){
   video.pause();
 }
 
-function muestraRodillo (videoId) {
-  const videoElements = document.querySelectorAll('.video-training');
-  
+function muestraRodillo (videoId, imageId) {
+
+  const videoElements = document.querySelectorAll('.video-training');  
   videoElements.forEach(video => {
     if (video.id === videoId) {
       video.style.display = 'block';
@@ -109,8 +114,21 @@ function muestraRodillo (videoId) {
     }
   });
 
+  const imagenElements = document.querySelectorAll('.image-training');  
+  imagenElements.forEach(imagen => {
+    if (imagen.id === imageId) {
+      imagen.style.display = 'block';
+    } else {
+      imagen.style.display = 'none';
+    }
+  }); 
+
   var videoBackground = document.getElementById('videoBackground');
   videoBackground.style.display = 'none';
+
+  setTimeout(() => {
+    applyImageEffects();
+  }, 800); // Retardo de 0.9 segundos (900 milisegundos)
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -185,7 +203,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
-
 // LOGICA PARA FULL SCREEN A IMAGENES
 const images = document.querySelectorAll('.image-training');
 images.forEach(image => {
@@ -215,11 +232,45 @@ images.forEach(image => {
     isFullscreen = !isFullscreen;
   });
 });
-////////////////////////////////////////////////////////////////////////////////////
+
+// Obtener todas las imágenes con la clase "image-training"
+const imageElementsi = document.querySelectorAll('.image-training');
+// Iterar a través de las imágenes y agregar eventos de mouse
+imageElementsi.forEach((image, index) => {
+  // Añadir el evento de aumento de tamaño al hacer clic
+  image.addEventListener('click', () => {
+    // Guardar el tamaño original para volver a él después
+    const originalWidth = image.width;
+    const originalHeight = image.height;
+    // Aumentar el tamaño de la imagen en un 30% durante 0.1 segundos
+    image.style.transition = 'transform 0.1s';
+    image.style.transform = 'scale(1.3)';    
+    // Volver al tamaño original después de 0.1 segundos
+    setTimeout(() => {
+      image.style.transition = 'transform 0.1s';
+      image.style.transform = 'scale(1)';
+    }, 400);
+  });
+});
 
 
 
+function applyImageEffects() { // aumento secuencial imagenes repuestos
+  const imageElements = document.querySelectorAll('.image-training');
+  let currentIndex = 0;
+  function applyEffect() {
+    if (currentIndex < imageElements.length) {
+      const currentImage = imageElements[currentIndex];
+      currentImage.style.transition = 'transform 0.1s';
+      currentImage.style.transform = 'scale(2.0)';
 
-
-
-
+      setTimeout(() => {
+        currentImage.style.transition = 'transform 0.7s';
+        currentImage.style.transform = 'scale(1)';
+        currentIndex++;
+        applyEffect();
+      }, 100);
+    }
+  }
+  applyEffect();
+}
