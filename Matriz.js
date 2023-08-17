@@ -1,6 +1,6 @@
 function VolveraInicio(){
   location.reload();
-  document.body.style.overflow = 'block'; 
+  document.body.style.overflow = 'block';    
 }
 function botoGrand() {
 
@@ -42,11 +42,6 @@ function changeButtonStyles(videoId) {
   elemento.style.display = 'block';
   });
 
-  /*   var imageElements = document.querySelectorAll('.image-training');  
-    for (var i= 0; i< imageElements.length; i++) {
-      imageElements[i].style.display='block'
-    } */
-
   var button = document.querySelector('.boton-a');
   // Guardar estilos originales
   var originalBackgroundColor = button.style.backgroundColor;
@@ -65,11 +60,6 @@ function changeButtonStyles(videoId) {
 
   var videoBackground = document.getElementById('videoBackground');
   videoBackground.style.display = 'none'; // Oculta el video
-
-  /*   var elementosToHide = document.getElementsByClassName('images-training');
-    for (var i=0; i< elementosToHide.length; i++ ) {
-      elementosToHide[i].style.display='none'
-    } */
 }
  
 function cambioContenedor() {
@@ -101,7 +91,6 @@ function cierraContenedores(desbobClas,teñiClas,alimClas,uniProClas,rebobClas){
 }
 
 function muestraRodillo (videoId, imageId) {
-
   const videoElements = document.querySelectorAll('.video-training');  
   videoElements.forEach(video => {
     if (video.id === videoId) {
@@ -123,12 +112,64 @@ function muestraRodillo (videoId, imageId) {
     }
   }); 
 
-  var videoBackground = document.getElementById('videoBackground');
+  var videoBackground = document.getElementById('videoBackground'); 
   videoBackground.style.display = 'none';
 
+  var botInicio = document.getElementById('bot-inic')
+  botInicio.style.marginLeft = '110px';
+
+  var botGrande = document.getElementById('iniciar');
+  botGrande.style.marginRight = '533px';
+
+  var botRepuesto = document.getElementById('butt-repuestos')
+  botRepuesto.style.display='block'
+
+  var botManautonomo = document.getElementsByClassName('cont-bot-esp')[0];
+  botManautonomo.style.display='flex'
   setTimeout(() => {
     applyImageEffects();
   }, 800); // Retardo de 0.9 segundos (900 milisegundos)
+}
+
+function applyImageEffects() { // aumento secuencial imagenes repuestos
+  const imageElements = document.querySelectorAll('.image-training');
+  let currentIndex = 0;
+  function applyEffect() {
+    if (currentIndex < imageElements.length) {
+      const currentImage = imageElements[currentIndex];
+      currentImage.style.transition = 'transform 0.1s';
+      currentImage.style.transform = 'scale(2.0)';
+
+      setTimeout(() => {
+        currentImage.style.transition = 'transform 0.7s';
+        currentImage.style.transform = 'scale(1)';
+        currentIndex++;
+        applyEffect();
+      }, 100);
+    }
+  }
+  applyEffect();
+}
+
+/* function alternarVisibilidad(docId) {
+  var elementsToHide = document.querySelectorAll ('.bot-entre, .video-training,.image-training, .butt-partes, .documentos')
+  for (var i = 0; i < elementsToHide.length; i++) {
+    elementsToHide[i].style.display = "none";
+  } 
+
+  var troublBoton = document.getElementById(docId);
+  troublBoton.style.display='block';
+} */
+
+function alternarVisibilidad(docId) {
+  var elementosParaAlternar = document.querySelectorAll('.bot-entre, .video-training,.image-training, .butt-partes, .documentos');
+  for (var i = 0; i < elementosParaAlternar.length; i++) {
+    if (elementosParaAlternar[i].id === docId) {
+      elementosParaAlternar[i].style.display = "block";
+    } else {
+      elementosParaAlternar[i].style.display = "none";
+    }
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -187,10 +228,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Llama a la función para los botones con ID 'boton-e'
     recorrerYCambiarColores(botonesE);
-
-/*   document.getElementById('detener').onclick = () => {
-    clearInterval(intervalId);
-  }; */
 })
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -255,22 +292,3 @@ imageElementsi.forEach((image, index) => {
 
 
 
-function applyImageEffects() { // aumento secuencial imagenes repuestos
-  const imageElements = document.querySelectorAll('.image-training');
-  let currentIndex = 0;
-  function applyEffect() {
-    if (currentIndex < imageElements.length) {
-      const currentImage = imageElements[currentIndex];
-      currentImage.style.transition = 'transform 0.1s';
-      currentImage.style.transform = 'scale(2.0)';
-
-      setTimeout(() => {
-        currentImage.style.transition = 'transform 0.7s';
-        currentImage.style.transform = 'scale(1)';
-        currentIndex++;
-        applyEffect();
-      }, 100);
-    }
-  }
-  applyEffect();
-}

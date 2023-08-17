@@ -137,7 +137,7 @@
 
     <div class="videosTraining">  
 
-      <div class="contene-7">
+      <div id="contenedor-7" class="contene-7">
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement2','imageElement1')">Montaje distribuidor<div class="linea-horizontal"></div></button>                
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement3','imageElement2')">Montaje entintador delantero <div class="linea-horizontal"></div></button>  
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement4')">Montaje entintador medio <div class="linea-horizontal"></div></button>  
@@ -146,28 +146,59 @@
         <button class="boton-f bot-entre" onclick="applyImageEffects()">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
       </div>
       <div class="videos-training" id="videos-training">
-        <video class="video-training" id="videoElement1" src="./assets/Finalizado.mp4" height="400px"></video>
+        <video class="video-training" id="videoElement1" src="./assets/FinalizadoII.mp4" height="400px"></video>
         <video class="video-training" id="videoElement2" src="./assets/Montaje rodillo 2.mp4" height="400px"></video>
         <video class="video-training" id="videoElement3" src="./assets/Montaje entintador1.mp4" height="400px"></video>
         <video class="video-training" id="videoElement4" src="./assets/2.full velocidad2.mp4" height="400px"></video>
         <video class="video-training" id="videoElement5" src="./assets/1.Rodillo a rodillo.mp4" height="400px"></video>
+
+        <div class="cont-bot-esp">
+          <div class="conti-boton">
+            <button id="ayudastrabajoButton" class="butt-mautonomo" onclick="alternarVisibilidad('ayudastrabajo')">ADT</button>
+            <button id="troubleshoot"  class="butt-mautonomo" onclick="alternarVisibilidad('troubleshooting')">Troubleshooting</button>
+          </div>
+          <div class="conti-boton">
+            <button class="butt-mautonomo" id="lups" onclick="alternarVisibilidad('def-tipo1')">DEFECTOS TIPO (1)</button>
+            <button class="butt-mautonomo" id="fuas" onclick="alternarVisibilidad('def-tipo2')">DEFECTOS TIPÒ (2)</button>
+          </div>
+          <div class="conti-boton">
+            <button class="butt-mautonomo" id="but-lup" onclick="alternarVisibilidad('lup')">LUP</button>
+            <button class="butt-mautonomo" id="but-fua" onclick="alternarVisibilidad('fua')">FUA</button>
+          </div>
+          <div>
+            <p class="documentos" id="ayudastrabajo">SITIO PARA ADMINISTRAR DOCUMENTOS AYUDAS DE TRABAJO</p>
+            <p class="documentos" id="troubleshooting">SITIO PARA ADMINISTRAR DOCUMENTOS TROUBLESHOOTING</p>
+          </div> 
+          <div>
+            <p class="documentos" id="def-tipo1">DEFECTOS MECANICOS TIPO 1</p>
+            <p class="documentos" id="def-tipo2">DEFECTOS MECANICOS TIPO 2</p>
+          </div>
+          <div>
+            <p class="documentos" id="lup">SITIO PARA ADMINISTRAR LUP</p>
+            <p class="documentos" id="fua">SITIO PARA ADMINISTRAR FUA</p>
+          </div> 
+
+        </div>
+
       </div>
+
       <div id="contene-images">
+        <button class="butt-partes" style="display: none;" id="butt-repuestos">PARTES  /  REPUESTOS</button>
         <div class="images-training" id="images-training-id">
           <image class="image-training" id="imageElement1" src="./assets/Entintador.png"></image><br>
           <image class="image-training" id="imageElement1" src="./assets/Rodamiento entintador.png"></image><br>
           <image class="image-training" id="imageElement1" src="./assets/Lupa.png"></image><br>
           <image class="image-training" id="imageElement1" src="./assets/Tornillo lupa.png"></image><br>
           <image class="image-training" id="imageElement1" src="./assets/Tuerca lupa.png"></image><br>
+        </div>       
+        <div class="images-training" id="images-training-id">
+          <image class="image-training" id="imageElement2" src="./assets/Entintador.png"></image><br>
+          <image class="image-training" id="imageElement2" src="./assets/Rodamiento entintador.png"></image><br>
         </div>
-      </div>  
-      <div class="images-training" id="images-training-id">
-        <image class="image-training" id="imageElement2" src="./assets/Entintador.png"></image><br>
-        <image class="image-training" id="imageElement2" src="./assets/Rodamiento entintador.png"></image><br>
       </div>
-    </div>      
-
-    </div>
+ 
+    </div> 
+     
 
     <script src="./Matriz.js"></script>    
   </body>

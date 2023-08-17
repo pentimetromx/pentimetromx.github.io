@@ -33,8 +33,9 @@ h1, h2, h3 {
   margin-top: 17px;
   background-color: #ff1837;
   color: white;
+  cursor: pointer;
   border-radius: 7px;
-  }
+}
 .boton-b{
   height: 47px;
   width: 120px;
@@ -80,6 +81,7 @@ h1, h2, h3 {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   transition: transform 0.1s; /* Aplica una transición al efecto de escalamiento */ 
 }
 .boton-e:hover {
@@ -144,15 +146,15 @@ h1, h2, h3 {
 }
 .images-training{ /*clase del contenedor */ 
   padding-left: 20px;
-  margin-top: -14px;
+  margin-top: 19px;
   display: flex;
   flex-wrap: wrap; 
-  align-content: flex-start;  
+  align-items: flex-start;
 } 
 .image-training{ /*clase de c/imagen*/
   height: 80px;
   display: none;
-  margin: 10px;
+  margin-bottom: 10px;
   cursor: pointer;
 }
 .bot-entre{
@@ -236,3 +238,87 @@ h1, h2, h3 {
 .ocultar-cont {
   display: none;
 } 
+/*/////////////////////////////////////////////// */
+#butt-repuestos {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center;
+  font-family: "GothamRounded", sans-serif;
+  color: white;
+  height: 27px;
+  width: 222px;
+  border-radius: 9px;
+  background-color: rgba(83, 82, 82, 0.678);
+  position: relative;
+  overflow: hidden;
+  margin-top: -57px;
+}
+#butt-repuestos::before,
+#butt-repuestos::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 27px;
+  height: 27px;
+  background-color: #ff1837;
+}
+#butt-repuestos::before {
+  left: 0;
+}
+#butt-repuestos::after {
+  right: 0;
+}
+.cont-bot-esp{
+  display: none;
+  flex-direction: row;
+  margin-top: 17px;
+}
+.conti-boton {
+  margin-right: 27px;
+}
+#contene-images{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;  
+}
+.documentos {
+  display: none;
+  overflow: visible;
+  font-family: "GothamRounded", sans-serif;
+  color: white;
+  margin-top: 200px;
+  transform: rotate(-45deg); /* Rotación en sentido antihorario */
+  transform-origin: center center; /* Punto de origen en el centro del elemento */
+}
+
+/*/////////////////////////////////////////////// */
+.butt-mautonomo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "GothamRounded", sans-serif;
+  color: white;
+  height: 27px;
+  width: 177px;
+  border-radius: 9px;
+  background-color: rgba(83, 82, 82, 0.678); 
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1px;
+  cursor: pointer;
+}
+.butt-mautonomo::before,
+.butt-mautonomo::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 27px;
+  height: 27px;
+  background-color: rgba(217, 255, 0, 1);
+}
+.butt-mautonomo::before {
+  left: 0;
+}
+.butt-mautonomo::after {
+  right: 0;
+}
