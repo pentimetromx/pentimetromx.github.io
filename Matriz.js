@@ -151,16 +151,6 @@ function applyImageEffects() { // aumento secuencial imagenes repuestos
   applyEffect();
 }
 
-/* function alternarVisibilidad(docId) {
-  var elementsToHide = document.querySelectorAll ('.bot-entre, .video-training,.image-training, .butt-partes, .documentos')
-  for (var i = 0; i < elementsToHide.length; i++) {
-    elementsToHide[i].style.display = "none";
-  } 
-
-  var troublBoton = document.getElementById(docId);
-  troublBoton.style.display='block';
-} */
-
 function alternarVisibilidad(docId) {
   var elementosParaAlternar = document.querySelectorAll('.bot-entre, .video-training,.image-training, .butt-partes, .documentos');
   for (var i = 0; i < elementosParaAlternar.length; i++) {
@@ -170,6 +160,9 @@ function alternarVisibilidad(docId) {
       elementosParaAlternar[i].style.display = "none";
     }
   }
+
+  var contenedorButton = document.getElementById('contiene-button');
+  contenedorButton.style.marginLeft = '-527px';
 }
 
 document.addEventListener('DOMContentLoaded', () => {

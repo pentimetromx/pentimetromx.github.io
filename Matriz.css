@@ -272,13 +272,14 @@ h1, h2, h3 {
   display: none;
   flex-direction: row;
   margin-top: 17px;
+  position: fixed;
 }
 .conti-boton {
   margin-right: 27px;
 }
 #contene-images{
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   align-items: flex-start;  
 }
 .documentos {
