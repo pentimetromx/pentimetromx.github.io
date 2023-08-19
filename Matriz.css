@@ -5,7 +5,7 @@
 body {
   font-family: "GothamRounded";
   background-color:#333333;
-  overflow: hidden;
+/*   overflow: hidden; */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -29,7 +29,7 @@ h1, h2, h3 {
 }
 .boton-a{
   height: 47px;
-  width: 477px;
+  width: auto;
   margin-top: 17px;
   background-color: #ff1837;
   color: white;
@@ -45,7 +45,7 @@ h1, h2, h3 {
   margin-right: 24px;
   cursor: pointer;
   text-align: center;
-  transition: transform 0.1s; /* Aplica una transición al efecto de escalamiento */   
+  transition: transform 0.1s; 
 }
 
 .boton-a:hover,
@@ -72,6 +72,21 @@ h1, h2, h3 {
 .boton-g{
   height: 47px;
   width: 177px;
+  margin-top: 17px;
+  background-color: #ffae18f3;
+  background-color: #ff1837;
+  color: white;
+  border-radius: 7px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.1s; /* Aplica una transición al efecto de escalamiento */ 
+}
+#bot-mantaut{
+  height: 47px;
+  width: 277px;
   margin-top: 17px;
   background-color: #ffae18f3;
   background-color: #ff1837;
@@ -112,8 +127,7 @@ h1, h2, h3 {
 }
 .contene-1{
   display: flex;
-  justify-content: space-evenly;
-  perspective: 1000px;
+  flex-direction: row;
 }
 .desbobinador{
   display: flex;
@@ -136,29 +150,30 @@ h1, h2, h3 {
   display: flex;
   flex-direction: column;
 }
-.videosTraining{
+#videosTraining{
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
 }
 .video-training {
   display: none;
 }
 .images-training{ /*clase del contenedor */ 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap; 
   padding-left: 20px;
   margin-top: 19px;
-  display: flex;
-  flex-wrap: wrap; 
-  align-items: flex-start;
 } 
-.image-training{ /*clase de c/imagen*/
-  height: 80px;
+.image-training,
+.image-training-a{ /*clase de c/imagen*/
   display: none;
-  margin-bottom: 10px;
   cursor: pointer;
+  height: 80px;
 }
 .bot-entre{
-  display: none;
+  display: flex;
 }
 .contene-7 {
   display: flex;
@@ -251,7 +266,8 @@ h1, h2, h3 {
   background-color: rgba(83, 82, 82, 0.678);
   position: relative;
   overflow: hidden;
-  margin-top: -57px;
+  margin-top: -107px;
+  margin-left: -13px;
 }
 #butt-repuestos::before,
 #butt-repuestos::after {
@@ -268,35 +284,56 @@ h1, h2, h3 {
 #butt-repuestos::after {
   right: 0;
 }
-.cont-bot-esp{
-  display: none;
-  flex-direction: row;
-  margin-top: 17px;
-  position: fixed;
-}
-.conti-boton {
-  margin-right: 27px;
-}
 #contene-images{
   display: flex;
   flex-direction: column; 
-  align-items: flex-start;  
+  align-items: flex-start;
+  margin-top: 50px;
+  margin-left: -27px;
+}
+#contTextos{
+  display: flex;
+  flex-direction: row;
+  margin-left: 57px;
 }
 .documentos {
   display: none;
-  overflow: visible;
+  /* overflow: visible; */
   font-family: "GothamRounded", sans-serif;
   color: white;
-  margin-top: 200px;
-  transform: rotate(-45deg); /* Rotación en sentido antihorario */
-  transform-origin: center center; /* Punto de origen en el centro del elemento */
+  margin-top: 5px;
+  /*transform: rotate(-45deg); /* Rotación en sentido antihorario */
+  /*transform-origin: center center; /* Punto de origen en el centro del elemento */
+}
+#contInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Alineación a la izquierda */
+  margin-top: 1px;
+  margin-left: 100px;
+}
+.inpt-class{
+  display: none;
+  width: 200px;
+  border-radius: 7px;
+  background-color: rgb(211, 255, 204);
+}
+.conti-boton{
+  display: flex;
+  flex-direction: column;
+  margin-left:20px;
+}
+#conteneMantaut{
+  display: flex;
+  flex-direction: row;
 }
 
 /*/////////////////////////////////////////////// */
 .butt-mautonomo{
-  display: flex;
+  display: none;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: left;
   font-family: "GothamRounded", sans-serif;
   color: white;
   height: 27px;
@@ -305,21 +342,22 @@ h1, h2, h3 {
   background-color: rgba(83, 82, 82, 0.678); 
   position: relative;
   overflow: hidden;
-  margin-bottom: 1px;
+  margin-bottom: 17px;
   cursor: pointer;
+  padding-left: 27px;
 }
-.butt-mautonomo::before,
-.butt-mautonomo::after {
+/* .butt-mautonomo::after, */
+.butt-mautonomo::before {
   content: "";
   position: absolute;
   top: 0;
-  width: 27px;
+  width: 17px;
   height: 27px;
   background-color: rgba(217, 255, 0, 1);
 }
 .butt-mautonomo::before {
   left: 0;
 }
-.butt-mautonomo::after {
+/* .butt-mautonomo::after {
   right: 0;
-}
+} */

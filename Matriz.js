@@ -25,9 +25,20 @@ function changeButtonStyles(videoId) {
   var elementsToHide = document.querySelectorAll('.alimentador, .uTeñido, .desbobinador,.unidProceso,.rebobinador, .contTorrImp');   
   for (var i = 0; i < elementsToHide.length; i++) {
     elementsToHide[i].style.display = 'none';
-  } 
+  }
+  
+  var contVid = document.getElementById('videosTraining')
+  contVid.style.display='flex'
 
- const videoElements = document.querySelectorAll('.video-training');  
+  const buttonElements = document.querySelectorAll('.boton-f');
+  var delay = 100;
+  for (var i = 0; i < buttonElements.length; i++) {
+    setTimeout(function(index) {
+      buttonElements[index].style.display = 'block';
+    }, delay * i,i);
+  }
+
+  const videoElements = document.querySelectorAll('.video-training');   
   videoElements.forEach(video => {
     if (video.id === videoId) {
       video.style.display = 'block';
@@ -37,10 +48,14 @@ function changeButtonStyles(videoId) {
     }
   });
 
-  const buttonElements = document.querySelectorAll('.bot-entre');
-  buttonElements.forEach(elemento => {
-  elemento.style.display = 'block';
-  });
+  var butInicio = document.getElementById('bot-inic')
+  butInicio.style.marginLeft='310px  '
+
+  var butGrande = document.getElementById('iniciar')
+  butGrande.style.marginLeft='363px'
+
+  var videoBackground = document.getElementById('videoBackground');
+  videoBackground.style.display = 'none'; // Oculta el video
 
   var button = document.querySelector('.boton-a');
   // Guardar estilos originales
@@ -56,11 +71,9 @@ function changeButtonStyles(videoId) {
   }, 300);
   // Retardo de 0.2 segundos antes de ejecutar esta parte
   setTimeout(function() {
-  }, 200);
-
-  var videoBackground = document.getElementById('videoBackground');
-  videoBackground.style.display = 'none'; // Oculta el video
+  }, 200);  
 }
+
  
 function cambioContenedor() {
   var elementsToHide = document.querySelectorAll('.alimentador, .uTeñido, .desbobinador,.unidProceso,.rebobinador');   
@@ -90,7 +103,7 @@ function cierraContenedores(desbobClas,teñiClas,alimClas,uniProClas,rebobClas){
   video.pause();
 }
 
-function muestraRodillo (videoId, imageId) {
+function muestraRodillo (videoId, imageClas) {
   const videoElements = document.querySelectorAll('.video-training');  
   videoElements.forEach(video => {
     if (video.id === videoId) {
@@ -103,36 +116,42 @@ function muestraRodillo (videoId, imageId) {
     }
   });
 
-  const imagenElements = document.querySelectorAll('.image-training');  
-  imagenElements.forEach(imagen => {
-    if (imagen.id === imageId) {
-      imagen.style.display = 'block';
-    } else {
-      imagen.style.display = 'none';
-    }
-  }); 
+  const imageContainerEras = document.querySelectorAll('.image-training, .image-training-a')
+  for (i=0; i < imageContainerEras.length; i ++){
+    imageContainerEras[i].style.display='none'
+  }
+
+  const imageContainer = document.getElementsByClassName(imageClas)
+  for (i=0; i < imageContainer.length; i ++){
+    imageContainer[i].style.display='block'
+  }
+
+  var botPanel = document.getElementById('bot-inic')
+  botPanel.style.marginLeft='190px'
+
+  var botMantaut = document.getElementById('bot-mantaut')
+  botMantaut.style.display='block'
+  botMantaut.style.marginLeft='17px'
+ 
+  var botGrand = document.getElementById('iniciar')
+  botGrand.style.marginLeft='17px'
+
+  var buttRepuest = document.getElementById('butt-repuestos')
+  buttRepuest.style.display='block'
+
+  var contImages = document.getElementById('contene-images')
+  contImages.style.marginLeft='10px'
 
   var videoBackground = document.getElementById('videoBackground'); 
   videoBackground.style.display = 'none';
 
-  var botInicio = document.getElementById('bot-inic')
-  botInicio.style.marginLeft = '110px';
-
-  var botGrande = document.getElementById('iniciar');
-  botGrande.style.marginRight = '533px';
-
-  var botRepuesto = document.getElementById('butt-repuestos')
-  botRepuesto.style.display='block'
-
-  var botManautonomo = document.getElementsByClassName('cont-bot-esp')[0];
-  botManautonomo.style.display='flex'
   setTimeout(() => {
     applyImageEffects();
   }, 800); // Retardo de 0.9 segundos (900 milisegundos)
 }
 
 function applyImageEffects() { // aumento secuencial imagenes repuestos
-  const imageElements = document.querySelectorAll('.image-training');
+  const imageElements = document.querySelectorAll('.image-training, .image-training-a');
   let currentIndex = 0;
   function applyEffect() {
     if (currentIndex < imageElements.length) {
@@ -161,9 +180,69 @@ function alternarVisibilidad(docId) {
     }
   }
 
-  var contenedorButton = document.getElementById('contiene-button');
-  contenedorButton.style.marginLeft = '-527px';
+
 }
+
+function ElementosMa() {
+  var elementosOcultar = document.querySelectorAll('.boton-a, .boton-g, .boton-f, .video-training, .image-training, .image-training-a');
+  for (var i = 0; i < elementosOcultar.length; i++) {
+    elementosOcultar[i].style.display = 'none';
+  }
+
+  var botonMa = document.getElementById('bot-mantaut')
+  botonMa.style.display='block'
+
+  var botRepuesto = document.getElementById('butt-repuestos')
+  botRepuesto.style.display='none'
+
+  var buttMantaut = document.querySelectorAll('.butt-mautonomo')
+  for (i=0; i < buttMantaut.length; i++){
+    buttMantaut[i].style.display='block'
+  }
+
+  var contVid = document.getElementById('videosTraining')
+  contVid.style.display='none'
+}
+
+function mostrarBotMa(id) {
+  var elemento = document.getElementById(id);
+  if (elemento.style.display === 'none') {
+      elemento.style.display = 'block';
+  } else {
+      elemento.style.display = 'none';
+  }
+}
+////////////////////////////////////////////////////////////////////////
+const inputsContainer = document.getElementById('contInput');
+const inputs = document.querySelectorAll('.inpt-class');
+let currentIndex = 0;
+function showNextInput() {
+  if (currentIndex < inputs.length) {
+    inputs[currentIndex].style.display = 'block';
+    currentIndex++;
+    setTimeout(showNextInput, 57);
+  }
+}
+function mantAutonomo (action, docuId) {
+  var contInput = document.getElementById('contTextos')
+  contInput.style.display='block'
+
+  if (action === 'troubleshooting') {
+    inputsContainer.style.display = 'block';
+    showNextInput();
+  }
+}
+//////////////////////////////////////////////////////////////////////////
+
+
+// Obtener todos los botones con la clase "butt-mautonomo"
+var botones = document.querySelectorAll('.butt-mautonomo');
+
+// Recorrer todos los botones y hacerlos visibles
+botones.forEach(function(boton) {
+var id = boton.getAttribute('id');
+alternarVisibilidad(id);
+});
 
 document.addEventListener('DOMContentLoaded', () => {
   const botonesB = document.querySelectorAll('.boton-b');
@@ -234,7 +313,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // LOGICA PARA FULL SCREEN A IMAGENES
-const images = document.querySelectorAll('.image-training');
+const images = document.querySelectorAll('.image-training, .image-training-a');
 images.forEach(image => {
   let isFullscreen = false;
   image.addEventListener('click', () => {
@@ -282,6 +361,3 @@ imageElementsi.forEach((image, index) => {
     }, 400);
   });
 });
-
-
-
