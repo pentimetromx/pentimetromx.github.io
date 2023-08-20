@@ -135,7 +135,7 @@
       </div>
     </div>
 
-    <div id="videosTraining">  
+    <div id="videosTraining" style="display: none;">  
 
       <div id="contenedor-7" class="contene-7"> 
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement2','image-training')">Montaje distribuidor<div class="linea-horizontal"></div></button>                
@@ -172,8 +172,7 @@
  
     </div> 
 
-    <div id="conteneMantaut">
-
+    <div id="conteneMantaut" class="mantAuto">
       <div class="conti-boton">
         <button class="butt-mautonomo" id="troubleshoot" onclick="mantAutonomo('troubleshooting')">TROUBLESHOOTING</button>
         <button class="butt-mautonomo" id="def1" onclick="mantAutonomo('def-tipo1')">DEFECTOS TIPO 1</button>
@@ -182,24 +181,46 @@
         <button class="butt-mautonomo" id="fua" onclick="mantAutonomo('fua')">FUA</button>           
         <button class="butt-mautonomo" id="lup" onclick="mantAutonomo('lup')">LUP</button>
       </div> 
-
       <div id="contInput">
-        <input type="file" class="inpt-class"><br>  
-        <input type="file" class="inpt-class"><br>
-        <input type="file" class="inpt-class"><br>
-        <input type="file" class="inpt-class"><br>
-        <input type="file" class="inpt-class"><br>
+        <input type="range"class="inpt-class"> 
+        <input type="file" class="inpt-class">
+        <input type="file" class="inpt-class">
+        <input type="file" class="inpt-class">
+        <input type="file" class="inpt-class">
+        <input type="file" class="inpt-class">
+        <input type="file" class="inpt-class">
         <input type="file" class="inpt-class">
       </div>
-          
-      <div id="contTextos" style="display: none;">
-        <p class="documentos" id="ayudastrabajo">SITIO PARA ADMINISTRAR DOCUMENTOS AYUDAS DE TRABAJO</p>
-        <p class="documentos" id="troubleshooting">SITIO PARA ADMINISTRAR DOCUMENTOS TROUBLESHOOTING</p>
-        <p class="documentos" id="def-tipo1">SITIO PARA ADMINISTRAR DOCUMENTOS DEFECTOS MECANICOS TIPO 1</p>
-        <p class="documentos" id="def-tipo2">SITIO PARA ADMINISTRAR DOCUMENTOS DEFECTOS MECANICOS TIPO 2</p>
-        <p class="documentos" id="lup">SITIO PARA ADMINISTRAR DOCUMENTOS TIPO LUP</p>
-        <p class="documentos" id="fua">SITIO PARA ADMINISTRAR DOCUMENTOS TIPO FUA</p>
-      </div> 
+      <div class="contGraf" id="grafiCuadro" style="display: none;">
+        <img src="C:\Users\Juan\Documentos\Estudiar\Excel\Nueva carpeta\Grafico 1.JPG" alt="Gráfico de Excel">
+      </div>
+      <div id="contChecks" style="display: none;">
+        <input type="checkbox"class="input-class"> 
+        <input type="checkbox" class="input-class">
+        <input type="checkbox" class="input-class">
+        <input type="checkbox" class="input-class">
+        <input type="checkbox" class="input-class">
+        <input type="checkbox" class="input-class">
+        <input type="checkbox" class="input-class">
+        <input type="checkbox" class="input-class">
+      </div>       
+      <div class="contGrafito" id="grafiCuadro2" style="display: none;">
+        <img src="C:\Users\Juan\Documentos\Estudiar\Excel\Nueva carpeta\Grafico 2.JPG" alt="Gráfico de Excel 2" class="grafMini">
+        <img src="C:\Users\Juan\Documentos\Estudiar\Excel\Nueva carpeta\Grafico 3.JPG" alt="Gráfico de Excel 3" class="grafMini">
+        <img src="C:\Users\Juan\Documentos\Estudiar\Excel\Nueva carpeta\Grafico 4.JPG" alt="Gráfico de Excel 4" class="grafMini">
+        <img src="C:\Users\Juan\Documentos\Estudiar\Excel\Nueva carpeta\Grafico 5.JPG" alt="Gráfico de Excel 5" class="grafMini">
+      </div>
+    </div>
+
+    <div id="segundoMantaut" class="contGrafNeg">
+
+      <div id="contImagGraf" style="display: none;">
+        <img src="C:\Users\Juan\Documentos\Estudiar\Excel\Nueva carpeta\Excel.png" alt="Gráfico de Excel 6" style="width: 200px;height: 100px;">
+      </div>
+      <div id="contImagNeg" style="display: none;">
+        <img src="C:\Users\Juan\Documentos\Estudiar\Excel\Nueva carpeta\Grafico 6.JPG" alt="Gráfico de Excel 6" style="width:447px ;height: 120px;">
+      </div>
+
     </div>
 
     <script src="./Matriz.js"></script>    

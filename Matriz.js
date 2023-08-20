@@ -107,7 +107,7 @@ function muestraRodillo (videoId, imageClas) {
   const videoElements = document.querySelectorAll('.video-training');  
   videoElements.forEach(video => {
     if (video.id === videoId) {
-      video.style.display = 'block';
+      video.style.display = 'block'; 
       video.currentTime = 0; // Establecer el tiempo actual al inicio
       video.play();      
     } else {
@@ -119,7 +119,7 @@ function muestraRodillo (videoId, imageClas) {
   const imageContainerEras = document.querySelectorAll('.image-training, .image-training-a')
   for (i=0; i < imageContainerEras.length; i ++){
     imageContainerEras[i].style.display='none'
-  }
+  }  
 
   const imageContainer = document.getElementsByClassName(imageClas)
   for (i=0; i < imageContainer.length; i ++){
@@ -147,7 +147,7 @@ function muestraRodillo (videoId, imageClas) {
 
   setTimeout(() => {
     applyImageEffects();
-  }, 800); // Retardo de 0.9 segundos (900 milisegundos)
+  }, 300); // Retardo de 0.9 segundos (900 milisegundos)
 }
 
 function applyImageEffects() { // aumento secuencial imagenes repuestos
@@ -195,9 +195,12 @@ function ElementosMa() {
   var botRepuesto = document.getElementById('butt-repuestos')
   botRepuesto.style.display='none'
 
-  var buttMantaut = document.querySelectorAll('.butt-mautonomo')
-  for (i=0; i < buttMantaut.length; i++){
-    buttMantaut[i].style.display='block'
+  const buttonElements = document.querySelectorAll('.butt-mautonomo');
+  var delay = 100;
+  for (var i = 0; i < buttonElements.length; i++) {
+    setTimeout(function(index) {
+      buttonElements[index].style.display = 'block';
+    }, delay * i,i);
   }
 
   var contVid = document.getElementById('videosTraining')
@@ -215,7 +218,42 @@ function mostrarBotMa(id) {
 ////////////////////////////////////////////////////////////////////////
 const inputsContainer = document.getElementById('contInput');
 const inputs = document.querySelectorAll('.inpt-class');
+const input = document.querySelectorAll('.input-class');
+const inpt = document.querySelectorAll('grafMini');
 let currentIndex = 0;
+let actualtIndex = 0;
+let nowIndex = 0;
+
+function mantAutonomo (opcionSeleccionada) {
+  switch (opcionSeleccionada) {
+    case 'troubleshooting':
+      showNextInput();
+      break;
+    case 'def-tipo1':
+      var contGrafi = document.getElementById('grafiCuadro')
+      contGrafi.style.display='block'
+      break;
+    case 'def-tipo2':
+      var conticheck = document.getElementById('contChecks')
+      conticheck.style.display='block'
+      showNextInputChec();
+      break;
+    case 'ayudastrabajo':
+      var contGrafvert = document.getElementById('grafiCuadro2')
+      contGrafvert.style.display='block'
+      showNextGraf();
+      break;
+    case 'fua':
+      var contGrafColor = document.getElementById('contImagGraf')
+      contGrafColor.style.display='block'
+      break;
+    case 'lup':
+      var contGrafNeg = document.getElementById('contImagNeg')
+      contGrafNeg.style.display='block'
+      break;
+    default:
+  }
+}
 function showNextInput() {
   if (currentIndex < inputs.length) {
     inputs[currentIndex].style.display = 'block';
@@ -223,15 +261,51 @@ function showNextInput() {
     setTimeout(showNextInput, 57);
   }
 }
-function mantAutonomo (action, docuId) {
-  var contInput = document.getElementById('contTextos')
-  contInput.style.display='block'
-
-  if (action === 'troubleshooting') {
-    inputsContainer.style.display = 'block';
-    showNextInput();
+function showNextInputChec() {
+  if (actualtIndex < input.length) {
+    input[actualtIndex].style.display = 'block';
+    actualtIndex++;
+    setTimeout(showNextInputChec, 57);
   }
 }
+function showNextGraf() {
+  if (nowIndex < inpt.length ){
+    inpt[nowIndex].style.display = 'block';
+    nowIndex++;
+    setTimeout(showNextGraf, 57);
+  }
+}
+
+  // Obtener todas las etiquetas de imagen
+  const imagesFull = document.querySelectorAll('img');
+
+  // Agregar evento de pantalla completa a cada imagen
+  imagesFull.forEach(image => {
+    image.addEventListener('click', () => {
+      if (!document.fullscreenElement) {
+        if (image.requestFullscreen) {
+          image.requestFullscreen();
+        } else if (image.mozRequestFullScreen) { // Firefox
+          image.mozRequestFullScreen();
+        } else if (image.webkitRequestFullscreen) { // Chrome, Safari and Opera
+          image.webkitRequestFullscreen();
+        } else if (image.msRequestFullscreen) { // IE/Edge
+          image.msRequestFullscreen();
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) { // Firefox
+          document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+          document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { // IE/Edge
+          document.msExitFullscreen();
+        }
+      }
+    });
+  });
+
 //////////////////////////////////////////////////////////////////////////
 
 
@@ -361,3 +435,5 @@ imageElementsi.forEach((image, index) => {
     }, 400);
   });
 });
+
+document.getElementsByClassName('transitto')

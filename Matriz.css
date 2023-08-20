@@ -5,13 +5,13 @@
 body {
   font-family: "GothamRounded";
   background-color:#333333;
-/*   overflow: hidden; */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh; /* Ajusta la altura del body para que cubra toda la pantalla */
   margin: 0; /* Elimina los márgenes predeterminados del body */
   padding: 0; /* Elimina los rellenos predeterminados del body */
+  overflow: hidden;
 }
 #videoBackground {
   position: fixed;
@@ -21,7 +21,7 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  opacity: 0.1; /* Cambia este valor para ajustar la opacidad */
+  opacity: 0.1;
 }
 
 h1, h2, h3 {
@@ -52,7 +52,7 @@ h1, h2, h3 {
 .boton-b:hover,
 .boton-c:hover,
 .boton-g:hover{
-  transform: scale(1.1); /* Aumenta el tamaño 1.3 veces al pasar el mouse */
+  transform: scale(1.1);
 }
 .boton-d{
   height: 47px;
@@ -67,7 +67,7 @@ h1, h2, h3 {
   transition: transform 0.1s;
 }
 .boton-d:hover {
-  transform: scale(1.1); /* Aumenta el tamaño 1.3 veces al pasar el mouse */
+  transform: scale(1.1);
 }
 .boton-g{
   height: 47px;
@@ -82,7 +82,7 @@ h1, h2, h3 {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: transform 0.1s; /* Aplica una transición al efecto de escalamiento */ 
+  transition: transform 0.1s; 
 }
 #bot-mantaut{
   height: 47px;
@@ -97,10 +97,10 @@ h1, h2, h3 {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: transform 0.1s; /* Aplica una transición al efecto de escalamiento */ 
+  transition: transform 0.1s; 
 }
 .boton-e:hover {
-  transform: scale(1.1); /* Aumenta el tamaño 1.3 veces al pasar el mouse */
+  transform: scale(1.1);
 }
 .segundo-bloque{
   display: flex;
@@ -158,7 +158,7 @@ h1, h2, h3 {
 .video-training {
   display: none;
 }
-.images-training{ /*clase del contenedor */ 
+.images-training{ 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -167,7 +167,7 @@ h1, h2, h3 {
   margin-top: 19px;
 } 
 .image-training,
-.image-training-a{ /*clase de c/imagen*/
+.image-training-a{
   display: none;
   cursor: pointer;
   height: 80px;
@@ -256,7 +256,7 @@ h1, h2, h3 {
 /*/////////////////////////////////////////////// */
 #butt-repuestos {
   display: flex;
-  justify-content: center; /* Centrar horizontalmente */
+  justify-content: center; 
   align-items: center;
   font-family: "GothamRounded", sans-serif;
   color: white;
@@ -293,30 +293,68 @@ h1, h2, h3 {
 }
 #contTextos{
   display: flex;
-  flex-direction: row;
+  flex-direction: block;
   margin-left: 57px;
+}
+.mantAuto{
+  display: flex;
+  flex-direction: row;
 }
 .documentos {
   display: none;
-  /* overflow: visible; */
   font-family: "GothamRounded", sans-serif;
   color: white;
   margin-top: 5px;
-  /*transform: rotate(-45deg); /* Rotación en sentido antihorario */
-  /*transform-origin: center center; /* Punto de origen en el centro del elemento */
 }
-#contInput {
+
+#contInput{
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Alineación a la izquierda */
-  margin-top: 1px;
-  margin-left: 100px;
+  justify-content: flex-start; 
+  position: absolute;
+  left: 250px;
+  top: 77px;
+}
+.contGraf{
+  position: absolute;
+  left: 477px;
+  top: 77px;
+}
+.contGraf img{
+height: 270px;
+width:447px ;
+}
+#contChecks{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  position: absolute;
+  left: 950px;
+  top: 77px;
 }
 .inpt-class{
   display: none;
   width: 200px;
   border-radius: 7px;
   background-color: rgb(211, 255, 204);
+  margin-bottom: 11px;
+}
+.input-class{
+  margin-bottom: 15px;
+  width: 20px;
+  height: 21px;
+}
+.contGrafito{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 1017px;
+  top: 77px;
+}
+.contGrafNeg {
+  display: flex;
+  flex-direction: row;
+  
 }
 .conti-boton{
   display: flex;
@@ -326,6 +364,20 @@ h1, h2, h3 {
 #conteneMantaut{
   display: flex;
   flex-direction: row;
+}
+#contImagGraf{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 250px;
+  top: 407px;
+}
+#contImagNeg {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 477px;
+  top: 407px;
 }
 
 /*/////////////////////////////////////////////// */
