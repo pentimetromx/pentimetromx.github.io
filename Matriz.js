@@ -104,6 +104,13 @@ function cierraContenedores(desbobClas,teñiClas,alimClas,uniProClas,rebobClas){
 }
 
 function muestraRodillo (videoId, imageClas) {
+
+  const correctPassword = '123'; // Cambia por la contraseña correcta
+  const enteredPassword = prompt('Ingrese la contraseña de verificación:');
+
+  if (enteredPassword === correctPassword) {
+    // Aquí puedes poner el resto de la lógica de muestraRodillo()
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
   const videoElements = document.querySelectorAll('.video-training');  
   videoElements.forEach(video => {
     if (video.id === videoId) {
@@ -148,6 +155,11 @@ function muestraRodillo (videoId, imageClas) {
   setTimeout(() => {
     applyImageEffects();
   }, 300); // Retardo de 0.9 segundos (900 milisegundos)
+
+
+} else {
+  alert('Contraseña incorrecta. Acceso denegado.');
+}
 }
 
 function applyImageEffects() { // aumento secuencial imagenes repuestos
@@ -194,6 +206,9 @@ function ElementosMa() {
 
   var botRepuesto = document.getElementById('butt-repuestos')
   botRepuesto.style.display='none'
+
+  var botPanel = document.getElementById('bot-inic')
+  botPanel.style.display='block'
 
   const buttonElements = document.querySelectorAll('.butt-mautonomo');
   var delay = 100;
