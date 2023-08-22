@@ -239,36 +239,6 @@ let currentIndex = 0;
 let actualtIndex = 0;
 let nowIndex = 0;
 
-function mantAutonomo (opcionSeleccionada) {
-  switch (opcionSeleccionada) {
-    case 'troubleshooting':
-      showNextInput();
-      break;
-    case 'def-tipo1':
-      var contGrafi = document.getElementById('grafiCuadro')
-      contGrafi.style.display='block'
-      break;
-    case 'def-tipo2':
-      var conticheck = document.getElementById('contChecks')
-      conticheck.style.display='block'
-      showNextInputChec();
-      break;
-    case 'ayudastrabajo':
-      var contGrafvert = document.getElementById('grafiCuadro2')
-      contGrafvert.style.display='block'
-      showNextGraf();
-      break;
-    case 'fua':
-      var contGrafColor = document.getElementById('contImagGraf')
-      contGrafColor.style.display='block'
-      break;
-    case 'lup':
-      var contGrafNeg = document.getElementById('contImagNeg')
-      contGrafNeg.style.display='block'
-      break;
-    default:
-  }
-}
 function showNextInput() {
   if (currentIndex < inputs.length) {
     inputs[currentIndex].style.display = 'block';
@@ -451,4 +421,263 @@ imageElementsi.forEach((image, index) => {
   });
 });
 
-document.getElementsByClassName('transitto')
+function mantAutonomo (opcionSeleccionada) {
+  switch (opcionSeleccionada) {
+    case 'troubleshooting':
+      showNextInput();
+      break;
+    case 'def-tipo1':
+/*       var contGrafi = document.getElementById('grafiCuadro')
+      contGrafi.style.display='block' */
+      const conteneCanvas = document.getElementById('canvasContainer2')
+      conteneCanvas.style.display='block'
+      break;
+    case 'def-tipo2':
+     var conticheck = document.getElementById('contChecks')
+      conticheck.style.display='block'
+      showNextInputChec();
+      
+      break;
+    case 'ayudastrabajo':
+/*       var contGrafvert = document.getElementById('grafiCuadro2')
+      contGrafvert.style.display='block'
+      showNextGraf(); */ 
+      var contGrafitos =  document.getElementById('canvasContainer3')
+      contGrafitos.style.display= 'block'
+      var segundaGraf = document.getElementById('MiSegundaGrafica')
+      segundaGraf.style.display='block'
+      break;
+    case 'fua':
+      var contGrafColor = document.getElementById('contImagGraf')
+      contGrafColor.style.display='block'
+      break;
+    case 'lup':
+      var contGrafNeg = document.getElementById('contImagNeg')
+      contGrafNeg.style.display='block'
+      break;
+    default:
+  }
+  
+}
+
+
+
+let miCanvas = document.getElementById('MiGrafica').getContext('2d');
+var chart = new Chart(miCanvas, {
+    type: 'bar',    
+    data: {
+        labels: ['TROUBLESHOOTING', 'DEFECTOS TIPO 1', 'DEFECTOS TIPO 2', 'ADT', 'FUA', 'LUP'],
+        datasets: [
+            {
+                label: 'Participación en M.A',
+                backgroundColor: ['rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(0, 0, 255)', 'rgb(255, 255, 0)', 'rgb(0, 255, 255)', 'rgb(255, 0, 255)'],
+                data: [57, 88, 62, 33, 14, 20]
+            }
+        ]
+    },
+    options: {
+        scales: {
+            x: {
+                grid: {
+                    display: false // Ocultar líneas de la cuadrícula en el eje X
+                },
+                ticks: {
+                    color: 'rgb(255,255,255)' // Color de las etiquetas de texto en el eje X
+                }
+            },
+            y: {
+                grid: {
+                    display: false // Ocultar líneas de la cuadrícula en el eje X
+                },
+                ticks: {
+                    color: 'rgb(255,255,255)' ,// Color de las etiquetas de texto en el eje X
+
+                    beginAtZero: true // Empezar el eje Y desde cero
+                }
+
+            }
+        },
+        indexAxis: 'y', // Mostrar barras horizontalmente
+        plugins: {
+            legend: {
+                display: false // Ocultar la leyenda
+            }
+        }
+    }
+});
+
+
+let miCanvas2 = document.getElementById('MiSegundaGrafica').getContext('2d');
+var chart2 = new Chart(miCanvas2, {
+    type: 'bar',
+    data: {
+        labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+        datasets: [
+            {
+                label: 'Datos del Segundo Gráfico',
+                backgroundColor: ['rgb(0, 128, 0)', 'rgb(0,0,255)', 'rgb(255, 102, 0)', 'rgb(255, 0, 0)'],
+                data: [15, 25, 35, 20, 10, 19]
+            }
+        ]
+    },
+    options: {
+        scales: {
+            x: {
+                grid: {
+                    display: false // Ocultar líneas de la cuadrícula en el eje X
+                },
+                ticks: {
+                    color: 'rgb(255,255,0)' // Color de las etiquetas de texto en el eje X
+                }
+            },
+            y: {
+                grid: {
+                    display: false // Ocultar líneas de la cuadrícula en el eje X
+                },
+                ticks: {
+                    color: 'rgb(255,255,0)', // Color de las etiquetas de texto en el eje X
+                    beginAtZero: true // Empezar el eje Y desde cero
+                }
+
+            }
+        },
+        indexAxis: 'x', // Mostrar barras horizontalmente
+        plugins: {
+            legend: {
+                display: false // Ocultar la leyenda
+            }
+        }
+    }
+});
+
+let miCanvas3 = document.getElementById('MiTerceraGrafica').getContext('2d');
+var chart2 = new Chart(miCanvas3, {
+    type: 'line',
+    data: {
+        labels: ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
+        datasets: [
+            {
+                label: 'Datos del Segundo Gráfico',
+                backgroundColor: ['rgb(0, 128, 0)', 'rgb(255, 102, 0)', 'rgb(0,0,255)', 'rgb(255,255,0)', 'rgb(255, 0, 0)', 'rgb(255, 0, 255)' ],
+                data: [15, 25, 35, 20, 10, 19]
+            }
+        ]
+    },
+    options: {
+        scales: {
+            x: {
+                grid: {
+                    display: false // Ocultar líneas de la cuadrícula en el eje X
+                },
+                ticks: {
+                    color: 'rgb(255,255,255)' // Color de las etiquetas de texto en el eje X
+                }
+            },
+            y: {
+                grid: {
+                    display: false // Ocultar líneas de la cuadrícula en el eje X
+                },
+                ticks: {
+                    color: 'rgb(255,255,255)', // Color de las etiquetas de texto en el eje X
+                    beginAtZero: true // Empezar el eje Y desde cero
+                }
+
+            }
+        },
+        indexAxis: 'x', // Mostrar barras horizontalmente
+        plugins: {
+            legend: {
+                display: false // Ocultar la leyenda
+            }
+        }
+    }
+});
+
+let miCanvas4 = document.getElementById('MiCuartaGrafica').getContext('2d');
+var chart2 = new Chart(miCanvas4, {
+    type: 'pie',
+    data: {
+        labels: ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
+        datasets: [
+            {
+                label: 'Datos del Segundo Gráfico',
+                backgroundColor: ['#ff1700', '#ff2e00', '#ff4500', '#ff7300', '#ffa200)', '#ffff00'],
+                data: [15, 25, 35, 20, 10, 19],
+                borderWidth: 0.3,
+            }
+        ]
+    },
+    options: {
+        scales: {
+            x: {
+                grid: {
+                    display: false // Ocultar líneas de la cuadrícula en el eje X
+                },
+                ticks: {
+                    color: 'rgb(3, 237, 253)' // Color de las etiquetas de texto en el eje X
+                }
+            },
+            y: {
+                grid: {
+                    display: false // Ocultar líneas de la cuadrícula en el eje X
+                },
+                ticks: {
+                    color: 'rgb(3, 237, 253)', // Color de las etiquetas de texto en el eje X
+                    beginAtZero: true // Empezar el eje Y desde cero
+                }
+
+            }
+        },
+        indexAxis: 'x', // Mostrar barras horizontalmente
+        plugins: {
+            legend: {
+                display: false // Ocultar la leyenda
+            }
+        }
+    }
+});
+
+let miCanvas5 = document.getElementById('MiQuintaGrafica').getContext('2d');
+var chart2 = new Chart(miCanvas5, {
+    type: 'bar',
+    data: {
+        labels: ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
+        datasets: [
+            {
+                label: 'Datos del Segundo Gráfico',
+                backgroundColor: ['rgb(0,255,0)', '#ff1700', 'green', '#ff1700', '#ffa200)', '#ffff00'],
+                data: [55, -65, 35, -90, 10, 19],
+                borderWidth: 0.3,
+            }
+        ]
+    },
+    options: {
+        scales: {
+            x: {
+                grid: {
+                    display: false // Ocultar líneas de la cuadrícula en el eje X
+                },
+                ticks: {
+                    color: 'rgb(3, 237, 253)' // Color de las etiquetas de texto en el eje X
+                }
+            },
+            y: {
+                grid: {
+                    display: false // Ocultar líneas de la cuadrícula en el eje X
+                },
+                ticks: {
+                    color: 'rgb(3, 237, 253)', // Color de las etiquetas de texto en el eje X
+                    beginAtZero: true // Empezar el eje Y desde cero
+                }
+
+            }
+        },
+        indexAxis: 'x', // Mostrar barras horizontalmente
+        plugins: {
+            legend: {
+                display: false // Ocultar la leyenda
+            }
+        }
+    }
+});
+

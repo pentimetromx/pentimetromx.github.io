@@ -171,3 +171,11 @@ var chart2 = new Chart(miCanvas4, {
         }
     }
 });
+
+function muestraCanvas() {
+    const conteneCanvas = document.getElementById('canvasContainer2')
+    conteneCanvas.style.display='flex'
+
+}
+
+
