@@ -112,7 +112,7 @@
               </div>
   
               <div>
-                <button class="boton-d" onclick="changeButtonStyles()">BANCADA DE TORRE</button>
+                <button class="boton-d" onclick="changeButtonStyles('contieneTorre')">BANCADA DE TORRE</button>
                 <div class="contene-7">
                   <div class="linea-vertical"></div>
                   <button class="boton-e">Guía<div class="linea-horizontal"></div></button>                  
@@ -214,17 +214,25 @@
         <input type="checkbox" class="input-class">
       </div>      
 
-    <div id="segundoMantaut" class="contGrafNeg">
-
-      <div id="contImagGraf" style="display: none;">
-        <img src="./assets/Excel.png" alt="Gráfico de Excel 6" style="width: 200px;height: 100px;">
+      <div id="segundoMantaut" class="contGrafNeg">
+        <div id="contImagGraf" style="display: none;">
+          <img src="./assets/Excel.png" alt="Gráfico de Excel 6" style="width: 200px;height: 100px;">
+        </div>
+        <div id="contImagNeg" style="display: none;">
+          <img src="./assets/Grafico 6.JPG" alt="Gráfico de Excel 6" style="width:447px ;height: 120px;">
+        </div>
       </div>
-      <div id="contImagNeg" style="display: none;">
-        <img src="./assets/Grafico 6.JPG" alt="Gráfico de Excel 6" style="width:447px ;height: 120px;">
-      </div>
+    </div> 
+    <div id="contieneTorre" style="display: none;">
+      <img src="./assets/Rotatek.jpg" id="imgTorre" alt="imagen-torre">
+      <a href="#" class="custom-link" id="linkDistribuidor" onclick="showRepuesto('rodillDistribuidor')">Rodillo distribuidor</a>
+      <a href="#" class="custom-link" id="linkForma" onclick="showRepuesto('rodillForma')">Rodillo forma</a>
+      <a href="#" class="custom-link" id="linkPlate" onclick="showRepuesto('portaPlancha')">Porta plancha</a>
+      <a href="#" class="custom-link" id="linkManta" onclick="showRepuesto('portaMantilla')">Porta mantilla</a>
+      <a href="#" class="custom-link" id="linkImpresor" onclick="showRepuesto('cilindroImpresor')">Cilindro impresor</a>
+    </div> 
 
-    </div>
 
-    <script src="./Matriz.js"></script>    
+  <script src="./Matriz.js"></script>    
   </body>
 </html>

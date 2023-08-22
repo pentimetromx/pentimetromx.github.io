@@ -2,7 +2,7 @@
   font-family: "GothamRounded"; /* Nombre de la familia de fuentes personalizada */
   src: url('C:\Users\Juan\Documentos\programacion\programar\Pruebas\fonts\Mukta-Medium.ttf') format('ttf'), /* Ruta hacia el archivo .woff2 de la fuente */
 }
-body {
+body, html {
   font-family: "GothamRounded";
   background-color:#333333;
   background-size: cover;
@@ -430,4 +430,45 @@ width:447px ;
   top: 7px;
   width: 200px;
   height: 800px;
+}
+#contieneTorre {
+  width: 100vw; /* 100% del ancho de la ventana */
+  height: 100vh; /* 100% de la altura de la ventana */
+  display: flex; /* Usar flexbox para centrar la imagen */
+  flex-direction: row;
+  justify-content: center; /* Centrar horizontalmente */
+
+}
+#imgTorre{
+  position: absolute;
+  left: 250px;
+  height: 477px;
+  width: 777px;  
+}
+#linkPlate{
+  position: absolute;
+  left: 597px;
+  top: 240px;
+}
+#linkManta{
+  position: absolute;
+  left: 597px;
+  top: 327px;
+}
+#linkImpresor{
+  position: absolute;
+  left: 597px;
+  top: 414px;
+}
+#linkForma{
+  position: absolute;
+  left: 533px;
+  top: 200px;
+  color: white;
+}
+#linkDistribuidor{
+  position: absolute;
+  left: 623px;
+  top: 153px;
+  color: white;
 }

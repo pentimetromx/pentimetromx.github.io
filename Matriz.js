@@ -26,36 +26,66 @@ function changeButtonStyles(videoId) {
   for (var i = 0; i < elementsToHide.length; i++) {
     elementsToHide[i].style.display = 'none';
   }
-  
-  var contVid = document.getElementById('videosTraining')
-  contVid.style.display='flex'
 
-  const buttonElements = document.querySelectorAll('.boton-f');
-  var delay = 100;
-  for (var i = 0; i < buttonElements.length; i++) {
-    setTimeout(function(index) {
-      buttonElements[index].style.display = 'block';
-    }, delay * i,i);
+  switch (videoId) {
+    case 'videoElement1':
+      var contVid = document.getElementById('videosTraining')  
+      contVid.style.display='flex'
+    
+      const buttonElements = document.querySelectorAll('.boton-f');
+      var delay = 100;
+      for (var i = 0; i < buttonElements.length; i++) {
+        setTimeout(function(index) {
+          buttonElements[index].style.display = 'block';
+        }, delay * i,i);
+      }
+    
+      const videoElements = document.querySelectorAll('.video-training');   
+      videoElements.forEach(video => {
+        if (video.id === videoId) {
+          video.style.display = 'block';
+          video.play();      
+        } else {
+          video.style.display = 'none';
+        }
+      });
+    
+      var butInicio = document.getElementById('bot-inic')
+      butInicio.style.marginLeft='310px  '
+    
+      var butGrande = document.getElementById('iniciar')
+      butGrande.style.marginLeft='363px'
+    
+      var videoBackground = document.getElementById('videoBackground');
+      videoBackground.style.display = 'none'; // Oculta el video
+
+    break;
+    case 'contieneTorre':
+      var videoBackground = document.getElementById('videoBackground');
+      var contTorre = document.getElementById('contieneTorre')
+      videoBackground.style.display = 'none'; // Oculta el video
+      contTorre.style.display='block'
+
+    break;
+    case 'def-tipo2':
+      
+    break;
+    case 'ayudastrabajo':
+
+    break;
+    case 'fua':
+
+    break;
+    case 'lup':
+
+    break;
+    default:
   }
 
-  const videoElements = document.querySelectorAll('.video-training');   
-  videoElements.forEach(video => {
-    if (video.id === videoId) {
-      video.style.display = 'block';
-      video.play();      
-    } else {
-      video.style.display = 'none';
-    }
-  });
 
-  var butInicio = document.getElementById('bot-inic')
-  butInicio.style.marginLeft='310px  '
 
-  var butGrande = document.getElementById('iniciar')
-  butGrande.style.marginLeft='363px'
+  
 
-  var videoBackground = document.getElementById('videoBackground');
-  videoBackground.style.display = 'none'; // Oculta el video
 
   var button = document.querySelector('.boton-a');
   // Guardar estilos originales
