@@ -11,7 +11,7 @@ body, html {
   height: 100vh; /* Ajusta la altura del body para que cubra toda la pantalla */
   margin: 0; /* Elimina los márgenes predeterminados del body */
   padding: 0; /* Elimina los rellenos predeterminados del body */
- /*  overflow:hidden; */
+ overflow:hidden;
 }
 #videoBackground {
   position: fixed;
@@ -476,6 +476,7 @@ width:447px ;
   display: flex;
   flex-direction: row;
 }
+.Bot-inicio2,
 .Bot-inicio{
   background-color: #302928;
   position: absolute;
@@ -489,7 +490,7 @@ width:447px ;
   cursor: pointer;
   z-index: 1;
 }
-
+.Bot-inicio2-fondo,
 .Bot-inicio-fondo{
   background-color: rgb(0,0,255);
   position: absolute;
@@ -502,8 +503,10 @@ width:447px ;
   cursor: pointer;
   z-index: 0;
 }
-
 .contOblicuos{
+  display: none;
+}
+.contOblicuosTorre{
   display: none;
 }
 .imagesTorre{

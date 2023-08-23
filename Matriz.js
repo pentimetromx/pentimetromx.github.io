@@ -81,10 +81,17 @@ function changeButtonStyles(videoId) {
     break;
     case 'contieneTorre':
       var videoBackground = document.getElementById('videoBackground');
-      videoBackground.style.display = 'none';
-      contTorre.style.display='block'
+      let botOblicuo = document.querySelectorAll('.Bot-inicio2, .Bot-inicio2-fondo');
+      let conteOblicuo = document.getElementsByClassName('contOblicuosTorre');
 
-      videoBackground.style.display = 'none'; // Oculta el video      
+      contTorre.style.display='block'
+      botOblicuo.forEach(elemento => {
+        elemento.style.display = 'block';
+      });
+      
+      for (let i = 0; i < conteOblicuo.length; i++) {
+        conteOblicuo[i].style.display = 'block'; 
+      }
 
     break;
     case 'def-tipo2':
@@ -312,8 +319,25 @@ function showRepuesto(parteopcionada) {
         if(imagen.id==='portPlaca'){
           imagen.style.display='block'
         }
-
       });
+      let botOblicuo = document.querySelectorAll('.Bot-inicio2, .Bot-inicio2-fondo');
+      let conteOblicuo = document.getElementsByClassName('contOblicuosTorre');
+      let conteOblicuo0 = document.getElementsByClassName('contOblicuos');
+      contTorre.style.display='none'
+      botOblicuo.forEach(elemento => {
+        elemento.style.display = 'none';
+      });      
+      for (let i = 0; i < conteOblicuo.length; i++) {
+        conteOblicuo[i].style.display = 'none'; 
+      }
+
+      for (let i = 0; i < conteOblicuo0.length; i++) {
+        conteOblicuo0[i].style.display = 'block'; 
+      }
+
+
+
+      
 
       break; 
       
