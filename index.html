@@ -223,14 +223,54 @@
         </div>
       </div>
     </div> 
-    <div id="contieneTorre" style="display: none;">
-      <img src="./assets/Rotatek.jpg" id="imgTorre" alt="imagen-torre">
-      <a href="#" class="custom-link" id="linkDistribuidor" onclick="showRepuesto('rodillDistribuidor')">Rodillo distribuidor</a>
-      <a href="#" class="custom-link" id="linkForma" onclick="showRepuesto('rodillForma')">Rodillo forma</a>
-      <a href="#" class="custom-link" id="linkPlate" onclick="showRepuesto('portaPlancha')">Porta plancha</a>
-      <a href="#" class="custom-link" id="linkManta" onclick="showRepuesto('portaMantilla')">Porta mantilla</a>
-      <a href="#" class="custom-link" id="linkImpresor" onclick="showRepuesto('cilindroImpresor')">Cilindro impresor</a>
-    </div> 
+    <!--- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+    
+    <div id="padreLinks">
+      <div id="contieneTorre" style="display: none;">
+        <img src="./assets/Rotatek.jpg" id="imgTorre" alt="imagen-torre">
+        <a href="#" class="custom-link" id="linkDistribuidor" onclick="showRepuesto('rodillDistribuidor')">Rodillo distribuidor</a>
+        <a href="#" class="custom-link" id="linkForma" onclick="showRepuesto('rodillForma')">Rodillo forma</a>
+        <a href="#" class="custom-link" id="linkPlate" onclick="showRepuesto('portaPlancha')">Porta plancha</a>
+        <a href="#" class="custom-link" id="linkManta" onclick="showRepuesto('portaMantilla')">Porta mantilla</a>
+        <a href="#" class="custom-link" id="linkImpresor" onclick="showRepuesto('cilindroImpresor')">Cilindro impresor</a>
+      </div>  
+    </div>  
+    <div id="agrupaOblicuos"> 
+    
+      <div id="contFrente" class="contOblicuos">
+        <button class="Bot-inicio" style="left: 450px;top: 10px;" onclick="muestraPerfiles('frente')">Frente</button>
+        <button class="Bot-inicio-fondo" style="left: 445px;top: 7px;"></button>  
+      </div>  
+      <div id="contLateral" class="contOblicuos">
+        <button class="Bot-inicio" style="left: 533px;top: 10px;" onclick="muestraPerfiles('mandos')">Mandos</button>
+        <button class="Bot-inicio-fondo" style="left: 529px;top: 7px;"></button>  
+      </div> 
+      <div id="contArriba" class="contOblicuos">
+        <button class="Bot-inicio" style="left: 617px;top: 10px;" onclick="muestraPerfiles('servicio')">Servicio</button>
+        <button class="Bot-inicio-fondo" style="left: 613px;top: 7px;"></button>  
+      </div> 
+      <div id="contAtras" class="contOblicuos">
+        <button class="Bot-inicio" style="left: 701px;top: 10px;" onclick="muestraPerfiles('atras')">Atras</button>
+        <button class="Bot-inicio-fondo" style="left: 697px;top: 7px;"></button>  
+      </div> 
+    </div>
+    
+    <div id="padreImagenes">      
+      <div id="contPortPlaca">
+        <img src="./assets/Porta plancha2.png" class="imagesTorre" id="portPlaca" alt="porte plancha">  
+        <img src="./assets/Porta plancha.png" class="imagesTorre" id="portPlaca" alt="porte plancha">
+        <img src="./assets/Porta plancha3.png" class="imagesTorre" id="portPlaca2" alt="porte plancha">
+        <img src="./assets/Porta plancha4.png" class="imagesTorre" id="portPlaca2" alt="porte plancha">
+        <img src="./assets/Porta plancha5.png" class="imagesTorre" id="portPlaca3" alt="porte plancha">
+        <img src="./assets/Porta plancha6.png" class="imagesTorre" id="portPlaca3" alt="porte plancha">
+        <img src="./assets/Porta plancha7.png" class="imagesTorre" id="portPlaca4" alt="porte plancha">
+        <img src="./assets/Porta plancha8.png" class="imagesTorre" id="portPlaca4" alt="porte plancha">
+
+      </div>
+
+    </div>
+
+
 
 
   <script src="./Matriz.js"></script>    

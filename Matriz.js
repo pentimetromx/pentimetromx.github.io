@@ -1,3 +1,22 @@
+const images = document.querySelectorAll('.image-training, .image-training-a');
+let miCanvas2 = document.getElementById('MiSegundaGrafica').getContext('2d');
+let miCanvas3 = document.getElementById('MiTerceraGrafica').getContext('2d');
+let miCanvas4 = document.getElementById('MiCuartaGrafica').getContext('2d');
+let miCanvas5 = document.getElementById('MiQuintaGrafica').getContext('2d');
+let miCanvas = document.getElementById('MiGrafica').getContext('2d');
+const imageElementsi = document.querySelectorAll('.image-training');
+const inputsContainer = document.getElementById('contInput');
+var botones = document.querySelectorAll('.butt-mautonomo');
+var contTorre = document.getElementById('contieneTorre')
+const inputs = document.querySelectorAll('.inpt-class');
+const input = document.querySelectorAll('.input-class');
+const imagesFull = document.querySelectorAll('img');
+const inpt = document.querySelectorAll('grafMini');
+
+let currentIndex = 0;
+let actualtIndex = 0;
+let nowIndex = 0;
+
 function VolveraInicio(){
   location.reload();
   document.body.style.overflow = 'block';    
@@ -62,9 +81,10 @@ function changeButtonStyles(videoId) {
     break;
     case 'contieneTorre':
       var videoBackground = document.getElementById('videoBackground');
-      var contTorre = document.getElementById('contieneTorre')
-      videoBackground.style.display = 'none'; // Oculta el video
+      videoBackground.style.display = 'none';
       contTorre.style.display='block'
+
+      videoBackground.style.display = 'none'; // Oculta el video      
 
     break;
     case 'def-tipo2':
@@ -103,7 +123,6 @@ function changeButtonStyles(videoId) {
   setTimeout(function() {
   }, 200);  
 }
-
  
 function cambioContenedor() {
   var elementsToHide = document.querySelectorAll('.alimentador, .uTeñido, .desbobinador,.unidProceso,.rebobinador');   
@@ -261,13 +280,6 @@ function mostrarBotMa(id) {
   }
 }
 ////////////////////////////////////////////////////////////////////////
-const inputsContainer = document.getElementById('contInput');
-const inputs = document.querySelectorAll('.inpt-class');
-const input = document.querySelectorAll('.input-class');
-const inpt = document.querySelectorAll('grafMini');
-let currentIndex = 0;
-let actualtIndex = 0;
-let nowIndex = 0;
 
 function showNextInput() {
   if (currentIndex < inputs.length) {
@@ -291,8 +303,73 @@ function showNextGraf() {
   }
 }
 
-  // Obtener todas las etiquetas de imagen
-  const imagesFull = document.querySelectorAll('img');
+function showRepuesto(parteopcionada) {
+  switch (parteopcionada) {
+    case 'portaPlancha':
+      contTorre.style.display='none'
+      var imgPlancha = document.querySelectorAll('.imagesTorre')  
+      imgPlancha.forEach(imagen => { 
+        if(imagen.id==='portPlaca'){
+          imagen.style.display='block'
+        }
+
+      });
+
+      break; 
+      
+      
+    case 'lup':
+
+    break;
+    default:
+  }
+} 
+
+function muestraPerfiles(ladoSeleccion){
+  switch (ladoSeleccion) {
+    case 'frente':
+      var imgPlancha = document.querySelectorAll('.imagesTorre')  
+      imgPlancha.forEach(imagen => { 
+        if(imagen.id==='portPlaca'){
+          imagen.style.display='block'
+        }else {
+          imagen.style.display='none'
+        }
+      });
+    break;
+    case 'mandos':
+      var imgPlancha = document.querySelectorAll('.imagesTorre')  
+      imgPlancha.forEach(imagen => { 
+        if(imagen.id==='portPlaca2'){
+          imagen.style.display='block'
+        }else {
+          imagen.style.display='none'
+        }
+      });
+      break;     
+    case 'servicio':
+      var imgPlancha = document.querySelectorAll('.imagesTorre')  
+      imgPlancha.forEach(imagen => { 
+        if(imagen.id==='portPlaca3'){
+          imagen.style.display='block'
+        }else {
+          imagen.style.display='none'
+        }
+      });
+    break;
+    case 'atras':
+      var imgPlancha = document.querySelectorAll('.imagesTorre')  
+      imgPlancha.forEach(imagen => { 
+        if(imagen.id==='portPlaca4'){
+          imagen.style.display='block'
+        }else {
+          imagen.style.display='none'
+        }
+      });
+    break;
+    default:
+  }
+}
 
   // Agregar evento de pantalla completa a cada imagen
   imagesFull.forEach(image => {
@@ -322,10 +399,6 @@ function showNextGraf() {
   });
 
 //////////////////////////////////////////////////////////////////////////
-
-
-// Obtener todos los botones con la clase "butt-mautonomo"
-var botones = document.querySelectorAll('.butt-mautonomo');
 
 // Recorrer todos los botones y hacerlos visibles
 botones.forEach(function(boton) {
@@ -402,7 +475,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // LOGICA PARA FULL SCREEN A IMAGENES
-const images = document.querySelectorAll('.image-training, .image-training-a');
 images.forEach(image => {
   let isFullscreen = false;
   image.addEventListener('click', () => {
@@ -431,8 +503,6 @@ images.forEach(image => {
   });
 });
 
-// Obtener todas las imágenes con la clase "image-training"
-const imageElementsi = document.querySelectorAll('.image-training');
 // Iterar a través de las imágenes y agregar eventos de mouse
 imageElementsi.forEach((image, index) => {
   // Añadir el evento de aumento de tamaño al hacer clic
@@ -490,9 +560,6 @@ function mantAutonomo (opcionSeleccionada) {
   
 }
 
-
-
-let miCanvas = document.getElementById('MiGrafica').getContext('2d');
 var chart = new Chart(miCanvas, {
     type: 'bar',    
     data: {
@@ -536,8 +603,6 @@ var chart = new Chart(miCanvas, {
     }
 });
 
-
-let miCanvas2 = document.getElementById('MiSegundaGrafica').getContext('2d');
 var chart2 = new Chart(miCanvas2, {
     type: 'bar',
     data: {
@@ -580,7 +645,6 @@ var chart2 = new Chart(miCanvas2, {
     }
 });
 
-let miCanvas3 = document.getElementById('MiTerceraGrafica').getContext('2d');
 var chart2 = new Chart(miCanvas3, {
     type: 'line',
     data: {
@@ -623,7 +687,6 @@ var chart2 = new Chart(miCanvas3, {
     }
 });
 
-let miCanvas4 = document.getElementById('MiCuartaGrafica').getContext('2d');
 var chart2 = new Chart(miCanvas4, {
     type: 'pie',
     data: {
@@ -667,7 +730,6 @@ var chart2 = new Chart(miCanvas4, {
     }
 });
 
-let miCanvas5 = document.getElementById('MiQuintaGrafica').getContext('2d');
 var chart2 = new Chart(miCanvas5, {
     type: 'bar',
     data: {
