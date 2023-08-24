@@ -231,7 +231,7 @@
         <a href="#" class="custom-link" id="linkDistribuidor" onclick="showRepuesto('rodillDistribuidor')">Rodillo distribuidor</a>
         <a href="#" class="custom-link" id="linkForma" onclick="showRepuesto('rodillForma')">Rodillo forma</a>
         <a href="#" class="custom-link" id="linkPlate" onclick="showRepuesto('portaPlancha')">Porta plancha</a>
-        <a href="#" class="custom-link" id="linkManta" onclick="showRepuesto('portaMantilla')">Porta mantilla</a>
+        <a href="#" class="custom-link" id="linkManta" onclick="showRepuesto('portaMantilla', 'videoTrain00')">Porta mantilla</a>
         <a href="#" class="custom-link" id="linkImpresor" onclick="showRepuesto('cilindroImpresor')">Cilindro impresor</a>
       </div>  
     </div>  
@@ -258,19 +258,19 @@
     <div id="agrupaOblicuos2"> 
     
       <div id="contFrente" class="contOblicuosTorre">
-        <button class="Bot-inicio2" style="left: 450px;top: 10px;" onclick="muestraTorres('')">Frente</button>
+        <button class="Bot-inicio2" style="left: 450px;top: 10px;" onclick="muestraTorres('torre')">Frente</button>
         <button class="Bot-inicio2-fondo" style="left: 445px;top: 7px;"></button>  
       </div>  
       <div id="contLateral" class="contOblicuosTorre">
-        <button class="Bot-inicio2" style="left: 533px;top: 10px;" onclick="muestraTorres('')">Mandos</button>
+        <button class="Bot-inicio2" style="left: 533px;top: 10px;" onclick="muestraTorres('torre1')">Mandos</button>
         <button class="Bot-inicio2-fondo" style="left: 529px;top: 7px;"></button>  
       </div> 
       <div id="contArriba" class="contOblicuosTorre">
-        <button class="Bot-inicio2" style="left: 617px;top: 10px;" onclick="muestraTorres('')">Servicio</button>
+        <button class="Bot-inicio2" style="left: 617px;top: 10px;" onclick="muestraTorres('torre2')">Servicio</button>
         <button class="Bot-inicio2-fondo" style="left: 613px;top: 7px;"></button>  
       </div> 
       <div id="contAtras" class="contOblicuosTorre">
-        <button class="Bot-inicio2" style="left: 701px;top: 10px;" onclick="muestraTorres('')">Atras</button>
+        <button class="Bot-inicio2" style="left: 701px;top: 10px;" onclick="muestraTorres('torre3')">Atras</button>
         <button class="Bot-inicio2-fondo" style="left: 697px;top: 7px;"></button>  
       </div> 
     </div>
@@ -285,10 +285,20 @@
         <img src="./assets/Porta plancha6.png" class="imagesTorre" id="portPlaca3" alt="porte plancha">
         <img src="./assets/Porta plancha7.png" class="imagesTorre" id="portPlaca4" alt="porte plancha">
         <img src="./assets/Porta plancha8.png" class="imagesTorre" id="portPlaca4" alt="porte plancha">
+      </div>
+      <div id="contPortManta">
+        <img src="./assets/Rot frente.jpg" class="imagenTorre" id="torre" alt="imageTorre">  
+        <img src="./assets/Rot derecha.jpg" class="imagenTorre" id="torre1" alt="imageTorre">
+        <img src="./assets/Rot iizquierda.jpg" class="imagenTorre" id="torre2" alt="imageTorre">
+        <img src="./assets/Rot trasera.jpg" class="imagenTorre" id="torre3" alt="imageTorre">
+      </div>º
 
+      <div id="contPortaManta">
+        <video class="video-training" id="videoTrain00" src="./assets/Porta mantilla.mp4" autoplay loop muted></video>
       </div>
 
     </div>
+
 
 
 

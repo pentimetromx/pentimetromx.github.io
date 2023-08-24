@@ -11,7 +11,7 @@ body, html {
   height: 100vh; /* Ajusta la altura del body para que cubra toda la pantalla */
   margin: 0; /* Elimina los márgenes predeterminados del body */
   padding: 0; /* Elimina los rellenos predeterminados del body */
- overflow:hidden;
+  /* overflow:hidden; */
 }
 #videoBackground {
   position: fixed;
@@ -514,9 +514,26 @@ width:447px ;
   height: 477px;
   border-radius: 10px;   
 }
+.imagenTorre{
+  display: none;
+  height: 477px;
+  width: 587px;
+}
 #contPortPlaca {
   display: none;
   display: flex;
   flex-direction: row;
   gap: 10px; /* Espacio entre las imágenes */
 }
+#contPortManta{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#contPortaManta{   
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 477px;
+}
+

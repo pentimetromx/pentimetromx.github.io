@@ -1,4 +1,5 @@
 const images = document.querySelectorAll('.image-training, .image-training-a');
+const portManta = document.getElementById('contPortaManta')
 let miCanvas2 = document.getElementById('MiSegundaGrafica').getContext('2d');
 let miCanvas3 = document.getElementById('MiTerceraGrafica').getContext('2d');
 let miCanvas4 = document.getElementById('MiCuartaGrafica').getContext('2d');
@@ -108,11 +109,6 @@ function changeButtonStyles(videoId) {
     break;
     default:
   }
-
-
-
-  
-
 
   var button = document.querySelector('.boton-a');
   // Guardar estilos originales
@@ -310,7 +306,22 @@ function showNextGraf() {
   }
 }
 
-function showRepuesto(parteopcionada) {
+function showRepuesto(parteopcionada, vidId) {
+  let botOblicuo = document.querySelectorAll('.Bot-inicio2, .Bot-inicio2-fondo'); // BOTONES segunda tanda
+  let conteOblicuo0 = document.getElementsByClassName('contOblicuos'); // contenedores primeros BOTONES
+  let conteOblicuo = document.getElementsByClassName('contOblicuosTorre'); // contenedores segundos BOTONES 
+  contTorre.style.display='none'
+
+  botOblicuo.forEach(elemento => {
+    elemento.style.display = 'none';
+  });      
+  for (let i = 0; i < conteOblicuo.length; i++) {
+    conteOblicuo[i].style.display = 'none'; 
+  }
+  for (let i = 0; i < conteOblicuo0.length; i++) {
+    conteOblicuo0[i].style.display = 'block'; 
+  } 
+
   switch (parteopcionada) {
     case 'portaPlancha':
       contTorre.style.display='none'
@@ -319,30 +330,36 @@ function showRepuesto(parteopcionada) {
         if(imagen.id==='portPlaca'){
           imagen.style.display='block'
         }
-      });
-      let botOblicuo = document.querySelectorAll('.Bot-inicio2, .Bot-inicio2-fondo');
-      let conteOblicuo = document.getElementsByClassName('contOblicuosTorre');
-      let conteOblicuo0 = document.getElementsByClassName('contOblicuos');
-      contTorre.style.display='none'
-      botOblicuo.forEach(elemento => {
-        elemento.style.display = 'none';
-      });      
-      for (let i = 0; i < conteOblicuo.length; i++) {
-        conteOblicuo[i].style.display = 'none'; 
+      });    
+      break;       
+    case 'portaMantilla':
+
+    contTorre.style.display='none' 
+    var imgPlancha = document.querySelectorAll('.imagesTorre')  // imagenes PORTAPLANCHA
+    imgPlancha.forEach(imagen => { 
+      if(imagen.id==='portPlaca'){
+        imagen.style.display='none'
       }
+    }); 
 
-      for (let i = 0; i < conteOblicuo0.length; i++) {
-        conteOblicuo0[i].style.display = 'block'; 
-      }
+    for (let i = 0; i < conteOblicuo.length; i++) {
+      conteOblicuo[i].style.display = 'block'; 
+    }
+    botOblicuo.forEach(elemento => { // segunda TANDA de BOTONES
+    elemento.style.display = 'block';
+    });      
 
 
 
-      
-
-      break; 
-      
-      
-    case 'lup':
+      const videoElements = document.querySelectorAll('.video-training');   
+      videoElements.forEach(video => {
+        if (video.id === vidId) {
+          video.style.display = 'block';
+          video.play();      
+        } else {
+          video.style.display = 'none';
+        }
+      });  
 
     break;
     default:
@@ -582,6 +599,66 @@ function mantAutonomo (opcionSeleccionada) {
     default:
   }
   
+}
+
+function muestraTorres (seleccion) {
+  let coleccImages = document.querySelectorAll('.imagenTorre')
+  let imgTorr = document.getElementById('imgTorre') 
+  portManta.style.display='none'
+  switch (seleccion) {
+    case 'torre':
+      portManta.style.display='none'
+    imgTorr.style.display='none'
+    contTorre.style.display='none'
+    coleccImages.forEach(elemento => {
+      if (elemento.id !== seleccion) {
+        elemento.style.display = 'none';
+      }else {
+        elemento.style.display = 'block';
+      }
+    });
+   
+      break;       
+    case 'torre1': 
+    portManta.style.display='none'
+    imgTorr.style.display='none'
+    contTorre.style.display='none'
+    coleccImages.forEach(elemento => {
+      if (elemento.id !== seleccion) {
+        elemento.style.display = 'none';
+      }else {
+        elemento.style.display = 'block';
+      }
+    });
+    break;
+    case 'torre2': 
+    portManta.style.display='none'
+    imgTorr.style.display='none'
+    contTorre.style.display='none'
+    coleccImages.forEach(elemento => {
+      if (elemento.id !== seleccion) {
+        elemento.style.display = 'none';
+      }else {
+        elemento.style.display = 'block';
+      }
+    });  
+    break;
+    case 'torre3': 
+    portManta.style.display='none'
+    imgTorr.style.display='none'
+    contTorre.style.display='none'
+    coleccImages.forEach(elemento => {
+      if (elemento.id !== seleccion) {
+        elemento.style.display = 'none';
+      }else {
+        elemento.style.display = 'block';
+      }
+    });  
+    break;
+
+    default:
+  }
+
 }
 
 var chart = new Chart(miCanvas, {
