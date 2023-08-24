@@ -1,5 +1,9 @@
 const images = document.querySelectorAll('.image-training, .image-training-a');
 const portManta = document.getElementById('contPortaManta')
+const imgsLaterales = document.getElementById('contPortManta')
+const contPortaPlancha = document.getElementById('contPortPlaca')
+
+const padreImagenes = document.getElementById('padreImagenes')
 let miCanvas2 = document.getElementById('MiSegundaGrafica').getContext('2d');
 let miCanvas3 = document.getElementById('MiTerceraGrafica').getContext('2d');
 let miCanvas4 = document.getElementById('MiCuartaGrafica').getContext('2d');
@@ -8,7 +12,7 @@ let miCanvas = document.getElementById('MiGrafica').getContext('2d');
 const imageElementsi = document.querySelectorAll('.image-training');
 const inputsContainer = document.getElementById('contInput');
 var botones = document.querySelectorAll('.butt-mautonomo');
-var contTorre = document.getElementById('contieneTorre')
+var linksTorre = document.getElementById('contLinksTorre')
 const inputs = document.querySelectorAll('.inpt-class');
 const input = document.querySelectorAll('.input-class');
 const imagesFull = document.querySelectorAll('img');
@@ -47,6 +51,10 @@ function changeButtonStyles(videoId) {
     elementsToHide[i].style.display = 'none';
   }
 
+  var videoBackground = document.getElementById('videoBackground');
+  videoBackground.pause();
+  videoBackground.style.display = 'none'; // Oculta el video
+
   switch (videoId) {
     case 'videoElement1':
       var contVid = document.getElementById('videosTraining')  
@@ -74,18 +82,15 @@ function changeButtonStyles(videoId) {
       butInicio.style.marginLeft='310px  '
     
       var butGrande = document.getElementById('iniciar')
-      butGrande.style.marginLeft='363px'
-    
-      var videoBackground = document.getElementById('videoBackground');
-      videoBackground.style.display = 'none'; // Oculta el video
+      butGrande.style.marginLeft='363px'   
 
     break;
-    case 'contieneTorre':
+    case 'contLinksTorre':
       var videoBackground = document.getElementById('videoBackground');
       let botOblicuo = document.querySelectorAll('.Bot-inicio2, .Bot-inicio2-fondo');
       let conteOblicuo = document.getElementsByClassName('contOblicuosTorre');
 
-      contTorre.style.display='block'
+      linksTorre.style.display='block'
       botOblicuo.forEach(elemento => {
         elemento.style.display = 'block';
       });
@@ -310,46 +315,49 @@ function showRepuesto(parteopcionada, vidId) {
   let botOblicuo = document.querySelectorAll('.Bot-inicio2, .Bot-inicio2-fondo'); // BOTONES segunda tanda
   let conteOblicuo0 = document.getElementsByClassName('contOblicuos'); // contenedores primeros BOTONES
   let conteOblicuo = document.getElementsByClassName('contOblicuosTorre'); // contenedores segundos BOTONES 
-  contTorre.style.display='none'
-
+  padreImagenes.style.display='block' // PADRE DE 2 CONTENEDORES DE FOTOS CON DIAMETROS
+  linksTorre.style.display='block'
   botOblicuo.forEach(elemento => {
     elemento.style.display = 'none';
-  });      
+  }); 
   for (let i = 0; i < conteOblicuo.length; i++) {
     conteOblicuo[i].style.display = 'none'; 
   }
   for (let i = 0; i < conteOblicuo0.length; i++) {
     conteOblicuo0[i].style.display = 'block'; 
   } 
-
   switch (parteopcionada) {
     case 'portaPlancha':
-      contTorre.style.display='none'
+      linksTorre.style.display='none'
       var imgPlancha = document.querySelectorAll('.imagesTorre')  
+
       imgPlancha.forEach(imagen => { 
-        if(imagen.id==='portPlaca'){
+        if(imagen.id!=='portPlaca'){
+          imagen.style.display='none'
+          console.log(imagen.id)
+        }else{
           imagen.style.display='block'
         }
-      });    
-      break;       
+      }); 
+
+    break;       
     case 'portaMantilla':
+      linksTorre.style.display='none' 
+      var imgPlancha = document.querySelectorAll('.imagesTorre')  // imagenes PORTAPLANCHA
+      imgPlancha.forEach(imagen => { 
+        if(imagen.id==='portPlaca'){
+          imagen.style.display='none'
+        }
+      }); 
 
-    contTorre.style.display='none' 
-    var imgPlancha = document.querySelectorAll('.imagesTorre')  // imagenes PORTAPLANCHA
-    imgPlancha.forEach(imagen => { 
-      if(imagen.id==='portPlaca'){
-        imagen.style.display='none'
+      for (let i = 0; i < conteOblicuo.length; i++) {
+        conteOblicuo[i].style.display = 'block'; 
       }
-    }); 
-
-    for (let i = 0; i < conteOblicuo.length; i++) {
-      conteOblicuo[i].style.display = 'block'; 
-    }
-    botOblicuo.forEach(elemento => { // segunda TANDA de BOTONES
-    elemento.style.display = 'block';
-    });      
-
-
+      botOblicuo.forEach(elemento => { // segunda TANDA de BOTONES
+      elemento.style.display = 'block';
+      }); 
+      
+      portManta.style.display='block'
 
       const videoElements = document.querySelectorAll('.video-training');   
       videoElements.forEach(video => {
@@ -367,10 +375,12 @@ function showRepuesto(parteopcionada, vidId) {
 } 
 
 function muestraPerfiles(ladoSeleccion){
+  var imgPlancha = document.querySelectorAll('.imagesTorre')  
+
   switch (ladoSeleccion) {
     case 'frente':
-      var imgPlancha = document.querySelectorAll('.imagesTorre')  
-      imgPlancha.forEach(imagen => { 
+/*       var imgPlancha = document.querySelectorAll('.imagesTorre')  
+ */      imgPlancha.forEach(imagen => { 
         if(imagen.id==='portPlaca'){
           imagen.style.display='block'
         }else {
@@ -379,8 +389,8 @@ function muestraPerfiles(ladoSeleccion){
       });
     break;
     case 'mandos':
-      var imgPlancha = document.querySelectorAll('.imagesTorre')  
-      imgPlancha.forEach(imagen => { 
+/*       var imgPlancha = document.querySelectorAll('.imagesTorre')  
+ */      imgPlancha.forEach(imagen => { 
         if(imagen.id==='portPlaca2'){
           imagen.style.display='block'
         }else {
@@ -389,8 +399,8 @@ function muestraPerfiles(ladoSeleccion){
       });
       break;     
     case 'servicio':
-      var imgPlancha = document.querySelectorAll('.imagesTorre')  
-      imgPlancha.forEach(imagen => { 
+/*       var imgPlancha = document.querySelectorAll('.imagesTorre')  
+ */      imgPlancha.forEach(imagen => { 
         if(imagen.id==='portPlaca3'){
           imagen.style.display='block'
         }else {
@@ -399,8 +409,8 @@ function muestraPerfiles(ladoSeleccion){
       });
     break;
     case 'atras':
-      var imgPlancha = document.querySelectorAll('.imagesTorre')  
-      imgPlancha.forEach(imagen => { 
+/*       var imgPlancha = document.querySelectorAll('.imagesTorre')  
+ */      imgPlancha.forEach(imagen => { 
         if(imagen.id==='portPlaca4'){
           imagen.style.display='block'
         }else {
@@ -602,39 +612,39 @@ function mantAutonomo (opcionSeleccionada) {
 }
 
 function muestraTorres (seleccion) {
-  let coleccImages = document.querySelectorAll('.imagenTorre')
-  let imgTorr = document.getElementById('imgTorre') 
+  let coleccImages = document.querySelectorAll('.imagenTorre') // FOTOS LATERALES
+  let imgTorr = document.getElementById('imgTorre') // TORRE CON LINKS
+  contPortaPlancha.style.display='none'
+
+  videoBackground.pause();
+  videoBackground.style.display='none'
+  padreImagenes.style.display='block' // PADRE DE 2 CONTENEDORES DE FOTOS CON DIAMETROS
   portManta.style.display='none'
+  imgTorr.style.display='none'
+  imgsLaterales.style.display='block'
+  linksTorre.style.display='none'
+
   switch (seleccion) {
     case 'torre':
-      portManta.style.display='none'
-    imgTorr.style.display='none'
-    contTorre.style.display='none'
+      coleccImages.forEach(elemento => {
+        if (elemento.id !== seleccion) {
+          elemento.style.display = 'none';
+        }else {
+        elemento.style.display = 'block';       
+        }
+      });    
+
+    break;       
+  case 'torre1': 
     coleccImages.forEach(elemento => {
       if (elemento.id !== seleccion) {
         elemento.style.display = 'none';
       }else {
-        elemento.style.display = 'block';
-      }
-    });
-   
-      break;       
-    case 'torre1': 
-    portManta.style.display='none'
-    imgTorr.style.display='none'
-    contTorre.style.display='none'
-    coleccImages.forEach(elemento => {
-      if (elemento.id !== seleccion) {
-        elemento.style.display = 'none';
-      }else {
-        elemento.style.display = 'block';
+      elemento.style.display = 'block';
       }
     });
     break;
     case 'torre2': 
-    portManta.style.display='none'
-    imgTorr.style.display='none'
-    contTorre.style.display='none'
     coleccImages.forEach(elemento => {
       if (elemento.id !== seleccion) {
         elemento.style.display = 'none';
@@ -644,9 +654,6 @@ function muestraTorres (seleccion) {
     });  
     break;
     case 'torre3': 
-    portManta.style.display='none'
-    imgTorr.style.display='none'
-    contTorre.style.display='none'
     coleccImages.forEach(elemento => {
       if (elemento.id !== seleccion) {
         elemento.style.display = 'none';
@@ -655,10 +662,8 @@ function muestraTorres (seleccion) {
       }
     });  
     break;
-
     default:
   }
-
 }
 
 var chart = new Chart(miCanvas, {

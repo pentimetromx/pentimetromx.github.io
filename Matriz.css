@@ -431,13 +431,18 @@ width:447px ;
   width: 200px;
   height: 800px;
 }
-#contieneTorre {
+#contLinksTorre {
   width: 100vw; /* 100% del ancho de la ventana */
   height: 100vh; /* 100% de la altura de la ventana */
   display: flex; /* Usar flexbox para centrar la imagen */
   flex-direction: row;
   justify-content: center; /* Centrar horizontalmente */
 
+}
+.custom-link {
+  position: relative; /* Asegura que la posición no sea static */
+  z-index: 9999;
+  font-family: "GothamRounded", sans-serif; /* Aplica la fuente deseada */
 }
 #imgTorre{
   position: absolute;
@@ -498,7 +503,7 @@ width:447px ;
   width: 86px;
   height: 53px;
   font-size: 14px;
-  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%); 
   transform: skewX(-30deg);
   cursor: pointer;
   z-index: 0;
@@ -519,21 +524,31 @@ width:447px ;
   height: 477px;
   width: 587px;
 }
+#padreImagenes{
+  display: flex;
+  flex-direction: column;
+}
 #contPortPlaca {
   display: none;
   display: flex;
   flex-direction: row;
   gap: 10px; /* Espacio entre las imágenes */
 }
-#contPortManta{
+#contPortManta {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  position: relative; 
+  left: 300PX;
 }
-#contPortaManta{   
+#contPortaManta{  
   display: flex;
   flex-direction: row;
   justify-content: center;
   height: 477px;
+  position: absolute;
+  left: 237px;
 }
+
+
 
