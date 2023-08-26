@@ -1,22 +1,24 @@
 const images = document.querySelectorAll('.image-training, .image-training-a');
-const portManta = document.getElementById('contPortaManta')
-const imgsLaterales = document.getElementById('contPortManta')
+const Cilimpresor = document.getElementById('contCilImpresor')
+const imageElementsi = document.querySelectorAll('.image-training');
 const contPortaPlancha = document.getElementById('contPortPlaca')
-
+const imgsLaterales = document.getElementById('contPortManta')
 const padreImagenes = document.getElementById('padreImagenes')
+const inputsContainer = document.getElementById('contInput');
+const portManta = document.getElementById('contPortaManta')
+const inputs = document.querySelectorAll('.inpt-class');
+const input = document.querySelectorAll('.input-class');
+const imagesFull = document.querySelectorAll('img');
+const inpt = document.querySelectorAll('grafMini');
+
+
 let miCanvas2 = document.getElementById('MiSegundaGrafica').getContext('2d');
 let miCanvas3 = document.getElementById('MiTerceraGrafica').getContext('2d');
 let miCanvas4 = document.getElementById('MiCuartaGrafica').getContext('2d');
 let miCanvas5 = document.getElementById('MiQuintaGrafica').getContext('2d');
 let miCanvas = document.getElementById('MiGrafica').getContext('2d');
-const imageElementsi = document.querySelectorAll('.image-training');
-const inputsContainer = document.getElementById('contInput');
 var botones = document.querySelectorAll('.butt-mautonomo');
 var linksTorre = document.getElementById('contLinksTorre')
-const inputs = document.querySelectorAll('.inpt-class');
-const input = document.querySelectorAll('.input-class');
-const imagesFull = document.querySelectorAll('img');
-const inpt = document.querySelectorAll('grafMini');
 
 let currentIndex = 0;
 let actualtIndex = 0;
@@ -162,12 +164,11 @@ function cierraContenedores(desbobClas,teñiClas,alimClas,uniProClas,rebobClas){
 
 function muestraRodillo (videoId, imageClas) {
 
-  const correctPassword = '123'; // Cambia por la contraseña correcta
-  const enteredPassword = prompt('Ingrese la contraseña de verificación:');
+  /* const correctPassword = '123'; // Cambia por la contraseña correcta
+  /* const enteredPassword = prompt('Ingrese la contraseña de verificación:'); */
 
-  if (enteredPassword === correctPassword) {
+  /* if (enteredPassword === correctPassword) { */
     // Aquí puedes poner el resto de la lógica de muestraRodillo()
-  ////////////////////////////////////////////////////////////////////////////////////////////////////
   const videoElements = document.querySelectorAll('.video-training');  
   videoElements.forEach(video => {
     if (video.id === videoId) {
@@ -214,9 +215,9 @@ function muestraRodillo (videoId, imageClas) {
   }, 300); // Retardo de 0.9 segundos (900 milisegundos)
 
 
-} else {
+/* } else {
   alert('Contraseña incorrecta. Acceso denegado.');
-}
+} */
 }
 
 function applyImageEffects() { // aumento secuencial imagenes repuestos
@@ -329,8 +330,7 @@ function showRepuesto(parteopcionada, vidId) {
   switch (parteopcionada) {
     case 'portaPlancha':
       linksTorre.style.display='none'
-      var imgPlancha = document.querySelectorAll('.imagesTorre')  
-
+      var imgPlancha = document.querySelectorAll('.imagesTorre') 
       imgPlancha.forEach(imagen => { 
         if(imagen.id!=='portPlaca'){
           imagen.style.display='none'
@@ -359,7 +359,7 @@ function showRepuesto(parteopcionada, vidId) {
       
       portManta.style.display='block'
 
-      const videoElements = document.querySelectorAll('.video-training');   
+      var videoElements = document.querySelectorAll('.video-training');   
       videoElements.forEach(video => {
         if (video.id === vidId) {
           video.style.display = 'block';
@@ -368,11 +368,37 @@ function showRepuesto(parteopcionada, vidId) {
           video.style.display = 'none';
         }
       });  
+    break;
+    case 'cilindroImpresor':
+      linksTorre.style.display='none' 
+
+      Cilimpresor.style.display='flex'
+      var vidElements = document.querySelectorAll('.video-training');   
+      vidElements.forEach(video => {
+        if (video.id !== vidId) {
+          video.style.display = 'none';
+          video.play();      
+        } else {
+          video.style.display = 'block';
+        }
+      }); 
 
     break;
     default:
   }
 } 
+
+// Agrega un manejador de eventos al clic en la imagen
+botImgCil.addEventListener("click", () => {
+  // Verifica si el video está pausado
+  if (videoTrain01.paused) {
+    // Reproduce el video
+    videoTrain01.play();
+  } else {
+    // Pausa el video si ya está reproduciéndose
+    videoTrain01.pause();
+  }
+});
 
 function muestraPerfiles(ladoSeleccion){
   var imgPlancha = document.querySelectorAll('.imagesTorre')  

@@ -4,14 +4,14 @@
 }
 body, html {
   font-family: "GothamRounded";
-  background-color:#333333;
+/*   background-color:#333333; */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; 
   height: 100vh; /* Ajusta la altura del body para que cubra toda la pantalla */
   margin: 0; /* Elimina los márgenes predeterminados del body */
   padding: 0; /* Elimina los rellenos predeterminados del body */
-  /* overflow:hidden; */
+  overflow:hidden;
 }
 #videoBackground {
   position: fixed;
@@ -21,9 +21,17 @@ body, html {
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  opacity: 0.1;
+  opacity: 0.1; /* Ajusta la opacidad según tus preferencias */
 }
-
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:#333333; /* Color de fondo gris con transparencia */
+  z-index: -2; /* Coloca el fondo gris detrás del video */
+}
 h1, h2, h3 {
   font-family: "GothamRounded";
 }
@@ -35,6 +43,8 @@ h1, h2, h3 {
   color: white;
   cursor: pointer;
   border-radius: 7px;
+  position: relative; /* Asegura que los botones estén posicionados correctamente */
+  z-index: 1; 
 }
 .boton-b{
   height: 47px;
@@ -549,6 +559,42 @@ width:447px ;
   position: absolute;
   left: 237px;
 }
+#contCilImpresor{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#imgCilImpresor{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  left: 100px;
+}
+#botImgCil-2,
+#botImgCil{
+  border: 7px solid grey;
+  display: inline-block;
+  padding: 5px;
+  border-radius: 7px;
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+}
+#vid-cilImpresor{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: absolute;
+  left: 340px;
+}
+.botImagRodamCil {
+  background-size: cover;
+  border: none;
+  padding: 0;
+  margin-bottom: 10px; /* Agregar margen inferior de 10px entre botones */
+}
+
 
 
 
