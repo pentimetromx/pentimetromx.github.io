@@ -334,7 +334,6 @@ function showRepuesto(parteopcionada, vidId) {
       imgPlancha.forEach(imagen => { 
         if(imagen.id!=='portPlaca'){
           imagen.style.display='none'
-          console.log(imagen.id)
         }else{
           imagen.style.display='block'
         }
@@ -343,36 +342,22 @@ function showRepuesto(parteopcionada, vidId) {
     break;       
     case 'portaMantilla':
       linksTorre.style.display='none' 
-      var imgPlancha = document.querySelectorAll('.imagesTorre')  // imagenes PORTAPLANCHA
-      imgPlancha.forEach(imagen => { 
-        if(imagen.id==='portPlaca'){
-          imagen.style.display='none'
-        }
-      }); 
+      Cilimpresor.style.display='flex'
 
-      for (let i = 0; i < conteOblicuo.length; i++) {
-        conteOblicuo[i].style.display = 'block'; 
-      }
-      botOblicuo.forEach(elemento => { // segunda TANDA de BOTONES
-      elemento.style.display = 'block';
-      }); 
-      
-      portManta.style.display='block'
-
-      var videoElements = document.querySelectorAll('.video-training');   
-      videoElements.forEach(video => {
-        if (video.id === vidId) {
-          video.style.display = 'block';
+      var vidElements = document.querySelectorAll('.video-training');   
+      vidElements.forEach(video => {
+        if (video.id !== vidId) {
+          video.style.display = 'none';
           video.play();      
         } else {
-          video.style.display = 'none';
+          video.style.display = 'block';
         }
-      });  
+      });   
     break;
     case 'cilindroImpresor':
       linksTorre.style.display='none' 
-
       Cilimpresor.style.display='flex'
+
       var vidElements = document.querySelectorAll('.video-training');   
       vidElements.forEach(video => {
         if (video.id !== vidId) {
@@ -388,17 +373,31 @@ function showRepuesto(parteopcionada, vidId) {
   }
 } 
 
-// Agrega un manejador de eventos al clic en la imagen
+/* // Agrega un manejador de eventos al clic en la imagen
 botImgCil.addEventListener("click", () => {
-  // Verifica si el video está pausado
   if (videoTrain01.paused) {
-    // Reproduce el video
     videoTrain01.play();
   } else {
-    // Pausa el video si ya está reproduciéndose
     videoTrain01.pause();
   }
-});
+}); */
+
+/* const buttons = document.querySelectorAll('.botImagRodamCil');
+const videos = document.querySelectorAll('.video-training');
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        const videoId = button.getAttribute('data-video-id');
+        const video = document.getElementById(videoId);
+
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    });
+}); */
+
 
 function muestraPerfiles(ladoSeleccion){
   var imgPlancha = document.querySelectorAll('.imagesTorre')  
@@ -644,7 +643,7 @@ function muestraTorres (seleccion) {
 
   videoBackground.pause();
   videoBackground.style.display='none'
-  padreImagenes.style.display='block' // PADRE DE 2 CONTENEDORES DE FOTOS CON DIAMETROS
+  padreImagenes.style.display='block' // PADRE DE 2 CONTENEDORES DE FOTOS CON DIAMETROS  
   portManta.style.display='none'
   imgTorr.style.display='none'
   imgsLaterales.style.display='block'
@@ -691,6 +690,41 @@ function muestraTorres (seleccion) {
     default:
   }
 }
+
+function videosImpresor(videoId) {
+  const video = document.getElementById(videoId);
+  const videoElements = document.querySelectorAll('.video-training');   
+  
+  switch (videoId) {
+    case 'videoTrain00':
+      videoElements.forEach(video => {
+      if (video.id !== videoId) {
+        video.style.display = 'none';   
+        } else {
+        video.style.display = 'block';
+        video.pause();
+        video.currentTime = 0;
+        video.play();   
+      } 
+    });
+    break;
+    case 'videoTrain02':
+      videoElements.forEach(video => {
+      if (video.id !== videoId) {
+        video.style.display = 'none';     
+        } else {
+        video.style.display = 'block';
+        video.pause();
+        video.currentTime = 0;
+        video.play();           
+      } 
+    });
+    break;
+
+    default: 
+  } 
+}       
+ 
 
 var chart = new Chart(miCanvas, {
     type: 'bar',    

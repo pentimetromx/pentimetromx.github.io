@@ -151,7 +151,7 @@
 
       <div class="videos-training" id="videos-training">
         <video class="video-training" id="videoElement1" src="./assets/Bateria de entintado.mp4" height="400px" loop></video>
-        <video class="video-training" id="videoElement2" src="./assets/Montaje rodillo 2.mp4" height="400px"></video>
+        <video class="video-training" id="videoElement2" src="./assets/Montaje distribuidor.mp4" height="400px"></video>
         <video class="video-training" id="videoElement3" src="./assets/Montaje entintador1.mp4" height="400px"></video>
         <video class="video-training" id="videoElement4" src="./assets/2.full velocidad2.mp4" height="400px"></video>
         <video class="video-training" id="videoElement5" src="./assets/1.Rodillo a rodillo.mp4" height="400px"></video>
@@ -233,7 +233,7 @@
         <a href="#" class="custom-link" id="linkDistribuidor" onclick="showRepuesto('rodillDistribuidor')">Rodillo distribuidor</a>
         <a href="#" class="custom-link" id="linkForma" onclick="showRepuesto('rodillForma')">Rodillo forma</a>
         <a href="#" class="custom-link" id="linkPlate" onclick="showRepuesto('portaPlancha')">Porta plancha</a>
-        <a href="#" class="custom-link" id="linkManta" onclick="showRepuesto('portaMantilla', 'videoTrain00')">Porta mantilla</a>
+        <a href="#" class="custom-link" id="linkManta" onclick="showRepuesto('portaMantilla', 'videoTrain03')">Porta mantilla</a>
         <a href="#" class="custom-link" id="linkImpresor" onclick="showRepuesto('cilindroImpresor', 'videoTrain01')">Cilindro impresor</a>
       </div>  
     </div>  
@@ -297,16 +297,20 @@
 
       <div id="contPortaManta" style="display: none;">
         <video class="video-training" id="videoTrain00" src="./assets/Porta mantilla.mp4" autoplay loop muted></video>
-      </div>
+      </div>  
 
       <div id="contCilImpresor" style="display: none;">
         <div id="imgCilImpresor">
-          <button class="botImagRodamCil" id="botImgCil" type="button" style="background-image: url('./assets/Rodamiento cilindro.jpg'); background-size: cover;"></button>
-          <button class="botImagRodamCil" id="botImgCil-2" type="button" style="background-image: url('./assets/Impresor\ imagen.jpg'); background-size: cover;"></button>
-
+          <button class="botImagRodamCil" id="botImgCil" type="button" onclick="videosImpresor('videoTrain00')" style="background-image: url('./assets/Rodamiento cilindro.jpg'); background-size: cover;"></button>
+          <button class="botImagRodamCil" id="botImgCil-2" type="button" onclick="videosImpresor('videoTrain02')" style="background-image: url('./assets/Impresor\ imagen.jpg'); background-size: cover;"></button>
         </div>
         <div id="vid-cilImpresor">
-          <video class="video-training" id="videoTrain01" src="./assets/Desarme rodamiento.mp4" loop muted></video>
+         <video class="video-training" id="videoTrain01" src="./assets/Cilindro contraimpresor.mp4" autoplay muted></video>
+          <video class="video-training" id="videoTrain00" src="./assets/Desarme rodamiento.mp4"></video>
+          <video class="video-training" id="videoTrain02" src="./assets/Cilindro impresor desarme.mp4"></video>
+          <video class="video-training" id="videoTrain03" src="./assets/Cilindro mantilla.mp4" autoplay muted></video>
+
+
         </div>
 
       </div>

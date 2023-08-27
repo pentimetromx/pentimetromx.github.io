@@ -11,7 +11,7 @@ body, html {
   height: 100vh; /* Ajusta la altura del body para que cubra toda la pantalla */
   margin: 0; /* Elimina los márgenes predeterminados del body */
   padding: 0; /* Elimina los rellenos predeterminados del body */
-  overflow:hidden;
+  /* overflow:hidden; */
 }
 #videoBackground {
   position: fixed;
@@ -555,9 +555,11 @@ width:447px ;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 477px;
   position: absolute;
   left: 237px;
+}
+#contPortaManta video{  
+  height: 477px;
 }
 #contCilImpresor{
   display: flex;
@@ -587,6 +589,9 @@ width:447px ;
   justify-content: center;
   position: absolute;
   left: 340px;
+}
+#vid-cilImpresor video{
+  height: 477px;
 }
 .botImagRodamCil {
   background-size: cover;
