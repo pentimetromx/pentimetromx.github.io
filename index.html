@@ -21,10 +21,13 @@
     </div><br>
 
     <div class="cont-ppal" id="contenedorInic"> 
-      <div>
-        <div class="segundo-bloque">
-          <div class="desbobinador mostrar-cont" >
+      <!-- <div> -->
+        <div class="segundo-bloque" id="idSegundo-bloque">
+
+          <div class="desbobinador mostrar-cont" id="desbobinadorId" >
             <button class="boton-b" onclick="cierraContenedores('alimentador','uTeñido','contTorrImp','unidProceso','rebobinador')">DESBOBINADOR</button><br>   
+            <button class="boton-a" id="bot-atras" style="text-align: center;left: 267px;display: none;" onclick="irContenedorAnterior('desbobinadorId')">IR ATRAS</button>
+
             <div class="contene-7">
               <div class="linea-vertical"></div>
               <button class="boton-c">Pulsadores<div class="linea-horizontal"></div></button>
@@ -35,8 +38,10 @@
             </div>
           </div>  
 
-          <div class="uTeñido mostrar-cont">  
+          <div class="uTeñido mostrar-cont" id="uTeñidos">  
             <button class="boton-b" onclick="cierraContenedores('alimentador','desbobinador','contTorrImp','unidProceso','rebobinador')">UNIDAD TEÑIDO</button><br> 
+            <button class="boton-a" type="button" id="bot-atras" style="text-align: center;left: 267px;display: none;" onclick="irContenedorAnterior('uTeñidos')" >Atras</button> 
+           
             <div class="contene-7">
               <div class="linea-vertical"></div>
               <button class="boton-c">Sistema neumático<div class="linea-horizontal"></div></button>
@@ -47,8 +52,10 @@
             </div>
           </div>
 
-          <div class="alimentador mostrar-cont">
+          <div class="alimentador mostrar-cont" id="alimentadorId">
             <button class="boton-b" onclick="cierraContenedores('uTeñido','desbobinador','contTorrImp','unidProceso','rebobinador')">ALIMENTADOR</button><br>  
+            <button class="boton-a" type="button" id="bot-atras" style="display: none;" onclick="irContenedorAnterior('alimentadorId')" >Atras</button> 
+            
             <div class="contene-7">
               <div class="linea-vertical"></div>
               <button class="boton-c">Estructura<div class="linea-horizontal"></div></button>
@@ -59,8 +66,9 @@
             </div>          
           </div>
 
-          <div class="unidProceso mostrar-cont">
+          <div class="unidProceso mostrar-cont" id="uniProceso">
             <button class="boton-b" onclick="cierraContenedores('alimentador','uTeñido','desbobinador','contTorrImp','rebobinador')">UNIDAD DE PROCESO</button><br>  
+            <button class="boton-a" type="button" id="bot-atras" style="display: none;" onclick="irContenedorAnterior('uniProceso')" >Atras</button> 
             <div class="contene-7">
               <div class="linea-vertical"></div>
               <button class="boton-c">Rodillos de transporte<div class="linea-horizontal"></div></button>
@@ -73,6 +81,8 @@
 
           <div class="rebobinador mostrar-cont" id="rebobinador">
             <button class="boton-b" onclick="cierraContenedores('alimentador','uTeñido','desbobinador','contTorrImp','unidProceso')">REBOBINADOR</button><br> 
+            <button class="boton-a" type="button" id="bot-atras" style="display: none;" onclick="irContenedorAnterior('rebobinador')" >Atras</button> 
+                        
             <div class="contene-7">
               <div class="linea-vertical"></div>
               <button class="boton-c">Estructura<div class="linea-horizontal"></div></button>
@@ -85,11 +95,11 @@
           <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
           <div class="contTorrImp mostrar-cont" id="rotatek-1">
-            <button id="toggleVideoButton" class="boton-b" style="margin-left: -227px;width: 500px;" onclick="cambioContenedor('alimentador','uTeñido','desbobinador', 'videos','contTorrImp','unidProceso','rebobinador')">TORRE DE IMPRESIÓN</button>                
-            <div class="torre-imp">
+            <button id="toggleVideoButton" class="boton-b" style="margin-left: -227px;width: 500px;" onclick="cambioContenedor('')">TORRE DE IMPRESIÓN</button>                
+            <div class="torre-imp" id="torre-imp">
   
               <div class="tintero">
-                <button class="boton-d" id="tinteroButton" onclick="changeButtonStyles()">TINTERO</button> 
+                <button class="boton-d" id="tinteroButton" onclick="changeButtonStyles('contLinksTorre')">TINTERO</button> 
                 <div class="contene-7">
                   <div class="linea-vertical"></div>
                   <button class="boton-e">Estructura<div class="linea-horizontal"></div></button>
@@ -101,8 +111,8 @@
                 </div>
               </div>
   
-              <div class="bateria">  
-                <button class="boton-d" onclick="changeButtonStyles('videoElement1')">BATERIA DE ENTINTADO</button>               
+              <div class="bateria" id="bateria-entintado">  
+                <button class="boton-d" onclick="changeButtonStyles('videoElement1', 'contene-7')">BATERIA DE ENTINTADO</button>               
                 <div class="contene-7">
                   <div class="linea-vertical"></div>
                   <button class="boton-e">Diámetros y durezas<div class="linea-horizontal"></div></button>
@@ -135,7 +145,7 @@
             </div> 
           </div>  
         </div>
-      </div>
+      <!-- </div> -->
     </div>
 
     <div id="videosTraining" style="display: none;">  
@@ -228,6 +238,7 @@
     <!--- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
     
     <div id="padreLinks">
+
       <div id="contLinksTorre" style="display: none;">
         <img src="./assets/Rotatek.jpg" id="imgTorre" alt="imagen-torre">
         <a href="#" class="custom-link" id="linkDistribuidor" onclick="showRepuesto('rodillDistribuidor')">Rodillo distribuidor</a>

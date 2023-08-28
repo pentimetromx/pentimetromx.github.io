@@ -1,3 +1,5 @@
+var idsArray = [];
+var currentID = null;
 const images = document.querySelectorAll('.image-training, .image-training-a');
 const Cilimpresor = document.getElementById('contCilImpresor')
 const imageElementsi = document.querySelectorAll('.image-training');
@@ -24,10 +26,35 @@ let currentIndex = 0;
 let actualtIndex = 0;
 let nowIndex = 0;
 
+idsArray.push('contenedorInic');
+console.log(idsArray)
+
 function VolveraInicio(){
   location.reload();
-  document.body.style.overflow = 'block';    
+  document.body.style.overflow = 'block';
+  idsArray = [];
+
 }
+function irContenedorAnterior() {
+
+  // Ocultar el contenedor actual
+  var contenedorActual = document.getElementById(idsArray[idsArray.length - 1]);
+  contenedorActual.style.display = 'none';
+
+  // Obtener el ID del contenedor anterior
+  var previousElementID = idsArray[idsArray.length - 2];
+  var contenedorAnterior = document.getElementById(previousElementID);
+  contenedorAnterior.style.display = 'flex';
+
+  // Actualizar el array quitando el último ID almacenado
+  idsArray.pop();
+  console.log(idsArray)
+
+  // Actualizar la variable currentID con el nuevo ID
+  currentID = previousElementID;
+}
+
+
 function botoGrand() {
 
   var button = document.querySelector('.boton-a');
@@ -47,11 +74,17 @@ function botoGrand() {
   }, 200);
 }
  
-function changeButtonStyles(videoId) { 
+function changeButtonStyles(videoId, elementId ) { 
   var elementsToHide = document.querySelectorAll('.alimentador, .uTeñido, .desbobinador,.unidProceso,.rebobinador, .contTorrImp');   
   for (var i = 0; i < elementsToHide.length; i++) {
     elementsToHide[i].style.display = 'none';
   }
+
+  // Verificar si el elementoId ya está presente en el array
+  if (!idsArray.includes(elementId)) {
+    idsArray.push(elementId);
+  }
+  console.log(idsArray)
 
   var videoBackground = document.getElementById('videoBackground');
   videoBackground.pause();
@@ -142,10 +175,12 @@ function cambioContenedor() {
   var botIn = document.getElementById('bot-inic')
   botIn.style.display='flex'
 
-
+  
 }
 
 function cierraContenedores(desbobClas,teñiClas,alimClas,uniProClas,rebobClas){
+  var btnAtras = document.getElementById('bot-atras')
+  btnAtras.style.display='flex'
   var desbobina = document.getElementsByClassName(desbobClas)[0];
   desbobina.style.display='none'
   var tiñe = document.getElementsByClassName(teñiClas)[0];
@@ -156,8 +191,8 @@ function cierraContenedores(desbobClas,teñiClas,alimClas,uniProClas,rebobClas){
   uniPro.style.display='none'
   var reboBin = document.getElementsByClassName(rebobClas)[0];
   reboBin.style.display='none'  
-  var botIn = document.getElementById('bot-inic')
-  botIn.style.display='flex'
+/*   var botIn = document.getElementById('bot-inic')
+  botIn.style.display='flex' */
   var video = document.getElementById("videoBackground"); 
   video.pause();
 }
@@ -723,8 +758,7 @@ function videosImpresor(videoId) {
 
     default: 
   } 
-}       
- 
+}  
 
 var chart = new Chart(miCanvas, {
     type: 'bar',    
@@ -938,4 +972,3 @@ var chart2 = new Chart(miCanvas5, {
         }
     }
 });
-

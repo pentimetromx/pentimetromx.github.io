@@ -44,7 +44,7 @@ h1, h2, h3 {
   cursor: pointer;
   border-radius: 7px;
   position: relative; /* Asegura que los botones estén posicionados correctamente */
-  z-index: 1; 
+  /* z-index: 1;  */
 }
 .boton-b{
   height: 47px;
@@ -599,7 +599,3 @@ width:447px ;
   padding: 0;
   margin-bottom: 10px; /* Agregar margen inferior de 10px entre botones */
 }
-
-
-
-
