@@ -54,7 +54,6 @@ function irContenedorAnterior() {
   currentID = previousElementID;
 }
 
-
 function botoGrand() {
 
   var button = document.querySelector('.boton-a');
@@ -178,9 +177,64 @@ function cambioContenedor() {
   
 }
 
-function cierraContenedores(desbobClas,teñiClas,alimClas,uniProClas,rebobClas){
+function cierraContenedores(SeleccionClass) {
+  const coleccion = document.querySelectorAll('.desbobinador, .uTeñido, .alimentador, .unidProceso, .rebobinador, .contTorrImp');
+  var btnAtras = document.getElementById('bot-atras');
+  
+  switch (SeleccionClass) {
+    case 'desbobinador':
+      btnAtras.style.display='block'
+      coleccion.forEach(elemento => {
+        if (elemento.classList.contains(SeleccionClass)) {
+          elemento.style.display = 'flex';
+        } else {
+          elemento.style.display = 'none';
+        }
+      });
+      break;
+      case 'uTeñido':
+        coleccion.forEach(elemento => {
+          if (elemento.classList.contains(SeleccionClass)) {
+            elemento.style.display = 'flex';
+          } else {
+            elemento.style.display = 'none';
+          }
+        });
+        break;
+        case 'alimentador':
+          coleccion.forEach(elemento => {
+            if (elemento.classList.contains(SeleccionClass)) {
+              elemento.style.display = 'flex';
+            } else {
+              elemento.style.display = 'none';
+            }
+          });
+          break;
+          case 'unidProceso':
+            coleccion.forEach(elemento => {
+              if (elemento.classList.contains(SeleccionClass)) {
+                elemento.style.display = 'flex';
+              } else {
+                elemento.style.display = 'none';
+              }
+            });
+            break;
+            case 'rebobinador':
+              coleccion.forEach(elemento => {
+                if (elemento.classList.contains(SeleccionClass)) {
+                  elemento.style.display = 'flex';
+                } else {
+                  elemento.style.display = 'none';
+                }
+              });
+              break;
+            
+    default:
+  }
+}
+/* function cierraContenedores(desbobClas,teñiClas,alimClas,uniProClas,rebobClas){
   var btnAtras = document.getElementById('bot-atras')
-  btnAtras.style.display='flex'
+  btnAtras.style.display='block'
   var desbobina = document.getElementsByClassName(desbobClas)[0];
   desbobina.style.display='none'
   var tiñe = document.getElementsByClassName(teñiClas)[0];
@@ -191,11 +245,11 @@ function cierraContenedores(desbobClas,teñiClas,alimClas,uniProClas,rebobClas){
   uniPro.style.display='none'
   var reboBin = document.getElementsByClassName(rebobClas)[0];
   reboBin.style.display='none'  
-/*   var botIn = document.getElementById('bot-inic')
-  botIn.style.display='flex' */
+  var botIn = document.getElementById('bot-inic')
+  botIn.style.display='flex'
   var video = document.getElementById("videoBackground"); 
   video.pause();
-}
+} */
 
 function muestraRodillo (videoId, imageClas) {
 

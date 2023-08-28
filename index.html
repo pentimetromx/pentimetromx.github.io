@@ -15,19 +15,19 @@
     </video>
 
     <div class="contene-1" id="container1">
+      <button class="boton-a" id="bot-atras" style="text-align: center;" onclick="irContenedorAnterior('desbobinadorId')">IR ATRAS</button>
       <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL PRINCIPAL</button>
       <button class="boton-a" id="bot-mantaut" style="text-align:center;display: none;" onclick="ElementosMa()">MANTENIMIENTO AUTONOMO</button>      
       <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
     </div><br>
 
     <div class="cont-ppal" id="contenedorInic"> 
-      <!-- <div> -->
+
         <div class="segundo-bloque" id="idSegundo-bloque">
 
           <div class="desbobinador mostrar-cont" id="desbobinadorId" >
-            <button class="boton-b" onclick="cierraContenedores('alimentador','uTeñido','contTorrImp','unidProceso','rebobinador')">DESBOBINADOR</button><br>   
-            <button class="boton-a" id="bot-atras" style="text-align: center;left: 267px;display: none;" onclick="irContenedorAnterior('desbobinadorId')">IR ATRAS</button>
 
+            <button class="boton-b" onclick="cierraContenedores('desbobinador')">DESBOBINADOR</button><br>
             <div class="contene-7">
               <div class="linea-vertical"></div>
               <button class="boton-c">Pulsadores<div class="linea-horizontal"></div></button>
@@ -36,11 +36,11 @@
               <button class="boton-c">Ensarte<div class="linea-horizontal"></div></button>
               <button class="boton-c">Regulación neumática<div class="linea-horizontal"></div></button>
             </div>
-          </div>  
+          </div>
 
           <div class="uTeñido mostrar-cont" id="uTeñidos">  
-            <button class="boton-b" onclick="cierraContenedores('alimentador','desbobinador','contTorrImp','unidProceso','rebobinador')">UNIDAD TEÑIDO</button><br> 
-            <button class="boton-a" type="button" id="bot-atras" style="text-align: center;left: 267px;display: none;" onclick="irContenedorAnterior('uTeñidos')" >Atras</button> 
+            <button class="boton-b" onclick="cierraContenedores('uTeñido')">UNIDAD TEÑIDO</button><br> 
+            <button class="boton-a" type="button" id="bot-atras" style="text-align: center;left: 267px;display: none;" onclick="irContenedorAnterior('uTeñidos')" >IR Atras</button> 
            
             <div class="contene-7">
               <div class="linea-vertical"></div>
@@ -53,7 +53,7 @@
           </div>
 
           <div class="alimentador mostrar-cont" id="alimentadorId">
-            <button class="boton-b" onclick="cierraContenedores('uTeñido','desbobinador','contTorrImp','unidProceso','rebobinador')">ALIMENTADOR</button><br>  
+            <button class="boton-b" onclick="cierraContenedores('alimentador')">ALIMENTADOR</button><br>  
             <button class="boton-a" type="button" id="bot-atras" style="display: none;" onclick="irContenedorAnterior('alimentadorId')" >Atras</button> 
             
             <div class="contene-7">
@@ -67,7 +67,7 @@
           </div>
 
           <div class="unidProceso mostrar-cont" id="uniProceso">
-            <button class="boton-b" onclick="cierraContenedores('alimentador','uTeñido','desbobinador','contTorrImp','rebobinador')">UNIDAD DE PROCESO</button><br>  
+            <button class="boton-b" onclick="cierraContenedores('unidProceso')">UNIDAD DE PROCESO</button><br>  
             <button class="boton-a" type="button" id="bot-atras" style="display: none;" onclick="irContenedorAnterior('uniProceso')" >Atras</button> 
             <div class="contene-7">
               <div class="linea-vertical"></div>
@@ -80,7 +80,7 @@
           </div>
 
           <div class="rebobinador mostrar-cont" id="rebobinador">
-            <button class="boton-b" onclick="cierraContenedores('alimentador','uTeñido','desbobinador','contTorrImp','unidProceso')">REBOBINADOR</button><br> 
+            <button class="boton-b" onclick="cierraContenedores('rebobinador')">REBOBINADOR</button><br> 
             <button class="boton-a" type="button" id="bot-atras" style="display: none;" onclick="irContenedorAnterior('rebobinador')" >Atras</button> 
                         
             <div class="contene-7">
