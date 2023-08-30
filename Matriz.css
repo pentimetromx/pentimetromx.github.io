@@ -11,7 +11,7 @@ body, html {
   height: 100vh; /* Ajusta la altura del body para que cubra toda la pantalla */
   margin: 0; /* Elimina los márgenes predeterminados del body */
   padding: 0; /* Elimina los rellenos predeterminados del body */
-  /* overflow:hidden; */
+  overflow:hidden;
 }
 #videoBackground {
   position: fixed;
@@ -37,13 +37,14 @@ h1, h2, h3 {
 }
 .boton-a{
   height: 47px;
-  width: auto;
-  margin-top: 17px;
+  width: 200px;
+  text-align: center;
   background-color: #ff1837;
   color: white;
   cursor: pointer;
   border-radius: 7px;
-  position: relative; /* Asegura que los botones estén posicionados correctamente */
+  position: absolute;
+  top: 5px;
 }
 .boton-b{
   height: 47px;
@@ -95,7 +96,7 @@ transform: scale(1.1);
 }
 #bot-mantaut{
   height: 47px;
-  width: 277px;
+  width: 247px;
   margin-top: 17px;
   background-color: #ffae18f3;
   background-color: #ff1837;
@@ -113,6 +114,9 @@ transform: scale(1.1);
 }
 .segundo-bloque{
   display: flex;
+  position: absolute;
+  margin-left: 7px;
+  top: 97px;
 }
 .contTorrImp{
   display: flex; 
@@ -127,8 +131,9 @@ transform: scale(1.1);
 .torre-imp{
   display: flex;
   flex-direction: row;
-  margin-top: 17px;
-  margin-left: -227px;
+  position: absolute;
+  top: 57px;
+  left: 733px;
 }
 .cont-ppal{
   display: flex;
@@ -137,11 +142,12 @@ transform: scale(1.1);
 .contene-1{
   display: flex;
   flex-direction: row;
+  position: absolute;
+  top: 7px;
 }
 .desbobinador{
   display: flex;
   flex-direction: column;
-  margin-left: 7px;
 }
 .uTeñido{
   display: flex;
@@ -167,6 +173,11 @@ transform: scale(1.1);
 .video-training {
   display: none;
 }
+.videos-training video{
+  position: absolute;
+  top: 100px;
+  left: 395px;
+}
 .images-training{ 
   display: flex;
   flex-direction: column;
@@ -187,10 +198,11 @@ transform: scale(1.1);
 .contene-7 {
   display: flex;
   flex-direction: column;
-  position: relative;
+  position: absolute;
+  top: 100px;
   padding-left: 20px;
 }
-.linea-vertical {
+ .linea-vertical {
   position: absolute;
   left: 10px;
   top: 0;
@@ -287,8 +299,7 @@ transform: scale(1.1);
   height: 27px;
   background-color: #ff1837;
 }
-#butt-repuestos::before {
-  left: 0;
+#butt-repuestos::before {  left: 0;
 }
 #butt-repuestos::after {
   right: 0;
@@ -297,8 +308,9 @@ transform: scale(1.1);
   display: flex;
   flex-direction: column; 
   align-items: flex-start;
-  margin-top: 50px;
-  margin-left: -27px;
+  margin-top: 137px;
+  margin-right: 17px;
+  /* margin-left: -47px; */
 }
 #contTextos{
   display: flex;
@@ -368,6 +380,7 @@ width:447px ;
 .conti-boton{
   display: flex;
   flex-direction: column;
+  margin-top: 57px;
   margin-left:20px;
 }
 #conteneMantaut{
@@ -441,50 +454,59 @@ width:447px ;
   height: 800px;
 }
 #contLinksTorre {
-  width: 100vw; /* 100% del ancho de la ventana */
-  height: 100vh; /* 100% de la altura de la ventana */
   display: flex; /* Usar flexbox para centrar la imagen */
   flex-direction: row;
   justify-content: center; /* Centrar horizontalmente */
-
+  position: absolute;
+  top: 90px;
+}
+#cont-links{
+  position: absolute;
+  top: -1px;
 }
 .custom-link {
   position: relative; /* Asegura que la posición no sea static */
   z-index: 9999;
+  text-decoration: none;
   font-family: "GothamRounded", sans-serif; /* Aplica la fuente deseada */
 }
 #imgTorre{
   position: absolute;
-  left: 250px;
+  left: 307px;
   height: 477px;
-  width: 777px;  
+  width: 707px;  
+}
+#linkDistribuidor{
+  position: absolute;
+  left: 597px;
+  top: 73px;
+  width: 177px;
+  color: white;
+}
+#linkForma{
+  position: absolute;
+  left: 597px;
+  top: 120px;
+  width: 177px;
+  color: white;
 }
 #linkPlate{
   position: absolute;
   left: 597px;
-  top: 240px;
+  top:167px;
+  width: 177px;
 }
 #linkManta{
   position: absolute;
   left: 597px;
-  top: 327px;
+  top: 250px;
+  width: 177px;
 }
 #linkImpresor{
   position: absolute;
   left: 597px;
-  top: 414px;
-}
-#linkForma{
-  position: absolute;
-  left: 533px;
-  top: 200px;
-  color: white;
-}
-#linkDistribuidor{
-  position: absolute;
-  left: 623px;
-  top: 153px;
-  color: white;
+  width: 177px;  
+  top: 336px;
 }
 #padreLinks{
   display: flex;
@@ -493,12 +515,13 @@ width:447px ;
 .Bot-inicio2,
 .Bot-inicio{
   background-color: #302928;
-  position: absolute;
+/*   position: absolute; */
   color: white;
   border-radius: 7px;
   width: 77px;
   height: 47px;
   font-size: 14px;
+  text-align: center;
   clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
   transform: skewX(-30deg);
   cursor: pointer;
@@ -507,31 +530,115 @@ width:447px ;
 .Bot-inicio2-fondo,
 .Bot-inicio-fondo{
   background-color: rgb(0,0,255);
-  position: absolute;
   border-radius: 7px;
-  width: 86px;
-  height: 53px;
+  width: 81px;
+  height: 51px;
   font-size: 14px;
   clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%); 
   transform: skewX(-30deg);
   cursor: pointer;
   z-index: 0;
 }
+#agrupaOblicuos,
+#agrupaOblicuos-II{
+  margin-top: -17px;
+  }
+#butt-1{
+  position: absolute;
+  margin-left: 1107px;
+  margin-top: 77px;
+} 
+#butt-01{
+  position: absolute;
+  margin-left: 1107px;
+  margin-top: 77px;
+}
+#butt-2{
+  position: absolute;
+  margin-left: 1107px;
+  margin-top: 77px;
+}
+#butt-02{
+  position: absolute;
+  margin-left: 1107px;
+  margin-top: 77px;
+}
+#butt-3{
+  position: absolute;
+  margin-left: 1107px;
+  margin-top: 137px;
+} 
+#butt-03{
+  position: absolute;
+  margin-left: 1107px;
+  margin-top: 137px;
+} 
+#butt-4{
+  position: absolute;
+  margin-left: 1107px;
+  margin-top: 137px;
+}
+#butt-04{
+  position: absolute;
+  margin-left: 1107px;
+  margin-top: 137px;
+}
+#butt-5{
+  position: absolute;
+  margin-left: 1107px;
+  margin-top: 197px;
+} 
+#butt-05{
+  position: absolute;
+  margin-left: 1107px;
+  margin-top: 197px;
+} 
+#butt-6{
+  position: absolute;
+  margin-left: 1107px;
+  margin-top: 197px;
+}
+#butt-06{
+  position: absolute;
+  margin-left: 1107px;
+  margin-top: 197px;
+}
+#butt-7{
+  position: absolute;
+  margin-left: 1107px;
+  margin-top: 257px;
+} 
+#butt-07{
+  position: absolute;
+  margin-left: 1107px;
+  margin-top: 257px;
+}
+#butt-8{
+  position: absolute;
+  margin-left: 1107px;
+  margin-top: 257px;  
+}
+#butt-08{
+  position: absolute;
+  margin-left: 1107px;
+  margin-top: 257px;  
+}
+
 .contOblicuos{
   display: none;
 }
-.contOblicuosTorre{
+/* .contOblicuosTorre{
   display: none;
-}
+} */
 .imagesTorre{
   display: none;
-  height: 477px;
+  height: 377px;
   border-radius: 10px;   
 }
 .imagenTorre{
   display: none;
   height: 477px;
-  width: 587px;
+  width: 627px;
 }
 #padreImagenes{
   display: flex;
@@ -541,14 +648,22 @@ width:447px ;
   display: none;
   display: flex;
   flex-direction: row;
+  position: absolute;
+  margin-left: 10px;
+  top: 77px;
   gap: 10px; /* Espacio entre las imágenes */
+}
+#contPortPlaca img{
+width: 530px;
+height: 398px;
 }
 #contPortManta {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  position: relative; 
-  left: 300PX;
+  position: absolute;
+  top: 87px;
+  left: 307px;
 }
 #contPortaManta{  
   display: flex;
@@ -570,6 +685,7 @@ width:447px ;
   flex-direction: column;
   justify-content: center;
   position: absolute;
+  top: 77px;
   left: 100px;
 }
 #botImgCil-2,
@@ -582,14 +698,19 @@ width:447px ;
   width: 100px;
   cursor: pointer;
 }
+#agrupaOblicuos{
+  display: flex;
+}
 #vid-cilImpresor{
   display: flex;
   flex-direction: row;
   justify-content: center;
   position: absolute;
+  top: 77px;
   left: 340px;
 }
 #vid-cilImpresor video{
+  width: 636px;
   height: 477px;
 }
 .botImagRodamCil {
@@ -597,4 +718,24 @@ width:447px ;
   border: none;
   padding: 0;
   margin-bottom: 10px; /* Agregar margen inferior de 10px entre botones */
+}
+#contImgEntintador,
+#contImgDistribuidor {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: absolute;
+  left: 187px;
+  top: 93px;
+}
+.imgRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.imgRow img{
+  height: 150px;
+  width: 200px;
+  margin: 0 10px;
+  border-radius: 7px;
 }

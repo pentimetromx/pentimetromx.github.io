@@ -1,5 +1,16 @@
 var idsArray = [];
 var currentID = null;
+var btnAtras = document.getElementById('bot-atras');
+var butInicio = document.getElementById('bot-inic')
+var botGrande = document.getElementById('iniciar')
+
+const grupOblicuos = document.getElementById('agrupaOblicuos')
+const contPadreMA = document.getElementById('conteneMantaut')
+const videoElements = document.querySelectorAll('.video-training');   
+const video = document.getElementById("videoBackground");
+const imgsDistribuidor = document.getElementById('contImgDistribuidor')
+const imgsForma = document.getElementById('contImgEntintador')
+const toggleVideoButton = document.getElementById("toggleVideoButton");
 const images = document.querySelectorAll('.image-training, .image-training-a');
 const Cilimpresor = document.getElementById('contCilImpresor')
 const imageElementsi = document.querySelectorAll('.image-training');
@@ -8,11 +19,13 @@ const imgsLaterales = document.getElementById('contPortManta')
 const padreImagenes = document.getElementById('padreImagenes')
 const inputsContainer = document.getElementById('contInput');
 const portManta = document.getElementById('contPortaManta')
+const padreOblicuos = document.getElementById('agrupaOblicuos-II')
 const inputs = document.querySelectorAll('.inpt-class');
 const input = document.querySelectorAll('.input-class');
+var contOblicuosList = document.querySelectorAll('.contOblicuosTorre');
+var contOblicuosIniList = document.querySelectorAll('.contOblicuos');
 const imagesFull = document.querySelectorAll('img');
 const inpt = document.querySelectorAll('grafMini');
-
 
 let miCanvas2 = document.getElementById('MiSegundaGrafica').getContext('2d');
 let miCanvas3 = document.getElementById('MiTerceraGrafica').getContext('2d');
@@ -74,7 +87,12 @@ function botoGrand() {
 }
  
 function changeButtonStyles(videoId, elementId ) { 
-  var elementsToHide = document.querySelectorAll('.alimentador, .uTeñido, .desbobinador,.unidProceso,.rebobinador, .contTorrImp');   
+  var elementsToHide = document.querySelectorAll('.alimentador, .uTeñido, .desbobinador,.unidProceso,.rebobinador, .contTorrImp'); 
+  btnAtras.style.display='block'
+  btnAtras.style.left='313px'
+  botGrande.style.left='333px'
+  butInicio.style.left='297px'
+
   for (var i = 0; i < elementsToHide.length; i++) {
     elementsToHide[i].style.display = 'none';
   }
@@ -102,7 +120,6 @@ function changeButtonStyles(videoId, elementId ) {
         }, delay * i,i);
       }
     
-      const videoElements = document.querySelectorAll('.video-training');   
       videoElements.forEach(video => {
         if (video.id === videoId) {
           video.style.display = 'block';
@@ -110,28 +127,11 @@ function changeButtonStyles(videoId, elementId ) {
         } else {
           video.style.display = 'none';
         }
-      });
-    
-      var butInicio = document.getElementById('bot-inic')
-      butInicio.style.marginLeft='310px  '
-    
-      var butGrande = document.getElementById('iniciar')
-      butGrande.style.marginLeft='363px'   
-
+      });    
     break;
     case 'contLinksTorre':
-      var videoBackground = document.getElementById('videoBackground');
-      let botOblicuo = document.querySelectorAll('.Bot-inicio2, .Bot-inicio2-fondo');
-      let conteOblicuo = document.getElementsByClassName('contOblicuosTorre');
-
-      linksTorre.style.display='block'
-      botOblicuo.forEach(elemento => {
-        elemento.style.display = 'block';
-      });
-      
-      for (let i = 0; i < conteOblicuo.length; i++) {
-        conteOblicuo[i].style.display = 'block'; 
-      }
+      padreOblicuos.style.display='flex'
+      linksTorre.style.display='block' 
 
     break;
     case 'def-tipo2':
@@ -166,24 +166,30 @@ function changeButtonStyles(videoId, elementId ) {
   }, 200);  
 }
  
-function cambioContenedor() {
-  var elementsToHide = document.querySelectorAll('.alimentador, .uTeñido, .desbobinador,.unidProceso,.rebobinador');   
+function cambioContenedor(contenedorSeleccion) {
+  var elementsToHide = document.querySelectorAll('.alimentador, .uTeñido, .desbobinador,.unidProceso,.rebobinador'); 
+  var torreImpresion = document.getElementById('torre-imp') 
+  
   for (var i = 0; i < elementsToHide.length; i++) {
       elementsToHide[i].style.display = 'none';
   }
-  var botIn = document.getElementById('bot-inic')
-  botIn.style.display='flex'
-
-  
+  butInicio.style.display='flex'
+  btnAtras.style.display='block'
+  btnAtras.style.left = '57px'; 
+   
+  if (contenedorSeleccion==='torre-imp'){
+    torreImpresion.style.left='11px'
+    toggleVideoButton.style.left='47px'
+  }
 }
 
 function cierraContenedores(SeleccionClass) {
   const coleccion = document.querySelectorAll('.desbobinador, .uTeñido, .alimentador, .unidProceso, .rebobinador, .contTorrImp');
-  var btnAtras = document.getElementById('bot-atras');
-  
+
   switch (SeleccionClass) {
     case 'desbobinador':
       btnAtras.style.display='block'
+      btnAtras.style.left = '57px';
       coleccion.forEach(elemento => {
         if (elemento.classList.contains(SeleccionClass)) {
           elemento.style.display = 'flex';
@@ -192,7 +198,32 @@ function cierraContenedores(SeleccionClass) {
         }
       });
       break;
-      case 'uTeñido':
+  
+    case 'uTeñido':
+      btnAtras.style.display='block'
+      btnAtras.style.left = '57px';
+        coleccion.forEach(elemento => {
+          if (elemento.classList.contains(SeleccionClass)) {
+            elemento.style.display = 'flex';
+          } else {
+            elemento.style.display = 'none';
+          }
+        });
+      break;
+      case 'alimentador':
+        btnAtras.style.display='block'
+        btnAtras.style.left = '57px';
+          coleccion.forEach(elemento => {
+            if (elemento.classList.contains(SeleccionClass)) {
+              elemento.style.display = 'flex';
+            } else {
+              elemento.style.display = 'none';
+            }
+        });
+      break;
+      case 'unidProceso':
+        btnAtras.style.display='block'
+        btnAtras.style.left = '57px';
         coleccion.forEach(elemento => {
           if (elemento.classList.contains(SeleccionClass)) {
             elemento.style.display = 'flex';
@@ -201,25 +232,9 @@ function cierraContenedores(SeleccionClass) {
           }
         });
         break;
-        case 'alimentador':
-          coleccion.forEach(elemento => {
-            if (elemento.classList.contains(SeleccionClass)) {
-              elemento.style.display = 'flex';
-            } else {
-              elemento.style.display = 'none';
-            }
-          });
-          break;
-          case 'unidProceso':
-            coleccion.forEach(elemento => {
-              if (elemento.classList.contains(SeleccionClass)) {
-                elemento.style.display = 'flex';
-              } else {
-                elemento.style.display = 'none';
-              }
-            });
-            break;
             case 'rebobinador':
+              btnAtras.style.display='block'
+              btnAtras.style.left = '57px';
               coleccion.forEach(elemento => {
                 if (elemento.classList.contains(SeleccionClass)) {
                   elemento.style.display = 'flex';
@@ -232,24 +247,6 @@ function cierraContenedores(SeleccionClass) {
     default:
   }
 }
-/* function cierraContenedores(desbobClas,teñiClas,alimClas,uniProClas,rebobClas){
-  var btnAtras = document.getElementById('bot-atras')
-  btnAtras.style.display='block'
-  var desbobina = document.getElementsByClassName(desbobClas)[0];
-  desbobina.style.display='none'
-  var tiñe = document.getElementsByClassName(teñiClas)[0];
-  tiñe.style.display='none'
-  var alimenta = document.getElementsByClassName(alimClas)[0];
-  alimenta.style.display='none'
-  var uniPro = document.getElementsByClassName(uniProClas)[0];
-  uniPro.style.display='none'
-  var reboBin = document.getElementsByClassName(rebobClas)[0];
-  reboBin.style.display='none'  
-  var botIn = document.getElementById('bot-inic')
-  botIn.style.display='flex'
-  var video = document.getElementById("videoBackground"); 
-  video.pause();
-} */
 
 function muestraRodillo (videoId, imageClas) {
 
@@ -258,7 +255,11 @@ function muestraRodillo (videoId, imageClas) {
 
   /* if (enteredPassword === correctPassword) { */
     // Aquí puedes poner el resto de la lógica de muestraRodillo()
-  const videoElements = document.querySelectorAll('.video-training');  
+
+    btnAtras.style.left='313px'
+    botGrande.style.left='333px'
+    butInicio.style.left='297px'
+
   videoElements.forEach(video => {
     if (video.id === videoId) {
       video.style.display = 'block'; 
@@ -280,15 +281,10 @@ function muestraRodillo (videoId, imageClas) {
     imageContainer[i].style.display='block'
   }
 
-  var botPanel = document.getElementById('bot-inic')
-  botPanel.style.marginLeft='190px'
-
   var botMantaut = document.getElementById('bot-mantaut')
   botMantaut.style.display='block'
   botMantaut.style.marginLeft='17px'
- 
-  var botGrand = document.getElementById('iniciar')
-  botGrand.style.marginLeft='17px'
+  botMantaut.style.marginTop='0px' 
 
   var buttRepuest = document.getElementById('butt-repuestos')
   buttRepuest.style.display='block'
@@ -304,9 +300,10 @@ function muestraRodillo (videoId, imageClas) {
   }, 300); // Retardo de 0.9 segundos (900 milisegundos)
 
 
-/* } else {
-  alert('Contraseña incorrecta. Acceso denegado.');
-} */
+  /* } else {
+    alert('Contraseña incorrecta. Acceso denegado.');
+  } */
+
 }
 
 function applyImageEffects() { // aumento secuencial imagenes repuestos
@@ -354,8 +351,7 @@ function ElementosMa() {
   var botRepuesto = document.getElementById('butt-repuestos')
   botRepuesto.style.display='none'
 
-  var botPanel = document.getElementById('bot-inic')
-  botPanel.style.display='block'
+  butInicio.style.display='block'
 
   const buttonElements = document.querySelectorAll('.butt-mautonomo');
   var delay = 100;
@@ -402,22 +398,24 @@ function showNextGraf() {
 }
 
 function showRepuesto(parteopcionada, vidId) {
-  let botOblicuo = document.querySelectorAll('.Bot-inicio2, .Bot-inicio2-fondo'); // BOTONES segunda tanda
-  let conteOblicuo0 = document.getElementsByClassName('contOblicuos'); // contenedores primeros BOTONES
-  let conteOblicuo = document.getElementsByClassName('contOblicuosTorre'); // contenedores segundos BOTONES 
-  padreImagenes.style.display='block' // PADRE DE 2 CONTENEDORES DE FOTOS CON DIAMETROS
+  padreImagenes.style.display='block' // PADRE CONTENEDORES FOTOS CON DIAMETROS
   linksTorre.style.display='block'
-  botOblicuo.forEach(elemento => {
-    elemento.style.display = 'none';
-  }); 
-  for (let i = 0; i < conteOblicuo.length; i++) {
-    conteOblicuo[i].style.display = 'none'; 
-  }
-  for (let i = 0; i < conteOblicuo0.length; i++) {
-    conteOblicuo0[i].style.display = 'block'; 
-  } 
+  conteneMantaut.style.display='none'
+  padreOblicuos.style.display='none'         
+
+  
   switch (parteopcionada) {
+    case 'rodillDistribuidor':
+      linksTorre.style.display='none'
+      imgsDistribuidor.style.display='block' 
+    break;
+    case 'rodillForma':
+      linksTorre.style.display='none'
+      imgsForma.style.display='block' 
+      break;
+
     case 'portaPlancha':
+      contPortaPlancha.style.display='flex'
       linksTorre.style.display='none'
       var imgPlancha = document.querySelectorAll('.imagesTorre') 
       imgPlancha.forEach(imagen => { 
@@ -426,7 +424,21 @@ function showRepuesto(parteopcionada, vidId) {
         }else{
           imagen.style.display='block'
         }
-      }); 
+      });
+      
+      var botOblicuos = document.querySelectorAll('.contOblicuos');
+      botOblicuos.forEach(boton => {
+        if (boton.classList.contains('contOblicuos')) {
+          boton.style.display = 'block';
+        }
+      });
+
+      var botOblicuos = document.querySelectorAll('.contOblicuosTorre');
+      botOblicuos.forEach(boton => {
+        if (boton.classList.contains('contOblicuosTorre')) {
+          boton.style.display = 'none';
+        }
+      });
 
     break;       
     case 'portaMantilla':
@@ -456,45 +468,18 @@ function showRepuesto(parteopcionada, vidId) {
           video.style.display = 'block';
         }
       }); 
+      break;
 
-    break;
-    default:
+    default: 
   }
 } 
-
-/* // Agrega un manejador de eventos al clic en la imagen
-botImgCil.addEventListener("click", () => {
-  if (videoTrain01.paused) {
-    videoTrain01.play();
-  } else {
-    videoTrain01.pause();
-  }
-}); */
-
-/* const buttons = document.querySelectorAll('.botImagRodamCil');
-const videos = document.querySelectorAll('.video-training');
-
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        const videoId = button.getAttribute('data-video-id');
-        const video = document.getElementById(videoId);
-
-        if (video.paused) {
-            video.play();
-        } else {
-            video.pause();
-        }
-    });
-}); */
-
 
 function muestraPerfiles(ladoSeleccion){
   var imgPlancha = document.querySelectorAll('.imagesTorre')  
 
   switch (ladoSeleccion) {
     case 'frente':
-/*       var imgPlancha = document.querySelectorAll('.imagesTorre')  
- */      imgPlancha.forEach(imagen => { 
+        imgPlancha.forEach(imagen => { 
         if(imagen.id==='portPlaca'){
           imagen.style.display='block'
         }else {
@@ -503,8 +488,7 @@ function muestraPerfiles(ladoSeleccion){
       });
     break;
     case 'mandos':
-/*       var imgPlancha = document.querySelectorAll('.imagesTorre')  
- */      imgPlancha.forEach(imagen => { 
+        imgPlancha.forEach(imagen => { 
         if(imagen.id==='portPlaca2'){
           imagen.style.display='block'
         }else {
@@ -513,8 +497,7 @@ function muestraPerfiles(ladoSeleccion){
       });
       break;     
     case 'servicio':
-/*       var imgPlancha = document.querySelectorAll('.imagesTorre')  
- */      imgPlancha.forEach(imagen => { 
+        imgPlancha.forEach(imagen => { 
         if(imagen.id==='portPlaca3'){
           imagen.style.display='block'
         }else {
@@ -523,8 +506,7 @@ function muestraPerfiles(ladoSeleccion){
       });
     break;
     case 'atras':
-/*       var imgPlancha = document.querySelectorAll('.imagesTorre')  
- */      imgPlancha.forEach(imagen => { 
+        imgPlancha.forEach(imagen => { 
         if(imagen.id==='portPlaca4'){
           imagen.style.display='block'
         }else {
@@ -630,9 +612,6 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 document.addEventListener("DOMContentLoaded", function() {
-  const video = document.getElementById("videoBackground");
-  const toggleVideoButton = document.getElementById("toggleVideoButton");
-
   toggleVideoButton.addEventListener("click", function() {
     video.pause();
   })
@@ -692,8 +671,6 @@ function mantAutonomo (opcionSeleccionada) {
       showNextInput();
       break;
     case 'def-tipo1':
-/*       var contGrafi = document.getElementById('grafiCuadro')
-      contGrafi.style.display='block' */
       const conteneCanvas = document.getElementById('canvasContainer2')
       conteneCanvas.style.display='block'
       break;
@@ -704,9 +681,6 @@ function mantAutonomo (opcionSeleccionada) {
       
       break;
     case 'ayudastrabajo':
-/*       var contGrafvert = document.getElementById('grafiCuadro2')
-      contGrafvert.style.display='block'
-      showNextGraf(); */ 
       var contGrafitos =  document.getElementById('canvasContainer3')
       contGrafitos.style.display= 'block'
       var segundaGraf = document.getElementById('MiSegundaGrafica')
@@ -727,18 +701,13 @@ function mantAutonomo (opcionSeleccionada) {
 
 function muestraTorres (seleccion) {
   let coleccImages = document.querySelectorAll('.imagenTorre') // FOTOS LATERALES
-  let imgTorr = document.getElementById('imgTorre') // TORRE CON LINKS
   contPortaPlancha.style.display='none'
-
-  videoBackground.pause();
-  videoBackground.style.display='none'
   padreImagenes.style.display='block' // PADRE DE 2 CONTENEDORES DE FOTOS CON DIAMETROS  
   portManta.style.display='none'
-  imgTorr.style.display='none'
   imgsLaterales.style.display='block'
   linksTorre.style.display='none'
 
-  switch (seleccion) {
+  switch (seleccion) {    
     case 'torre':
       coleccImages.forEach(elemento => {
         if (elemento.id !== seleccion) {
@@ -782,7 +751,6 @@ function muestraTorres (seleccion) {
 
 function videosImpresor(videoId) {
   const video = document.getElementById(videoId);
-  const videoElements = document.querySelectorAll('.video-training');   
   
   switch (videoId) {
     case 'videoTrain00':
