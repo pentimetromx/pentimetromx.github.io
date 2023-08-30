@@ -4,7 +4,7 @@ var btnAtras = document.getElementById('bot-atras');
 var butInicio = document.getElementById('bot-inic')
 var botGrande = document.getElementById('iniciar')
 
-const grupOblicuos = document.getElementById('agrupaOblicuos')
+const grupOblicuos = document.getElementById('agrupaOblicuos-I')
 const contPadreMA = document.getElementById('conteneMantaut')
 const videoElements = document.querySelectorAll('.video-training');   
 const video = document.getElementById("videoBackground");
@@ -993,4 +993,25 @@ var chart2 = new Chart(miCanvas5, {
             }
         }
     }
+});
+
+const zoomableImages = document.querySelectorAll('.image-trainings');
+const sensitivity = 5; // Ajusta la sensibilidad del movimiento
+
+zoomableImages.forEach((zoomableImage) => {
+  zoomableImage.addEventListener('mouseenter', () => {
+    zoomableImage.style.transition = 'transform 0.1s ease, filter 0.1s ease';
+  });
+
+  zoomableImage.addEventListener('mousemove', (e) => {
+    const x = (zoomableImage.clientWidth / 2 - e.clientX + zoomableImage.getBoundingClientRect().left) / sensitivity;
+    const y = (zoomableImage.clientHeight / 2 - e.clientY + zoomableImage.getBoundingClientRect().top) / sensitivity;
+
+    zoomableImage.style.transform = `translate(${x}px, ${y}px) scale(1.5)`;
+  });
+
+  zoomableImage.addEventListener('mouseleave', () => {
+    zoomableImage.style.transition = 'transform 0.1s ease';
+    zoomableImage.style.transform = 'translate(0, 0) scale(1)';
+  });
 });
