@@ -3,19 +3,28 @@ var currentID = null;
 var btnAtras = document.getElementById('bot-atras');
 var butInicio = document.getElementById('bot-inic')
 var botGrande = document.getElementById('iniciar')
+const coleccImgFront = document.querySelectorAll('.rep-frente');
+const coleccImgIzq = document.querySelectorAll('.rep-izquierda');
 
 const grupOblicuos = document.getElementById('agrupaOblicuos-I')
+const contieneLinks = document.getElementById('cont-links')
+const imgsRepuestos = document.getElementById('imgsRepuestos') // HIJO IMAGENES
+const imgsRepuestosII = document.getElementById('imgsRepuestos-II') // HIJO IMAGENES 
+const imgsRepuestosIII = document.getElementById('imgsRepuestos-III') // HIJO IMAGENES      
+const imgsRepuestosIV = document.getElementById('imgsRepuestos-IV') // HIJO IMAGENES      
+
+
 const contPadreMA = document.getElementById('conteneMantaut')
 const videoElements = document.querySelectorAll('.video-training');   
 const video = document.getElementById("videoBackground");
 const imgsDistribuidor = document.getElementById('contImgDistribuidor')
 const imgsForma = document.getElementById('contImgEntintador')
 const toggleVideoButton = document.getElementById("toggleVideoButton");
-const images = document.querySelectorAll('.image-training, .image-training-a');
+const images = document.querySelectorAll('.image-training, .image-training-a'); 
 const Cilimpresor = document.getElementById('contCilImpresor')
 const imageElementsi = document.querySelectorAll('.image-training');
 const contPortaPlancha = document.getElementById('contPortPlaca')
-const imgsLaterales = document.getElementById('contPortManta')
+const imgsDeLado = document.getElementById('contPortManta')
 const padreImagenes = document.getElementById('padreImagenes')
 const inputsContainer = document.getElementById('contInput');
 const portManta = document.getElementById('contPortaManta')
@@ -46,7 +55,6 @@ function VolveraInicio(){
   location.reload();
   document.body.style.overflow = 'block';
   idsArray = [];
-
 }
 function irContenedorAnterior() {
 
@@ -61,7 +69,6 @@ function irContenedorAnterior() {
 
   // Actualizar el array quitando el último ID almacenado
   idsArray.pop();
-  console.log(idsArray)
 
   // Actualizar la variable currentID con el nuevo ID
   currentID = previousElementID;
@@ -86,7 +93,7 @@ function botoGrand() {
   }, 200);
 }
  
-function changeButtonStyles(videoId, elementId ) { 
+function changeButtonStyles(videoId, elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
   var elementsToHide = document.querySelectorAll('.alimentador, .uTeñido, .desbobinador,.unidProceso,.rebobinador, .contTorrImp'); 
   btnAtras.style.display='block'
   btnAtras.style.left='313px'
@@ -97,12 +104,6 @@ function changeButtonStyles(videoId, elementId ) {
     elementsToHide[i].style.display = 'none';
   }
 
-  // Verificar si el elementoId ya está presente en el array
-  if (!idsArray.includes(elementId)) {
-    idsArray.push(elementId);
-  }
-  console.log(idsArray)
-
   var videoBackground = document.getElementById('videoBackground');
   videoBackground.pause();
   videoBackground.style.display = 'none'; // Oculta el video
@@ -110,7 +111,7 @@ function changeButtonStyles(videoId, elementId ) {
   switch (videoId) {
     case 'videoElement1':
       var contVid = document.getElementById('videosTraining')  
-      contVid.style.display='flex'
+      contVid.style.display='block'
     
       const buttonElements = document.querySelectorAll('.boton-f');
       var delay = 100;
@@ -130,8 +131,18 @@ function changeButtonStyles(videoId, elementId ) {
       });    
     break;
     case 'contLinksTorre':
+      // Verificar si el elementoId ya está presente en el array
+      if (!idsArray.includes(elementId)) {
+      idsArray.push(elementId);
+  }
       padreOblicuos.style.display='flex'
+      imgsRepuestos.style.display='block'
+
       linksTorre.style.display='block' 
+      for (var i=0; i< coleccImgFront.length; i++){
+        coleccImgFront[i].style.display = 'block';
+      }
+    
 
     break;
     case 'def-tipo2':
@@ -699,51 +710,81 @@ function mantAutonomo (opcionSeleccionada) {
   
 }
 
-function muestraTorres (seleccion) {
-  let coleccImages = document.querySelectorAll('.imagenTorre') // FOTOS LATERALES
-  contPortaPlancha.style.display='none'
-  padreImagenes.style.display='block' // PADRE DE 2 CONTENEDORES DE FOTOS CON DIAMETROS  
-  portManta.style.display='none'
-  imgsLaterales.style.display='block'
-  linksTorre.style.display='none'
-
+function muestraTorres (seleccion,idImagen) {  // BOTON OBLICUO
+  var contenedor = document.getElementById('contPortManta');
+  var imagenes = contenedor.querySelectorAll('.imagenTorre');
+  var imgRttek = document.getElementById('imgTorre')
   switch (seleccion) {    
     case 'torre':
-      coleccImages.forEach(elemento => {
-        if (elemento.id !== seleccion) {
-          elemento.style.display = 'none';
-        }else {
-        elemento.style.display = 'block';       
-        }
-      });    
+      contieneLinks.style.display='none'
+      imgsRepuestos.style.display='flex' // PRIMER BLOQUE DE FOTOS
+      imgsRepuestosII.style.display='none'
 
-    break;       
-  case 'torre1': 
-    coleccImages.forEach(elemento => {
-      if (elemento.id !== seleccion) {
-        elemento.style.display = 'none';
-      }else {
-      elemento.style.display = 'block';
-      }
+      imagenes.forEach(function(imagen) {
+        if (imagen.id === seleccion) {
+            imagen.style.display = 'block'; // O 'flex' si es necesario
+        } else {
+            imagen.style.display = 'none';
+        }
+    });
+    break;  
+         
+    case 'torre1':
+      padreImagenes.style.display='block' // PADRE CONTENEDORES FOTOS CON DIAMETROS
+      imgsDeLado.style.display='block'
+      var imgIzq = document.getElementById('torre1')
+      imgIzq.style.display='block'
+      imgRttek.style.display='none'
+      imgsRepuestos.style.display='none'
+      imgsRepuestosII.style.display='flex' // SEGUNDO BLOQUE DE FOTOS
+      imagenes.forEach(function(imagen) {
+        if (imagen.id === seleccion) {
+            imagen.style.display = 'block'; // O 'flex' si es necesario
+        } else {
+            imagen.style.display = 'none';
+        }
     });
     break;
     case 'torre2': 
-    coleccImages.forEach(elemento => {
-      if (elemento.id !== seleccion) {
-        elemento.style.display = 'none';
-      }else {
-        elemento.style.display = 'block';
-      }
-    });  
+    padreImagenes.style.display='block' // PADRE CONTENEDORES FOTOS CON DIAMETROS
+    imgsDeLado.style.display='block'
+    var imgDer = document.getElementById('torre2')
+
+    imgDer.style.display='block'
+    imgRttek.style.display='none'
+    imgsRepuestos.style.display='none'
+    imgsRepuestosII.style.display='none' // SEGUNDO BLOQUE DE FOTOS
+    imgsRepuestosIII.style.display='flex' // SEGUNDO BLOQUE DE FOTOS
+
+    imagenes.forEach(function(imagen) {
+        if (imagen.id === seleccion) {
+            imagen.style.display = 'block'; // O 'flex' si es necesario
+        } else {
+            imagen.style.display = 'none';
+        }
+    });
     break;
-    case 'torre3': 
-    coleccImages.forEach(elemento => {
-      if (elemento.id !== seleccion) {
-        elemento.style.display = 'none';
-      }else {
-        elemento.style.display = 'block';
-      }
-    });  
+    case 'torre3':
+      padreImagenes.style.display='block' // PADRE CONTENEDORES FOTOS CON DIAMETROS
+      imgsDeLado.style.display='block'
+      var imgBack = document.getElementById('torre3')
+      imgBack.style.display='flex'
+  
+      imgRttek.style.display='none'
+      imgsRepuestos.style.display='none'
+      imgsRepuestosII.style.display='none' // SEGUNDO BLOQUE DE FOTOS
+      imgsRepuestosIII.style.display='none' // SEGUNDO BLOQUE DE FOTOS
+      imgsRepuestosIV.style.display='flex' // SEGUNDO BLOQUE DE FOTOS
+
+  
+      imagenes.forEach(function(imagen) {
+          if (imagen.id === seleccion) {
+              imagen.style.display = 'block'; // O 'flex' si es necesario
+          } else {
+              imagen.style.display = 'none';
+          }
+      });
+
     break;
     default:
   }
@@ -994,24 +1035,22 @@ var chart2 = new Chart(miCanvas5, {
         }
     }
 });
-
+//////////////////////////////////AUMENTO Y MOVIMIENTO IMAGENES /////////////////////////////////////////////
 const zoomableImages = document.querySelectorAll('.image-trainings');
-const sensitivity = 5; // Ajusta la sensibilidad del movimiento
-
+const sensitivity = 5; 
 zoomableImages.forEach((zoomableImage) => {
   zoomableImage.addEventListener('mouseenter', () => {
     zoomableImage.style.transition = 'transform 0.1s ease, filter 0.1s ease';
   });
-
   zoomableImage.addEventListener('mousemove', (e) => {
     const x = (zoomableImage.clientWidth / 2 - e.clientX + zoomableImage.getBoundingClientRect().left) / sensitivity;
     const y = (zoomableImage.clientHeight / 2 - e.clientY + zoomableImage.getBoundingClientRect().top) / sensitivity;
 
     zoomableImage.style.transform = `translate(${x}px, ${y}px) scale(1.5)`;
   });
-
   zoomableImage.addEventListener('mouseleave', () => {
     zoomableImage.style.transition = 'transform 0.1s ease';
     zoomableImage.style.transform = 'translate(0, 0) scale(1)';
   });
 });
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////

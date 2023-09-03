@@ -61,6 +61,7 @@ h1, h2, h3 {
 .boton-a:hover,
 .boton-b:hover,
 .boton-c:hover,
+.boton-f:hover,
 .boton-g:hover{
 transform: scale(1.1);
 }
@@ -308,9 +309,10 @@ transform: scale(1.1);
   display: flex;
   flex-direction: column; 
   align-items: flex-start;
+  position: absolute;
+  left: 1033px;
   margin-top: 137px;
   margin-right: 17px;
-  /* margin-left: -47px; */
 }
 #contTextos{
   display: flex;
@@ -383,11 +385,11 @@ width:447px ;
   margin-top: 57px;
   margin-left:20px;
 }
-#conteneMantaut{
+/* #conteneMantaut{
   display: flex;
   flex-direction: row;
 }
-#contImagGraf{
+ */#contImagGraf{
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -740,13 +742,20 @@ height: 398px;
   margin: 0 10px;
   border-radius: 7px;
 }
+#imgsRepuestos-IV,
+#imgsRepuestos-III,
+#imgsRepuestos-II,
 #imgsRepuestos{
   display: flex;
   flex-direction: column;
   margin-left: 77px;
 }
+#imgsRepuestos-IV img,
+#imgsRepuestos-III img,
+#imgsRepuestos-II img,
 #imgsRepuestos img{
  height: 107px;
+ width: 143px;
  margin-bottom: 15px; 
 }
 
