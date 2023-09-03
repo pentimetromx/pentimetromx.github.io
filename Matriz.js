@@ -63,12 +63,13 @@ function irContenedorAnterior() {
   contenedorActual.style.display = 'none';
 
   // Obtener el ID del contenedor anterior
-  var previousElementID = idsArray[idsArray.length - 2];
+  var previousElementID = idsArray[idsArray.length - 1];
   var contenedorAnterior = document.getElementById(previousElementID);
   contenedorAnterior.style.display = 'flex';
 
   // Actualizar el array quitando el último ID almacenado
   idsArray.pop();
+  console.log(idsArray)
 
   // Actualizar la variable currentID con el nuevo ID
   currentID = previousElementID;
@@ -93,7 +94,7 @@ function botoGrand() {
   }, 200);
 }
  
-function changeButtonStyles(videoId, elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
+function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
   var elementsToHide = document.querySelectorAll('.alimentador, .uTeñido, .desbobinador,.unidProceso,.rebobinador, .contTorrImp'); 
   btnAtras.style.display='block'
   btnAtras.style.left='313px'
@@ -108,10 +109,31 @@ function changeButtonStyles(videoId, elementId) { //TINTERO-BATERIA-BANCADA-HUME
   videoBackground.pause();
   videoBackground.style.display = 'none'; // Oculta el video
 
-  switch (videoId) {
+  switch (elementId) {
+    case 'contLinksTorre':
+      // Verificar si el elementoId ya está presente en el array
+      if (!idsArray.includes(elementId)) {
+      idsArray.push(elementId);
+      console.log(idsArray)
+  }
+      padreOblicuos.style.display='flex'
+      imgsRepuestos.style.display='block'
+
+      linksTorre.style.display='block' 
+      for (var i=0; i< coleccImgFront.length; i++){
+        coleccImgFront[i].style.display = 'block';
+      }    
+    break;
+
     case 'videoElement1':
       var contVid = document.getElementById('videosTraining')  
       contVid.style.display='block'
+
+      // Verificar si el elementoId ya está presente en el array
+      if (!idsArray.includes(elementId)) {
+      idsArray.push(elementId);
+      console.log(idsArray)
+      }
     
       const buttonElements = document.querySelectorAll('.boton-f');
       var delay = 100;
@@ -122,7 +144,7 @@ function changeButtonStyles(videoId, elementId) { //TINTERO-BATERIA-BANCADA-HUME
       }
     
       videoElements.forEach(video => {
-        if (video.id === videoId) {
+        if (video.id === elementId) {
           video.style.display = 'block';
           video.play();      
         } else {
@@ -130,21 +152,7 @@ function changeButtonStyles(videoId, elementId) { //TINTERO-BATERIA-BANCADA-HUME
         }
       });    
     break;
-    case 'contLinksTorre':
-      // Verificar si el elementoId ya está presente en el array
-      if (!idsArray.includes(elementId)) {
-      idsArray.push(elementId);
-  }
-      padreOblicuos.style.display='flex'
-      imgsRepuestos.style.display='block'
 
-      linksTorre.style.display='block' 
-      for (var i=0; i< coleccImgFront.length; i++){
-        coleccImgFront[i].style.display = 'block';
-      }
-    
-
-    break;
     case 'def-tipo2':
       
     break;
