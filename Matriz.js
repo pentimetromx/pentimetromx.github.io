@@ -5,6 +5,7 @@ var butInicio = document.getElementById('bot-inic')
 var botGrande = document.getElementById('iniciar')
 const coleccImgFront = document.querySelectorAll('.rep-frente');
 const coleccImgIzq = document.querySelectorAll('.rep-izquierda');
+const conteRepDistrib = document.querySelectorAll('.imgRow')
 
 const grupOblicuos = document.getElementById('agrupaOblicuos-I')
 const contieneLinks = document.getElementById('cont-links')
@@ -424,9 +425,12 @@ function showRepuesto(parteopcionada, vidId) {
 
   
   switch (parteopcionada) {
-    case 'rodillDistribuidor':
+    case 'contImgDistribuidor':
       linksTorre.style.display='none'
-      imgsDistribuidor.style.display='block' 
+      imgsDistribuidor.style.display='flex' 
+      conteRepDistrib.forEach(pict => {
+        pict.style.display='block'
+      })
     break;
     case 'rodillForma':
       linksTorre.style.display='none'
