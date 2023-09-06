@@ -3,9 +3,16 @@ var currentID = null;
 var btnAtras = document.getElementById('bot-atras');
 var butInicio = document.getElementById('bot-inic')
 var botGrande = document.getElementById('iniciar')
+var imgTorreI = document.getElementById('imgTorre')
 const coleccImgFront = document.querySelectorAll('.rep-frente');
 const coleccImgIzq = document.querySelectorAll('.rep-izquierda');
 const conteRepDistrib = document.querySelectorAll('.imgRow')
+const uniTeñido = document.getElementById('uTeñidos')
+const alimentadorId = document.getElementById('alimentadorId')
+const unidadProcess = document.getElementById('uniProceso')
+const reBobinado = document.getElementById('rebobinador')
+const rotatPanel = document.getElementById('rotatek-1')
+
 
 const grupOblicuos = document.getElementById('agrupaOblicuos-I')
 const contieneLinks = document.getElementById('cont-links')
@@ -49,7 +56,7 @@ let currentIndex = 0;
 let actualtIndex = 0;
 let nowIndex = 0;
 
-idsArray.push('contenedorInic');
+idsArray.push('desbobinadorId');
 console.log(idsArray)
 
 function VolveraInicio(){
@@ -58,20 +65,29 @@ function VolveraInicio(){
   idsArray = [];
 }
 function irContenedorAnterior() {
-
   // Ocultar el contenedor actual
   var contenedorActual = document.getElementById(idsArray[idsArray.length - 1]);
-  contenedorActual.style.display = 'none';
+
+if(contenedorActual.id === 'desbobinadorId') {
+  imgsRepuestos.style.display='none'
+  imgTorreI.style.display='none'
+  contieneLinks.style.display='none'
+  padreOblicuos.style.display='none'
+  uniTeñido.style.display='block'
+  alimentadorId.style.display='block'
+  unidadProcess.style.display='block'
+  reBobinado.style.display='block'
+  rotatPanel.style.display='block'
+  
+}
 
   // Obtener el ID del contenedor anterior
   var previousElementID = idsArray[idsArray.length - 1];
   var contenedorAnterior = document.getElementById(previousElementID);
   contenedorAnterior.style.display = 'flex';
-
   // Actualizar el array quitando el último ID almacenado
   idsArray.pop();
   console.log(idsArray)
-
   // Actualizar la variable currentID con el nuevo ID
   currentID = previousElementID;
 }
@@ -111,12 +127,12 @@ function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
   videoBackground.style.display = 'none'; // Oculta el video
 
   switch (elementId) {
-    case 'contLinksTorre':
+    case 'desbobinadorId':
       // Verificar si el elementoId ya está presente en el array
       if (!idsArray.includes(elementId)) {
       idsArray.push(elementId);
       console.log(idsArray)
-  }
+      }
       padreOblicuos.style.display='flex'
       imgsRepuestos.style.display='block'
 
@@ -127,14 +143,14 @@ function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
     break;
 
     case 'videoElement1':
+      // Verificar si el elementoId ya está presente en el array
+      if (!idsArray.includes('videoElement1')) {
+        idsArray.push('videoElement1');
+        console.log(idsArray)
+      }
+
       var contVid = document.getElementById('videosTraining')  
       contVid.style.display='block'
-
-      // Verificar si el elementoId ya está presente en el array
-      if (!idsArray.includes(elementId)) {
-      idsArray.push(elementId);
-      console.log(idsArray)
-      }
     
       const buttonElements = document.querySelectorAll('.boton-f');
       var delay = 100;
