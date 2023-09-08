@@ -4,6 +4,11 @@ var btnAtras = document.getElementById('bot-atras');
 var butInicio = document.getElementById('bot-inic')
 var botGrande = document.getElementById('iniciar')
 var imgTorreI = document.getElementById('imgTorre')
+var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor'];
+var conteHijosTintero = ['cont-links', 'imgTorre', 'imgsRepuestos','agrupaOblicuos-II'];
+var conteHijosFrente = ['imgTorre-f','imgsRepuestos-II', 'agrupaOblicuos-III'];
+var conteHijosMandos = ['imgTorre-m','imgsRepuestos-III','agrupaOblicuos-IV'];
+
 const coleccImgFront = document.querySelectorAll('.rep-frente');
 const coleccImgIzq = document.querySelectorAll('.rep-izquierda');
 const conteRepDistrib = document.querySelectorAll('.imgRow')
@@ -12,6 +17,10 @@ const alimentadorId = document.getElementById('alimentadorId')
 const unidadProcess = document.getElementById('uniProceso')
 const reBobinado = document.getElementById('rebobinador')
 const rotatPanel = document.getElementById('rotatek-1')
+const seccionTintero = document.getElementById('pantalla-tintero')
+const seccionFrente = document.getElementById('pantalla-frente')
+const seccionMandos = document.getElementById('pantalla-mandos')
+const pantallas = ['pantalla-frente', 'pantalla-mandos','pantalla-servicio','pantalla-atras'];
 
 
 const grupOblicuos = document.getElementById('agrupaOblicuos-I')
@@ -56,7 +65,7 @@ let currentIndex = 0;
 let actualtIndex = 0;
 let nowIndex = 0;
 
-idsArray.push('desbobinadorId');
+idsArray.push('pantalla-inicial');
 console.log(idsArray)
 
 function VolveraInicio(){
@@ -64,30 +73,23 @@ function VolveraInicio(){
   document.body.style.overflow = 'block';
   idsArray = [];
 }
+
 function irContenedorAnterior() {
+  // Obtener el ID del contenedor anterior antes de ocultar el actual
+  var previousElementID = idsArray[idsArray.length - 2]; // Utiliza length - 2 para obtener el elemento anterior
+  var contenedorAnterior = document.getElementById(previousElementID);
+
   // Ocultar el contenedor actual
   var contenedorActual = document.getElementById(idsArray[idsArray.length - 1]);
+  contenedorActual.style.display = 'none';
 
-if(contenedorActual.id === 'desbobinadorId') {
-  imgsRepuestos.style.display='none'
-  imgTorreI.style.display='none'
-  contieneLinks.style.display='none'
-  padreOblicuos.style.display='none'
-  uniTeñido.style.display='block'
-  alimentadorId.style.display='block'
-  unidadProcess.style.display='block'
-  reBobinado.style.display='block'
-  rotatPanel.style.display='block'
-  
-}
-
-  // Obtener el ID del contenedor anterior
-  var previousElementID = idsArray[idsArray.length - 1];
-  var contenedorAnterior = document.getElementById(previousElementID);
+  // Mostrar el contenedor anterior
   contenedorAnterior.style.display = 'flex';
+
   // Actualizar el array quitando el último ID almacenado
   idsArray.pop();
-  console.log(idsArray)
+  console.log(idsArray);
+
   // Actualizar la variable currentID con el nuevo ID
   currentID = previousElementID;
 }
@@ -110,7 +112,36 @@ function botoGrand() {
   setTimeout(function() {
   }, 200);
 }
- 
+
+function muestraTintero(elementId) {
+  var elementsToHide = document.querySelectorAll('.alimentador, .uTeñido, .desbobinador,.unidProceso,.rebobinador, .contTorrImp'); 
+  btnAtras.style.display='block'
+  btnAtras.style.left='313px'
+  botGrande.style.left='333px'
+  butInicio.style.left='297px'
+  for (var i = 0; i < elementsToHide.length; i++) {
+    elementsToHide[i].style.display = 'none';
+  }
+  var videoBackground = document.getElementById('videoBackground');
+  videoBackground.pause();
+  videoBackground.style.display = 'none'; // Oculta el video
+  seccionTintero.style.display='block'
+  if (!idsArray.includes(elementId)) {
+    idsArray.push(elementId);
+    console.log(idsArray)
+    }
+
+    /*   // Paso 2: Crear un bucle para hacer visibles los contenedores
+      contenedoresHijo.forEach(function(contenedorID) {
+        var contenedor = document.getElementById(contenedorID);
+
+        // Verificar si el contenedor existe antes de mostrarlo
+        if (contenedor) {
+          contenedor.style.display = 'block'; // O cualquier otra propiedad CSS que desees
+        }
+      }); */
+}
+
 function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
   var elementsToHide = document.querySelectorAll('.alimentador, .uTeñido, .desbobinador,.unidProceso,.rebobinador, .contTorrImp'); 
   btnAtras.style.display='block'
@@ -127,19 +158,13 @@ function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
   videoBackground.style.display = 'none'; // Oculta el video
 
   switch (elementId) {
-    case 'desbobinadorId':
+    case 'pantalla-tintero':
       // Verificar si el elementoId ya está presente en el array
       if (!idsArray.includes(elementId)) {
       idsArray.push(elementId);
       console.log(idsArray)
       }
-      padreOblicuos.style.display='flex'
-      imgsRepuestos.style.display='block'
 
-      linksTorre.style.display='block' 
-      for (var i=0; i< coleccImgFront.length; i++){
-        coleccImgFront[i].style.display = 'block';
-      }    
     break;
 
     case 'videoElement1':
@@ -738,80 +763,80 @@ function mantAutonomo (opcionSeleccionada) {
   
 }
 
-function muestraTorres (seleccion,idImagen) {  // BOTON OBLICUO
-  var contenedor = document.getElementById('contPortManta');
-  var imagenes = contenedor.querySelectorAll('.imagenTorre');
-  var imgRttek = document.getElementById('imgTorre')
+function muestraTorres (seleccion) {  // BOTON OBLICUO
+    seccionTintero.style.display='none'
   switch (seleccion) {    
-    case 'torre':
-      contieneLinks.style.display='none'
-      imgsRepuestos.style.display='flex' // PRIMER BLOQUE DE FOTOS
-      imgsRepuestosII.style.display='none'
-
-      imagenes.forEach(function(imagen) {
-        if (imagen.id === seleccion) {
-            imagen.style.display = 'block'; // O 'flex' si es necesario
-        } else {
-            imagen.style.display = 'none';
+    case 'frente':
+      pantallas.forEach(pantallaId => {
+        const pantalla = document.getElementById(pantallaId);
+        if (pantalla) {
+          pantalla.style.display = 'none';
         }
-    });
-    break;  
-         
-    case 'torre1':
-      padreImagenes.style.display='block' // PADRE CONTENEDORES FOTOS CON DIAMETROS
-      imgsDeLado.style.display='block'
-      var imgIzq = document.getElementById('torre1')
-      imgIzq.style.display='block'
-      imgRttek.style.display='none'
-      imgsRepuestos.style.display='none'
-      imgsRepuestosII.style.display='flex' // SEGUNDO BLOQUE DE FOTOS
-      imagenes.forEach(function(imagen) {
-        if (imagen.id === seleccion) {
-            imagen.style.display = 'block'; // O 'flex' si es necesario
-        } else {
-            imagen.style.display = 'none';
-        }
-    });
-    break;
-    case 'torre2': 
-    padreImagenes.style.display='block' // PADRE CONTENEDORES FOTOS CON DIAMETROS
-    imgsDeLado.style.display='block'
-    var imgDer = document.getElementById('torre2')
-
-    imgDer.style.display='block'
-    imgRttek.style.display='none'
-    imgsRepuestos.style.display='none'
-    imgsRepuestosII.style.display='none' // SEGUNDO BLOQUE DE FOTOS
-    imgsRepuestosIII.style.display='flex' // SEGUNDO BLOQUE DE FOTOS
-
-    imagenes.forEach(function(imagen) {
-        if (imagen.id === seleccion) {
-            imagen.style.display = 'block'; // O 'flex' si es necesario
-        } else {
-            imagen.style.display = 'none';
-        }
-    });
-    break;
-    case 'torre3':
-      padreImagenes.style.display='block' // PADRE CONTENEDORES FOTOS CON DIAMETROS
-      imgsDeLado.style.display='block'
-      var imgBack = document.getElementById('torre3')
-      imgBack.style.display='flex'
-  
-      imgRttek.style.display='none'
-      imgsRepuestos.style.display='none'
-      imgsRepuestosII.style.display='none' // SEGUNDO BLOQUE DE FOTOS
-      imgsRepuestosIII.style.display='none' // SEGUNDO BLOQUE DE FOTOS
-      imgsRepuestosIV.style.display='flex' // SEGUNDO BLOQUE DE FOTOS
-
-  
-      imagenes.forEach(function(imagen) {
-          if (imagen.id === seleccion) {
-              imagen.style.display = 'block'; // O 'flex' si es necesario
-          } else {
-              imagen.style.display = 'none';
-          }
       });
+      for (var i = 0; i < pantallas.length; i++) {
+        if (pantallas[i] === 'pantalla-frente') {
+          const elementoMandos = document.getElementById('pantalla-frente');
+          if (elementoMandos) {
+            elementoMandos.style.display = 'block';
+          }else {
+            elementoMandos.style.display = 'none';            
+          }
+        }
+      }
+    break; 
+    case 'mandos':
+      pantallas.forEach(pantallaId => {
+        const pantalla = document.getElementById(pantallaId);
+        if (pantalla) {
+          pantalla.style.display = 'none';
+        }
+      });      
+      for (var i = 0; i < pantallas.length; i++) {
+        if (pantallas[i] === 'pantalla-mandos') {
+          const elementoMandos = document.getElementById('pantalla-mandos');
+          if (elementoMandos) {
+            elementoMandos.style.display = 'block';
+          }else {
+            elementoMandos.style.display = 'none';            
+          }
+        }
+      }
+    break;
+    case 'servicio': 
+    pantallas.forEach(pantallaId => {
+      const pantalla = document.getElementById(pantallaId);
+      if (pantalla) {
+        pantalla.style.display = 'none';
+      }
+    });      
+    for (var i = 0; i < pantallas.length; i++) {
+      if (pantallas[i] === 'pantalla-servicio') {
+        const elementoMandos = document.getElementById('pantalla-servicio');
+        if (elementoMandos) {
+          elementoMandos.style.display = 'block';
+        }else {
+          elementoMandos.style.display = 'none';            
+        }
+      }
+    }   
+    break;
+    case 'atras':
+      pantallas.forEach(pantallaId => {
+        const pantalla = document.getElementById(pantallaId);
+        if (pantalla) {
+          pantalla.style.display = 'none';
+        }
+      });      
+      for (var i = 0; i < pantallas.length; i++) {
+        if (pantallas[i] === 'pantalla-atras') {
+          const elementoMandos = document.getElementById('pantalla-atras');
+          if (elementoMandos) {
+            elementoMandos.style.display = 'block';
+          }else {
+            elementoMandos.style.display = 'none';            
+          }
+        }
+      }        
 
     break;
     default:

@@ -457,6 +457,11 @@ width:447px ;
   width: 200px;
   height: 800px;
 }
+#pantalla-atras,
+#pantalla-servicio,
+#pantalla-mandos,
+#pantalla-frente,
+#pantalla-tintero,
 #contLinksTorre {
   display: flex; /* Usar flexbox para centrar la imagen */
   flex-direction: row;
@@ -474,9 +479,14 @@ width:447px ;
   text-decoration: none;
   font-family: "GothamRounded", sans-serif; /* Aplica la fuente deseada */
 }
+#imgTorre-a,
+#imgTorre-s,
+#imgTorre-m,
+#imgTorre-f,
 #imgTorre{
   position: absolute;
   left: 307px;
+  top: 1px;
   height: 477px;
   width: 707px;  
 }
@@ -544,8 +554,14 @@ width:447px ;
   z-index: 0;
 }
 #agrupaOblicuos-I,
-#agrupaOblicuos-II{
-  margin-top: -17px;
+#agrupaOblicuos-II,
+#agrupaOblicuos-III,
+#agrupaOblicuos-IV,
+#agrupaOblicuos-V,
+#agrupaOblicuos-VI{
+  display: flex;
+  flex-direction: column;
+  margin-top: -555px;
   }
 #butt-1{
   position: absolute;
@@ -702,9 +718,6 @@ height: 398px;
   width: 100px;
   cursor: pointer;
 }
-#agrupaOblicuos-I{
-  display: flex;
-}
 #vid-cilImpresor{
   display: flex;
   flex-direction: row;
@@ -744,6 +757,7 @@ height: 398px;
   margin: 0 10px;
   border-radius: 7px;
 }
+#imgsRepuestos-V,
 #imgsRepuestos-IV,
 #imgsRepuestos-III,
 #imgsRepuestos-II,
@@ -751,7 +765,9 @@ height: 398px;
   display: flex;
   flex-direction: column;
   margin-left: 77px;
+  cursor: pointer;
 }
+#imgsRepuestos-V img,
 #imgsRepuestos-IV img,
 #imgsRepuestos-III img,
 #imgsRepuestos-II img,
@@ -759,6 +775,7 @@ height: 398px;
  height: 107px;
  width: 143px;
  margin-bottom: 15px; 
+ cursor: pointer;
 }
 
 .image-trainings {
