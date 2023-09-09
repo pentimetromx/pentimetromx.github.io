@@ -12,7 +12,7 @@ body, html {
   height: 100vh; /* Ajusta la altura del body para que cubra toda la pantalla */
   margin: 0; /* Elimina los márgenes predeterminados del body */
   padding: 0; /* Elimina los rellenos predeterminados del body */
-  /* overflow:hidden; */
+   /* overflow:hidden; */
 }
 
 #videoBackground {
@@ -462,6 +462,7 @@ width:447px ;
 #pantalla-mandos,
 #pantalla-frente,
 #pantalla-tintero,
+#contPortPlaca,
 #contLinksTorre {
   display: flex; /* Usar flexbox para centrar la imagen */
   flex-direction: row;
@@ -558,11 +559,12 @@ width:447px ;
 #agrupaOblicuos-III,
 #agrupaOblicuos-IV,
 #agrupaOblicuos-V,
-#agrupaOblicuos-VI{
+#agrupaOblicuos-VI,
+#agrupaOblicuos-VII{
   display: flex;
   flex-direction: column;
   margin-top: -555px;
-  }
+}
 #butt-1{
   position: absolute;
   margin-left: 1107px;
@@ -644,12 +646,6 @@ width:447px ;
   margin-top: 257px;  
 }
 
-.contOblicuos{
-  display: none;
-}
-/* .contOblicuosTorre{
-  display: none;
-} */
 .imagesTorre{
   display: none;
   height: 377px;
@@ -665,7 +661,7 @@ width:447px ;
   flex-direction: column;
 }
 #contPortPlaca {
-  display: none;
+  /* display: none; */
   display: flex;
   flex-direction: row;
   position: absolute;
@@ -741,7 +737,6 @@ height: 398px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* background-image: url('./assets/Barra\ diagonales.jpg'); */
   position: absolute;
   left: 187px;
   top: 93px;
@@ -777,7 +772,22 @@ height: 398px;
  margin-bottom: 15px; 
  cursor: pointer;
 }
-
 .image-trainings {
   transition: transform 0.1s ease, filter 0.1s ease;
+}
+
+
+
+  
+
+#imagenes-plancha {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-left: 7px;
+}
+
+.imagen-container {
+  margin-right: 7px; /* Margen entre las imágenes */
+  margin-bottom: 10px; /* Espacio vertical entre las filas de imágenes */
 }

@@ -5,9 +5,23 @@ var butInicio = document.getElementById('bot-inic')
 var botGrande = document.getElementById('iniciar')
 var imgTorreI = document.getElementById('imgTorre')
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor'];
+
+
+const grupOblicuos = document.getElementById('agrupaOblicuos-I')
+const oblicuosVI = document.getElementById('agrupaOblicuos-VI')
+const grupOblicuosVI = document.querySelectorAll('.Bot-inicio2')
+var contOblicuosMandos = document.getElementById('agrupaOblicuos-VII');
+
+
 var conteHijosTintero = ['cont-links', 'imgTorre', 'imgsRepuestos','agrupaOblicuos-II'];
 var conteHijosFrente = ['imgTorre-f','imgsRepuestos-II', 'agrupaOblicuos-III'];
 var conteHijosMandos = ['imgTorre-m','imgsRepuestos-III','agrupaOblicuos-IV'];
+var imgesDistribuidor = ['imgs-I','imgs-II','imgs-III','imgs-IV','imgs-V'];
+
+var imgesPlancha = ['portPlaca','portPlaca1','portPlaca2','portPlaca3','portPlaca4'];
+var imgesManta = ['torre','torre1','torre2','torre3'];
+
+
 
 const coleccImgFront = document.querySelectorAll('.rep-frente');
 const coleccImgIzq = document.querySelectorAll('.rep-izquierda');
@@ -23,7 +37,6 @@ const seccionMandos = document.getElementById('pantalla-mandos')
 const pantallas = ['pantalla-frente', 'pantalla-mandos','pantalla-servicio','pantalla-atras'];
 
 
-const grupOblicuos = document.getElementById('agrupaOblicuos-I')
 const contieneLinks = document.getElementById('cont-links')
 const imgsRepuestos = document.getElementById('imgsRepuestos') // HIJO IMAGENES
 const imgsRepuestosII = document.getElementById('imgsRepuestos-II') // HIJO IMAGENES 
@@ -41,15 +54,10 @@ const images = document.querySelectorAll('.image-training, .image-training-a');
 const Cilimpresor = document.getElementById('contCilImpresor')
 const imageElementsi = document.querySelectorAll('.image-training');
 const contPortaPlancha = document.getElementById('contPortPlaca')
-const imgsDeLado = document.getElementById('contPortManta')
-const padreImagenes = document.getElementById('padreImagenes')
+const contPortaManta = document.getElementById('contPortManta')
 const inputsContainer = document.getElementById('contInput');
-const portManta = document.getElementById('contPortaManta')
-const padreOblicuos = document.getElementById('agrupaOblicuos-II')
 const inputs = document.querySelectorAll('.inpt-class');
 const input = document.querySelectorAll('.input-class');
-var contOblicuosList = document.querySelectorAll('.contOblicuosTorre');
-var contOblicuosIniList = document.querySelectorAll('.contOblicuos');
 const imagesFull = document.querySelectorAll('img');
 const inpt = document.querySelectorAll('grafMini');
 
@@ -458,80 +466,103 @@ function showNextGraf() {
   }
 }
 
-function showRepuesto(parteopcionada, vidId) {
-  padreImagenes.style.display='block' // PADRE CONTENEDORES FOTOS CON DIAMETROS
-  linksTorre.style.display='block'
-  conteneMantaut.style.display='none'
-  padreOblicuos.style.display='none'         
-
-  
+function showRepuesto(parteopcionada,videoID) {
   switch (parteopcionada) {
     case 'contImgDistribuidor':
-      linksTorre.style.display='none'
-      imgsDistribuidor.style.display='flex' 
-      conteRepDistrib.forEach(pict => {
-        pict.style.display='block'
-      })
-    break;
+      conteHijosTintero.forEach(elementId => {
+        var element = document.getElementById(elementId);
+        if (element) {
+          element.style.display = 'none';
+        }
+      });
+
+      if (imgsDistribuidor) {
+        imgsDistribuidor.style.display = 'block';
+        // Recorre el arreglo y muestra las imágenes
+        var imagenesDistribuidor = document.querySelectorAll('.imag-distri');
+        imagenesDistribuidor.forEach(function(imagen) {
+          imagen.style.display = 'block';
+        });
+      }
+   break;
     case 'rodillForma':
-      linksTorre.style.display='none'
-      imgsForma.style.display='block' 
-      break;
-
+      conteHijosTintero.forEach(elementId => {
+        var element = document.getElementById(elementId);
+        if (element) {
+          element.style.display = 'none';
+        }
+      });
+      if (imgsForma) {
+        imgsForma.style.display = 'block';
+        // Recorre el arreglo y muestra las imágenes
+        var imagenesForma = document.querySelectorAll('.imag-distri');
+        imagenesForma.forEach(function(imagen) {
+          imagen.style.display = 'block';
+        });
+      }     
+    break;
     case 'portaPlancha':
+      conteHijosTintero.forEach(elementId => {
+        var element = document.getElementById(elementId);
+        if (element) {
+          element.style.display = 'none';
+        }
+      });    
       contPortaPlancha.style.display='flex'
-      linksTorre.style.display='none'
-      var imgPlancha = document.querySelectorAll('.imagesTorre') 
-      imgPlancha.forEach(imagen => { 
-        if(imagen.id!=='portPlaca'){
-          imagen.style.display='none'
-        }else{
-          imagen.style.display='block'
-        }
-      });
-      
-      var botOblicuos = document.querySelectorAll('.contOblicuos');
-      botOblicuos.forEach(boton => {
-        if (boton.classList.contains('contOblicuos')) {
-          boton.style.display = 'block';
-        }
-      });
+     var imagenesPlancha = document.querySelectorAll('.imagesTorre')
+     imagenesPlancha.forEach(function (imagen) {
+      if (imagen.id === 'portPlaca'){
+        imagen.style.display='flex'
+      }
+     })
 
-      var botOblicuos = document.querySelectorAll('.contOblicuosTorre');
-      botOblicuos.forEach(boton => {
-        if (boton.classList.contains('contOblicuosTorre')) {
-          boton.style.display = 'none';
-        }
-      });
 
+      for (let i = 0; i < grupOblicuosVI.length; i++) {
+        grupOblicuosVI[i].style.display = 'block';
+      }
+
+
+
+     
     break;       
     case 'portaMantilla':
-      linksTorre.style.display='none' 
-      Cilimpresor.style.display='flex'
-
-      var vidElements = document.querySelectorAll('.video-training');   
-      vidElements.forEach(video => {
-        if (video.id !== vidId) {
-          video.style.display = 'none';
-          video.play();      
-        } else {
-          video.style.display = 'block';
+      conteHijosTintero.forEach(elementId => {
+        var element = document.getElementById(elementId);
+        if (element) {
+          element.style.display = 'none';
         }
       });   
+      
+      // Obtener las imágenes del contenedor
+      var imagenes = imgesManta.map(function (id) {
+        return document.getElementById(id);
+      });
+      // Mostrar el contenedor
+      contPortaManta.style.display = 'block';
+      // Mostrar las imágenes
+      imagenes.forEach(function (imagen) {
+        imagen.style.display = 'block';
+      }); 
+
+
+      videoElements.forEach(video => {
+        if (video.id !== videoID) {
+          video.style.display = 'none';   
+          } else {
+          video.style.display = 'block';
+          video.pause();
+          video.currentTime = 0;
+          video.play();   
+        }});
+
+      
+      
+      
+           
+  
     break;
     case 'cilindroImpresor':
-      linksTorre.style.display='none' 
-      Cilimpresor.style.display='flex'
-
-      var vidElements = document.querySelectorAll('.video-training');   
-      vidElements.forEach(video => {
-        if (video.id !== vidId) {
-          video.style.display = 'none';
-          video.play();      
-        } else {
-          video.style.display = 'block';
-        }
-      }); 
+ 
       break;
 
     default: 
@@ -775,11 +806,11 @@ function muestraTorres (seleccion) {  // BOTON OBLICUO
       });
       for (var i = 0; i < pantallas.length; i++) {
         if (pantallas[i] === 'pantalla-frente') {
-          const elementoMandos = document.getElementById('pantalla-frente');
-          if (elementoMandos) {
-            elementoMandos.style.display = 'block';
+          const elementoFrente = document.getElementById('pantalla-frente');
+          if (elementoFrente) {
+            elementoFrente.style.display = 'block';
           }else {
-            elementoMandos.style.display = 'none';            
+            elementoFrente.style.display = 'none';            
           }
         }
       }
