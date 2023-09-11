@@ -153,7 +153,8 @@
         <a href="#" class="custom-link" id="linkImpresor" onclick="showRepuesto('cilindroImpresor', 'videoTrain01')">Cilindro impresor</a>
 
       </div>
-      <img src="./assets/Rotatek.jpg" id="imgTorre" alt="imagen-torre">
+      <img src="./assets/Arriba abajo.jpg" id="imgTorre" alt="imagen-torre">
+      <video id="vidTintero" src="./assets/Arriba abajo.mp4" muted loop autoplay></video>
 
       <div id="imgsRepuestos">
         <img class="image-trainings rep-frente" src="./assets/eje.jpg" alt="eje">
@@ -398,9 +399,29 @@
     </div> 
     <!--- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
     <div id="contPortPlaca" style="display: none;">
+      <video src="./assets/video-plancha.mp4"  id="video-placa" loop muted autoplay></video>
+      <div id="agrupaOblicuos-VIII">
+        <div id="contFrente-VI " class="contOblicuosPlaca">
+          <button class="Bot-inicio2" id="butt-1" onclick="muestraPerfiles('frente')">Frente</button>
+          <button class="Bot-inicio2-fondo" id="butt-2"></button>  
+        </div>  
+        <div id="contLateral-VI" class="contOblicuosPlaca">
+          <button class="Bot-inicio2" id="butt-3" onclick="muestraPerfiles('mandos')">Mandos</button>
+          <button class="Bot-inicio2-fondo" id="butt-4"></button>  
+        </div> 
+        <div id="contArriba-VI" class="contOblicuosPlaca">
+          <button class="Bot-inicio2" id="butt-5" onclick="muestraPerfiles('servicio')">Servicio</button>
+          <button class="Bot-inicio2-fondo" id="butt-6"></button>  
+        </div> 
+        <div id="contAtras-VI" class="contOblicuosPlaca">
+          <button class="Bot-inicio2" id="butt-7" onclick="muestraPerfiles('atras')">Atras</button>
+          <button class="Bot-inicio2-fondo" id="butt-8"></button>  
+        </div> 
+      </div>
+    </div>
 
-
-      <div id="imagenes-plancha">
+    <div id="contPerfilesPlancha">
+      <div id="imagenes-plancha" style="display: none;">
         <div class="imagen-container">
           <img src="./assets/Porta plancha2.png" class="imagesTorre" id="portPlaca" alt="porte plancha">
         </div>
@@ -427,55 +448,84 @@
         </div>
       </div>
 
-      <div id="agrupaOblicuos-VIII" style="margin-left: -1100px;">
-        <div id="contFrente-VI " class="contOblicuosPlaca">
-          <button class="Bot-inicio2" id="butt-1" onclick="muestraPerfiles('frente')">Frente</button>
+    </div>
+
+    <div id="contPortManta" style="display: none;">
+
+      <video class="video-training" id="videoManta"  src="./assets/video-portaManta.mp4" muted loop autoplay></video>
+
+      <div id="agrupaOblicuos-IX">
+        <div id="contFrente-IX" class="contOblicuosPlaca">
+          <button class="Bot-inicio2" id="butt-1" onclick="muestraAngulos('frente')">Frente</button>
           <button class="Bot-inicio2-fondo" id="butt-2"></button>  
         </div>  
-        <div id="contLateral-VI" class="contOblicuosPlaca">
-          <button class="Bot-inicio2" id="butt-3" onclick="muestraPerfiles('mandos')">Mandos</button>
+        <div id="contLateral-IX" class="contOblicuosPlaca">
+          <button class="Bot-inicio2" id="butt-3" onclick="muestraAngulos('mandos')">Mandos</button>
           <button class="Bot-inicio2-fondo" id="butt-4"></button>  
         </div> 
-        <div id="contArriba-VI" class="contOblicuosPlaca">
-          <button class="Bot-inicio2" id="butt-5" onclick="muestraPerfiles('servicio')">Servicio</button>
+        <div id="contArriba-IX" class="contOblicuosPlaca">
+          <button class="Bot-inicio2" id="butt-5" onclick="muestraAngulos('servicio')">Servicio</button>
           <button class="Bot-inicio2-fondo" id="butt-6"></button>  
         </div> 
-        <div id="contAtras-VI" class="contOblicuosPlaca">
-          <button class="Bot-inicio2" id="butt-7" onclick="muestraPerfiles('atras')">Atras</button>
+        <div id="contAtras-IX" class="contOblicuosPlaca">
+          <button class="Bot-inicio2" id="butt-7" onclick="muestraAngulos('atras')">Atras</button>
           <button class="Bot-inicio2-fondo" id="butt-8"></button>  
         </div> 
       </div>
 
     </div>
 
-    <div id="contPortManta">
-      <img src="./assets/Frente.jpg" class="imagenTorre" id="torre" alt="imageTorre">  
-      <img src="./assets/Mandos.jpg" class="imagenTorre" id="torre1" alt="imageTorre">
-      <img src="./assets/Atras.jpg" class="imagenTorre" id="torre2" alt="imageTorre">
-      <img src="./assets/Transmision.jpg" class="imagenTorre" id="torre3" alt="imageTorre">
+    <div id="contPerfilesManta">
+      <div id="imagenes-manta">
+        <div id="torre">
+          <img src="./assets/tensor cilindro.jpg" class="imagesTorre imgMant" id="manta1" alt="porte plancha">
+        </div>
+        <div id="torre1">
+          <img src="./assets/tensor doblerosca.jpg" class="imagesTorre imgMant" id="manta1" alt="porte plancha">
+        </div>
+        <div id="torre2">
+          <img src="./assets/tensor piñon.jpg" class="imagesTorre imgMant" id="manta2" alt="porte plancha">
+        </div>
+        <div id="torre3">
+          <img src="./assets/tensor rosca.jpg" class="imagesTorre imgMant" id="manta2" alt="porte plancha">
+        </div>
+        <div id="torre4">
+          <img src="./assets/tensor rotula.jpg" class="imagesTorre imgMant" id="manta3" alt="porte plancha">
+        </div>
+        <div id="torre5">
+          <img src="./assets/tensor rotulas.jpg" class="imagesTorre imgMant" id="manta3" alt="porte plancha">
+        </div>
+        <div id="torre6">
+          <img src="./assets/tensor rotulaz.jpg" class="imagesTorre imgMant" id="manta4" alt="porte plancha">
+        </div>
+        <div id="torre7">
+          <img src="./assets/tensor avanzado.jpg" class="imagesTorre imgMant" id="manta4" alt="porte plancha">
+        </div>
+      </div>       
     </div>
 
+    <div id="contImpresor" style="display: none;">
+
+      <video class="video-training" id="video-impresor" src="./assets/video-impresor.mp4" loop muted autoplay></video>
 
 
-    <div id="contLinksTorre" style="display: none;">
+      <div class="oblicuosContra">
+        <button class="Bot-inicio2" id="butt-1" onclick="muestraLados('frente')">Frente</button>
+        <button class="Bot-inicio2-fondo" id="butt-2"></button>  
+      </div>  
+      <div class="oblicuosContra">
+        <button class="Bot-inicio2" id="butt-3" onclick="muestraLados('mandos')">Mandos</button>
+        <button class="Bot-inicio2-fondo" id="butt-4"></button>  
+      </div> 
+      <div class="oblicuosContra">
+        <button class="Bot-inicio2" id="butt-5" onclick="muestraLados('servicio')">Servicio</button>
+        <button class="Bot-inicio2-fondo" id="butt-6"></button>  
+      </div> 
+      <div class="oblicuosContra">
+        <button class="Bot-inicio2" id="butt-7" onclick="muestraLados('atras')">Atras</button>
+        <button class="Bot-inicio2-fondo" id="butt-8"></button>  
+      </div> 
 
-
-      <div id="contPortaManta" style="display: none;">
-        <video class="video-training" id="videoTrain00" src="./assets/Porta mantilla.mp4" autoplay loop muted></video>
-      </div>
-
-      <div id="contCilImpresor" style="display: none;">
-
-        <button class="botImagRodamCil image-trainings" id="botImgCil" type="button" onclick="videosImpresor('videoTrain00')" style="background-image: url('./assets/Rodamiento cilindro.jpg'); background-size: cover;"></button>
-        <button class="botImagRodamCil image-trainings" id="botImgCil-2" type="button" onclick="videosImpresor('videoTrain02')" style="background-image: url('./assets/Impresor\ imagen.jpg'); background-size: cover;"></button>
-      </div>
-
-      <div id="vid-cilImpresor">
-        <video class="video-training" id="videoTrain01" src="./assets/Cilindro contraimpresor.mp4" autoplay muted></video>
-        <video class="video-training" id="videoTrain00" src="./assets/Desarme rodamiento.mp4"></video>
-        <video class="video-training" id="videoTrain02" src="./assets/Cilindro impresor desarme.mp4"></video>
-        <video class="video-training" id="videoTrain03" src="./assets/Cilindro mantilla.mp4" autoplay muted></video>
-      </div>   
     </div>
     
     <div id="contImgDistribuidor" style="display: none;">
@@ -516,24 +566,23 @@
         <img src="./assets/forma-4.jpg" class="imag-distri image-trainings" alt="imgDistrib-21">
       </div>
       <div class="imgRow">
-        <img src="./assets/" class="imag-distri image-trainings" alt="imgDistrib-22"> 
-        <img src="./assets/" class="imag-distri image-trainings"  alt="imgDistrib-23">
-        <img src="./assets/" class="imag-distri image-trainings" alt="imgDistrib-24">
-        <img src="./assets/" class="imag-distri image-trainings" alt="imgDistrib-25">
+        <img class="imag-distri image-trainings"> 
+        <img class="imag-distri image-trainings">
+        <img class="imag-distri image-trainings">
+        <img class="imag-distri image-trainings">
       </div>
       <div class="imgRow">
-        <img src="./assets/" class="imag-distri image-trainings" alt="imgDistrib-26">
-        <img src="./assets/" class="imag-distri image-trainings" alt="imgDistrib-27">
-        <img src="./assets/" class="imag-distri image-trainings" alt="imgDistrib-28">
-        <img src="./assets/" class="imag-distri image-trainings" alt="imgDistrib-29">
+        <img class="imag-distri image-trainings">
+        <img class="imag-distri image-trainings">
+        <img class="imag-distri image-trainings">
+        <img class="imag-distri image-trainings">
       </div>
       <div class="imgRow">
-        <img src="./assets/" class="imag-distri image-trainings" alt="imgDistrib-30">
-        <img src="./assets/" class="imag-distri image-trainings" alt="imgDistrib-31">
-        <img src="./assets/" class="imag-distri image-trainings" alt="imgDistrib-32">
+        <img class="imag-distri image-trainings">
+        <img class="imag-distri image-trainings">
+        <img class="imag-distri image-trainings">
       </div>
     </div> 
-
 
     <script src="./Matriz.js"></script>    
   </body>

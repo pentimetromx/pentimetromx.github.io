@@ -9,7 +9,8 @@ var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','port
 
 const grupOblicuos = document.getElementById('agrupaOblicuos-I')
 const oblicuosVI = document.getElementById('agrupaOblicuos-VI')
-const grupOblicuosVI = document.querySelectorAll('.Bot-inicio2')
+
+const contOblicuosX = document.querySelectorAll('.BotObliX')
 var contOblicuosMandos = document.getElementById('agrupaOblicuos-VII');
 
 
@@ -19,7 +20,8 @@ var conteHijosMandos = ['imgTorre-m','imgsRepuestos-III','agrupaOblicuos-IV'];
 var imgesDistribuidor = ['imgs-I','imgs-II','imgs-III','imgs-IV','imgs-V'];
 
 var imgesPlancha = ['portPlaca','portPlaca1','portPlaca2','portPlaca3','portPlaca4'];
-var imgesManta = ['torre','torre1','torre2','torre3'];
+var imgesManta = document.querySelectorAll('.imgMant')
+var contImgsManta = document.getElementById('contPerfilesManta');
 
 
 
@@ -51,10 +53,10 @@ const imgsDistribuidor = document.getElementById('contImgDistribuidor')
 const imgsForma = document.getElementById('contImgEntintador')
 const toggleVideoButton = document.getElementById("toggleVideoButton");
 const images = document.querySelectorAll('.image-training, .image-training-a'); 
-const Cilimpresor = document.getElementById('contCilImpresor')
 const imageElementsi = document.querySelectorAll('.image-training');
 const contPortaPlancha = document.getElementById('contPortPlaca')
 const contPortaManta = document.getElementById('contPortManta')
+const contImpresor = document.getElementById('contImpresor')
 const inputsContainer = document.getElementById('contInput');
 const inputs = document.querySelectorAll('.inpt-class');
 const input = document.querySelectorAll('.input-class');
@@ -134,20 +136,22 @@ function muestraTintero(elementId) {
   videoBackground.pause();
   videoBackground.style.display = 'none'; // Oculta el video
   seccionTintero.style.display='block'
+
+    const video = document.getElementById("vidTintero");
+
+    // Reproducir el video
+    video.play();
+    // Después de 3 segundos, ocultar el video
+    setTimeout(function() {
+    video.style.display = "none"; // Esto ocultará el elemento de video
+    }, 2000); // 3000 milisegundos = 3 segundos
+
   if (!idsArray.includes(elementId)) {
     idsArray.push(elementId);
     console.log(idsArray)
     }
 
-    /*   // Paso 2: Crear un bucle para hacer visibles los contenedores
-      contenedoresHijo.forEach(function(contenedorID) {
-        var contenedor = document.getElementById(contenedorID);
 
-        // Verificar si el contenedor existe antes de mostrarlo
-        if (contenedor) {
-          contenedor.style.display = 'block'; // O cualquier otra propiedad CSS que desees
-        }
-      }); */
 }
 
 function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
@@ -467,6 +471,8 @@ function showNextGraf() {
 }
 
 function showRepuesto(parteopcionada,videoID) {
+  const botsOblicuos = document.querySelectorAll('.Bot-inicio2, .Bot-inicio2-fondo');
+  var contOblicuos = document.getElementById('agrupaOblicuos-X');
   switch (parteopcionada) {
     case 'contImgDistribuidor':
       conteHijosTintero.forEach(elementId => {
@@ -516,13 +522,9 @@ function showRepuesto(parteopcionada,videoID) {
       }
      })
 
-
-      for (let i = 0; i < grupOblicuosVI.length; i++) {
-        grupOblicuosVI[i].style.display = 'block';
+      for (let i = 0; i < botsOblicuos.length; i++) {
+        botsOblicuos[i].style.display = 'block';
       }
-
-
-
      
     break;       
     case 'portaMantilla':
@@ -531,114 +533,198 @@ function showRepuesto(parteopcionada,videoID) {
         if (element) {
           element.style.display = 'none';
         }
-      });   
-      
-      // Obtener las imágenes del contenedor
-      var imagenes = imgesManta.map(function (id) {
-        return document.getElementById(id);
-      });
-      // Mostrar el contenedor
-      contPortaManta.style.display = 'block';
-      // Mostrar las imágenes
-      imagenes.forEach(function (imagen) {
-        imagen.style.display = 'block';
-      }); 
-
-
+      });       
+      contPortaManta.style.display='block'
       videoElements.forEach(video => {
-        if (video.id !== videoID) {
-          video.style.display = 'none';   
-          } else {
-          video.style.display = 'block';
-          video.pause();
-          video.currentTime = 0;
-          video.play();   
-        }});
-
-      
-      
-      
-           
-  
+      if (video.id !== 'videoManta') {
+        video.style.display = 'none';   
+        } else {
+        video.style.display = 'block';
+        video.pause();
+        video.currentTime = 0;
+        video.play();   
+      }});  
     break;
     case 'cilindroImpresor':
- 
-      break;
+      conteHijosTintero.forEach(elementId => {
+        var element = document.getElementById(elementId);
+        if (element) {
+          element.style.display = 'none';
+        }
+      }); 
+
+      contImpresor.style.display='block'
+
+      videoElements.forEach(video => {
+      if (video.id !== 'video-impresor') {
+        video.style.display = 'none';   
+        } else {
+        video.style.display = 'block';
+        video.pause();
+        video.currentTime = 0;
+        video.play();   
+      }});  
+      
+      for (let i=0; i<botsOblicuos.length; i++){
+        botsOblicuos[i].style.display='block'
+      }
+
+    break;
 
     default: 
-  }
+  }  
 } 
 
 function muestraPerfiles(ladoSeleccion){
-  var imgPlancha = document.querySelectorAll('.imagesTorre')  
-
-  switch (ladoSeleccion) {
+  var video = document.getElementById('video-placa');
+  var imgPlancha = document.querySelectorAll('.imagesTorre') 
+  var imagesPlancha = document.getElementById('imagenes-plancha') 
+  imgPlancha.forEach(imagen => { 
+      imagen.style.display='none'    
+  });
+    switch (ladoSeleccion) {
     case 'frente':
-        imgPlancha.forEach(imagen => { 
-        if(imagen.id==='portPlaca'){
-          imagen.style.display='block'
-        }else {
-          imagen.style.display='none'
-        }
-      });
+    // Detener el video
+    video.pause();
+    // Ocultar el video estableciendo su estilo de visualización en 'none'
+    video.style.display = 'none';
+    imagesPlancha.style.display='flex'
+
+   imgPlancha.forEach(imagen => { 
+    if(imagen.id==='portPlaca'){
+      imagen.style.display='block'
+    }else {
+      imagen.style.display='none'
+    }
+    });
     break;
     case 'mandos':
-        imgPlancha.forEach(imagen => { 
-        if(imagen.id==='portPlaca2'){
-          imagen.style.display='block'
-        }else {
-          imagen.style.display='none'
-        }
-      });
+    video.pause();
+    video.style.display = 'none';
+    imagesPlancha.style.display='flex'
+   imgPlancha.forEach(imagen => { 
+    if(imagen.id==='portPlaca2'){
+      imagen.style.display='block'
+    }else {
+      imagen.style.display='none'
+    }
+    });
       break;     
     case 'servicio':
-        imgPlancha.forEach(imagen => { 
-        if(imagen.id==='portPlaca3'){
-          imagen.style.display='block'
-        }else {
-          imagen.style.display='none'
-        }
+      video.pause();
+      video.style.display = 'none';
+      imagesPlancha.style.display='flex'
+     imgPlancha.forEach(imagen => { 
+      if(imagen.id==='portPlaca3'){
+        imagen.style.display='block'
+      }else {
+        imagen.style.display='none'
+      }
       });
     break;
     case 'atras':
-        imgPlancha.forEach(imagen => { 
-        if(imagen.id==='portPlaca4'){
-          imagen.style.display='block'
-        }else {
-          imagen.style.display='none'
-        }
+      video.pause();
+      video.style.display = 'none';
+      imagesPlancha.style.display='flex'
+     imgPlancha.forEach(imagen => { 
+      if(imagen.id==='portPlaca4'){
+        imagen.style.display='block'
+      }else {
+        imagen.style.display='none'
+      }
       });
     break;
     default:
   }
 }
 
-  // Agregar evento de pantalla completa a cada imagen
-  imagesFull.forEach(image => {
-    image.addEventListener('click', () => {
-      if (!document.fullscreenElement) {
-        if (image.requestFullscreen) {
-          image.requestFullscreen();
-        } else if (image.mozRequestFullScreen) { // Firefox
-          image.mozRequestFullScreen();
-        } else if (image.webkitRequestFullscreen) { // Chrome, Safari and Opera
-          image.webkitRequestFullscreen();
-        } else if (image.msRequestFullscreen) { // IE/Edge
-          image.msRequestFullscreen();
-        }
-      } else {
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        } else if (document.mozCancelFullScreen) { // Firefox
-          document.mozCancelFullScreen();
-        } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
-          document.webkitExitFullscreen();
-        } else if (document.msExitFullscreen) { // IE/Edge
-          document.msExitFullscreen();
-        }
+function muestraAngulos(anguloSel){
+    switch (anguloSel) {
+    case 'frente':
+    contPortaManta.style.display='block'
+    videoElements.forEach(video => {
+    if (video.id == 'videoManta') {
+      video.style.display = 'none';   
+      }}); 
+
+    contImgsManta.style.display='block'
+
+    for(var i = 0; i < imgesManta.length; i ++){
+      if(imgesManta[i].id == 'manta1'){
+        imgesManta[i].style.display='block'
+      }else{imgesManta[i].style.display='none'}
+    }
+    break;
+    case 'mandos':
+      contPortaManta.style.display='block'
+      videoElements.forEach(video => {
+      if (video.id == 'videoManta') {
+        video.style.display = 'none';   
+        }});   
+      contImgsManta.style.display='block'  
+      for(var i = 0; i < imgesManta.length; i ++){
+        if(imgesManta[i].id == 'manta2'){
+          imgesManta[i].style.display='block'
+        }else{imgesManta[i].style.display='none'}
       }
-    });
+      break;     
+    case 'servicio':
+      contPortaManta.style.display='block'
+      videoElements.forEach(video => {
+      if (video.id == 'videoManta') {
+        video.style.display = 'none';   
+        }});   
+      contImgsManta.style.display='block'  
+      for(var i = 0; i < imgesManta.length; i ++){
+        if(imgesManta[i].id == 'manta3'){
+          imgesManta[i].style.display='block'
+        }else{imgesManta[i].style.display='none'}
+      }
+    break;
+    case 'atras':
+      contPortaManta.style.display='block'
+      videoElements.forEach(video => {
+      if (video.id == 'videoManta') {
+        video.style.display = 'none';   
+        }});   
+      contImgsManta.style.display='block'  
+      for(var i = 0; i < imgesManta.length; i ++){
+        if(imgesManta[i].id == 'manta4'){
+          imgesManta[i].style.display='block'
+        }else{imgesManta[i].style.display='none'}
+      }
+    break;
+    default:
+  }
+}
+
+
+// Agregar evento de pantalla completa a cada imagen
+imagesFull.forEach(image => {
+  image.addEventListener('click', () => {
+    if (!document.fullscreenElement) {
+      if (image.requestFullscreen) {
+        image.requestFullscreen();
+      } else if (image.mozRequestFullScreen) { // Firefox
+        image.mozRequestFullScreen();
+      } else if (image.webkitRequestFullscreen) { // Chrome, Safari and Opera
+        image.webkitRequestFullscreen();
+      } else if (image.msRequestFullscreen) { // IE/Edge
+        image.msRequestFullscreen();
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) { // IE/Edge
+        document.msExitFullscreen();
+      }
+    }
   });
+});
 
 //////////////////////////////////////////////////////////////////////////
 

@@ -59,7 +59,6 @@ h1, h2, h3 {
   text-align: center;
   transition: transform 0.1s; 
 }
-
 .boton-a:hover,
 .boton-b:hover,
 .boton-c:hover,
@@ -379,19 +378,14 @@ width:447px ;
 .contGrafNeg {
   display: flex;
   flex-direction: row;
-  
-}
+  }
 .conti-boton{
   display: flex;
   flex-direction: column;
   margin-top: 57px;
   margin-left:20px;
 }
-/* #conteneMantaut{
-  display: flex;
-  flex-direction: row;
-}
- */#contImagGraf{
+#contImagGraf{
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -424,7 +418,6 @@ width:447px ;
   cursor: pointer;
   padding-left: 27px;
 }
-/* .butt-mautonomo::after, */
 .butt-mautonomo::before {
   content: "";
   position: absolute;
@@ -436,10 +429,6 @@ width:447px ;
 .butt-mautonomo::before {
   left: 0;
 }
-/* .butt-mautonomo::after {
-  right: 0;
-} */
-
 #canvasContainer2 {
   display: none;
   flex-direction: row;
@@ -472,7 +461,8 @@ width:447px ;
 }
 #cont-links{
   position: absolute;
-  top: -1px;
+  top: -13px;
+  left: 27px;
 }
 .custom-link {
   position: relative; /* Asegura que la posición no sea static */
@@ -480,16 +470,24 @@ width:447px ;
   text-decoration: none;
   font-family: "GothamRounded", sans-serif; /* Aplica la fuente deseada */
 }
+#vidTintero,
 #imgTorre-a,
 #imgTorre-s,
 #imgTorre-m,
-#imgTorre-f,
-#imgTorre{
+#imgTorre-f{
   position: absolute;
   left: 307px;
   top: 1px;
   height: 477px;
   width: 707px;  
+}
+#imgTorre{
+  position: absolute;
+  left: 341px;
+  top: 1px;
+  height: 477px;
+  /* width: 707px; */ 
+  width: 637px;
 }
 #linkDistribuidor{
   position: absolute;
@@ -523,14 +521,9 @@ width:447px ;
   width: 177px;  
   top: 336px;
 }
-#padreLinks{
-  display: flex;
-  flex-direction: row;
-}
 .Bot-inicio2,
 .Bot-inicio{
   background-color: #302928;
-/*   position: absolute; */
   color: white;
   border-radius: 7px;
   width: 77px;
@@ -560,7 +553,8 @@ width:447px ;
 #agrupaOblicuos-IV,
 #agrupaOblicuos-V,
 #agrupaOblicuos-VI,
-#agrupaOblicuos-VII{
+#agrupaOblicuos-VII,
+#agrupaOblicuos-X{
   display: flex;
   flex-direction: column;
   margin-top: -555px;
@@ -570,17 +564,7 @@ width:447px ;
   margin-left: 1107px;
   margin-top: 77px;
 } 
-#butt-01{
-  position: absolute;
-  margin-left: 1107px;
-  margin-top: 77px;
-}
 #butt-2{
-  position: absolute;
-  margin-left: 1107px;
-  margin-top: 77px;
-}
-#butt-02{
   position: absolute;
   margin-left: 1107px;
   margin-top: 77px;
@@ -590,17 +574,7 @@ width:447px ;
   margin-left: 1107px;
   margin-top: 137px;
 } 
-#butt-03{
-  position: absolute;
-  margin-left: 1107px;
-  margin-top: 137px;
-} 
 #butt-4{
-  position: absolute;
-  margin-left: 1107px;
-  margin-top: 137px;
-}
-#butt-04{
   position: absolute;
   margin-left: 1107px;
   margin-top: 137px;
@@ -610,17 +584,7 @@ width:447px ;
   margin-left: 1107px;
   margin-top: 197px;
 } 
-#butt-05{
-  position: absolute;
-  margin-left: 1107px;
-  margin-top: 197px;
-} 
 #butt-6{
-  position: absolute;
-  margin-left: 1107px;
-  margin-top: 197px;
-}
-#butt-06{
   position: absolute;
   margin-left: 1107px;
   margin-top: 197px;
@@ -630,38 +594,20 @@ width:447px ;
   margin-left: 1107px;
   margin-top: 257px;
 } 
-#butt-07{
-  position: absolute;
-  margin-left: 1107px;
-  margin-top: 257px;
-}
 #butt-8{
   position: absolute;
   margin-left: 1107px;
   margin-top: 257px;  
 }
-#butt-08{
-  position: absolute;
-  margin-left: 1107px;
-  margin-top: 257px;  
-}
-
 .imagesTorre{
   display: none;
   height: 377px;
+  width: 503px;
   border-radius: 10px;   
 }
-.imagenTorre{
-  display: none;
-  height: 477px;
-  width: 627px;
-}
-#padreImagenes{
-  display: flex;
-  flex-direction: column;
-}
+#contPortManta,
+#contImpresor,
 #contPortPlaca {
-  /* display: none; */
   display: flex;
   flex-direction: row;
   position: absolute;
@@ -669,17 +615,18 @@ width:447px ;
   top: 77px;
   gap: 10px; /* Espacio entre las imágenes */
 }
+#contPortManta img,
+#contImpresor img,
 #contPortPlaca img{
 width: 530px;
 height: 398px;
 }
-#contPortManta {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+#contPortManta video,
+#contImpresor video,
+#contPortPlaca video{
   position: absolute;
-  top: 87px;
-  left: 307px;
+  left: 333px;
+  height: 477px;
 }
 #contPortaManta{  
   display: flex;
@@ -690,47 +637,6 @@ height: 398px;
 }
 #contPortaManta video{  
   height: 477px;
-}
-#contCilImpresor{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-#imgCilImpresor{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: absolute;
-  top: 77px;
-  left: 100px;
-}
-#botImgCil-2,
-#botImgCil{
-  border: 7px solid grey;
-  display: inline-block;
-  padding: 5px;
-  border-radius: 7px;
-  height: 100px;
-  width: 100px;
-  cursor: pointer;
-}
-#vid-cilImpresor{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  position: absolute;
-  top: 77px;
-  left: 340px;
-}
-#vid-cilImpresor video{
-  width: 636px;
-  height: 477px;
-}
-.botImagRodamCil {
-  background-size: cover;
-  border: none;
-  padding: 0;
-  margin-bottom: 10px; /* Agregar margen inferior de 10px entre botones */
 }
 #contImgEntintador,
 #contImgDistribuidor {
@@ -775,18 +681,14 @@ height: 398px;
 .image-trainings {
   transition: transform 0.1s ease, filter 0.1s ease;
 }
-
-
-
-  
-
+#imagenes-manta,
 #imagenes-plancha {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   margin-left: 7px;
 }
-
+.imgMant,
 .imagen-container {
   margin-right: 7px; /* Margen entre las imágenes */
   margin-bottom: 10px; /* Espacio vertical entre las filas de imágenes */
