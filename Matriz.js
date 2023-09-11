@@ -137,19 +137,19 @@ function muestraTintero(elementId) {
   videoBackground.style.display = 'none'; // Oculta el video
   seccionTintero.style.display='block'
 
-    const video = document.getElementById("vidTintero");
+  const video = document.getElementById("vidTintero");
 
-    // Reproducir el video
-    video.play();
-    // Después de 3 segundos, ocultar el video
-    setTimeout(function() {
-    video.style.display = "none"; // Esto ocultará el elemento de video
-    }, 2000); // 3000 milisegundos = 3 segundos
+  // Reproducir el video
+  video.play();
+  // Después de 3 segundos, ocultar el video
+  setTimeout(function() {
+  video.style.display = "none"; // Esto ocultará el elemento de video
+  }, 2000); // 2000 milisegundos = 2 segundos
 
-  if (!idsArray.includes(elementId)) {
-    idsArray.push(elementId);
-    console.log(idsArray)
-    }
+ if (!idsArray.includes(elementId)) {
+  idsArray.push(elementId);
+  console.log(idsArray)
+  }
 
 
 }

@@ -471,16 +471,16 @@ width:447px ;
   font-family: "GothamRounded", sans-serif; /* Aplica la fuente deseada */
 }
 #vidTintero,
-#imgTorre-a,
 #imgTorre-s,
-#imgTorre-m,
-#imgTorre-f{
+#imgTorre-m{
   position: absolute;
   left: 307px;
   top: 1px;
   height: 477px;
   width: 707px;  
 }
+#imgTorre-a,
+#imgTorre-f,
 #imgTorre{
   position: absolute;
   left: 341px;
