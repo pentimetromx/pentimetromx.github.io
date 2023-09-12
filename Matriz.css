@@ -12,7 +12,7 @@ body, html {
   height: 100vh; /* Ajusta la altura del body para que cubra toda la pantalla */
   margin: 0; /* Elimina los márgenes predeterminados del body */
   padding: 0; /* Elimina los rellenos predeterminados del body */
-   /* overflow:hidden; */
+  overflow:hidden;
 }
 
 #videoBackground {
@@ -47,6 +47,11 @@ h1, h2, h3 {
   border-radius: 7px;
   position: absolute;
   top: 5px;
+}
+.maq-seccion{
+  border: 6px solid gray; border-radius: 7px;
+  height:77px;
+  width: 102px;
 }
 .boton-b{
   height: 47px;
@@ -96,7 +101,7 @@ transform: scale(1.1);
   cursor: pointer;
   transition: transform 0.1s; 
 }
-#bot-mantaut{
+/* #bot-mantaut{
   height: 47px;
   width: 247px;
   margin-top: 17px;
@@ -110,7 +115,7 @@ transform: scale(1.1);
   justify-content: center;
   cursor: pointer;
   transition: transform 0.1s; 
-}
+} */
 .boton-e:hover {
   transform: scale(1.1);
 }
@@ -692,4 +697,70 @@ height: 398px;
 .imagen-container {
   margin-right: 7px; /* Margen entre las imágenes */
   margin-bottom: 10px; /* Espacio vertical entre las filas de imágenes */
+}
+
+
+
+
+#textToColor {
+  color: white;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+/* Estilos para el contenedor del título */
+#titleContainer {
+  position: absolute;
+  left: 807px;
+  display: flex;
+  align-items: center;
+
+
+}
+
+/* Estilo para el punto después del título */
+#titleContainer::after {
+  content: " ";
+  color: transparent;
+}
+
+/* Estilo para la línea debajo del título */
+#line {
+  position: absolute;
+  left: 807px;
+  top: 42px;
+  width: 0;
+  height: 7px;
+  background-color: blue;
+  transition: 0.1s;
+}
+
+/* Estilos para la lista de enlaces */
+#linkList {
+  display: none;
+  list-style: none;
+  width: 511px;
+  padding: 0;
+  position: absolute;
+  left: 807px;
+  top: 47px;
+  background-color: blue;
+  z-index: 7;
+}
+
+#linkList li {
+  margin: 5px 0;
+}
+
+/* Estilo para los enlaces cuando se muestran */
+#linkList a {
+  color: white;
+}
+
+/* Estilo para la línea debajo de los enlaces cuando el puntero está sobre ellos */
+#linkList li:hover {
+  background-color:yellow;          
+}
+#linkList li:hover a {
+  color: black;
 }

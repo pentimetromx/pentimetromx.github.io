@@ -37,6 +37,7 @@ const seccionTintero = document.getElementById('pantalla-tintero')
 const seccionFrente = document.getElementById('pantalla-frente')
 const seccionMandos = document.getElementById('pantalla-mandos')
 const pantallas = ['pantalla-frente', 'pantalla-mandos','pantalla-servicio','pantalla-atras'];
+const linkIniciales = document.getElementById('links-iniciales')
 
 
 const contieneLinks = document.getElementById('cont-links')
@@ -132,6 +133,9 @@ function muestraTintero(elementId) {
   for (var i = 0; i < elementsToHide.length; i++) {
     elementsToHide[i].style.display = 'none';
   }
+
+  linkIniciales.style.display='none'
+
   var videoBackground = document.getElementById('videoBackground');
   videoBackground.pause();
   videoBackground.style.display = 'none'; // Oculta el video
@@ -144,7 +148,7 @@ function muestraTintero(elementId) {
   // Después de 3 segundos, ocultar el video
   setTimeout(function() {
   video.style.display = "none"; // Esto ocultará el elemento de video
-  }, 2000); // 2000 milisegundos = 2 segundos
+  }, 977); // 2000 milisegundos = 2 segundos
 
  if (!idsArray.includes(elementId)) {
   idsArray.push(elementId);
@@ -1223,4 +1227,42 @@ zoomableImages.forEach((zoomableImage) => {
     zoomableImage.style.transform = 'translate(0, 0) scale(1)';
   });
 });
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+const textToColor = document.getElementById("textToColor");
+const line = document.getElementById("line");
+const linkList = document.getElementById("linkList");
+let hoverTimeout;
+let hideTimeout;
+
+textToColor.addEventListener("mouseover", () => {
+    clearTimeout(hideTimeout);
+    hoverTimeout = setTimeout(() => {
+        linkList.style.display = "block";
+        line.style.width = textToColor.offsetWidth + "px";
+    }, 100);
+});
+
+linkList.addEventListener("mouseover", () => {
+    clearTimeout(hideTimeout);
+});
+
+textToColor.addEventListener("mouseout", () => {
+    clearTimeout(hoverTimeout);
+    hideTimeout = setTimeout(() => {
+        textToColor.style.color = "white";
+        linkList.style.display = "none";
+        line.style.width = "0";
+    }, 200);
+});
+
+linkList.addEventListener("mouseout", () => {
+    hideTimeout = setTimeout(() => {
+        textToColor.style.color = "white";
+        linkList.style.display = "none";
+        line.style.width = "0";
+    }, 500);
+});
