@@ -4,15 +4,24 @@ var btnAtras = document.getElementById('bot-atras');
 var butInicio = document.getElementById('bot-inic')
 var botGrande = document.getElementById('iniciar')
 var imgTorreI = document.getElementById('imgTorre')
+var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contImgDistribuidor','contImgEntintador','']
+var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado']
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor'];
-
+var allContTintero = ['pantalla-tintero','cont-links','imgTorre','vidTintero','imgsRepuestos','agrupaOblicuos-II',''];
 
 const grupOblicuos = document.getElementById('agrupaOblicuos-I')
 const oblicuosVI = document.getElementById('agrupaOblicuos-VI')
 
 const contOblicuosX = document.querySelectorAll('.BotObliX')
 var contOblicuosMandos = document.getElementById('agrupaOblicuos-VII');
+let contVariable = document.getElementById('cont-variable');
+let contPlana = document.getElementById('cont-plana');
 
+const textToColor = document.getElementById("textToColor");
+const line = document.getElementById("line");
+const linkList = document.getElementById("linkList");
+let hoverTimeout;
+let hideTimeout;
 
 var conteHijosTintero = ['cont-links', 'imgTorre', 'imgsRepuestos','agrupaOblicuos-II'];
 var conteHijosFrente = ['imgTorre-f','imgsRepuestos-II', 'agrupaOblicuos-III'];
@@ -22,8 +31,6 @@ var imgesDistribuidor = ['imgs-I','imgs-II','imgs-III','imgs-IV','imgs-V'];
 var imgesPlancha = ['portPlaca','portPlaca1','portPlaca2','portPlaca3','portPlaca4'];
 var imgesManta = document.querySelectorAll('.imgMant')
 var contImgsManta = document.getElementById('contPerfilesManta');
-
-
 
 const coleccImgFront = document.querySelectorAll('.rep-frente');
 const coleccImgIzq = document.querySelectorAll('.rep-izquierda');
@@ -81,8 +88,19 @@ console.log(idsArray)
 
 function VolveraInicio(){
   location.reload();
-  document.body.style.overflow = 'block';
   idsArray = [];
+  allContenedores.forEach(elemen => {
+    var element = document.getElementById(elemen);
+    if (element) {
+      element.style.display = 'none';
+    }
+  });
+  allContIniciales.forEach(elements => {
+    var element = document.getElementById(elements);
+    if (element) {
+      element.style.display = 'flex';
+    }
+  });
 }
 
 function irContenedorAnterior() {
@@ -125,16 +143,23 @@ function botoGrand() {
 }
 
 function muestraTintero(elementId) {
-  var elementsToHide = document.querySelectorAll('.alimentador, .uTeñido, .desbobinador,.unidProceso,.rebobinador, .contTorrImp'); 
-  btnAtras.style.display='block'
-  btnAtras.style.left='313px'
-  botGrande.style.left='333px'
-  butInicio.style.left='297px'
-  for (var i = 0; i < elementsToHide.length; i++) {
-    elementsToHide[i].style.display = 'none';
+  
+  // Recorre el array y oculta los elementos por su ID
+  for (var i = 0; i < allContenedores.length; i++) {
+    var elemento = document.getElementById(allContenedores[i]);
+    if (elemento) {
+      elemento.style.display = 'none';
+    }
   }
 
-  linkIniciales.style.display='none'
+    // Recorre el array y oculta los elementos por su ID
+    for (var i = 0; i < allContTintero.length; i++) {
+      var elemento = document.getElementById(allContTintero[i]);
+      if (elemento) {
+        elemento.style.display = 'flex';
+      }
+    }  
+
 
   var videoBackground = document.getElementById('videoBackground');
   videoBackground.pause();
@@ -154,8 +179,6 @@ function muestraTintero(elementId) {
   idsArray.push(elementId);
   console.log(idsArray)
   }
-
-
 }
 
 function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
@@ -995,8 +1018,54 @@ function videosImpresor(videoId) {
 
     default: 
   } 
-}  
+} 
+function abrirSeccionContinua(){
+  /* location.reload(); */
+  allContenedores.forEach(elemen => {
+    var element = document.getElementById(elemen);
+    if (element) {
+      element.style.display = 'none';
+    }
+  });
+  allContIniciales.forEach(elemen => {
+    var element = document.getElementById(elemen);
+    if (element) {
+      element.style.display = 'flex';
+    }
+  });
+  contVariable.style.display='none'
+  contPlana.style.display='none'
+  linkList.style.display = "none";
+}
+function abrirSeccionVariable(){
+  allContenedores.forEach(elementId => {
+    var element = document.getElementById(elementId);
+    if (element) {
+      element.style.display = 'none';
+    }
+  });
+  contPlana.style.display='none'
+  contVariable.style.display='flex'
+  linkList.style.display = "none";
+} 
+function abrirSeccionPlanas(){
+  allContenedores.forEach(elementId => {
+    var element = document.getElementById(elementId);
+    if (element) {
+      element.style.display = 'none';
+    }
+  });
+  contVariable.style.display='none'
+  contPlana.style.display='flex'
+  linkList.style.display = "none";
+}
+function cerrarSecciones(){
+  var linkList = document.getElementById("linkList");
+  contVariable.style.display='none'
+  contPlana.style.display='none'
+  linkList.style.display = "none";
 
+}
 var chart = new Chart(miCanvas, {
     type: 'bar',    
     data: {
@@ -1228,22 +1297,12 @@ zoomableImages.forEach((zoomableImage) => {
   });
 });
 
-
-
-
-
-const textToColor = document.getElementById("textToColor");
-const line = document.getElementById("line");
-const linkList = document.getElementById("linkList");
-let hoverTimeout;
-let hideTimeout;
-
 textToColor.addEventListener("mouseover", () => {
     clearTimeout(hideTimeout);
     hoverTimeout = setTimeout(() => {
         linkList.style.display = "block";
         line.style.width = textToColor.offsetWidth + "px";
-    }, 100);
+    }, 77);
 });
 
 linkList.addEventListener("mouseover", () => {
@@ -1256,7 +1315,7 @@ textToColor.addEventListener("mouseout", () => {
         textToColor.style.color = "white";
         linkList.style.display = "none";
         line.style.width = "0";
-    }, 200);
+    }, 100);
 });
 
 linkList.addEventListener("mouseout", () => {

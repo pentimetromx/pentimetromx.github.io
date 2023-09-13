@@ -14,32 +14,29 @@
       <source src="./assets/Rotatek.mp4" type="video/mp4">  
     </video>
 
-    <div class="contene-1" id="container1">
+    <div id="links-iniciales" style="position: absolute;left: 233px;font-family: 'GothamRounded', sans-serif;">
+      <div class="iridescent-element" id="line"></div>
+      <div id="titleContainer">
+        <p id="textToColor" style="position: relative;">Entrenamientos <span style="color:blue; position: relative; top: -17px;left: 115px;">&#9660;</span></p>
+      </div>
+      
+      <ul class="iridescent-element" id="linkList">
+        <li><a href="#" onclick="abrirSeccionContinua()">Impresion rotativa / flexográfica</a></li><br>
+          <li><a href="#" onclick="abrirSeccionVariable()">Impresion variable</a></li><br>
+          <li><a href="#" onclick="abrirSeccionPlanas()">Impresion plana</a></li><br>
+          <li><a href="#" onclick="cerrarSecciones()">Salir</a></li><br>
+
+      </ul>    
+    </div>   
+
+    <div class="contene-1" id="container1" style="display: none;">
       <button class="boton-a" id="bot-atras" style="text-align: center;display: none;" onclick="irContenedorAnterior('pantalla-inicial')">IR ATRAS</button>
       <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL PRINCIPAL</button>
       <button class="boton-a" id="bot-mantaut" style="text-align:center;display: none;" onclick="ElementosMa()">MANTENIMIENTO AUTONOMO</button>      
       <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
-      
-      <div id="links-iniciales" style="position: absolute;left: -67px;">
-        <div id="titleContainer">
-          <p id="textToColor" style="position: relative;">Entrenamientos <span style="color:red; position: relative; top: -17px;left: 107px;">&#9660;</span></p>
-        </div>
-        <div id="line"></div>
-        
-        <ul id="linkList">
-            <li><a href="#">Enlace 1 para prueba del ancho del enlace</a></li><br>
-            <li><a href="#">Enlace 2 para prueba del ancho del enlace</a></li><br>
-            <li><a href="#">Enlace 3 para prueba del ancho del enlace</a></li><br>
-        </ul>    
-      </div>
-     
-      <!-- <img class="maq-seccion" src="./assets/IBM 4000.jpg" style="margin-left: 737px;" alt="IBM4000">
-      <img class="maq-seccion" src="./assets/GTO 52.jpg" style="margin-left: 77px;" alt="GTO52">
-      <img class="maq-seccion" src="./assets/Colectora.jpg" style="margin-left: 77px;" alt="COLECTORA"> -->
-
     </div><br>
 
-    <div class="segundo-bloque" id="pantalla-inicial">
+    <div class="segundo-bloque" id="pantalla-inicial" style="display: none;">
       
       <div class="desbobinador mostrar-cont" id="desbobinadorId" >
 
@@ -601,6 +598,20 @@
         <img class="imag-distri image-trainings">
       </div>
     </div> 
+
+    <div id="cont-variable" class="secciones" style="display: none;">
+      <img class="maq-seccion" src="./assets/IBM 4000.jpg" alt="IBM4000">
+      <img class="maq-seccion" src="./assets/IBM 5000.jpg" alt="IBM4000">
+      <img class="maq-seccion" src="./assets/info print.jpg" alt="IBM4000">
+
+    </div>
+
+    <div id="cont-plana" class="secciones" style="display: none;">
+      <img class="maq-seccion" src="./assets/sor-m.jpg" alt="GTO52">
+      <img class="maq-seccion" src="./assets/GTO 52.jpg" alt="GTO52">
+      <img class="maq-seccion" src="./assets/pinza heidelberg.jpg" alt="GTO52">
+    </div>
+
 
     <script src="./Matriz.js"></script>    
   </body>

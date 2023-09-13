@@ -12,7 +12,7 @@ body, html {
   height: 100vh; /* Ajusta la altura del body para que cubra toda la pantalla */
   margin: 0; /* Elimina los márgenes predeterminados del body */
   padding: 0; /* Elimina los rellenos predeterminados del body */
-  overflow:hidden;
+  /* overflow:hidden; */
 }
 
 #videoBackground {
@@ -698,6 +698,16 @@ height: 398px;
   margin-right: 7px; /* Margen entre las imágenes */
   margin-bottom: 10px; /* Espacio vertical entre las filas de imágenes */
 }
+.secciones{
+  display: flex;
+  flex-direction: column;
+  padding: 27px;
+}
+.secciones img{
+  margin-bottom: 7px;
+  height: 135px;
+  width: 180px;
+}
 
 
 
@@ -728,10 +738,10 @@ height: 398px;
 #line {
   position: absolute;
   left: 807px;
-  top: 42px;
+  top: 6px;
   width: 0;
   height: 7px;
-  background-color: blue;
+  /* background-color: blue; */
   transition: 0.1s;
 }
 
@@ -739,11 +749,11 @@ height: 398px;
 #linkList {
   display: none;
   list-style: none;
-  width: 511px;
+  width: 367px;
   padding: 0;
   position: absolute;
   left: 807px;
-  top: 47px;
+  top: 30px;
   background-color: blue;
   z-index: 7;
 }
@@ -754,7 +764,8 @@ height: 398px;
 
 /* Estilo para los enlaces cuando se muestran */
 #linkList a {
-  color: white;
+  color: black;
+  text-decoration: none;
 }
 
 /* Estilo para la línea debajo de los enlaces cuando el puntero está sobre ellos */
@@ -763,4 +774,27 @@ height: 398px;
 }
 #linkList li:hover a {
   color: black;
+}
+
+
+
+
+@keyframes iridescent {
+  0% {
+    background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff);
+    background-size: 200% 200%;
+    animation-timing-function: linear;
+  }
+  100% {
+    background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff);
+    background-size: 200% 200%;
+    animation-timing-function: linear;
+    background-position: 100% 0;
+  }
+}
+
+.iridescent-element {
+  width: 200px;
+  height: 200px;
+  animation: iridescent 4s infinite;
 }
