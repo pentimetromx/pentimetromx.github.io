@@ -12,7 +12,7 @@ body, html {
   height: 100vh; /* Ajusta la altura del body para que cubra toda la pantalla */
   margin: 0; /* Elimina los márgenes predeterminados del body */
   padding: 0; /* Elimina los rellenos predeterminados del body */
-  /* overflow:hidden; */
+  overflow:hidden;
 }
 
 #videoBackground {
@@ -146,6 +146,7 @@ transform: scale(1.1);
   display: flex;
   flex-direction: row;
 }
+.contene-2,
 .contene-1{
   display: flex;
   flex-direction: row;
@@ -373,6 +374,10 @@ width:447px ;
   width: 20px;
   height: 21px;
 }
+.botnClass{
+  height: 27px;
+  text-align: left;
+}
 .contGrafito{
   display: flex;
   flex-direction: column;
@@ -422,6 +427,12 @@ width:447px ;
   margin-bottom: 17px;
   cursor: pointer;
   padding-left: 27px;
+}
+.labl-class{
+  font-family: "GothamRounded", sans-serif;
+  color: yellow;
+  display: flex;
+
 }
 .butt-mautonomo::before {
   content: "";
@@ -605,10 +616,14 @@ width:447px ;
   margin-top: 257px;  
 }
 .imagesTorre{
-  display: none;
   height: 377px;
   width: 503px;
   border-radius: 10px;   
+}
+.imagesTorreP{
+  height: 377px;
+  width: 503px;
+  border-radius: 10px; 
 }
 #contPortManta,
 #contImpresor,
@@ -686,17 +701,15 @@ height: 398px;
 .image-trainings {
   transition: transform 0.1s ease, filter 0.1s ease;
 }
+#imagenes-impresor,
 #imagenes-manta,
 #imagenes-plancha {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin-left: 7px;
-}
-.imgMant,
-.imagen-container {
-  margin-right: 7px; /* Margen entre las imágenes */
-  margin-bottom: 10px; /* Espacio vertical entre las filas de imágenes */
+  margin-left: 27px;
+  margin-top: 127px;
+  display: none;
 }
 .secciones{
   display: flex;
@@ -708,9 +721,6 @@ height: 398px;
   height: 135px;
   width: 180px;
 }
-
-
-
 
 #textToColor {
   color: white;

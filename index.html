@@ -29,19 +29,19 @@
       </ul>    
     </div>   
 
-    <div class="contene-1" id="container1" style="display: none;">
+    <div class="contene-1" id="container1">
       <button class="boton-a" id="bot-atras" style="text-align: center;display: none;" onclick="irContenedorAnterior('pantalla-inicial')">IR ATRAS</button>
       <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL PRINCIPAL</button>
       <button class="boton-a" id="bot-mantaut" style="text-align:center;display: none;" onclick="ElementosMa()">MANTENIMIENTO AUTONOMO</button>      
       <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
     </div><br>
 
-    <div class="segundo-bloque" id="pantalla-inicial" style="display: none;">
+    <div class="segundo-bloque" id="pantalla-inicial"> 
       
       <div class="desbobinador mostrar-cont" id="desbobinadorId" >
 
         <button class="boton-b" onclick="cierraContenedores('desbobinador')">DESBOBINADOR</button><br>
-        <div class="contene-7">
+        <div class="contene-7" id="cont-Verticales1">
           <div class="linea-vertical"></div>
           <button class="boton-c">Pulsadores<div class="linea-horizontal"></div></button>
           <button class="boton-c">Freno<div class="linea-horizontal"></div></button>
@@ -70,7 +70,7 @@
         <button class="boton-a" type="button" id="bot-atras" style="display: none;" onclick="irContenedorAnterior('alimentadorId')" >Atras</button> 
         
         <div class="contene-7">
-          <div class="linea-vertical"></div>
+          <div class="linea-vertical" id="verticales-alimentador"></div>
           <button class="boton-c">Estructura<div class="linea-horizontal"></div></button>
           <button class="boton-c">Sistema planetario<div class="linea-horizontal"></div></button>
           <button class="boton-c">Ajuste mecanico<div class="linea-horizontal"></div></button>
@@ -112,7 +112,7 @@
 
           <div class="tintero" id="tinter-o">
             <button class="boton-d" id="tinteroButton" onclick="muestraTintero('pantalla-tintero')">TINTERO</button>
-            <div class="contene-7">
+            <div class="contene-7" id="cont-Verticales2">
               <div class="linea-vertical"></div>
               <button class="boton-e">Estructura<div class="linea-horizontal"></div></button>
               <button class="boton-e">Ajuste en el cierre<div class="linea-horizontal"></div></button>
@@ -125,7 +125,7 @@
 
           <div class="bateria" id="bateria-entintado">  
             <button class="boton-d" onclick="changeButtonStyles('videoElement1', 'contene-7')">BATERIA DE ENTINTADO</button>               
-            <div class="contene-7">
+            <div class="contene-7" id="cont-Verticales3">
               <div class="linea-vertical"></div>
               <button class="boton-e">Diámetros y durezas<div class="linea-horizontal"></div></button>
               <button class="boton-e">Contacto entre rodillos<div class="linea-horizontal"></div></button>
@@ -137,16 +137,16 @@
 
           <div id="bancada-torre">
             <button class="boton-d" onclick="changeButtonStyles('contLinksTorre')">BANCADA DE TORRE</button>
-            <div class="contene-7">
+            <div class="contene-7" id="cont-Verticales4">
               <div class="linea-vertical"></div>
               <button class="boton-e">Guía<div class="linea-horizontal"></div></button>                  
               <button class="boton-e">Ajuste<div class="linea-horizontal"></div></button>                  
             </div>         
           </div> 
 
-          <div class="sistHumedad">  
+          <div class="sistHumedad" id="sis-humedad">  
             <button class="boton-d" onclick="changeButtonStyles()">SISTEMA HUMEDAD</button>
-            <div class="contene-7">
+            <div class="contene-7" id="cont-Verticales5">
               <div class="linea-vertical"></div>
               <button class="boton-e">Composición<div class="linea-horizontal"></div></button>                  
               <button class="boton-e">Graduación<div class="linea-horizontal"></div></button>                  
@@ -158,7 +158,14 @@
       </div>  
     </div>
 
-    <div id="pantalla-tintero" style="display: none;">           
+    <div id="pantalla-tintero" style="display: none;">  
+      
+      <div class="contene-2" id="container2" style="display: none;top: -77px;left: 197px;">
+        <button class="boton-a" id="bot-atras" style="text-align: center;" onclick="irContenedorAnterior('pantalla-inicial')">IR ATRAS</button>
+        <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL PRINCIPAL</button>
+        <button class="boton-a" id="bot-mantaut" style="text-align:center;display: none;" onclick="ElementosMa()">MANTENIMIENTO AUTONOMO</button>      
+        <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
+      </div><br>
 
       <div id="cont-links">
         <a href="#" class="custom-link" id="linkDistribuidor" onclick="showRepuesto ('contImgDistribuidor')">Rodillo distribuidor</a>
@@ -168,7 +175,7 @@
         <a href="#" class="custom-link" id="linkImpresor" onclick="showRepuesto('cilindroImpresor', 'videoTrain01')">Cilindro impresor</a>
 
       </div>
-      <img src="./assets/Arriba abajo.jpg" id="imgTorre" alt="imagen-torre">
+      <img src="./assets/Arriba abajo.jpg" id="imgTorre" alt="imagen-torre"> 
       <video id="vidTintero" src="./assets/Arriba abajo.mp4"></video>
 
       <div id="imgsRepuestos">
@@ -178,7 +185,7 @@
         <img class="image-trainings rep-frente" src="./assets/reductorII.png" alt="eje">
       </div>
 
-      <div id="agrupaOblicuos-II">
+      <div id="agrupaOblicuos-II" style="margin-top: -573px;">
         <div id="contFrente-II " class="contOblicuosTorre">
           <button class="Bot-inicio2" id="butt-1" onclick="muestraTorres('frente')">Frente</button>
           <button class="Bot-inicio2-fondo" id="butt-2"></button>  
@@ -201,6 +208,13 @@
 
     <div id="pantalla-frente" style="display: none;">
 
+      <div class="contene-2" id="container2" style="top: -77px;left: 197px;">
+        <button class="boton-a" id="bot-atras" style="text-align: center;display: none;" onclick="irContenedorAnterior('pantalla-inicial')">IR ATRAS</button>
+        <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL PRINCIPAL</button>
+        <button class="boton-a" id="bot-mantaut" style="text-align:center;display: none;" onclick="ElementosMa()">MANTENIMIENTO AUTONOMO</button>      
+        <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
+      </div><br>
+
       <div id="imgsRepuestos-II">
         <img class="image-trainings rep-frente" src="./assets/eje.jpg" alt="eje">
         <img class="image-trainings rep-frente" src="./assets/cónico.jpg" alt="eje">
@@ -210,28 +224,34 @@
 
       <img src="./assets/Arriba abajo.jpg" id="imgTorre-f" alt="imagen-torre">
 
-      <div id="agrupaOblicuos-III">
-        <div id="contFrente-III " class="contOblicuosTorre">
-          <button class="Bot-inicio2" id="butt-1" onclick="muestraTorres('frente')">Frente</button>
+      <div id="agrupaOblicuos" style="margin-top: -573px;">
+        <div id="contFrente-III" class="contOblicuosTorre">
+          <button class="Bot-inicio2" id="butt-1" onclick="muestraTorresI('frente')">Frente</button>
           <button class="Bot-inicio2-fondo" id="butt-2"></button>  
         </div>  
         <div id="contLateral-III" class="contOblicuosTorre">
-          <button class="Bot-inicio2" id="butt-3" onclick="muestraTorres('mandos')">Mandos</button>
+          <button class="Bot-inicio2" id="butt-3" onclick="muestraTorresI('mandos')">Mandos</button>
           <button class="Bot-inicio2-fondo" id="butt-4"></button>  
         </div> 
         <div id="contArriba-III" class="contOblicuosTorre">
-          <button class="Bot-inicio2" id="butt-5" onclick="muestraTorres('servicio')">Servicio</button>
+          <button class="Bot-inicio2" id="butt-5" onclick="muestraTorresI('servicio')">Servicio</button>
           <button class="Bot-inicio2-fondo" id="butt-6"></button>  
         </div> 
-        <div id="contAtras-II" class="contOblicuosTorre">
-          <button class="Bot-inicio2" id="butt-7" onclick="muestraTorres('atras')">Atras</button>
+        <div id="contAtras-III" class="contOblicuosTorre">
+          <button class="Bot-inicio2" id="butt-7" onclick="muestraTorresI('atras')">Atras</button>
           <button class="Bot-inicio2-fondo" id="butt-8"></button>  
         </div> 
       </div>
-
     </div>
 
     <div id="pantalla-mandos" style="display: none;">
+
+      <div class="contene-2" id="container2" style="top: -77px;left: 197px;">
+        <button class="boton-a" id="bot-atras" style="text-align: center;display: none;" onclick="irContenedorAnterior('pantalla-inicial')">IR ATRAS</button>
+        <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL PRINCIPAL</button>
+        <button class="boton-a" id="bot-mantaut" style="text-align:center;display: none;" onclick="ElementosMa()">MANTENIMIENTO AUTONOMO</button>      
+        <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
+      </div><br>
 
       <div id="imgsRepuestos-III">
         <img class="image-trainings rep-izquierda" src="./assets/sprocket.jpg" alt="ejes">
@@ -242,29 +262,36 @@
 
       <img src="./assets/Mandos.jpg" id="imgTorre-f" alt="imagen-torre">
 
-      <div id="agrupaOblicuos-VII">
-        <div id="contFrente-VII" class="contOblicuosTorre">
-          <button class="Bot-inicio2" id="butt-1" onclick="muestraTorres('frente')">Frente</button>
+      <div id="agrupaOblicuos-II" style="margin-top: -573px;">
+        <div id="contFrente-II " class="contOblicuosTorre">
+          <button class="Bot-inicio2" id="butt-1" onclick="muestraTorresI('frente')">Frente</button>
           <button class="Bot-inicio2-fondo" id="butt-2"></button>  
         </div>  
-        <div id="contLateral-VII" class="contOblicuosTorre">
-          <button class="Bot-inicio2" id="butt-3" onclick="muestraTorres('mandos')">Mandos</button>
+        <div id="contLateral-II" class="contOblicuosTorre">
+          <button class="Bot-inicio2" id="butt-3" onclick="muestraTorresI('mandos')">Mandos</button>
           <button class="Bot-inicio2-fondo" id="butt-4"></button>  
         </div> 
-        <div id="contArriba-VII" class="contOblicuosTorre">
-          <button class="Bot-inicio2" id="butt-5" onclick="muestraTorres('servicio')">Servicio</button>
+        <div id="contArriba-II" class="contOblicuosTorre">
+          <button class="Bot-inicio2" id="butt-5" onclick="muestraTorresI('servicio')">Servicio</button>
           <button class="Bot-inicio2-fondo" id="butt-6"></button>  
         </div> 
-        <div id="contAtras-VII" class="contOblicuosTorre">
-          <button class="Bot-inicio2" id="butt-7" onclick="muestraTorres('atras')">Atras</button>
+        <div id="contAtras-II" class="contOblicuosTorre">
+          <button class="Bot-inicio2" id="butt-7" onclick="muestraTorresI('atras')">Atras</button>
           <button class="Bot-inicio2-fondo" id="butt-8"></button>  
         </div> 
       </div>
-
-  
+      
     </div>
 
     <div id="pantalla-servicio" style="display: none;">
+
+      <div class="contene-2" id="container2" style="top: -77px;left: 197px;">
+        <button class="boton-a" id="bot-atras" style="text-align: center;display: none;" onclick="irContenedorAnterior('pantalla-inicial')">IR ATRAS</button>
+        <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL PRINCIPAL</button>
+        <button class="boton-a" id="bot-mantaut" style="text-align:center;display: none;" onclick="ElementosMa()">MANTENIMIENTO AUTONOMO</button>      
+        <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
+      </div><br>
+
       <div id="imgsRepuestos-IV">
         <img class="image-trainings rep-derecha" src="./assets/piñon masa.jpg" alt="ejes">
         <img class="image-trainings rep-derecha" src="./assets/Piñon.jpg" alt="ejes">
@@ -273,21 +300,21 @@
       </div>
       <img src="./assets/Transmision.jpg" id="imgTorre-f" alt="imagen-torre">
 
-      <div id="agrupaOblicuos-IV">
+      <div id="agrupaOblicuos-IV" style="margin-top: -573px;">
         <div id="contFrente-IV" class="contOblicuosTorre">
-          <button class="Bot-inicio2" id="butt-1" onclick="muestraTorres('frente')">Frente</button>
+          <button class="Bot-inicio2" id="butt-1" onclick="muestraTorresI('frente')">Frente</button>
           <button class="Bot-inicio2-fondo" id="butt-2"></button>  
         </div>  
         <div id="contLateral-IV" class="contOblicuosTorre">
-          <button class="Bot-inicio2" id="butt-3" onclick="muestraTorres('mandos')">Mandos</button>
+          <button class="Bot-inicio2" id="butt-3" onclick="muestraTorresI('mandos')">Mandos</button>
           <button class="Bot-inicio2-fondo" id="butt-4"></button>  
         </div> 
         <div id="contArriba-IV" class="contOblicuosTorre">
-          <button class="Bot-inicio2" id="butt-5" onclick="muestraTorres('servicio')">Servicio</button>
+          <button class="Bot-inicio2" id="butt-5" onclick="muestraTorresI('servicio')">Servicio</button>
           <button class="Bot-inicio2-fondo" id="butt-6"></button>  
         </div> 
         <div id="contAtras-IV" class="contOblicuosTorre">
-          <button class="Bot-inicio2" id="butt-7" onclick="muestraTorres('atras')">Atras</button>
+          <button class="Bot-inicio2" id="butt-7" onclick="muestraTorresI('atras')">Atras</button>
           <button class="Bot-inicio2-fondo" id="butt-8"></button>  
         </div> 
       </div>
@@ -295,30 +322,37 @@
 
     <div id="pantalla-atras" style="display: none;">
 
-      <div id="imgsRepuestos-V" style="margin-top: -19px;">
+      <div class="contene-2" id="container2" style="top: -77px;left: 197px;">
+        <button class="boton-a" id="bot-atras" style="text-align: center;display: none;" onclick="irContenedorAnterior('pantalla-inicial')">IR ATRAS</button>
+        <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL PRINCIPAL</button>
+        <button class="boton-a" id="bot-mantaut" style="text-align:center;display: none;" onclick="ElementosMa()">MANTENIMIENTO AUTONOMO</button>      
+        <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
+      </div><br>
+
+      <div id="imgsRepuestos-V">
         <img class="image-trainings rep-derecha" src="./assets/transmision correas.jpg" alt="ejes">
         <img class="image-trainings rep-derecha" src="./assets/piñon loco.jpg" alt="ejes">
         <img class="image-trainings rep-derecha" src="./assets/planeta.jpg" alt="ejes">
-        <img class="image-trainings rep-derecha" src="./assets/piñon trasero.jpg" alt="ejes">º
+        <img class="image-trainings rep-derecha" src="./assets/piñon trasero.jpg" alt="ejes">
       </div>
 
       <img src="./assets/Atras.jpg" id="imgTorre-a" alt="imagen-torre">
 
-      <div id="agrupaOblicuos-V">
+      <div id="agrupaOblicuos-V" style="margin-top: -573px;">
         <div id="contFrente-V" class="contOblicuosTorre">
-          <button class="Bot-inicio2" id="butt-1" onclick="muestraTorres('frente')">Frente</button>
+          <button class="Bot-inicio2" id="butt-1" onclick="muestraTorresI('frente')">Frente</button>
           <button class="Bot-inicio2-fondo" id="butt-2"></button>  
         </div>  
         <div id="contLateral-V" class="contOblicuosTorre">
-          <button class="Bot-inicio2" id="butt-3" onclick="muestraTorres('mandos')">Mandos</button>
+          <button class="Bot-inicio2" id="butt-3" onclick="muestraTorresI('mandos')">Mandos</button>
           <button class="Bot-inicio2-fondo" id="butt-4"></button>  
         </div> 
         <div id="contArriba-V" class="contOblicuosTorre">
-          <button class="Bot-inicio2" id="butt-5" onclick="muestraTorres('servicio')">Servicio</button>
+          <button class="Bot-inicio2" id="butt-5" onclick="muestraTorresI('servicio')">Servicio</button>
           <button class="Bot-inicio2-fondo" id="butt-6"></button>  
         </div> 
         <div id="contAtras-V" class="contOblicuosTorre">
-          <button class="Bot-inicio2" id="butt-7" onclick="muestraTorres('atras')">Atras</button>
+          <button class="Bot-inicio2" id="butt-7" onclick="muestraTorresI('atras')">Atras</button>
           <button class="Bot-inicio2-fondo" id="butt-8"></button>  
         </div> 
       </div>
@@ -337,7 +371,7 @@
 
       <div class="videos-training" id="videos-training">
         <video class="video-training" id="videoElement1" src="./assets/Bateria de entintado.mp4" height="400px" loop></video>
-        <video class="video-training" id="videoElement2" src="./assets/Montaje distribuidor.mp4" height="400px"></video>
+        <video class="video-training" id="videoElement2" src="./assets/Montaje distribuidor.mp4" height="400px" autoplay loop></video>
         <video class="video-training" id="videoElement3" src="./assets/Montaje entintador1.mp4" height="400px"></video>
         <video class="video-training" id="videoElement4" src="./assets/2.full velocidad2.mp4" height="400px"></video>
         <video class="video-training" id="videoElement5" src="./assets/1.Rodillo a rodillo.mp4" height="400px"></video>
@@ -371,15 +405,47 @@
         <button class="butt-mautonomo image-trainings" id="fua" onclick="mantAutonomo('fua')">FUA</button>           
         <button class="butt-mautonomo image-trainings" id="lup" onclick="mantAutonomo('lup')">LUP</button>
       </div> 
-      <div id="contInput">
-        <input type="range"class="inpt-class"> 
-        <input type="file" class="inpt-class">
-        <input type="file" class="inpt-class">
-        <input type="file" class="inpt-class">
-        <input type="file" class="inpt-class">
-        <input type="file" class="inpt-class">
-        <input type="file" class="inpt-class">
-        <input type="file" class="inpt-class">
+
+<!--       <div id="contInput">
+        <input type="range" class="inpt-class" id="input1">
+        <a href="enlace1.html" target="_blank">Enlace 1</a>
+      
+        <input type="file" class="inpt-class" id="input2">
+        <a href="enlace2.html" target="_blank">Enlace 2</a>
+      
+        <input type="file" class="inpt-class" id="input3">
+        <a href="enlace3.html" target="_blank">Enlace 3</a>
+      
+        <input type="file" class="inpt-class" id="input4">
+        <a href="enlace4.html" target="_blank">Enlace 4</a>
+      
+        <input type="file" class="inpt-class" id="input5">
+        <a href="enlace5.html" target="_blank">Enlace 5</a>
+      
+        <input type="file" class="inpt-class" id="input6">
+        <a href="enlace6.html" target="_blank">Enlace 6</a>
+      
+        <input type="file" class="inpt-class" id="input7">
+        <a href="enlace7.html" target="_blank">Enlace 7</a>
+      
+        <input type="file" class="inpt-class" id="input8">
+        <a href="enlace8.html" target="_blank">Enlace 8</a>
+      </div> -->
+
+      <div id="contInput" style="display: none;">
+        <label class="labl-class" for="archivo"  onclick="VolveraInicio()">Aditivos solución de fuente:</label>
+        <button class="inpt-class botnClass">Seleccionar archivo</button>
+        <label class="labl-class" for="archivo">Reproceso adelantado:</label>
+        <button class="inpt-class botnClass">Seleccionar archivo</button>
+        <label class="labl-class" for="archivo">Reproceso atrazado:</label>
+        <button class="inpt-class botnClass">Seleccionar archivo</button>
+        <label class="labl-class" for="archivo">Largos fuera de rango:</label>
+        <button class="inpt-class botnClass">Seleccionar archivo</button>
+        <label class="labl-class" for="archivo">Desprendimiento de mantilla:</label>
+        <button class="inpt-class botnClass">Seleccionar archivo</button>
+        <label class="labl-class" for="archivo">Problemas de teñido:</label>
+        <button class="inpt-class botnClass">Seleccionar archivo</button>
+       
       </div>
 
       <div id="canvasContainer2">
@@ -414,8 +480,8 @@
     </div> 
     <!--- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
     <div id="contPortPlaca" style="display: none;">
-      <video src="./assets/video-plancha.mp4"  id="video-placa" loop muted autoplay></video>
-      <div id="agrupaOblicuos-VIII">
+      <video class="video-training" id="video-placa" src="./assets/video-plancha.mp4" loop muted autoplay></video>
+      <div id="agrupaOblicuos-VIII" style="margin-top: -54px;margin-left: -10px;">
         <div id="contFrente-VI " class="contOblicuosPlaca">
           <button class="Bot-inicio2" id="butt-1" onclick="muestraPerfiles('frente')">Frente</button>
           <button class="Bot-inicio2-fondo" id="butt-2"></button>  
@@ -436,30 +502,30 @@
     </div>
 
     <div id="contPerfilesPlancha">
-      <div id="imagenes-plancha" style="display: none;">
+      <div id="imagenes-plancha">
         <div class="imagen-container">
-          <img src="./assets/Porta plancha2.png" class="imagesTorre" id="portPlaca" alt="porte plancha">
+          <img src="./assets/Porta plancha2.png" class="imagesTorre imagesTorreP" id="portPlaca" alt="porte plancha">
         </div>
         <div class="imagen-container">
-          <img src="./assets/Porta plancha.png" class="imagesTorre" id="portPlaca" alt="porte plancha">
+          <img src="./assets/Porta plancha.png" class="imagesTorre imagesTorreP" id="portPlaca1" style="margin-left: 17px;" alt="porte plancha">
         </div>
         <div class="imagen-container">
-          <img src="./assets/Porta plancha3.png" class="imagesTorre" id="portPlaca2" alt="porte plancha">
+          <img src="./assets/Porta plancha3.png" class="imagesTorre imagesTorreP" id="portPlaca2" alt="porte plancha">
         </div>
         <div class="imagen-container">
-          <img src="./assets/Porta plancha4.png" class="imagesTorre" id="portPlaca2" alt="porte plancha">
+          <img src="./assets/Porta plancha4.png" class="imagesTorre imagesTorreP" id="portPlaca3" style="margin-left: 17px;" alt="porte plancha">
         </div>
         <div class="imagen-container">
-          <img src="./assets/Porta plancha5.png" class="imagesTorre" id="portPlaca3" alt="porte plancha">
+          <img src="./assets/Porta plancha5.png" class="imagesTorre imagesTorreP" id="portPlaca4" alt="porte plancha">
         </div>
         <div class="imagen-container">
-          <img src="./assets/Porta plancha6.png" class="imagesTorre" id="portPlaca3" alt="porte plancha">
+          <img src="./assets/Porta plancha6.png" class="imagesTorre imagesTorreP" id="portPlaca5" style="margin-left: 17px;" alt="porte plancha">
         </div>
         <div class="imagen-container">
-          <img src="./assets/Porta plancha7.png" class="imagesTorre" id="portPlaca4" alt="porte plancha">
+          <img src="./assets/Porta plancha7.png" class="imagesTorre imagesTorreP" id="portPlaca6" alt="porte plancha">
         </div>
         <div class="imagen-container">
-          <img src="./assets/Porta plancha8.png" class="imagesTorre" id="portPlaca4" alt="porte plancha">
+          <img src="./assets/Porta plancha8.png" class="imagesTorre imagesTorreP" id="portPlaca7" style="margin-left: 17px;" alt="porte plancha">
         </div>
       </div>
 
@@ -469,7 +535,7 @@
 
       <video class="video-training" id="videoManta"  src="./assets/video-portaManta.mp4" muted loop autoplay></video>
 
-      <div id="agrupaOblicuos-IX">
+      <div id="agrupaOblicuos-IX" style="margin-top: -54px;margin-left: -10px;">
         <div id="contFrente-IX" class="contOblicuosPlaca">
           <button class="Bot-inicio2" id="butt-1" onclick="muestraAngulos('frente')">Frente</button>
           <button class="Bot-inicio2-fondo" id="butt-2"></button>  
@@ -492,29 +558,29 @@
 
     <div id="contPerfilesManta">
       <div id="imagenes-manta">
-        <div id="torre">
-          <img src="./assets/tensor cilindro.jpg" class="imagesTorre imgMant" id="manta1" alt="porte plancha">
+        <div class="contImPlate">
+          <img src="./assets/mantillaII.jpg" class="imagesTorre imgMant" id="manta" alt="porte plancha">
         </div>
-        <div id="torre1">
-          <img src="./assets/tensor doblerosca.jpg" class="imagesTorre imgMant" id="manta1" alt="porte plancha">
+        <div class="contImPlate">
+          <img src="./assets/mantilla.jpg" class="imagesTorre imgMant" id="manta1" style="margin-left: 17px;" alt="porte plancha">
         </div>
-        <div id="torre2">
-          <img src="./assets/tensor piñon.jpg" class="imagesTorre imgMant" id="manta2" alt="porte plancha">
+        <div class="contImPlate">
+          <img src="./assets/mantilla estructura.jpg" class="imagesTorre imgMant" id="manta2" alt="porte plancha">
         </div>
-        <div id="torre3">
-          <img src="./assets/tensor rosca.jpg" class="imagesTorre imgMant" id="manta2" alt="porte plancha">
+        <div class="contImPlate">
+          <img src="./assets/mantilla aplicador.png" class="imagesTorre imgMant" id="manta3" style="margin-left: 17px;" alt="porte plancha">
         </div>
-        <div id="torre4">
-          <img src="./assets/tensor rotula.jpg" class="imagesTorre imgMant" id="manta3" alt="porte plancha">
+        <div class="contImPlate">
+          <img src="./assets/tensor rotula.jpg" class="imagesTorre imgMant" id="manta4" alt="porte plancha">
         </div>
-        <div id="torre5">
-          <img src="./assets/tensor rotulas.jpg" class="imagesTorre imgMant" id="manta3" alt="porte plancha">
+        <div class="contImPlate">
+          <img src="./assets/tensor rotulas.jpg" class="imagesTorre imgMant" id="manta5" style="margin-left: 17px;" alt="porte plancha">
         </div>
-        <div id="torre6">
-          <img src="./assets/tensor rotulaz.jpg" class="imagesTorre imgMant" id="manta4" alt="porte plancha">
+        <div class="contImPlate">
+          <img src="./assets/tensor rotulaz.jpg" class="imagesTorre imgMant" id="manta6" alt="porte plancha">
         </div>
-        <div id="torre7">
-          <img src="./assets/tensor avanzado.jpg" class="imagesTorre imgMant" id="manta4" alt="porte plancha">
+        <div class="contImPlate">
+          <img src="./assets/tensor avanzado.jpg" class="imagesTorre imgMant" id="manta7" style="margin-left: 17px;" alt="porte plancha">
         </div>
       </div>       
     </div>
@@ -523,8 +589,7 @@
 
       <video class="video-training" id="video-impresor" src="./assets/video-impresor.mp4" loop muted autoplay></video>
 
-
-      <div class="oblicuosContra">
+      <div class="oblicuosContra" style="margin-top: -54px;margin-left: -10px;">
         <button class="Bot-inicio2" id="butt-1" onclick="muestraLados('frente')">Frente</button>
         <button class="Bot-inicio2-fondo" id="butt-2"></button>  
       </div>  
@@ -541,6 +606,35 @@
         <button class="Bot-inicio2-fondo" id="butt-8"></button>  
       </div> 
 
+    </div>
+
+    <div id="contPerfilesImpresor">
+      <div id="imagenes-impresor">
+        <div class="contImImpresor">
+          <img src="./assets/tensor cilindro.jpg" class="imagesTorre imgImpresor" id="impresor" alt="porte plancha">
+        </div>
+        <div class="contImPlate">
+          <img src="./assets/tensor doblerosca.jpg" class="imagesTorre imgImpresor" id="impresor1" alt="porte plancha">
+        </div>
+        <div class="contImPlate">
+          <img src="./assets/tensor piñon.jpg" class="imagesTorre imgImpresor" id="impresor2" alt="porte plancha">
+        </div>
+        <div class="contImPlate">
+          <img src="./assets/tensor rosca.jpg" class="imagesTorre imgImpresor" id="impresor3" alt="porte plancha">
+        </div>
+        <div class="contImPlate">
+          <img src="./assets/tensor rotula.jpg" class="imagesTorre imgImpresor" id="impresor4" alt="porte plancha">
+        </div>
+        <div class="contImPlate">
+          <img src="./assets/tensor rotulas.jpg" class="imagesTorre imgImpresor" id="impresor5" alt="porte plancha">
+        </div>
+        <div class="contImPlate">
+          <img src="./assets/tensor rotulaz.jpg" class="imagesTorre imgImpresor" id="impresor6" alt="porte plancha">
+        </div>
+        <div class="contImPlate">
+          <img src="./assets/tensor avanzado.jpg" class="imagesTorre imgImpresor" id="impresor7" alt="porte plancha">
+        </div>
+      </div>       
     </div>
     
     <div id="contImgDistribuidor" style="display: none;">
@@ -611,7 +705,6 @@
       <img class="maq-seccion" src="./assets/GTO 52.jpg" alt="GTO52">
       <img class="maq-seccion" src="./assets/pinza heidelberg.jpg" alt="GTO52">
     </div>
-
 
     <script src="./Matriz.js"></script>    
   </body>
