@@ -361,6 +361,7 @@ width:447px ;
   position: absolute;
   left: 830px;
   top: 77px;
+  display: none;
 }
 .inpt-class{
   display: none;
@@ -368,15 +369,27 @@ width:447px ;
   border-radius: 7px;
   background-color: rgb(211, 255, 204);
   margin-bottom: 11px;
+  transition: background-color 0.3s, color 0.3s;
+
 }
+.inpt-class.botnClass:hover {
+  background-color: gray;
+  color: red;
+}
+
+
+
+
 .input-class{
   margin-bottom: 15px;
   width: 20px;
   height: 21px;
 }
+
 .botnClass{
   height: 27px;
   text-align: left;
+  cursor: pointer;
 }
 .contGrafito{
   display: flex;
@@ -721,7 +734,8 @@ height: 398px;
   height: 135px;
   width: 180px;
 }
-
+/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+#textToColorI,
 #textToColor {
   color: white;
   transition: color 0.2s;
@@ -729,22 +743,36 @@ height: 398px;
 }
 
 /* Estilos para el contenedor del título */
+#titleContainerI{
+  position: absolute;
+  left: 777px;
+  display: flex;
+  align-items: center;
+}
 #titleContainer {
   position: absolute;
   left: 807px;
   display: flex;
   align-items: center;
-
-
 }
 
 /* Estilo para el punto después del título */
+#titleContainerI::after,
 #titleContainer::after {
   content: " ";
   color: transparent;
 }
 
 /* Estilo para la línea debajo del título */
+#lineI {
+  position: absolute;
+  left: 777px;
+  top: 6px;
+  width: 0;
+  height: 7px;
+  /* background-color: blue; */
+  transition: 0.1s;
+}
 #line {
   position: absolute;
   left: 807px;
@@ -754,12 +782,22 @@ height: 398px;
   /* background-color: blue; */
   transition: 0.1s;
 }
-
-/* Estilos para la lista de enlaces */
+#linkListI{
+  left: 600px;
+  top: 30px;
+  width: 257px;
+  height:auto;
+  display: none;
+  list-style: none;
+  padding: 0;
+  position: absolute;
+  background-color: blue;
+  z-index: 7;
+}
 #linkList {
   display: none;
   list-style: none;
-  width: 367px;
+  width: 237px;
   padding: 0;
   position: absolute;
   left: 807px;
@@ -767,28 +805,27 @@ height: 398px;
   background-color: blue;
   z-index: 7;
 }
-
+#linkListI li,
 #linkList li {
   margin: 5px 0;
 }
 
 /* Estilo para los enlaces cuando se muestran */
+#linkListI a,
 #linkList a {
   color: black;
   text-decoration: none;
 }
 
 /* Estilo para la línea debajo de los enlaces cuando el puntero está sobre ellos */
+#linkListI li:hover,
 #linkList li:hover {
   background-color:yellow;          
 }
+#linkListI li:hover a,
 #linkList li:hover a {
   color: black;
 }
-
-
-
-
 @keyframes iridescent {
   0% {
     background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff);
@@ -802,7 +839,6 @@ height: 398px;
     background-position: 100% 0;
   }
 }
-
 .iridescent-element {
   width: 200px;
   height: 200px;

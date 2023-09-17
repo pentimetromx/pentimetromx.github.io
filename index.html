@@ -14,6 +14,26 @@
       <source src="./assets/Rotatek.mp4" type="video/mp4">  
     </video>
 
+    <div id="links-inicialesI" style="position: absolute;left: 150px;font-family: 'GothamRounded', sans-serif;">
+      
+      <button class="boton-a" id="bot-ini-link" style="text-align: center;margin-left: 507px;display: none;" onclick="VolveraInicio()">PANEL PRINCIPAL</button>
+
+      <div class="iridescent-element" id="lineI"></div>
+      <div id="titleContainerI">
+        <p id="textToColorI" style="position: relative;">Pilares<span style="color:blue; position: relative; top: -1px;left: 2px;">&#9660;</span></p>
+      </div>
+      
+      <ul class="iridescent-element" id="linkListI">
+        <li><a href="#" onclick="ElementosMa()">Pilar de Mantenimiento Autonomo</a></li><br>
+        <li><a href="#" onclick="abrirPilarEE()">Pilar Educación y Entrenamiento</a></li><br>
+        <li><a href="#" onclick="abrirPilarSSA()">Pilar Salud Seguridad y Ambiente</a></li><br>
+        <li><a href="#" onclick="abrirPilarMP()">Pilar Mantenimiento Progresivo</a></li><br>
+        <li><a href="#" onclick="abrirPilarME()">Pilar Mejora Enfocada</a></li><br>
+        <li><a href="#" onclick="abrirPilarME()">Pilar Administrativo y soporte</a></li><br>
+
+      </ul>    
+    </div> 
+
     <div id="links-iniciales" style="position: absolute;left: 233px;font-family: 'GothamRounded', sans-serif;">
       <div class="iridescent-element" id="line"></div>
       <div id="titleContainer">
@@ -22,9 +42,9 @@
       
       <ul class="iridescent-element" id="linkList">
         <li><a href="#" onclick="abrirSeccionContinua()">Impresion rotativa / flexográfica</a></li><br>
-          <li><a href="#" onclick="abrirSeccionVariable()">Impresion variable</a></li><br>
-          <li><a href="#" onclick="abrirSeccionPlanas()">Impresion plana</a></li><br>
-          <li><a href="#" onclick="cerrarSecciones()">Salir</a></li><br>
+        <li><a href="#" onclick="abrirSeccionVariable()">Impresion variable</a></li><br>
+        <li><a href="#" onclick="abrirSeccionPlanas()">Impresion plana</a></li><br>
+        <li><a href="#" onclick="cerrarSecciones()">Salir</a></li><br>
 
       </ul>    
     </div>   
@@ -181,7 +201,7 @@
       <div id="imgsRepuestos">
         <img class="image-trainings rep-frente" src="./assets/eje.jpg" alt="eje">
         <img class="image-trainings rep-frente" src="./assets/cónico.jpg" alt="eje">
-        <img class="image-trainings rep-frente" src="./assets/reductor.png" alt="eje">
+        <img class="image-trainings rep-frente" src="./assets/reductor.jpg" alt="eje">
         <img class="image-trainings rep-frente" src="./assets/reductorII.png" alt="eje">
       </div>
 
@@ -397,7 +417,7 @@
     </div> 
 <!---//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
     <div id="conteneMantaut" class="mantAuto">
-      <div class="conti-boton">
+      <div class="conti-boton" id="conti-boton">
         <button class="butt-mautonomo image-trainings" id="troubleshoot" onclick="mantAutonomo('troubleshooting')">TROUBLESHOOTING</button>
         <button class="butt-mautonomo image-trainings" id="def1" onclick="mantAutonomo('def-tipo1')">DEFECTOS TIPO 1</button>
         <button class="butt-mautonomo image-trainings" id="def2" onclick="mantAutonomo('def-tipo2')">DEFECTOS TIPO 2</button>
@@ -406,35 +426,9 @@
         <button class="butt-mautonomo image-trainings" id="lup" onclick="mantAutonomo('lup')">LUP</button>
       </div> 
 
-<!--       <div id="contInput">
-        <input type="range" class="inpt-class" id="input1">
-        <a href="enlace1.html" target="_blank">Enlace 1</a>
-      
-        <input type="file" class="inpt-class" id="input2">
-        <a href="enlace2.html" target="_blank">Enlace 2</a>
-      
-        <input type="file" class="inpt-class" id="input3">
-        <a href="enlace3.html" target="_blank">Enlace 3</a>
-      
-        <input type="file" class="inpt-class" id="input4">
-        <a href="enlace4.html" target="_blank">Enlace 4</a>
-      
-        <input type="file" class="inpt-class" id="input5">
-        <a href="enlace5.html" target="_blank">Enlace 5</a>
-      
-        <input type="file" class="inpt-class" id="input6">
-        <a href="enlace6.html" target="_blank">Enlace 6</a>
-      
-        <input type="file" class="inpt-class" id="input7">
-        <a href="enlace7.html" target="_blank">Enlace 7</a>
-      
-        <input type="file" class="inpt-class" id="input8">
-        <a href="enlace8.html" target="_blank">Enlace 8</a>
-      </div> -->
-
       <div id="contInput" style="display: none;">
-        <label class="labl-class" for="archivo"  onclick="VolveraInicio()">Aditivos solución de fuente:</label>
-        <button class="inpt-class botnClass">Seleccionar archivo</button>
+        <label class="labl-class" for="archivo">Aditivos solución de fuente:</label>
+        <button class="inpt-class botnClass" onclick="VolveraInicio()">Seleccionar archivo</button>
         <label class="labl-class" for="archivo">Reproceso adelantado:</label>
         <button class="inpt-class botnClass">Seleccionar archivo</button>
         <label class="labl-class" for="archivo">Reproceso atrazado:</label>
@@ -444,8 +438,7 @@
         <label class="labl-class" for="archivo">Desprendimiento de mantilla:</label>
         <button class="inpt-class botnClass">Seleccionar archivo</button>
         <label class="labl-class" for="archivo">Problemas de teñido:</label>
-        <button class="inpt-class botnClass">Seleccionar archivo</button>
-       
+        <button class="inpt-class botnClass" id="bott-seleccion">Seleccionar archivo</button>       
       </div>
 
       <div id="canvasContainer2">
@@ -458,7 +451,7 @@
         <canvas id="MiQuintaGrafica"></canvas>              
       </div>
 
-      <div id="contChecks" style="display: none;">
+      <div id="contChecks">
         <input type="checkbox"class="input-class"> 
         <input type="checkbox" class="input-class">
         <input type="checkbox" class="input-class">

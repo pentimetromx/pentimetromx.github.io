@@ -4,12 +4,15 @@ var btnAtras = document.getElementById('bot-atras');
 var butInicio = document.getElementById('bot-inic')
 var botGrande = document.getElementById('iniciar')
 var imgTorreI = document.getElementById('imgTorre')
-var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador']
+var contInicial = document.getElementById('container1');
+var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado']
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor'];
 var allContTintero = ['pantalla-tintero','cont-links','imgTorre','vidTintero','imgsRepuestos','agrupaOblicuos-II','container2'];
 var allContPantafrente = ['pantalla-frente','container2','imgsRepuestos-II','imgTorre-f','agrupaOblicuos-III']
 var allContTorreImp = ['rotatek-1','toggleVideoButton','torre-imp','tinter-o','Verticales2','bateria-entintado','cont-Verticales3','bancada-torre','cont-Verticales4','sis-humedad','cont-Verticales5'];
+var allContMA = ['conteneMantaut','conti-boton']
+var buttonsMA = document.getElementsByClassName("butt-mautonomo");
 
 const grupOblicuos = document.getElementById('agrupaOblicuos-I')
 const oblicuosVI = document.getElementById('agrupaOblicuos-VI')
@@ -20,8 +23,9 @@ let contVariable = document.getElementById('cont-variable');
 let contPlana = document.getElementById('cont-plana');
 
 const textToColor = document.getElementById("textToColor");
+const textToColorI = document.getElementById("textToColorI");
 const line = document.getElementById("line");
-const linkList = document.getElementById("linkList");
+const lineI = document.getElementById("lineI");
 let hoverTimeout;
 let hideTimeout;
 
@@ -29,10 +33,9 @@ var conteHijosTintero = ['cont-links', 'imgTorre', 'imgsRepuestos','agrupaOblicu
 var conteHijosFrente = ['imgTorre-f','imgsRepuestos-II', 'agrupaOblicuos-III'];
 var conteHijosMandos = ['imgTorre-m','imgsRepuestos-III','agrupaOblicuos-IV'];
 var imgesDistribuidor = ['imgs-I','imgs-II','imgs-III','imgs-IV','imgs-V'];
-
 var imgesPlancha = ['portPlaca','portPlaca1','portPlaca2','portPlaca3','portPlaca4'];
-/* var imgesManta = document.querySelectorAll('.imgMant') */
 var contImgsManta = document.getElementById('contPerfilesManta');
+
 
 const coleccImgFront = document.querySelectorAll('.rep-frente');
 const coleccImgIzq = document.querySelectorAll('.rep-izquierda');
@@ -46,7 +49,6 @@ const seccionTintero = document.getElementById('pantalla-tintero')
 const seccionFrente = document.getElementById('pantalla-frente')
 const seccionMandos = document.getElementById('pantalla-mandos')
 const pantallas = ['pantalla-frente', 'pantalla-mandos','pantalla-servicio','pantalla-atras'];
-const linkIniciales = document.getElementById('links-iniciales')
 
 
 const contieneLinks = document.getElementById('cont-links')
@@ -67,9 +69,9 @@ const imageElementsi = document.querySelectorAll('.image-training');
 const contPortaPlancha = document.getElementById('contPortPlaca')
 const contPortaManta = document.getElementById('contPortManta')
 const contImpresor = document.getElementById('contImpresor')
-const inputsContainer = document.getElementById('contInput');
-const inputs = document.querySelectorAll('.inpt-class');
+const inputs = document.querySelectorAll('.input-class');
 const input = document.querySelectorAll('.input-class');
+const checks = document.querySelectorAll('.input-class')
 const imagesFull = document.querySelectorAll('img');
 const inpt = document.querySelectorAll('grafMini');
 
@@ -87,12 +89,10 @@ let nowIndex = 0;
 
 idsArray.push('pantalla-inicial');
 console.log(idsArray)
-
 function VolveraInicio(){
   location.reload();
   idsArray = [];
 }
-
 function irContenedorAnterior() {
   // Obtener el ID del contenedor anterior antes de ocultar el actual
   var previousElementID = idsArray[idsArray.length - 2]; // Utiliza length - 2 para obtener el elemento anterior
@@ -112,9 +112,7 @@ function irContenedorAnterior() {
   // Actualizar la variable currentID con el nuevo ID
   currentID = previousElementID;
 }
-
 function botoGrand() {
-
   var button = document.querySelector('.boton-a');
   // Guardar estilos originales
   var originalBackgroundColor = button.style.backgroundColor;
@@ -131,9 +129,7 @@ function botoGrand() {
   setTimeout(function() {
   }, 200);
 }
-
-function muestraTintero(elementId) {
-  
+function muestraTintero(elementId) {  
   // Recorre el array y oculta los elementos por su ID
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);
@@ -141,7 +137,6 @@ function muestraTintero(elementId) {
       elemento.style.display = 'none';
     }
   }
-
     // Recorre el array y oculta los elementos por su ID
     for (var i = 0; i < allContTintero.length; i++) {
       var elemento = document.getElementById(allContTintero[i]);
@@ -169,18 +164,44 @@ function muestraTintero(elementId) {
   console.log(idsArray)
   }
 }
-
+function ElementosMa() {
+  var linkList = document.getElementById("links-iniciales");
+  var linkListI = document.getElementById("links-inicialesI");
+  var continerButInic = document.getElementById('container1')
+  // Recorre el array y oculta los elementos por su ID
+  for (var i = 0; i < allContenedores.length; i++) {
+    var elemento = document.getElementById(allContenedores[i]);
+    if (elemento) {
+      elemento.style.display = 'none';
+    }
+  }
+  if (contPadreMA) {
+    contPadreMA.style.display = 'flex';
+  }
+  continerButInic.style.display='block'
+  butInicio.style.display='block'
+  continerButInic.style.marginLeft='-57px'  
+  // Aquí puedes continuar con las operaciones adicionales que necesites
+  for (var i = 0; i < buttonsMA.length; i++) {
+    buttonsMA[i].style.display = 'block';
+  }
+  if (linkListI) {
+    linkListI.style.display = 'flex';
+    linkListI.style.left = '-100px'; // Ajusta la cantidad de desplazamiento según tus necesidades
+  }
+  if (linkList) {
+    linkList.style.display = 'flex';
+    linkList.style.left = '-1px'; // Ajusta la cantidad de desplazamiento según tus necesidades
+  }
+}
 function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
   var elementsToHide = document.querySelectorAll('.alimentador, .uTeñido, .desbobinador,.unidProceso,.rebobinador, .contTorrImp'); 
-  btnAtras.style.display='block'
-  btnAtras.style.left='313px'
+  var continerButInic = document.getElementById('container1')
   botGrande.style.left='333px'
   butInicio.style.left='297px'
-
   for (var i = 0; i < elementsToHide.length; i++) {
     elementsToHide[i].style.display = 'none';
   }
-
   var videoBackground = document.getElementById('videoBackground');
   videoBackground.pause();
   videoBackground.style.display = 'none'; // Oculta el video
@@ -192,27 +213,32 @@ function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
       idsArray.push(elementId);
       console.log(idsArray)
       }
-
     break;
 
     case 'videoElement1':
+      /* var botIni = document.getElementById('bot-ini-link'); */      
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i]);
+        if (elemento) {
+          elemento.style.display = 'none';
+        }
+      }
+      continerButInic.style.display='block'
+      continerButInic.style.marginLeft='-147px'
       // Verificar si el elementoId ya está presente en el array
       if (!idsArray.includes('videoElement1')) {
         idsArray.push('videoElement1');
         console.log(idsArray)
       }
-
       var contVid = document.getElementById('videosTraining')  
-      contVid.style.display='block'
-    
+      contVid.style.display='block'    
       const buttonElements = document.querySelectorAll('.boton-f');
       var delay = 100;
       for (var i = 0; i < buttonElements.length; i++) {
         setTimeout(function(index) {
           buttonElements[index].style.display = 'block';
         }, delay * i,i);
-      }
-    
+      }    
       videoElements.forEach(video => {
         if (video.id === elementId) {
           video.style.display = 'block';
@@ -258,8 +284,7 @@ function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
   // Retardo de 0.2 segundos antes de ejecutar esta parte
   setTimeout(function() {
   }, 200);  
-}
- 
+} 
 function cambioContenedor(contenedorSeleccion) {
   var elementsToHide = document.querySelectorAll('.alimentador, .uTeñido, .desbobinador,.unidProceso,.rebobinador'); 
   var torreImpresion = document.getElementById('torre-imp') 
@@ -281,7 +306,6 @@ function cambioContenedor(contenedorSeleccion) {
     elto.style.display='block'
   }
 }
-
 function cierraContenedores(SeleccionClass) {
   const coleccion = document.querySelectorAll('.desbobinador, .uTeñido, .alimentador, .unidProceso, .rebobinador, .contTorrImp');
 
@@ -346,65 +370,41 @@ function cierraContenedores(SeleccionClass) {
     default:
   }
 }
-
 function muestraRodillo (videoId, imageClas) {
-
-  /* const correctPassword = '123'; // Cambia por la contraseña correcta
-  /* const enteredPassword = prompt('Ingrese la contraseña de verificación:'); */
-
-  /* if (enteredPassword === correctPassword) { */
-    // Aquí puedes poner el resto de la lógica de muestraRodillo()
-
-    btnAtras.style.left='313px'
-    botGrande.style.left='333px'
-    butInicio.style.left='297px'
-
+  var botMantaut = document.getElementById('bot-mantaut')
+  botMantaut.style.display='block'
+  botMantaut.style.marginLeft='477px'  
+  botGrande.style.left='450px'
+  butInicio.style.left='437px'
   videoElements.forEach(video => {
-    if (video.id === videoId) {
-      video.style.display = 'block'; 
-      video.currentTime = 0; // Establecer el tiempo actual al inicio
-      video.play();      
-    } else {
-      video.style.display = 'none';
-      video.pause();
-    }
+  if (video.id === videoId) {
+    video.style.display = 'block'; 
+    video.currentTime = 0; // Establecer el tiempo actual al inicio
+    video.play();      
+  } else {
+    video.style.display = 'none';
+    video.pause();
+  }
   });
-
   const imageContainerEras = document.querySelectorAll('.image-training, .image-training-a')
   for (i=0; i < imageContainerEras.length; i ++){
     imageContainerEras[i].style.display='none'
-  }  
-
+  } 
   const imageContainer = document.getElementsByClassName(imageClas)
   for (i=0; i < imageContainer.length; i ++){
     imageContainer[i].style.display='block'
   }
-
-  var botMantaut = document.getElementById('bot-mantaut')
-  botMantaut.style.display='block'
-  botMantaut.style.marginLeft='17px'
-  botMantaut.style.marginTop='0px' 
-
   var buttRepuest = document.getElementById('butt-repuestos')
   buttRepuest.style.display='block'
-
   var contImages = document.getElementById('contene-images')
   contImages.style.marginLeft='10px'
-
   var videoBackground = document.getElementById('videoBackground'); 
   videoBackground.style.display = 'none';
-
   setTimeout(() => {
     applyImageEffects();
   }, 300); // Retardo de 0.9 segundos (900 milisegundos)
 
-
-  /* } else {
-    alert('Contraseña incorrecta. Acceso denegado.');
-  } */
-
 }
-
 function applyImageEffects() { // aumento secuencial imagenes repuestos
   const imageElements = document.querySelectorAll('.image-training, .image-training-a');
   let currentIndex = 0;
@@ -424,7 +424,6 @@ function applyImageEffects() { // aumento secuencial imagenes repuestos
   }
   applyEffect();
 }
-
 function alternarVisibilidad(docId) {
   var elementosParaAlternar = document.querySelectorAll('.bot-entre, .video-training,.image-training, .butt-partes, .documentos');
   for (var i = 0; i < elementosParaAlternar.length; i++) {
@@ -437,33 +436,6 @@ function alternarVisibilidad(docId) {
 
 
 }
-
-function ElementosMa() {
-  var elementosOcultar = document.querySelectorAll('.boton-a, .boton-g, .boton-f, .video-training, .image-training, .image-training-a');
-  for (var i = 0; i < elementosOcultar.length; i++) {
-    elementosOcultar[i].style.display = 'none';
-  }
-
-  var botonMa = document.getElementById('bot-mantaut')
-  botonMa.style.display='block'
-
-  var botRepuesto = document.getElementById('butt-repuestos')
-  botRepuesto.style.display='none'
-
-  butInicio.style.display='block'
-
-  const buttonElements = document.querySelectorAll('.butt-mautonomo');
-  var delay = 100;
-  for (var i = 0; i < buttonElements.length; i++) {
-    setTimeout(function(index) {
-      buttonElements[index].style.display = 'block';
-    }, delay * i,i);
-  }
-
-  var contVid = document.getElementById('videosTraining')
-  contVid.style.display='none'
-}
-
 function mostrarBotMa(id) {
   var elemento = document.getElementById(id);
   if (elemento.style.display === 'none') {
@@ -473,23 +445,6 @@ function mostrarBotMa(id) {
   }
 }
 ////////////////////////////////////////////////////////////////////////
-
-function showNextInput() {
-  var contInputsMA = document.getElementById('contInput')
-  contInputsMA.style.display='flex'
-  if (currentIndex < inputs.length) {
-    inputs[currentIndex].style.display = 'block';
-    currentIndex++;
-    setTimeout(showNextInput, 57);
-  }
-}
-function showNextInputChec() {
-  if (actualtIndex < input.length) {
-    input[actualtIndex].style.display = 'block';
-    actualtIndex++;
-    setTimeout(showNextInputChec, 57);
-  }
-}
 function showNextGraf() {
   if (nowIndex < inpt.length ){
     inpt[nowIndex].style.display = 'block';
@@ -497,7 +452,6 @@ function showNextGraf() {
     setTimeout(showNextGraf, 57);
   }
 }
-
 function showRepuesto(parteopcionada,videoID) {
   switch (parteopcionada) {
     case 'contImgDistribuidor':
@@ -597,7 +551,6 @@ function showRepuesto(parteopcionada,videoID) {
     default: 
   }  
 } 
-
 function muestraPerfiles(ladoSeleccion){
   var video = document.getElementById('video-placa');
   var imgPlancha = document.querySelectorAll('.imagesTorreP') 
@@ -672,7 +625,6 @@ function muestraPerfiles(ladoSeleccion){
     default:
   }
 }
-
 function muestraAngulos(anguloSel){
 var contPadManta = document.getElementById('contPerfilesManta');
 var contChildManta = document.getElementById('imagenes-manta');
@@ -753,7 +705,6 @@ var imgsManta = document.querySelectorAll('.imgMant')
     default:
   }
 }
-
 function muestraLados(anguloSel){
   var contPadImpresor = document.getElementById('contPerfilesImpresor');
   var contChildImpresor = document.getElementById('imagenes-impresor');
@@ -829,8 +780,7 @@ function muestraLados(anguloSel){
       break;
       default:
     }
-  }  
-
+} 
 // Agregar evento de pantalla completa a cada imagen
 imagesFull.forEach(image => {
   image.addEventListener('click', () => {
@@ -857,7 +807,6 @@ imagesFull.forEach(image => {
     }
   });
 });
-
 //////////////////////////////////////////////////////////////////////////
 
 // Recorrer todos los botones y hacerlos visibles
@@ -865,7 +814,6 @@ botones.forEach(function(boton) {
 var id = boton.getAttribute('id');
 alternarVisibilidad(id);
 });
-
 document.addEventListener('DOMContentLoaded', () => {
   const botonesB = document.querySelectorAll('.boton-b');
   const botonesC = document.querySelectorAll('.boton-c');
@@ -923,14 +871,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Llama a la función para los botones con ID 'boton-e'
     recorrerYCambiarColores(botonesE);
 })
-
 document.addEventListener("DOMContentLoaded", function() {
   toggleVideoButton.addEventListener("click", function() {
     video.pause();
   })
 
 });
-
 // LOGICA PARA FULL SCREEN A IMAGENES
 images.forEach(image => {
   let isFullscreen = false;
@@ -959,7 +905,6 @@ images.forEach(image => {
     isFullscreen = !isFullscreen;
   });
 });
-
 // Iterar a través de las imágenes y agregar eventos de mouse
 imageElementsi.forEach((image, index) => {
   // Añadir el evento de aumento de tamaño al hacer clic
@@ -977,44 +922,112 @@ imageElementsi.forEach((image, index) => {
     }, 400);
   });
 });
-
+function showNextInputChec() {
+  var conteneChecks = document.getElementById('contChecks');
+  if (conteneChecks.style.display === 'block') {
+    for (var i = 0; i < checks.length; i++) {
+      checks[i].style.display = 'none';
+    }
+    conteneChecks.style.display = 'none';
+  } else {
+    conteneChecks.style.display = 'block';
+    if (actualtIndex < input.length) {
+      input[actualtIndex].style.display = 'block';
+      actualtIndex++;
+    } else {
+      actualtIndex = 0; // Restablecer el índice si alcanza el final
+    }
+    setTimeout(showNextInputChec, 37); // Ajusta el tiempo de espera en milisegundos
+  }
+}
 function mantAutonomo (opcionSeleccionada) {
   switch (opcionSeleccionada) {
     case 'troubleshooting':
-      showNextInput();
-      break;
+       var contInput = document.getElementById('contInput'); 
+      var inputs = document.querySelectorAll('.inpt-class');
+
+      if (contInput.style.display === 'none') {
+        contInput.style.display = 'block';
+    
+        // Mostrar cada input con un intervalo de 77 milisegundos
+        for (var i = 0; i < inputs.length; i++) {
+          (function(index) {
+            setTimeout(function() {
+              inputs[index].style.display = 'block';
+            }, 77 * index);
+          })(i);
+        }
+      } else {
+        contInput.style.display = 'none';
+        for (var i = 0; i < inputs.length; i++) {
+          inputs[i].style.display = 'none';
+        }
+      }
+    break;
     case 'def-tipo1':
       const conteneCanvas = document.getElementById('canvasContainer2')
-      conteneCanvas.style.display='block'
-      break;
+      if (conteneCanvas.style.display === 'block') {
+        conteneCanvas.style.display = 'none'; 
+      } else {
+        conteneCanvas.style.display = 'block';
+      }
+    break;
     case 'def-tipo2':
-     var conticheck = document.getElementById('contChecks')
-      conticheck.style.display='block'
-      showNextInputChec();
-      
-      break;
+
+
+    var cotCheck = document.getElementById('contChecks');
+    var inpts = document.querySelectorAll('.input-class');
+
+    if (cotCheck.style.display === 'block') {
+      // Ocultar los elementos
+      cotCheck.style.display = 'none';
+    for (var i = 0; i < inpts.length; i++) {
+    inpts[i].style.display = 'none';
+    }
+    } else {
+      // Ejecutar la lógica si el contenedor está visible
+      cotCheck.style.display = 'block';
+
+      // Mostrar cada input con un intervalo de 77 milisegundos
+    for (var i = 0; i < inpts.length; i++) {
+    (function(index) {
+      setTimeout(function() {
+      inpts[index].style.display = 'block';
+    }, 77 * index);
+    })(i);
+    }
+    }
+
+    break;
     case 'ayudastrabajo':
-      var contGrafitos =  document.getElementById('canvasContainer3')
-      contGrafitos.style.display= 'block'
-      var segundaGraf = document.getElementById('MiSegundaGrafica')
-      segundaGraf.style.display='block'
-      break;
+      const contGrafitos = document.getElementById('canvasContainer3')
+      if (contGrafitos.style.display === 'block') {
+        contGrafitos.style.display = 'none'; 
+      } else {
+        contGrafitos.style.display = 'block';
+      }
+    break;
     case 'fua':
       var contGrafColor = document.getElementById('contImagGraf')
-      contGrafColor.style.display='block'
+      if (contGrafColor.style.display === 'block') {
+        contGrafColor.style.display = 'none'; 
+      } else {
+        contGrafColor.style.display = 'block';
+      }
       break;
     case 'lup':
       var contGrafNeg = document.getElementById('contImagNeg')
-      contGrafNeg.style.display='block'
-      break;
-    default:
-  }
-  
-}
+      if (contGrafNeg.style.display === 'block') {
+        contGrafNeg.style.display = 'none'; 
+      } else {
+        contGrafNeg.style.display = 'block';
+      }
+    break;
+  default:
+}}
 function ensayoPruebas(){
   location.reload();
 }
-
 function muestraTorres (seleccion) {  // BOTON OBLICUO
   seccionTintero.style.display='none'
   switch (seleccion) {    
@@ -1080,7 +1093,6 @@ function muestraTorres (seleccion) {  // BOTON OBLICUO
     default:
   }
 }
-
 function muestraTorresI (seleccion) {  // BOTON OBLICUO
   seccionTintero.style.display='none'
   switch (seleccion) {    
@@ -1165,7 +1177,6 @@ function muestraTorresI (seleccion) {  // BOTON OBLICUO
     default:
   }
 }
-
 function videosImpresor(videoId) {
   const video = document.getElementById(videoId);
   
@@ -1245,6 +1256,29 @@ function cerrarSecciones(){
   linkList.style.display = "none";
 
 }
+function abrirPilarMA(){
+  linkListI.style.display = "none";    
+  // Recorre el array y oculta los elementos por su ID
+  for (var i = 0; i < allContenedores.length; i++) {
+    var elemento = document.getElementById(allContenedores[i]);
+    if (elemento) {
+      elemento.style.display = 'none';
+    }
+  }
+
+  var botonMa = document.getElementById('bot-mantaut')
+  botonMa.style.display='block'
+
+  butInicio.style.display='block'
+  const buttonElements = document.querySelectorAll('.butt-mautonomo');
+  var delay = 100;
+  for (var i = 0; i < buttonElements.length; i++) {
+    setTimeout(function(index) {
+      buttonElements[index].style.display = 'block';
+    }, delay * i,i);
+  }
+    
+}
 var chart = new Chart(miCanvas, {
     type: 'bar',    
     data: {
@@ -1287,7 +1321,6 @@ var chart = new Chart(miCanvas, {
         }
     }
 });
-
 var chart2 = new Chart(miCanvas2, {
     type: 'bar',
     data: {
@@ -1329,7 +1362,6 @@ var chart2 = new Chart(miCanvas2, {
         }
     }
 });
-
 var chart2 = new Chart(miCanvas3, {
     type: 'line',
     data: {
@@ -1371,7 +1403,6 @@ var chart2 = new Chart(miCanvas3, {
         }
     }
 });
-
 var chart2 = new Chart(miCanvas4, {
     type: 'pie',
     data: {
@@ -1414,7 +1445,6 @@ var chart2 = new Chart(miCanvas4, {
         }
     }
 });
-
 var chart2 = new Chart(miCanvas5, {
     type: 'bar',
     data: {
@@ -1475,32 +1505,55 @@ zoomableImages.forEach((zoomableImage) => {
     zoomableImage.style.transform = 'translate(0, 0) scale(1)';
   });
 });
-
+/////////////////////////////////////////////VINCULOS INICIALES////////////////////////////////////////////
 textToColor.addEventListener("mouseover", () => {
     clearTimeout(hideTimeout);
     hoverTimeout = setTimeout(() => {
-        linkList.style.display = "block";
-        line.style.width = textToColor.offsetWidth + "px";
-    }, 77);
+      linkList.style.display = "block";
+      line.style.width = textToColor.offsetWidth + "px";
+    }, 7);
 });
-
 linkList.addEventListener("mouseover", () => {
     clearTimeout(hideTimeout);
 });
-
 textToColor.addEventListener("mouseout", () => {
     clearTimeout(hoverTimeout);
     hideTimeout = setTimeout(() => {
-        textToColor.style.color = "white";
-        linkList.style.display = "none";
-        line.style.width = "0";
-    }, 100);
+      textToColor.style.color = "white";
+      linkList.style.display = "none";
+      line.style.width = "0";
+    }, 7);
 });
-
 linkList.addEventListener("mouseout", () => {
     hideTimeout = setTimeout(() => {
-        textToColor.style.color = "white";
-        linkList.style.display = "none";
-        line.style.width = "0";
-    }, 500);
+      textToColor.style.color = "white";
+      linkList.style.display = "none";
+      line.style.width = "0";
+    }, 7);
 });
+textToColorI.addEventListener("mouseover", () => {
+  clearTimeout(hideTimeout);
+  hoverTimeout = setTimeout(() => {
+    linkListI.style.display = "block";
+    lineI.style.width = textToColorI.offsetWidth + "px";
+  }, 7);
+});
+linkListI.addEventListener("mouseover", () => {
+  clearTimeout(hideTimeout);
+});
+textToColorI.addEventListener("mouseout", () => {
+  clearTimeout(hoverTimeout);
+  hideTimeout = setTimeout(() => {
+    textToColorI.style.color = "white";
+    linkListI.style.display = "none";
+    lineI.style.width = "0";
+  }, 77);
+});
+linkListI.addEventListener("mouseout", () => {
+  hideTimeout = setTimeout(() => {
+    textToColorI.style.color = "white";
+    linkListI.style.display = "none";
+    lineI.style.width = "0";
+  }, 7);
+});
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
