@@ -92,6 +92,23 @@ let nowIndex = 0;
 idsArray.push('pantalla-inicial');
 console.log(idsArray)
 
+function allHidden(){
+  for (var i = 0; i < allContenedores.length; i++) {
+    var elemento = document.getElementById(allContenedores[i]);
+    if (elemento) {
+      elemento.style.display = 'none';
+    }
+  }
+}
+function allShowdden(){
+  for (var i = 0; i < allContenedores.length; i++) {
+    var elemento = document.getElementById(allContenedores[i]);
+    if (elemento) {
+      elemento.style.display = 'block';
+    }
+  }
+}
+
 function VolveraInicio(){
   location.reload();
   idsArray = [];
