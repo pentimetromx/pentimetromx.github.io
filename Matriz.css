@@ -85,7 +85,7 @@ transform: scale(1.1);
 .boton-d:hover {
   transform: scale(1.1);
 }
-.boton-g{
+/* .boton-g{
   height: 47px;
   width: 177px;
   margin-top: 17px;
@@ -99,7 +99,7 @@ transform: scale(1.1);
   justify-content: center;
   cursor: pointer;
   transition: transform 0.1s; 
-}
+}*/
 .boton-e:hover {
   transform: scale(1.1);
 }
@@ -247,6 +247,7 @@ transform: scale(1.1);
   cursor: pointer; 
   transition: transform 0.1s; 
 }
+.boton-g,
 .boton-f{
   position: relative;
   align-items: center;

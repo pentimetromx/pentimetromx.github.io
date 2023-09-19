@@ -7,8 +7,8 @@ var imgTorreI = document.getElementById('imgTorre')
 var contInicial = document.getElementById('container1');
 var botonMa = document.getElementById('bot-mantaut')
 
+var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana']
 var linksIniciales = ['links-inicialesI','links-iniciales']
-var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado']
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor'];
 var allContTintero = ['pantalla-tintero','cont-links','imgTorre','vidTintero','imgsRepuestos','agrupaOblicuos-II','container2'];
@@ -149,7 +149,7 @@ function botoGrand() {
   setTimeout(function() {
   }, 200);
 }
-function muestraTintero(elementId) {  
+/* function muestraTintero(elementId) {  
   // Recorre el array y oculta los elementos por su ID
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);
@@ -190,7 +190,7 @@ function muestraTintero(elementId) {
   idsArray.push(elementId);
   console.log(idsArray)
   }
-}
+}*/
 function muestraBateria(elementId) {  
   // Recorre el array y oculta los elementos por su ID
   for (var i = 0; i < allContenedores.length; i++) {
@@ -264,21 +264,10 @@ function ElementosMa() {
   }
 }
 function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
-  var elementsToHide = document.querySelectorAll('.alimentador, .uTeñido, .desbobinador,.unidProceso,.rebobinador, .contTorrImp'); 
-  var continerButInic = document.getElementById('container1')
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);
     if (elemento) {
       elemento.style.display = 'none';
-    }
-  }
-  for (var i = 0; i < elementsToHide.length; i++) {
-    elementsToHide[i].style.display = 'none';
-  }
-  for (var i = 0; i < linksIniciales.length; i++) {
-    var elemento = document.getElementById(linksIniciales[i]);
-    if (elemento) {
-      elemento.style.display = 'block';
     }
   }
   var videoBackground = document.getElementById('videoBackground');
@@ -286,39 +275,95 @@ function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
   videoBackground.style.display = 'none'; // Oculta el video
   switch (elementId) {
     case 'pantalla-tintero':
-      // Verificar si el elementoId ya está presente en el array
-      if (!idsArray.includes(elementId)) {
-      idsArray.push(elementId);
-      console.log(idsArray)
+  // Recorre el array y oculta los elementos por su ID
+  for (var i = 0; i < allContenedores.length; i++) {
+    var elemento = document.getElementById(allContenedores[i]);
+    if (elemento) {
+      elemento.style.display = 'none';
+    }
+  }
+    // Recorre el array y oculta los elementos por su ID
+    for (var i = 0; i < allContTintero.length; i++) {
+      var elemento = document.getElementById(allContTintero[i]);
+      if (elemento) {
+        elemento.style.display = 'flex';
       }
-    break;
-    case 'videoElement1':  
-      continerButInic.style.display='block'
-       continerButInic.style.marginLeft='40px'
-      // Verificar si el elementoId ya está presente en el array
-      if (!idsArray.includes('videoElement1')) {
-        idsArray.push('videoElement1');
-        console.log(idsArray)
+    }
+    for (var i = 0; i < linksIniciales.length; i++) {
+      var elemento = document.getElementById(linksIniciales[i]);
+      if (elemento) {
+        elemento.style.display = 'block';
       }
-      var contVid = document.getElementById('videosTraining')  
-      contVid.style.display='block'    
-      const buttonElements = document.querySelectorAll('.boton-f');
-      var delay = 100;
-      for (var i = 0; i < buttonElements.length; i++) {
-        setTimeout(function(index) {
-          buttonElements[index].style.display = 'block';
-        }, delay * i,i);
-      }    
-      videoElements.forEach(video => {
-        if (video.id === elementId) {
-          video.style.display = 'block';
-          video.play();      
-        } else {
-          video.style.display = 'none';
-        }
-      });    
+    }
+  var videoBackground = document.getElementById('videoBackground');
+  videoBackground.pause();
+  videoBackground.style.display = 'none'; // Oculta el video
+  seccionTintero.style.display='block'
+  const video = document.getElementById("vidTintero");
+  // Reproducir el video
+  video.play();
+  // Después de 3 segundos, ocultar el video
+  setTimeout(function() {
+  video.style.display = "none"; // Esto ocultará el elemento de video
+  }, 977); // 2000 milisegundos = 2 segundos
+ if (!idsArray.includes(elementId)) {
+  idsArray.push(elementId);
+  console.log(idsArray)
+  }
     break;
-    case 'def-tipo2':      
+    case 'videoElement1-II': 
+    for (var i = 0; i < allContenedores.length; i++) {
+      var elemento = document.getElementById(allContenedores[i]);
+      if (elemento) {
+        elemento.style.display = 'none';
+      }
+    }
+    var contBateria = document.getElementById('bateria-entintado-II')
+    contBateria.style.display='block'
+    const buttonElements = document.querySelectorAll('.boton-f');
+    var delay = 100;
+    for (var i = 0; i < buttonElements.length; i++) {
+      setTimeout(function(index) {
+        buttonElements[index].style.display = 'block';
+      }, delay * i,i);
+    }
+    var contVid = document.getElementById('videosTraining')  
+    contVid.style.display='block' 
+    videoElements.forEach(video => {
+      if (video.id === elementId) {
+        video.style.display = 'block';
+        video.play();      
+      } else {
+        video.style.display = 'none';
+      }
+    });    
+    break;
+    case 'plate-smed': 
+    for (var i = 0; i < allContenedores.length; i++) {
+      var elemento = document.getElementById(allContenedores[i]);
+      if (elemento) {
+        elemento.style.display = 'none';
+      }
+    }  
+    var contBancada = document.getElementById('bancada-torre-II')
+    contBancada.style.display='block'
+    const buttonElementos = document.querySelectorAll('.boton-g');
+    var delay = 100;
+    for (var i = 0; i < buttonElementos.length; i++) {
+      setTimeout(function(index) {
+        buttonElementos[index].style.display = 'block';
+      }, delay * i,i);
+    }
+    var contVid = document.getElementById('videosTraining')  
+    contVid.style.display='block' 
+    videoElements.forEach(video => {
+      if (video.id === elementId) {
+        video.style.display = 'block';
+        video.play();      
+      } else {
+        video.style.display = 'none';
+      }
+    }); 
     break;
     case 'ayudastrabajo':
     break;
