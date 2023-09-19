@@ -5,7 +5,6 @@
 
 body, html {
   font-family: "GothamRounded";
-/*   background-color:#333333; */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; 
@@ -101,23 +100,12 @@ transform: scale(1.1);
   cursor: pointer;
   transition: transform 0.1s; 
 }
-/* #bot-mantaut{
-  height: 47px;
-  width: 247px;
-  margin-top: 17px;
-  background-color: #ffae18f3;
-  background-color: #ff1837;
-  color: white;
-  border-radius: 7px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: transform 0.1s; 
-} */
 .boton-e:hover {
   transform: scale(1.1);
+}
+#container1{
+  position: absolute;
+  left: 27px;
 }
 .segundo-bloque{
   display: flex;
@@ -184,7 +172,7 @@ transform: scale(1.1);
 .videos-training video{
   position: absolute;
   top: 100px;
-  left: 395px;
+  left: 297px;
 }
 .images-training{ 
   display: flex;
@@ -376,16 +364,11 @@ width:447px ;
   background-color: gray;
   color: red;
 }
-
-
-
-
 .input-class{
   margin-bottom: 15px;
   width: 20px;
   height: 21px;
 }
-
 .botnClass{
   height: 27px;
   text-align: left;
@@ -515,7 +498,6 @@ width:447px ;
   left: 341px;
   top: 1px;
   height: 477px;
-  /* width: 707px; */ 
   width: 637px;
 }
 #linkDistribuidor{
@@ -770,7 +752,6 @@ height: 398px;
   top: 6px;
   width: 0;
   height: 7px;
-  /* background-color: blue; */
   transition: 0.1s;
 }
 #line {
@@ -779,7 +760,6 @@ height: 398px;
   top: 6px;
   width: 0;
   height: 7px;
-  /* background-color: blue; */
   transition: 0.1s;
 }
 #linkListI{
@@ -843,4 +823,41 @@ height: 398px;
   width: 200px;
   height: 200px;
   animation: iridescent 4s infinite;
+}
+/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+/* Estilos para el header y el formulario */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+#search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#search-input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+#search-button {
+  /* background-color: #007BFF; */
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  width: 27px;
+  height: 27px;
+  text-align: center;
+}
+/* Estilos para la imagen de la lupa */
+#search-button img {
+  width: 20px;
+  height: 20px;
+  display: block; /* Cambia la imagen a un elemento en bloque */
+  margin-left: -5px;
 }

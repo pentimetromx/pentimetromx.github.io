@@ -5,6 +5,9 @@ var butInicio = document.getElementById('bot-inic')
 var botGrande = document.getElementById('iniciar')
 var imgTorreI = document.getElementById('imgTorre')
 var contInicial = document.getElementById('container1');
+var botonMa = document.getElementById('bot-mantaut')
+
+var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado']
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor'];
@@ -17,7 +20,6 @@ var buttonsMA = document.getElementsByClassName("butt-mautonomo");
 const grupOblicuos = document.getElementById('agrupaOblicuos-I')
 const oblicuosVI = document.getElementById('agrupaOblicuos-VI')
 
-const contOblicuosX = document.querySelectorAll('.BotObliX')
 var contOblicuosMandos = document.getElementById('agrupaOblicuos-VII');
 let contVariable = document.getElementById('cont-variable');
 let contPlana = document.getElementById('cont-plana');
@@ -89,6 +91,7 @@ let nowIndex = 0;
 
 idsArray.push('pantalla-inicial');
 console.log(idsArray)
+
 function VolveraInicio(){
   location.reload();
   idsArray = [];
@@ -145,6 +148,55 @@ function muestraTintero(elementId) {
       }
     }  
 
+    for (var i = 0; i < linksIniciales.length; i++) {
+      var elemento = document.getElementById(linksIniciales[i]);
+      if (elemento) {
+        elemento.style.display = 'block';
+      }
+    }
+
+  var videoBackground = document.getElementById('videoBackground');
+  videoBackground.pause();
+  videoBackground.style.display = 'none'; // Oculta el video
+  seccionTintero.style.display='block'
+
+  const video = document.getElementById("vidTintero");
+
+  // Reproducir el video
+  video.play();
+  // Después de 3 segundos, ocultar el video
+  setTimeout(function() {
+  video.style.display = "none"; // Esto ocultará el elemento de video
+  }, 977); // 2000 milisegundos = 2 segundos
+
+ if (!idsArray.includes(elementId)) {
+  idsArray.push(elementId);
+  console.log(idsArray)
+  }
+}
+function muestraBateria(elementId) {  
+  // Recorre el array y oculta los elementos por su ID
+  for (var i = 0; i < allContenedores.length; i++) {
+    var elemento = document.getElementById(allContenedores[i]);
+    if (elemento) {
+      elemento.style.display = 'none';
+    }
+  }
+    // Recorre el array y oculta los elementos por su ID
+    for (var i = 0; i < allContTintero.length; i++) {
+      var elemento = document.getElementById(allContTintero[i]);
+      if (elemento) {
+        elemento.style.display = 'flex';
+      }
+    }  
+
+    for (var i = 0; i < linksIniciales.length; i++) {
+      var elemento = document.getElementById(linksIniciales[i]);
+      if (elemento) {
+        elemento.style.display = 'block';
+      }
+    }
+
   var videoBackground = document.getElementById('videoBackground');
   videoBackground.pause();
   videoBackground.style.display = 'none'; // Oculta el video
@@ -197,15 +249,24 @@ function ElementosMa() {
 function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
   var elementsToHide = document.querySelectorAll('.alimentador, .uTeñido, .desbobinador,.unidProceso,.rebobinador, .contTorrImp'); 
   var continerButInic = document.getElementById('container1')
-  botGrande.style.left='333px'
-  butInicio.style.left='297px'
+  for (var i = 0; i < allContenedores.length; i++) {
+    var elemento = document.getElementById(allContenedores[i]);
+    if (elemento) {
+      elemento.style.display = 'none';
+    }
+  }
   for (var i = 0; i < elementsToHide.length; i++) {
     elementsToHide[i].style.display = 'none';
+  }
+  for (var i = 0; i < linksIniciales.length; i++) {
+    var elemento = document.getElementById(linksIniciales[i]);
+    if (elemento) {
+      elemento.style.display = 'block';
+    }
   }
   var videoBackground = document.getElementById('videoBackground');
   videoBackground.pause();
   videoBackground.style.display = 'none'; // Oculta el video
-
   switch (elementId) {
     case 'pantalla-tintero':
       // Verificar si el elementoId ya está presente en el array
@@ -214,17 +275,9 @@ function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
       console.log(idsArray)
       }
     break;
-
-    case 'videoElement1':
-      /* var botIni = document.getElementById('bot-ini-link'); */      
-      for (var i = 0; i < allContenedores.length; i++) {
-        var elemento = document.getElementById(allContenedores[i]);
-        if (elemento) {
-          elemento.style.display = 'none';
-        }
-      }
+    case 'videoElement1':  
       continerButInic.style.display='block'
-      continerButInic.style.marginLeft='-147px'
+       continerButInic.style.marginLeft='40px'
       // Verificar si el elementoId ya está presente en el array
       if (!idsArray.includes('videoElement1')) {
         idsArray.push('videoElement1');
@@ -248,25 +301,15 @@ function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
         }
       });    
     break;
-
-    case 'def-tipo2':
-      
+    case 'def-tipo2':      
     break;
     case 'ayudastrabajo':
-
     break;
     case 'fua':
-
     break;
     case 'lup':
-
     break;
     default:
-
-    if (!idsArray.includes(elementId)) {
-      idsArray.push(elementId);
-      console.log(idsArray)
-      }
   }
 
   var button = document.querySelector('.boton-a');
@@ -293,8 +336,8 @@ function cambioContenedor(contenedorSeleccion) {
       elementsToHide[i].style.display = 'none';
   }
   butInicio.style.display='flex'
-  btnAtras.style.display='block'
-  btnAtras.style.left = '57px'; 
+  /* btnAtras.style.display='block'
+  btnAtras.style.left = '57px'; */ 
    
   if (contenedorSeleccion==='torre-imp'){
     torreImpresion.style.left='11px'
@@ -306,76 +349,81 @@ function cambioContenedor(contenedorSeleccion) {
     elto.style.display='block'
   }
 }
-function cierraContenedores(SeleccionClass) {
-  const coleccion = document.querySelectorAll('.desbobinador, .uTeñido, .alimentador, .unidProceso, .rebobinador, .contTorrImp');
+function cierraContenedores(elementId) {
+  const coleccion = document.querySelectorAll('.desbobinador, .desbobinador-I, .uTeñido, .alimentador, .unidProceso, .rebobinador, .contTorrImp');
 
-  switch (SeleccionClass) {
+  switch (elementId) {
     case 'desbobinador':
-      btnAtras.style.display='block'
-      btnAtras.style.left = '57px';
+      /* btnAtras.style.display='block' */
+      /* btnAtras.style.left = '57px'; */
       coleccion.forEach(elemento => {
-        if (elemento.classList.contains(SeleccionClass)) {
+        if (elemento.classList.contains(elementId)) {
           elemento.style.display = 'flex';
         } else {
           elemento.style.display = 'none';
         }
       });
-      break;
-  
+      if (!idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray)
+        }
+      break; 
     case 'uTeñido':
-      btnAtras.style.display='block'
-      btnAtras.style.left = '57px';
-        coleccion.forEach(elemento => {
-          if (elemento.classList.contains(SeleccionClass)) {
-            elemento.style.display = 'flex';
-          } else {
-            elemento.style.display = 'none';
-          }
-        });
-      break;
-      case 'alimentador':
-        btnAtras.style.display='block'
-        btnAtras.style.left = '57px';
-          coleccion.forEach(elemento => {
-            if (elemento.classList.contains(SeleccionClass)) {
-              elemento.style.display = 'flex';
-            } else {
-              elemento.style.display = 'none';
-            }
-        });
-      break;
-      case 'unidProceso':
-        btnAtras.style.display='block'
-        btnAtras.style.left = '57px';
-        coleccion.forEach(elemento => {
-          if (elemento.classList.contains(SeleccionClass)) {
-            elemento.style.display = 'flex';
-          } else {
-            elemento.style.display = 'none';
-          }
-        });
-        break;
-            case 'rebobinador':
-              btnAtras.style.display='block'
-              btnAtras.style.left = '57px';
-              coleccion.forEach(elemento => {
-                if (elemento.classList.contains(SeleccionClass)) {
-                  elemento.style.display = 'flex';
-                } else {
-                  elemento.style.display = 'none';
-                }
-              });
-              break;
-            
+    /* btnAtras.style.display='block'
+    btnAtras.style.left = '57px'; */
+    coleccion.forEach(elemento => {
+    if (elemento.classList.contains(elementId)) {
+    elemento.style.display = 'flex';
+    } else {
+    elemento.style.display = 'none';
+    }
+    });
+    break;
+    case 'alimentador':
+    /* btnAtras.style.display='block'
+    btnAtras.style.left = '57px'; */
+    coleccion.forEach(elemento => {
+    if (elemento.classList.contains(elementId)) {
+    elemento.style.display = 'flex';
+    } else {
+    elemento.style.display = 'none';
+    }
+    });
+    break;
+    case 'unidProceso':
+    /* btnAtras.style.display='block'
+    btnAtras.style.left = '57px'; */
+    coleccion.forEach(elemento => {
+    if (elemento.classList.contains(elementId)) {
+    elemento.style.display = 'flex';
+    } else {
+    elemento.style.display = 'none';
+    }
+    });
+    break;
+    case 'rebobinador':
+    /* btnAtras.style.display='block'
+    btnAtras.style.left = '57px'; */
+    coleccion.forEach(elemento => {
+      if (elemento.classList.contains(elementId)) {
+        elemento.style.display = 'flex';
+      } else {
+        elemento.style.display = 'none';
+      }
+    });
+    break;
+
     default:
   }
 }
 function muestraRodillo (videoId, imageClas) {
   var botMantaut = document.getElementById('bot-mantaut')
+  var contVideos = document.getElementById('videos-training')
+
   botMantaut.style.display='block'
-  botMantaut.style.marginLeft='477px'  
-  botGrande.style.left='450px'
-  butInicio.style.left='437px'
+  botMantaut.style.marginLeft='57px' 
+  contInicial.style.left='107px'
+  /* botonMa.style.display='block' */
   videoElements.forEach(video => {
   if (video.id === videoId) {
     video.style.display = 'block'; 
@@ -1265,10 +1313,7 @@ function abrirPilarMA(){
       elemento.style.display = 'none';
     }
   }
-
-  var botonMa = document.getElementById('bot-mantaut')
   botonMa.style.display='block'
-
   butInicio.style.display='block'
   const buttonElements = document.querySelectorAll('.butt-mautonomo');
   var delay = 100;
@@ -1276,8 +1321,7 @@ function abrirPilarMA(){
     setTimeout(function(index) {
       buttonElements[index].style.display = 'block';
     }, delay * i,i);
-  }
-    
+  }    
 }
 var chart = new Chart(miCanvas, {
     type: 'bar',    
@@ -1557,3 +1601,16 @@ linkListI.addEventListener("mouseout", () => {
   }, 7);
 });
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Obtenemos los elementos del DOM
+const searchForm = document.getElementById('search-form');
+const searchInput = document.getElementById('search-input');
+
+// Agregamos un evento para manejar la búsqueda
+searchForm.addEventListener('submit', function (e) {
+    e.preventDefault(); // Evita que se envíe el formulario
+
+    const searchTerm = searchInput.value.toLowerCase(); // Obtenemos el término de búsqueda y lo convertimos a minúsculas
+
+    // Aquí puedes realizar la lógica de búsqueda, por ejemplo, mostrar resultados en la página o redirigir a una página de resultados.
+});
