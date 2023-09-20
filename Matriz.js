@@ -108,29 +108,62 @@ function allShowdden(){
     }
   }
 }
-
 function VolveraInicio(){
   location.reload();
   idsArray = [];
 }
 function irContenedorAnterior() {
-  // Obtener el ID del contenedor anterior antes de ocultar el actual
-  var previousElementID = idsArray[idsArray.length - 2]; // Utiliza length - 2 para obtener el elemento anterior
-  var contenedorAnterior = document.getElementById(previousElementID);
-
   // Ocultar el contenedor actual
+  var i = 0;
   var contenedorActual = document.getElementById(idsArray[idsArray.length - 1]);
   contenedorActual.style.display = 'none';
 
-  // Mostrar el contenedor anterior
-  contenedorAnterior.style.display = 'flex';
+  recorrerActual = contenedorActual.querySelectorAll('*');
+
+    // Ocultar todos los elementos secundarios del actual
+    recorrerActual.forEach(function (elemento) {
+      elemento.style.display = 'none';
+    });
+
+  // Obtener el ID del contenedor anterior
+  var previousElementID = idsArray[idsArray.length - 2];
+  var contenedorAnterior = document.getElementById(previousElementID);
+  contenedorAnterior.style.display = 'block';
+
+  switch (contenedorAnterior) {
+    case "contPortPlaca":
+      showRepuesto('contPortPlaca');
+      break;
+    // Agrega más casos aquí si es necesario para otros elementos anteriores
+    default:
+      break;
+  }
+
+  var recorrerAnterior = contenedorAnterior.querySelectorAll('*');
+
+  // Mostrar todos los elementos  del anterior
+  recorrerAnterior.forEach(function (elemento) {
+    elemento.style.display = 'block';
+  });
 
   // Actualizar el array quitando el último ID almacenado
   idsArray.pop();
-  console.log(idsArray);
+  console.log(idsArray)
 
   // Actualizar la variable currentID con el nuevo ID
   currentID = previousElementID;
+
+  // Verificar si solo queda un elemento en el array
+  if (idsArray.length === 1) {
+    // Ejecutar la función VolveraInicio si solo queda un elemento
+    allContenedores.forEach(elemen => {
+      var element = document.getElementById(elemen);
+      if (element) {
+        element.style.display = 'none';
+      }
+    });
+    VolveraInicio();
+  }
 }
 function botoGrand() {
   var button = document.querySelector('.boton-a');
@@ -149,48 +182,6 @@ function botoGrand() {
   setTimeout(function() {
   }, 200);
 }
-/* function muestraTintero(elementId) {  
-  // Recorre el array y oculta los elementos por su ID
-  for (var i = 0; i < allContenedores.length; i++) {
-    var elemento = document.getElementById(allContenedores[i]);
-    if (elemento) {
-      elemento.style.display = 'none';
-    }
-  }
-    // Recorre el array y oculta los elementos por su ID
-    for (var i = 0; i < allContTintero.length; i++) {
-      var elemento = document.getElementById(allContTintero[i]);
-      if (elemento) {
-        elemento.style.display = 'flex';
-      }
-    }  
-
-    for (var i = 0; i < linksIniciales.length; i++) {
-      var elemento = document.getElementById(linksIniciales[i]);
-      if (elemento) {
-        elemento.style.display = 'block';
-      }
-    }
-
-  var videoBackground = document.getElementById('videoBackground');
-  videoBackground.pause();
-  videoBackground.style.display = 'none'; // Oculta el video
-  seccionTintero.style.display='block'
-
-  const video = document.getElementById("vidTintero");
-
-  // Reproducir el video
-  video.play();
-  // Después de 3 segundos, ocultar el video
-  setTimeout(function() {
-  video.style.display = "none"; // Esto ocultará el elemento de video
-  }, 977); // 2000 milisegundos = 2 segundos
-
- if (!idsArray.includes(elementId)) {
-  idsArray.push(elementId);
-  console.log(idsArray)
-  }
-}*/
 function muestraBateria(elementId) {  
   // Recorre el array y oculta los elementos por su ID
   for (var i = 0; i < allContenedores.length; i++) {
@@ -562,16 +553,19 @@ function showNextGraf() {
     setTimeout(showNextGraf, 57);
   }
 }
-function showRepuesto(parteopcionada,videoID) {
-  switch (parteopcionada) {
+function showRepuesto(elementId) {
+  switch (elementId) {
     case 'contImgDistribuidor':
-      conteHijosTintero.forEach(elementId => {
-        var element = document.getElementById(elementId);
+      if (!idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray)
+        }      
+      conteHijosTintero.forEach(elementCont => {
+        var element = document.getElementById(elementCont);
         if (element) {
           element.style.display = 'none';
         }
       });
-
       if (imgsDistribuidor) {
         imgsDistribuidor.style.display = 'block';
         // Recorre el arreglo y muestra las imágenes
@@ -581,7 +575,7 @@ function showRepuesto(parteopcionada,videoID) {
         });
       }
    break;
-    case 'rodillForma':
+    case 'contImgEntintador':
       conteHijosTintero.forEach(elementId => {
         var element = document.getElementById(elementId);
         if (element) {
@@ -595,9 +589,17 @@ function showRepuesto(parteopcionada,videoID) {
         imagenesForma.forEach(function(imagen) {
           imagen.style.display = 'block';
         });
-      }     
+      } 
+      if (!idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray)
+        }    
     break;
-    case 'portaPlancha':
+    case 'contPortPlaca':
+      if (!idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray)
+        }      
       conteHijosTintero.forEach(elementId => {
         var element = document.getElementById(elementId);
         if (element) {
@@ -616,13 +618,17 @@ function showRepuesto(parteopcionada,videoID) {
         }}); 
      var imagenesPlancha = document.querySelectorAll('.imagesTorre')
      imagenesPlancha.forEach(function (imagen) {
-      var elementosPortPlaca = imagen.querySelectorAll('#portPlaca');
+      var elementosPortPlaca = imagen.querySelectorAll('portPlaca');
       elementosPortPlaca.forEach(function (elemento) {
         elemento.style.display = 'flex';
       });
     });
     break;       
-    case 'portaMantilla':
+    case 'contPortManta':
+      if (!idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray)
+        }       
       conteHijosTintero.forEach(elementId => {
         var element = document.getElementById(elementId);
         if (element) {
@@ -638,15 +644,19 @@ function showRepuesto(parteopcionada,videoID) {
         video.pause();
         video.currentTime = 0;
         video.play();   
-      }});  
+      }}); 
     break;
-    case 'cilindroImpresor':
+    case 'contImpresor':
+      if (!idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray)
+        }
       conteHijosTintero.forEach(elementId => {
         var element = document.getElementById(elementId);
         if (element) {
           element.style.display = 'none';
         }
-      }); 
+      });  
       contImpresor.style.display='block'
       videoElements.forEach(video => {
       if (video.id !== 'video-impresor') {
@@ -661,76 +671,89 @@ function showRepuesto(parteopcionada,videoID) {
     default: 
   }  
 } 
-function muestraPerfiles(ladoSeleccion){
+function muestraPerfiles(elementId){
   var video = document.getElementById('video-placa');
-  var imgPlancha = document.querySelectorAll('.imagesTorreP') 
+  var imgPlancha = document.querySelectorAll('.imagesTorre') 
   var imagesPlancha = document.getElementById('contPerfilesPlancha')
   var imgsPlancha = document.getElementById('imagenes-plancha')
 
-    switch (ladoSeleccion) {
-    case 'frente':
+    switch (elementId) {
+    case 'imagen1':
     // Detener el video
     video.pause();
     // Ocultar el video estableciendo su estilo de visualización en 'none'
     video.style.display = 'none';
     imagesPlancha.style.display='flex'
     imgsPlancha.style.display='flex'
-
     imgPlancha.forEach(function (imagen) {
-      if (imagen.id === 'portPlaca' || imagen.id === 'portPlaca1') {
+      if (imagen.id === 'portPlaca') {
         imagen.style.display = 'block';
       }else{
         imagen.style.display = 'none';
       }
     });
+    if (!idsArray.includes(elementId)) {
+      idsArray.push(elementId);
+      console.log(idsArray)
+      }
     break;
-    case 'mandos':
+    case 'imagen2':
     // Detener el video
     video.pause();
     // Ocultar el video estableciendo su estilo de visualización en 'none'
     video.style.display = 'none';
+    
     imagesPlancha.style.display='flex'
     imgsPlancha.style.display='flex'
-
     imgPlancha.forEach(function (imagen) {
-      if (imagen.id === 'portPlaca2' || imagen.id === 'portPlaca3') {
+      if (imagen.id === 'portPlaca2') {
         imagen.style.display = 'block';
       }else{
         imagen.style.display = 'none';
       }
     });
+    if (!idsArray.includes(elementId)) {
+      idsArray.push(elementId);
+      console.log(idsArray)
+      }
       break;     
-    case 'servicio':
+    case 'imagen3':
     // Detener el video
     video.pause();
     // Ocultar el video estableciendo su estilo de visualización en 'none'
-    video.style.display = 'none';
+    video.style.display = 'none';    
     imagesPlancha.style.display='flex'
     imgsPlancha.style.display='flex'
-
     imgPlancha.forEach(function (imagen) {
-      if (imagen.id === 'portPlaca4' || imagen.id === 'portPlaca5') {
+      if (imagen.id === 'portPlaca3') {
         imagen.style.display = 'block';
       }else{
         imagen.style.display = 'none';
       }
     });
+    if (!idsArray.includes(elementId)) {
+      idsArray.push(elementId);
+      console.log(idsArray)
+      }
     break;
-    case 'atras':
-     // Detener el video
-     video.pause();
-     // Ocultar el video estableciendo su estilo de visualización en 'none'
-     video.style.display = 'none';
-     imagesPlancha.style.display='flex'
-     imgsPlancha.style.display='flex'
- 
-     imgPlancha.forEach(function (imagen) {
-       if (imagen.id === 'portPlaca6' || imagen.id === 'portPlaca7') {
-         imagen.style.display = 'block';
-       }else{
-         imagen.style.display = 'none';
-       }
-     });
+    case 'imagen4':
+  // Detener el video
+  video.pause();
+  // Ocultar el video estableciendo su estilo de visualización en 'none'
+  video.style.display = 'none';    
+  imagesPlancha.style.display='flex'
+  imgsPlancha.style.display='flex'
+  imgPlancha.forEach(function (imagen) {
+    if (imagen.id === 'portPlaca4') {
+      imagen.style.display = 'block';
+    }else{
+      imagen.style.display = 'none';
+    }
+  });
+  if (!idsArray.includes(elementId)) {
+    idsArray.push(elementId);
+    console.log(idsArray)
+    }
     break;
     default:
   }

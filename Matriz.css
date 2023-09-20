@@ -11,7 +11,7 @@ body, html {
   height: 100vh; /* Ajusta la altura del body para que cubra toda la pantalla */
   margin: 0; /* Elimina los márgenes predeterminados del body */
   padding: 0; /* Elimina los rellenos predeterminados del body */
-  overflow:hidden;
+  /* overflow:hidden; */
 }
 
 #videoBackground {
@@ -717,6 +717,9 @@ height: 398px;
   height: 135px;
   width: 180px;
 }
+.imagen-container{
+  display: flex;
+}
 /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 #textToColorI,
 #textToColor {
@@ -861,4 +864,9 @@ header {
   height: 20px;
   display: block; /* Cambia la imagen a un elemento en bloque */
   margin-left: -5px;
+}
+
+#bot-atras::before {
+  content: "\25C0"; /* Código HTML para el triángulo de reproducción */
+  font-size: 2em; /* Aumentar el tamaño al doble */
 }

@@ -189,25 +189,24 @@
       </div>  
     </div>
 
-    <div id="pantalla-tintero" style="display: none;">  
+    <div id="pantalla-tintero" style="display: none;">       
       
       <div class="contene-2" id="container2" style="display: none;top: -77px;left: 197px;">
-        <!-- <button class="boton-a" id="bot-atras" style="text-align: center;" onclick="irContenedorAnterior('pantalla-inicial')">IR ATRAS</button> -->
+        <button class="boton-a" id="bot-atras" style="text-align: center;width: 47px;position: fixed;left: 407px;top: 19px;" onclick="irContenedorAnterior('contPortPlaca')"></button>
         <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL PRINCIPAL</button>
-        <button class="boton-a" id="bot-mantaut" style="text-align:center;display: none;" onclick="ElementosMa()">MANTENIMIENTO AUTONOMO</button>      
         <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
       </div><br>
 
       <div id="cont-links">
         <a href="#" class="custom-link" id="linkDistribuidor" onclick="showRepuesto ('contImgDistribuidor')">Rodillo distribuidor</a>
-        <a href="#" class="custom-link" id="linkForma" onclick="showRepuesto('rodillForma')">Rodillo forma</a>
-        <a href="#" class="custom-link" id="linkPlate" onclick="showRepuesto('portaPlancha')">Porta plancha</a>
-        <a href="#" class="custom-link" id="linkManta" onclick="showRepuesto('portaMantilla', 'videoTrain03')">Porta mantilla</a>
-        <a href="#" class="custom-link" id="linkImpresor" onclick="showRepuesto('cilindroImpresor', 'videoTrain01')">Cilindro impresor</a>
+        <a href="#" class="custom-link" id="linkForma" onclick="showRepuesto('contImgEntintador')">Rodillo forma</a>
+        <a href="#" class="custom-link" id="linkPlate" onclick="showRepuesto('contPortPlaca')">Porta plancha</a>
+        <a href="#" class="custom-link" id="linkManta" onclick="showRepuesto('contPortManta', 'videoTrain03')">Porta mantilla</a>
+        <a href="#" class="custom-link" id="linkImpresor" onclick="showRepuesto('contImpresor', 'videoTrain01')">Cilindro impresor</a>
 
       </div>
       <img src="./assets/Arriba abajo.jpg" id="imgTorre" alt="imagen-torre"> 
-      <video id="vidTintero" src="./assets/Arriba abajo.mp4"></video>
+      <video class="video-training" id="vidTintero" src="./assets/Arriba abajo.mp4"></video>
 
       <div id="imgsRepuestos">
         <img class="image-trainings rep-frente" src="./assets/eje.jpg" alt="eje">
@@ -475,22 +474,25 @@
     </div> 
     <!--- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
     <div id="contPortPlaca" style="display: none;">
-      <video class="video-training" id="video-placa" src="./assets/video-plancha-v2.mp4" loop muted autoplay></video>
+      <button class="boton-a" id="bot-atras" style="text-align: center;width: 47px;position:absolute;top:-59px;left: 397px;" onclick="irContenedorAnterior('contPortPlaca')"></button>
+      
+      <video class="video-training" id="video-placa" src="./assets/video-plancha-v2.mp4" loop autoplay></video>
+     
       <div id="agrupaOblicuos-VIII" style="margin-top: -54px;margin-left: -10px;">
         <div id="contFrente-VI " class="contOblicuosPlaca">
-          <button class="Bot-inicio2" id="butt-1" onclick="muestraPerfiles('frente')">Frente</button>
+          <button class="Bot-inicio2" id="butt-1" onclick="muestraPerfiles('imagen1')">Frente</button>
           <button class="Bot-inicio2-fondo" id="butt-2"></button>  
         </div>  
         <div id="contLateral-VI" class="contOblicuosPlaca">
-          <button class="Bot-inicio2" id="butt-3" onclick="muestraPerfiles('mandos')">Mandos</button>
+          <button class="Bot-inicio2" id="butt-3" onclick="muestraPerfiles('imagen2')">Mandos</button>
           <button class="Bot-inicio2-fondo" id="butt-4"></button>  
         </div> 
         <div id="contArriba-VI" class="contOblicuosPlaca">
-          <button class="Bo  t-inicio2" id="butt-5" onclick="muestraPerfiles('servicio')">Servicio</button>
+          <button class="Bot-inicio2" id="butt-5" onclick="muestraPerfiles('imagen3')">Servicio</button>
           <button class="Bot-inicio2-fondo" id="butt-6"></button>  
         </div> 
         <div id="contAtras-VI" class="contOblicuosPlaca">
-          <button class="Bot-inicio2" id="butt-7" onclick="muestraPerfiles('atras')">Atras</button>
+          <button class="Bot-inicio2" id="butt-7" onclick="muestraPerfiles('imagen4')">Atras</button>
           <button class="Bot-inicio2-fondo" id="butt-8"></button>  
         </div> 
       </div>
@@ -498,35 +500,35 @@
 
     <div id="contPerfilesPlancha">
       <div id="imagenes-plancha">
-        <div class="imagen-container">
-          <img src="./assets/Porta plancha2.png" class="imagesTorre imagesTorreP" id="portPlaca" alt="porte plancha">
+        <div class="imagen-container" id="imagen1">
+          <img src="./assets/Porta plancha2.png" class="imagesTorre" id="portPlaca" alt="porte plancha">
+
+          <img src="./assets/Porta plancha.png" class="imagesTorre" id="portPlaca" style="margin-left: 17px;" alt="porte plancha">
         </div>
-        <div class="imagen-container">
-          <img src="./assets/Porta plancha.png" class="imagesTorre imagesTorreP" id="portPlaca1" style="margin-left: 17px;" alt="porte plancha">
+
+        <div class="imagen-container" id="imagen2">
+          <img src="./assets/Porta plancha3.png" class="imagesTorre" id="portPlaca2" alt="porte plancha">
+
+          <img src="./assets/Porta plancha4.png" class="imagesTorre" id="portPlaca2" style="margin-left: 17px;" alt="porte plancha">
         </div>
-        <div class="imagen-container">
-          <img src="./assets/Porta plancha3.png" class="imagesTorre imagesTorreP" id="portPlaca2" alt="porte plancha">
+
+        <div class="imagen-container" id="imagen3">
+          <img src="./assets/Porta plancha5.png" class="imagesTorre" id="portPlaca3" alt="porte plancha">
+
+          <img src="./assets/Porta plancha6.png" class="imagesTorre" id="portPlaca3" style="margin-left: 17px;" alt="porte plancha">
         </div>
-        <div class="imagen-container">
-          <img src="./assets/Porta plancha4.png" class="imagesTorre imagesTorreP" id="portPlaca3" style="margin-left: 17px;" alt="porte plancha">
-        </div>
-        <div class="imagen-container">
-          <img src="./assets/Porta plancha5.png" class="imagesTorre imagesTorreP" id="portPlaca4" alt="porte plancha">
-        </div>
-        <div class="imagen-container">
-          <img src="./assets/Porta plancha6.png" class="imagesTorre imagesTorreP" id="portPlaca5" style="margin-left: 17px;" alt="porte plancha">
-        </div>
-        <div class="imagen-container">
-          <img src="./assets/Porta plancha7.png" class="imagesTorre imagesTorreP" id="portPlaca6" alt="porte plancha">
-        </div>
-        <div class="imagen-container">
-          <img src="./assets/Porta plancha8.png" class="imagesTorre imagesTorreP" id="portPlaca7" style="margin-left: 17px;" alt="porte plancha">
+
+        <div class="imagen-container" id="imagen4">
+          <img src="./assets/Porta plancha7.png" class="imagesTorre" id="portPlaca4" alt="porte plancha">
+
+          <img src="./assets/Porta plancha8.png" class="imagesTorre" id="portPlaca4" style="margin-left: 17px;" alt="porte plancha">
         </div>
       </div>
 
     </div>
 
     <div id="contPortManta" style="display: none;">
+      <button class="boton-a" id="bot-atras" style="text-align: center;width: 47px;position:absolute;top:-59px;left: 397px;" onclick="irContenedorAnterior('contPortPlaca')"></button>
 
       <video class="video-training" id="videoManta"  src="./assets/video-portaManta-v2.mp4" muted loop autoplay></video>
 
@@ -581,6 +583,7 @@
     </div>
 
     <div id="contImpresor" style="display: none;">
+      <button class="boton-a" id="bot-atras" style="text-align: center;width: 47px;position:absolute;top:-59px;left: 397px;" onclick="irContenedorAnterior('contPortPlaca')"></button>
 
       <video class="video-training" id="video-impresor" src="./assets/video-impresor.mp4" loop muted autoplay></video>
 
