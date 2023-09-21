@@ -7,7 +7,7 @@ var imgTorreI = document.getElementById('imgTorre')
 var contInicial = document.getElementById('container1');
 var botonMa = document.getElementById('bot-mantaut')
 
-var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana']
+var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','']
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado']
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor'];
@@ -24,6 +24,7 @@ const oblicuosVI = document.getElementById('agrupaOblicuos-VI')
 var contOblicuosMandos = document.getElementById('agrupaOblicuos-VII');
 let contVariable = document.getElementById('cont-variable');
 let contPlana = document.getElementById('cont-plana');
+let contSecador = document.getElementById('cont-secador')
 
 const textToColor = document.getElementById("textToColor");
 const textToColorI = document.getElementById("textToColorI");
@@ -92,23 +93,6 @@ let nowIndex = 0;
 
 idsArray.push('pantalla-inicial');
 console.log(idsArray)
-
-function allHidden(){
-  for (var i = 0; i < allContenedores.length; i++) {
-    var elemento = document.getElementById(allContenedores[i]);
-    if (elemento) {
-      elemento.style.display = 'none';
-    }
-  }
-}
-function allShowdden(){
-  for (var i = 0; i < allContenedores.length; i++) {
-    var elemento = document.getElementById(allContenedores[i]);
-    if (elemento) {
-      elemento.style.display = 'block';
-    }
-  }
-}
 function VolveraInicio(){
   location.reload();
   idsArray = [];
@@ -164,9 +148,24 @@ function irContenedorAnterior() {
           break; 
           case "torre-imp":
             cambioContenedor('torre-imp')
-          break;                                           
-        default:
+          break; 
+          case "cont-variable":
+            abrirSeccionVariable('cont-variable')
+          break; 
+          case "cont-plana":
+            abrirSeccionPlanas('cont-plana')
+          break; 
+          case "cont-secador":
+            abrirSeccionCurado('cont-secador')
           break;
+          case "bateria-entintado-II":
+            changeButtonStyles('bateria-entintado-II', 'contene-7')
+          break; 
+          case "bancada-torre-II":
+            changeButtonStyles('bancada-torre-II')
+          break;                                                                                              
+        default:
+          break; 
       }
     }
   }
@@ -1372,7 +1371,6 @@ function videosImpresor(videoId) {
   } 
 } 
 function abrirSeccionContinua(){
-  /* location.reload(); */
   allContenedores.forEach(elemen => {
     var element = document.getElementById(elemen);
     if (element) {
@@ -1387,11 +1385,13 @@ function abrirSeccionContinua(){
   });
   contVariable.style.display='none'
   contPlana.style.display='none'
+  contSecador.style.display='none'
   linkList.style.display = "none";
+  location.reload();
 }
-function abrirSeccionVariable(){
-  allContenedores.forEach(elementId => {
-    var element = document.getElementById(elementId);
+function abrirSeccionVariable(elementId){
+  allContenedores.forEach(elemen => {
+    var element = document.getElementById(elemen);  
     if (element) {
       element.style.display = 'none';
     }
@@ -1399,10 +1399,15 @@ function abrirSeccionVariable(){
   contPlana.style.display='none'
   contVariable.style.display='flex'
   linkList.style.display = "none";
+  contSecador.style.display='none'
+  if (!idsArray.includes(elementId)) {
+    idsArray.push(elementId);
+    console.log(idsArray)
+  }
 } 
-function abrirSeccionPlanas(){
-  allContenedores.forEach(elementId => {
-    var element = document.getElementById(elementId);
+function abrirSeccionPlanas(elementId){
+  allContenedores.forEach(elemen => {
+    var element = document.getElementById(elemen);  
     if (element) {
       element.style.display = 'none';
     }
@@ -1410,6 +1415,37 @@ function abrirSeccionPlanas(){
   contVariable.style.display='none'
   contPlana.style.display='flex'
   linkList.style.display = "none";
+  contSecador.style.display='none'
+  if (!idsArray.includes(elementId)) {
+    idsArray.push(elementId);
+    console.log(idsArray)
+  }  
+}
+function abrirSeccionCurado(elementId){
+  allContenedores.forEach(elemen => {
+    var element = document.getElementById(elemen);  
+    if (element) {
+      element.style.display = 'none';
+    }
+  });
+  contVariable.style.display='none'
+  contPlana.style.display='none'
+  linkList.style.display = "none";
+  contSecador.style.display='block'
+  videoElements.forEach(video => {
+    if (video.id !== 'curado-uv') {
+      video.style.display = 'none';     
+      } else {
+      video.style.display = 'block';
+      video.pause();
+      video.currentTime = 0;
+      video.play();           
+    } 
+  });
+  if (!idsArray.includes(elementId)) {
+    idsArray.push(elementId);
+    console.log(idsArray)
+  }  
 }
 function cerrarSecciones(){
   var linkList = document.getElementById("linkList");

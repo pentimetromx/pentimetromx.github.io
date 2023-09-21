@@ -883,7 +883,9 @@ header {
 #bot-atras3::before,
 #bot-atras4::before,
 #bot-atras5::before,
-#bot-atras6::before{
+#bot-atras6::before,
+#bot-atras7::before,
+#bot-atras8::before{
   content: "\25C0"; /* Código HTML para el triángulo de reproducción */
   font-size: 2em; /* Aumentar el tamaño al doble */
 }

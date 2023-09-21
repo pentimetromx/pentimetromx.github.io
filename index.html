@@ -50,16 +50,14 @@
       </div>
       
       <ul class="iridescent-element" id="linkList">
-        <li><a href="#" onclick="VolveraInicio()">Impresion rotativa / flexográfica</a></li><br>
-        <li><a href="#" onclick="abrirSeccionVariable()">Impresion variable</a></li><br>
-        <li><a href="#" onclick="abrirSeccionPlanas()">Impresion plana</a></li><br>
+        <li><a href="#" onclick="abrirSeccionContinua()">Impresion rotativa / flexográfica</a></li><br>
+        <li><a href="#" onclick="abrirSeccionVariable('cont-variable')">Impresion variable</a></li><br>
+        <li><a href="#" onclick="abrirSeccionPlanas('cont-plana')">Impresion plana</a></li><br>
+        <li><a href="#" onclick="abrirSeccionCurado('cont-secador')">Curado UV</a></li><br>
         <li><a href="#" onclick="cerrarSecciones()">Salir</a></li><br>
 
       </ul>    
-    </div>
-    
-    <button style="width: 77px;height: 100px;" onclick="allHidden()"></button>
-    <button style="width: 77px;height: 100px;" onclick="allShowdden()"></button>
+    </div>    
 
     <div class="contene-1" id="container1">
       <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL PRINCIPAL</button>
@@ -684,11 +682,11 @@
       </div>
     </div> 
 
-    <div id="cont-variable" class="secciones" style="display: none;">
+    <div id="cont-variable" class="secciones" style="display: none;">  
 
       <div class="contene-2" id="container6" style="margin-left: 127px;">
+        <button class="boton-a" id="bot-atras7" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 6px;" onclick="irContenedorAnterior('cont-variable')"></button>
         <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL PRINCIPAL</button>
-        <button class="boton-a" id="bot-mantaut" style="text-align:center;display: none;" onclick="ElementosMa()">MANTENIMIENTO AUTONOMO</button>      
         <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
       </div><br>      
 
@@ -701,8 +699,8 @@
     <div id="cont-plana" class="secciones" style="display: none;">
 
       <div class="contene-3" id="container3" style="margin-left: 127px;">
+        <button class="boton-a" id="bot-atras8" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 6px;" onclick="irContenedorAnterior('cont-plana')"></button>
         <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL PRINCIPAL</button>
-        <button class="boton-a" id="bot-mantaut" style="text-align:center;display: none;" onclick="ElementosMa()">MANTENIMIENTO AUTONOMO</button>      
         <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
       </div><br>
 
@@ -710,6 +708,19 @@
       <img class="maq-seccion" src="./assets/GTO 52.jpg" alt="GTO52">
       <img class="maq-seccion" src="./assets/pinza heidelberg.jpg" alt="GTO52">
     </div>
+
+    <div id="cont-secador" style="position: absolute;left: 170px;top: 6px;display: none;">
+
+      <video class="video-training" id="curado-uv" src="./assets/secador.mp4" style="position: absolute;left: 167px;top: 80px;width: 638px;height: 480px;" autoplay loop></video>
+
+      <div class="contene-5" id="contene-9">
+        <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL PRINCIPAL</button>
+        <button class="boton-a" id="bot-atras6" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 6px;" onclick="irContenedorAnterior('cont-secador')"></button>
+        <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
+      </div><br>
+
+    </div>
+
 
     <div id="bateria-entintado-II" style="position: absolute;left: 170px;top: 6px;display: none;">
 
@@ -735,10 +746,10 @@
     <div id="bancada-torre-II" style="position: absolute;left: 170px;top: 6px;display: none;">
 
       <div id="contenedor-8" class="contene-7" style="position: absolute;left:-177px;"> 
-        <button class="boton-g bot-entre" onclick="muestraRodillo('videoElement2','image-training')">Estacion cassets<div class="linea-horizontal"></div></button>                
-        <button class="boton-g bot-entre" onclick="muestraRodillo('videoElement3','image-training-a')">Puente guía <div class="linea-horizontal"></div></button>  
-        <button class="boton-g bot-entre" onclick="muestraRodillo('videoElement4')">Alojamiento del casset <div class="linea-horizontal"></div></button>  
-        <button class="boton-g bot-entre" onclick="muestraRodillo('videoElement5')">Expulsión y halado<div class="linea-horizontal"></div></button>                
+        <button class="boton-g bot-entre" onclick="uestraRodillo()">Estacion cassets<div class="linea-horizontal"></div></button>                
+        <button class="boton-g bot-entre" onclick="uestraRodillo()">Puente guía <div class="linea-horizontal"></div></button>  
+        <button class="boton-g bot-entre" onclick="uestraRodillo()">Alojamiento del casset <div class="linea-horizontal"></div></button>  
+        <button class="boton-g bot-entre" onclick="uestraRodillo()">Expulsión y halado<div class="linea-horizontal"></div></button>                
       </div>
 
       <video class="video-training" id="plate-smed" src="./assets/plate smed.mp4" style="position: absolute;left: 167px;top: 80px;width: 638px;height: 480px;" autoplay loop></video>
@@ -750,7 +761,7 @@
       </div><br>
 
     </div>
-          
+         
     <script src="./Matriz.js"></script>    
   </body>
 </html>
