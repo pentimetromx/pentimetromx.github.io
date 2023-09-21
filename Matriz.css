@@ -103,7 +103,13 @@ transform: scale(1.1);
 .boton-e:hover {
   transform: scale(1.1);
 }
-#container1{
+#container1,
+#container2,
+#container3,
+#container4,
+#container5,
+#container6,
+#container7{
   position: absolute;
   left: 27px;
 }
@@ -134,8 +140,14 @@ transform: scale(1.1);
   display: flex;
   flex-direction: row;
 }
+.contene-1,
 .contene-2,
-.contene-1{
+.contene-3,
+.contene-4,
+.contene-5,
+.contene-6,
+.contene-7,
+.contene-8{
   display: flex;
   flex-direction: row;
   position: absolute;
@@ -865,8 +877,13 @@ header {
   display: block; /* Cambia la imagen a un elemento en bloque */
   margin-left: -5px;
 }
-
-#bot-atras::before {
+#bot-atras::before,
+#bot-atras1::before,
+#bot-atras2::before,
+#bot-atras3::before,
+#bot-atras4::before,
+#bot-atras5::before,
+#bot-atras6::before{
   content: "\25C0"; /* Código HTML para el triángulo de reproducción */
   font-size: 2em; /* Aumentar el tamaño al doble */
 }
