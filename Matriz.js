@@ -146,8 +146,8 @@ function irContenedorAnterior() {
           case "imagen4":
             muestraPerfiles('imagen4')
           break; 
-          case "torre-imp":
-            cambioContenedor('torre-imp')
+          case "contTorrImp":
+            cambioContenedor('contTorrImp')
           break; 
           case "cont-variable":
             abrirSeccionVariable('cont-variable')
@@ -163,7 +163,10 @@ function irContenedorAnterior() {
           break; 
           case "bancada-torre-II":
             changeButtonStyles('bancada-torre-II')
-          break;                                                                                              
+          break; 
+          case "conteneMantaut":
+            ElementosMa('conteneMantaut')
+          break;                                                                                                        
         default:
           break; 
       }
@@ -231,10 +234,8 @@ function muestraBateria(elementId) {
   console.log(idsArray)
   }
 }
-function ElementosMa() {
-  var linkList = document.getElementById("links-iniciales");
-  var linkListI = document.getElementById("links-inicialesI");
-  var continerButInic = document.getElementById('container1')
+function ElementosMa(elementId) {
+  var contenedor = document.getElementById("container8");
   // Recorre el array y oculta los elementos por su ID
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);
@@ -245,22 +246,25 @@ function ElementosMa() {
   if (contPadreMA) {
     contPadreMA.style.display = 'flex';
   }
-  continerButInic.style.display='block'
-  butInicio.style.display='block'
-  continerButInic.style.marginLeft='-57px'  
-  // Aquí puedes continuar con las operaciones adicionales que necesites
+
+  contenedor.style.display='block'
+  // Obtén una lista de todos los elementos de botón dentro del contenedor
+  var botones = contenedor.getElementsByTagName("button");  
+  // Itera a través de la lista de botones y establece su estilo para hacerlos visibles
+  for (var i = 0; i < botones.length; i++) {
+    var boton = botones[i];
+    boton.style.display = "inline-block"; // Cambia "inline-block" por "block" si prefieres que ocupen todo el ancho
+  }
+
   for (var i = 0; i < buttonsMA.length; i++) {
     buttonsMA[i].style.display = 'block';
   }
-  if (linkListI) {
-    linkListI.style.display = 'flex';
-    linkListI.style.left = '-100px'; // Ajusta la cantidad de desplazamiento según tus necesidades
+  
+  if (!idsArray.includes(elementId)) {
+    idsArray.push(elementId);
+    console.log(idsArray)
   }
-  if (linkList) {
-    linkList.style.display = 'flex';
-    linkList.style.left = '-1px'; // Ajusta la cantidad de desplazamiento según tus necesidades
-  }
-}
+};
 function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);
@@ -1108,6 +1112,7 @@ function showNextInputChec() {
   }
 }
 function mantAutonomo (opcionSeleccionada) {
+  var conteLinksI = document.getElementById('links-inicialesI')
   switch (opcionSeleccionada) {
     case 'troubleshooting':
        var contInput = document.getElementById('contInput'); 
@@ -1140,8 +1145,6 @@ function mantAutonomo (opcionSeleccionada) {
       }
     break;
     case 'def-tipo2':
-
-
     var cotCheck = document.getElementById('contChecks');
     var inpts = document.querySelectorAll('.input-class');
 
@@ -1173,6 +1176,8 @@ function mantAutonomo (opcionSeleccionada) {
       } else {
         contGrafitos.style.display = 'block';
       }
+      conteLinksI.style.left='47px'
+      
     break;
     case 'fua':
       var contGrafColor = document.getElementById('contImagGraf')
@@ -1755,7 +1760,6 @@ linkListI.addEventListener("mouseout", () => {
 // Obtenemos los elementos del DOM
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
-
 // Agregamos un evento para manejar la búsqueda
 searchForm.addEventListener('submit', function (e) {
     e.preventDefault(); // Evita que se envíe el formulario
