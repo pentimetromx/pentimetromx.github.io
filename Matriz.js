@@ -114,6 +114,8 @@ function irContenedorAnterior() {
           VolveraInicio(); 
           break;
           case "pantalla-tintero":
+            var botonesInicio = document.getElementById('container01')
+            botonesInicio.style.display='block'
             changeButtonStyles('pantalla-tintero');  
           break;
           case "videoElement1-II":
@@ -637,14 +639,16 @@ function showRepuesto(elementId) {
       });    
       contPortaPlancha.style.display='block'
       videoElements.forEach(video => {
-        if (video.id !== 'video-placa') {
-          video.style.display = 'none';   
-          } else {
-          video.style.display = 'block';
-          video.pause();
-          video.currentTime = 0;
-          video.play();   
-        }}); 
+      if (video.id !== 'video-placa') {
+        video.style.display = 'none';   
+        } else {
+        video.style.display = 'block';
+        /* video.pause(); */
+        video.currentTime = 0;
+        video.play();   
+      }});
+      var botonesInicio = document.getElementById('container01')
+      botonesInicio.style.display='none'
      var imagenesPlancha = document.querySelectorAll('.imagesTorre')
      imagenesPlancha.forEach(function (imagen) {
       var elementosPortPlaca = imagen.querySelectorAll('portPlaca');
