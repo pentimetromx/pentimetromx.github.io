@@ -131,7 +131,9 @@
       </div>          
 
       <div class="contTorrImp mostrar-cont" id="rotatek-1">
-        <button id="toggleVideoButton" class="boton-b" style="margin-left: -227px;width: 500px;" onclick="cambioContenedor('contTorrImp')">TORRE DE IMPRESIÓN</button>                
+        <button class="boton-a" id="bot-atras10" style="text-align: center;width: 47px;position: absolute;left: 23px;top: 0.01px;display: none;" onclick="irContenedorAnterior('rotatek-1')"></button>
+        <button id="toggleVideoButton" class="boton-b" style="margin-left: -227px;width: 500px;" onclick="cambioContenedor('rotatek-1')">TORRE DE IMPRESIÓN</button>                
+        
         <div class="torre-imp" id="torre-imp">
 
           <div class="tintero" id="tinter-o">
@@ -182,7 +184,7 @@
       </div>  
     </div>
 
-    <div id="pantalla-tintero" style="display: none;">       
+    <div id="pantalla-tintero" style="display: none;left: -43px;top:84px;">       
       
       <div class="contene-2" id="container1" style="top: -77px;left: 197px;">
         <button class="boton-a" id="bot-atras" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 6px;" onclick="irContenedorAnterior('contPortPlaca')"></button>
@@ -471,7 +473,7 @@
     </div> 
     <!--- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
     <div id="contPortPlaca" style="display: none;">
-      <button class="boton-a" id="bot-atras2" style="text-align: center;width: 47px;position:absolute;top:-59px;left: 397px;" onclick="irContenedorAnterior('contPortPlaca')"></button>
+      <button class="boton-a" id="bot-atras2" style="text-align: center;width: 47px;position:absolute;top:-59px;left: 397px;display: none;" onclick="irContenedorAnterior('contPortPlaca')"></button>
       
       <video class="video-training" id="video-placa" src="./assets/video-plancha-v2.mp4" loop autoplay></video>
      
@@ -525,7 +527,7 @@
     </div>
 
     <div id="contPortManta" style="display: none;">
-      <button class="boton-a" id="bot-atras3" style="text-align: center;width: 47px;position:absolute;top:-59px;left: 397px;" onclick="irContenedorAnterior('contPortPlaca')"></button>
+      <button class="boton-a" id="bot-atras3" style="text-align: center;width: 47px;position:absolute;top:-59px;left: 397px;display: none;" onclick="irContenedorAnterior('contPortPlaca')"></button>
 
       <video class="video-training" id="videoManta"  src="./assets/video-portaManta-v2.mp4" muted loop autoplay></video>
 
@@ -580,7 +582,7 @@
     </div>
 
     <div id="contImpresor" style="display: none;">
-      <button class="boton-a" id="bot-atras4" style="text-align: center;width: 47px;position:absolute;top:-59px;left: 397px;" onclick="irContenedorAnterior('contPortPlaca')"></button>
+      <button class="boton-a" id="bot-atras4" style="text-align: center;width: 47px;position:absolute;top:-59px;left: 397px;display: none;" onclick="irContenedorAnterior('contPortPlaca')"></button>
 
       <video class="video-training" id="video-impresor" src="./assets/video-impresor.mp4" loop muted autoplay></video>
 
@@ -717,9 +719,9 @@
 
     <div id="cont-secador" style="position: absolute;left: 170px;top: 6px;display: none;">
 
-      <video class="video-training" id="curado-uv" src="./assets/secador.mp4" style="position: absolute;left: 167px;top: 80px;width: 638px;height: 480px;" autoplay loop></video>
+      <video class="video-training" id="curado-uv" src="./assets/secador.mp4" style="position: absolute;left: 117px;top: 80px;width: 638px;height: 480px;" autoplay loop></video>
 
-      <div class="contene-5" id="contene-9">
+      <div class="contene-5" id="contene-9" style="position: absolute;left: -16px;top: 1px;">
         <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL PRINCIPAL</button>
         <button class="boton-a" id="bot-atras6" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 6px;" onclick="irContenedorAnterior('cont-secador')"></button>
         <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
@@ -758,9 +760,9 @@
         <button class="boton-g bot-entre" onclick="uestraRodillo()">Expulsión y halado<div class="linea-horizontal"></div></button>                
       </div>
 
-      <video class="video-training" id="plate-smed" src="./assets/plate smed.mp4" style="position: absolute;left: 167px;top: 80px;width: 638px;height: 480px;" autoplay loop></video>
+      <video class="video-training" id="plate-smed" src="./assets/plate smed.mp4" style="position: absolute;left: 137px;top: 80px;width: 638px;height: 480px;" autoplay loop></video>
 
-      <div class="contene-5" id="contene-8">
+      <div class="contene-5" id="contene-8" style="position: absolute;left: -16px;top: 1px;">
         <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL PRINCIPAL</button>
         <button class="boton-a" id="bot-atras6" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 6px;" onclick="irContenedorAnterior('bateria-entintado-II')"></button>
         <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>

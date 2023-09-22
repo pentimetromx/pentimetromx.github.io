@@ -148,7 +148,8 @@ transform: scale(1.1);
 .contene-5,
 .contene-6,
 .contene-7,
-.contene-8{
+.contene-8,
+.contene-9{
   display: flex;
   flex-direction: row;
   position: absolute;
@@ -895,7 +896,8 @@ header {
 #bot-atras6::before,
 #bot-atras7::before,
 #bot-atras8::before,
-#bot-atras9::before{
+#bot-atras9::before,
+#bot-atras10::before{
   content: "\25C0"; /* Código HTML para el triángulo de reproducción */
   font-size: 2em; /* Aumentar el tamaño al doble */
 }

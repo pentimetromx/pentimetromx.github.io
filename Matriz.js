@@ -100,7 +100,7 @@ function VolveraInicio(){
 function irContenedorAnterior() {
   var i = 0;
   var previousElementID = idsArray[idsArray.length - 2];
-  var contenedorAnterior = document.getElementById(previousElementID);
+  /* var contenedorAnterior = document.getElementById(previousElementID); */
   var contenedorActual = document.getElementById(idsArray[idsArray.length - 1]);
   contenedorActual.style.display = 'none';
 
@@ -146,9 +146,6 @@ function irContenedorAnterior() {
           case "imagen4":
             muestraPerfiles('imagen4')
           break; 
-          case "contTorrImp":
-            cambioContenedor('contTorrImp')
-          break; 
           case "cont-variable":
             abrirSeccionVariable('cont-variable')
           break; 
@@ -166,7 +163,11 @@ function irContenedorAnterior() {
           break; 
           case "conteneMantaut":
             ElementosMa('conteneMantaut')
-          break;                                                                                                        
+          break; 
+          case "rotatek-1":
+            /* cambioContenedor('rotatek-1') */
+            location.reload();
+          break;                                                                                                                 
         default:
           break; 
       }
@@ -402,41 +403,31 @@ function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
   setTimeout(function() {
   }, 200);  
 } 
-function cambioContenedor(contenedorSeleccion) {
-  /* for (var i = 0; i < allContenedores.length; i++) {
-    var elemento = document.getElementById(allContenedores[i]);
+function cambioContenedor(elementId) { 
+  var elementsToHide = document.querySelectorAll('.alimentador, .uTeñido, .desbobinador,.unidProceso,.rebobinador'); 
+  var torreImpresion = document.getElementById('torre-imp') // PADRE TORRE IMPRESION  */
+  var botonTorre = document.getElementById('toggleVideoButton');
+  var botAtras = document.getElementById('bot-atras10')
+
+  for (var i = 0; i < elementsToHide.length; i++) {
+    elementsToHide[i].style.display = 'none';
+  }
+
+/*   for (var i = 0; i < elementsToHide.length; i++) {
+    var elemento = document.getElementById(elementsToHide[i]);                                 
     if (elemento) {
-      elemento.style.display = 'none';
+        elemento.style.display = 'none';
     }
   } */
-  var elementsToHide = document.querySelectorAll('.alimentador, .uTeñido, .desbobinador,.unidProceso,.rebobinador'); 
-  var torreImpresion = document.getElementById('torre-imp') 
-  
-  for (var i = 0; i < elementsToHide.length; i++) {
-      elementsToHide[i].style.display = 'none';
-  }
 
-  
-  butInicio.style.display='flex'
-   
-  if (contenedorSeleccion==='torre-imp'){
-    torreImpresion.style.left='11px'
-    toggleVideoButton.style.left='47px'
-  }
+  botAtras.style.display='block'
+  torreImpresion.style.position='absolute'
+  torreImpresion.style.left='77px'
+  botonTorre.style.position='absolute'
+  botonTorre.style.left='307px'
 
-  for (var i = 0; i < allContTorreImp.length; i++) {
-    var elementoId = allContTorreImp[i];
-    var elto = document.getElementById(elementoId);
-  
-    if (elto) {
-      elto.style.display = 'flex';
-    } else {
-      console.error("Elemento no encontrado:", elementoId);
-    }
-  }
-
-  if (!idsArray.includes(contenedorSeleccion)) {
-    idsArray.push(contenedorSeleccion);
+  if (!idsArray.includes(elementId)) {
+    idsArray.push(elementId);
     console.log(idsArray)
   }
 }
@@ -1176,8 +1167,7 @@ function mantAutonomo (opcionSeleccionada) {
       } else {
         contGrafitos.style.display = 'block';
       }
-      conteLinksI.style.left='47px'
-      
+      conteLinksI.style.left='47px'      
     break;
     case 'fua':
       var contGrafColor = document.getElementById('contImagGraf')
