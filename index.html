@@ -11,13 +11,18 @@
     <header id="buscador" style="position: absolute;left: 3px;top: 2px;">
       <form id="search-form">
           <input type="text" id="search-input" placeholder="Buscar...">
+          <datalist id="suggestions">
+            <!-- Aquí puedes agregar opciones de autocompletado -->
+            <option value="inicio">
+            <option value="tintero">
+            <option value="bateria">
+            <!-- Agrega más opciones según sea necesario -->
+          </datalist>          
           <button type="submit" id="search-button">
               <img src="./assets/lupa.jpg" alt="Buscar">
           </button>
       </form>
     </header>
-
-    <ul id="resultados-lista"></ul>
 
     <div class="overlay"></div>
 
@@ -214,7 +219,7 @@
 
       <div id="agrupaOblicuos-II" style="margin-top: -573px;">
         <div id="contFrente-II " class="contOblicuosTorre">
-          <button class="Bot-inicio2" id="butt-1" onclick="muestraTorres('frente')">Frente</button>
+          <button class="Bot-inicio2" id="butt-11" onclick="muestraTorres('frente')">Frente</button>
           <button class="Bot-inicio2-fondo" id="butt-2"></button>  
         </div>  
         <div id="contLateral-II" class="contOblicuosTorre">
@@ -237,7 +242,6 @@
 
       <div class="contene-2" id="container2" style="top: -77px;left: 197px;">
         <button class="boton-a" id="bot-atras1" style="text-align: center;width: 47px;left:210px;top: 6px;" onclick="irContenedorAnterior('')"></button>
-
         <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL PRINCIPAL</button>
         <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
       </div><br>
@@ -253,7 +257,7 @@
 
       <div id="agrupaOblicuos" style="margin-top: -573px;">
         <div id="contFrente-III" class="contOblicuosTorre">
-          <button class="Bot-inicio2" id="butt-1" onclick="muestraTorresI('frente')">Frente</button>
+          <button class="Bot-inicio2" id="butt-1" onclick="muestraTorresI('pantalla-frente')">Frente</button>
           <button class="Bot-inicio2-fondo" id="butt-2"></button>  
         </div>  
         <div id="contLateral-III" class="contOblicuosTorre">
@@ -288,8 +292,8 @@
 
       <img src="./assets/Mandos.jpg" id="imgTorre-f" alt="imagen-torre">
 
-      <div id="agrupaOblicuos-II" style="margin-top: -573px;">
-        <div id="contFrente-II " class="contOblicuosTorre">
+      <div id="agrupaOblicuos-III" style="margin-top: -573px;">
+        <div id="contFrente-III " class="contOblicuosTorre">
           <button class="Bot-inicio2" id="butt-1" onclick="muestraTorresI('frente')">Frente</button>
           <button class="Bot-inicio2-fondo" id="butt-2"></button>  
         </div>  

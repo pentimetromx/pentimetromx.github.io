@@ -168,7 +168,13 @@ function irContenedorAnterior() {
           case "rotatek-1":
             /* cambioContenedor('rotatek-1') */
             location.reload();
-          break;                                                                                                                 
+          break; 
+          case "frente":
+            muestraTorresI('frente')
+          break;  
+          case "pantalla-frente":
+            muestraTorres('frente')
+          break;                                                                                                                          
         default:
           break; 
       }
@@ -1195,14 +1201,12 @@ function ensayoPruebas(){
 }
 function muestraTorres(seleccion) {
   seccionTintero.style.display = 'none';
-
   for (var i = 0; i < pantallas.length; i++) {
     var elemento = document.getElementById(pantallas[i]);
     if (elemento) {
       elemento.style.display = 'none';
     }
   }
-
   switch (seleccion) {
     case 'frente':
       const elementoMandosFrente = document.getElementById('pantalla-frente');
@@ -1214,7 +1218,6 @@ function muestraTorres(seleccion) {
         console.log(idsArray);
       }
       break;
-
     case 'mandos':
       const elementoMandos = document.getElementById('pantalla-mandos');
       if (elementoMandos) {
@@ -1225,7 +1228,6 @@ function muestraTorres(seleccion) {
         console.log(idsArray);
       }
       break;
-
     case 'servicio':
       const elementoServicio = document.getElementById('pantalla-servicio');
       if (elementoServicio) {
@@ -1236,7 +1238,6 @@ function muestraTorres(seleccion) {
         console.log(idsArray);
       }
       break;
-
     case 'atras':
       const elementoAtras = document.getElementById('pantalla-atras');
       if (elementoAtras) {
@@ -1247,7 +1248,6 @@ function muestraTorres(seleccion) {
         console.log(idsArray);
       }
       break;
-
     default:
       break;
   }
@@ -1749,41 +1749,117 @@ linkListI.addEventListener("mouseout", () => {
   }, 7);
 });
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Obtenemos los elementos del DOM
+
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
+const suggestionsList = document.getElementById('suggestions'); // Agrega el elemento datalist
+
+// Definir una lista de sugerencias (puedes cargarla desde una fuente externa si es necesario)
+const sugerencias = [
+  'inicio',
+  'tintero',
+  'bateria',
+  'autonomo',
+  'mantenimiento autonomo',
+  'variable',
+  'planas',
+  'secador uv',
+  'secador',
+  'rotatek-1',
+  'torre',
+  'smed',
+  'plancha',
+  'porta plancha',
+  'mantilla',
+  'manta',
+  'porta mantilla',
+  'contra',
+  'contraPresion',
+  'impresor',
+];
+
 // Agregamos un evento para manejar la búsqueda
 searchForm.addEventListener('submit', function (e) {
   e.preventDefault(); // Evita que se envíe el formulario
   const searchTerm = searchInput.value.toLowerCase(); // Obtenemos el término de búsqueda y lo convertimos a minúsculas
+
+  // ... Tu código de manejo de búsqueda actual ...
   switch (searchTerm) {
-    case 'pantalla-inicial':
+    case 'inicio':
       VolveraInicio();
     break;
-    case 'pantalla-tintero':
+    case 'tintero':
       changeButtonStyles('pantalla-tintero');
     break;
-    case 'contenedor-7':
+    case 'bateria':
       changeButtonStyles('bateria-entintado-II', 'contene-7');
     break;
-    case 'container8':
+    case 'autonomo':
+    case 'mantenimiento autonomo':
       ElementosMa('conteneMantaut');
     break;
-    case 'container6':
+    case 'variable':
       abrirSeccionVariable('cont-variable');
     break;
-    case 'container3':
+    case 'planas':
       abrirSeccionPlanas('cont-plana');
     break;
-    case 'contene-9':
+    case 'secador uv':
+    case 'secador':      
       abrirSeccionCurado('cont-secador');
     break;
     case 'rotatek-1':
+    case 'torre':      
       cambioContenedor('rotatek-1')
     break;
+    case 'smed':      
+    changeButtonStyles('bancada-torre-II')
+    break;  
+    case 'plancha':  
+    case 'porta plancha': 
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i]);
+        if (elemento) {
+          elemento.style.display = 'none';
+        }
+      }             
+      showRepuesto('contPortPlaca')
+    break;
+    case 'mantilla': 
+    case 'manta':      
+    case 'porta mantilla': 
+    for (var i = 0; i < allContenedores.length; i++) {
+      var elemento = document.getElementById(allContenedores[i]);
+      if (elemento) {
+        elemento.style.display = 'none';
+      }
+    }          
+    showRepuesto('contPortManta', 'videoTrain03')
+    break;
+    case 'contra':      
+    case 'contraPresion':
+    case 'impresor':
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i]);
+        if (elemento) {
+          elemento.style.display = 'none';
+        }
+      }       
+    showRepuesto('contImpresor', 'videoTrain01')
+      break;          
     default:
       // Manejo por defecto si ningún caso coincide con searchTerm
       // Puedes agregar un código aquí si es necesario
     break;
+  }
+
+
+  // Puedes agregar una lógica para autocompletar el término de búsqueda
+  if (sugerencias.includes(searchTerm)) {
+    // Si el término de búsqueda coincide con una sugerencia, lo autocompletamos
+    suggestionsList.innerHTML = ''; // Borra cualquier sugerencia anterior
+    const suggestionOption = document.createElement('option');
+    suggestionOption.value = searchTerm;
+    suggestionsList.appendChild(suggestionOption);
   }
 });

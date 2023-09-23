@@ -593,7 +593,8 @@ width:447px ;
   flex-direction: column;
   margin-top: -555px;
 }
-#butt-1{
+#butt-1,
+#butt-11{
   position: absolute;
   margin-left: 1107px;
   margin-top: 77px;
