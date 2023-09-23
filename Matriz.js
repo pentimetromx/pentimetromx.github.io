@@ -107,7 +107,6 @@ function irContenedorAnterior() {
   recorrerActual = contenedorActual.querySelectorAll('*');
 
   for (var i = 0; i < idsArray.length; i++) {
-
     if (previousElementID) {
       switch (previousElementID) { 
         case "pantalla-inicial":
@@ -1750,15 +1749,41 @@ linkListI.addEventListener("mouseout", () => {
   }, 7);
 });
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 // Obtenemos los elementos del DOM
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
 // Agregamos un evento para manejar la búsqueda
 searchForm.addEventListener('submit', function (e) {
-    e.preventDefault(); // Evita que se envíe el formulario
-
-    const searchTerm = searchInput.value.toLowerCase(); // Obtenemos el término de búsqueda y lo convertimos a minúsculas
-
-    // Aquí puedes realizar la lógica de búsqueda, por ejemplo, mostrar resultados en la página o redirigir a una página de resultados.
+  e.preventDefault(); // Evita que se envíe el formulario
+  const searchTerm = searchInput.value.toLowerCase(); // Obtenemos el término de búsqueda y lo convertimos a minúsculas
+  switch (searchTerm) {
+    case 'pantalla-inicial':
+      VolveraInicio();
+    break;
+    case 'pantalla-tintero':
+      changeButtonStyles('pantalla-tintero');
+    break;
+    case 'contenedor-7':
+      changeButtonStyles('bateria-entintado-II', 'contene-7');
+    break;
+    case 'container8':
+      ElementosMa('conteneMantaut');
+    break;
+    case 'container6':
+      abrirSeccionVariable('cont-variable');
+    break;
+    case 'container3':
+      abrirSeccionPlanas('cont-plana');
+    break;
+    case 'contene-9':
+      abrirSeccionCurado('cont-secador');
+    break;
+    case 'rotatek-1':
+      cambioContenedor('rotatek-1')
+    break;
+    default:
+      // Manejo por defecto si ningún caso coincide con searchTerm
+      // Puedes agregar un código aquí si es necesario
+    break;
+  }
 });

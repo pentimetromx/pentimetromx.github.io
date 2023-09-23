@@ -12,10 +12,12 @@
       <form id="search-form">
           <input type="text" id="search-input" placeholder="Buscar...">
           <button type="submit" id="search-button">
-              <img src="./assets/lupa.jpg" alt="Buscar" onclick="VolveraInicio()">
+              <img src="./assets/lupa.jpg" alt="Buscar">
           </button>
       </form>
     </header>
+
+    <ul id="resultados-lista"></ul>
 
     <div class="overlay"></div>
 
@@ -23,7 +25,7 @@
       <source src="./assets/Rotatek.mp4" type="video/mp4">  
     </video>
 
-    <div id="links-inicialesI" style="position: absolute;left: 187px;font-family: 'GothamRounded', sans-serif;">
+    <div id="links-inicialesI" style="position: absolute;left: 187px;top: 0.1px; font-family: 'GothamRounded', sans-serif;">
       
       <button class="boton-a" id="bot-ini-link" style="text-align: center;margin-left: 507px;display: none;" onclick="VolveraInicio()">PANEL PRINCIPAL</button>
 
@@ -43,7 +45,7 @@
       </ul>    
     </div> 
 
-    <div id="links-iniciales" style="position: absolute;left: 270px;font-family: 'GothamRounded', sans-serif;">
+    <div id="links-iniciales" style="position: absolute;left: 270px;top: 0.1px;font-family: 'GothamRounded', sans-serif;">
       <div class="iridescent-element" id="line"></div>
       <div id="titleContainer">
         <p id="textToColor" style="position: relative;left: 31px;">Entrenamientos <span style="color:blue; position: relative; top: -17px;left: 120px;">&#9660;</span></p>
@@ -748,7 +750,7 @@
 
       <video class="video-training" id="videoElement1-II" src="./assets/Bateria de entintado.mp4" style="position: absolute;left: 167px;top: 80px;width: 638px;height: 480px;" autoplay loop></video>
 
-      <div class="contene-4" id="container7">
+      <div class="contene-4" id="container7" style="left:-17px;top: 0.1px;">
         <button class="boton-a" id="bot-atras5" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 6px;" onclick="irContenedorAnterior('bateria-entintado-II')"></button>
         <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL PRINCIPAL</button>
         <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
