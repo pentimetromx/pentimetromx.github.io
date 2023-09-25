@@ -4,10 +4,10 @@ var btnAtras = document.getElementById('bot-atras');
 var butInicio = document.getElementById('bot-inic')
 var botGrande = document.getElementById('iniciar')
 var imgTorreI = document.getElementById('imgTorre')
-var contInicial = document.getElementById('container1');
+var contInicial = document.getElementById('container1'); 
 var botonMa = document.getElementById('bot-mantaut')
 
-var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','']
+var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa']
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado']
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor'];
@@ -15,6 +15,9 @@ var allContTintero = ['pantalla-tintero','cont-links','imgTorre','vidTintero','i
 var allContPantafrente = ['pantalla-frente','container2','imgsRepuestos-II','imgTorre-f','agrupaOblicuos-III']
 var allContTorreImp = ['rotatek-1','toggleVideoButton','torre-imp','tinter-o','cont-Verticales2','bateria-entintado','cont-Verticales3','bancada-torre','cont-Verticales4','sis-humedad','cont-Verticales5'];
 var allContBaterImp = ['contenedor-7','videoElement1-II','container7']
+var allContSisHumedad = ['contenedor-9','contene-10','sitema-humedad']
+var contVid = document.getElementById('videosTraining')  
+
 var allContMA = ['conteneMantaut','conti-boton']
 var buttonsMA = document.getElementsByClassName("butt-mautonomo");
 
@@ -78,6 +81,7 @@ const input = document.querySelectorAll('.input-class');
 const checks = document.querySelectorAll('.input-class')
 const imagesFull = document.querySelectorAll('img');
 const inpt = document.querySelectorAll('grafMini');
+const imagesPrepress = ['primerCont','segundoCont','tercerCont']
 
 let miCanvas2 = document.getElementById('MiSegundaGrafica').getContext('2d');
 let miCanvas3 = document.getElementById('MiTerceraGrafica').getContext('2d');
@@ -96,92 +100,6 @@ console.log(idsArray)
 function VolveraInicio(){
   location.reload();
   idsArray = [];
-}
-function irContenedorAnterior() {
-  var i = 0;
-  var previousElementID = idsArray[idsArray.length - 2];
-  /* var contenedorAnterior = document.getElementById(previousElementID); */
-  var contenedorActual = document.getElementById(idsArray[idsArray.length - 1]);
-  contenedorActual.style.display = 'none';
-
-  recorrerActual = contenedorActual.querySelectorAll('*');
-
-  for (var i = 0; i < idsArray.length; i++) {
-    if (previousElementID) {
-      switch (previousElementID) { 
-        case "pantalla-inicial":
-          VolveraInicio(); 
-          break;
-          case "pantalla-tintero":
-            var botonesInicio = document.getElementById('container01')
-            botonesInicio.style.display='block'
-            changeButtonStyles('pantalla-tintero');  
-          break;
-          case "videoElement1-II":
-            changeButtonStyles('videoElement1-II');  
-          break;          
-          case "contImgEntintador":
-            showRepuesto('contImgEntintador')
-          break; 
-          case "contImgDistribuidor":
-            showRepuesto ('contImgDistribuidor') 
-          break;          
-          case "contPortPlaca":
-            showRepuesto('contPortPlaca');
-          break;
-          case "contPortManta":
-            showRepuesto('contPortManta', 'videoTrain03');  
-          break;
-          case "contImpresor":
-            showRepuesto('contImpresor', 'videoTrain01')
-          break;
-          case "imagen1":
-            muestraPerfiles('imagen1')
-          break;
-          case "imagen2":
-            muestraPerfiles('imagen2')
-          break; 
-          case "imagen3":
-            muestraPerfiles('imagen3')
-          break;
-          case "imagen4":
-            muestraPerfiles('imagen4')
-          break; 
-          case "cont-variable":
-            abrirSeccionVariable('cont-variable')
-          break; 
-          case "cont-plana":
-            abrirSeccionPlanas('cont-plana')
-          break; 
-          case "cont-secador":
-            abrirSeccionCurado('cont-secador')
-          break;
-          case "bateria-entintado-II":
-            changeButtonStyles('bateria-entintado-II', 'contene-7')
-          break; 
-          case "bancada-torre-II":
-            changeButtonStyles('bancada-torre-II')
-          break; 
-          case "conteneMantaut":
-            ElementosMa('conteneMantaut')
-          break; 
-          case "rotatek-1":
-            /* cambioContenedor('rotatek-1') */
-            location.reload();
-          break; 
-          case "frente":
-            muestraTorresI('frente')
-          break;  
-          case "pantalla-frente":
-            muestraTorres('frente')
-          break;                                                                                                                          
-        default:
-          break; 
-      }
-    }
-  }
-  idsArray.pop();
-  console.log(idsArray)
 }
 function botoGrand() {
   var button = document.querySelector('.boton-a');
@@ -292,18 +210,6 @@ function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
         elemento.style.display = 'flex';
       }
     }
-/*     for (var i = 0; i < linksIniciales.length; i++) {
-      var elemento = document.getElementById(linksIniciales[i]);
-      if (elemento) {
-        elemento.style.display = 'block';
-      }
-    } */
-
-
-/*   var videoBackground = document.getElementById('videoBackground');
-  videoBackground.pause();
-  videoBackground.style.display = 'none'; // Oculta el video */
-
   seccionTintero.style.display='block'
   const video = document.getElementById("vidTintero");
   // Reproducir el video
@@ -336,7 +242,6 @@ function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
         buttonElements[index].style.display = 'block';
       }, delay * i,i);
     } 
-    var contVid = document.getElementById('videosTraining')  
     contVid.style.display='block' 
     videoElements.forEach(video => {
       if (video.id === 'videoElement1-II') {
@@ -370,7 +275,6 @@ function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
         botonElement[index].style.display = 'block';
       }, delay * i,i);
     } 
-    var contVid = document.getElementById('videosTraining')  
     contVid.style.display='block' 
     videoElements.forEach(video => {
       if (video.id === 'plate-smed') {
@@ -385,7 +289,43 @@ function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
       console.log(idsArray)
       } 
     break;
-    case 'ayudastrabajo':
+    case 'sitema-humedad':
+      const bancadaVideo = document.getElementById('bancada');
+      var contenedorHumedad = document.getElementById("sitema-humedad");
+      contenedorHumedad.style.display = "block";
+  
+      for (var i = 0; i < allContSisHumedad.length; i++) {
+        var elemento = document.getElementById(allContSisHumedad[i]);
+        if (elemento) {
+          elemento.style.display = 'block';
+        }
+      }    
+      const botonElemento = document.querySelectorAll('.boton-f');
+      var delay = 100;
+      for (var i = 0; i < botonElemento.length; i++) {
+        setTimeout(function(index) {
+          botonElemento[index].style.display = 'block';
+        }, delay * i,i);
+      } 
+      contVid.style.display='block' 
+
+// Ocultar todos los videos excepto el video 'bancada'
+videoElements.forEach(video => {
+  if (video !== bancadaVideo) {
+    video.style.display = 'none';
+  }
+});
+
+// Reproducir el video 'bancada' si está definido
+if (bancadaVideo) {
+  bancadaVideo.style.display = 'block';
+  bancadaVideo.play();
+}
+      if (!idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray)
+      } 
+  
     break;
     case 'fua':
     break;
@@ -952,7 +892,7 @@ function muestraLados(anguloSel){
       default:
     }
 } 
-// Agregar evento de pantalla completa a cada imagen
+/* // Agregar evento de pantalla completa a cada imagen
 imagesFull.forEach(image => {
   image.addEventListener('click', () => {
     if (!document.fullscreenElement) {
@@ -977,7 +917,39 @@ imagesFull.forEach(image => {
       }
     }
   });
+}); */
+
+
+// Obtén todas las imágenes con la clase "aumentar"
+const imagenesAumentar = document.querySelectorAll('img.aumentar');
+
+// Agrega un evento click a cada imagen con la clase "aumentar"
+imagenesAumentar.forEach(image => {
+  image.addEventListener('click', () => {
+    if (!document.fullscreenElement) {
+      if (image.requestFullscreen) {
+        image.requestFullscreen();
+      } else if (image.mozRequestFullScreen) { // Firefox
+        image.mozRequestFullScreen();
+      } else if (image.webkitRequestFullscreen) { // Chrome, Safari y Opera
+        image.webkitRequestFullscreen();
+      } else if (image.msRequestFullscreen) { // IE/Edge
+        image.msRequestFullscreen();
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) { // Chrome, Safari y Opera
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) { // IE/Edge
+        document.msExitFullscreen();
+      }
+    }
+  });
 });
+
 //////////////////////////////////////////////////////////////////////////
 
 // Recorrer todos los botones y hacerlos visibles
@@ -1431,7 +1403,7 @@ function abrirSeccionCurado(elementId){
   linkList.style.display = "none";
   contSecador.style.display='block'
   videoElements.forEach(video => {
-    if (video.id !== 'curado-uv') {
+    if (video.id !== 'curado-uv') {             
       video.style.display = 'none';     
       } else {
       video.style.display = 'block';
@@ -1471,6 +1443,219 @@ function abrirPilarMA(){
     }, delay * i,i);
   }    
 }
+function abrirPrepress(elementId) {
+  var linksIniciales = ['links-inicialesI', 'links-iniciales'];
+  var contBotPress = document.getElementById('contene-11');
+  var contImgsPrepress = document.getElementById('imgs-prepress');
+  var videoBackground = document.getElementById('videoBackground');
+  var prePrensaElemento = document.getElementById('pre-prensa');
+
+  
+  videoBackground.pause();
+  videoBackground.style.display = 'none'; // Oculta el video
+  // Ocultar todos los elementos
+  for (var i = 0; i < allContenedores.length; i++) {
+    var elemento = document.getElementById(allContenedores[i]);
+    if (elemento) {
+      elemento.style.display = 'none';
+    }
+  }
+  contBotPress.style.display = 'block';
+  contImgsPrepress.style.display = 'block';
+
+  // Mostrar el elemento "pre-prensa"
+  if (prePrensaElemento) {
+    prePrensaElemento.style.display = 'block';
+    prePrensaElemento.style.zIndex = '0';
+
+    // Establecer el mismo z-index para linksIniciales
+    for (var j = 0; j < linksIniciales.length; j++) {
+      var linkInicial = document.getElementById(linksIniciales[j]);
+      if (linkInicial) {
+        linkInicial.style.zIndex = '1';
+      }
+    }
+  }
+  videoElements.forEach(video => {
+    if (video) {
+      video.style.display = 'none';
+      video.pause();      
+    }
+    });
+    if (!idsArray.includes(elementId)) {
+      idsArray.push(elementId);
+      console.log(idsArray)
+    } 
+}
+function muestraVidPrisma(elementId) {
+  var contImgsTeoria = document.getElementsByClassName('imgTeoria'); // Obtén elementos por su 
+  for (var i = 0; i < contImgsTeoria.length; i++) {
+    var teorImage = contImgsTeoria[i]; // Accede al elemento actual
+    teorImage.style.display = 'none'; // Oculta el elemento  
+  }
+  videoElements.forEach(video => {
+  if (video.id === 'prisma-vid') {
+    video.style.display = 'block';
+    video.play();      
+  } else {
+    video.style.display = 'none';
+  }
+  });
+  if (!idsArray.includes(elementId)) {
+    idsArray.push(elementId);
+    console.log(idsArray)
+  }   
+}
+function muestraVidColor(elementId){
+  var contImgsTeoria = document.getElementsByClassName('imgTeoria'); // Obtén elementos por su
+  for (var i = 0; i < contImgsTeoria.length; i++) {
+    var teorImage = contImgsTeoria[i]; // Accede al elemento actual
+    teorImage.style.display = 'none'; // Oculta el elemento  
+  }
+  videoElements.forEach(video => {
+  if (video.id === 'color-vid') {
+    video.style.display = 'block';
+    video.play();      
+  } else {
+    video.style.display = 'none';
+  }
+  });
+  if (!idsArray.includes(elementId)) {
+    idsArray.push(elementId);
+    console.log(idsArray)
+  } 
+}
+function irContenedorAnterior() {
+  var i = 0;
+  var previousElementID = idsArray[idsArray.length - 2];
+  var contenedorActual = document.getElementById(idsArray[idsArray.length - 1]); 
+  contenedorActual.style.display = 'none';
+  recorrerActual = contenedorActual.querySelectorAll('*');
+
+  for (var i = 0; i < idsArray.length; i++) {
+    if (previousElementID) {
+      switch (previousElementID) { 
+        case "pantalla-inicial":
+          VolveraInicio(); 
+          break;
+          case "pantalla-tintero":
+            var botonesInicio = document.getElementById('container01')
+            botonesInicio.style.display='block'
+            changeButtonStyles('pantalla-tintero');  
+          break;
+          case "videoElement1-II":
+            changeButtonStyles('videoElement1-II');  
+          break;          
+          case "contImgEntintador":
+            showRepuesto('contImgEntintador')
+          break; 
+          case "contImgDistribuidor":
+            showRepuesto ('contImgDistribuidor') 
+          break;          
+          case "contPortPlaca":
+            showRepuesto('contPortPlaca');
+          break;
+          case "contPortManta":
+            var contBotManta = document.getElementById('container01')
+            contBotManta.style.display='block'
+            showRepuesto('contPortManta', 'videoTrain03');  
+          break;
+          case "contImpresor":
+            showRepuesto('contImpresor', 'videoTrain01')
+          break;
+          case "imagen1":
+            muestraPerfiles('imagen1')
+          break;
+          case "imagen2":
+            muestraPerfiles('imagen2')
+          break; 
+          case "imagen3":
+            muestraPerfiles('imagen3')
+          break;
+          case "imagen4":
+            muestraPerfiles('imagen4')
+          break; 
+          case "cont-variable":
+            abrirSeccionVariable('cont-variable')
+          break; 
+          case "cont-plana":
+            abrirSeccionPlanas('cont-plana')
+          break; 
+          case "cont-secador":
+            abrirSeccionCurado('cont-secador')
+          break;
+          case "bateria-entintado-II":
+            changeButtonStyles('bateria-entintado-II', 'contene-7')
+          break; 
+          case "bancada-torre-II":
+            changeButtonStyles('bancada-torre-II')
+          break; 
+          case "conteneMantaut":
+            ElementosMa('conteneMantaut')
+          break; 
+          case "rotatek-1":
+            /* cambioContenedor('rotatek-1') */
+            location.reload();
+          break; 
+          case "frente":
+            muestraTorresI('frente')
+          break;  
+          case "pantalla-frente":
+            muestraTorres('frente')
+          break; 
+          case "sitema-humedad":
+            changeButtonStyles('sitema-humedad')  
+          break; 
+          case "pre-prensa":
+            var mostrar = document.getElementById('pre-prensa');
+            var contImg = document.getElementById('imgs-prepress')
+            mostrar.style.display='block'
+            contImg.style.style='block'
+            var contImgsTeoria = document.getElementsByClassName('imgTeoria'); // Obtén elementos por su
+            for (var i = 0; i < contImgsTeoria.length; i++) {
+              var teorImage = contImgsTeoria[i]; // Accede al elemento actual
+              teorImage.style.display = 'block'; // muestra el elemento  
+            }            
+            /* abrirPrepress('pre-prensa') */     
+          break;  
+          case "vidColor":
+          var mostrario = document.getElementById('pre-prensa');
+          var videos = document.getElementById('vidColor');
+          mostrario.style.display='flex'
+          videos.style.style='flex'
+          videoElements.forEach(vide => {
+            if (vide.id === 'prisma-vid') {
+              vide.style.display = 'block';
+              vide.play();      
+            } else {
+              vide.style.display = 'none';
+            }
+            });
+          break; 
+          case "vidColor-II":
+          var mostrario = document.getElementById('pre-prensa');
+          var videos = document.getElementById('vidColor-II');
+          mostrario.style.display='flex'
+          videos.style.style='flex'
+          videoElements.forEach(vide => {
+            if (vide.id === 'color-vid') {
+              vide.style.display = 'block';
+              vide.play();      
+            } else {
+              vide.style.display = 'none';
+            }
+            });
+          break;                                                                                                                                                                            
+        default:
+        break;
+      }  
+    }
+  }
+  idsArray.pop();  
+  console.log(idsArray)
+}
+
+
 var chart = new Chart(miCanvas, {
     type: 'bar',    
     data: {
@@ -1679,7 +1864,7 @@ var chart2 = new Chart(miCanvas5, {
         }
     }
 });
-//////////////////////////////////AUMENTO Y MOVIMIENTO IMAGENES /////////////////////////////////////////////
+/* //////////////////////////////////AUMENTO Y MOVIMIENTO IMAGENES ///////////////////////////////////////////// */
 const zoomableImages = document.querySelectorAll('.image-trainings');
 const sensitivity = 5; 
 zoomableImages.forEach((zoomableImage) => {
@@ -1697,7 +1882,7 @@ zoomableImages.forEach((zoomableImage) => {
     zoomableImage.style.transform = 'translate(0, 0) scale(1)';
   });
 });
-/////////////////////////////////////////////VINCULOS INICIALES////////////////////////////////////////////
+/* /////////////////////////////////////////////VINCULOS INICIALES//////////////////////////////////////////// */
 textToColor.addEventListener("mouseover", () => {
     clearTimeout(hideTimeout);
     hoverTimeout = setTimeout(() => {
@@ -1748,7 +1933,7 @@ linkListI.addEventListener("mouseout", () => {
     lineI.style.width = "0";
   }, 7);
 });
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
@@ -1863,3 +2048,52 @@ searchForm.addEventListener('submit', function (e) {
     suggestionsList.appendChild(suggestionOption);
   }
 });
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+// Obtén los elementos canvas de canvasContainer2 y canvasContainer3
+const canvasElements2 = document.querySelectorAll('#canvasContainer2 canvas');
+const canvasElements3 = document.querySelectorAll('#canvasContainer3 canvas');
+const canvasElements4 = document.querySelectorAll('#contChecks input')
+
+// Función para agregar/eliminar pantalla completa a un elemento
+function toggleFullScreen(element) {
+  if (!document.fullscreenElement) {
+    if (element.requestFullscreen) {
+      element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+      element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari y Opera
+      element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE/Edge
+      element.msRequestFullscreen();
+    }
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari y Opera
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE/Edge
+      document.msExitFullscreen();
+    }
+  }
+}
+// Agrega un evento click a cada elemento canvas en canvasContainer2
+canvasElements2.forEach(canvas => {
+  canvas.addEventListener('click', () => {
+    toggleFullScreen(canvas);
+  });
+});
+// Agrega un evento click a cada elemento canvas en canvasContainer3  
+canvasElements3.forEach(canvas => {
+  canvas.addEventListener('click', () => {
+    toggleFullScreen(canvas);
+  });
+});
+// Agrega un evento click a cada elemento checkbox  
+canvasElements4.forEach(input => {
+  input.addEventListener('click', () => {
+    toggleFullScreen(input);
+  });
+});/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */

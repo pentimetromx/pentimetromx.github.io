@@ -67,7 +67,8 @@ h1, h2, h3 {
 .boton-b:hover,
 .boton-c:hover,
 .boton-f:hover,
-.boton-g:hover{
+.boton-g:hover,
+.boton-h:hover{
 transform: scale(1.1);
 }
 .boton-d{
@@ -100,7 +101,8 @@ transform: scale(1.1);
   cursor: pointer;
   transition: transform 0.1s; 
 }*/
-.boton-e:hover {
+.boton-e:hover,
+.boton-f:hover {
   transform: scale(1.1);
 }
 #container1,
@@ -269,6 +271,7 @@ transform: scale(1.1);
   cursor: pointer; 
   transition: transform 0.1s; 
 }
+.boton-h,
 .boton-g,
 .boton-f{
   position: relative;
@@ -805,6 +808,7 @@ height: 398px;
   display: none;
   list-style: none;
   width: 237px;
+  height:auto;  
   padding: 0;
   position: absolute;
   left: 807px;
@@ -898,7 +902,35 @@ header {
 #bot-atras7::before,
 #bot-atras8::before,
 #bot-atras9::before,
-#bot-atras10::before{
+#bot-atras10::before,
+#bot-atras11::before{
   content: "\25C0"; /* Código HTML para el triángulo de reproducción */
   font-size: 2em; /* Aumentar el tamaño al doble */
+}
+.aumentar{
+  cursor: pointer;
+}
+#imgsSecador img{
+  width: 240px;
+  height: 180px;
+}
+/* Utilizamos CSS Grid para crear la grilla de imágenes */
+.image-grid {
+  position: relative;
+  top: 77px;
+  left: -157px;
+  display: flex;
+  flex-direction: column;
+}
+.contColor{
+  display: flex;
+  flex-direction: row;
+  margin: 3px;
+}
+.contColor img{
+  height: 135px;
+  width: 180px;
+}
+.imgTeoria {
+  margin-right: 3px; /* Espacio vertical entre las imágenes */
 }
