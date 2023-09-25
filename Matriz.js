@@ -7,7 +7,7 @@ var imgTorreI = document.getElementById('imgTorre')
 var contInicial = document.getElementById('container1'); 
 var botonMa = document.getElementById('bot-mantaut')
 
-var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa']
+var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa']
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado']
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor'];
@@ -531,11 +531,14 @@ function showNextGraf() {
 }
 function showRepuesto(elementId) {
   switch (elementId) {
-    case 'contImgDistribuidor':
-      if (!idsArray.includes(elementId)) {
-        idsArray.push(elementId);
-        console.log(idsArray)
-        }      
+    case 'contImgDistribuidor':  
+      allContenedores.forEach(elemen => {
+      var element = document.getElementById(elemen);
+      if (element) {
+        element.style.display = 'none';
+      }
+    });
+    
       conteHijosTintero.forEach(elementCont => {
         var element = document.getElementById(elementCont);
         if (element) {
@@ -550,8 +553,19 @@ function showRepuesto(elementId) {
           imagen.style.display = 'block';
         });
       }
+      if (!idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray)
+      }       
    break;
     case 'contImgEntintador':
+      allContenedores.forEach(elemen => {
+        var element = document.getElementById(elemen);
+        if (element) {
+          element.style.display = 'none';
+        }
+      });
+
       conteHijosTintero.forEach(elementId => {
         var element = document.getElementById(elementId);
         if (element) {
@@ -571,11 +585,7 @@ function showRepuesto(elementId) {
         console.log(idsArray)
         }    
     break;
-    case 'contPortPlaca':
-      if (!idsArray.includes(elementId)) {
-        idsArray.push(elementId);
-        console.log(idsArray)
-        }      
+    case 'contPortPlaca':     
       conteHijosTintero.forEach(elementId => {
         var element = document.getElementById(elementId);
         if (element) {
@@ -592,6 +602,8 @@ function showRepuesto(elementId) {
         video.currentTime = 0;
         video.play();   
       }});
+      var contOblicuoPlaca = document.getElementById('agrupaOblicuos-placa')
+      contOblicuoPlaca.style.display='block'  
       var botonesInicio = document.getElementById('container01')
       botonesInicio.style.display='none'
      var imagenesPlancha = document.querySelectorAll('.imagesTorre')
@@ -601,6 +613,10 @@ function showRepuesto(elementId) {
         elemento.style.display = 'flex';
       });
     });
+    if (!idsArray.includes(elementId)) {
+      idsArray.push(elementId);
+      console.log(idsArray)
+      }
     break;       
     case 'contPortManta':
       if (!idsArray.includes(elementId)) {
@@ -654,13 +670,22 @@ function muestraPerfiles(elementId){
   var imgPlancha = document.querySelectorAll('.imagesTorre') 
   var imagesPlancha = document.getElementById('contPerfilesPlancha')
   var imgsPlancha = document.getElementById('imagenes-plancha')
-
+  var cont10 = document.getElementById('container10')
     switch (elementId) {
     case 'imagen1':
     // Detener el video
     video.pause();
     // Ocultar el video estableciendo su estilo de visualización en 'none'
     video.style.display = 'none';
+/*     allContenedores.forEach(elemen => {
+      var element = document.getElementById(elemen);
+      if (element !== 'agrupaOblicuos-placa') {
+        element.style.display = 'none';
+      }else{
+        element.style.display = 'block';
+      }
+    }); */
+    cont10.style.display='block'
     imagesPlancha.style.display='flex'
     imgsPlancha.style.display='flex'
     imgPlancha.forEach(function (imagen) {
@@ -1626,6 +1651,8 @@ function irContenedorAnterior() {
           videoElements.forEach(vide => {
             if (vide.id === 'prisma-vid') {
               vide.style.display = 'block';
+              vide.currentTime = 0;
+              vide.loop = true;               
               vide.play();      
             } else {
               vide.style.display = 'none';
@@ -1633,16 +1660,18 @@ function irContenedorAnterior() {
             });
           break; 
           case "vidColor-II":
-          var mostrario = document.getElementById('pre-prensa');
+          var mostrari = document.getElementById('pre-prensa');
           var videos = document.getElementById('vidColor-II');
-          mostrario.style.display='flex'
+          mostrari.style.display='flex'
           videos.style.style='flex'
-          videoElements.forEach(vide => {
-            if (vide.id === 'color-vid') {
-              vide.style.display = 'block';
-              vide.play();      
+          videoElements.forEach(vid => {
+            if (vid.id === 'color-vid') {
+              vid.style.display = 'block';
+              vid.currentTime = 0;
+              vid.loop = true;                            
+              vid.play();      
             } else {
-              vide.style.display = 'none';
+              vid.style.display = 'none';
             }
             });
           break;                                                                                                                                                                            
