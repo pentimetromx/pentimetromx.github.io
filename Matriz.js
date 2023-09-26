@@ -1444,10 +1444,7 @@ function abrirSeccionCurado(elementId){
 }
 function cerrarSecciones(){
   var linkList = document.getElementById("linkList");
-  contVariable.style.display='none'
-  contPlana.style.display='none'
   linkList.style.display = "none";
-
 }
 function abrirPilarMA(){
   linkListI.style.display = "none";    
@@ -1505,6 +1502,11 @@ function abrirPrepress(elementId) {
       video.pause();      
     }
     });
+    const videos = document.querySelectorAll('.vidTeoria');
+    // Reproducir todos los videos simultáneamente
+        videos.forEach(video => {
+            video.play();
+        });
     linkList.style.display = "none";    
     if (!idsArray.includes(elementId)) {
       idsArray.push(elementId);
@@ -1570,6 +1572,12 @@ function muestraVidPrisma(elementId) {
     video.style.display = 'none';
   }
   });
+  const videos = document.querySelectorAll('.vidTeoria');
+  // Reproducir todos los videos simultáneamente
+      videos.forEach(video => {
+          video.pause();
+          video.style.display='none'
+      });
   if (!idsArray.includes(elementId)) {
     idsArray.push(elementId);
     console.log(idsArray)
@@ -1589,6 +1597,12 @@ function muestraVidColor(elementId){
     video.style.display = 'none';
   }
   });
+  const videos = document.querySelectorAll('.vidTeoria'); 
+  // Reproducir todos los videos simultáneamente
+      videos.forEach(video => {
+          video.pause();
+          video.style.display='none'
+      });
   if (!idsArray.includes(elementId)) {
     idsArray.push(elementId);
     console.log(idsArray)
@@ -1684,7 +1698,13 @@ function irContenedorAnterior() {
             for (var i = 0; i < contImgsTeoria.length; i++) {
               var teorImage = contImgsTeoria[i]; // Accede al elemento actual
               teorImage.style.display = 'block'; // muestra el elemento  
-            }            
+            } 
+            const vidTeoria = document.querySelectorAll('.vidTeoria');
+            // Reproducir todos los videos simultáneamente
+            vidTeoria.forEach(video => {
+              video.style.display='block'
+              video.play();
+            });                       
           break; 
           case "densitometria":
             var mostraDensit = document.getElementById('densitometria');

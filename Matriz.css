@@ -11,7 +11,7 @@ body, html {
   height: 100vh; /* Ajusta la altura del body para que cubra toda la pantalla */
   margin: 0; /* Elimina los márgenes predeterminados del body */
   padding: 0; /* Elimina los rellenos predeterminados del body */
-  overflow:hidden;
+  /* overflow:hidden; */
 }
 
 #videoBackground {
@@ -922,15 +922,21 @@ header {
   display: flex;
   flex-direction: column;
 }
+.vidTeoria{
+  height: 120px;
+  width: 160px;
+}
 .contColor{
   display: flex;
   flex-direction: row;
   margin: 3px;
 }
 .contColor img{
-  height: 135px;
-  width: 180px;
+  height: 120px;
+  width: 160px;
 }
+.vidTeoria,
+.imgDensito,
 .imgTeoria {
   margin-right: 3px; /* Espacio vertical entre las imágenes */
 }

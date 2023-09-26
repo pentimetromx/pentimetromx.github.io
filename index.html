@@ -843,7 +843,7 @@
 
       <div id="imgs-prepress" class="image-grid" style="display: none;">
         <div id="contColor" class="contColor">
-          <img class='imgTeoria' onclick="VolveraInicio()" src="./assets/preprensa13.png" alt="pre13"> 
+          <img class='imgTeoria' src="./assets/preprensa13.png" alt="pre13"> 
           <img class='imgTeoria' src="./assets/preprensa.jpg" alt="pre1">
           <img class='imgTeoria' src="./assets/preprensa2.jpg" alt="pre2">
           <img class='imgTeoria' onclick="muestraVidPrisma('vidColor')" src="./assets/preprensa17.jpg" alt="pre3">          
@@ -852,19 +852,24 @@
         </div>
         <div id="segundoCont" class="contColor">
           <img class='imgTeoria' src="./assets/preprensa5.jpg" alt="pre5">
-          <img class='imgTeoria' src="./assets/preprensa6.jpg" alt="pre6">
           <img class='imgTeoria' src="./assets/preprensa7.jpg" alt="pre7">
+          <video class='vidTeoria' src="./assets/luz.mp4" autoplay loop></video>
           <img class='imgTeoria' src="./assets/preprensa8.jpg" alt="pre8">
           <img class='imgTeoria' onclick="muestraVidColor('vidColor-II')" src="./assets/preprensa10.jpg" alt="pre10">
-          <img class='imgTeoria' src="./assets/preprensa9.jpg" alt="pre9"> 
+          <video class='vidTeoria' src="./assets/luz2.mp4" autoplay loop></video>
         </div>
         <div id="tercerCont" class="contColor">
-          <img class='imgTeoria' src="./assets/preprensa11.png" alt="pre17">
+          <img class='imgTeoria' src="./assets/preprensa6.jpg" alt="pre6">
           <img class='imgTeoria' src="./assets/preprensa1.jpg" alt="pre19">
           <img class='imgTeoria' src="./assets/preprensa14.jpg" alt="pre14">
           <img class='imgTeoria' src="./assets/preprensa15.jpg" alt="pre15">
           <img class='imgTeoria' src="./assets/preprensa16.jpg" alt="pre16">
           <img class='imgTeoria' src="./assets/preprensa10.png" alt="pre18">
+        </div>
+        <div id="cuartoCont" class="contColor">
+          <img class='imgTeoria' src="./assets/preprensa11.png" alt="pre17">
+          <img class='imgTeoria' src="./assets/preprensa9.jpg" alt="pre9"> 
+          <video class='vidTeoria' src="./assets/luz3.mp4" autoplay loop></video>
         </div>
       </div>
     </div>
@@ -883,7 +888,7 @@
         <video class="video-training" id="color-vid" style="position: absolute;left: 137px;top: 80px;width: 638px;height: 480px;" src="./assets/color.mp4"></video>
       </div> 
 
-      <div id="imgs-densito" class="image-grid" style="display: none;">
+      <div id="imgs-densito" class="image-grid" style="display: none;position: absolute;top: 67px;">
         <div id="contDensito" class="contColor">
           <img class='imgDensito' src="./assets/densito906.jfif" alt="pre10018">
           <img class='imgDensito' src="./assets/densito1.jpg" alt="pre1002">
@@ -916,6 +921,14 @@
           <img class='imgDensito' src="./assets/densito913.jfif" alt="pre10017">  
           <img class='imgDensito' src="./assets/densito914.jfif" alt="pre10018">
         </div>
+        <!-- <div class="conti-boton" id="conte-botDensito" style="display: flex;"> -->
+          <button class="butt-mautonomo image-trainings" id="troubleshoot" onclick="mantAutonomo('troubleshooting')">MONTAJES</button>
+          <button class="butt-mautonomo image-trainings" id="def1" onclick="mantAutonomo('def-tipo1')">ANGULACION</button>
+          <button class="butt-mautonomo image-trainings" id="def2" onclick="mantAutonomo('def-tipo2')">INSOLADOR</button>
+          <button class="butt-mautonomo image-trainings" id="adtBut" onclick="mantAutonomo('ayudastrabajo')">AYUDAS</button>
+          <button class="butt-mautonomo image-trainings" id="fua" onclick="mantAutonomo('fua')">DOBLADOR</button>           
+          <button class="butt-mautonomo image-trainings" id="lup" onclick="mantAutonomo('lup')">CALIBRES</button>
+        <!-- </div> --> 
       </div>
     </div>
     <script src="./Matriz.js"></script>    
