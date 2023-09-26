@@ -7,7 +7,7 @@ var imgTorreI = document.getElementById('imgTorre')
 var contInicial = document.getElementById('container1'); 
 var botonMa = document.getElementById('bot-mantaut')
 
-var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa']
+var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria']
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado']
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor'];
@@ -1473,9 +1473,7 @@ function abrirPrepress(elementId) {
   var contBotPress = document.getElementById('contene-11');
   var contImgsPrepress = document.getElementById('imgs-prepress');
   var videoBackground = document.getElementById('videoBackground');
-  var prePrensaElemento = document.getElementById('pre-prensa');
-
-  
+  var prePrensaElemento = document.getElementById('pre-prensa');  
   videoBackground.pause();
   videoBackground.style.display = 'none'; // Oculta el video
   // Ocultar todos los elementos
@@ -1507,10 +1505,56 @@ function abrirPrepress(elementId) {
       video.pause();      
     }
     });
+    linkList.style.display = "none";    
     if (!idsArray.includes(elementId)) {
       idsArray.push(elementId);
       console.log(idsArray)
     } 
+}
+function abrirDensitometria(elementId){
+  var densiitoElemento = document.getElementById('densitometria');  
+  var linksIniciales = ['links-inicialesI', 'links-iniciales'];
+  var contBotDensito = document.getElementById('contene-12');
+  var contImgsDensito = document.getElementById('imgs-densito');
+  var videoBackground = document.getElementById('videoBackground');
+  // Ocultar todos los elementos
+  for (var i = 0; i < allContenedores.length; i++) {
+    var elemento = document.getElementById(allContenedores[i]);
+    if (elemento) {
+      elemento.style.display = 'none';
+    }
+  } 
+
+  videoBackground.pause();
+  videoBackground.style.display = 'none'; // Oculta el video
+  // Mostrar el elemento "densitometria"
+  if (densiitoElemento) {
+    densiitoElemento.style.display = 'block';
+    densiitoElemento.style.zIndex = '0';
+
+    // Establecer el mismo z-index para linksIniciales
+    for (var j = 0; j < linksIniciales.length; j++) {
+      var linkInicial = document.getElementById(linksIniciales[j]);
+      if (linkInicial) {
+        linkInicial.style.zIndex = '1';
+      }
+    }
+  }
+ 
+  contBotDensito.style.display = 'block';
+  contImgsDensito.style.display = 'block';  
+
+    videoElements.forEach(video => {
+      if (video) {
+        video.style.display = 'none';
+        video.pause();      
+      }
+      });
+      linkList.style.display = "none";
+      if (!idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray)
+      }   
 }
 function muestraVidPrisma(elementId) {
   var contImgsTeoria = document.getElementsByClassName('imgTeoria'); // Obtén elementos por su 
@@ -1641,7 +1685,17 @@ function irContenedorAnterior() {
               var teorImage = contImgsTeoria[i]; // Accede al elemento actual
               teorImage.style.display = 'block'; // muestra el elemento  
             }            
-            /* abrirPrepress('pre-prensa') */     
+          break; 
+          case "densitometria":
+            var mostraDensit = document.getElementById('densitometria');
+            var contDensit = document.getElementById('imgs-densito')
+            mostraDensit.style.display='block'
+            contDensit.style.style='block'
+            var contImgsDensito = document.getElementsByClassName('imgDensito'); // Obtén elementos por su
+            for (var i = 0; i < contImgsDensito.length; i++) {
+              var teorImage = contImgsDensito[i]; // Accede al elemento actual
+              teorImage.style.display = 'block'; // muestra el elemento  
+            }            
           break;  
           case "vidColor":
           var mostrario = document.getElementById('pre-prensa');
@@ -1683,8 +1737,6 @@ function irContenedorAnterior() {
   idsArray.pop();  
   console.log(idsArray)
 }
-
-
 var chart = new Chart(miCanvas, {
     type: 'bar',    
     data: {

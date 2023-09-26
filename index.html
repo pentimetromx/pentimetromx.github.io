@@ -55,6 +55,7 @@
         <li><a href="#" onclick="abrirSeccionPlanas('cont-plana')">Impresion plana</a></li><br>
         <li><a href="#" onclick="abrirSeccionCurado('cont-secador')">Curado UV</a></li><br>
         <li><a href="#" onclick="abrirPrepress('pre-prensa')">Teoria del color</a></li><br>
+        <li><a href="#" onclick="abrirDensitometria('densitometria')">Densitometría</a></li><br>
         <li><a href="#" onclick="cerrarSecciones()">Salir</a></li><br>
 
       </ul>    
@@ -864,6 +865,56 @@
           <img class='imgTeoria' src="./assets/preprensa15.jpg" alt="pre15">
           <img class='imgTeoria' src="./assets/preprensa16.jpg" alt="pre16">
           <img class='imgTeoria' src="./assets/preprensa10.png" alt="pre18">
+        </div>
+      </div>
+    </div>
+
+    <div id="densitometria" style="position: absolute;left: 170px;top: 6px;display: none;">
+      <div class="contene-5" id="contene-12" style="position: absolute;left: -16px;top: 1px;display: none;">
+        <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL PRINCIPAL</button>
+        <button class="boton-a" id="bot-atras6" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 5px;" onclick="irContenedorAnterior('densitometria')"></button>
+        <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
+      </div><br>
+
+      <div id="vidDensito">
+        <video class="video-training" id="prisma-vid" style="position: absolute;left: 137px;top: 80px;width: 638px;height: 480px;" src="./assets/prisma.mp4"></video>
+      </div>
+      <div id="vidDensito-II">
+        <video class="video-training" id="color-vid" style="position: absolute;left: 137px;top: 80px;width: 638px;height: 480px;" src="./assets/color.mp4"></video>
+      </div> 
+
+      <div id="imgs-densito" class="image-grid" style="display: none;">
+        <div id="contDensito" class="contColor">
+          <img class='imgDensito' src="./assets/densito906.jfif" alt="pre10018">
+          <img class='imgDensito' src="./assets/densito1.jpg" alt="pre1002">
+          <img class='imgDensito' src="./assets/densito2.jpg" alt="pre1003">
+          <img class='imgDensito' src="./assets/densito3.jpg" alt="pre1004">          
+          <img class='imgDensito' src="./assets/densito4.jpg" alt="pre1005"> 
+          <img class='imgDensito' src="./assets/densito904.jfif" alt="pre10016">          
+        </div>
+        <div id="segundoContDensito" class="contColor">
+          <img class='imgDensito' src="./assets/densito5.jpg" alt="pre1006">
+          <img class='imgDensito' src="./assets/densito7.jpg" alt="pre1008">
+          <img class='imgDensito' src="./assets/densito8.jpg" alt="pre1009">
+          <img class='imgDensito' src="./assets/densito9.jpg" alt="pre10010">          
+          <img class='imgDensito' src="./assets/densito910.jfif" alt="pre10011">  
+          <img class='imgDensito' src="./assets/densito911.jfif" alt="pre10012">
+        </div>
+        <div id="tercerContDensito" class="contColor">
+          <img class='imgDensito' src="./assets/densito901.png" alt="pre10013"> 
+          <img class='imgDensito' src="./assets/densito902.jpg" alt="pre10014">
+          <img class='imgDensito' src="./assets/densito903.jpg" alt="pre10015">
+          <img class='imgDensito' src="./assets/densito6.jpg" alt="pre1007"> 
+          <img class='imgDensito' src="./assets/densito909.jfif" alt="pre10015">         
+          <img class='imgDensito' src="./assets/densito.jpg" alt="pre1001"> 
+        </div>
+        <div id="tercerContDensito" class="contColor">
+          <img class='imgDensito' src="./assets/densito907.jfif" alt="pre10013"> 
+          <img class='imgDensito' src="./assets/densito908.jfif" alt="pre10014">
+          <img class='imgDensito' src="./assets/densito905.jfif" alt="pre10017"> 
+          <img class='imgDensito' src="./assets/densito912.jfif" alt="pre10016">          
+          <img class='imgDensito' src="./assets/densito913.jfif" alt="pre10017">  
+          <img class='imgDensito' src="./assets/densito914.jfif" alt="pre10018">
         </div>
       </div>
     </div>
