@@ -1,4 +1,6 @@
 var idsArray = [];
+var idsArrayII = [];
+
 var currentID = null;
 var btnAtras = document.getElementById('bot-atras');
 var butInicio = document.getElementById('bot-inic')
@@ -355,6 +357,7 @@ function cambioContenedor(elementId) {
   var torreImpresion = document.getElementById('torre-imp') // PADRE TORRE IMPRESION  */
   var botonTorre = document.getElementById('toggleVideoButton');
   var botAtras = document.getElementById('bot-atras10')
+  var botTrasII = document.getElementById('bot-atras11')
 
   for (var i = 0; i < elementsToHide.length; i++) {
     elementsToHide[i].style.display = 'none';
@@ -368,6 +371,7 @@ function cambioContenedor(elementId) {
   } */
 
   botAtras.style.display='block'
+  botTrasII.style.display='block'
   torreImpresion.style.position='absolute'
   torreImpresion.style.left='77px'
   botonTorre.style.position='absolute'
@@ -1483,6 +1487,9 @@ function abrirPrepress(elementId) {
   contBotPress.style.display = 'block';
   contImgsPrepress.style.display = 'block';
 
+/*   var contPrensa = document.getElementById('padrePrePrensa') 
+  contPrensa.style.display='block' */
+
   // Mostrar el elemento "pre-prensa"
   if (prePrensaElemento) {
     prePrensaElemento.style.display = 'block';
@@ -1505,6 +1512,7 @@ function abrirPrepress(elementId) {
     const videos = document.querySelectorAll('.vidTeoria');
     // Reproducir todos los videos simultáneamente
         videos.forEach(video => {
+          video.style.display='block'
             video.play();
         });
     linkList.style.display = "none";    
@@ -1534,6 +1542,15 @@ function abrirDensitometria(elementId){
     densiitoElemento.style.display = 'block';
     densiitoElemento.style.zIndex = '0';
 
+    var botEspecial = document.getElementById('conte-botDensito');
+    // Obtén todos los botones y guárdalos en un array
+    var botones = botEspecial.querySelectorAll('button');    
+    // Recorre el array de botones y muestra cada botón
+    for (var i = 0; i < botones.length; i++) {
+        botones[i].style.display = 'flex';
+    }
+
+
     // Establecer el mismo z-index para linksIniciales
     for (var j = 0; j < linksIniciales.length; j++) {
       var linkInicial = document.getElementById(linksIniciales[j]);
@@ -1544,7 +1561,7 @@ function abrirDensitometria(elementId){
   }
  
   contBotDensito.style.display = 'block';
-  contImgsDensito.style.display = 'block';  
+  contImgsDensito.style.display = 'block'; 
 
     videoElements.forEach(video => {
       if (video) {
@@ -1552,6 +1569,12 @@ function abrirDensitometria(elementId){
         video.pause();      
       }
       });
+      const videos = document.querySelectorAll('.vidTeoria');
+      // Reproducir todos los videos simultáneamente
+          videos.forEach(video => {
+            video.style.display='block'
+              video.play();
+          });      
       linkList.style.display = "none";
       if (!idsArray.includes(elementId)) {
         idsArray.push(elementId);
@@ -1608,6 +1631,156 @@ function muestraVidColor(elementId){
     console.log(idsArray)
   } 
 }
+function irContenedorSiguiente() {
+  var i = 0;
+  var previousElementID = idsArrayII[idsArrayII.length - 2];
+  var contenedorActual = document.getElementById(idsArrayII[idsArrayII.length - 1]); 
+  contenedorActual.style.display = 'block';
+  recorrerActual = contenedorActual.querySelectorAll('*');
+
+  for (var i = 0; i < idsArrayII.length; i++) {
+    if (previousElementID) {
+      switch (previousElementID) { 
+        case "pantalla-inicial":
+          VolveraInicio(); 
+          break;
+          case "pantalla-tintero":
+            var botonesInicio = document.getElementById('container01')
+            botonesInicio.style.display='block'
+            changeButtonStyles('pantalla-tintero');  
+          break;
+          case "videoElement1-II":
+            changeButtonStyles('videoElement1-II');  
+          break;          
+          case "contImgEntintador":
+            showRepuesto('contImgEntintador')
+          break; 
+          case "contImgDistribuidor":
+            showRepuesto ('contImgDistribuidor') 
+          break;          
+          case "contPortPlaca":
+            showRepuesto('contPortPlaca');
+          break;
+          case "contPortManta":
+            var contBotManta = document.getElementById('container01')
+            contBotManta.style.display='block'
+            showRepuesto('contPortManta', 'videoTrain03');  
+          break;
+          case "contImpresor":
+            showRepuesto('contImpresor', 'videoTrain01')
+          break;
+          case "imagen1":
+            muestraPerfiles('imagen1')
+          break;
+          case "imagen2":
+            muestraPerfiles('imagen2')
+          break; 
+          case "imagen3":
+            muestraPerfiles('imagen3')
+          break;
+          case "imagen4":
+            muestraPerfiles('imagen4')
+          break; 
+          case "cont-variable":
+            abrirSeccionVariable('cont-variable')
+          break; 
+          case "cont-plana":
+            abrirSeccionPlanas('cont-plana')
+          break; 
+          case "cont-secador":
+            abrirSeccionCurado('cont-secador')
+          break;
+          case "bateria-entintado-II":
+            changeButtonStyles('bateria-entintado-II', 'contene-7')
+          break; 
+          case "bancada-torre-II":
+            changeButtonStyles('bancada-torre-II')
+          break; 
+          case "conteneMantaut":
+            ElementosMa('conteneMantaut')
+          break; 
+          case "rotatek-1":
+            /* cambioContenedor('rotatek-1') */
+            location.reload();
+          break; 
+          case "frente":
+            muestraTorresI('frente')
+          break;  
+          case "pantalla-frente":
+            muestraTorres('frente')
+          break; 
+          case "sitema-humedad":
+            changeButtonStyles('sitema-humedad')  
+          break; 
+          case "pre-prensa":
+            var mostrar = document.getElementById('pre-prensa');
+            var contImg = document.getElementById('imgs-prepress')
+            mostrar.style.display='block'
+            contImg.style.style='block'
+            var contImgsTeoria = document.getElementsByClassName('imgTeoria'); // Obtén elementos por su
+            for (var i = 0; i < contImgsTeoria.length; i++) {
+              var teorImage = contImgsTeoria[i]; // Accede al elemento actual
+              teorImage.style.display = 'block'; // muestra el elemento  
+            } 
+            const vidTeoria = document.querySelectorAll('.vidTeoria');
+            // Reproducir todos los videos simultáneamente
+            vidTeoria.forEach(video => {
+              video.style.display='block'
+              video.play();
+            });                       
+          break; 
+          case "densitometria":
+            var mostraDensit = document.getElementById('densitometria');
+            var contDensit = document.getElementById('imgs-densito')
+            mostraDensit.style.display='block'
+            contDensit.style.style='block'
+            var contImgsDensito = document.getElementsByClassName('imgDensito'); // Obtén elementos por su
+            for (var i = 0; i < contImgsDensito.length; i++) {
+              var teorImage = contImgsDensito[i]; // Accede al elemento actual
+              teorImage.style.display = 'block'; // muestra el elemento  
+            }            
+          break;  
+          case "vidColor":
+          var mostrario = document.getElementById('pre-prensa');
+          var videos = document.getElementById('vidColor');
+          mostrario.style.display='flex'
+          videos.style.style='flex'
+          videoElements.forEach(vide => {
+            if (vide.id === 'prisma-vid') {
+              vide.style.display = 'block';
+              vide.currentTime = 0;
+              vide.loop = true;               
+              vide.play();      
+            } else {
+              vide.style.display = 'none';
+            }
+            });
+          break; 
+          case "vidColor-II":
+          var mostrari = document.getElementById('pre-prensa');
+          var videos = document.getElementById('vidColor-II');
+          mostrari.style.display='flex'
+          videos.style.style='flex'
+          videoElements.forEach(vid => {
+            if (vid.id === 'color-vid') {
+              vid.style.display = 'block';
+              vid.currentTime = 0;
+              vid.loop = true;                            
+              vid.play();      
+            } else {
+              vid.style.display = 'none';
+            }
+            });
+          break;                                                                                                                                                                            
+        default:
+        break;
+      }  
+    }
+  }
+  idsArrayII.pop();  
+  console.log(idsArrayII)
+}
+
 function irContenedorAnterior() {
   var i = 0;
   var previousElementID = idsArray[idsArray.length - 2];
@@ -1754,6 +1927,8 @@ function irContenedorAnterior() {
       }  
     }
   }
+  idsArrayII.push(contenedorActual.id);
+  console.log(idsArrayII);
   idsArray.pop();  
   console.log(idsArray)
 }

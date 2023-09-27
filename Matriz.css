@@ -11,7 +11,7 @@ body, html {
   height: 100vh; /* Ajusta la altura del body para que cubra toda la pantalla */
   margin: 0; /* Elimina los márgenes predeterminados del body */
   padding: 0; /* Elimina los rellenos predeterminados del body */
-  /* overflow:hidden; */
+  overflow:hidden;
 }
 
 #videoBackground {
@@ -450,22 +450,19 @@ width:447px ;
   cursor: pointer;
   padding-left: 27px;
 }
-.labl-class{
-  font-family: "GothamRounded", sans-serif;
-  color: yellow;
-  display: flex;
-
-}
 .butt-mautonomo::before {
   content: "";
   position: absolute;
+  left: 0;
   top: 0;
   width: 17px;
   height: 27px;
   background-color: rgba(217, 255, 0, 1);
 }
-.butt-mautonomo::before {
-  left: 0;
+.labl-class{
+  font-family: "GothamRounded", sans-serif;
+  color: yellow;
+  display: flex;
 }
 #canvasContainer2 {
   display: none;
@@ -903,8 +900,32 @@ header {
 #bot-atras8::before,
 #bot-atras9::before,
 #bot-atras10::before,
-#bot-atras11::before{
+#bot-atras100::before,
+#bot-atras101::before,
+#bot-atras102::before{
   content: "\25C0"; /* Código HTML para el triángulo de reproducción */
+  font-size: 2em; /* Aumentar el tamaño al doble */
+}
+#bot-atras12::before,
+#bot-atras11::before,
+#bot-atras13::before,
+#bot-atras14::before,
+#bot-atras15::before,
+#bot-atras16::before,
+#bot-atras17::before,
+#bot-atras18::before,
+#bot-atras19::before,
+#bot-atras20::before,
+#bot-atras21::before,
+#bot-atras22::before,
+#bot-atras23::before,
+#bot-atras24::before,
+#bot-atras25::before,
+#bot-atras26::before,
+#bot-atras27::before,
+#bot-atras28::before,
+#bot-atras29::before{
+  content: "\25B6"; /* Código HTML para el triángulo de reproducción hacia la derecha */
   font-size: 2em; /* Aumentar el tamaño al doble */
 }
 .aumentar{
@@ -939,4 +960,20 @@ header {
 .imgDensito,
 .imgTeoria {
   margin-right: 3px; /* Espacio vertical entre las imágenes */
+}
+#vidCicodeliaII,
+#vidCicodelia{
+  position: fixed;
+  left: 17px;
+  top: 77px;
+  height: 487px; 
+  object-fit: fill; /* Elimina la relación de aspecto original */
+  width: 973px;
+  z-index: -1; 
+}
+.conte-botDensito{
+  display: flex;
+  flex-direction: column;
+  margin-top: 57px;
+  margin-left:877px;
 }
