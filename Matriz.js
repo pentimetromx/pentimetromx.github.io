@@ -174,7 +174,6 @@ function ElementosMa(elementId) {
   if (contPadreMA) {
     contPadreMA.style.display = 'flex';
   }
-
   contenedor.style.display='block'
   // Obtén una lista de todos los elementos de botón dentro del contenedor
   var botones = contenedor.getElementsByTagName("button");  
@@ -183,11 +182,10 @@ function ElementosMa(elementId) {
     var boton = botones[i];
     boton.style.display = "inline-block"; // Cambia "inline-block" por "block" si prefieres que ocupen todo el ancho
   }
-
   for (var i = 0; i < buttonsMA.length; i++) {
     buttonsMA[i].style.display = 'block';
   }
-  
+  linkListI.style.display = "none";
   if (!idsArray.includes(elementId)) {
     idsArray.push(elementId);
     console.log(idsArray)
@@ -1484,11 +1482,21 @@ function abrirPrepress(elementId) {
       elemento.style.display = 'none';
     }
   }
+var contBotEspeciales = document.getElementById('conte-botDensitoII')
+contBotEspeciales.style.display='block'
+
+  var botEspecial = document.getElementById('conte-botDensitoII');
+  // Obtén todos los botones y guárdalos en un array
+  var botones = botEspecial.querySelectorAll('button');    
+  // Recorre el array de botones y muestra cada botón
+  for (var i = 0; i < botones.length; i++) {
+      botones[i].style.display = 'flex';
+  }
+
   contBotPress.style.display = 'block';
   contImgsPrepress.style.display = 'block';
 
-/*   var contPrensa = document.getElementById('padrePrePrensa') 
-  contPrensa.style.display='block' */
+
 
   // Mostrar el elemento "pre-prensa"
   if (prePrensaElemento) {
@@ -1780,7 +1788,6 @@ function irContenedorSiguiente() {
   idsArrayII.pop();  
   console.log(idsArrayII)
 }
-
 function irContenedorAnterior() {
   var i = 0;
   var previousElementID = idsArray[idsArray.length - 2];

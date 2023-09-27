@@ -971,6 +971,15 @@ header {
   width: 973px;
   z-index: -1; 
 }
+.conte-botDensitoII{
+  position: absolute;
+  left: 1034px;px;
+  top: 9px;
+  display: flex;
+  flex-direction: column;
+  /* margin-top: 57px;
+  margin-left:877px; */
+}
 .conte-botDensito{
   display: flex;
   flex-direction: column;
