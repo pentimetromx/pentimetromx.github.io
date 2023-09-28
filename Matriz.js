@@ -8,8 +8,8 @@ var botGrande = document.getElementById('iniciar')
 var imgTorreI = document.getElementById('imgTorre')
 var contInicial = document.getElementById('container1'); 
 var botonMa = document.getElementById('bot-mantaut')
-
-var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria']
+var imagPasoApaso = document.querySelectorAll('.img1')
+var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','largoImpresion']
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado']
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor'];
@@ -1170,12 +1170,13 @@ function mantAutonomo (opcionSeleccionada) {
     break;
     case 'ayudastrabajo':
       const contGrafitos = document.getElementById('canvasContainer3')
-      if (contGrafitos.style.display === 'block') {
-        contGrafitos.style.display = 'none'; 
+      if (contGrafitos.style.display !== 'block') {
+        contGrafitos.style.display = 'block'; 
+        conteLinksI.style.left='547px'
       } else {
-        contGrafitos.style.display = 'block';
+        contGrafitos.style.display = 'none';
+        conteLinksI.style.left='187px'
       }
-      conteLinksI.style.left='47px'      
     break;
     case 'fua':
       var contGrafColor = document.getElementById('contImagGraf')
@@ -1542,7 +1543,6 @@ function abrirDensitometria(elementId){
       elemento.style.display = 'none';
     }
   } 
-
   videoBackground.pause();
   videoBackground.style.display = 'none'; // Oculta el video
   // Mostrar el elemento "densitometria"
@@ -1938,6 +1938,50 @@ function irContenedorAnterior() {
   console.log(idsArrayII);
   idsArray.pop();  
   console.log(idsArray)
+}
+function listaEntrenamientos(){
+  var videoBackground = document.getElementById('videoBackground');
+  videoBackground.pause();
+  videoBackground.style.display = 'none'; // Oculta el 
+  
+  for (var i = 0; i < allContenedores.length; i++) {
+    var elemento = document.getElementById(allContenedores[i]); 
+    if(elemento.id !== 'conteneMantaut'){
+      elemento.style.display='none'
+    }else{
+      elemento.style.display='block'
+    }}
+  
+  var contTraining = document.getElementById('largoImpresion')
+  contTraining.style.display='flex'
+  contTraining.style.left='487px'
+  contTraining.style.top='57px'
+
+}
+function imagenesPasoApaso(idElto){
+  var contImgEntrenos = document.getElementById('contImgEntrenos')
+  contImgEntrenos.style.display='flex'
+  imagPasoApaso.forEach(imag => {
+  if (imag.id == idElto) {
+    imag.style.display='block'
+  }else{
+    imag.style.display='none'
+  }
+ })
+
+   // Simular la pulsación de la tecla 'Esc'
+   var event = new KeyboardEvent('keydown', {
+    key: 'Escape',
+    code: 'Escape',
+    keyCode: 27,
+    which: 27,
+    charCode: 27,
+    cancelable: true,
+    bubbles: true,
+  });
+
+  document.dispatchEvent(event);
+
 }
 var chart = new Chart(miCanvas, {
     type: 'bar',    

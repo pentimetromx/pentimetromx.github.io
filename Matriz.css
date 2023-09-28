@@ -750,8 +750,6 @@ height: 398px;
   transition: color 0.2s;
   cursor: pointer;
 }
-
-/* Estilos para el contenedor del título */
 #titleContainerI{
   position: absolute;
   left: 777px;
@@ -852,8 +850,24 @@ height: 398px;
   height: 200px;
   animation: iridescent 4s infinite;
 }
+.linksTraining li a {
+  color: white; /* Cambiar el color del texto a blanco */
+  cursor: pointer; /* Cambiar el cursor a una mano */
+  text-decoration: none; /* Eliminar la subrayado predeterminado de los enlaces */
+}
+.imgs-entrenos{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  display: none;
+  left: 17px;
+  top: 27PX;
+}
+.imgs-entrenos img{
+  width: 220px;
+  height: 180px;
+}
 /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
-/* Estilos para el header y el formulario */
 header {
   background-color: #333;
   color: #fff;
@@ -872,7 +886,6 @@ header {
   margin-right: 5px;
 }
 #search-button {
-  /* background-color: #007BFF; */
   background-color: white;
   border: none;
   border-radius: 5px;
@@ -882,7 +895,6 @@ header {
   height: 27px;
   text-align: center;
 }
-/* Estilos para la imagen de la lupa */
 #search-button img {
   width: 20px;
   height: 20px;
@@ -959,7 +971,7 @@ header {
 .vidTeoria,
 .imgDensito,
 .imgTeoria {
-  margin-right: 3px; /* Espacio vertical entre las imágenes */
+  margin-right: 3px;
 }
 #vidCicodeliaII,
 #vidCicodelia{
@@ -973,16 +985,30 @@ header {
 }
 .conte-botDensitoII{
   position: absolute;
-  left: 1034px;px;
+  left: 1034px;
   top: 9px;
   display: flex;
   flex-direction: column;
-  /* margin-top: 57px;
-  margin-left:877px; */
 }
 .conte-botDensito{
   display: flex;
   flex-direction: column;
   margin-top: 57px;
   margin-left:877px;
+}
+#largoImpresion h2 {
+  font-family: "GothamRounded", sans-serif;
+}
+#largoImpresion p {
+  font-family: "GothamRounded", sans-serif;
+}
+#largoImpresion{
+  position: absolute;
+  left: 17px;
+  display: flex; 
+  flex-direction: row;
+  color: white;
+  display: none;
+  font-family: "GothamRounded", sans-serif;
+  /* display: none; */ 
 }
