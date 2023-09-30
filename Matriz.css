@@ -184,6 +184,7 @@ transform: scale(1.1);
 }
 .video-training {
   display: none;
+  border-radius: 11px;
 }
 #videoElement3,
 #videoElement2{
@@ -522,6 +523,7 @@ width:447px ;
   top: 1px;
   height: 477px;
   width: 637px;
+  border-radius: 11px;
 }
 #linkDistribuidor{
   position: absolute;
@@ -719,6 +721,14 @@ height: 398px;
 }
 .image-trainings {
   transition: transform 0.1s ease, filter 0.1s ease;
+  border-radius: 11px;
+}
+.contImPresor{
+  display: flex;
+  flex-direction: row;  
+}
+.contImPresor img{
+margin-right: 7px; 
 }
 #imagenes-impresor,
 #imagenes-manta,
@@ -912,9 +922,11 @@ header {
 #bot-atras8::before,
 #bot-atras9::before,
 #bot-atras10::before,
+#bot-atras31::before,
 #bot-atras100::before,
 #bot-atras101::before,
-#bot-atras102::before{
+#bot-atras102::before,
+#bot-atras-m::before{
   content: "\25C0"; /* Código HTML para el triángulo de reproducción */
   font-size: 2em; /* Aumentar el tamaño al doble */
 }
@@ -936,7 +948,9 @@ header {
 #bot-atras26::before,
 #bot-atras27::before,
 #bot-atras28::before,
-#bot-atras29::before{
+#bot-atras29::before,
+#bot-atras30::before,
+#bot-atras32::before{
   content: "\25B6"; /* Código HTML para el triángulo de reproducción hacia la derecha */
   font-size: 2em; /* Aumentar el tamaño al doble */
 }

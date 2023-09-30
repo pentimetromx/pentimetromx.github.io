@@ -1,5 +1,5 @@
 var idsArray = [];
-var idsArrayII = [];
+var idsArrayEliminados = [];
 
 var currentID = null;
 var btnAtras = document.getElementById('bot-atras');
@@ -18,7 +18,9 @@ var allContPantafrente = ['pantalla-frente','container2','imgsRepuestos-II','img
 var allContTorreImp = ['rotatek-1','toggleVideoButton','torre-imp','tinter-o','cont-Verticales2','bateria-entintado','cont-Verticales3','bancada-torre','cont-Verticales4','sis-humedad','cont-Verticales5'];
 var allContBaterImp = ['contenedor-7','videoElement1-II','container7']
 var allContSisHumedad = ['contenedor-9','contene-10','sitema-humedad']
-var contVid = document.getElementById('videosTraining')  
+var contVid = document.getElementById('videosTraining') 
+var contIMPlaca = document.getElementById('placa')
+var contIMmanta = document.getElementById('manta')
 
 var allContMA = ['conteneMantaut','conti-boton']
 var buttonsMA = document.getElementsByClassName("butt-mautonomo");
@@ -97,17 +99,29 @@ let currentIndex = 0;
 let actualtIndex = 0;
 let nowIndex = 0;
 
-idsArray.push('pantalla-inicial');
+idsArray.push("pantalla-inicial");
+idsArrayEliminados.push('salir');
+console.log(idsArrayEliminados)
 console.log(idsArray)
 function VolveraInicio(){
   location.reload();
   idsArray = [];
+  idsArrayEliminados = [];
+}
+function ocultaMA () {
+  var contenedorPrincipal = document.getElementById('conteneMantaut');
+  var hijosDelContenedor = contenedorPrincipal.children;
+  
+  for (var i = 0; i < hijosDelContenedor.length; i++) {
+    var hijo = hijosDelContenedor[i];
+      hijo.style.display = 'none';    
+  }
 }
 function botoGrand() {
   var button = document.querySelector('.boton-a');
   // Guardar estilos originales
   var originalBackgroundColor = button.style.backgroundColor;
-  var originalColor = button.style.color;
+  var originalColor = button.style.color; 
   // Cambiar estilos con click
   button.style.backgroundColor = 'white';
   button.style.color = 'red';
@@ -163,7 +177,18 @@ function muestraBateria(elementId) {
   }
 }
 function ElementosMa(elementId) {
-  var contenedor = document.getElementById("container8");
+/*   // Obtener el elemento padre
+  var contenedorPadre = document.getElementById("conteneMantaut");
+  // Obtener todos los elementos hijos del contenedor padre
+  var elementosHijos = contenedorPadre.children;
+  // Recorrer los elementos hijos sin usar clases ni 'id'
+  for (var i = 0; i < elementosHijos.length; i++) {
+  var elementoHijo = elementosHijos[i];
+  // Realizar las operaciones que desees con cada elemento hijo aquí
+  console.log(elementoHijo);
+  } */
+
+  var contenedor = document.getElementById("container8"); 
   // Recorre el array y oculta los elementos por su ID
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);
@@ -382,11 +407,14 @@ function cambioContenedor(elementId) {
 }
 function cierraContenedores(elementId) {
   const coleccion = document.querySelectorAll('.desbobinador, .desbobinador-I, .uTeñido, .alimentador, .unidProceso, .rebobinador, .contTorrImp');
+  if (!idsArray.includes(elementId)) {
+    idsArray.push(elementId);
+    console.log(idsArray)
+  }
 
   switch (elementId) {
+
     case 'desbobinador':
-      /* btnAtras.style.display='block' */
-      /* btnAtras.style.left = '57px'; */
       coleccion.forEach(elemento => {
         if (elemento.classList.contains(elementId)) {
           elemento.style.display = 'flex';
@@ -394,14 +422,8 @@ function cierraContenedores(elementId) {
           elemento.style.display = 'none';
         }
       });
-      if (!idsArray.includes(elementId)) {
-        idsArray.push(elementId);
-        console.log(idsArray)
-        }
-      break; 
+    break; 
     case 'uTeñido':
-    /* btnAtras.style.display='block'
-    btnAtras.style.left = '57px'; */
     coleccion.forEach(elemento => {
     if (elemento.classList.contains(elementId)) {
     elemento.style.display = 'flex';
@@ -411,8 +433,6 @@ function cierraContenedores(elementId) {
     });
     break;
     case 'alimentador':
-    /* btnAtras.style.display='block'
-    btnAtras.style.left = '57px'; */
     coleccion.forEach(elemento => {
     if (elemento.classList.contains(elementId)) {
     elemento.style.display = 'flex';
@@ -422,8 +442,6 @@ function cierraContenedores(elementId) {
     });
     break;
     case 'unidProceso':
-    /* btnAtras.style.display='block'
-    btnAtras.style.left = '57px'; */
     coleccion.forEach(elemento => {
     if (elemento.classList.contains(elementId)) {
     elemento.style.display = 'flex';
@@ -433,8 +451,6 @@ function cierraContenedores(elementId) {
     });
     break;
     case 'rebobinador':
-    /* btnAtras.style.display='block'
-    btnAtras.style.left = '57px'; */
     coleccion.forEach(elemento => {
       if (elemento.classList.contains(elementId)) {
         elemento.style.display = 'flex';
@@ -443,7 +459,6 @@ function cierraContenedores(elementId) {
       }
     });
     break;
-
     default:
   }
 }
@@ -593,7 +608,14 @@ function showRepuesto(elementId) {
         if (element) {
           element.style.display = 'none';
         }
-      });    
+      }); 
+      var contenedorPrincipal = document.getElementById('contPerfilesPlancha');
+      var hijosDelContenedor = contenedorPrincipal.children;
+      for (var i = 0; i < hijosDelContenedor.length; i++) {
+        var hijo = hijosDelContenedor[i];  
+        hijo.style.display = 'none';
+      }
+      
       contPortaPlancha.style.display='block'
       videoElements.forEach(video => {
       if (video.id !== 'video-placa') {
@@ -621,16 +643,18 @@ function showRepuesto(elementId) {
       }
     break;       
     case 'contPortManta':
-      if (!idsArray.includes(elementId)) {
-        idsArray.push(elementId);
-        console.log(idsArray)
-        }       
-      conteHijosTintero.forEach(elementId => {
-        var element = document.getElementById(elementId);
+      conteHijosTintero.forEach(elemento => {
+        var element = document.getElementById(elemento);
         if (element) {
           element.style.display = 'none';
         }
-      });       
+      });
+      var contenedorPrincipal = document.getElementById('contPerfilesManta');
+      var hijosDelContenedor = contenedorPrincipal.children;
+      for (var i = 0; i < hijosDelContenedor.length; i++) {
+        var hijo = hijosDelContenedor[i];  
+        hijo.style.display = 'none';
+      }
       contPortaManta.style.display='block'
       videoElements.forEach(video => {
       if (video.id !== 'videoManta') {
@@ -641,6 +665,10 @@ function showRepuesto(elementId) {
         video.currentTime = 0;
         video.play();   
       }}); 
+      if (!idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray)
+        }       
     break;
     case 'contImpresor':
       if (!idsArray.includes(elementId)) {
@@ -654,6 +682,19 @@ function showRepuesto(elementId) {
         }
       });  
       contImpresor.style.display='block'
+
+  // Obtener el elemento padre
+  var contenedorPadre = document.getElementById("contImpresor");
+  // Obtener todos los elementos hijos del contenedor padre
+  var elementosHijos = contenedorPadre.children;
+  // Recorrer los elementos hijos sin usar clases ni 'id'
+  for (var i = 0; i < elementosHijos.length; i++) {
+  var elementoHijo = elementosHijos[i];
+  // Realizar las operaciones que desees con cada elemento hijo aquí
+  /* console.log(elementoHijo); */
+  elementoHijo.style.display='block'
+  }
+
       videoElements.forEach(video => {
       if (video.id !== 'video-impresor') {
         video.style.display = 'none';   
@@ -673,110 +714,106 @@ function muestraPerfiles(elementId){
   var imagesPlancha = document.getElementById('contPerfilesPlancha')
   var imgsPlancha = document.getElementById('imagenes-plancha')
   var cont10 = document.getElementById('container10')
-    switch (elementId) {
+  switch (elementId) {
     case 'imagen1':
-    // Detener el video
-    video.pause();
-    // Ocultar el video estableciendo su estilo de visualización en 'none'
-    video.style.display = 'none';
-/*     allContenedores.forEach(elemen => {
-      var element = document.getElementById(elemen);
-      if (element !== 'agrupaOblicuos-placa') {
-        element.style.display = 'none';
-      }else{
-        element.style.display = 'block';
-      }
-    }); */
-    cont10.style.display='block'
-    imagesPlancha.style.display='flex'
-    imgsPlancha.style.display='flex'
-    imgPlancha.forEach(function (imagen) {
-      if (imagen.id === 'portPlaca') {
-        imagen.style.display = 'block';
-      }else{
-        imagen.style.display = 'none';
-      }
-    });
-    if (!idsArray.includes(elementId)) {
-      idsArray.push(elementId);
-      console.log(idsArray)
+      // Detener el video
+      video.pause();
+      // Ocultar el video estableciendo su estilo de visualización en 'none'
+      video.style.display = 'none';
+      cont10.style.display='block'
+      imagesPlancha.style.display='flex'
+      imgsPlancha.style.display='flex'
+      imgPlancha.forEach(function (imagen) {
+        if (imagen.id === 'portPlaca') {
+          imagen.style.display = 'block';
+        }else{
+          imagen.style.display = 'none';
+        }
+      });
+      contIMPlaca.style.display='none' 
+      if (!idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray)
       }
     break;
     case 'imagen2':
-    // Detener el video
-    video.pause();
-    // Ocultar el video estableciendo su estilo de visualización en 'none'
-    video.style.display = 'none';
-    
-    imagesPlancha.style.display='flex'
-    imgsPlancha.style.display='flex'
-    imgPlancha.forEach(function (imagen) {
-      if (imagen.id === 'portPlaca2') {
-        imagen.style.display = 'block';
-      }else{
-        imagen.style.display = 'none';
+      // Detener el video
+      video.pause();
+      // Ocultar el video estableciendo su estilo de visualización en 'none'
+      video.style.display = 'none';
+      
+      imagesPlancha.style.display='flex'
+      imgsPlancha.style.display='flex'
+      imgPlancha.forEach(function (imagen) {
+        if (imagen.id === 'portPlaca2') {
+          imagen.style.display = 'block';
+        }else{
+          imagen.style.display = 'none';
+        }
+      });
+      contIMPlaca.style.display='none' 
+      if (!idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray)
       }
-    });
-    if (!idsArray.includes(elementId)) {
-      idsArray.push(elementId);
-      console.log(idsArray)
-      }
-      break;     
+    break; 
     case 'imagen3':
-    // Detener el video
-    video.pause();
-    // Ocultar el video estableciendo su estilo de visualización en 'none'
-    video.style.display = 'none';    
-    imagesPlancha.style.display='flex'
-    imgsPlancha.style.display='flex'
-    imgPlancha.forEach(function (imagen) {
-      if (imagen.id === 'portPlaca3') {
-        imagen.style.display = 'block';
-      }else{
-        imagen.style.display = 'none';
-      }
-    });
-    if (!idsArray.includes(elementId)) {
-      idsArray.push(elementId);
-      console.log(idsArray)
+      // Detener el video
+      video.pause();
+      // Ocultar el video estableciendo su estilo de visualización en 'none'
+      video.style.display = 'none';    
+      imagesPlancha.style.display='flex'
+      imgsPlancha.style.display='flex'
+      imgPlancha.forEach(function (imagen) {
+        if (imagen.id === 'portPlaca3') {
+          imagen.style.display = 'block';
+        }else{
+          imagen.style.display = 'none';
+        }
+      });
+      contIMPlaca.style.display='none' 
+      if (!idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray)
       }
     break;
     case 'imagen4':
-  // Detener el video
-  video.pause();
-  // Ocultar el video estableciendo su estilo de visualización en 'none'
-  video.style.display = 'none';    
-  imagesPlancha.style.display='flex'
-  imgsPlancha.style.display='flex'
-  imgPlancha.forEach(function (imagen) {
-    if (imagen.id === 'portPlaca4') {
-      imagen.style.display = 'block';
-    }else{
-      imagen.style.display = 'none';
-    }
-  });
-  if (!idsArray.includes(elementId)) {
-    idsArray.push(elementId);
-    console.log(idsArray)
-    }
+      // Detener el video
+      video.pause();
+      // Ocultar el video estableciendo su estilo de visualización en 'none'
+      video.style.display = 'none';    
+      imagesPlancha.style.display='flex'
+      imgsPlancha.style.display='flex'
+      imgPlancha.forEach(function (imagen) {
+        if (imagen.id === 'portPlaca4') {
+          imagen.style.display = 'block';
+        }else{
+          imagen.style.display = 'none';
+        }
+      });
+      contIMPlaca.style.display='none' 
+      if (!idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray)
+      }
     break;
     default:
   }
 }
-function muestraAngulos(anguloSel){
+function muestraAngulos(elementId){
 var contPadManta = document.getElementById('contPerfilesManta');
 var contChildManta = document.getElementById('imagenes-manta');
 var imgsManta = document.querySelectorAll('.imgMant')
-    switch (anguloSel) {
-    case 'frente':
-    contPortaManta.style.display='block'
+  switch (elementId) {
+    case 'mantilla1':
+    contPortaManta.style.display='block'  
     videoElements.forEach(video => {
     if (video.id == 'videoManta') {
       video.style.display = 'none';   
       }}); 
 
-      contPadManta.style.display='flex'
-      contChildManta.style.display='flex'
+      contPadManta.style.display='block'
+      contChildManta.style.display='block'
   
       imgsManta.forEach(function (imagen) {
         if (imagen.id === 'manta' || imagen.id === 'manta1') {
@@ -785,17 +822,20 @@ var imgsManta = document.querySelectorAll('.imgMant')
           imagen.style.display = 'none';
         }
       });
+      contIMmanta.style.display='none' 
+      if (!idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray)
+      }    
     break;
-    case 'mandos':
+    case 'mantilla2':
       contPortaManta.style.display='block'
       videoElements.forEach(video => {
       if (video.id == 'videoManta') {
         video.style.display = 'none';   
-        }}); 
-  
+        }});   
         contPadManta.style.display='flex'
-        contChildManta.style.display='flex'
-    
+        contChildManta.style.display='flex'    
         imgsManta.forEach(function (imagen) {
           if (imagen.id === 'manta2' || imagen.id === 'manta3') {
             imagen.style.display = 'block';
@@ -803,8 +843,13 @@ var imgsManta = document.querySelectorAll('.imgMant')
             imagen.style.display = 'none';
           }
         });
+        contIMmanta.style.display='none' 
+        if (!idsArray.includes(elementId)) {
+          idsArray.push(elementId);
+          console.log(idsArray)
+        } 
       break;     
-    case 'servicio':
+    case 'mantilla3':
       contPortaManta.style.display='block'
       videoElements.forEach(video => {
       if (video.id == 'videoManta') {
@@ -821,8 +866,13 @@ var imgsManta = document.querySelectorAll('.imgMant')
             imagen.style.display = 'none';
           }
         });
+        contIMmanta.style.display='none' 
+        if (!idsArray.includes(elementId)) {
+          idsArray.push(elementId);
+          console.log(idsArray)
+        } 
     break;
-    case 'atras':
+    case 'mantilla4':
       contPortaManta.style.display='block'
       videoElements.forEach(video => {
       if (video.id == 'videoManta') {
@@ -839,6 +889,11 @@ var imgsManta = document.querySelectorAll('.imgMant')
             imagen.style.display = 'none';
           }
         });
+        contIMmanta.style.display='none' 
+        if (!idsArray.includes(elementId)) {
+          idsArray.push(elementId);
+          console.log(idsArray)
+        } 
     break;
     default:
   }
@@ -848,7 +903,7 @@ function muestraLados(anguloSel){
   var contChildImpresor = document.getElementById('imagenes-impresor');
   var imgsImpresor = document.querySelectorAll('.imgImpresor')
       switch (anguloSel) {
-      case 'frente':
+      case 'forward':
       videoElements.forEach(video => {
       if (video.id == 'video-impresor') {
         video.style.display = 'none';   
@@ -865,7 +920,7 @@ function muestraLados(anguloSel){
           }
         });
       break;
-      case 'mandos':
+      case 'comands':
         videoElements.forEach(video => {
         if (video.id == 'video-impresor') {
           video.style.display = 'none';   
@@ -882,7 +937,7 @@ function muestraLados(anguloSel){
             }
           });
         break;     
-      case 'servicio':
+      case 'service':
         videoElements.forEach(video => {
         if (video.id == 'video-impresor') {
           video.style.display = 'none';   
@@ -899,7 +954,7 @@ function muestraLados(anguloSel){
             }
           });
       break;
-      case 'atras':
+      case 'back':
         videoElements.forEach(video => {
         if (video.id == 'video-impresor') {
           video.style.display = 'none';   
@@ -919,33 +974,6 @@ function muestraLados(anguloSel){
       default:
     }
 } 
-/* // Agregar evento de pantalla completa a cada imagen
-imagesFull.forEach(image => {
-  image.addEventListener('click', () => {
-    if (!document.fullscreenElement) {
-      if (image.requestFullscreen) {
-        image.requestFullscreen();
-      } else if (image.mozRequestFullScreen) { // Firefox
-        image.mozRequestFullScreen();
-      } else if (image.webkitRequestFullscreen) { // Chrome, Safari and Opera
-        image.webkitRequestFullscreen();
-      } else if (image.msRequestFullscreen) { // IE/Edge
-        image.msRequestFullscreen();
-      }
-    } else {
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
-      } else if (document.mozCancelFullScreen) { // Firefox
-        document.mozCancelFullScreen();
-      } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
-        document.webkitExitFullscreen();
-      } else if (document.msExitFullscreen) { // IE/Edge
-        document.msExitFullscreen();
-      }
-    }
-  });
-}); */
-
 
 // Obtén todas las imágenes con la clase "aumentar"
 const imagenesAumentar = document.querySelectorAll('img.aumentar');
@@ -1111,28 +1139,30 @@ function showNextInputChec() {
   }
 }
 function mantAutonomo (opcionSeleccionada) {
-  var conteLinksI = document.getElementById('links-inicialesI')
+  var conteLinksI = document.getElementById('links-inicialesI') 
   switch (opcionSeleccionada) {
     case 'troubleshooting':
-       var contInput = document.getElementById('contInput'); 
+      var contInput = document.getElementById('contInput'); 
       var inputs = document.querySelectorAll('.inpt-class');
 
       if (contInput.style.display === 'none') {
-        contInput.style.display = 'block';
-    
-        // Mostrar cada input con un intervalo de 77 milisegundos
-        for (var i = 0; i < inputs.length; i++) {
-          (function(index) {
-            setTimeout(function() {
-              inputs[index].style.display = 'block';
-            }, 77 * index);
-          })(i);
-        }
+      contInput.style.display = 'block';
+  
+      // Mostrar cada input con un intervalo de 77 milisegundos
+      for (var i = 0; i < inputs.length; i++) {
+        (function(index) {
+          setTimeout(function() {
+            inputs[index].style.display = 'block';
+          }, 77 * index);
+        })(i);
+      }
       } else {
-        contInput.style.display = 'none';
-        for (var i = 0; i < inputs.length; i++) {
-          inputs[i].style.display = 'none';
-        }
+      contInput.style.display = 'none';
+      for (var i = 0; i < inputs.length; i++) {
+        inputs[i].style.display = 'none';
+      }
+      var largoImp = document.getElementById('largoImpresion')
+      largoImp.style.display='none'
       }
     break;
     case 'def-tipo1':
@@ -1430,16 +1460,22 @@ function abrirSeccionCurado(elementId){
   contPlana.style.display='none'
   linkList.style.display = "none";
   contSecador.style.display='block'
+
   videoElements.forEach(video => {
-    if (video.id !== 'curado-uv') {             
-      video.style.display = 'none';     
+    try {
+      if (video.id !== 'curado-uv') {             
+        video.style.display = 'none';     
       } else {
-      video.style.display = 'block';
-      video.pause();
-      video.currentTime = 0;
-      video.play();           
-    } 
-  });
+        video.style.display = 'block';
+        video.pause();
+        video.currentTime = 0;
+        video.play();           
+      } 
+    } catch (error) {
+      // Manejar la excepción aquí si es necesario
+      console.error('Error al manipular videos:', error);
+    }
+  });  
   if (!idsArray.includes(elementId)) {
     idsArray.push(elementId);
     console.log(idsArray)
@@ -1639,305 +1675,491 @@ function muestraVidColor(elementId){
     console.log(idsArray)
   } 
 }
-function irContenedorSiguiente() {
-  var i = 0;
-  var previousElementID = idsArrayII[idsArrayII.length - 2];
-  var contenedorActual = document.getElementById(idsArrayII[idsArrayII.length - 1]); 
-  contenedorActual.style.display = 'block';
-  recorrerActual = contenedorActual.querySelectorAll('*');
-
-  for (var i = 0; i < idsArrayII.length; i++) {
-    if (previousElementID) {
-      switch (previousElementID) { 
-        case "pantalla-inicial":
-          VolveraInicio(); 
-          break;
-          case "pantalla-tintero":
-            var botonesInicio = document.getElementById('container01')
-            botonesInicio.style.display='block'
-            changeButtonStyles('pantalla-tintero');  
-          break;
-          case "videoElement1-II":
-            changeButtonStyles('videoElement1-II');  
-          break;          
-          case "contImgEntintador":
-            showRepuesto('contImgEntintador')
-          break; 
-          case "contImgDistribuidor":
-            showRepuesto ('contImgDistribuidor') 
-          break;          
-          case "contPortPlaca":
-            showRepuesto('contPortPlaca');
-          break;
-          case "contPortManta":
-            var contBotManta = document.getElementById('container01')
-            contBotManta.style.display='block'
-            showRepuesto('contPortManta', 'videoTrain03');  
-          break;
-          case "contImpresor":
-            showRepuesto('contImpresor', 'videoTrain01')
-          break;
-          case "imagen1":
-            muestraPerfiles('imagen1')
-          break;
-          case "imagen2":
-            muestraPerfiles('imagen2')
-          break; 
-          case "imagen3":
-            muestraPerfiles('imagen3')
-          break;
-          case "imagen4":
-            muestraPerfiles('imagen4')
-          break; 
-          case "cont-variable":
-            abrirSeccionVariable('cont-variable')
-          break; 
-          case "cont-plana":
-            abrirSeccionPlanas('cont-plana')
-          break; 
-          case "cont-secador":
-            abrirSeccionCurado('cont-secador')
-          break;
-          case "bateria-entintado-II":
-            changeButtonStyles('bateria-entintado-II', 'contene-7')
-          break; 
-          case "bancada-torre-II":
-            changeButtonStyles('bancada-torre-II')
-          break; 
-          case "conteneMantaut":
-            ElementosMa('conteneMantaut')
-          break; 
-          case "rotatek-1":
-            /* cambioContenedor('rotatek-1') */
-            location.reload();
-          break; 
-          case "frente":
-            muestraTorresI('frente')
-          break;  
-          case "pantalla-frente":
-            muestraTorres('frente')
-          break; 
-          case "sitema-humedad":
-            changeButtonStyles('sitema-humedad')  
-          break; 
-          case "pre-prensa":
-            var mostrar = document.getElementById('pre-prensa');
-            var contImg = document.getElementById('imgs-prepress')
-            mostrar.style.display='block'
-            contImg.style.style='block'
-            var contImgsTeoria = document.getElementsByClassName('imgTeoria'); // Obtén elementos por su
-            for (var i = 0; i < contImgsTeoria.length; i++) {
-              var teorImage = contImgsTeoria[i]; // Accede al elemento actual
-              teorImage.style.display = 'block'; // muestra el elemento  
-            } 
-            const vidTeoria = document.querySelectorAll('.vidTeoria');
-            // Reproducir todos los videos simultáneamente
-            vidTeoria.forEach(video => {
-              video.style.display='block'
-              video.play();
-            });                       
-          break; 
-          case "densitometria":
-            var mostraDensit = document.getElementById('densitometria');
-            var contDensit = document.getElementById('imgs-densito')
-            mostraDensit.style.display='block'
-            contDensit.style.style='block'
-            var contImgsDensito = document.getElementsByClassName('imgDensito'); // Obtén elementos por su
-            for (var i = 0; i < contImgsDensito.length; i++) {
-              var teorImage = contImgsDensito[i]; // Accede al elemento actual
-              teorImage.style.display = 'block'; // muestra el elemento  
-            }            
-          break;  
-          case "vidColor":
-          var mostrario = document.getElementById('pre-prensa');
-          var videos = document.getElementById('vidColor');
-          mostrario.style.display='flex'
-          videos.style.style='flex'
-          videoElements.forEach(vide => {
-            if (vide.id === 'prisma-vid') {
-              vide.style.display = 'block';
-              vide.currentTime = 0;
-              vide.loop = true;               
-              vide.play();      
-            } else {
-              vide.style.display = 'none';
-            }
-            });
-          break; 
-          case "vidColor-II":
-          var mostrari = document.getElementById('pre-prensa');
-          var videos = document.getElementById('vidColor-II');
-          mostrari.style.display='flex'
-          videos.style.style='flex'
-          videoElements.forEach(vid => {
-            if (vid.id === 'color-vid') {
-              vid.style.display = 'block';
-              vid.currentTime = 0;
-              vid.loop = true;                            
-              vid.play();      
-            } else {
-              vid.style.display = 'none';
-            }
-            });
-          break;                                                                                                                                                                            
-        default:
-        break;
-      }  
-    }
-  }
-  idsArrayII.pop();  
-  console.log(idsArrayII)
-}
 function irContenedorAnterior() {
-  var i = 0;
+  const coleccion = document.querySelectorAll('.desbobinador, .desbobinador-I, .uTeñido, .alimentador, .unidProceso, .rebobinador, .contTorrImp');
   var previousElementID = idsArray[idsArray.length - 2];
-  var contenedorActual = document.getElementById(idsArray[idsArray.length - 1]); 
-  contenedorActual.style.display = 'none';
-  recorrerActual = contenedorActual.querySelectorAll('*');
-
-  for (var i = 0; i < idsArray.length; i++) {
-    if (previousElementID) {
-      switch (previousElementID) { 
-        case "pantalla-inicial":
-          VolveraInicio(); 
-          break;
-          case "pantalla-tintero":
-            var botonesInicio = document.getElementById('container01')
-            botonesInicio.style.display='block'
-            changeButtonStyles('pantalla-tintero');  
-          break;
-          case "videoElement1-II":
-            changeButtonStyles('videoElement1-II');  
-          break;          
-          case "contImgEntintador":
-            showRepuesto('contImgEntintador')
-          break; 
-          case "contImgDistribuidor":
-            showRepuesto ('contImgDistribuidor') 
-          break;          
-          case "contPortPlaca":
-            showRepuesto('contPortPlaca');
-          break;
-          case "contPortManta":
-            var contBotManta = document.getElementById('container01')
-            contBotManta.style.display='block'
-            showRepuesto('contPortManta', 'videoTrain03');  
-          break;
-          case "contImpresor":
-            showRepuesto('contImpresor', 'videoTrain01')
-          break;
-          case "imagen1":
-            muestraPerfiles('imagen1')
-          break;
-          case "imagen2":
-            muestraPerfiles('imagen2')
-          break; 
-          case "imagen3":
-            muestraPerfiles('imagen3')
-          break;
-          case "imagen4":
-            muestraPerfiles('imagen4')
-          break; 
-          case "cont-variable":
-            abrirSeccionVariable('cont-variable')
-          break; 
-          case "cont-plana":
-            abrirSeccionPlanas('cont-plana')
-          break; 
-          case "cont-secador":
-            abrirSeccionCurado('cont-secador')
-          break;
-          case "bateria-entintado-II":
-            changeButtonStyles('bateria-entintado-II', 'contene-7')
-          break; 
-          case "bancada-torre-II":
-            changeButtonStyles('bancada-torre-II')
-          break; 
-          case "conteneMantaut":
-            ElementosMa('conteneMantaut')
-          break; 
-          case "rotatek-1":
-            /* cambioContenedor('rotatek-1') */
-            location.reload();
-          break; 
-          case "frente":
-            muestraTorresI('frente')
-          break;  
-          case "pantalla-frente":
-            muestraTorres('frente')
-          break; 
-          case "sitema-humedad":
-            changeButtonStyles('sitema-humedad')  
-          break; 
-          case "pre-prensa":
-            var mostrar = document.getElementById('pre-prensa');
-            var contImg = document.getElementById('imgs-prepress')
-            mostrar.style.display='block'
-            contImg.style.style='block'
-            var contImgsTeoria = document.getElementsByClassName('imgTeoria'); // Obtén elementos por su
-            for (var i = 0; i < contImgsTeoria.length; i++) {
-              var teorImage = contImgsTeoria[i]; // Accede al elemento actual
-              teorImage.style.display = 'block'; // muestra el elemento  
-            } 
-            const vidTeoria = document.querySelectorAll('.vidTeoria');
-            // Reproducir todos los videos simultáneamente
-            vidTeoria.forEach(video => {
-              video.style.display='block'
-              video.play();
-            });                       
-          break; 
-          case "densitometria":
-            var mostraDensit = document.getElementById('densitometria');
-            var contDensit = document.getElementById('imgs-densito')
-            mostraDensit.style.display='block'
-            contDensit.style.style='block'
-            var contImgsDensito = document.getElementsByClassName('imgDensito'); // Obtén elementos por su
-            for (var i = 0; i < contImgsDensito.length; i++) {
-              var teorImage = contImgsDensito[i]; // Accede al elemento actual
-              teorImage.style.display = 'block'; // muestra el elemento  
-            }            
-          break;  
-          case "vidColor":
-          var mostrario = document.getElementById('pre-prensa');
-          var videos = document.getElementById('vidColor');
-          mostrario.style.display='flex'
-          videos.style.style='flex'
-          videoElements.forEach(vide => {
-            if (vide.id === 'prisma-vid') {
-              vide.style.display = 'block';
-              vide.currentTime = 0;
-              vide.loop = true;               
-              vide.play();      
-            } else {
-              vide.style.display = 'none';
-            }
-            });
-          break; 
-          case "vidColor-II":
-          var mostrari = document.getElementById('pre-prensa');
-          var videos = document.getElementById('vidColor-II');
-          mostrari.style.display='flex'
-          videos.style.style='flex'
-          videoElements.forEach(vid => {
-            if (vid.id === 'color-vid') {
-              vid.style.display = 'block';
-              vid.currentTime = 0;
-              vid.loop = true;                            
-              vid.play();      
-            } else {
-              vid.style.display = 'none';
-            }
-            });
-          break;                                                                                                                                                                            
-        default:
+  for (var i = 0; i < idsArray.length; i++) { 
+    switch (previousElementID) { 
+      case "pantalla-inicial":
+        location.reload();
+        idsArray = [];
         break;
-      }  
-    }
-  }
-  idsArrayII.push(contenedorActual.id);
-  console.log(idsArrayII);
+      case "pantalla-tintero":
+        var botonesInicio = document.getElementById('container01')
+        botonesInicio.style.display='block'
+        changeButtonStyles('pantalla-tintero');  
+      break;
+      case "videoElement1-II":
+        changeButtonStyles('videoElement1-II');  
+      break;          
+      case "contImgEntintador":
+        showRepuesto('contImgEntintador')
+      break; 
+      case "contImgDistribuidor":
+        showRepuesto ('contImgDistribuidor') 
+      break;          
+      case "contPortPlaca":
+        contIMPlaca.style.display='block'
+        showRepuesto('contPortPlaca');
+      break;
+      case "contPortManta":
+        var contBotManta = document.getElementById('container01')
+        contBotManta.style.display='block'
+        contIMmanta.style.display='block'
+        showRepuesto('contPortManta', 'videoTrain03');  
+      break;
+      case "contImpresor":
+        showRepuesto('contImpresor', 'videoTrain01')
+      break;
+      case "imagen1":
+        muestraPerfiles('imagen1')
+      break;
+      case "imagen2":
+        muestraPerfiles('imagen2')
+      break; 
+      case "imagen3":
+        muestraPerfiles('imagen3')
+      break;
+      case "imagen4":
+        muestraPerfiles('imagen4')
+      break; 
+      case "cont-variable":
+        abrirSeccionVariable('cont-variable')
+      break; 
+      case "cont-plana":
+        abrirSeccionPlanas('cont-plana')
+      break; 
+      case "cont-secador":
+        abrirSeccionCurado('cont-secador')
+      break;
+      case "bateria-entintado-II":
+        changeButtonStyles('bateria-entintado-II', 'contene-7')
+      break; 
+      case "bancada-torre-II":
+        changeButtonStyles('bancada-torre-II')
+      break; 
+      case "conteneMantaut":
+        var contenedorPrincipal = document.getElementById('conteneMantaut');
+        var hijosDelContenedor = contenedorPrincipal.children;
+        
+        for (var i = 0; i < hijosDelContenedor.length; i++) {
+          var hijo = hijosDelContenedor[i];
+          var idDelHijo = hijo.id;
+          
+          // Verificar si el ID del hijo coincide con los IDs deseados
+          if (idDelHijo !== 'container8' && idDelHijo !== 'conti-boton') {
+            // Ocultar el hijo si su ID no coincide
+            hijo.style.display = 'none';
+          }
+        }
+        ElementosMa('conteneMantaut')
+      break; 
+      case "rotatek-1":
+        /* cambioContenedor('rotatek-1') */
+        location.reload();
+      break; 
+      case "frente":
+        muestraTorresI('frente')
+      break;  
+      case "pantalla-frente":
+        muestraTorres('frente')
+      break; 
+      case "sitema-humedad":
+        changeButtonStyles('sitema-humedad')  
+      break; 
+      case "pre-prensa":
+        ocultaMA();
+        var contenedorPrincipal = document.getElementById('pre-prensa');
+        var hijosDelContenedor = contenedorPrincipal.children;
+        contenedorPrincipal.style.display='block'        
+        for (var i = 0; i < hijosDelContenedor.length; i++) {
+          var hijo = hijosDelContenedor[i];
+          var idDelHijo = hijo.id;          
+          // Verificar si el ID del hijo coincide con los IDs deseados
+          if (idDelHijo) {
+            // Ocultar el hijo si su ID no coincide
+            hijo.style.display = 'block';
+          }
+        }
+      break; 
+      case "densitometria":
+        ocultaMA();
+        var contenedorPrincipal = document.getElementById('densitometria');
+        var hijosDelContenedor = contenedorPrincipal.children;
+        contenedorPrincipal.style.display='block'        
+        for (var i = 0; i < hijosDelContenedor.length; i++) {
+          var hijo = hijosDelContenedor[i];
+          var idDelHijo = hijo.id;          
+          // Verificar si el ID del hijo coincide con los IDs deseados
+          if (idDelHijo) {
+            // Ocultar el hijo si su ID no coincide
+            hijo.style.display = 'block';
+          }
+        }
+      break;  
+      case "vidColor":
+      var mostrario = document.getElementById('pre-prensa');
+      var videos = document.getElementById('vidColor');
+      mostrario.style.display='flex'
+      videos.style.style='flex'
+      videoElements.forEach(vide => {
+        if (vide.id === 'prisma-vid') {
+          vide.style.display = 'block';
+          vide.currentTime = 0;
+          vide.loop = true;               
+          vide.play();      
+        } else {
+          vide.style.display = 'none';
+        }
+        });
+      break; 
+      case "vidColor-II":
+      var mostrari = document.getElementById('pre-prensa');
+      var videos = document.getElementById('vidColor-II');
+      mostrari.style.display='flex'
+      videos.style.style='flex'
+      videoElements.forEach(vid => {
+        if (vid.id === 'color-vid') {
+          vid.style.display = 'block';
+          vid.currentTime = 0;
+          vid.loop = true;                            
+          vid.play();      
+        } else {
+          vid.style.display = 'none';
+        }
+        });
+      break; 
+      case "mantilla1" :
+        muestraAngulos('mantilla1')
+      break;
+      case "mantilla2" :
+        for (var i = 0; i < allContenedores.length; i++) {
+          var elemento = document.getElementById(allContenedores[i]); 
+            elemento.style.display='none'
+          }
+        muestraAngulos('mantilla2')
+      break;
+      case "mantilla3" :
+        for (var i = 0; i < allContenedores.length; i++) {
+          var elemento = document.getElementById(allContenedores[i]); 
+            elemento.style.display='none'
+          }
+        muestraAngulos('mantilla3')
+      break; 
+      case 'desbobinador':
+        for (var i = 0; i < allContenedores.length; i++) {
+          var elemento = document.getElementById(allContenedores[i]); 
+          elemento.style.display='none'}              
+          // Obtener el elemento padre
+          var contenedorPadre = document.getElementById("pantalla-inicial");
+          contenedorPadre.style.display='block'
+          // Obtener todos los elementos hijos del contenedor padre
+          var elementosHijos = contenedorPadre.children;
+          // Recorrer los elementos hijos sin usar clases ni 'id'
+          for (var i = 0; i < elementosHijos.length; i++) {
+          var elementoHijo = elementosHijos[i];
+          // Realizar las operaciones que desees con cada elemento hijo aquí
+          /* console.log(elementoHijo); */
+          elementoHijo.style.display='block'          } 
+
+          cierraContenedores('desbobinador')
+          contInicial.style.display='block'
+          contInicial.style.marginLeft = '128px'
+          var botTwin = ['bot-atras32','bot-atras31']
+          botTwin.forEach(twinId => {
+            var twinElement = document.getElementById(twinId);
+            if (twinElement) {
+              twinElement.style.display = 'block';
+          }
+        });        
+      break; 
+      case 'uTeñido':
+      for (var i = 0; i < allContenedores.length; i++) {
+      var elemento = document.getElementById(allContenedores[i]); 
+      elemento.style.display='none'}
+          
+      // Obtener el elemento padre
+      var contenedorPadre = document.getElementById("pantalla-inicial");
+      contenedorPadre.style.display='block'
+      // Obtener todos los elementos hijos del contenedor padre
+      var elementosHijos = contenedorPadre.children;
+      // Recorrer los elementos hijos sin usar clases ni 'id'
+      for (var i = 0; i < elementosHijos.length; i++) {
+      var elementoHijo = elementosHijos[i];
+      // Realizar las operaciones que desees con cada elemento hijo aquí
+      /* console.log(elementoHijo); */
+      elementoHijo.style.display='block'
+      }          
+      cierraContenedores('uTeñido')
+      contInicial.style.display='block'
+      contInicial.style.marginLeft = '128px'
+      var botTwin = ['bot-atras32','bot-atras31']
+      botTwin.forEach(twinId => {
+        var twinElement = document.getElementById(twinId);
+        if (twinElement) {
+          twinElement.style.display = 'block';
+        }
+      });        
+      break;
+      case 'alimentador':
+        for (var i = 0; i < allContenedores.length; i++) {
+          var elemento = document.getElementById(allContenedores[i]); 
+          elemento.style.display='none'}
+              
+          // Obtener el elemento padre
+          var contenedorPadre = document.getElementById("pantalla-inicial");
+          contenedorPadre.style.display='block'
+          // Obtener todos los elementos hijos del contenedor padre
+          var elementosHijos = contenedorPadre.children;
+          // Recorrer los elementos hijos sin usar clases ni 'id'
+          for (var i = 0; i < elementosHijos.length; i++) {
+          var elementoHijo = elementosHijos[i];
+          // Realizar las operaciones que desees con cada elemento hijo aquí
+          /* console.log(elementoHijo); */
+          elementoHijo.style.display='block'
+          }          
+          cierraContenedores('alimentador')
+          contInicial.style.display='block'
+          contInicial.style.marginLeft = '128px'
+          var botTwin = ['bot-atras32','bot-atras31']
+          botTwin.forEach(twinId => {
+            var twinElement = document.getElementById(twinId);
+            if (twinElement) {
+              twinElement.style.display = 'block';
+            }
+          });       
+      break;
+      case 'unidProceso':
+        for (var i = 0; i < allContenedores.length; i++) {
+          var elemento = document.getElementById(allContenedores[i]); 
+          elemento.style.display='none'}
+              
+          // Obtener el elemento padre
+          var contenedorPadre = document.getElementById("pantalla-inicial");
+          contenedorPadre.style.display='block'
+          // Obtener todos los elementos hijos del contenedor padre
+          var elementosHijos = contenedorPadre.children;
+          // Recorrer los elementos hijos sin usar clases ni 'id'
+          for (var i = 0; i < elementosHijos.length; i++) {
+          var elementoHijo = elementosHijos[i];
+          // Realizar las operaciones que desees con cada elemento hijo aquí
+          /* console.log(elementoHijo); */
+          elementoHijo.style.display='block'
+          }          
+          cierraContenedores('unidProceso')
+          contInicial.style.display='block'
+          contInicial.style.marginLeft = '128px'
+          var botTwin = ['bot-atras32','bot-atras31']
+          botTwin.forEach(twinId => {
+            var twinElement = document.getElementById(twinId);
+            if (twinElement) {
+              twinElement.style.display = 'block';
+            }
+          });       
+      break;
+      case 'rebobinador':
+        for (var i = 0; i < allContenedores.length; i++) {
+          var elemento = document.getElementById(allContenedores[i]); 
+          elemento.style.display='none'}
+              
+          // Obtener el elemento padre
+          var contenedorPadre = document.getElementById("pantalla-inicial");
+          contenedorPadre.style.display='block'
+          // Obtener todos los elementos hijos del contenedor padre
+          var elementosHijos = contenedorPadre.children;
+          // Recorrer los elementos hijos sin usar clases ni 'id'
+          for (var i = 0; i < elementosHijos.length; i++) {
+          var elementoHijo = elementosHijos[i];
+          // Realizar las operaciones que desees con cada elemento hijo aquí
+          /* console.log(elementoHijo); */
+          elementoHijo.style.display='block'
+          }          
+          cierraContenedores('rebobinador')
+          contInicial.style.display='block'
+          contInicial.style.marginLeft = '128px'
+          var botTwin = ['bot-atras32','bot-atras31']
+          botTwin.forEach(twinId => {
+            var twinElement = document.getElementById(twinId);
+            if (twinElement) {
+              twinElement.style.display = 'block';
+          }
+        });       
+      break;  
+    default:
+  }}
+  var eltoAnterior = idsArray[idsArray.length - 2];
+  idsArrayEliminados.push(eltoAnterior)  
+  console.log('ELIMINADOS',idsArrayEliminados)
   idsArray.pop();  
-  console.log(idsArray)
+  console.log(idsArray) 
+} 
+function irContenedorSiguiente() {
+  var previoElementID = idsArrayEliminados[idsArrayEliminados.length - 2];
+  for (var i = 0; i < idsArrayEliminados.length; i++) {
+    switch (previoElementID) {
+      case "salir":
+        location.reload();
+        idsArrayEliminados = [];
+        break; 
+      case "pantalla-tintero":
+        var botonesInicio = document.getElementById('container01')
+        botonesInicio.style.display='block'
+        changeButtonStyles('pantalla-tintero');  
+      break;
+      case "videoElement1-II":
+        changeButtonStyles('videoElement1-II');  
+      break;          
+      case "contImgEntintador":
+        showRepuesto('contImgEntintador')
+      break; 
+      case "contImgDistribuidor":
+        showRepuesto ('contImgDistribuidor') 
+      break;          
+      case "contPortPlaca":
+        contIMPlaca.style.display='block'
+        showRepuesto('contPortPlaca');
+      break;
+      case "contPortManta":
+        var contBotManta = document.getElementById('container01')
+        contBotManta.style.display='block'
+        contIMmanta.style.display='block'
+        showRepuesto('contPortManta', 'videoTrain03');  
+      break;
+      case "contImpresor":
+        showRepuesto('contImpresor', 'videoTrain01')
+      break;
+      case "imagen1":
+        muestraPerfiles('imagen1')
+      break;
+      case "imagen2":
+        muestraPerfiles('imagen2')
+      break; 
+      case "imagen3":
+        muestraPerfiles('imagen3')
+      break;
+      case "imagen4":
+        muestraPerfiles('imagen4')
+      break; 
+      case "cont-variable":
+        abrirSeccionVariable('cont-variable')
+      break; 
+      case "cont-plana":
+        abrirSeccionPlanas('cont-plana')
+      break; 
+      case "cont-secador":
+        abrirSeccionCurado('cont-secador')
+      break;
+      case "bateria-entintado-II":
+        changeButtonStyles('bateria-entintado-II', 'contene-7')
+      break; 
+      case "bancada-torre-II":
+        changeButtonStyles('bancada-torre-II')
+      break; 
+      case "conteneMantaut":
+        ElementosMa('conteneMantaut')
+      break; 
+      case "rotatek-1":
+        /* cambioContenedor('rotatek-1') */
+        location.reload();
+      break; 
+      case "frente":
+        muestraTorresI('frente')
+      break;  
+      case "pantalla-frente":
+        muestraTorres('frente')
+      break; 
+      case "sitema-humedad":
+        changeButtonStyles('sitema-humedad')  
+      break; 
+      case "pre-prensa":
+        var mostrar = document.getElementById('pre-prensa');
+        var contImg = document.getElementById('imgs-prepress')
+        mostrar.style.display='block'
+        contImg.style.style='block'
+        var contImgsTeoria = document.getElementsByClassName('imgTeoria'); // Obtén elementos por su
+        for (var i = 0; i < contImgsTeoria.length; i++) {
+          var teorImage = contImgsTeoria[i]; // Accede al elemento actual
+          teorImage.style.display = 'block'; // muestra el elemento  
+        } 
+        const vidTeoria = document.querySelectorAll('.vidTeoria');
+        // Reproducir todos los videos simultáneamente
+        vidTeoria.forEach(video => {
+          video.style.display='block'
+          video.play();
+        });                       
+      break; 
+      case "densitometria":
+        var mostraDensit = document.getElementById('densitometria');
+        var contDensit = document.getElementById('imgs-densito')
+        mostraDensit.style.display='block'
+        contDensit.style.style='block'
+        var contImgsDensito = document.getElementsByClassName('imgDensito'); // Obtén elementos por su
+        for (var i = 0; i < contImgsDensito.length; i++) {
+          var teorImage = contImgsDensito[i]; // Accede al elemento actual
+          teorImage.style.display = 'block'; // muestra el elemento  
+        }            
+      break;  
+      case "vidColor":
+      var mostrario = document.getElementById('pre-prensa');
+      var videos = document.getElementById('vidColor');
+      mostrario.style.display='flex'
+      videos.style.style='flex'
+      videoElements.forEach(vide => {
+        if (vide.id === 'prisma-vid') {
+          vide.style.display = 'block';
+          vide.currentTime = 0;
+          vide.loop = true;               
+          vide.play();      
+        } else {
+          vide.style.display = 'none';
+        }
+        });
+      break; 
+      case "vidColor-II":
+      var mostrari = document.getElementById('pre-prensa');
+      var videos = document.getElementById('vidColor-II');
+      mostrari.style.display='flex'
+      videos.style.style='flex'
+      videoElements.forEach(vid => {
+        if (vid.id === 'color-vid') {
+          vid.style.display = 'block';
+          vid.currentTime = 0;
+          vid.loop = true;                            
+          vid.play();      
+        } else {
+          vid.style.display = 'none';
+        }
+        });
+      break; 
+      case "mantilla1" :
+        muestraAngulos('mantilla1')
+      break;
+      case "mantilla2" :
+        for (var i = 0; i < allContenedores.length; i++) {
+          var elemento = document.getElementById(allContenedores[i]); 
+            elemento.style.display='none'
+          }
+        muestraAngulos('mantilla2')
+      break;
+      case "mantilla3" :
+        for (var i = 0; i < allContenedores.length; i++) {
+          var elemento = document.getElementById(allContenedores[i]); 
+            elemento.style.display='none'
+          }
+        muestraAngulos('mantilla3')
+      break; 
+      case "mantilla4" :
+        for (var i = 0; i < allContenedores.length; i++) {
+          var elemento = document.getElementById(allContenedores[i]); 
+            elemento.style.display='none'
+          }
+        muestraAngulos('mantilla4')
+      break;
+    default:
+    }
+  }  
+  idsArrayEliminados.pop();  
+  console.log('ELIMINADOS',idsArrayEliminados)
 }
 function listaEntrenamientos(){
   var videoBackground = document.getElementById('videoBackground');
@@ -1968,21 +2190,31 @@ function imagenesPasoApaso(idElto){
     imag.style.display='none'
   }
  })
-
-   // Simular la pulsación de la tecla 'Esc'
-   var event = new KeyboardEvent('keydown', {
-    key: 'Escape',
-    code: 'Escape',
-    keyCode: 27,
-    which: 27,
-    charCode: 27,
-    cancelable: true,
-    bubbles: true,
-  });
-
-  document.dispatchEvent(event);
-
 }
+function toggleFullScreen(element) {
+  if (!document.fullscreenElement) {
+    if (element.requestFullscreen) {
+      element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+      element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari y Opera
+      element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE/Edge
+      element.msRequestFullscreen();
+    }
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari y Opera
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE/Edge
+      document.msExitFullscreen();
+    }
+  }
+}
+
 var chart = new Chart(miCanvas, {
     type: 'bar',    
     data: {
@@ -2383,29 +2615,6 @@ const canvasElements3 = document.querySelectorAll('#canvasContainer3 canvas');
 const canvasElements4 = document.querySelectorAll('#contChecks input')
 
 // Función para agregar/eliminar pantalla completa a un elemento
-function toggleFullScreen(element) {
-  if (!document.fullscreenElement) {
-    if (element.requestFullscreen) {
-      element.requestFullscreen();
-    } else if (element.mozRequestFullScreen) { // Firefox
-      element.mozRequestFullScreen();
-    } else if (element.webkitRequestFullscreen) { // Chrome, Safari y Opera
-      element.webkitRequestFullscreen();
-    } else if (element.msRequestFullscreen) { // IE/Edge
-      element.msRequestFullscreen();
-    }
-  } else {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (document.mozCancelFullScreen) { // Firefox
-      document.mozCancelFullScreen();
-    } else if (document.webkitExitFullscreen) { // Chrome, Safari y Opera
-      document.webkitExitFullscreen();
-    } else if (document.msExitFullscreen) { // IE/Edge
-      document.msExitFullscreen();
-    }
-  }
-}
 // Agrega un evento click a cada elemento canvas en canvasContainer2
 canvasElements2.forEach(canvas => {
   canvas.addEventListener('click', () => {
