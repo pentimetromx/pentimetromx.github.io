@@ -1,14 +1,29 @@
+function allElemMA (hijo){
+  switch(hijo) {
+    case 'largoImpresion' :
+    var contenedorPrincipal = document.getElementById('largoImpresion');
+    var hijosDelContenedor = contenedorPrincipal.children;
+    for (var i = 0; i < hijosDelContenedor.length; i++) {
+      var hijo = hijosDelContenedor[i];
+        hijo.style.display = 'none';    
+    }
+    break 
+    default:  
+  }
+}
+
+
 var idsArray = [];
 var idsArrayEliminados = [];
 
 var currentID = null;
 var btnAtras = document.getElementById('bot-atras');
-var butInicio = document.getElementById('bot-inic')
-var botGrande = document.getElementById('iniciar')
-var imgTorreI = document.getElementById('imgTorre')
-var contInicial = document.getElementById('container1'); 
-var botonMa = document.getElementById('bot-mantaut')
-var imagPasoApaso = document.querySelectorAll('.img1')
+var butInicio = document.getElementById('bot-inic');
+var botGrande = document.getElementById('iniciar');
+var imgTorreI = document.getElementById('imgTorre');
+var contInicial = document.getElementById('container1');
+var botonMa = document.getElementById('bot-mantaut');
+var imagPasoApaso = document.querySelectorAll('.img1');
 var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','largoImpresion']
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado']
@@ -18,20 +33,20 @@ var allContPantafrente = ['pantalla-frente','container2','imgsRepuestos-II','img
 var allContTorreImp = ['rotatek-1','toggleVideoButton','torre-imp','tinter-o','cont-Verticales2','bateria-entintado','cont-Verticales3','bancada-torre','cont-Verticales4','sis-humedad','cont-Verticales5'];
 var allContBaterImp = ['contenedor-7','videoElement1-II','container7']
 var allContSisHumedad = ['contenedor-9','contene-10','sitema-humedad']
-var contVid = document.getElementById('videosTraining') 
-var contIMPlaca = document.getElementById('placa')
-var contIMmanta = document.getElementById('manta')
+var contVid = document.getElementById('videosTraining');
+var contIMPlaca = document.getElementById('placa');
+var contIMmanta = document.getElementById('manta');
 
 var allContMA = ['conteneMantaut','conti-boton']
 var buttonsMA = document.getElementsByClassName("butt-mautonomo");
 
-const grupOblicuos = document.getElementById('agrupaOblicuos-I')
-const oblicuosVI = document.getElementById('agrupaOblicuos-VI')
+const grupOblicuos = document.getElementById('agrupaOblicuos-I');
+const oblicuosVI = document.getElementById('agrupaOblicuos-VI');
 
 var contOblicuosMandos = document.getElementById('agrupaOblicuos-VII');
 let contVariable = document.getElementById('cont-variable');
 let contPlana = document.getElementById('cont-plana');
-let contSecador = document.getElementById('cont-secador')
+let contSecador = document.getElementById('cont-secador');
 
 const textToColor = document.getElementById("textToColor");
 const textToColorI = document.getElementById("textToColorI");
@@ -50,39 +65,39 @@ var contImgsManta = document.getElementById('contPerfilesManta');
 
 const coleccImgFront = document.querySelectorAll('.rep-frente');
 const coleccImgIzq = document.querySelectorAll('.rep-izquierda');
-const conteRepDistrib = document.querySelectorAll('.imgRow')
-const uniTeñido = document.getElementById('uTeñidos')
-const alimentadorId = document.getElementById('alimentadorId')
-const unidadProcess = document.getElementById('uniProceso')
-const reBobinado = document.getElementById('rebobinador')
-const rotatPanel = document.getElementById('rotatek-1')
-const seccionTintero = document.getElementById('pantalla-tintero')
-const seccionFrente = document.getElementById('pantalla-frente')
-const seccionMandos = document.getElementById('pantalla-mandos')
+const conteRepDistrib = document.querySelectorAll('.imgRow');
+const uniTeñido = document.getElementById('uTeñidos');
+const alimentadorId = document.getElementById('alimentadorId');
+const unidadProcess = document.getElementById('uniProceso');
+const reBobinado = document.getElementById('rebobinador');
+const rotatPanel = document.getElementById('rotatek-1');
+const seccionTintero = document.getElementById('pantalla-tintero');
+const seccionFrente = document.getElementById('pantalla-frente');
+const seccionMandos = document.getElementById('pantalla-mandos');
 const pantallas = ['pantalla-frente', 'pantalla-mandos','pantalla-servicio','pantalla-atras'];
 
 
-const contieneLinks = document.getElementById('cont-links')
-const imgsRepuestos = document.getElementById('imgsRepuestos') // HIJO IMAGENES
-const imgsRepuestosII = document.getElementById('imgsRepuestos-II') // HIJO IMAGENES 
-const imgsRepuestosIII = document.getElementById('imgsRepuestos-III') // HIJO IMAGENES      
-const imgsRepuestosIV = document.getElementById('imgsRepuestos-IV') // HIJO IMAGENES      
+const contieneLinks = document.getElementById('cont-links');
+const imgsRepuestos = document.getElementById('imgsRepuestos');// HIJO IMAGENES
+const imgsRepuestosII = document.getElementById('imgsRepuestos-II');// HIJO IMAGENES 
+const imgsRepuestosIII = document.getElementById('imgsRepuestos-III');// HIJO IMAGENES      
+const imgsRepuestosIV = document.getElementById('imgsRepuestos-IV');// HIJO IMAGENES      
 
 
-const contPadreMA = document.getElementById('conteneMantaut')
+const contPadreMA = document.getElementById('conteneMantaut');
 const videoElements = document.querySelectorAll('.video-training');   
 const video = document.getElementById("videoBackground");
 const imgsDistribuidor = document.getElementById('contImgDistribuidor')
-const imgsForma = document.getElementById('contImgEntintador')
+const imgsForma = document.getElementById('contImgEntintador');
 const toggleVideoButton = document.getElementById("toggleVideoButton");
 const images = document.querySelectorAll('.image-training, .image-training-a'); 
 const imageElementsi = document.querySelectorAll('.image-training');
-const contPortaPlancha = document.getElementById('contPortPlaca')
-const contPortaManta = document.getElementById('contPortManta')
-const contImpresor = document.getElementById('contImpresor')
+const contPortaPlancha = document.getElementById('contPortPlaca');
+const contPortaManta = document.getElementById('contPortManta');
+const contImpresor = document.getElementById('contImpresor');
 const inputs = document.querySelectorAll('.input-class');
 const input = document.querySelectorAll('.input-class');
-const checks = document.querySelectorAll('.input-class')
+const checks = document.querySelectorAll('.input-class');
 const imagesFull = document.querySelectorAll('img');
 const inpt = document.querySelectorAll('grafMini');
 const imagesPrepress = ['primerCont','segundoCont','tercerCont']
@@ -93,7 +108,7 @@ let miCanvas4 = document.getElementById('MiCuartaGrafica').getContext('2d');
 let miCanvas5 = document.getElementById('MiQuintaGrafica').getContext('2d');
 let miCanvas = document.getElementById('MiGrafica').getContext('2d');
 var botones = document.querySelectorAll('.butt-mautonomo');
-var linksTorre = document.getElementById('contLinksTorre')
+var linksTorre = document.getElementById('contLinksTorre');
 
 let currentIndex = 0;
 let actualtIndex = 0;
@@ -101,8 +116,8 @@ let nowIndex = 0;
 
 idsArray.push("pantalla-inicial");
 idsArrayEliminados.push('salir');
-console.log(idsArrayEliminados)
-console.log(idsArray)
+console.log(idsArrayEliminados);
+console.log(idsArray);
 function VolveraInicio(){
   location.reload();
   idsArray = [];
@@ -1172,6 +1187,14 @@ function mantAutonomo (opcionSeleccionada) {
       } else {
         conteneCanvas.style.display = 'block';
       }
+
+      var contenedorPrincipal = document.getElementById('largoImpresion');
+      var hijosDelContenedor = contenedorPrincipal.children;
+      for (var i = 0; i < hijosDelContenedor.length; i++) {
+        var hijo = hijosDelContenedor[i];
+          hijo.style.display = 'none';    
+      }
+  
     break;
     case 'def-tipo2':
     var cotCheck = document.getElementById('contChecks');
