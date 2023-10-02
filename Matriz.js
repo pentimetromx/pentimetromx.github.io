@@ -1125,13 +1125,41 @@ function showNextInputChec() {
     setTimeout(showNextInputChec, 37); // Ajusta el tiempo de espera en milisegundos
   }
 }
-function posicionEnArray() {
+function posicionEnArray(idElement) {
   if (arrayContador.length > 0) {
     var lastPosition = arrayContador[arrayContador.length - 1];
-    alert('Última posición en el array: ' + lastPosition);
-  }
-  if(lastPosition === 1){
-
+    if (lastPosition === 1) {
+      var element = document.getElementById(idElement);
+      if (element && element.style) {
+        element.style.left = '4px';
+      } else {
+        console.error('idElement no es un elemento válido para establecer la propiedad left.');
+      }
+    }
+    if (lastPosition === 2) {
+      var element = document.getElementById(idElement);
+      if (element && element.style) {
+        element.style.left = '457px';
+      } else {
+        console.error('idElement no es un elemento válido para establecer la propiedad left.');
+      }
+    }
+    if (lastPosition === 3) {
+      var element = document.getElementById(idElement);
+      if (element && element.style) {
+        element.style.left = '830px';
+      } else {
+        console.error('idElement no es un elemento válido para establecer la propiedad left.');
+      }
+    }
+    if (lastPosition === 4) {
+      var element = document.getElementById(idElement);
+      if (element && element.style) {
+        element.style.left = '947px';
+      } else {
+        console.error('idElement no es un elemento válido para establecer la propiedad left.');
+      }
+    }
   }
 }
 function mantAutonomo (idElement) {
@@ -1178,7 +1206,6 @@ function mantAutonomo (idElement) {
       /* console.log("Se alcanzó el número máximo de posiciones (5)."); */
       return; // No agrega una nueva posición si ya se alcanzó el límite
       }
-
       // Si no se alcanzó el límite, agrega una nueva posición
       if (arrayContador.length === 0) {
       // Agrega la primera posición (1) al array
@@ -1191,15 +1218,12 @@ function mantAutonomo (idElement) {
       // Agrega la nueva posición al array
       arrayContador.push(nuevaPosicion);
       }
-
       // Resto de la lógica de la función mantAutonomo
       // ...
-
       // Puedes acceder a la posición actual en el array
       var posicionActual = arrayContador[arrayContador.length - 1];
       console.log('Posición actual en el array: ' + posicionActual);
-  
-      
+
     break;
     case 'def-tipo1':
       // Capturar el contenedor padre
@@ -1322,32 +1346,6 @@ function mantAutonomo (idElement) {
       })(i);
       }
       }
-
-      // Verifica si el array ya contiene 5 posiciones
-      if (arrayContador.length >= 6) {
-      /* console.log("Se alcanzó el número máximo de posiciones (5)."); */
-      return; // No agrega una nueva posición si ya se alcanzó el límite
-      }
-
-      // Si no se alcanzó el límite, agrega una nueva posición
-      if (arrayContador.length === 0) {
-      // Agrega la primera posición (1) al array
-      arrayContador.push(1);
-      } else {
-      // Obtiene la última posición en el array y le suma 1
-      var ultimaPosicion = arrayContador[arrayContador.length - 1];
-      var nuevaPosicion = ultimaPosicion + 1;
-
-      // Agrega la nueva posición al array
-      arrayContador.push(nuevaPosicion);
-      }
-
-      // Resto de la lógica de la función mantAutonomo
-      // ...
-
-      // Puedes acceder a la posición actual en el array
-      var posicionActual = arrayContador[arrayContador.length - 1];
-      console.log('Posición actual en el array: ' + posicionActual);
 
     break;
     case 'ayudastrabajo':
@@ -1553,7 +1551,33 @@ function mantAutonomo (idElement) {
     break;
   default:
 }}
+function ubicacionAutomatica() {
+  var arrayPosicionnador = ['canvasContainer3', 'troubleshooting','contChecks', 'canvasContainer2','conti-boton', 'contImagNeg', 'contImagGraf'];
 
+  // Obtén el primer elemento del array por su ID
+  var primerElemento = document.getElementById(arrayPosicionnador[0]);
+
+  if (primerElemento) {
+    // 1. Guardar la posición left del primer elemento en la variable 'puntoInicial'
+    var puntoInicial = primerElemento.getBoundingClientRect().left;
+
+    // 2. Guardar el ancho (width) del primer elemento en la variable 'anchoTotal'
+    var anchoTotal = primerElemento.offsetWidth;
+
+    // Verifica si hay suficientes elementos en el array
+    if (arrayPosicionnador.length > 1) {
+      // Obtén el segundo elemento del array por su ID
+      var segundoElemento = document.getElementById(arrayPosicionnador[1]);
+
+      if (segundoElemento) {
+        // 3. Asignar la posición left al segundo elemento con la suma de los dos puntos anteriores
+        segundoElemento.style.left = puntoInicial + anchoTotal + 'px';
+      }
+    }
+  } else {
+    console.error('El primer elemento no se encontró en el DOM');
+  }
+}
 function resetBotns() {
   var idsMA = ['canvasContainer2', 'canvasContainer3', 'contChecks', 'segundoMantaut', 'largoImpresion','contImagGraf','contImagNeg'];
 
