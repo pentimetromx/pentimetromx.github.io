@@ -1,20 +1,6 @@
-function allElemMA (hijo){
-  switch(hijo) {
-    case 'largoImpresion' :
-    var contenedorPrincipal = document.getElementById('largoImpresion');
-    var hijosDelContenedor = contenedorPrincipal.children;
-    for (var i = 0; i < hijosDelContenedor.length; i++) {
-      var hijo = hijosDelContenedor[i];
-        hijo.style.display = 'none';    
-    }
-    break 
-    default:  
-  }
-}
-
-
 var idsArray = [];
 var idsArrayEliminados = [];
+var idsMA = ['canvasContainer2', 'canvasContainer3', 'contChecks', 'segundoMantaut','largoImpresion'];
 
 var currentID = null;
 var btnAtras = document.getElementById('bot-atras');
@@ -192,16 +178,6 @@ function muestraBateria(elementId) {
   }
 }
 function ElementosMa(elementId) {
-/*   // Obtener el elemento padre
-  var contenedorPadre = document.getElementById("conteneMantaut");
-  // Obtener todos los elementos hijos del contenedor padre
-  var elementosHijos = contenedorPadre.children;
-  // Recorrer los elementos hijos sin usar clases ni 'id'
-  for (var i = 0; i < elementosHijos.length; i++) {
-  var elementoHijo = elementosHijos[i];
-  // Realizar las operaciones que desees con cada elemento hijo aquí
-  console.log(elementoHijo);
-  } */
 
   var contenedor = document.getElementById("container8"); 
   // Recorre el array y oculta los elementos por su ID
@@ -401,13 +377,6 @@ function cambioContenedor(elementId) {
     elementsToHide[i].style.display = 'none';
   }
 
-/*   for (var i = 0; i < elementsToHide.length; i++) {
-    var elemento = document.getElementById(elementsToHide[i]);                                 
-    if (elemento) {
-        elemento.style.display = 'none';
-    }
-  } */
-
   botAtras.style.display='block'
   botTrasII.style.display='block'
   torreImpresion.style.position='absolute'
@@ -542,7 +511,6 @@ function alternarVisibilidad(docId) {
       elementosParaAlternar[i].style.display = "none";
     }
   }
-
 
 }
 function mostrarBotMa(id) {
@@ -1157,58 +1125,128 @@ function mantAutonomo (opcionSeleccionada) {
   var conteLinksI = document.getElementById('links-inicialesI') 
   switch (opcionSeleccionada) {
     case 'troubleshooting':
-      var contInput = document.getElementById('contInput'); 
-      var inputs = document.querySelectorAll('.inpt-class');
-
-      if (contInput.style.display === 'none') {
-      contInput.style.display = 'block';
-  
-      // Mostrar cada input con un intervalo de 77 milisegundos
-      for (var i = 0; i < inputs.length; i++) {
+        var contInput = document.getElementById('largoImpresion'); 
+        var inputs = document.querySelectorAll('.inpt-class');
+        if (contInput.style.display === 'none') {
+        contInput.style.display = 'flex';  
+        // Mostrar cada input con un intervalo de 77 milisegundos
+        for (var i = 0; i < inputs.length; i++) {
         (function(index) {
-          setTimeout(function() {
-            inputs[index].style.display = 'block';
-          }, 77 * index);
+        setTimeout(function() {
+        inputs[index].style.display = 'block';
+        }, 77 * index);
         })(i);
-      }
-      } else {
-      contInput.style.display = 'none';
-      for (var i = 0; i < inputs.length; i++) {
+        }
+        } else {
+        contInput.style.display = 'none';
+        for (var i = 0; i < inputs.length; i++) {
         inputs[i].style.display = 'none';
-      }
-      var largoImp = document.getElementById('largoImpresion')
-      largoImp.style.display='none'
-      }
+        }
+        }
+
+          // Obtener el elemento padre
+          var largoImpresion = document.getElementById("largoImpresion");
+          // Obtener los elementos secundarios
+          var children = largoImpresion.children;
+          // Iterar a través de los elementos secundarios
+          for (var i = 0; i < children.length; i++) {
+          // Verificar si el elemento tiene el id "linksMA" y si está visible
+          if (children[i].id === "linksMA" && children[i].style.display === "block") {
+          // Ocultar el elemento "linksMA" cambiando su estilo a "none"
+          children[i].style.display = "none";
+          }
+          // Verificar si el elemento tiene el id "contImgEntrenos" y si está visible
+          if (children[i].id === "contImgEntrenos" && children[i].style.display === "flex") {
+          // Ocultar el elemento "contImgEntrenos" cambiando su estilo a "none"
+          children[i].style.display = "none";
+          }
+          }
     break;
     case 'def-tipo1':
+// Capturar el contenedor padre
+var contenedorPadre = document.getElementById('largoImpresion');
+// Obtener todos los hijos del contenedor padre
+var hijos = contenedorPadre.children;
+
+// Inicializar variables para verificar si los elementos 'linksMA' y 'imgs-entrenos' están visibles
+var linksMAVisible = false;
+var imgsEntrenosVisible = false;
+
+// Iterar a través de los hijos del contenedor
+for (var i = 0; i < hijos.length; i++) {
+  var hijo = hijos[i];
+
+  // Verificar si el hijo es 'linksMA' y si está visible
+  if (hijo.id === 'linksMA' || hijo.style.display !== 'none') {
+    linksMAVisible = true;
+  }
+
+  // Verificar si el hijo es 'imgs-entrenos' y si está visible
+  if (hijo.className === 'imgs-entrenos' || hijo.style.display !== 'none') {
+    imgsEntrenosVisible = true;
+  }
+}
+
+// Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
+if (linksMAVisible && imgsEntrenosVisible) {
+  document.getElementById('linksMA').style.display = 'none';
+  document.getElementById('contImgEntrenos').style.display = 'none';
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
       const conteneCanvas = document.getElementById('canvasContainer2')
       if (conteneCanvas.style.display === 'block') {
         conteneCanvas.style.display = 'none'; 
       } else {
         conteneCanvas.style.display = 'block';
       }
-
-      var contenedorPrincipal = document.getElementById('largoImpresion');
-      var hijosDelContenedor = contenedorPrincipal.children;
-      for (var i = 0; i < hijosDelContenedor.length; i++) {
-        var hijo = hijosDelContenedor[i];
-          hijo.style.display = 'none';    
-      }
   
     break;
     case 'def-tipo2':
-    var cotCheck = document.getElementById('contChecks');
+// Capturar el contenedor padre
+var contenedorPadre = document.getElementById('largoImpresion');
+// Obtener todos los hijos del contenedor padre
+var hijos = contenedorPadre.children;
+
+// Inicializar variables para verificar si los elementos 'linksMA' y 'imgs-entrenos' están visibles
+var linksMAVisible = false;
+var imgsEntrenosVisible = false;
+
+// Iterar a través de los hijos del contenedor
+for (var i = 0; i < hijos.length; i++) {
+  var hijo = hijos[i];
+
+  // Verificar si el hijo es 'linksMA' y si está visible
+  if (hijo.id === 'linksMA' || hijo.style.display !== 'none') {
+    linksMAVisible = true;
+  }
+
+  // Verificar si el hijo es 'imgs-entrenos' y si está visible
+  if (hijo.className === 'imgs-entrenos' || hijo.style.display !== 'none') {
+    imgsEntrenosVisible = true;
+  }
+}
+
+// Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
+if (linksMAVisible && imgsEntrenosVisible) {
+  document.getElementById('linksMA').style.display = 'none';
+  document.getElementById('contImgEntrenos').style.display = 'none';
+}
+
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/    
+    var contCheck = document.getElementById('contChecks');
     var inpts = document.querySelectorAll('.input-class');
 
-    if (cotCheck.style.display === 'block') {
+    if (contCheck.style.display === 'block') {
       // Ocultar los elementos
-      cotCheck.style.display = 'none';
+      contCheck.style.display = 'none';
     for (var i = 0; i < inpts.length; i++) {
     inpts[i].style.display = 'none';
     }
     } else {
       // Ejecutar la lógica si el contenedor está visible
-      cotCheck.style.display = 'block';
+      contCheck.style.display = 'block';
 
       // Mostrar cada input con un intervalo de 77 milisegundos
     for (var i = 0; i < inpts.length; i++) {
@@ -1219,9 +1257,40 @@ function mantAutonomo (opcionSeleccionada) {
     })(i);
     }
     }
-
     break;
     case 'ayudastrabajo':
+// Capturar el contenedor padre
+var contenedorPadre = document.getElementById('largoImpresion');
+// Obtener todos los hijos del contenedor padre
+var hijos = contenedorPadre.children;
+
+// Inicializar variables para verificar si los elementos 'linksMA' y 'imgs-entrenos' están visibles
+var linksMAVisible = false;
+var imgsEntrenosVisible = false;
+
+// Iterar a través de los hijos del contenedor
+for (var i = 0; i < hijos.length; i++) {
+  var hijo = hijos[i];
+
+  // Verificar si el hijo es 'linksMA' y si está visible
+  if (hijo.id === 'linksMA' || hijo.style.display !== 'none') {
+    linksMAVisible = true;
+  }
+
+  // Verificar si el hijo es 'imgs-entrenos' y si está visible
+  if (hijo.className === 'imgs-entrenos' || hijo.style.display !== 'none') {
+    imgsEntrenosVisible = true;
+  }
+}
+
+// Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
+if (linksMAVisible && imgsEntrenosVisible) {
+  document.getElementById('linksMA').style.display = 'none';
+  document.getElementById('contImgEntrenos').style.display = 'none';
+}
+
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/      
       const contGrafitos = document.getElementById('canvasContainer3')
       if (contGrafitos.style.display !== 'block') {
         contGrafitos.style.display = 'block'; 
@@ -1232,25 +1301,104 @@ function mantAutonomo (opcionSeleccionada) {
       }
     break;
     case 'fua':
-      var contGrafColor = document.getElementById('contImagGraf')
-      if (contGrafColor.style.display === 'block') {
-        contGrafColor.style.display = 'none'; 
-      } else {
-        contGrafColor.style.display = 'block';
-      }
-      break;
+// Capturar el contenedor padre
+var contenedorPadre = document.getElementById('largoImpresion');
+// Obtener todos los hijos del contenedor padre
+var hijos = contenedorPadre.children;
+
+// Inicializar variables para verificar si los elementos 'linksMA' y 'imgs-entrenos' están visibles
+var linksMAVisible = false;
+var imgsEntrenosVisible = false;
+
+// Iterar a través de los hijos del contenedor
+for (var i = 0; i < hijos.length; i++) {
+  var hijo = hijos[i];
+
+  // Verificar si el hijo es 'linksMA' y si está visible
+  if (hijo.id === 'linksMA' || hijo.style.display !== 'none') {
+    linksMAVisible = true;
+  }
+
+  // Verificar si el hijo es 'imgs-entrenos' y si está visible
+  if (hijo.className === 'imgs-entrenos' || hijo.style.display !== 'none') {
+    imgsEntrenosVisible = true;
+  }
+}
+
+// Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
+if (linksMAVisible && imgsEntrenosVisible) {
+  document.getElementById('linksMA').style.display = 'none';
+  document.getElementById('contImgEntrenos').style.display = 'none';
+}
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/    
+    var contGrafColor = document.getElementById('contImagNeg')
+    var contGrafNeg = document.getElementById('contImagGraf');
+    var padreLup = document.getElementById('segundoMantaut'); 
+    padreLup.style.display='block'
+    if (contGrafColor.style.display === 'block') {
+      contGrafColor.style.display = 'none'; 
+    } else {
+      contGrafColor.style.display = 'block';
+      contGrafNeg.style.display = 'none'
+    }
+    break;
     case 'lup':
-      var contGrafNeg = document.getElementById('contImagNeg')
+// Capturar el contenedor padre
+var contenedorPadre = document.getElementById('largoImpresion');
+// Obtener todos los hijos del contenedor padre
+var hijos = contenedorPadre.children;
+
+// Inicializar variables para verificar si los elementos 'linksMA' y 'imgs-entrenos' están visibles
+var linksMAVisible = false;
+var imgsEntrenosVisible = false;
+
+// Iterar a través de los hijos del contenedor
+for (var i = 0; i < hijos.length; i++) {
+  var hijo = hijos[i];
+
+  // Verificar si el hijo es 'linksMA' y si está visible
+  if (hijo.id === 'linksMA' || hijo.style.display !== 'none') {
+    linksMAVisible = true;
+  }
+
+  // Verificar si el hijo es 'imgs-entrenos' y si está visible
+  if (hijo.className === 'imgs-entrenos' || hijo.style.display !== 'none') {
+    imgsEntrenosVisible = true;
+  }}
+
+    // Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
+    if (linksMAVisible && imgsEntrenosVisible) {
+      document.getElementById('linksMA').style.display = 'none';
+      document.getElementById('contImgEntrenos').style.display = 'none';
+    }
+
+      /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////*/    
+      var contGrafNeg = document.getElementById('contImagGraf');
+      var padreLup = document.getElementById('segundoMantaut'); 
+      var contImagNeg = document.getElementById('contImagNeg'); 
+
+      padreLup.style.display='block'
       if (contGrafNeg.style.display === 'block') {
         contGrafNeg.style.display = 'none'; 
       } else {
         contGrafNeg.style.display = 'block';
+        contImagNeg.style.display = 'none'
       }
     break;
   default:
 }}
-function ensayoPruebas(){
-  location.reload();
+function resetBotns() {
+  var idsMA = ['canvasContainer2', 'canvasContainer3', 'contChecks', 'segundoMantaut', 'largoImpresion','contImagGraf','contImagNeg'];
+
+  for (var i = 0; i < idsMA.length; i++) {
+    var elementId = idsMA[i];
+    var element = document.getElementById(elementId);
+    
+    if (element) {
+      element.style.display = 'none';
+    }
+  }
 }
 function muestraTorres(seleccion) {
   seccionTintero.style.display = 'none';
@@ -1555,8 +1703,6 @@ contBotEspeciales.style.display='block'
 
   contBotPress.style.display = 'block';
   contImgsPrepress.style.display = 'block';
-
-
 
   // Mostrar el elemento "pre-prensa"
   if (prePrensaElemento) {
@@ -2187,8 +2333,7 @@ function irContenedorSiguiente() {
 function listaEntrenamientos(){
   var videoBackground = document.getElementById('videoBackground');
   videoBackground.pause();
-  videoBackground.style.display = 'none'; // Oculta el 
-  
+  videoBackground.style.display = 'none';  
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]); 
     if(elemento.id !== 'conteneMantaut'){
@@ -2196,12 +2341,26 @@ function listaEntrenamientos(){
     }else{
       elemento.style.display='block'
     }}
-  
   var contTraining = document.getElementById('largoImpresion')
+  var contLinksMA = document.getElementById('linksMA')
+  var contBotMA = document.getElementById('conti-boton')
   contTraining.style.display='flex'
-  contTraining.style.left='487px'
-  contTraining.style.top='57px'
-
+  contTraining.style.left='250px'
+  contTraining.style.top='73px'
+  contLinksMA.style.display='block'
+  contLinksMA.style.marginLeft='30px'
+  contLinksMA.style.marginTop='-16px'
+  contBotMA.style.marginTop='45px'  
+}  
+function listaEntrenamientosII(){
+  var conteneID = document.getElementById('canvasContainer2');
+  var contGrafi = document.getElementById('canvasContainer3');
+  var contGrafi2 = document.getElementById('contChecks');
+  var contGrafi3 = document.getElementById('contImagGraf');
+  var contGrafi4 = document.getElementById('contImagNeg');
+  if (conteneID.style.display === 'none' && contGrafi.style.display === 'none' && contGrafi2.style.display === 'none' && contGrafi3.style.display === 'none' && contGrafi4.style.display === 'none' ){
+    listaEntrenamientos();
+  }
 }
 function imagenesPasoApaso(idElto){
   var contImgEntrenos = document.getElementById('contImgEntrenos')

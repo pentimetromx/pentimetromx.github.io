@@ -435,29 +435,14 @@
         <button class="butt-mautonomo image-trainings" id="def1" onclick="mantAutonomo('def-tipo1')">DEFECTOS TIPO 1</button>
         <button class="butt-mautonomo image-trainings" id="def2" onclick="mantAutonomo('def-tipo2')">DEFECTOS TIPO 2</button>
         <button class="butt-mautonomo image-trainings" id="adtBut" onclick="mantAutonomo('ayudastrabajo')">ADT</button>
-        <button class="butt-mautonomo image-trainings" id="fua" onclick="mantAutonomo('fua')">FUA</button>           
+        <button class="butt-mautonomo image-trainings" id="fua1" onclick="mantAutonomo('fua')">FUA</button>           
         <button class="butt-mautonomo image-trainings" id="lup" onclick="mantAutonomo('lup')">LUP</button>
+        <button class="butt-mautonomo image-trainings" id="reset" onclick="resetBotns()" style="background-color: red;color: white;" onclick="">RESET</button>
+
       </div> 
 
-      <div id="contInput" style="display: none;">
-        <label class="labl-class" for="archivo">Largo de impresion:</label>
-        <button class="inpt-class botnClass" onclick="listaEntrenamientos('')">Seleccionar archivo</button>
-        <label class="labl-class" for="archivo">Aditivos solución de fuente:</label>
-        <button class="inpt-class botnClass">Seleccionar archivo</button>
-        <label class="labl-class" for="archivo">Reproceso adelantado:</label>
-        <button class="inpt-class botnClass">Seleccionar archivo</button>
-        <label class="labl-class" for="archivo">Reproceso atrazado:</label>
-        <button class="inpt-class botnClass">Seleccionar archivo</button>
-        <label class="labl-class" for="archivo">Largos fuera de rango:</label>
-        <button class="inpt-class botnClass">Seleccionar archivo</button>
-        <label class="labl-class" for="archivo">Desprendimiento de mantilla:</label>
-        <button class="inpt-class botnClass">Seleccionar archivo</button>
-        <label class="labl-class" for="archivo">Problemas de teñido:</label>
-        <button class="inpt-class botnClass" id="bott-seleccion">Seleccionar archivo</button>       
-      </div>
-
       <div id="canvasContainer2">
-          <canvas id="MiGrafica"></canvas>
+          <canvas id="MiGrafica"></canvas> 
       </div>        
       <div id="canvasContainer3">
         <canvas id="MiSegundaGrafica"></canvas><br>
@@ -477,11 +462,11 @@
         <input type="checkbox" class="input-class">
       </div>      
 
-      <div id="segundoMantaut" class="contGrafNeg">
-        <div id="contImagGraf" style="display: none;">
+      <div id="segundoMantaut" class="contGrafNeg" >
+        <div id="contImagGraf">
           <img src="./assets/Excel.png" alt="Gráfico de Excel 6" style="width: 200px;height: 100px;">
         </div>
-        <div id="contImagNeg" style="display: none;">
+        <div id="contImagNeg">
           <img src="./assets/Grafico 6.JPG" alt="Gráfico de Excel 6" style="width:447px ;height: 120px;">
         </div>
       </div>
@@ -898,7 +883,7 @@
           <button class="butt-mautonomo image-trainings" id="def1" onclick="mantAutonomo('def-tipo1')">ANGULACION</button>
           <button class="butt-mautonomo image-trainings" id="def2" onclick="mantAutonomo('def-tipo2')">INSOLADOR</button>
           <button class="butt-mautonomo image-trainings" id="adtBut" onclick="mantAutonomo('ayudastrabajo')">AYUDAS</button>
-          <button class="butt-mautonomo image-trainings" id="fua" onclick="mantAutonomo('fua')">DOBLADOR</button>           
+          <button class="butt-mautonomo image-trainings" id="fua2" onclick="mantAutonomo('fua')">DOBLADOR</button>           
           <button class="butt-mautonomo image-trainings" id="lup" onclick="mantAutonomo('lup')">CALIBRES</button>
         </div> 
       </div>
@@ -961,14 +946,32 @@
         <button class="butt-mautonomo image-trainings" id="def1" onclick="mantAutonomo('def-tipo1')">ANGULACION</button>
         <button class="butt-mautonomo image-trainings" id="def2" onclick="mantAutonomo('def-tipo2')">INSOLADOR</button>
         <button class="butt-mautonomo image-trainings" id="adtBut" onclick="mantAutonomo('ayudastrabajo')">AYUDAS</button>
-        <button class="butt-mautonomo image-trainings" id="fua" onclick="mantAutonomo('fua')">DOBLADOR</button>           
+        <button class="butt-mautonomo image-trainings" id="fua3" onclick="mantAutonomo('fua')">DOBLADOR</button>           
         <button class="butt-mautonomo image-trainings" id="lup" onclick="mantAutonomo('lup')">CALIBRES</button>
       </div> 
     </div>
 
-    <section id="largoImpresion">
-      <div>
-        <h2>Largo de impresión ajustes preliminares</h2>  
+    <div id="largoImpresion">
+
+      <div id="entrenamientosMA" style="margin-top: 4px;">
+        <label class="labl-class" for="archivo">Largo de impresion:</label>
+        <button class="inpt-class botnClass" onclick="listaEntrenamientosII('')">Seleccionar archivo</button>
+        <label class="labl-class" for="archivo">Aditivos solución de fuente:</label>
+        <button class="inpt-class botnClass">Seleccionar archivo</button>
+        <label class="labl-class" for="archivo">Reproceso adelantado:</label>
+        <button class="inpt-class botnClass">Seleccionar archivo</button>
+        <label class="labl-class" for="archivo">Reproceso atrazado:</label>
+        <button class="inpt-class botnClass">Seleccionar archivo</button>
+        <label class="labl-class" for="archivo">Largos fuera de rango:</label>
+        <button class="inpt-class botnClass">Seleccionar archivo</button>
+        <label class="labl-class" for="archivo">Desprendimiento de mantilla:</label>
+        <button class="inpt-class botnClass">Seleccionar archivo</button>
+        <label class="labl-class" for="archivo">Problemas de teñido:</label>
+        <button class="inpt-class botnClass" id="bott-seleccion">Seleccionar archivo</button>       
+      </div>
+
+      <div id="linksMA" style="margin-top: 7px;display: none;" >
+        <h2 style="margin-left: 20px;">Largo de impresión ajustes preliminares</h2>  
         <ol class="linksTraining" id="linkLis">
           <li><a href="#" onclick="imagenesPasoApaso('imag1')">Asegurar PSI neumática</a></li><br>
           <li><a href="#" onclick="imagenesPasoApaso('imag2')">Optimización al freno de bobina</a></li><br>
@@ -1010,7 +1013,7 @@
         </div>        
        
       </div>
-    </section>
+    </div>
     <script src="./Matriz.js"></script>    
   </body>
 </html>
