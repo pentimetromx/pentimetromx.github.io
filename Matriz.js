@@ -1,3 +1,4 @@
+var arrayContador = [];
 var idsArray = [];
 var idsArrayEliminados = [];
 var idsMA = ['canvasContainer2', 'canvasContainer3', 'contChecks', 'segundoMantaut','largoImpresion'];
@@ -10,20 +11,20 @@ var imgTorreI = document.getElementById('imgTorre');
 var contInicial = document.getElementById('container1');
 var botonMa = document.getElementById('bot-mantaut');
 var imagPasoApaso = document.querySelectorAll('.img1');
-var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','largoImpresion']
+var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','largoImpresion','contImagGraf','contImagNeg'];
 var linksIniciales = ['links-inicialesI','links-iniciales']
-var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado']
+var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado'];
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor'];
 var allContTintero = ['pantalla-tintero','cont-links','imgTorre','vidTintero','imgsRepuestos','agrupaOblicuos-II','container2'];
-var allContPantafrente = ['pantalla-frente','container2','imgsRepuestos-II','imgTorre-f','agrupaOblicuos-III']
+var allContPantafrente = ['pantalla-frente','container2','imgsRepuestos-II','imgTorre-f','agrupaOblicuos-III'];
 var allContTorreImp = ['rotatek-1','toggleVideoButton','torre-imp','tinter-o','cont-Verticales2','bateria-entintado','cont-Verticales3','bancada-torre','cont-Verticales4','sis-humedad','cont-Verticales5'];
-var allContBaterImp = ['contenedor-7','videoElement1-II','container7']
-var allContSisHumedad = ['contenedor-9','contene-10','sitema-humedad']
+var allContBaterImp = ['contenedor-7','videoElement1-II','container7'];
+var allContSisHumedad = ['contenedor-9','contene-10','sitema-humedad'];
 var contVid = document.getElementById('videosTraining');
 var contIMPlaca = document.getElementById('placa');
 var contIMmanta = document.getElementById('manta');
 
-var allContMA = ['conteneMantaut','conti-boton']
+var allContMA = ['conteneMantaut','conti-boton'];
 var buttonsMA = document.getElementsByClassName("butt-mautonomo");
 
 const grupOblicuos = document.getElementById('agrupaOblicuos-I');
@@ -73,7 +74,7 @@ const imgsRepuestosIV = document.getElementById('imgsRepuestos-IV');// HIJO IMAG
 const contPadreMA = document.getElementById('conteneMantaut');
 const videoElements = document.querySelectorAll('.video-training');   
 const video = document.getElementById("videoBackground");
-const imgsDistribuidor = document.getElementById('contImgDistribuidor')
+const imgsDistribuidor = document.getElementById('contImgDistribuidor');
 const imgsForma = document.getElementById('contImgEntintador');
 const toggleVideoButton = document.getElementById("toggleVideoButton");
 const images = document.querySelectorAll('.image-training, .image-training-a'); 
@@ -86,7 +87,7 @@ const input = document.querySelectorAll('.input-class');
 const checks = document.querySelectorAll('.input-class');
 const imagesFull = document.querySelectorAll('img');
 const inpt = document.querySelectorAll('grafMini');
-const imagesPrepress = ['primerCont','segundoCont','tercerCont']
+const imagesPrepress = ['primerCont','segundoCont','tercerCont'];
 
 let miCanvas2 = document.getElementById('MiSegundaGrafica').getContext('2d');
 let miCanvas3 = document.getElementById('MiTerceraGrafica').getContext('2d');
@@ -201,6 +202,9 @@ function ElementosMa(elementId) {
   for (var i = 0; i < buttonsMA.length; i++) {
     buttonsMA[i].style.display = 'block';
   }
+
+  resetBotns();
+
   linkListI.style.display = "none";
   if (!idsArray.includes(elementId)) {
     idsArray.push(elementId);
@@ -1125,75 +1129,75 @@ function mantAutonomo (opcionSeleccionada) {
   var conteLinksI = document.getElementById('links-inicialesI') 
   switch (opcionSeleccionada) {
     case 'troubleshooting':
-        var contInput = document.getElementById('largoImpresion'); 
-        var inputs = document.querySelectorAll('.inpt-class');
-        if (contInput.style.display === 'none') {
-        contInput.style.display = 'flex';  
-        // Mostrar cada input con un intervalo de 77 milisegundos
-        for (var i = 0; i < inputs.length; i++) {
-        (function(index) {
-        setTimeout(function() {
-        inputs[index].style.display = 'block';
-        }, 77 * index);
-        })(i);
-        }
-        } else {
-        contInput.style.display = 'none';
-        for (var i = 0; i < inputs.length; i++) {
-        inputs[i].style.display = 'none';
-        }
-        }
-
-          // Obtener el elemento padre
-          var largoImpresion = document.getElementById("largoImpresion");
-          // Obtener los elementos secundarios
-          var children = largoImpresion.children;
-          // Iterar a través de los elementos secundarios
-          for (var i = 0; i < children.length; i++) {
-          // Verificar si el elemento tiene el id "linksMA" y si está visible
-          if (children[i].id === "linksMA" && children[i].style.display === "block") {
-          // Ocultar el elemento "linksMA" cambiando su estilo a "none"
-          children[i].style.display = "none";
-          }
-          // Verificar si el elemento tiene el id "contImgEntrenos" y si está visible
-          if (children[i].id === "contImgEntrenos" && children[i].style.display === "flex") {
-          // Ocultar el elemento "contImgEntrenos" cambiando su estilo a "none"
-          children[i].style.display = "none";
-          }
-          }
+      var contInput = document.getElementById('largoImpresion'); 
+      var inputs = document.querySelectorAll('.inpt-class');
+      if (contInput.style.display === 'none') {
+      contInput.style.display = 'flex';  
+      // Mostrar cada input con un intervalo de 77 milisegundos
+      for (var i = 0; i < inputs.length; i++) {
+      (function(index) {
+      setTimeout(function() {
+      inputs[index].style.display = 'block';
+      }, 77 * index);
+      })(i);
+      }
+      } else {
+      contInput.style.display = 'none';
+      for (var i = 0; i < inputs.length; i++) {
+      inputs[i].style.display = 'none';
+      }
+      }
+      // Obtener el elemento padre
+      var largoImpresion = document.getElementById("largoImpresion");
+      // Obtener los elementos secundarios
+      var children = largoImpresion.children;
+      // Iterar a través de los elementos secundarios
+      for (var i = 0; i < children.length; i++) {
+      // Verificar si el elemento tiene el id "linksMA" y si está visible
+      if (children[i].id === "linksMA" && children[i].style.display === "block") {
+      // Ocultar el elemento "linksMA" cambiando su estilo a "none"
+      children[i].style.display = "none";
+      }
+      // Verificar si el elemento tiene el id "contImgEntrenos" y si está visible
+      if (children[i].id === "contImgEntrenos" && children[i].style.display === "flex") {
+      // Ocultar el elemento "contImgEntrenos" cambiando su estilo a "none"
+      children[i].style.display = "none";
+      }
+      } 
+      
     break;
     case 'def-tipo1':
-// Capturar el contenedor padre
-var contenedorPadre = document.getElementById('largoImpresion');
-// Obtener todos los hijos del contenedor padre
-var hijos = contenedorPadre.children;
+      // Capturar el contenedor padre
+      var contenedorPadre = document.getElementById('largoImpresion');
+      // Obtener todos los hijos del contenedor padre
+      var hijos = contenedorPadre.children;
 
-// Inicializar variables para verificar si los elementos 'linksMA' y 'imgs-entrenos' están visibles
-var linksMAVisible = false;
-var imgsEntrenosVisible = false;
+      // Inicializar variables para verificar si los elementos 'linksMA' y 'imgs-entrenos' están visibles
+      var linksMAVisible = false;
+      var imgsEntrenosVisible = false;
 
-// Iterar a través de los hijos del contenedor
-for (var i = 0; i < hijos.length; i++) {
-  var hijo = hijos[i];
+      // Iterar a través de los hijos del contenedor
+      for (var i = 0; i < hijos.length; i++) {
+      var hijo = hijos[i];
 
-  // Verificar si el hijo es 'linksMA' y si está visible
-  if (hijo.id === 'linksMA' || hijo.style.display !== 'none') {
-    linksMAVisible = true;
-  }
+      // Verificar si el hijo es 'linksMA' y si está visible
+      if (hijo.id === 'linksMA' || hijo.style.display !== 'none') {
+      linksMAVisible = true;
+      }
 
-  // Verificar si el hijo es 'imgs-entrenos' y si está visible
-  if (hijo.className === 'imgs-entrenos' || hijo.style.display !== 'none') {
-    imgsEntrenosVisible = true;
-  }
-}
+      // Verificar si el hijo es 'imgs-entrenos' y si está visible
+      if (hijo.className === 'imgs-entrenos' || hijo.style.display !== 'none') {
+      imgsEntrenosVisible = true;
+      }
+      }
 
-// Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
-if (linksMAVisible && imgsEntrenosVisible) {
-  document.getElementById('linksMA').style.display = 'none';
-  document.getElementById('contImgEntrenos').style.display = 'none';
-}
+      // Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
+      if (linksMAVisible && imgsEntrenosVisible) {
+      document.getElementById('linksMA').style.display = 'none';
+      document.getElementById('contImgEntrenos').style.display = 'none';
+      }
 
-/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+      /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
       const conteneCanvas = document.getElementById('canvasContainer2')
       if (conteneCanvas.style.display === 'block') {
         conteneCanvas.style.display = 'none'; 
@@ -1201,96 +1205,149 @@ if (linksMAVisible && imgsEntrenosVisible) {
         conteneCanvas.style.display = 'block';
       }
   
+      // Verifica si el array ya contiene 5 posiciones
+      if (arrayContador.length >= 5) {
+      /* console.log("Se alcanzó el número máximo de posiciones (5)."); */
+      return; // No agrega una nueva posición si ya se alcanzó el límite
+      }
+
+      // Si no se alcanzó el límite, agrega una nueva posición
+      if (arrayContador.length === 0) {
+      // Agrega la primera posición (1) al array
+      arrayContador.push(1);
+      } else {
+      // Obtiene la última posición en el array y le suma 1
+      var ultimaPosicion = arrayContador[arrayContador.length - 1];
+      var nuevaPosicion = ultimaPosicion + 1;
+
+      // Agrega la nueva posición al array
+      arrayContador.push(nuevaPosicion);
+      }
+
+      // Resto de la lógica de la función mantAutonomo
+      // ...
+
+      // Puedes acceder a la posición actual en el array
+      var posicionActual = arrayContador[arrayContador.length - 1];
+      console.log('Posición actual en el array: ' + posicionActual);
+
     break;
     case 'def-tipo2':
-// Capturar el contenedor padre
-var contenedorPadre = document.getElementById('largoImpresion');
-// Obtener todos los hijos del contenedor padre
-var hijos = contenedorPadre.children;
+      // Capturar el contenedor padre
+      var contenedorPadre = document.getElementById('largoImpresion');
+      // Obtener todos los hijos del contenedor padre
+      var hijos = contenedorPadre.children;
 
-// Inicializar variables para verificar si los elementos 'linksMA' y 'imgs-entrenos' están visibles
-var linksMAVisible = false;
-var imgsEntrenosVisible = false;
+      // Inicializar variables para verificar si los elementos 'linksMA' y 'imgs-entrenos' están visibles
+      var linksMAVisible = false;
+      var imgsEntrenosVisible = false;
 
-// Iterar a través de los hijos del contenedor
-for (var i = 0; i < hijos.length; i++) {
-  var hijo = hijos[i];
+      // Iterar a través de los hijos del contenedor
+      for (var i = 0; i < hijos.length; i++) {
+      var hijo = hijos[i];
 
-  // Verificar si el hijo es 'linksMA' y si está visible
-  if (hijo.id === 'linksMA' || hijo.style.display !== 'none') {
-    linksMAVisible = true;
-  }
+      // Verificar si el hijo es 'linksMA' y si está visible
+      if (hijo.id === 'linksMA' || hijo.style.display !== 'none') {
+      linksMAVisible = true;
+      }
 
-  // Verificar si el hijo es 'imgs-entrenos' y si está visible
-  if (hijo.className === 'imgs-entrenos' || hijo.style.display !== 'none') {
-    imgsEntrenosVisible = true;
-  }
-}
+      // Verificar si el hijo es 'imgs-entrenos' y si está visible
+      if (hijo.className === 'imgs-entrenos' || hijo.style.display !== 'none') {
+      imgsEntrenosVisible = true;
+      }
+      }
 
-// Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
-if (linksMAVisible && imgsEntrenosVisible) {
-  document.getElementById('linksMA').style.display = 'none';
-  document.getElementById('contImgEntrenos').style.display = 'none';
-}
+      // Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
+      if (linksMAVisible && imgsEntrenosVisible) {
+      document.getElementById('linksMA').style.display = 'none';
+      document.getElementById('contImgEntrenos').style.display = 'none';
+      }
 
 
-/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/    
-    var contCheck = document.getElementById('contChecks');
-    var inpts = document.querySelectorAll('.input-class');
+      /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/    
+      var contCheck = document.getElementById('contChecks');
+      var inpts = document.querySelectorAll('.input-class');
 
-    if (contCheck.style.display === 'block') {
+      if (contCheck.style.display === 'block') {
       // Ocultar los elementos
       contCheck.style.display = 'none';
-    for (var i = 0; i < inpts.length; i++) {
-    inpts[i].style.display = 'none';
-    }
-    } else {
+      for (var i = 0; i < inpts.length; i++) {
+      inpts[i].style.display = 'none';
+      }
+      } else {
       // Ejecutar la lógica si el contenedor está visible
       contCheck.style.display = 'block';
 
       // Mostrar cada input con un intervalo de 77 milisegundos
-    for (var i = 0; i < inpts.length; i++) {
-    (function(index) {
+      for (var i = 0; i < inpts.length; i++) {
+      (function(index) {
       setTimeout(function() {
       inpts[index].style.display = 'block';
-    }, 77 * index);
-    })(i);
-    }
-    }
+      }, 77 * index);
+      })(i);
+      }
+      }
+
+      // Verifica si el array ya contiene 5 posiciones
+      if (arrayContador.length >= 5) {
+      /* console.log("Se alcanzó el número máximo de posiciones (5)."); */
+      return; // No agrega una nueva posición si ya se alcanzó el límite
+      }
+
+      // Si no se alcanzó el límite, agrega una nueva posición
+      if (arrayContador.length === 0) {
+      // Agrega la primera posición (1) al array
+      arrayContador.push(1);
+      } else {
+      // Obtiene la última posición en el array y le suma 1
+      var ultimaPosicion = arrayContador[arrayContador.length - 1];
+      var nuevaPosicion = ultimaPosicion + 1;
+
+      // Agrega la nueva posición al array
+      arrayContador.push(nuevaPosicion);
+      }
+
+      // Resto de la lógica de la función mantAutonomo
+      // ...
+
+      // Puedes acceder a la posición actual en el array
+      var posicionActual = arrayContador[arrayContador.length - 1];
+      console.log('Posición actual en el array: ' + posicionActual);
+
     break;
     case 'ayudastrabajo':
-// Capturar el contenedor padre
-var contenedorPadre = document.getElementById('largoImpresion');
-// Obtener todos los hijos del contenedor padre
-var hijos = contenedorPadre.children;
+      // Capturar el contenedor padre
+      var contenedorPadre = document.getElementById('largoImpresion');
+      // Obtener todos los hijos del contenedor padre
+      var hijos = contenedorPadre.children;
 
-// Inicializar variables para verificar si los elementos 'linksMA' y 'imgs-entrenos' están visibles
-var linksMAVisible = false;
-var imgsEntrenosVisible = false;
+      // Inicializar variables para verificar si los elementos 'linksMA' y 'imgs-entrenos' están visibles
+      var linksMAVisible = false;
+      var imgsEntrenosVisible = false;
 
-// Iterar a través de los hijos del contenedor
-for (var i = 0; i < hijos.length; i++) {
-  var hijo = hijos[i];
+      // Iterar a través de los hijos del contenedor
+      for (var i = 0; i < hijos.length; i++) {
+      var hijo = hijos[i];
 
-  // Verificar si el hijo es 'linksMA' y si está visible
-  if (hijo.id === 'linksMA' || hijo.style.display !== 'none') {
-    linksMAVisible = true;
-  }
+      // Verificar si el hijo es 'linksMA' y si está visible
+      if (hijo.id === 'linksMA' || hijo.style.display !== 'none') {
+      linksMAVisible = true;
+      }
 
-  // Verificar si el hijo es 'imgs-entrenos' y si está visible
-  if (hijo.className === 'imgs-entrenos' || hijo.style.display !== 'none') {
-    imgsEntrenosVisible = true;
-  }
-}
+      // Verificar si el hijo es 'imgs-entrenos' y si está visible
+      if (hijo.className === 'imgs-entrenos' || hijo.style.display !== 'none') {
+      imgsEntrenosVisible = true;
+      }
+      }
 
-// Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
-if (linksMAVisible && imgsEntrenosVisible) {
-  document.getElementById('linksMA').style.display = 'none';
-  document.getElementById('contImgEntrenos').style.display = 'none';
-}
+      // Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
+      if (linksMAVisible && imgsEntrenosVisible) {
+      document.getElementById('linksMA').style.display = 'none';
+      document.getElementById('contImgEntrenos').style.display = 'none';
+      }
 
 
-/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/      
+       /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/      
       const contGrafitos = document.getElementById('canvasContainer3')
       if (contGrafitos.style.display !== 'block') {
         contGrafitos.style.display = 'block'; 
@@ -1299,95 +1356,169 @@ if (linksMAVisible && imgsEntrenosVisible) {
         contGrafitos.style.display = 'none';
         conteLinksI.style.left='187px'
       }
+
+      if (arrayContador.length >= 5) {
+      /* console.log("Se alcanzó el número máximo de posiciones (5)."); */
+      return; // No agrega una nueva posición si ya se alcanzó el límite
+      }
+
+      // Si no se alcanzó el límite, agrega una nueva posición
+      if (arrayContador.length === 0) {
+      // Agrega la primera posición (1) al array
+      arrayContador.push(1);
+      } else {
+      // Obtiene la última posición en el array y le suma 1
+      var ultimaPosicion = arrayContador[arrayContador.length - 1];
+      var nuevaPosicion = ultimaPosicion + 1;
+
+      // Agrega la nueva posición al array
+      arrayContador.push(nuevaPosicion);
+      }
+
+      // Resto de la lógica de la función mantAutonomo
+      // ...
+
+      // Puedes acceder a la posición actual en el array
+      var posicionActual = arrayContador[arrayContador.length - 1];
+      console.log('Posición actual en el array: ' + posicionActual);
+
     break;
     case 'fua':
-// Capturar el contenedor padre
-var contenedorPadre = document.getElementById('largoImpresion');
-// Obtener todos los hijos del contenedor padre
-var hijos = contenedorPadre.children;
+      // Capturar el contenedor padre
+      var contenedorPadre = document.getElementById('largoImpresion');
+      // Obtener todos los hijos del contenedor padre
+      var hijos = contenedorPadre.children;
 
-// Inicializar variables para verificar si los elementos 'linksMA' y 'imgs-entrenos' están visibles
-var linksMAVisible = false;
-var imgsEntrenosVisible = false;
+      // Inicializar variables para verificar si los elementos 'linksMA' y 'imgs-entrenos' están visibles
+      var linksMAVisible = false;
+      var imgsEntrenosVisible = false;
 
-// Iterar a través de los hijos del contenedor
-for (var i = 0; i < hijos.length; i++) {
-  var hijo = hijos[i];
+      // Iterar a través de los hijos del contenedor
+      for (var i = 0; i < hijos.length; i++) {
+      var hijo = hijos[i];
 
-  // Verificar si el hijo es 'linksMA' y si está visible
-  if (hijo.id === 'linksMA' || hijo.style.display !== 'none') {
-    linksMAVisible = true;
-  }
+      // Verificar si el hijo es 'linksMA' y si está visible
+      if (hijo.id === 'linksMA' || hijo.style.display !== 'none') {
+      linksMAVisible = true;
+      }
 
-  // Verificar si el hijo es 'imgs-entrenos' y si está visible
-  if (hijo.className === 'imgs-entrenos' || hijo.style.display !== 'none') {
-    imgsEntrenosVisible = true;
-  }
-}
+      // Verificar si el hijo es 'imgs-entrenos' y si está visible
+      if (hijo.className === 'imgs-entrenos' || hijo.style.display !== 'none') {
+      imgsEntrenosVisible = true;
+      }
+      }
 
-// Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
-if (linksMAVisible && imgsEntrenosVisible) {
-  document.getElementById('linksMA').style.display = 'none';
-  document.getElementById('contImgEntrenos').style.display = 'none';
-}
-
-/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/    
-    var contGrafColor = document.getElementById('contImagNeg')
-    var contGrafNeg = document.getElementById('contImagGraf');
-    var padreLup = document.getElementById('segundoMantaut'); 
-    padreLup.style.display='block'
-    if (contGrafColor.style.display === 'block') {
-      contGrafColor.style.display = 'none'; 
-    } else {
-      contGrafColor.style.display = 'block';
-      contGrafNeg.style.display = 'none'
-    }
-    break;
-    case 'lup':
-// Capturar el contenedor padre
-var contenedorPadre = document.getElementById('largoImpresion');
-// Obtener todos los hijos del contenedor padre
-var hijos = contenedorPadre.children;
-
-// Inicializar variables para verificar si los elementos 'linksMA' y 'imgs-entrenos' están visibles
-var linksMAVisible = false;
-var imgsEntrenosVisible = false;
-
-// Iterar a través de los hijos del contenedor
-for (var i = 0; i < hijos.length; i++) {
-  var hijo = hijos[i];
-
-  // Verificar si el hijo es 'linksMA' y si está visible
-  if (hijo.id === 'linksMA' || hijo.style.display !== 'none') {
-    linksMAVisible = true;
-  }
-
-  // Verificar si el hijo es 'imgs-entrenos' y si está visible
-  if (hijo.className === 'imgs-entrenos' || hijo.style.display !== 'none') {
-    imgsEntrenosVisible = true;
-  }}
-
-    // Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
-    if (linksMAVisible && imgsEntrenosVisible) {
+      // Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
+      if (linksMAVisible && imgsEntrenosVisible) {
       document.getElementById('linksMA').style.display = 'none';
       document.getElementById('contImgEntrenos').style.display = 'none';
-    }
+      }
+
+      /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/    
+      var contGrafColor = document.getElementById('contImagNeg')
+      /* var padreLup = document.getElementById('segundoMantaut'); 
+      padreLup.style.display='block'*/
+      if (contGrafColor.style.display === 'block') {
+      contGrafColor.style.display = 'none'; 
+      } else {
+      contGrafColor.style.display = 'block';
+      }
+
+      if (arrayContador.length >= 5) {
+      /* console.log("Se alcanzó el número máximo de posiciones (5)."); */
+      return; // No agrega una nueva posición si ya se alcanzó el límite
+      }
+
+      // Si no se alcanzó el límite, agrega una nueva posición
+      if (arrayContador.length === 0) {
+      // Agrega la primera posición (1) al array
+      arrayContador.push(1);
+      } else {
+      // Obtiene la última posición en el array y le suma 1
+      var ultimaPosicion = arrayContador[arrayContador.length - 1];
+      var nuevaPosicion = ultimaPosicion + 1;
+
+      // Agrega la nueva posición al array
+      arrayContador.push(nuevaPosicion);
+      }
+
+      // Resto de la lógica de la función mantAutonomo
+      // ...
+
+      // Puedes acceder a la posición actual en el array
+      var posicionActual = arrayContador[arrayContador.length - 1];
+      console.log('Posición actual en el array: ' + posicionActual);
+
+    break;
+    case 'lup':
+      // Capturar el contenedor padre
+      var contenedorPadre = document.getElementById('largoImpresion');
+      // Obtener todos los hijos del contenedor padre
+      var hijos = contenedorPadre.children;
+
+      // Inicializar variables para verificar si los elementos 'linksMA' y 'imgs-entrenos' están visibles
+      var linksMAVisible = false;
+      var imgsEntrenosVisible = false;
+
+      // Iterar a través de los hijos del contenedor
+      for (var i = 0; i < hijos.length; i++) {
+      var hijo = hijos[i];
+
+      // Verificar si el hijo es 'linksMA' y si está visible
+      if (hijo.id === 'linksMA' || hijo.style.display !== 'none') {
+      linksMAVisible = true;
+      }
+
+      // Verificar si el hijo es 'imgs-entrenos' y si está visible
+      if (hijo.className === 'imgs-entrenos' || hijo.style.display !== 'none') {
+      imgsEntrenosVisible = true;
+      }}
+
+      // Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
+      if (linksMAVisible && imgsEntrenosVisible) {
+      document.getElementById('linksMA').style.display = 'none';
+      document.getElementById('contImgEntrenos').style.display = 'none';
+      }
 
       /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////*/    
       var contGrafNeg = document.getElementById('contImagGraf');
-      var padreLup = document.getElementById('segundoMantaut'); 
-      var contImagNeg = document.getElementById('contImagNeg'); 
-
-      padreLup.style.display='block'
+      /*       var padreLup = document.getElementById('segundoMantaut'); 
+      padreLup.style.display='block' */
       if (contGrafNeg.style.display === 'block') {
-        contGrafNeg.style.display = 'none'; 
+      contGrafNeg.style.display = 'none'; 
       } else {
-        contGrafNeg.style.display = 'block';
-        contImagNeg.style.display = 'none'
+      contGrafNeg.style.display = 'block';
       }
+
+      if (arrayContador.length >= 5) {
+      /* console.log("Se alcanzó el número máximo de posiciones (5)."); */
+      return; // No agrega una nueva posición si ya se alcanzó el límite
+      }
+
+      // Si no se alcanzó el límite, agrega una nueva posición
+      if (arrayContador.length === 0) {
+      // Agrega la primera posición (1) al array
+      arrayContador.push(1);
+      } else {
+      // Obtiene la última posición en el array y le suma 1
+      var ultimaPosicion = arrayContador[arrayContador.length - 1];
+      var nuevaPosicion = ultimaPosicion + 1;
+
+      // Agrega la nueva posición al array
+      arrayContador.push(nuevaPosicion);
+      }
+
+      // Resto de la lógica de la función mantAutonomo
+      // ...
+
+      // Puedes acceder a la posición actual en el array
+      var posicionActual = arrayContador[arrayContador.length - 1];
+      console.log('Posición actual en el array: ' + posicionActual);
+
     break;
   default:
 }}
+
 function resetBotns() {
   var idsMA = ['canvasContainer2', 'canvasContainer3', 'contChecks', 'segundoMantaut', 'largoImpresion','contImagGraf','contImagNeg'];
 
@@ -1399,6 +1530,7 @@ function resetBotns() {
       element.style.display = 'none';
     }
   }
+  arrayContador = [];
 }
 function muestraTorres(seleccion) {
   seccionTintero.style.display = 'none';
@@ -2353,14 +2485,25 @@ function listaEntrenamientos(){
   contBotMA.style.marginTop='45px'  
 }  
 function listaEntrenamientosII(){
-  var conteneID = document.getElementById('canvasContainer2');
-  var contGrafi = document.getElementById('canvasContainer3');
-  var contGrafi2 = document.getElementById('contChecks');
-  var contGrafi3 = document.getElementById('contImagGraf');
-  var contGrafi4 = document.getElementById('contImagNeg');
-  if (conteneID.style.display === 'none' && contGrafi.style.display === 'none' && contGrafi2.style.display === 'none' && contGrafi3.style.display === 'none' && contGrafi4.style.display === 'none' ){
+  var arrayBotsMA = ['canvasContainer2', 'canvasContainer3', 'contChecks', 'contImagGraf', 'contImagNeg'];
+
+  // Variable para rastrear si al menos un elemento está visible
+  var algunVisible = false;
+  
+  // Recorre el array y verifica el estilo de cada elemento
+  arrayBotsMA.forEach(function(id) {
+    var elemento = document.getElementById(id);
+    if (elemento.style.display !== 'none') {
+      algunVisible = true;
+      return; // Sale del bucle si encuentra al menos un elemento visible
+    }
+  });
+  
+  // Si no se encontró ningún elemento visible, ejecuta la función
+  if (!algunVisible) {
     listaEntrenamientos();
   }
+
 }
 function imagenesPasoApaso(idElto){
   var contImgEntrenos = document.getElementById('contImgEntrenos')
