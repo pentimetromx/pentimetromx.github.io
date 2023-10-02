@@ -844,9 +844,11 @@ margin-right: 7px;
   animation: iridescent 4s infinite;
 }
 .linksTraining li a {
-  color: white; /* Cambiar el color del texto a blanco */
-  cursor: pointer; /* Cambiar el cursor a una mano */
-  text-decoration: none; /* Eliminar la subrayado predeterminado de los enlaces */
+  color: blue; /*Cambiar el color del texto a blanco*/
+  cursor: pointer; /*Cambiar el cursor a una mano */
+  font-size: 21px;
+  font-weight: bold;  
+/*   text-decoration: none; /* Eliminar la subrayado predeterminado de los enlaces */
 }
 .imgs-entrenos{
   display: flex;

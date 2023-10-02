@@ -1125,9 +1125,18 @@ function showNextInputChec() {
     setTimeout(showNextInputChec, 37); // Ajusta el tiempo de espera en milisegundos
   }
 }
-function mantAutonomo (opcionSeleccionada) {
+function posicionEnArray() {
+  if (arrayContador.length > 0) {
+    var lastPosition = arrayContador[arrayContador.length - 1];
+    alert('Última posición en el array: ' + lastPosition);
+  }
+  if(lastPosition === 1){
+
+  }
+}
+function mantAutonomo (idElement) {
   var conteLinksI = document.getElementById('links-inicialesI') 
-  switch (opcionSeleccionada) {
+  switch (idElement) {
     case 'troubleshooting':
       var contInput = document.getElementById('largoImpresion'); 
       var inputs = document.querySelectorAll('.inpt-class');
@@ -1164,6 +1173,32 @@ function mantAutonomo (opcionSeleccionada) {
       children[i].style.display = "none";
       }
       } 
+      // Verifica si el array ya contiene 5 posiciones
+      if (arrayContador.length >= 6) {
+      /* console.log("Se alcanzó el número máximo de posiciones (5)."); */
+      return; // No agrega una nueva posición si ya se alcanzó el límite
+      }
+
+      // Si no se alcanzó el límite, agrega una nueva posición
+      if (arrayContador.length === 0) {
+      // Agrega la primera posición (1) al array
+      arrayContador.push(1);
+      } else {
+      // Obtiene la última posición en el array y le suma 1
+      var ultimaPosicion = arrayContador[arrayContador.length - 1];
+      var nuevaPosicion = ultimaPosicion + 1;
+
+      // Agrega la nueva posición al array
+      arrayContador.push(nuevaPosicion);
+      }
+
+      // Resto de la lógica de la función mantAutonomo
+      // ...
+
+      // Puedes acceder a la posición actual en el array
+      var posicionActual = arrayContador[arrayContador.length - 1];
+      console.log('Posición actual en el array: ' + posicionActual);
+  
       
     break;
     case 'def-tipo1':
@@ -1206,7 +1241,7 @@ function mantAutonomo (opcionSeleccionada) {
       }
   
       // Verifica si el array ya contiene 5 posiciones
-      if (arrayContador.length >= 5) {
+      if (arrayContador.length >= 6) {
       /* console.log("Se alcanzó el número máximo de posiciones (5)."); */
       return; // No agrega una nueva posición si ya se alcanzó el límite
       }
@@ -1289,7 +1324,7 @@ function mantAutonomo (opcionSeleccionada) {
       }
 
       // Verifica si el array ya contiene 5 posiciones
-      if (arrayContador.length >= 5) {
+      if (arrayContador.length >= 6) {
       /* console.log("Se alcanzó el número máximo de posiciones (5)."); */
       return; // No agrega una nueva posición si ya se alcanzó el límite
       }
@@ -1357,7 +1392,7 @@ function mantAutonomo (opcionSeleccionada) {
         conteLinksI.style.left='187px'
       }
 
-      if (arrayContador.length >= 5) {
+      if (arrayContador.length >= 6) {
       /* console.log("Se alcanzó el número máximo de posiciones (5)."); */
       return; // No agrega una nueva posición si ya se alcanzó el límite
       }
@@ -1424,7 +1459,7 @@ function mantAutonomo (opcionSeleccionada) {
       contGrafColor.style.display = 'block';
       }
 
-      if (arrayContador.length >= 5) {
+      if (arrayContador.length >= 6) {
       /* console.log("Se alcanzó el número máximo de posiciones (5)."); */
       return; // No agrega una nueva posición si ya se alcanzó el límite
       }
@@ -1490,7 +1525,7 @@ function mantAutonomo (opcionSeleccionada) {
       contGrafNeg.style.display = 'block';
       }
 
-      if (arrayContador.length >= 5) {
+      if (arrayContador.length >= 6) {
       /* console.log("Se alcanzó el número máximo de posiciones (5)."); */
       return; // No agrega una nueva posición si ya se alcanzó el límite
       }
