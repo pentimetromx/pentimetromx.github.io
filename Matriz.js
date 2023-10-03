@@ -1,3 +1,4 @@
+var arrayPosicionnador = [];
 var arrayContador = [];
 var idsArray = [];
 var idsArrayEliminados = [];
@@ -1163,7 +1164,7 @@ function posicionEnArray(idElement) {
   }
 }
 function mantAutonomo (idElement) {
-  var conteLinksI = document.getElementById('links-inicialesI') 
+  var conteLinksI = document.getElementById('links-inicialesI'); 
   switch (idElement) {
     case 'troubleshooting':
       var contInput = document.getElementById('largoImpresion'); 
@@ -1184,7 +1185,7 @@ function mantAutonomo (idElement) {
       inputs[i].style.display = 'none';
       }
       }
-      // Obtener el elemento padre
+      /*// Obtener el elemento padre
       var largoImpresion = document.getElementById("largoImpresion");
       // Obtener los elementos secundarios
       var children = largoImpresion.children;
@@ -1199,33 +1200,15 @@ function mantAutonomo (idElement) {
       if (children[i].id === "contImgEntrenos" && children[i].style.display === "flex") {
       // Ocultar el elemento "contImgEntrenos" cambiando su estilo a "none"
       children[i].style.display = "none";
-      }
-      } 
-      // Verifica si el array ya contiene 5 posiciones
-      if (arrayContador.length >= 6) {
-      /* console.log("Se alcanzó el número máximo de posiciones (5)."); */
-      return; // No agrega una nueva posición si ya se alcanzó el límite
-      }
-      // Si no se alcanzó el límite, agrega una nueva posición
-      if (arrayContador.length === 0) {
-      // Agrega la primera posición (1) al array
-      arrayContador.push(1);
-      } else {
-      // Obtiene la última posición en el array y le suma 1
-      var ultimaPosicion = arrayContador[arrayContador.length - 1];
-      var nuevaPosicion = ultimaPosicion + 1;
+      }} */
 
-      // Agrega la nueva posición al array
-      arrayContador.push(nuevaPosicion);
+      if (!arrayPosicionnador.includes(idElement)) {
+        arrayPosicionnador.push(idElement);
+        console.log(arrayPosicionnador)
       }
-      // Resto de la lógica de la función mantAutonomo
-      // ...
-      // Puedes acceder a la posición actual en el array
-      var posicionActual = arrayContador[arrayContador.length - 1];
-      console.log('Posición actual en el array: ' + posicionActual);
-
+      ubicacionAutomatica()
     break;
-    case 'def-tipo1':
+    case 'canvasContainer2':
       // Capturar el contenedor padre
       var contenedorPadre = document.getElementById('largoImpresion');
       // Obtener todos los hijos del contenedor padre
@@ -1283,15 +1266,13 @@ function mantAutonomo (idElement) {
       arrayContador.push(nuevaPosicion);
       }
 
-      // Resto de la lógica de la función mantAutonomo
-      // ...
-
-      // Puedes acceder a la posición actual en el array
-      var posicionActual = arrayContador[arrayContador.length - 1];
-      console.log('Posición actual en el array: ' + posicionActual);
-
+      if (!arrayPosicionnador.includes(idElement)) {
+        arrayPosicionnador.push(idElement);
+        console.log(arrayPosicionnador)
+      }
+      ubicacionAutomatica()      
     break;
-    case 'def-tipo2':
+    case 'contChecks':
       // Capturar el contenedor padre
       var contenedorPadre = document.getElementById('largoImpresion');
       // Obtener todos los hijos del contenedor padre
@@ -1346,9 +1327,13 @@ function mantAutonomo (idElement) {
       })(i);
       }
       }
-
+      if (!arrayPosicionnador.includes(idElement)) {
+        arrayPosicionnador.push(idElement);
+        console.log(arrayPosicionnador)
+      }
+      ubicacionAutomatica()      
     break;
-    case 'ayudastrabajo':
+    case 'canvasContainer3':
       // Capturar el contenedor padre
       var contenedorPadre = document.getElementById('largoImpresion');
       // Obtener todos los hijos del contenedor padre
@@ -1407,16 +1392,13 @@ function mantAutonomo (idElement) {
       // Agrega la nueva posición al array
       arrayContador.push(nuevaPosicion);
       }
-
-      // Resto de la lógica de la función mantAutonomo
-      // ...
-
-      // Puedes acceder a la posición actual en el array
-      var posicionActual = arrayContador[arrayContador.length - 1];
-      console.log('Posición actual en el array: ' + posicionActual);
-
+      if (!arrayPosicionnador.includes(idElement)) {
+        arrayPosicionnador.push(idElement);
+        console.log(arrayPosicionnador)
+      }
+      ubicacionAutomatica()      
     break;
-    case 'fua':
+    case 'contImagNeg':
       // Capturar el contenedor padre
       var contenedorPadre = document.getElementById('largoImpresion');
       // Obtener todos los hijos del contenedor padre
@@ -1474,16 +1456,13 @@ function mantAutonomo (idElement) {
       // Agrega la nueva posición al array
       arrayContador.push(nuevaPosicion);
       }
-
-      // Resto de la lógica de la función mantAutonomo
-      // ...
-
-      // Puedes acceder a la posición actual en el array
-      var posicionActual = arrayContador[arrayContador.length - 1];
-      console.log('Posición actual en el array: ' + posicionActual);
-
+      if (!arrayPosicionnador.includes(idElement)) {
+        arrayPosicionnador.push(idElement);
+        console.log(arrayPosicionnador)
+      }
+      ubicacionAutomatica()      
     break;
-    case 'lup':
+    case 'contImagGraf':
       // Capturar el contenedor padre
       var contenedorPadre = document.getElementById('largoImpresion');
       // Obtener todos los hijos del contenedor padre
@@ -1540,44 +1519,47 @@ function mantAutonomo (idElement) {
       // Agrega la nueva posición al array
       arrayContador.push(nuevaPosicion);
       }
-
-      // Resto de la lógica de la función mantAutonomo
-      // ...
-
-      // Puedes acceder a la posición actual en el array
-      var posicionActual = arrayContador[arrayContador.length - 1];
-      console.log('Posición actual en el array: ' + posicionActual);
-
+      if (!arrayPosicionnador.includes(idElement)) {
+        arrayPosicionnador.push(idElement);
+        console.log(arrayPosicionnador)
+      }
+      ubicacionAutomatica()      
     break;
   default:
 }}
 function ubicacionAutomatica() {
-  var arrayPosicionnador = ['canvasContainer3', 'troubleshooting','contChecks', 'canvasContainer2','conti-boton', 'contImagNeg', 'contImagGraf'];
+  // Iterar a través de los elementos del array
+  for (var i = 0; i < arrayPosicionnador.length; i++) {
+    var elementoActual = document.getElementById(arrayPosicionnador[i]);
 
-  // Obtén el primer elemento del array por su ID
-  var primerElemento = document.getElementById(arrayPosicionnador[0]);
+    if (elementoActual) {
+      // Si es el primer elemento, déjalo en su posición inicial (0px)
+      if (i === 0) {
+        elementoActual.style.left = '217px';
+      } else {
+        // Obtén el elemento anterior por su ID
+        var elementoAnterior = document.getElementById(arrayPosicionnador[i - 1]);
 
-  if (primerElemento) {
-    // 1. Guardar la posición left del primer elemento en la variable 'puntoInicial'
-    var puntoInicial = primerElemento.getBoundingClientRect().left;
+        if (elementoAnterior) {
+          // 1. Capturar la posición 'left' del elemento anterior
+          var punto1 = elementoAnterior.getBoundingClientRect().left;
 
-    // 2. Guardar el ancho (width) del primer elemento en la variable 'anchoTotal'
-    var anchoTotal = primerElemento.offsetWidth;
+          // 2. Capturar el ancho (width) del elemento anterior
+          var anchoElementoAnterior = elementoAnterior.offsetWidth;
 
-    // Verifica si hay suficientes elementos en el array
-    if (arrayPosicionnador.length > 1) {
-      // Obtén el segundo elemento del array por su ID
-      var segundoElemento = document.getElementById(arrayPosicionnador[1]);
-
-      if (segundoElemento) {
-        // 3. Asignar la posición left al segundo elemento con la suma de los dos puntos anteriores
-        segundoElemento.style.left = puntoInicial + anchoTotal + 'px';
+          // 3. Posicionar el elemento actual a la derecha del elemento anterior
+          var nuevaPosicionLeft = punto1 + anchoElementoAnterior;
+          elementoActual.style.left = nuevaPosicionLeft + 'px';
+        } else {
+          console.error('El elemento anterior no se encontró en el DOM para el ID: ' + arrayPosicionnador[i - 1]);
+        }
       }
+    } else {
+      console.error('El elemento no se encontró en el DOM para el ID: ' + arrayPosicionnador[i]);
     }
-  } else {
-    console.error('El primer elemento no se encontró en el DOM');
   }
 }
+
 function resetBotns() {
   var idsMA = ['canvasContainer2', 'canvasContainer3', 'contChecks', 'segundoMantaut', 'largoImpresion','contImagGraf','contImagNeg'];
 
@@ -2536,10 +2518,10 @@ function listaEntrenamientos(){
   var contLinksMA = document.getElementById('linksMA')
   var contBotMA = document.getElementById('conti-boton')
   contTraining.style.display='flex'
-  contTraining.style.left='250px'
+  /* contTraining.style.left='7px' */
   contTraining.style.top='73px'
   contLinksMA.style.display='block'
-  contLinksMA.style.marginLeft='30px'
+  contLinksMA.style.marginLeft='427px'
   contLinksMA.style.marginTop='-16px'
   contBotMA.style.marginTop='45px'  
 }  

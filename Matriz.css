@@ -394,6 +394,7 @@ width:447px ;
   top: 77px;
 }
 .conti-boton{
+  position: absolute;
   display: flex;
   flex-direction: column;
   margin-top: 64px;
@@ -461,7 +462,7 @@ width:447px ;
   flex-direction: row;
   position: absolute;
   left: 947px;
-  top: 7px;
+  top: 77px;
   width: 200px;
   height: 800px;
 }
@@ -825,6 +826,14 @@ margin-right: 7px;
 #linkList li:hover a {
   color: black;
 }
+#linkLis{
+  position: absolute;
+}
+#contImgEntrenos{
+  position: absolute;
+  left: 977px;
+  top:15px;
+}
 @keyframes iridescent {
   0% {
     background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff);
@@ -847,7 +856,7 @@ margin-right: 7px;
   color: blue; /*Cambiar el color del texto a blanco*/
   cursor: pointer; /*Cambiar el cursor a una mano */
   font-size: 21px;
-  font-weight: bold;  
+  /* font-weight: bold; */  
 /*   text-decoration: none; /* Eliminar la subrayado predeterminado de los enlaces */
 }
 .imgs-entrenos{
@@ -1003,7 +1012,7 @@ header {
 }
 #largoImpresion{
   position: absolute;
-  left: 250px;
+  /* left: 250px; */
   top: 73px;
   display: flex; 
   flex-direction: row;
