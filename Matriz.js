@@ -180,7 +180,6 @@ function muestraBateria(elementId) {
   }
 }
 function ElementosMa(elementId) {
-
   var contenedor = document.getElementById("container8"); 
   // Recorre el array y oculta los elementos por su ID
   for (var i = 0; i < allContenedores.length; i++) {
@@ -192,26 +191,27 @@ function ElementosMa(elementId) {
   if (contPadreMA) {
     contPadreMA.style.display = 'flex';
   }
-  contenedor.style.display='block'
-  // Obtén una lista de todos los elementos de botón dentro del contenedor
-  var botones = contenedor.getElementsByTagName("button");  
-  // Itera a través de la lista de botones y establece su estilo para hacerlos visibles
-  for (var i = 0; i < botones.length; i++) {
-    var boton = botones[i];
-    boton.style.display = "inline-block"; // Cambia "inline-block" por "block" si prefieres que ocupen todo el ancho
-  }
-  for (var i = 0; i < buttonsMA.length; i++) {
-    buttonsMA[i].style.display = 'block';
-  }
-
-  resetBotns();
-
-  linkListI.style.display = "none";
+  contenedor.style.display = 'block';
+  showButtonsMAconRetraso()
+  linkListI.style.display = "none";  
   if (!idsArray.includes(elementId)) {
     idsArray.push(elementId);
     console.log(idsArray)
   }
-};
+}
+function showButtonsMAconRetraso() {
+  var botones = document.querySelectorAll('.butt-mautonomo'); // Selecciona todos los botones
+  function mostrarBotonConRetraso(i) {
+    if (i < botones.length) {
+      var boton = botones[i];
+      boton.style.display = 'inline-block';
+      setTimeout(function() {
+        mostrarBotonConRetraso(i + 1);
+      }, 150); // 100 milisegundos de retraso entre botones
+    }
+  }
+  mostrarBotonConRetraso(0); // Comienza desde el primer botón
+}
 function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);
@@ -458,7 +458,6 @@ function muestraRodillo (videoId, imageClas) {
   botMantaut.style.display='block'
   botMantaut.style.marginLeft='57px' 
   contInicial.style.left='107px'
-  /* botonMa.style.display='block' */
   videoElements.forEach(video => {
   if (video.id === videoId) {
     video.style.display = 'block'; 
@@ -610,7 +609,6 @@ function showRepuesto(elementId) {
         video.style.display = 'none';   
         } else {
         video.style.display = 'block';
-        /* video.pause(); */
         video.currentTime = 0;
         video.play();   
       }});
@@ -679,7 +677,6 @@ function showRepuesto(elementId) {
   for (var i = 0; i < elementosHijos.length; i++) {
   var elementoHijo = elementosHijos[i];
   // Realizar las operaciones que desees con cada elemento hijo aquí
-  /* console.log(elementoHijo); */
   elementoHijo.style.display='block'
   }
 
@@ -1126,47 +1123,11 @@ function showNextInputChec() {
     setTimeout(showNextInputChec, 37); // Ajusta el tiempo de espera en milisegundos
   }
 }
-function posicionEnArray(idElement) {
-  if (arrayContador.length > 0) {
-    var lastPosition = arrayContador[arrayContador.length - 1];
-    if (lastPosition === 1) {
-      var element = document.getElementById(idElement);
-      if (element && element.style) {
-        element.style.left = '4px';
-      } else {
-        console.error('idElement no es un elemento válido para establecer la propiedad left.');
-      }
-    }
-    if (lastPosition === 2) {
-      var element = document.getElementById(idElement);
-      if (element && element.style) {
-        element.style.left = '457px';
-      } else {
-        console.error('idElement no es un elemento válido para establecer la propiedad left.');
-      }
-    }
-    if (lastPosition === 3) {
-      var element = document.getElementById(idElement);
-      if (element && element.style) {
-        element.style.left = '830px';
-      } else {
-        console.error('idElement no es un elemento válido para establecer la propiedad left.');
-      }
-    }
-    if (lastPosition === 4) {
-      var element = document.getElementById(idElement);
-      if (element && element.style) {
-        element.style.left = '947px';
-      } else {
-        console.error('idElement no es un elemento válido para establecer la propiedad left.');
-      }
-    }
-  }
-}
 function mantAutonomo (idElement) {
+  var index = arrayPosicionnador.indexOf(idElement); // Buscar el índice del ID en el array
   var conteLinksI = document.getElementById('links-inicialesI'); 
   switch (idElement) {
-    case 'troubleshooting':
+    case 'troubleshooting': 
       var contInput = document.getElementById('largoImpresion'); 
       var inputs = document.querySelectorAll('.inpt-class');
       if (contInput.style.display === 'none') {
@@ -1185,129 +1146,86 @@ function mantAutonomo (idElement) {
       inputs[i].style.display = 'none';
       }
       }
-      /*// Obtener el elemento padre
-      var largoImpresion = document.getElementById("largoImpresion");
-      // Obtener los elementos secundarios
-      var children = largoImpresion.children;
-      // Iterar a través de los elementos secundarios
-      for (var i = 0; i < children.length; i++) {
-      // Verificar si el elemento tiene el id "linksMA" y si está visible
-      if (children[i].id === "linksMA" && children[i].style.display === "block") {
-      // Ocultar el elemento "linksMA" cambiando su estilo a "none"
-      children[i].style.display = "none";
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
+      if (index !== -1) {
+      // Si se encontró el ID en el array, eliminarlo
+      arrayPosicionnador.splice(index, 1);
+      } else {
+      // Si el ID no existe en el array, agrégalo
+      arrayPosicionnador.push(idElement);
       }
-      // Verificar si el elemento tiene el id "contImgEntrenos" y si está visible
-      if (children[i].id === "contImgEntrenos" && children[i].style.display === "flex") {
-      // Ocultar el elemento "contImgEntrenos" cambiando su estilo a "none"
-      children[i].style.display = "none";
-      }} */
-
-      if (!arrayPosicionnador.includes(idElement)) {
-        arrayPosicionnador.push(idElement);
-        console.log(arrayPosicionnador)
-      }
-      ubicacionAutomatica()
+      console.log(arrayPosicionnador);
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
     break;
     case 'canvasContainer2':
       // Capturar el contenedor padre
       var contenedorPadre = document.getElementById('largoImpresion');
       // Obtener todos los hijos del contenedor padre
       var hijos = contenedorPadre.children;
-
       // Inicializar variables para verificar si los elementos 'linksMA' y 'imgs-entrenos' están visibles
       var linksMAVisible = false;
       var imgsEntrenosVisible = false;
-
       // Iterar a través de los hijos del contenedor
       for (var i = 0; i < hijos.length; i++) {
       var hijo = hijos[i];
-
       // Verificar si el hijo es 'linksMA' y si está visible
       if (hijo.id === 'linksMA' || hijo.style.display !== 'none') {
       linksMAVisible = true;
       }
-
       // Verificar si el hijo es 'imgs-entrenos' y si está visible
       if (hijo.className === 'imgs-entrenos' || hijo.style.display !== 'none') {
       imgsEntrenosVisible = true;
       }
       }
-
       // Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
       if (linksMAVisible && imgsEntrenosVisible) {
       document.getElementById('linksMA').style.display = 'none';
       document.getElementById('contImgEntrenos').style.display = 'none';
       }
-
-      /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
       const conteneCanvas = document.getElementById('canvasContainer2')
       if (conteneCanvas.style.display === 'block') {
-        conteneCanvas.style.display = 'none'; 
-      } else {
-        conteneCanvas.style.display = 'block';
+        conteneCanvas.style.display = 'none';         
+       } else {
+        conteneCanvas.style.display = 'block';        
       }
-  
-      // Verifica si el array ya contiene 5 posiciones
-      if (arrayContador.length >= 6) {
-      /* console.log("Se alcanzó el número máximo de posiciones (5)."); */
-      return; // No agrega una nueva posición si ya se alcanzó el límite
-      }
-
-      // Si no se alcanzó el límite, agrega una nueva posición
-      if (arrayContador.length === 0) {
-      // Agrega la primera posición (1) al array
-      arrayContador.push(1);
-      } else {
-      // Obtiene la última posición en el array y le suma 1
-      var ultimaPosicion = arrayContador[arrayContador.length - 1];
-      var nuevaPosicion = ultimaPosicion + 1;
-
-      // Agrega la nueva posición al array
-      arrayContador.push(nuevaPosicion);
-      }
-
-      if (!arrayPosicionnador.includes(idElement)) {
+      /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+      if (index !== -1) {
+        // Si se encontró el ID en el array, eliminarlo
+        arrayPosicionnador.splice(index, 1);
+        } else {
+        // Si el ID no existe en el array, agrégalo
         arrayPosicionnador.push(idElement);
-        console.log(arrayPosicionnador)
-      }
-      ubicacionAutomatica()      
+        }
+        console.log(arrayPosicionnador);      
+      /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
     break;
     case 'contChecks':
       // Capturar el contenedor padre
       var contenedorPadre = document.getElementById('largoImpresion');
       // Obtener todos los hijos del contenedor padre
       var hijos = contenedorPadre.children;
-
       // Inicializar variables para verificar si los elementos 'linksMA' y 'imgs-entrenos' están visibles
       var linksMAVisible = false;
       var imgsEntrenosVisible = false;
-
       // Iterar a través de los hijos del contenedor
       for (var i = 0; i < hijos.length; i++) {
       var hijo = hijos[i];
-
       // Verificar si el hijo es 'linksMA' y si está visible
       if (hijo.id === 'linksMA' || hijo.style.display !== 'none') {
       linksMAVisible = true;
       }
-
       // Verificar si el hijo es 'imgs-entrenos' y si está visible
       if (hijo.className === 'imgs-entrenos' || hijo.style.display !== 'none') {
       imgsEntrenosVisible = true;
       }
       }
-
       // Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
       if (linksMAVisible && imgsEntrenosVisible) {
       document.getElementById('linksMA').style.display = 'none';
       document.getElementById('contImgEntrenos').style.display = 'none';
       }
-
-
-      /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/    
       var contCheck = document.getElementById('contChecks');
       var inpts = document.querySelectorAll('.input-class');
-
       if (contCheck.style.display === 'block') {
       // Ocultar los elementos
       contCheck.style.display = 'none';
@@ -1317,7 +1235,6 @@ function mantAutonomo (idElement) {
       } else {
       // Ejecutar la lógica si el contenedor está visible
       contCheck.style.display = 'block';
-
       // Mostrar cada input con un intervalo de 77 milisegundos
       for (var i = 0; i < inpts.length; i++) {
       (function(index) {
@@ -1327,45 +1244,42 @@ function mantAutonomo (idElement) {
       })(i);
       }
       }
-      if (!arrayPosicionnador.includes(idElement)) {
+      /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+      if (index !== -1) {
+        // Si se encontró el ID en el array, eliminarlo
+        arrayPosicionnador.splice(index, 1);
+        } else {
+        // Si el ID no existe en el array, agrégalo
         arrayPosicionnador.push(idElement);
-        console.log(arrayPosicionnador)
-      }
-      ubicacionAutomatica()      
+        }
+        console.log(arrayPosicionnador);      
+      /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
     break;
     case 'canvasContainer3':
       // Capturar el contenedor padre
       var contenedorPadre = document.getElementById('largoImpresion');
       // Obtener todos los hijos del contenedor padre
       var hijos = contenedorPadre.children;
-
       // Inicializar variables para verificar si los elementos 'linksMA' y 'imgs-entrenos' están visibles
       var linksMAVisible = false;
       var imgsEntrenosVisible = false;
-
       // Iterar a través de los hijos del contenedor
       for (var i = 0; i < hijos.length; i++) {
       var hijo = hijos[i];
-
       // Verificar si el hijo es 'linksMA' y si está visible
       if (hijo.id === 'linksMA' || hijo.style.display !== 'none') {
-      linksMAVisible = true;
-      }
+      linksMAVisible = true;      }
 
       // Verificar si el hijo es 'imgs-entrenos' y si está visible
       if (hijo.className === 'imgs-entrenos' || hijo.style.display !== 'none') {
       imgsEntrenosVisible = true;
       }
       }
-
       // Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
       if (linksMAVisible && imgsEntrenosVisible) {
       document.getElementById('linksMA').style.display = 'none';
       document.getElementById('contImgEntrenos').style.display = 'none';
       }
-
-
-       /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/      
       const contGrafitos = document.getElementById('canvasContainer3')
       if (contGrafitos.style.display !== 'block') {
         contGrafitos.style.display = 'block'; 
@@ -1374,204 +1288,118 @@ function mantAutonomo (idElement) {
         contGrafitos.style.display = 'none';
         conteLinksI.style.left='187px'
       }
-
-      if (arrayContador.length >= 6) {
-      /* console.log("Se alcanzó el número máximo de posiciones (5)."); */
-      return; // No agrega una nueva posición si ya se alcanzó el límite
-      }
-
-      // Si no se alcanzó el límite, agrega una nueva posición
-      if (arrayContador.length === 0) {
-      // Agrega la primera posición (1) al array
-      arrayContador.push(1);
-      } else {
-      // Obtiene la última posición en el array y le suma 1
-      var ultimaPosicion = arrayContador[arrayContador.length - 1];
-      var nuevaPosicion = ultimaPosicion + 1;
-
-      // Agrega la nueva posición al array
-      arrayContador.push(nuevaPosicion);
-      }
-      if (!arrayPosicionnador.includes(idElement)) {
+      /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+      if (index !== -1) {
+        // Si se encontró el ID en el array, eliminarlo
+        arrayPosicionnador.splice(index, 1);
+        } else {
+        // Si el ID no existe en el array, agrégalo
         arrayPosicionnador.push(idElement);
-        console.log(arrayPosicionnador)
-      }
-      ubicacionAutomatica()      
+        }
+        console.log(arrayPosicionnador);      
+      /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
     break;
     case 'contImagNeg':
       // Capturar el contenedor padre
       var contenedorPadre = document.getElementById('largoImpresion');
       // Obtener todos los hijos del contenedor padre
       var hijos = contenedorPadre.children;
-
       // Inicializar variables para verificar si los elementos 'linksMA' y 'imgs-entrenos' están visibles
       var linksMAVisible = false;
       var imgsEntrenosVisible = false;
-
       // Iterar a través de los hijos del contenedor
       for (var i = 0; i < hijos.length; i++) {
       var hijo = hijos[i];
-
       // Verificar si el hijo es 'linksMA' y si está visible
       if (hijo.id === 'linksMA' || hijo.style.display !== 'none') {
       linksMAVisible = true;
       }
-
       // Verificar si el hijo es 'imgs-entrenos' y si está visible
       if (hijo.className === 'imgs-entrenos' || hijo.style.display !== 'none') {
       imgsEntrenosVisible = true;
       }
       }
-
       // Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
       if (linksMAVisible && imgsEntrenosVisible) {
       document.getElementById('linksMA').style.display = 'none';
       document.getElementById('contImgEntrenos').style.display = 'none';
       }
-
       /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/    
       var contGrafColor = document.getElementById('contImagNeg')
-      /* var padreLup = document.getElementById('segundoMantaut'); 
-      padreLup.style.display='block'*/
       if (contGrafColor.style.display === 'block') {
       contGrafColor.style.display = 'none'; 
       } else {
       contGrafColor.style.display = 'block';
       }
-
-      if (arrayContador.length >= 6) {
-      /* console.log("Se alcanzó el número máximo de posiciones (5)."); */
-      return; // No agrega una nueva posición si ya se alcanzó el límite
-      }
-
-      // Si no se alcanzó el límite, agrega una nueva posición
-      if (arrayContador.length === 0) {
-      // Agrega la primera posición (1) al array
-      arrayContador.push(1);
-      } else {
-      // Obtiene la última posición en el array y le suma 1
-      var ultimaPosicion = arrayContador[arrayContador.length - 1];
-      var nuevaPosicion = ultimaPosicion + 1;
-
-      // Agrega la nueva posición al array
-      arrayContador.push(nuevaPosicion);
-      }
-      if (!arrayPosicionnador.includes(idElement)) {
+      /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+      if (index !== -1) {
+        // Si se encontró el ID en el array, eliminarlo
+        arrayPosicionnador.splice(index, 1);
+        } else {
+        // Si el ID no existe en el array, agrégalo
         arrayPosicionnador.push(idElement);
-        console.log(arrayPosicionnador)
-      }
-      ubicacionAutomatica()      
+        }
+        console.log(arrayPosicionnador);      
+      /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
     break;
     case 'contImagGraf':
       // Capturar el contenedor padre
       var contenedorPadre = document.getElementById('largoImpresion');
       // Obtener todos los hijos del contenedor padre
       var hijos = contenedorPadre.children;
-
       // Inicializar variables para verificar si los elementos 'linksMA' y 'imgs-entrenos' están visibles
       var linksMAVisible = false;
       var imgsEntrenosVisible = false;
-
       // Iterar a través de los hijos del contenedor
       for (var i = 0; i < hijos.length; i++) {
       var hijo = hijos[i];
-
       // Verificar si el hijo es 'linksMA' y si está visible
       if (hijo.id === 'linksMA' || hijo.style.display !== 'none') {
       linksMAVisible = true;
       }
-
       // Verificar si el hijo es 'imgs-entrenos' y si está visible
       if (hijo.className === 'imgs-entrenos' || hijo.style.display !== 'none') {
       imgsEntrenosVisible = true;
       }}
-
       // Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
       if (linksMAVisible && imgsEntrenosVisible) {
       document.getElementById('linksMA').style.display = 'none';
       document.getElementById('contImgEntrenos').style.display = 'none';
       }
-
       /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////*/    
       var contGrafNeg = document.getElementById('contImagGraf');
-      /*       var padreLup = document.getElementById('segundoMantaut'); 
-      padreLup.style.display='block' */
       if (contGrafNeg.style.display === 'block') {
       contGrafNeg.style.display = 'none'; 
       } else {
       contGrafNeg.style.display = 'block';
       }
-
-      if (arrayContador.length >= 6) {
-      /* console.log("Se alcanzó el número máximo de posiciones (5)."); */
-      return; // No agrega una nueva posición si ya se alcanzó el límite
-      }
-
-      // Si no se alcanzó el límite, agrega una nueva posición
-      if (arrayContador.length === 0) {
-      // Agrega la primera posición (1) al array
-      arrayContador.push(1);
-      } else {
-      // Obtiene la última posición en el array y le suma 1
-      var ultimaPosicion = arrayContador[arrayContador.length - 1];
-      var nuevaPosicion = ultimaPosicion + 1;
-
-      // Agrega la nueva posición al array
-      arrayContador.push(nuevaPosicion);
-      }
-      if (!arrayPosicionnador.includes(idElement)) {
+      /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+      if (index !== -1) {
+        // Si se encontró el ID en el array, eliminarlo
+        arrayPosicionnador.splice(index, 1);
+        } else {
+        // Si el ID no existe en el array, agrégalo
         arrayPosicionnador.push(idElement);
-        console.log(arrayPosicionnador)
-      }
-      ubicacionAutomatica()      
+        }
+        console.log(arrayPosicionnador);      
+      /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
     break;
   default:
 }}
-function ubicacionAutomatica() {
-  // Iterar a través de los elementos del array
+function modificarPosicion(idElement) {
   for (var i = 0; i < arrayPosicionnador.length; i++) {
-    var elementoActual = document.getElementById(arrayPosicionnador[i]);
-
-    if (elementoActual) {
-      // Si es el primer elemento, déjalo en su posición inicial (0px)
-      if (i === 0) {
-        elementoActual.style.left = '217px';
-      } else {
-        // Obtén el elemento anterior por su ID
-        var elementoAnterior = document.getElementById(arrayPosicionnador[i - 1]);
-
-        if (elementoAnterior) {
-          // 1. Capturar la posición 'left' del elemento anterior
-          var punto1 = elementoAnterior.getBoundingClientRect().left;
-
-          // 2. Capturar el ancho (width) del elemento anterior
-          var anchoElementoAnterior = elementoAnterior.offsetWidth;
-
-          // 3. Posicionar el elemento actual a la derecha del elemento anterior
-          var nuevaPosicionLeft = punto1 + anchoElementoAnterior;
-          elementoActual.style.left = nuevaPosicionLeft + 'px';
-        } else {
-          console.error('El elemento anterior no se encontró en el DOM para el ID: ' + arrayPosicionnador[i - 1]);
-        }
-      }
-    } else {
-      console.error('El elemento no se encontró en el DOM para el ID: ' + arrayPosicionnador[i]);
-    }
-  }
-}
-
-function resetBotns() {
-  var idsMA = ['canvasContainer2', 'canvasContainer3', 'contChecks', 'segundoMantaut', 'largoImpresion','contImagGraf','contImagNeg'];
-
-  for (var i = 0; i < idsMA.length; i++) {
-    var elementId = idsMA[i];
-    var element = document.getElementById(elementId);
+    var elemento = document.getElementById(arrayPosicionnador[i]);
     
-    if (element) {
-      element.style.display = 'none';
+    if (elemento) {
+      if (i === 0) {
+        // Si es el primer elemento del array, modificar el 'left' a '777px'
+        elemento.style.left = '777px';
+      }
+      // Resto de la lógica aquí si es necesario para otros elementos
+    } else {
+      console.log('Elemento no encontrado en el DOM: ' + arrayPosicionnador[i]);
     }
   }
-  arrayContador = [];
 }
 function muestraTorres(seleccion) {
   seccionTintero.style.display = 'none';
@@ -2097,7 +1925,6 @@ function irContenedorAnterior() {
         ElementosMa('conteneMantaut')
       break; 
       case "rotatek-1":
-        /* cambioContenedor('rotatek-1') */
         location.reload();
       break; 
       case "frente":
@@ -2201,9 +2028,7 @@ function irContenedorAnterior() {
           for (var i = 0; i < elementosHijos.length; i++) {
           var elementoHijo = elementosHijos[i];
           // Realizar las operaciones que desees con cada elemento hijo aquí
-          /* console.log(elementoHijo); */
-          elementoHijo.style.display='block'          } 
-
+          elementoHijo.style.display='block'         } 
           cierraContenedores('desbobinador')
           contInicial.style.display='block'
           contInicial.style.marginLeft = '128px'
@@ -2229,7 +2054,6 @@ function irContenedorAnterior() {
       for (var i = 0; i < elementosHijos.length; i++) {
       var elementoHijo = elementosHijos[i];
       // Realizar las operaciones que desees con cada elemento hijo aquí
-      /* console.log(elementoHijo); */
       elementoHijo.style.display='block'
       }          
       cierraContenedores('uTeñido')
@@ -2257,7 +2081,6 @@ function irContenedorAnterior() {
           for (var i = 0; i < elementosHijos.length; i++) {
           var elementoHijo = elementosHijos[i];
           // Realizar las operaciones que desees con cada elemento hijo aquí
-          /* console.log(elementoHijo); */
           elementoHijo.style.display='block'
           }          
           cierraContenedores('alimentador')
@@ -2285,7 +2108,6 @@ function irContenedorAnterior() {
           for (var i = 0; i < elementosHijos.length; i++) {
           var elementoHijo = elementosHijos[i];
           // Realizar las operaciones que desees con cada elemento hijo aquí
-          /* console.log(elementoHijo); */
           elementoHijo.style.display='block'
           }          
           cierraContenedores('unidProceso')
@@ -2313,7 +2135,6 @@ function irContenedorAnterior() {
           for (var i = 0; i < elementosHijos.length; i++) {
           var elementoHijo = elementosHijos[i];
           // Realizar las operaciones que desees con cada elemento hijo aquí
-          /* console.log(elementoHijo); */
           elementoHijo.style.display='block'
           }          
           cierraContenedores('rebobinador')
@@ -2401,7 +2222,6 @@ function irContenedorSiguiente() {
         ElementosMa('conteneMantaut')
       break; 
       case "rotatek-1":
-        /* cambioContenedor('rotatek-1') */
         location.reload();
       break; 
       case "frente":
@@ -2518,7 +2338,6 @@ function listaEntrenamientos(){
   var contLinksMA = document.getElementById('linksMA')
   var contBotMA = document.getElementById('conti-boton')
   contTraining.style.display='flex'
-  /* contTraining.style.left='7px' */
   contTraining.style.top='73px'
   contLinksMA.style.display='block'
   contLinksMA.style.marginLeft='427px'

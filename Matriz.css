@@ -1021,3 +1021,8 @@ header {
   font-family: "GothamRounded", sans-serif;
   /* display: none; */ 
 }
+#troubleshooting{
+  position: fixed;
+  margin-top: 4px;
+  margin-left: 257px;
+}
