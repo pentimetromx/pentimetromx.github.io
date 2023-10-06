@@ -2445,6 +2445,42 @@ function toggleFullScreen(element) {
     }
   }
 }
+function deslizaContenedor(eltoDeslizante) {
+  var index = arrayPosicionnador.indexOf(eltoDeslizante); // Buscar el índice del ID en el array
+  var contenedor = document.getElementById(eltoDeslizante);  
+  // 1. Hacer visible el contenedor
+  contenedor.style.display = 'block';
+  // 2. Iniciar en la posición left=1300px
+  contenedor.style.left = '1300px';
+  // 3. Animación para desplazarse hacia la izquierda
+  var inicio = 1300;
+  var destino = 257;
+  var velocidad = 500; // px por 0.1s
+  var duracion = Math.abs(destino - inicio) / velocidad * 100; // en milisegundos
+  // Usar requestAnimationFrame para la animación suave
+  var inicioTiempo = null;
+  function animar(tiempo) {
+    if (!inicioTiempo) inicioTiempo = tiempo;
+    var progreso = (tiempo - inicioTiempo) / duracion;
+    var izquierda = inicio + progreso * (destino - inicio);
+    if (progreso < 1) {
+      contenedor.style.left = izquierda + 'px';
+      requestAnimationFrame(animar);
+    } else {
+      contenedor.style.left = destino + 'px';
+    }
+  }
+  requestAnimationFrame(animar);
+  if (index !== -1) {
+    // Si se encontró el ID en el array, eliminarlo
+    arrayPosicionnador.splice(index, 1);
+    } else {
+    // Si el ID no existe en el array, agrégalo
+    arrayPosicionnador.push(eltoDeslizante);
+   }
+   console.log(arrayPosicionnador);
+}
+
 var chart = new Chart(miCanvas, {
     type: 'bar',    
     data: {
