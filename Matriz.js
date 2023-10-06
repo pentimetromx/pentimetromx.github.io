@@ -111,15 +111,6 @@ function VolveraInicio(){
   idsArray = [];
   idsArrayEliminados = [];
 }
-function ocultaMA () {
-  var contenedorPrincipal = document.getElementById('conteneMantaut');
-  var hijosDelContenedor = contenedorPrincipal.children;
-  
-  for (var i = 0; i < hijosDelContenedor.length; i++) {
-    var hijo = hijosDelContenedor[i];
-      hijo.style.display = 'none';    
-  }
-}
 function botoGrand() {
   var button = document.querySelector('.boton-a');
   // Guardar estilos originales
@@ -1399,11 +1390,12 @@ function resetBotns(){
     if (elemento.style.display !== 'none') {
       elemento.style.display = 'none';
     }
-  });
+  }); 
   contProblema.style.display='none'
   contProblema2.style.display='none'
   arrayPosicionnador = [];
   console.log(arrayPosicionnador)
+  deslizaContenedor()
 }
 
 function modificarPosicion() {   
@@ -2449,7 +2441,7 @@ function deslizaContenedor(eltoDeslizante) {
   var index = arrayPosicionnador.indexOf(eltoDeslizante); // Buscar el índice del ID en el array
   var contenedor = document.getElementById(eltoDeslizante);  
   // 1. Hacer visible el contenedor
-  contenedor.style.display = 'block';
+  contenedor.style.display = 'flex';
   // 2. Iniciar en la posición left=1300px
   contenedor.style.left = '1300px';
   // 3. Animación para desplazarse hacia la izquierda
