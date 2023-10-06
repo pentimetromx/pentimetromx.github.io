@@ -364,15 +364,14 @@ width:447px ;
   display: none;
 }
 .inpt-class{
-  display: none;
   width: 200px;
   border-radius: 7px;
   background-color: rgb(211, 255, 204);
   margin-bottom: 11px;
   transition: background-color 0.3s, color 0.3s;
-
 }
-.inpt-class.botnClass:hover {
+.inpt-class,
+.botnClass:hover {
   background-color: gray;
   color: red;
 }
@@ -447,7 +446,6 @@ width:447px ;
 .labl-class{
   font-family: "GothamRounded", sans-serif;
   color: yellow;
-  display: flex;
 }
 #canvasContainer2 {
   display: none;
@@ -786,11 +784,11 @@ margin-right: 7px;
   top: 30px;
   width: 257px;
   height:auto;
-  display: none;
   list-style: none;
   padding: 0;
   position: absolute;
   background-color: blue;
+  display: none;
   z-index: 7;
 }
 #linkList {
@@ -828,11 +826,17 @@ margin-right: 7px;
 }
 #linkLis{
   position: absolute;
+  width: 477px;
+} 
+#linksMA{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 47px;
 }
 #contImgEntrenos{
   position: absolute;
-  left: 977px;
-  top:15px;
+  left: 997px;
 }
 @keyframes iridescent {
   0% {
@@ -865,7 +869,7 @@ margin-right: 7px;
   position: relative;
   display: none;
   left: 17px;
-  top: 27PX;
+  top: 17PX;
 }
 .imgs-entrenos img{
   width: 220px;
@@ -1012,17 +1016,28 @@ header {
 }
 #largoImpresion{
   position: absolute;
-  /* left: 250px; */
   top: 73px;
   display: flex; 
-  flex-direction: row;
+  flex-direction: column;
   color: white;
-  display: none;
   font-family: "GothamRounded", sans-serif;
-  /* display: none; */ 
 }
 #troubleshooting{
-  position: fixed;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 257px;
   margin-top: 4px;
-  margin-left: 257px;
+  display: none;
+}
+
+/* Para ocultar elementos */
+elemento {
+  opacity: 0;
+  transition: opacity 0.3s ease; /* Agrega una transición suave si lo deseas */
+}
+
+/* Para hacerlos visibles nuevamente */
+elemento.visible {
+  opacity: 1;
 }
