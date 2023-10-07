@@ -950,152 +950,6 @@ function muestraLados(anguloSel){
       default:
     }
 } 
-
-// Obtén todas las imágenes con la clase "aumentar"
-const imagenesAumentar = document.querySelectorAll('img.aumentar');
-
-// Agrega un evento click a cada imagen con la clase "aumentar"
-imagenesAumentar.forEach(image => {
-  image.addEventListener('click', () => {
-    if (!document.fullscreenElement) {
-      if (image.requestFullscreen) {
-        image.requestFullscreen();
-      } else if (image.mozRequestFullScreen) { // Firefox
-        image.mozRequestFullScreen();
-      } else if (image.webkitRequestFullscreen) { // Chrome, Safari y Opera
-        image.webkitRequestFullscreen();
-      } else if (image.msRequestFullscreen) { // IE/Edge
-        image.msRequestFullscreen();
-      }
-    } else {
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
-      } else if (document.mozCancelFullScreen) { // Firefox
-        document.mozCancelFullScreen();
-      } else if (document.webkitExitFullscreen) { // Chrome, Safari y Opera
-        document.webkitExitFullscreen();
-      } else if (document.msExitFullscreen) { // IE/Edge
-        document.msExitFullscreen();
-      }
-    }
-  });
-});
-
-//////////////////////////////////////////////////////////////////////////
-
-// Recorrer todos los botones y hacerlos visibles
-botones.forEach(function(boton) {
-var id = boton.getAttribute('id');
-alternarVisibilidad(id);
-});
-document.addEventListener('DOMContentLoaded', () => {
-  const botonesB = document.querySelectorAll('.boton-b');
-  const botonesC = document.querySelectorAll('.boton-c');
-  const botonesD = document.querySelectorAll('.boton-d');
-  const botonesE = document.querySelectorAll('.boton-e');
-
-  async function cambioColorTemporal(boton) {
-    const originalColor = boton.getAttribute('data-original-color');
-    
-   // Cambia el color de fondo del botón a blanco y espera 80 milisegundos
-   boton.style.backgroundColor = 'white';
-   await new Promise(resolve => setTimeout(resolve, 80));
-   
-   // Cambia el color a azul y espera nuevamente
-   boton.style.backgroundColor = 'blue';
-   await new Promise(resolve => setTimeout(resolve, 80));  
-   boton.style.backgroundColor = 'green';
-   await new Promise(resolve => setTimeout(resolve, 80));
-   boton.style.backgroundColor = 'red';
-   await new Promise(resolve => setTimeout(resolve, 80));
-   boton.style.backgroundColor = 'yellow';
-   await new Promise(resolve => setTimeout(resolve, 80));
-   boton.style.backgroundColor = 'black';
-   await new Promise(resolve => setTimeout(resolve, 80));    
-
-   // Restaura el color original del botón
-   boton.style.backgroundColor = originalColor;
-  }
-
-  function recorrerYCambiarColores(botones) {
-    let indiceActual = 0;
-
-    async function recorrerBotones() {
-      await cambioColorTemporal(botones[indiceActual]);
-
-      indiceActual = (indiceActual + 1) % botones.length;
-
-      if (indiceActual === 0) {
-        clearInterval(intervalId);
-      }
-    }
-
-    const intervalId = setInterval(recorrerBotones, 30);
-  }
-
-  // Llama a la función para los botones con ID 'boton-b'
-  recorrerYCambiarColores(botonesB);
-
-  // Llama a la función para los botones 'boton-c'
-  recorrerYCambiarColores(botonesC);
-
-  // Llama a la función para los botones con ID 'boton-d'
-  recorrerYCambiarColores(botonesD);
-
-    // Llama a la función para los botones con ID 'boton-e'
-    recorrerYCambiarColores(botonesE);
-})
-document.addEventListener("DOMContentLoaded", function() {
-  toggleVideoButton.addEventListener("click", function() {
-    video.pause();
-  })
-
-});
-// LOGICA PARA FULL SCREEN A IMAGENES
-images.forEach(image => {
-  let isFullscreen = false;
-  image.addEventListener('click', () => {
-    if (!isFullscreen) {
-      if (image.requestFullscreen) {
-        image.requestFullscreen();
-      } else if (image.mozRequestFullScreen) {
-        image.mozRequestFullScreen();
-      } else if (image.webkitRequestFullscreen) {
-        image.webkitRequestFullscreen();
-      } else if (image.msRequestFullscreen) {
-        image.msRequestFullscreen();
-      }
-    } else {
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
-      } else if (document.mozCancelFullScreen) {
-        document.mozCancelFullScreen();
-      } else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen();
-      } else if (document.msExitFullscreen) {
-        document.msExitFullscreen();
-      }
-    }
-    isFullscreen = !isFullscreen;
-  });
-});
-// Iterar a través de las imágenes y agregar eventos de mouse
-imageElementsi.forEach((image, index) => {
-  // Añadir el evento de aumento de tamaño al hacer clic
-  image.addEventListener('click', () => {
-    // Guardar el tamaño original para volver a él después
-    const originalWidth = image.width;
-    const originalHeight = image.height;
-    // Aumentar el tamaño de la imagen en un 30% durante 0.1 segundos
-    image.style.transition = 'transform 0.1s';
-    image.style.transform = 'scale(1.3)';    
-    // Volver al tamaño original después de 0.1 segundos
-    setTimeout(() => {
-      image.style.transition = 'transform 0.1s';
-      image.style.transform = 'scale(1)';
-    }, 400);
-  });
-});
 function showNextInputChec() {
   var conteneChecks = document.getElementById('contChecks');
   if (conteneChecks.style.display === 'block') {
@@ -1122,63 +976,22 @@ function mantAutonomo (idElement) {
   videoBackground.style.display = 'none'; // Oculta el video
   switch (idElement) {
     case 'troubleshooting': 
-      var contProblema = document.getElementById('linksMA');
-      var contProblema2 = document.getElementById('contImgEntrenos') 
-      contProblema.style.display='none'
-      contProblema2.style.display='none'
-
-      const contTrouble = document.getElementById('troubleshooting')
-      if (contTrouble.style.display === 'flex') {
-        contTrouble.style.display = 'none';         
-       } else {
-        contTrouble.style.display = 'flex';        
-      }
-
-      /*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
+      /*//////////////////////////////////////////////////////////////////////////////////////////////////////*/
       if (index !== -1) {
-      // Si se encontró el ID en el array, eliminarlo
-      arrayPosicionnador.splice(index, 1);
-      /* modificarPosicion() */
-      } else {
-      // Si el ID no existe en el array, agrégalo
-      arrayPosicionnador.push(idElement);
-      }
-      console.log(arrayPosicionnador);
-      modificarPosicion()
+        // Si se encontró el ID en el array, eliminarlo
+        arrayPosicionnador.splice(index, 1);
+        } else {
+        // Si el ID no existe en el array, agrégalo
+        arrayPosicionnador.push(idElement);
+        }
+        console.log(arrayPosicionnador);
+    
+        deslizaContenedor(idElement);
+      /*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
+       modificarPosicion();
       /*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
     break;
     case 'canvasContainer2':
-      // Capturar el contenedor padre
-      var contenedorPadre = document.getElementById('largoImpresion');
-      // Obtener todos los hijos del contenedor padre
-      var hijos = contenedorPadre.children;
-      // Inicializar variables para verificar si los elementos 'linksMA' y 'imgs-entrenos' están visibles
-      var linksMAVisible = false;
-      var imgsEntrenosVisible = false;
-      // Iterar a través de los hijos del contenedor
-      for (var i = 0; i < hijos.length; i++) {
-      var hijo = hijos[i];
-      // Verificar si el hijo es 'linksMA' y si está visible
-      if (hijo.id === 'linksMA' || hijo.style.display !== 'none') {
-      linksMAVisible = true;
-      }
-      // Verificar si el hijo es 'imgs-entrenos' y si está visible
-      if (hijo.className === 'imgs-entrenos' || hijo.style.display !== 'none') {
-      imgsEntrenosVisible = true;
-      }
-      }
-      // Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
-      if (linksMAVisible && imgsEntrenosVisible) {
-      document.getElementById('linksMA').style.display = 'none';
-      document.getElementById('contImgEntrenos').style.display = 'none';
-      }
-      const conteneCanvas = document.getElementById('canvasContainer2')
-      if (conteneCanvas.style.display === 'block') {
-        conteneCanvas.style.display = 'none';         
-       } else {
-        conteneCanvas.style.display = 'block';        
-      }
-        /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
       if (index !== -1) {
         // Si se encontró el ID en el array, eliminarlo
         arrayPosicionnador.splice(index, 1);
@@ -1186,7 +999,10 @@ function mantAutonomo (idElement) {
         // Si el ID no existe en el array, agrégalo
         arrayPosicionnador.push(idElement);
        }
-       console.log(arrayPosicionnador);    
+       console.log(arrayPosicionnador);       
+
+       deslizaContenedor(idElement);
+        /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/   
        modificarPosicion()
         /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
     break;
@@ -1397,28 +1213,34 @@ function resetBotns(){
   console.log(arrayPosicionnador)
   deslizaContenedor()
 }
+function modificarPosicion() {  
+  // Valor fijo para el primer elemento
+  var destino = '257px';
 
-function modificarPosicion() {   
-  var leftValue = '257px'; // Valor fijo para el primer elemento
+  // Iterar a través de los IDs y calcular la posición left
+  arrayPosicionnador.forEach(function(id) {
+  // Seleccionar el elemento por su ID
+  var elemento = document.getElementById(id);
 
-  for (var i = 0; i < arrayPosicionnador.length; i++) {
-    var elemento = arrayPosicionnador[i];
-    var elementoAnterior = document.getElementById(arrayPosicionnador[i - 1]);
+  if (elemento) {
+    // Asignar el valor de destino como posición left al elemento actual
+    elemento.style.left = destino;
 
-    if (i > 0 && elementoAnterior) {
-      var leftAnterior = elementoAnterior.style.left;
-      var widthAnterior = elementoAnterior.clientWidth;
+    // Obtener el ancho (width) de cada elemento
+    var width = window.getComputedStyle(elemento).getPropertyValue('width');
+    
+    // Eliminar 'px' del valor y convertirlo a un número
+    var ancho = parseFloat(width);
 
-      // Calcula el nuevo valor left sumando la posición left anterior y el ancho anterior
-      leftValue = parseInt(leftAnterior) + widthAnterior + 'px';
-    }
+    // Calcular la nueva posición left para el próximo elemento
+    destino = parseInt(destino) + ancho + 'px';
 
-    // Asigna el nuevo valor left al elemento actual
-    var elementoActual = document.getElementById(elemento);
-    if (elementoActual) {
-      elementoActual.style.left = leftValue;
-    }
+    // Mostrar la posición en la consola
+    console.log(id + " - posicion left:", destino);
+  } else {
+    console.error("Elemento con ID '" + id + "' no encontrado.");
   }
+}); 
 }
 function muestraTorres(seleccion) {
   seccionTintero.style.display = 'none';
@@ -2437,14 +2259,13 @@ function toggleFullScreen(element) {
     }
   }
 }
-function deslizaContenedor(eltoDeslizante) {
-  var index = arrayPosicionnador.indexOf(eltoDeslizante); // Buscar el índice del ID en el array
-  var contenedor = document.getElementById(eltoDeslizante);  
+function deslizaContenedor(idElement) {
+  var contenedor = document.getElementById(idElement);  
   // 1. Hacer visible el contenedor
-  contenedor.style.display = 'flex';
+  contenedor.style.display = 'block';
   // 2. Iniciar en la posición left=1300px
   contenedor.style.left = '1300px';
-  // 3. Animación para desplazarse hacia la izquierda
+  // 3. Animación para desplazarse hacia la izquierda 
   var inicio = 1300;
   var destino = 257;
   var velocidad = 500; // px por 0.1s
@@ -2460,19 +2281,151 @@ function deslizaContenedor(eltoDeslizante) {
       requestAnimationFrame(animar);
     } else {
       contenedor.style.left = destino + 'px';
-    }
-  }
+    }}
   requestAnimationFrame(animar);
-  if (index !== -1) {
-    // Si se encontró el ID en el array, eliminarlo
-    arrayPosicionnador.splice(index, 1);
-    } else {
-    // Si el ID no existe en el array, agrégalo
-    arrayPosicionnador.push(eltoDeslizante);
-   }
-   console.log(arrayPosicionnador);
 }
+// Obtén todas las imágenes con la clase "aumentar"
+const imagenesAumentar = document.querySelectorAll('img.aumentar');
+// Agrega un evento click a cada imagen con la clase "aumentar"
+imagenesAumentar.forEach(image => {
+  image.addEventListener('click', () => {
+    if (!document.fullscreenElement) {
+      if (image.requestFullscreen) {
+        image.requestFullscreen();
+      } else if (image.mozRequestFullScreen) { // Firefox
+        image.mozRequestFullScreen();
+      } else if (image.webkitRequestFullscreen) { // Chrome, Safari y Opera
+        image.webkitRequestFullscreen();
+      } else if (image.msRequestFullscreen) { // IE/Edge
+        image.msRequestFullscreen();
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) { // Chrome, Safari y Opera
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) { // IE/Edge
+        document.msExitFullscreen();
+      }
+    }
+  });
+});
+//////////////////////////////////////////////////////////////////////////
+// Recorrer todos los botones y hacerlos visibles
+botones.forEach(function(boton) {
+var id = boton.getAttribute('id');
+alternarVisibilidad(id);
+});
+document.addEventListener('DOMContentLoaded', () => {
+  const botonesB = document.querySelectorAll('.boton-b');
+  const botonesC = document.querySelectorAll('.boton-c');
+  const botonesD = document.querySelectorAll('.boton-d');
+  const botonesE = document.querySelectorAll('.boton-e');
 
+  async function cambioColorTemporal(boton) {
+  const originalColor = boton.getAttribute('data-original-color');
+  
+  // Cambia el color de fondo del botón a blanco y espera 80 milisegundos
+  boton.style.backgroundColor = 'white';
+  await new Promise(resolve => setTimeout(resolve, 80));
+  
+  // Cambia el color a azul y espera nuevamente
+  boton.style.backgroundColor = 'blue';
+  await new Promise(resolve => setTimeout(resolve, 80));  
+  boton.style.backgroundColor = 'green';
+  await new Promise(resolve => setTimeout(resolve, 80));
+  boton.style.backgroundColor = 'red';
+  await new Promise(resolve => setTimeout(resolve, 80));
+  boton.style.backgroundColor = 'yellow';
+  await new Promise(resolve => setTimeout(resolve, 80));
+  boton.style.backgroundColor = 'black';
+  await new Promise(resolve => setTimeout(resolve, 80));    
+
+  // Restaura el color original del botón
+  boton.style.backgroundColor = originalColor;
+  }
+
+  function recorrerYCambiarColores(botones) {
+    let indiceActual = 0;
+
+    async function recorrerBotones() {
+      await cambioColorTemporal(botones[indiceActual]);
+
+      indiceActual = (indiceActual + 1) % botones.length;
+
+      if (indiceActual === 0) {
+        clearInterval(intervalId);
+      }
+    }
+
+    const intervalId = setInterval(recorrerBotones, 30);
+  }
+
+  // Llama a la función para los botones con ID 'boton-b'
+  recorrerYCambiarColores(botonesB);
+
+  // Llama a la función para los botones 'boton-c'
+  recorrerYCambiarColores(botonesC);
+
+  // Llama a la función para los botones con ID 'boton-d'
+  recorrerYCambiarColores(botonesD);
+
+    // Llama a la función para los botones con ID 'boton-e'
+    recorrerYCambiarColores(botonesE);
+})
+document.addEventListener("DOMContentLoaded", function() {
+  toggleVideoButton.addEventListener("click", function() {
+    video.pause();
+  })
+
+});
+// LOGICA PARA FULL SCREEN A IMAGENES
+images.forEach(image => {
+  let isFullscreen = false;
+  image.addEventListener('click', () => {
+    if (!isFullscreen) {
+      if (image.requestFullscreen) {
+        image.requestFullscreen();
+      } else if (image.mozRequestFullScreen) {
+        image.mozRequestFullScreen();
+      } else if (image.webkitRequestFullscreen) {
+        image.webkitRequestFullscreen();
+      } else if (image.msRequestFullscreen) {
+        image.msRequestFullscreen();
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      }
+    }
+    isFullscreen = !isFullscreen;
+  });
+});
+// Iterar a través de las imágenes y agregar eventos de mouse
+imageElementsi.forEach((image, index) => {
+  // Añadir el evento de aumento de tamaño al hacer clic
+  image.addEventListener('click', () => {
+    // Guardar el tamaño original para volver a él después
+    const originalWidth = image.width;
+    const originalHeight = image.height;
+    // Aumentar el tamaño de la imagen en un 30% durante 0.1 segundos
+    image.style.transition = 'transform 0.1s';
+    image.style.transform = 'scale(1.3)';    
+    // Volver al tamaño original después de 0.1 segundos
+    setTimeout(() => {
+      image.style.transition = 'transform 0.1s';
+      image.style.transform = 'scale(1)';
+    }, 400);
+  });
+});
 var chart = new Chart(miCanvas, {
     type: 'bar',    
     data: {
@@ -2751,11 +2704,9 @@ linkListI.addEventListener("mouseout", () => {
   }, 7);
 });
 /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
 const suggestionsList = document.getElementById('suggestions'); // Agrega el elemento datalist
-
 // Definir una lista de sugerencias (puedes cargarla desde una fuente externa si es necesario)
 const sugerencias = [
   'inicio',
@@ -2779,7 +2730,6 @@ const sugerencias = [
   'contraPresion',
   'impresor',
 ];
-
 // Agregamos un evento para manejar la búsqueda
 searchForm.addEventListener('submit', function (e) {
   e.preventDefault(); // Evita que se envíe el formulario
@@ -2866,12 +2816,10 @@ searchForm.addEventListener('submit', function (e) {
   }
 });
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-
 // Obtén los elementos canvas de canvasContainer2 y canvasContainer3
 const canvasElements2 = document.querySelectorAll('#canvasContainer2 canvas');
 const canvasElements3 = document.querySelectorAll('#canvasContainer3 canvas');
 const canvasElements4 = document.querySelectorAll('#contChecks input')
-
 // Función para agregar/eliminar pantalla completa a un elemento
 // Agrega un evento click a cada elemento canvas en canvasContainer2
 canvasElements2.forEach(canvas => {
