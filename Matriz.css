@@ -404,16 +404,25 @@ width:447px ;
   flex-direction: column;
   position: absolute;
   left: 250px;
-  top: 477px;
+  top: 78px;
   display: none;
 }
+#contImagGraf img{
+  width:117px;
+  height:489px;
+}
+
 #contImagNeg {
   display: flex;
   flex-direction: column;
   position: absolute;
-  left: 477px;
-  top: 477px;
-  display: none;
+  left: 1057px;
+  top: 77px;
+  display: none;  
+}
+#contImagNeg img{
+  width:117px;
+  height:490px;
 }
 
 /*/////////////////////////////////////////////// */
@@ -448,16 +457,16 @@ width:447px ;
   color: yellow;
 }
 #canvasContainer2 {
-  display: none;
-  flex-direction: row;
+  display: flex;
+  flex-direction: column;
   position: absolute;
   left: 457px;
   top: 72px;
   width: 350px;
 }
 #canvasContainer3{
-  display: none;
-  flex-direction: row;
+  display: flex;
+  flex-direction: column;
   position: absolute;
   left: 947px;
   top: 77px;
@@ -1027,6 +1036,7 @@ header {
   flex-direction: column;
   position: absolute;
   left: 257px;
+  width: 207px;
   margin-top: 4px;
 }
 

@@ -1,5 +1,6 @@
 var arrayPosicionnador = [];
 var arrayContador = [];
+var destino = 257;
 var idsArray = [];
 var idsArrayEliminados = [];
 var idsMA = ['canvasContainer2', 'canvasContainer3', 'contChecks', 'segundoMantaut','largoImpresion'];
@@ -968,42 +969,23 @@ function showNextInputChec() {
     setTimeout(showNextInputChec, 37); // Ajusta el tiempo de espera en milisegundos
   }
 }
+
 function mantAutonomo (idElement) {
-  var index = arrayPosicionnador.indexOf(idElement); // Buscar el índice del ID en el array
   var conteLinksI = document.getElementById('links-inicialesI'); 
   var videoBackground = document.getElementById('videoBackground');
   videoBackground.pause();
   videoBackground.style.display = 'none'; // Oculta el video
   switch (idElement) {
-    case 'troubleshooting': 
-      /*//////////////////////////////////////////////////////////////////////////////////////////////////////*/
-      if (index !== -1) {
-        // Si se encontró el ID en el array, eliminarlo
-        arrayPosicionnador.splice(index, 1);
-        } else {
-        // Si el ID no existe en el array, agrégalo
-        arrayPosicionnador.push(idElement);
-        }
-        console.log(arrayPosicionnador);
-    
-        deslizaContenedor(idElement);
+    case 'troubleshooting':       
+        deslizarTrouble(idElement);
       /*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
-       modificarPosicion();
+       /* modificarPosicion(); */
       /*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
     break;
-    case 'canvasContainer2':
-      if (index !== -1) {
-        // Si se encontró el ID en el array, eliminarlo
-        arrayPosicionnador.splice(index, 1);
-        } else {
-        // Si el ID no existe en el array, agrégalo
-        arrayPosicionnador.push(idElement);
-       }
-       console.log(arrayPosicionnador);       
-
-       deslizaContenedor(idElement);
+    case 'canvasContainer2':   
+       deslizarCanvas2(idElement);
         /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/   
-       modificarPosicion()
+       /* modificarPosicion() */
         /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
     break;
     case 'contChecks':
@@ -1198,6 +1180,337 @@ function mantAutonomo (idElement) {
     break;
   default:
 }}
+function deslizarTrouble(idElemento) {
+  // Verificar si el elemento ya está en el array
+  if (!arrayPosicionnador.includes(idElemento)) {
+    arrayPosicionnador.push(idElemento);
+  }
+  console.log(arrayPosicionnador);
+  console.log(destino)
+}
+
+function deslizaContenedor(idElement) {
+  // Verificar si el elemento ya está en el array
+  if (!arrayPosicionnador.includes(idElement)) {
+    arrayPosicionnador.push(idElement);
+  }
+  /*   console.log(arrayPosicionnador); */
+  var contenedor = document.getElementById(idElement);  
+  // 1. Hacer visible el contenedor
+  contenedor.style.display = 'flex';
+  // 2. Iniciar en la posición left=1300px
+  contenedor.style.left = '1300px';
+  // 3. Animación para desplazarse hacia la izquierda 
+  arrayPosicionnador.forEach((element, index) => {
+    if (index === 0) {
+      console.log('Este es el primer elemento del array:', element);
+      console.log(arrayPosicionnador);
+    } else if (index === 1) {
+      destino = 357;
+      console.log('Este es el segundo elemento del array:', element);
+      console.log(arrayPosicionnador);      
+    } else if (index === 2) {
+      destino = 477;
+      console.log('Este es el tercer elemento del array:', element);
+      console.log(arrayPosicionnador);      
+    } else if (index === 3) {
+      destino = 707;      
+      console.log('Este es el cuarto elemento del array:', element);
+      console.log(arrayPosicionnador); 
+      
+      
+
+
+      var posicionInicial = null;
+      var anchoContenedor = null;
+
+
+      for (var i = 1; i < arrayPosicionnador.length; i++) {
+        var elementoActual = document.getElementById(arrayPosicionnador[i]);
+        var elementoAnterior = document.getElementById(arrayPosicionnador[i - 1]);
+      
+        if (elementoActual && elementoAnterior) {
+          var estiloAnterior = window.getComputedStyle(elementoAnterior);
+          posicionInicial = estiloAnterior.getPropertyValue('left');
+          anchoContenedor = estiloAnterior.getPropertyValue('width');
+
+/*           console.log('El left del elemento anterior es:', posicionInicial);
+          console.log('El width del elemento anterior es:', anchoContenedor); */
+
+        }
+      }
+
+
+
+
+    } else {
+      console.log('Este es un elemento adicional del array:', element);
+    }
+  });
+
+
+  var inicio = 1300;
+  var velocidad = 500; // px por 0.1s
+  var duracion = Math.abs(destino - inicio) / velocidad * 100; // en milisegundos
+  // Usar requestAnimationFrame para la animación suave
+  var inicioTiempo = null;
+  function animar(tiempo) {
+    if (!inicioTiempo) inicioTiempo = tiempo;
+    var progreso = (tiempo - inicioTiempo) / duracion;
+    var izquierda = inicio + progreso * (destino - inicio);
+    if (progreso < 1) {
+      contenedor.style.left = izquierda + 'px';
+      requestAnimationFrame(animar);
+    } else {
+      contenedor.style.left = destino + 'px';
+    }}
+  requestAnimationFrame(animar);
+}
+
+
+
+function deslizarCanvas2(idElement) {
+  var index = arrayPosicionnador.indexOf(idElement); // Buscar el índice del ID en el array
+  if (index !== -1) {
+    // Si se encontró el ID en el array, eliminarlo
+    arrayPosicionnador.splice(index, 1);
+  } else {
+    // Si el ID no existe en el array, agrégalo
+    arrayPosicionnador.push(idElement);
+  }
+  console.log(arrayPosicionnador);
+  /*////////////////////////////////////////////////////////////////////////////////////////////*/
+  var contenedor = document.getElementById('troubleshooting')
+  var contenedor1 = document.getElementById('canvasContainer2');
+  if (contenedor1) {
+    var estilo = getComputedStyle(contenedor1);
+    var left = estilo.getPropertyValue('left');1
+    var width = estilo.getPropertyValue('width');
+
+    // Convierte los valores de left y width a números
+    var leftValue = parseFloat(left);
+    var widthValue = parseFloat(width);
+
+    // Suma los valores y almacénalos en ultimaPosicion
+    var ultimaPosicion = leftValue + widthValue;
+
+    console.log(ultimaPosicion);
+  } else {
+  console.error("El contenedor con ID 'troubleshooting' no se encontró.");
+  }
+  /*////////////////////////////////////////////////////////////////////////////////////////////////*/  
+  if (contenedor1) {
+    // 1. Hacer visible el contenedor
+    contenedor1.style.display = 'block';
+    // 2. Iniciar en la posición left=1200px
+    contenedor1.style.left = '1200px';
+    // 3. Calcular el destino como la suma de left y width de troubleshooting
+    var destino = parseInt(contenedor.style.left) + contenedor.clientWidth;
+    // 4. Animación para desplazarse hacia la izquierda
+    var inicio = 1200;
+    var velocidad = 300; // 100px por 0.1s
+    var duracion = Math.abs(destino - inicio) / velocidad * 100; // en milisegundos
+    // Usar requestAnimationFrame para la animación suave
+    var inicioTiempo = null;
+
+    function animar(tiempo) {
+      if (!inicioTiempo) inicioTiempo = tiempo;
+      var progreso = (tiempo - inicioTiempo) / duracion;
+      var izquierda = inicio + progreso * (destino - inicio);
+      contenedor1.style.left = izquierda + 'px';
+    
+      if (progreso < 1) {
+        requestAnimationFrame(animar);
+      } else {
+        contenedor1.style.left = destino + 'px'
+        /* deslizarChecks(); */
+      }
+    }
+    requestAnimationFrame(animar);
+  } else {
+    console.error("Los contenedores 'troubleshooting' o 'canvasContainer2' no se encontraron.");
+  }
+}
+function deslizarChecks(idElement) {
+  var index = arrayPosicionnador.indexOf(idElement); // Buscar el índice del ID en el array
+  if (index !== -1) {
+    // Si se encontró el ID en el array, eliminarlo
+    arrayPosicionnador.splice(index, 1);
+  } else {
+    // Si el ID no existe en el array, agrégalo
+    arrayPosicionnador.push(idElement);
+  }
+  console.log(arrayPosicionnador);
+  /*//////////////////////////////////////////////////////////////////////////////////////////////*/
+  var contenedor1 = document.getElementById('contChecks');
+  var contenedor2 = document.getElementById('canvasContainer2');
+
+  if (contenedor1) {
+    // 1. Hacer visible el contenedor
+    contenedor1.style.display = 'flex';
+    // 2. Iniciar en la posición left=1200px
+    contenedor1.style.left = '1200px';
+    // 3. Calcular el destino como la suma de left y width de troubleshooting
+    var destino = parseInt(contenedor2.style.left) + contenedor2.clientWidth;
+    // 4. Animación para desplazarse hacia la izquierda
+    var inicio = 1200;
+    var velocidad = 300; // 100px por 0.1s
+    var duracion = Math.abs(destino - inicio) / velocidad * 100; // en milisegundos
+    // Usar requestAnimationFrame para la animación suave
+    var inicioTiempo = null;
+
+    function animar(tiempo) {
+      if (!inicioTiempo) inicioTiempo = tiempo;
+      var progreso = (tiempo - inicioTiempo) / duracion;
+      var izquierda = inicio + progreso * (destino - inicio);
+      contenedor1.style.left = izquierda + 'px';
+
+      if (progreso < 1) {
+        requestAnimationFrame(animar);
+      } else {
+        contenedor1.style.left = destino + 'px';
+      }
+    }
+    requestAnimationFrame(animar);
+    } else {
+    console.error("Los contenedores 'troubleshooting' o 'canvasContainer2' no se encontraron.");
+    }
+}
+function deslizarCanvas3(idElement) {
+  var index = arrayPosicionnador.indexOf(idElement); // Buscar el índice del ID en el array
+  if (index !== -1) {
+    // Si se encontró el ID en el array, eliminarlo
+    arrayPosicionnador.splice(index, 1);
+  } else {
+    // Si el ID no existe en el array, agrégalo
+    arrayPosicionnador.push(idElement);
+  }
+  console.log(arrayPosicionnador);
+  /*//////////////////////////////////////////////////////////////////////////////////////////////*/
+  var contenedor1 = document.getElementById('canvasContainer3');
+  var contenedor2 = document.getElementById('contChecks');
+
+  if (contenedor1) {
+    // 1. Hacer visible el contenedor
+    contenedor1.style.display = 'block';
+    // 2. Iniciar en la posición left=1200px
+    contenedor1.style.left = '1200px';
+    // 3. Calcular el destino como la suma de left y width de troubleshooting
+    var destino = parseInt(contenedor2.style.left) + contenedor2.clientWidth;
+    // 4. Animación para desplazarse hacia la izquierda
+    var inicio = 1200;
+    var velocidad = 300; // 100px por 0.1s
+    var duracion = Math.abs(destino - inicio) / velocidad * 100; // en milisegundos
+    // Usar requestAnimationFrame para la animación suave
+    var inicioTiempo = null;
+
+    function animar(tiempo) {
+      if (!inicioTiempo) inicioTiempo = tiempo;
+      var progreso = (tiempo - inicioTiempo) / duracion;
+      var izquierda = inicio + progreso * (destino - inicio);
+      contenedor1.style.left = izquierda + 'px';
+
+      if (progreso < 1) {
+        requestAnimationFrame(animar);
+      } else {
+        contenedor1.style.left = destino + 'px';
+      }
+    }
+    requestAnimationFrame(animar);
+    } else {
+    console.error("Los contenedores 'troubleshooting' o 'canvasContainer2' no se encontraron.");
+    }
+}
+function deslizarContImagNeg(idElement) {
+  var index = arrayPosicionnador.indexOf(idElement); // Buscar el índice del ID en el array
+  if (index !== -1) {
+    // Si se encontró el ID en el array, eliminarlo
+    arrayPosicionnador.splice(index, 1);
+  } else {
+    // Si el ID no existe en el array, agrégalo
+    arrayPosicionnador.push(idElement);
+  }
+  console.log(arrayPosicionnador);
+  /*//////////////////////////////////////////////////////////////////////////////////////////////*/
+  var contenedor1 = document.getElementById('contImagNeg');
+  var contenedor2 = document.getElementById('canvasContainer3');
+
+  if (contenedor1) {
+    // 1. Hacer visible el contenedor
+    contenedor1.style.display = 'block';
+    // 2. Iniciar en la posición left=1200px
+    contenedor1.style.left = '1200px';
+    // 3. Calcular el destino como la suma de left y width de troubleshooting
+    var destino = parseInt(contenedor2.style.left) + contenedor2.clientWidth;
+    // 4. Animación para desplazarse hacia la izquierda
+    var inicio = 1200;
+    var velocidad = 300; // 100px por 0.1s
+    var duracion = Math.abs(destino - inicio) / velocidad * 100; // en milisegundos
+    // Usar requestAnimationFrame para la animación suave
+    var inicioTiempo = null;
+
+    function animar(tiempo) {
+      if (!inicioTiempo) inicioTiempo = tiempo;
+      var progreso = (tiempo - inicioTiempo) / duracion;
+      var izquierda = inicio + progreso * (destino - inicio);
+      contenedor1.style.left = izquierda + 'px';
+
+      if (progreso < 1) {
+        requestAnimationFrame(animar);
+      } else {
+        contenedor1.style.left = destino + 'px';
+      }
+    }
+    requestAnimationFrame(animar);
+    } else {
+    console.error("Los contenedores 'troubleshooting' o 'canvasContainer2' no se encontraron.");
+    }
+}
+function deslizarContImagGraf(idElement) {
+  var index = arrayPosicionnador.indexOf(idElement); // Buscar el índice del ID en el array
+  if (index !== -1) {
+    // Si se encontró el ID en el array, eliminarlo
+    arrayPosicionnador.splice(index, 1);
+  } else {
+    // Si el ID no existe en el array, agrégalo
+    arrayPosicionnador.push(idElement);
+  }
+  console.log(arrayPosicionnador);
+  /*//////////////////////////////////////////////////////////////////////////////////////////////*/
+  var contenedor1 = document.getElementById('contImagGraf');
+  var contenedor2 = document.getElementById('contImagNeg');
+
+  if (contenedor1) {
+    // 1. Hacer visible el contenedor
+    contenedor1.style.display = 'block';
+    // 2. Iniciar en la posición left=1200px
+    contenedor1.style.left = '1200px';
+    // 3. Calcular el destino como la suma de left y width de troubleshooting
+    var destino = parseInt(contenedor2.style.left) + contenedor2.clientWidth;
+    // 4. Animación para desplazarse hacia la izquierda
+    var inicio = 1200;
+    var velocidad = 300; // 100px por 0.1s
+    var duracion = Math.abs(destino - inicio) / velocidad * 100; // en milisegundos
+    // Usar requestAnimationFrame para la animación suave
+    var inicioTiempo = null;
+
+    function animar(tiempo) {
+      if (!inicioTiempo) inicioTiempo = tiempo;
+      var progreso = (tiempo - inicioTiempo) / duracion;
+      var izquierda = inicio + progreso * (destino - inicio);
+      contenedor1.style.left = izquierda + 'px';
+
+      if (progreso < 1) {
+        requestAnimationFrame(animar);
+      } else {
+        contenedor1.style.left = destino + 'px';
+      }
+    }
+    requestAnimationFrame(animar);
+    } else {
+    console.error("Los contenedores 'troubleshooting' o 'canvasContainer2' no se encontraron.");
+    }
+}
 function resetBotns(){      
   var contProblema = document.getElementById('linksMA');
   var contProblema2 = document.getElementById('contImgEntrenos')    
@@ -2202,7 +2515,7 @@ function listaEntrenamientosII() {
       elemento.style.display = 'block'; // O el valor apropiado
     });
   }
-} 
+}   
 function listaEntrenamientos(){
   var videoBackground = document.getElementById('videoBackground');
   var contTraining = document.getElementById('largoImpresion')
@@ -2259,31 +2572,7 @@ function toggleFullScreen(element) {
     }
   }
 }
-function deslizaContenedor(idElement) {
-  var contenedor = document.getElementById(idElement);  
-  // 1. Hacer visible el contenedor
-  contenedor.style.display = 'block';
-  // 2. Iniciar en la posición left=1300px
-  contenedor.style.left = '1300px';
-  // 3. Animación para desplazarse hacia la izquierda 
-  var inicio = 1300;
-  var destino = 257;
-  var velocidad = 500; // px por 0.1s
-  var duracion = Math.abs(destino - inicio) / velocidad * 100; // en milisegundos
-  // Usar requestAnimationFrame para la animación suave
-  var inicioTiempo = null;
-  function animar(tiempo) {
-    if (!inicioTiempo) inicioTiempo = tiempo;
-    var progreso = (tiempo - inicioTiempo) / duracion;
-    var izquierda = inicio + progreso * (destino - inicio);
-    if (progreso < 1) {
-      contenedor.style.left = izquierda + 'px';
-      requestAnimationFrame(animar);
-    } else {
-      contenedor.style.left = destino + 'px';
-    }}
-  requestAnimationFrame(animar);
-}
+
 // Obtén todas las imágenes con la clase "aumentar"
 const imagenesAumentar = document.querySelectorAll('img.aumentar');
 // Agrega un evento click a cada imagen con la clase "aumentar"
@@ -2312,6 +2601,7 @@ imagenesAumentar.forEach(image => {
     }
   });
 });
+
 //////////////////////////////////////////////////////////////////////////
 // Recorrer todos los botones y hacerlos visibles
 botones.forEach(function(boton) {

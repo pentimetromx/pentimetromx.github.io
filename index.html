@@ -431,20 +431,27 @@
       </div><br>
 
       <div class="conti-boton" id="conti-boton">
-        <button class="butt-mautonomo image-trainings" id="troubleshoot" onclick="mantAutonomo('troubleshooting')">TROUBLESHOOTING</button>
-        <button class="butt-mautonomo image-trainings" id="def1" onclick="mantAutonomo('canvasContainer2')">DEFECTOS TIPO 1</button>
-        <button class="butt-mautonomo image-trainings" id="def2" onclick="mantAutonomo('contChecks')">DEFECTOS TIPO 2</button>
-        <button class="butt-mautonomo image-trainings" id="adtBut" onclick="mantAutonomo('canvasContainer3')">ADT</button>
-        <button class="butt-mautonomo image-trainings" id="fua1" onclick="mantAutonomo('contImagNeg')">FUA</button>           
-        <button class="butt-mautonomo image-trainings" id="lup" onclick="mantAutonomo('contImagGraf')">LUP</button>
-        <button class="butt-mautonomo image-trainings" id="reset" onclick="deslizaContenedor('troubleshooting')" style="background-color: red;color: white;" onclick="">RESET</button>
+        <button class="butt-mautonomo image-trainings" id="troubleshoot" onclick="deslizarTrouble('troubleshooting')">TROUBLESHOOTING</button>
+<!--         <button class="butt-mautonomo image-trainings" id="troubleshoot" onclick="mantAutonomo('troubleshooting')">TROUBLESHOOTING</button>
+ -->        <button class="butt-mautonomo image-trainings" id="def1" onclick="deslizarTrouble('canvasContainer2')">DEFECTOS TIPO 1</button>
+<!--         <button class="butt-mautonomo image-trainings" id="def1" onclick="mantAutonomo('canvasContainer2')">DEFECTOS TIPO 1</button>
+ -->        <button class="butt-mautonomo image-trainings" id="def2" onclick="deslizaContenedor('contChecks')">DEFECTOS TIPO 2</button>
+<!--         <button class="butt-mautonomo image-trainings" id="def2" onclick="mantAutonomo('contChecks')">DEFECTOS TIPO 2</button>
+ -->        <!-- <button class="butt-mautonomo image-trainings" id="adtBut" onclick="mantAutonomo('canvasContainer3')">ADT</button> -->
+        <button class="butt-mautonomo image-trainings" id="adtBut" onclick="deslizaContenedor('canvasContainer3')">ADT</button>
+        <!-- <button class="butt-mautonomo image-trainings" id="fua1" onclick="mantAutonomo('contImagNeg')">FUA</button>            -->
+        <button class="butt-mautonomo image-trainings" id="fua1" onclick="deslizaContenedor('contImagNeg')">FUA</button>           
+        <!-- <button class="butt-mautonomo image-trainings" id="lup" onclick="mantAutonomo('contImagGraf')">LUP</button> -->
+
+        <button class="butt-mautonomo image-trainings" id="lup" onclick="deslizaContenedor('contImagGraf')">LUP</button>
+        <button class="butt-mautonomo image-trainings" id="reset" onclick="resetBotns('troubleshooting')" style="background-color: red;color: white;" onclick="">RESET</button>
 
       </div> 
 
-      <div id="canvasContainer2">
+      <div id="canvasContainer2" style="display: none;">
           <canvas id="MiGrafica"></canvas> 
       </div>        
-      <div id="canvasContainer3">
+      <div id="canvasContainer3" style="display: none;">
         <canvas id="MiSegundaGrafica"></canvas><br>
         <canvas id="MiTerceraGrafica"></canvas><br>
         <canvas id="MiCuartaGrafica"></canvas>  
@@ -461,10 +468,12 @@
         <input type="checkbox" class="input-class">
       </div>    
       <div id="contImagNeg">
-        <img src="./assets/Grafico 6.JPG" alt="Gráfico de Excel 6" style="width:447px ;height: 120px;">
+        <img id="imagPixelate" src="./assets/pixelate.jpg" alt="Gráfico de Excel 6">
       </div>
+
+
       <div id="contImagGraf">
-        <img src="./assets/Excel.png" alt="Gráfico de Excel 6" style="width: 200px;height: 100px;">
+        <img src="./assets/Excel.png" alt="Gráfico de Excel 6">
       </div>      
     </div> 
     
