@@ -471,7 +471,7 @@ width:447px ;
   left: 947px;
   top: 77px;
   width: 200px;
-  height: 800px;
+  height: 490px;
 }
 #pantalla-atras,
 #pantalla-servicio,
@@ -1036,8 +1036,8 @@ header {
   flex-direction: column;
   position: absolute;
   left: 257px;
+  top: 77px;
   width: 207px;
-  margin-top: 4px;
 }
 /* Para ocultar elementos */
 elemento {

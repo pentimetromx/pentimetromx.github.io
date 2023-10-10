@@ -1180,10 +1180,8 @@ function mantAutonomo (idElement) {
     break;
   default:
 }}
-
 var botonClicado = false;
 var originalButtonColors = {}; // Objeto para almacenar los colores originales de los botones
-
 function deslizaContenedor(idElement, idButton) {
   var contImgMant = document.getElementById('contImgEntrenos');
   var contLinkMant = document.getElementById('linksMA');
@@ -1245,6 +1243,7 @@ function deslizaContenedor(idElement, idButton) {
   }
 
   console.log('El valor final de destino es:', destino);
+  console.log(arrayPosicionnador);
 
   // Cambiar el color de fondo del botón al hacer clic
   var boton = document.getElementById(idButton);
@@ -1255,8 +1254,22 @@ function deslizaContenedor(idElement, idButton) {
   boton.onclick = null;
   }  
 }
-function deslizAutomatic(){
-  setTimeout(function() {
+ function deslizAutomatic(){
+  arrayPosicionnador = [];
+  destino = 277;
+  arrayIdButtsMA.forEach(function (elto) {
+    var elemento = document.getElementById(elto);    
+    if (elemento) {
+      elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)'; // Restaura el color original
+    }
+  });
+  idsMA.forEach(function (elto) {
+    var elemento = document.getElementById(elto);    
+    if (elemento) {
+      elemento.style.display = 'none';
+    }
+  });
+  //setTimeout(function() {
     deslizaContenedor('troubleshooting', 'troubleshoot');  
     // Esperar 400 milisegundos y ejecutar la tercera función
     setTimeout(function() {
@@ -1278,7 +1291,8 @@ function deslizAutomatic(){
         }, 300);
       }, 300);
     }, 300);
-  }, 300); 
+  //}, 50); 
+  console.log('al final de la funcion ',arrayPosicionnador)
 }
 
 function resetBotns() {  
@@ -1352,7 +1366,6 @@ function resetBotns() {
   console.log(arrayPosicionnador)
 
 }
-
 function deslizarTrouble(idElemento) {
   // Verificar si el elemento ya está en el array
   if (!arrayPosicionnador.includes(idElemento)) {
@@ -2079,6 +2092,10 @@ function muestraVidColor(elementId){
 }
 function irContenedorAnterior() {
   const coleccion = document.querySelectorAll('.desbobinador, .desbobinador-I, .uTeñido, .alimentador, .unidProceso, .rebobinador, .contTorrImp');
+  var contTrouble = document.getElementById('troubleshooting')
+  if(contTrouble){
+    contTrouble.style.display = 'none'
+  }
   var previousElementID = idsArray[idsArray.length - 2];
   for (var i = 0; i < idsArray.length; i++) { 
     switch (previousElementID) { 
@@ -2142,12 +2159,10 @@ function irContenedorAnterior() {
       break; 
       case "conteneMantaut":
         var contenedorPrincipal = document.getElementById('conteneMantaut');
-        var hijosDelContenedor = contenedorPrincipal.children;
-        
+        var hijosDelContenedor = contenedorPrincipal.children;        
         for (var i = 0; i < hijosDelContenedor.length; i++) {
           var hijo = hijosDelContenedor[i];
-          var idDelHijo = hijo.id;
-          
+          var idDelHijo = hijo.id;          
           // Verificar si el ID del hijo coincide con los IDs deseados
           if (idDelHijo !== 'container8' && idDelHijo !== 'conti-boton') {
             // Ocultar el hijo si su ID no coincide

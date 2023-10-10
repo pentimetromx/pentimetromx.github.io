@@ -432,22 +432,31 @@
 
       <div class="conti-boton" id="conti-boton">
         <button class="butt-mautonomo image-trainings" id="troubleshoot" onclick="deslizaContenedor('troubleshooting','troubleshoot')">TROUBLESHOOTING</button>
-<!--         <button class="butt-mautonomo image-trainings" id="troubleshoot" onclick="mantAutonomo('troubleshooting')">TROUBLESHOOTING</button>
- -->        <button class="butt-mautonomo image-trainings" id="def1" onclick="deslizaContenedor('canvasContainer2','def1')">DEFECTOS TIPO 1</button>
-<!--         <button class="butt-mautonomo image-trainings" id="def1" onclick="mantAutonomo('canvasContainer2')">DEFECTOS TIPO 1</button>
- -->        <button class="butt-mautonomo image-trainings" id="def2" onclick="deslizaContenedor('contChecks','def2')">DEFECTOS TIPO 2</button>
-<!--         <button class="butt-mautonomo image-trainings" id="def2" onclick="mantAutonomo('contChecks')">DEFECTOS TIPO 2</button>
- -->        <!-- <button class="butt-mautonomo image-trainings" id="adtBut" onclick="mantAutonomo('canvasContainer3')">ADT</button> -->
+        <button class="butt-mautonomo image-trainings" id="def1" onclick="deslizaContenedor('canvasContainer2','def1')">DEFECTOS TIPO 1</button>
+        <button class="butt-mautonomo image-trainings" id="def2" onclick="deslizaContenedor('contChecks','def2')">DEFECTOS TIPO 2</button>
         <button class="butt-mautonomo image-trainings" id="adtBut" onclick="deslizaContenedor('canvasContainer3','adtBut')">ADT</button>
-        <!-- <button class="butt-mautonomo image-trainings" id="fua1" onclick="mantAutonomo('contImagNeg')">FUA</button>            -->
-        <button class="butt-mautonomo image-trainings" id="fua1" onclick="deslizaContenedor('contImagNeg','fua1')">FUA</button>           
-        <!-- <button class="butt-mautonomo image-trainings" id="lup" onclick="mantAutonomo('contImagGraf')">LUP</button> -->
-
+        <button class="butt-mautonomo image-trainings" id="fua1" onclick="deslizaContenedor('contImagNeg','fua1')">FUA</button>          
         <button class="butt-mautonomo image-trainings" id="lup" onclick="deslizaContenedor('contImagGraf','lup')">LUP</button>
-        <button class="butt-mautonomo image-trainings" id="reset" onclick="resetBotns('troubleshoot')" style="background-color: red;color: white;">RESET</button>
-        <button class="butt-mautonomo image-trainings" id="auto" onclick="deslizAutomatic('troubleshooting','troubleshoot')" style="background-color: red;color: white;">SHOW EVERYTHING</button>
-
+        <button class="butt-mautonomo image-trainings" id="reset" onclick="resetBotns('troubleshoot')" style="background-color: red;color: white;">Reset</button>
+        <button class="butt-mautonomo image-trainings" id="auto" onclick="deslizAutomatic('troubleshooting','troubleshoot')" style="background-color: red;color: white;">Show everything</button>
       </div> 
+
+      <div id="troubleshooting" style="display: none;">
+        <label class="labl-class" for="archivo">Largo de impresion:</label>
+        <button class="inpt-class botnClass" onclick="listaEntrenamientosII('')">Seleccionar archivo</button>
+        <label class="labl-class" for="archivo">Aditivos solución de fuente:</label>
+        <button class="inpt-class botnClass">Seleccionar archivo</button>
+        <label class="labl-class" for="archivo">Reproceso adelantado:</label>
+        <button class="inpt-class botnClass">Seleccionar archivo</button>
+        <label class="labl-class" for="archivo">Reproceso atrazado:</label>
+        <button class="inpt-class botnClass">Seleccionar archivo</button>
+        <label class="labl-class" for="archivo">Largos fuera de rango:</label>
+        <button class="inpt-class botnClass">Seleccionar archivo</button>
+        <label class="labl-class" for="archivo">Desprendimiento de mantilla:</label>
+        <button class="inpt-class botnClass">Seleccionar archivo</button>
+        <label class="labl-class" for="archivo">Problemas de teñido:</label>
+        <button class="inpt-class botnClass" id="bott-seleccion">Seleccionar archivo</button>       
+      </div>
 
       <div id="canvasContainer2" style="display: none;">
           <canvas id="MiGrafica"></canvas> 
@@ -959,8 +968,7 @@
     </div>
 
     <div id="largoImpresion" >
-
-      <div id="troubleshooting" style="display: none;">
+<!--       <div id="troubleshooting" style="display: none;">
         <label class="labl-class" for="archivo">Largo de impresion:</label>
         <button class="inpt-class botnClass" onclick="listaEntrenamientosII('')">Seleccionar archivo</button>
         <label class="labl-class" for="archivo">Aditivos solución de fuente:</label>
@@ -975,8 +983,7 @@
         <button class="inpt-class botnClass">Seleccionar archivo</button>
         <label class="labl-class" for="archivo">Problemas de teñido:</label>
         <button class="inpt-class botnClass" id="bott-seleccion">Seleccionar archivo</button>       
-      </div>
-
+      </div> -->
       <div id="linksMA"  style="margin-top: 7px;display: none;" >
         <h2 style="margin-left: 20px;width: 517px;">Largo de impresión ajustes preliminares</h2>  
         <ol class="linksTraining" id="linkLis">
