@@ -1048,4 +1048,6 @@ elemento {
 elemento.visible {
   opacity: 1;
 }
-
+.orange-text {
+  color: orange !important;
+}

@@ -108,6 +108,7 @@ idsArray.push("pantalla-inicial");
 idsArrayEliminados.push('salir');
 console.log(idsArrayEliminados);
 console.log(idsArray);
+
 function VolveraInicio(){
   location.reload();
   idsArray = [];
@@ -3222,3 +3223,15 @@ canvasElements4.forEach(input => {
     toggleFullScreen(input);
   });
 });/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+  // Obten todos los elementos con la clase "colorClick"
+  var colorClickLinks = document.querySelectorAll('.colorClick');
+
+  // Recorre todos los elementos y agrega el evento a cada uno
+  colorClickLinks.forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      link.classList.add('orange-text');
+      imagenesPasoApaso(link.getAttribute('data-imagen'));
+    });
+  });
