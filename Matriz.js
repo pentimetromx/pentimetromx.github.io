@@ -1253,8 +1253,32 @@ function deslizaContenedor(idElement, idButton) {
   }
   boton.style.backgroundColor = 'orange';
   boton.onclick = null;
-
+  }  
 }
+function deslizAutomatic(){
+  setTimeout(function() {
+    deslizaContenedor('troubleshooting', 'troubleshoot');  
+    // Esperar 400 milisegundos y ejecutar la tercera función
+    setTimeout(function() {
+      deslizaContenedor('canvasContainer2', 'def1');  
+      // Esperar 400 milisegundos y ejecutar la tercera función
+      setTimeout(function() {
+        deslizaContenedor('contChecks', 'def2');  
+        // Esperar 400 milisegundos y ejecutar la cuarta función
+        setTimeout(function() {
+          deslizaContenedor('canvasContainer3', 'adtBut');  
+          // Esperar 400 milisegundos y ejecutar la quinta función
+          setTimeout(function() {
+            deslizaContenedor('contImagNeg', 'fua1');  
+            // Esperar 400 milisegundos y ejecutar la sexta función
+            setTimeout(function() {
+              deslizaContenedor('contImagGraf', 'lup');
+            }, 300);
+          }, 300);
+        }, 300);
+      }, 300);
+    }, 300);
+  }, 300); 
 }
 
 function resetBotns() {  
