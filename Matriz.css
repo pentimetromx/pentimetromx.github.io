@@ -1039,14 +1039,13 @@ header {
   width: 207px;
   margin-top: 4px;
 }
-
 /* Para ocultar elementos */
 elemento {
   opacity: 0;
   transition: opacity 0.3s ease; /* Agrega una transición suave si lo deseas */
 }
-
 /* Para hacerlos visibles nuevamente */
 elemento.visible {
   opacity: 1;
 }
+
