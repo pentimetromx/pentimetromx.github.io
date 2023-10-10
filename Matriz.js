@@ -1195,6 +1195,14 @@ function deslizaContenedor(idElement, idButton) {
     contImgEntrenos.style.display = 'none';
   }
 
+
+  // Verificar si el elemento ya está en el array
+  if (!arrayPosicionnador.includes(idElement)) {
+    arrayPosicionnador.push(idElement);
+  
+
+
+
   // Verificar si el elemento ya está en el array
   if (!arrayPosicionnador.includes(idElement)) {
     arrayPosicionnador.push(idElement);
@@ -1245,9 +1253,9 @@ function deslizaContenedor(idElement, idButton) {
   }
   boton.style.backgroundColor = 'orange';
   boton.onclick = null;
-}
 
-// En la función resetBotns, restaura el color original de los botones
+}
+}
 
 function resetBotns() {  
   var contProblema = document.getElementById('linksMA');
@@ -1308,6 +1316,13 @@ function resetBotns() {
   }
   miBoton6.addEventListener("click", handleClickEvent6);
 
+  // Itera a través de cada ID de botón
+  arrayIdButtsMA.forEach(function (buttonId) {
+  // Obtiene el elemento del botón por su ID
+  var button = document.getElementById(buttonId);
+  // Establece el color de fondo del botón
+  button.style.backgroundColor = 'rgba(83, 82, 82, 0.678)';
+  });
 
   arrayPosicionnador = [];
   console.log(arrayPosicionnador)
