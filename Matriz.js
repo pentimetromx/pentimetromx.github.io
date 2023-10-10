@@ -4,7 +4,7 @@ var arrayContador = [];
 var destino = 257;
 var idsArray = [];
 var idsArrayEliminados = [];
-var idsMA = ['canvasContainer2', 'canvasContainer3', 'contChecks', 'segundoMantaut','largoImpresion'];
+var idsMA = ['canvasContainer2', 'canvasContainer3', 'contChecks','troubleshooting','contImagNeg','contImagGraf'];
 
 var currentID = null;
 var btnAtras = document.getElementById('bot-atras');
@@ -970,7 +970,6 @@ function showNextInputChec() {
     setTimeout(showNextInputChec, 37); // Ajusta el tiempo de espera en milisegundos
   }
 }
-
 function mantAutonomo (idElement) {
   var conteLinksI = document.getElementById('links-inicialesI'); 
   var videoBackground = document.getElementById('videoBackground');
@@ -1181,6 +1180,140 @@ function mantAutonomo (idElement) {
     break;
   default:
 }}
+
+var botonClicado = false;
+var originalButtonColors = {}; // Objeto para almacenar los colores originales de los botones
+
+function deslizaContenedor(idElement, idButton) {
+  var contImgMant = document.getElementById('contImgEntrenos');
+  var contLinkMant = document.getElementById('linksMA');
+  var elementoAnterior = null;
+  var elementoActual = null;
+
+  if (contLinkMant !== null && contImgEntrenos !== null) {
+    contLinkMant.style.display = 'none';
+    contImgEntrenos.style.display = 'none';
+  }
+
+  // Verificar si el elemento ya está en el array
+  if (!arrayPosicionnador.includes(idElement)) {
+    arrayPosicionnador.push(idElement);
+  }
+
+  var contenedor = document.getElementById(idElement);
+  contenedor.style.display = 'flex';
+  contenedor.style.left = '1300px';
+
+  var inicio = 1300;
+  var velocidad = 500;
+  var duracion = Math.abs(destino - inicio) / velocidad * 100;
+  var inicioTiempo = null;
+
+  function animar(tiempo) {
+    if (!inicioTiempo) inicioTiempo = tiempo;
+    var progreso = (tiempo - inicioTiempo) / duracion;
+    var izquierda = inicio + progreso * (destino - inicio);
+    if (progreso < 1) {
+      contenedor.style.left = izquierda + 'px';
+      requestAnimationFrame(animar);
+    } else {
+      contenedor.style.left = destino + 'px';
+    }
+  }
+
+  requestAnimationFrame(animar);
+
+  for (var i = 1; i < arrayPosicionnador.length; i++) {
+    var elementoActual = document.getElementById(arrayPosicionnador[i]);
+    var elementoAnterior = document.getElementById(arrayPosicionnador[i - 1]);
+
+    if (elementoActual && elementoAnterior) {
+      var estiloAnterior = window.getComputedStyle(elementoAnterior);
+      var posicionAnterior = parseFloat(estiloAnterior.getPropertyValue('left'));
+      var anchoAnterior = parseFloat(estiloAnterior.getPropertyValue('width'));
+
+      destino = posicionAnterior + anchoAnterior;
+    }
+  }
+
+  console.log('El valor final de destino es:', destino);
+
+  // Cambiar el color de fondo del botón al hacer clic
+  var boton = document.getElementById(idButton);
+  if (originalButtonColors[idButton] === undefined) {
+    originalButtonColors[idButton] = boton.style.backgroundColor; // Guarda el color original
+  }
+  boton.style.backgroundColor = 'orange';
+  boton.onclick = null;
+}
+
+// En la función resetBotns, restaura el color original de los botones
+
+function resetBotns() {  
+  var contProblema = document.getElementById('linksMA');
+  var contProblema2 = document.getElementById('contImgEntrenos');
+  
+  // Ocultar otros elementos y realizar otras acciones necesarias
+  contProblema.style.display = 'none';
+  contProblema2.style.display = 'none';
+  console.log(arrayPosicionnador);
+
+  idsMA.forEach(function (elto) {
+    var elemento = document.getElementById(elto);    
+    if (elemento) {
+      elemento.style.display = 'none';
+      elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)'; // Restaura el color original
+    }
+  });
+
+  arrayPosicionnador = [];
+  destino = 257;
+  // Restaurar el color original de los botones
+
+
+
+  var miBoton1 = document.getElementById("troubleshoot");
+  function handleClickEvent(event) {
+  deslizaContenedor('troubleshooting', 'troubleshoot');
+  }
+  miBoton1.addEventListener("click", handleClickEvent);
+
+  var miBoton2 = document.getElementById("def1");
+  function handleClickEvent2(event) {
+  deslizaContenedor('canvasContainer2','def1');
+  }
+  miBoton2.addEventListener("click", handleClickEvent2);
+
+  var miBoton3 = document.getElementById("def2");
+  function handleClickEvent3(event) {
+  deslizaContenedor('contChecks','def2');
+  }
+  miBoton3.addEventListener("click", handleClickEvent3);
+
+  var miBoton4 = document.getElementById("adtBut");
+  function handleClickEvent4(event) {
+  deslizaContenedor('canvasContainer3','adtBut');
+  }
+  miBoton4.addEventListener("click", handleClickEvent4);
+
+  var miBoton5 = document.getElementById("fua1");
+  function handleClickEvent5(event) {
+  deslizaContenedor('contImagNeg','fua1');
+  }
+  miBoton5.addEventListener("click", handleClickEvent5);
+
+  var miBoton6 = document.getElementById("lup");
+  function handleClickEvent6(event) {
+  deslizaContenedor('contImagGraf','lup');
+  }
+  miBoton6.addEventListener("click", handleClickEvent6);
+
+
+  arrayPosicionnador = [];
+  console.log(arrayPosicionnador)
+
+}
+
 function deslizarTrouble(idElemento) {
   // Verificar si el elemento ya está en el array
   if (!arrayPosicionnador.includes(idElemento)) {
@@ -1189,70 +1322,6 @@ function deslizarTrouble(idElemento) {
   console.log(arrayPosicionnador);
   console.log(destino)
 }
-
-function deslizaContenedor(idElement,idButton) {
-  var contImgMant = document.getElementById('contImgEntrenos')
-  var contLinkMant = document.getElementById('linksMA')
-  var elementoAnterior = null;
-  var elementoActual = null;
-
-  if (contLinkMant !== null && contImgEntrenos !== null) {
-    contLinkMant.style.display = 'none';
-    contImgEntrenos.style.display = 'none';
-  }  
-  // Verificar si el elemento ya está en el array
-  if (!arrayPosicionnador.includes(idElement)) {
-    arrayPosicionnador.push(idElement);
-  }
-
-    /*   console.log(arrayPosicionnador); */
-  var contenedor = document.getElementById(idElement);  
-  // 1. Hacer visible el contenedor
-  contenedor.style.display = 'flex';
-  // 2. Iniciar en la posición left=1300px
-  contenedor.style.left = '1300px';
-    /*////////////////////////////////////////////////////////   ANIMACION  /////////////////////////////////////////////////*/
-  // 3. Animación para desplazarse hacia la izquierda 
-    var inicio = 1300;
-    var velocidad = 500; // px por 0.1s
-    var duracion = Math.abs(destino - inicio) / velocidad * 100; // en milisegundos
-    // Usar requestAnimationFrame para la animación suave
-    var inicioTiempo = null;
-    function animar(tiempo) {
-      if (!inicioTiempo) inicioTiempo = tiempo;
-      var progreso = (tiempo - inicioTiempo) / duracion;
-      var izquierda = inicio + progreso * (destino - inicio);  
-      if (progreso < 1) {
-        contenedor.style.left = izquierda + 'px';
-        requestAnimationFrame(animar);
-      } else {
-        contenedor.style.left = destino + 'px';
-      }}
-    requestAnimationFrame(animar);
-   /*////////////////////////////////////////////////////// ALINEAR UNO AL LADO DE OTRO  ////////////////////////////////////////////////////////*/
-
-  for (var i = 1; i < arrayPosicionnador.length; i++) {
-    var elementoActual = document.getElementById(arrayPosicionnador[i]);
-    var elementoAnterior = document.getElementById(arrayPosicionnador[i - 1]);
-  
-    if (elementoActual && elementoAnterior) {
-      var estiloAnterior = window.getComputedStyle(elementoAnterior);
-      var posicionAnterior = parseFloat(estiloAnterior.getPropertyValue('left')); // Obtén 'left' del elemento anterior
-      var anchoAnterior = parseFloat(estiloAnterior.getPropertyValue('width')); // Obtén 'width' del elemento anterior
-  
-      console.log('El left del elemento anterior es:', posicionAnterior);
-      console.log('El width del elemento anterior es:', anchoAnterior);
-  
-      destino = posicionAnterior + anchoAnterior;
-    }
-  }  
-  console.log('El valor final de destino es:', destino);
-
-  var boton = document.getElementById(idButton)
-  boton.onclick = null;
-}
-
-
 function deslizarCanvas2(idElement) {
   var index = arrayPosicionnador.indexOf(idElement); // Buscar el índice del ID en el array
   if (index !== -1) {
@@ -1495,48 +1564,6 @@ function deslizarContImagGraf(idElement) {
     console.error("Los contenedores 'troubleshooting' o 'canvasContainer2' no se encontraron.");
     }
 }
-
-
-function resetBotns() {      
-  var contProblema = document.getElementById('linksMA');
-  var contProblema2 = document.getElementById('contImgEntrenos');
-
-
-  // Ocultar otros elementos y realizar otras acciones necesarias
-  contProblema.style.display = 'none';
-  contProblema2.style.display = 'none';
-  arrayPosicionnador = [];
-  console.log(arrayPosicionnador);
-}
-
-/*///////////////////////////////////////////////////////  COLOOR DE BOTON AL DAR CLICK ///////////////////////////////////////////////////////*/
-/*function cambiarColorPrimeraVez(boton) {
-  if (!boton.classList.contains('cambiadoDeColor')) {
-    boton.style.backgroundColor = 'orange';
-    boton.classList.add('cambiadoDeColor');
-  }
-}
-
-// Agregar event listeners a los botones
-document.getElementById('troubleshoot').addEventListener('click', function() {
-  cambiarColorPrimeraVez(this);
-});
-document.getElementById('def1').addEventListener('click', function() {
-  cambiarColorPrimeraVez(this);
-});
-document.getElementById('def2').addEventListener('click', function() {
-  cambiarColorPrimeraVez(this);
-});
-document.getElementById('adtBut').addEventListener('click', function() {
-  cambiarColorPrimeraVez(this);
-});
-document.getElementById('fua1').addEventListener('click', function() {
-  cambiarColorPrimeraVez(this);
-});
-document.getElementById('lup').addEventListener('click', function() {
-  cambiarColorPrimeraVez(this);
-});*/
-  /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 function modificarPosicion() {  
   // Valor fijo para el primer elemento

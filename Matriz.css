@@ -1029,7 +1029,7 @@ header {
   display: flex; 
   flex-direction: column;
   color: white;
-  font-family: "GothamRounded", sans-serif;
+  font-family: "GothamRounded", sans-serif; 
 }
 #troubleshooting{
   display: flex;
