@@ -362,6 +362,7 @@ width:447px ;
   left: 830px;
   top: 77px;
   display: none;
+  border-radius: 20px;
 }
 .inpt-class{
   width: 200px;
@@ -410,6 +411,7 @@ width:447px ;
 #contImagGraf img{
   width:117px;
   height:489px;
+  border-radius: 17px;
 }
 
 #contImagNeg {
@@ -418,11 +420,13 @@ width:447px ;
   position: absolute;
   left: 1057px;
   top: 77px;
-  display: none;  
+  display: none; 
+  border-radius: 20px; 
 }
 #contImagNeg img{
   width:117px;
   height:490px;
+  border-radius: 17px;
 }
 
 /*/////////////////////////////////////////////// */
@@ -463,6 +467,7 @@ width:447px ;
   left: 457px;
   top: 72px;
   width: 350px;
+  border-radius: 20px;
 }
 #canvasContainer3{
   display: flex;
@@ -472,6 +477,7 @@ width:447px ;
   top: 77px;
   width: 200px;
   height: 490px;
+  border-radius: 20px;
 }
 #pantalla-atras,
 #pantalla-servicio,
@@ -1038,6 +1044,7 @@ header {
   left: 257px;
   top: 77px;
   width: 207px;
+  border-radius: 20px;
 }
 /* Para ocultar elementos */
 elemento {
@@ -1048,6 +1055,11 @@ elemento {
 elemento.visible {
   opacity: 1;
 }
+
 .orange-text {
-  color: orange !important;
+  color: orange;
+}
+
+.blue-text {
+  color: blue;
 }

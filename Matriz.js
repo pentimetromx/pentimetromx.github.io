@@ -2632,17 +2632,6 @@ function listaEntrenamientos(){
   contLinksMA.style.marginTop='-16px'
   contBotMA.style.marginTop='45px'
 }
-function imagenesPasoApaso(idElto){
-  var contImgEntrenos = document.getElementById('contImgEntrenos')
-  contImgEntrenos.style.display='flex'
-  imagPasoApaso.forEach(imag => {
-  if (imag.id == idElto) {
-    imag.style.display='block'
-  }else{
-    imag.style.display='none'
-  }
- })
-}
 function toggleFullScreen(element) {
   if (!document.fullscreenElement) {
     if (element.requestFullscreen) {
@@ -2663,6 +2652,76 @@ function toggleFullScreen(element) {
       document.webkitExitFullscreen();
     } else if (document.msExitFullscreen) { // IE/Edge
       document.msExitFullscreen();
+    }
+  }
+}
+
+function imagenesPasoApaso(idElto, id) {
+  var contImgEntrenos = document.getElementById('contImgEntrenos'); 
+  var botOrange = document.getElementById(id)
+
+  switch (id) {
+    case 'vinc1':
+      botOrange.style.color = 'orange';
+      // Cambiar otros enlaces a azul
+      var botones = document.getElementsByClassName('colorClick');
+      for (var i = 0; i < botones.length; i++) {
+      if (botones[i].id !== id) {
+      botones[i].style.color = 'blue';
+      }}
+    break; 
+    case 'vinc2':
+      botOrange.style.color = 'orange';
+      // Cambiar otros enlaces a azul
+      var botones = document.getElementsByClassName('colorClick');
+      for (var i = 0; i < botones.length; i++) {
+      if (botones[i].id !== id) {
+      botones[i].style.color = 'blue';
+      }}
+     break;
+     case 'vinc3':
+      botOrange.style.color = 'orange';
+      // Cambiar otros enlaces a azul
+      var botones = document.getElementsByClassName('colorClick');
+      for (var i = 0; i < botones.length; i++) {
+      if (botones[i].id !== id) {
+      botones[i].style.color = 'blue';
+      }}
+     break; 
+     case 'vinc4':
+      botOrange.style.color = 'orange';
+      // Cambiar otros enlaces a azul
+      var botones = document.getElementsByClassName('colorClick');
+      for (var i = 0; i < botones.length; i++) {
+      if (botones[i].id !== id) {
+      botones[i].style.color = 'blue';
+      }}
+     break;          
+    default:
+  }  
+
+
+ 
+
+
+  contImgEntrenos.style.display = 'flex';
+  imagPasoApaso.forEach(imag => {
+    if (imag.id == idElto) {
+      imag.style.display = 'block';
+    } else {
+      imag.style.display = 'none';
+    }
+  });
+}
+
+function paraPrueba(imagen, id) {
+  var botones = document.querySelectorAll('.colorClick');
+
+  for (var i = 0; i < botones.length; i++) {
+    if (botones[i].id === id) {
+      botones[i].style.color = 'orange';
+    }else{
+      botones[i].style.color = 'blue';
     }
   }
 }
