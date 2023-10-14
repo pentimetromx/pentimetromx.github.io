@@ -2769,7 +2769,6 @@ function lubricaDiario(){
     var hijo = hijosDelContenedor[i];  
     hijo.style.display = 'flex';
   }
-
   var contenedorPrincipalII = document.getElementById('indicaciones-II');
   contenedorPrincipalII.style.display = 'block'
   var hijosDelContenedorII = contenedorPrincipalII.children;
@@ -2777,7 +2776,39 @@ function lubricaDiario(){
     var hijo = hijosDelContenedorII[i];  
     hijo.style.display = 'block';
   }
+}
 
+function lubricaSemanal(){ 
+  var conteLub = document.getElementById('aceitera')
+  var contLabel = document.getElementById('aceite')
+  var conteLabels = document.getElementById('indicaciones')
+  var vertLine = document.getElementById('vertcal-line')
+
+  videoElements.forEach(video => {
+    if (video) {
+      video.style.display = 'none';
+      video.play();      
+    }})
+
+  conteLub.style.display = 'none'
+  contLabel.style.display = 'none'
+  conteLabels.style.display = 'none'
+  vertLine.style.display = 'none'
+
+  var contenedorPrincipal = document.getElementById('lubri-II');
+  contenedorPrincipal.style.display = 'none'
+  var hijosDelContenedor = contenedorPrincipal.children;
+  for (var i = 0; i < hijosDelContenedor.length; i++) {
+    var hijo = hijosDelContenedor[i];  
+    hijo.style.display = 'none';
+  }
+  var contenedorPrincipalII = document.getElementById('indicaciones-II');
+  contenedorPrincipalII.style.display = 'none'
+  var hijosDelContenedorII = contenedorPrincipalII.children;
+  for (var i = 0; i < hijosDelContenedorII.length; i++) {
+    var hijo = hijosDelContenedorII[i];  
+    hijo.style.display = 'none';
+  }
 }
 
 // Obtén todas las imágenes con la clase "aumentar"
