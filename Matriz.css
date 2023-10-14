@@ -1107,7 +1107,7 @@ elemento {
   display: flex;
   flex-direction: column;
   display: none;
-  margin-left: 757px;
+  margin-left: 757px; 
   margin-top: -597px;
 }
 #indicaciones label{
@@ -1123,6 +1123,22 @@ elemento {
 #indicaciones-II label{
   margin-top: 140px;
 }
+
+ol {
+  font-family: "GothamRounded", sans-serif;
+  position: absolute;
+  left: 577px;
+  top: 177px;
+  font-size: 23px;
+  color: white;
+}
+
+ul {
+  font-family: "GothamRounded", sans-serif;
+  font-size: 23px;
+  color: white;
+}
+
 /* Para hacerlos visibles nuevamente */
 elemento.visible {
   opacity: 1;
