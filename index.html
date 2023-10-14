@@ -75,12 +75,15 @@
         <button class="boton-b" onclick="cierraContenedores('desbobinador')">DESBOBINADOR</button><br>
         <div class="contene-7" id="cont-Verticales1">
           <div class="linea-vertical"></div>
-          <button class="boton-c">Pulsadores<div class="linea-horizontal"></div></button>
+          <button class="boton-c" onclick="lubricacion ()">Lubricacion<div class="linea-horizontal"></div></button>
           <button class="boton-c">Freno<div class="linea-horizontal"></div></button>
           <button class="boton-c">Bailarina<div class="linea-horizontal"></div></button>
           <button class="boton-c">Ensarte<div class="linea-horizontal"></div></button>
           <button class="boton-c">Regulación neumática<div class="linea-horizontal"></div></button>
         </div>
+
+
+
       </div>
 
       <div class="uTeñido mostrar-cont" id="uTeñidos">  
@@ -480,12 +483,84 @@
       <div id="contImagNeg">
         <img id="imagPixelate" src="./assets/pixelate.jpg" alt="Gráfico de Excel 6">
       </div>
-
-
       <div id="contImagGraf">
         <img src="./assets/Excel.png" alt="Gráfico de Excel 6">
       </div>      
     </div> 
+
+    <div id="lubricacion" style="display: none;">
+
+      <div class="conti-boton" id="conti-boton-desb" style="left: 127px;top: 130px;">
+        <button class="butt-mautonomo butt-mautonomo-desb image-trainings" id="troubleshoot" onclick="LubricaDesbobinador()">REMALINER</button>
+        <button class="butt-mautonomo butt-mautonomo-desb image-trainings" id="def1" onclick="desliza1Contenedor('canvasContainer2','def1')">RODAMIENTOS</button>
+        <button class="butt-mautonomo butt-mautonomo-desb image-trainings" id="def2" onclick="desliza1Contenedor('contChecks','def2')">EJES</button>
+        <button class="butt-mautonomo butt-mautonomo-desb image-trainings" id="adtBut" onclick="desli1zaContenedor('canvasContainer3','adtBut')">ZONA TROQUELADO</button>
+        <button class="butt-mautonomo butt-mautonomo-desb image-trainings" id="fua1" onclick="desliza1Contenedor('contImagNeg','fua1')">SALIDA</button>          
+      </div> 
+
+      <div id="frec-lubrica" style="margin-left:357px;margin-top: 157px;">
+
+        <div>
+          <button id="lub-diario" class="butt-lub labl-lub" onclick="lubricaDiario()"></button>
+          <label class="labl-class labl-lub" style="display: none;" for="lubrica">Frecuencia diaria</label>
+        </div><br>
+
+        <div>
+          <button id="lub-semanal" class="butt-lub labl-lub"></button>
+          <label class="labl-class labl-lub" style="display: none;" for="lubrica">Frecuencia semanal</label>
+        </div><br> 
+
+        <div>
+          <button id="lub-mensual" class="butt-lub labl-lub"></button>
+          <label class="labl-class labl-lub" style="display: none;" for="lubrica">Frecuencia mensual</label>
+        </div>
+
+      </div>
+      
+      <div id="lubri-I">
+        <div id="aceite" style="position: absolute; left: 590px; top: 77px; font-size: 33px; background-color: black; width: 287px;border-radius: 7px; display: none; justify-content: center; align-items: center;">
+          <label class="labl-class" for="lubrica">ACEITE</label>
+        </div>
+
+        <video class="video-training" id="lubri-vid" style="margin-left:577px;margin-top:-167px; border-radius: 17px;height: 127px;" src="./assets/Lubricacion.mp4" autoplay loop muted></video>
+
+        <div id="aceitera">
+          <img src="./assets/aceitera.jpg" alt="aceitera-1">
+          <img src="./assets/aceite.jpg" alt="aceitera-1">
+        </div>
+
+        <div id="indicaciones">
+          <label class="labl-class labl-lub" style="display: none;" for="lubrica">Boquilla principal</label>
+          <label class="labl-class labl-lub" style="display: none;" for="lubrica">Aceitera manual</label>
+          <label class="labl-class labl-lub" style="display: none;" for="lubrica">Aceite SAE 70W</label>
+        </div>
+
+        <div class="linea-vertical-II" id="vertcal-line"></div>
+
+      </div>
+
+      <div id="lubri-II" style="position: absolute;left:177px;display: none;">
+
+        <div id="aceite" style="position: absolute; left: 777px;top: -407px; font-size: 33px; background-color: black; width: 287px;border-radius: 7px; justify-content: center; align-items: center;">
+          <label class="labl-class" for="lubrica">GRASA</label>
+        </div>
+
+        <div id="aceitera-II">
+          <img src="./assets/engrasadora.jpg" alt="aceitera-1">
+          <img src="./assets/grasera.jpg" alt="aceitera-1">
+          <img src="./assets/rodagrasa.jpg" alt="aceitera-1">
+        </div>
+
+        <div id="indicaciones-II">
+          <label class="labl-class" for="lubrica">Precarga</label>
+          <label class="labl-class" for="lubrica">Grasera transmision</label>
+          <label class="labl-class" for="lubrica">Viscosidad 80 - 120</label>
+        </div>
+
+      </div>
+
+   
+    </div>
     
     <div id="contPortPlaca" style="display: none;">
       

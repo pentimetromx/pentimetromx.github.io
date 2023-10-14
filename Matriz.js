@@ -14,7 +14,7 @@ var imgTorreI = document.getElementById('imgTorre');
 var contInicial = document.getElementById('container1');
 var botonMa = document.getElementById('bot-mantaut');
 var imagPasoApaso = document.querySelectorAll('.img1');
-var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg'];
+var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion'];
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado'];
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor'];
@@ -108,7 +108,7 @@ idsArray.push("pantalla-inicial");
 idsArrayEliminados.push('salir');
 console.log(idsArrayEliminados);
 console.log(idsArray);
-
+  
 function VolveraInicio(){
   location.reload();
   idsArray = [];
@@ -191,7 +191,7 @@ function ElementosMa(elementId) {
   if (!idsArray.includes(elementId)) {
     idsArray.push(elementId);
     console.log(idsArray)
-  }
+  }  
 }
 function showButtonsMAconRetraso() {
   var botones = document.querySelectorAll('.butt-mautonomo'); // Selecciona todos los botones
@@ -405,6 +405,8 @@ function cierraContenedores(elementId) {
           elemento.style.display = 'none';
         }
       });
+
+      video.style.display = 'none'
     break; 
     case 'uTeñido':
     coleccion.forEach(elemento => {
@@ -1183,8 +1185,8 @@ function mantAutonomo (idElement) {
 }}
 var botonClicado = false;
 var originalButtonColors = {}; // Objeto para almacenar los colores originales de los botones
+
 function deslizaContenedor(idElement, idButton) {
-  var contImgMant = document.getElementById('contImgEntrenos');
   var contLinkMant = document.getElementById('linksMA');
   var elementoAnterior = null;
   var elementoActual = null;
@@ -1194,20 +1196,13 @@ function deslizaContenedor(idElement, idButton) {
     contImgEntrenos.style.display = 'none';
   }
 
-
-  // Verificar si el elemento ya está en el array
-  if (!arrayPosicionnador.includes(idElement)) {
-    arrayPosicionnador.push(idElement);
-  
-
-
-
   // Verificar si el elemento ya está en el array
   if (!arrayPosicionnador.includes(idElement)) {
     arrayPosicionnador.push(idElement);
   }
 
   var contenedor = document.getElementById(idElement);
+  
   contenedor.style.display = 'flex';
   contenedor.style.left = '1300px';
 
@@ -1242,20 +1237,19 @@ function deslizaContenedor(idElement, idButton) {
       destino = posicionAnterior + anchoAnterior;
     }
   }
-
   console.log('El valor final de destino es:', destino);
   console.log(arrayPosicionnador);
-
   // Cambiar el color de fondo del botón al hacer clic
   var boton = document.getElementById(idButton);
   if (originalButtonColors[idButton] === undefined) {
     originalButtonColors[idButton] = boton.style.backgroundColor; // Guarda el color original
   }
   boton.style.backgroundColor = 'orange';
-  boton.onclick = null;
-  }  
+  boton.onclick = null;      
+  setTimeout(function () {    
+  }, 300);
 }
- function deslizAutomatic(){
+function deslizAutomatic(){
   arrayPosicionnador = [];
   destino = 277;
   arrayIdButtsMA.forEach(function (elto) {
@@ -1295,7 +1289,6 @@ function deslizaContenedor(idElement, idButton) {
   //}, 50); 
   console.log('al final de la funcion ',arrayPosicionnador)
 }
-
 function resetBotns() {  
   var contProblema = document.getElementById('linksMA');
   var contProblema2 = document.getElementById('contImgEntrenos');
@@ -1617,7 +1610,6 @@ function deslizarContImagGraf(idElement) {
     console.error("Los contenedores 'troubleshooting' o 'canvasContainer2' no se encontraron.");
     }
 }
-
 function modificarPosicion() {  
   // Valor fijo para el primer elemento
   var destino = '257px';
@@ -2185,7 +2177,7 @@ function irContenedorAnterior() {
         changeButtonStyles('sitema-humedad')  
       break; 
       case "pre-prensa":
-        ocultaMA();
+        /* ocultaMA(); */
         var contenedorPrincipal = document.getElementById('pre-prensa');
         var hijosDelContenedor = contenedorPrincipal.children;
         contenedorPrincipal.style.display='block'        
@@ -2200,7 +2192,7 @@ function irContenedorAnterior() {
         }
       break; 
       case "densitometria":
-        ocultaMA();
+        /* ocultaMA(); */
         var contenedorPrincipal = document.getElementById('densitometria');
         var hijosDelContenedor = contenedorPrincipal.children;
         contenedorPrincipal.style.display='block'        
@@ -2655,7 +2647,6 @@ function toggleFullScreen(element) {
     }
   }
 }
-
 function imagenesPasoApaso(idElto, id) {
   var contImgEntrenos = document.getElementById('contImgEntrenos'); 
   var botOrange = document.getElementById(id)
@@ -2713,17 +2704,80 @@ function imagenesPasoApaso(idElto, id) {
     }
   });
 }
+function lubricacion(){
+  var contLubrica = document.getElementById('lubricacion')  
+  contLubrica.style.display = 'block'
+  var contTorre = document.getElementById('rotatek-1')
 
-function paraPrueba(imagen, id) {
-  var botones = document.querySelectorAll('.colorClick');
+  if (contTorre.style.display === 'none'){
+    showButtonsMAconRetrasoDesb()
+  }
+}
 
-  for (var i = 0; i < botones.length; i++) {
-    if (botones[i].id === id) {
-      botones[i].style.color = 'orange';
-    }else{
-      botones[i].style.color = 'blue';
+function showButtonsMAconRetrasoDesb() {
+  var botones = document.querySelectorAll('.butt-mautonomo-desb'); // Selecciona todos los botones
+  function mostrarBotonConRetrasoDesb(i) {
+    if (i < botones.length) {
+      var boton = botones[i];
+      boton.style.display = 'inline-block';
+      setTimeout(function() {
+        mostrarBotonConRetrasoDesb(i + 1);
+      }, 150); // 100 milisegundos de retraso entre botones
     }
   }
+  mostrarBotonConRetrasoDesb(0); // Comienza desde el primer botón
+}
+function LubricaDesbobinador(){
+   showLablsLubricacion();
+}
+function showLablsLubricacion() {
+  var contLabelsLub = document.getElementById('frec-lubrica')
+  
+  var botones = document.querySelectorAll('.labl-lub'); // Selecciona todos los botones
+  function mostrarLabelConRetraso(i) {
+    if (i < botones.length) {
+      var boton = botones[i];
+      boton.style.display = 'inline-block';
+      setTimeout(function() {
+        mostrarLabelConRetraso(i + 1);
+      }, 150); // 100 milisegundos de retraso entre botones
+    }
+  }
+  mostrarLabelConRetraso(0); // Comienza desde el primer botón
+}
+function lubricaDiario(){
+  var conteLub = document.getElementById('aceitera')
+  var contLabel = document.getElementById('aceite')
+  var conteLabels = document.getElementById('indicaciones')
+  var vertLine = document.getElementById('vertcal-line')
+  videoElements.forEach(video => {
+  if (video.id === 'lubri-vid') {
+    video.style.display = 'block';
+    video.play();      
+  } else {
+    video.style.display = 'none';
+  }})
+  conteLub.style.display = 'flex'
+  contLabel.style.display = 'flex'
+  conteLabels.style.display = 'flex'
+  vertLine.style.display = 'flex'
+
+  var contenedorPrincipal = document.getElementById('lubri-II');
+  contenedorPrincipal.style.display = 'flex'
+  var hijosDelContenedor = contenedorPrincipal.children;
+  for (var i = 0; i < hijosDelContenedor.length; i++) {
+    var hijo = hijosDelContenedor[i];  
+    hijo.style.display = 'flex';
+  }
+
+  var contenedorPrincipalII = document.getElementById('indicaciones-II');
+  contenedorPrincipalII.style.display = 'block'
+  var hijosDelContenedorII = contenedorPrincipalII.children;
+  for (var i = 0; i < hijosDelContenedorII.length; i++) {
+    var hijo = hijosDelContenedorII[i];  
+    hijo.style.display = 'block';
+  }
+
 }
 
 // Obtén todas las imágenes con la clase "aumentar"
@@ -3125,7 +3179,7 @@ textToColorI.addEventListener("mouseover", () => {
   clearTimeout(hideTimeout);
   hoverTimeout = setTimeout(() => {
     linkListI.style.display = "block";
-    lineI.style.width = textToColorI.offsetWidth + "px";
+    lineI.style.width = textToColorI.offsetWidth + "px"; // desde aqui se llevan las variables a que se lleven los demas estados de las funciones
   }, 7);
 });
 linkListI.addEventListener("mouseover", () => {

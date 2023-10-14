@@ -217,6 +217,17 @@ transform: scale(1.1);
   background-color: white;
   content: "";
 }
+.linea-vertical-II{
+  position: absolute;
+  left: 917px;
+  top: 147px;
+  bottom: 0;
+  width: 2px;
+  height: 477px;
+  background-color: white;
+  content: "";
+  display: none;
+}
 .linea-horizontal {
   position: absolute;
   left: -12px;
@@ -1050,6 +1061,67 @@ header {
 elemento {
   opacity: 0;
   transition: opacity 0.3s ease; /* Agrega una transición suave si lo deseas */
+}
+#conti-boton-desb button{
+  margin-bottom: 38px;
+}
+#frec-lubrica{
+  display: flex;
+  flex-direction: column;
+}  
+#frec-lubrica button{
+  width: 27px;
+  height: 27px;
+  border-radius: 13px;
+  background-color: rgba(217, 255, 0, 1);
+  cursor: pointer;
+  display: none;
+}
+#aceitera{
+  display: flex;
+  flex-direction: column;
+  margin-left: 577px;
+  display: none; 
+}
+#aceitera img{
+  height: 147px;
+  width: 168.7px;
+  border-radius: 17px; 
+  margin-top: 17px;
+}
+
+#aceitera-II{
+  display: flex;
+  flex-direction: column;
+  display: none;
+  margin-top:  -333px;
+  margin-left: 777px;   
+}
+#aceitera-II img{
+  height: 141px;
+  width: 168.7px;
+  border-radius: 17px; 
+  margin-bottom: 17px;
+}
+#indicaciones{
+  display: flex;
+  flex-direction: column;
+  display: none;
+  margin-left: 757px;
+  margin-top: -597px;
+}
+#indicaciones label{
+  margin-top: 140px;
+}
+
+#indicaciones-II{
+  display: flex;
+  flex-direction: column;
+  margin-left:7px;
+  margin-top:-477px;
+}
+#indicaciones-II label{
+  margin-top: 140px;
 }
 /* Para hacerlos visibles nuevamente */
 elemento.visible {
