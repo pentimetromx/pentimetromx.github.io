@@ -866,7 +866,7 @@ var imgsManta = document.querySelectorAll('.imgMant')
   }
 }
 function muestraLados(elementId){
-  var contPadImpresor = document.getElementById('contPerfilesImpresor');
+  var contPadImpresor = document.getElementById('contPerfilesImpresor');      
   var contChildImpresor = document.getElementById('imagenes-impresor');
   var imgsImpresor = document.querySelectorAll('.imgImpresor');
   var imgImpresorI = document.getElementById('impresor');
@@ -2441,30 +2441,35 @@ function irContenedorAnterior() {
       break;
       case 'forward':
         muestraLados('forward');
+        var contImpresor = document.getElementById('contImpresor');
+        contImpresor.style.display = 'block'
+
         var boton01 = document.getElementById('bot-inic');
         boton01.style.display = 'block'
       break;
       case 'comands':
-        var idsButts = ['bot-atras', 'bot-inic','iniciar'];
-        var contIdsArray = document.getElementById('container12')
-        contIdsArray.style.display = 'block'
-        idsButts.forEach(element => {
-          var elemento = document.getElementById(element)          
-          if(elemento){
-            elemento.style.display = 'flex'
-          }
-        });
-        muestraLados('comands')
+        muestraLados('comands');
+        var contImpresor = document.getElementById('contImpresor');
+        contImpresor.style.display = 'block'
+
+        var boton01 = document.getElementById('bot-inic');
+        boton01.style.display = 'block'
       break; 
       case 'service':
-        var botonPpalForward = document.getElementById('container12');
-        botonPpalForward.style.display = 'block'
-        muestraLados('service')
+        muestraLados('service');
+        var contImpresor = document.getElementById('contImpresor');
+        contImpresor.style.display = 'block'
+
+        var boton01 = document.getElementById('bot-inic');
+        boton01.style.display = 'block'
       break;
       case 'back':
-        var botonPpalForward = document.getElementById('container12');
-        botonPpalForward.style.display = 'block'
-        muestraLados('back')
+        muestraLados('back');
+        var contImpresor = document.getElementById('contImpresor');
+        contImpresor.style.display = 'block'
+
+        var boton01 = document.getElementById('bot-inic');
+        boton01.style.display = 'block'        
       break;                   
     default:
   }}
