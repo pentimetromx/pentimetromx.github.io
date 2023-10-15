@@ -2640,6 +2640,38 @@ function irContenedorSiguiente() {
           }
         muestraAngulos('mantilla4')
       break;
+      case 'forward':
+        muestraLados('forward');
+        var contImpresor = document.getElementById('contImpresor');
+        contImpresor.style.display = 'block'
+
+        var boton01 = document.getElementById('bot-inic');
+        boton01.style.display = 'block'
+      break;
+      case 'comands':
+        muestraLados('comands');
+        var contImpresor = document.getElementById('contImpresor');
+        contImpresor.style.display = 'block'
+
+        var boton01 = document.getElementById('bot-inic');
+        boton01.style.display = 'block'
+      break; 
+      case 'service':
+        muestraLados('service');
+        var contImpresor = document.getElementById('contImpresor');
+        contImpresor.style.display = 'block'
+
+        var boton01 = document.getElementById('bot-inic');
+        boton01.style.display = 'block'
+      break;
+      case 'back':
+        muestraLados('back');
+        var contImpresor = document.getElementById('contImpresor');
+        contImpresor.style.display = 'block'
+
+        var boton01 = document.getElementById('bot-inic');
+        boton01.style.display = 'block'        
+      break;                   
     default:
     }
   }  
