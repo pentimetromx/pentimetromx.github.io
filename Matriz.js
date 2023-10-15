@@ -75,7 +75,7 @@ const imgsRepuestosIV = document.getElementById('imgsRepuestos-IV');// HIJO IMAG
 
 
 const contPadreMA = document.getElementById('conteneMantaut');
-const videoElements = document.querySelectorAll('.video-training');   
+const videoElements = document.querySelectorAll('.video-training','vidBackGrPress');   
 const video = document.getElementById("videoBackground");
 const imgsDistribuidor = document.getElementById('contImgDistribuidor');
 const imgsForma = document.getElementById('contImgEntintador');
@@ -115,21 +115,7 @@ function VolveraInicio(){
   idsArrayEliminados = [];
 }
 function botoGrand() {
-  var button = document.querySelector('.boton-a');
-  // Guardar estilos originales
-  var originalBackgroundColor = button.style.backgroundColor;
-  var originalColor = button.style.color; 
-  // Cambiar estilos con click
-  button.style.backgroundColor = 'white';
-  button.style.color = 'red';
-  // Restablecer estilos después de ... segundos
-  setTimeout(function() {
-      button.style.backgroundColor = originalBackgroundColor;
-      button.style.color = originalColor;
-  }, 300);
-  // Retardo de 0.2 segundos antes de ejecutar esta parte
-  setTimeout(function() {
-  }, 200);
+
 }
 function muestraBateria(elementId) {  
   // Recorre el array y oculta los elementos por su ID
@@ -879,27 +865,31 @@ var imgsManta = document.querySelectorAll('.imgMant')
     default:
   }
 }
-function muestraLados(anguloSel){
+function muestraLados(elementId){
   var contPadImpresor = document.getElementById('contPerfilesImpresor');
   var contChildImpresor = document.getElementById('imagenes-impresor');
-  var imgsImpresor = document.querySelectorAll('.imgImpresor')
-      switch (anguloSel) {
+  var imgsImpresor = document.querySelectorAll('.imgImpresor');
+  var imgImpresorI = document.getElementById('impresor');
+  imgImpresorI.style.display = 'none'
+      switch (elementId) {
       case 'forward':
-      videoElements.forEach(video => {
-      if (video.id == 'video-impresor') {
+        videoElements.forEach(video => {
+        if (video.id == 'video-impresor') {
         video.style.display = 'none';   
         }}); 
-  
         contPadImpresor.style.display='flex'
-        contChildImpresor.style.display='flex'
-    
+        contChildImpresor.style.display='flex'      
         imgsImpresor.forEach(function (imagen) {
-          if (imagen.id === 'impresor' || imagen.id === 'impresor1') {
-            imagen.style.display = 'block';
-          }else{
-            imagen.style.display = 'none';
-          }
+        if (imagen.id === 'impresor' || imagen.id === 'impresor1') {
+          imagen.style.display = 'block';
+        }else{
+          imagen.style.display = 'none';
+        }
         });
+        if (!idsArray.includes(elementId)) {
+          idsArray.push(elementId);
+          console.log(idsArray)
+        } 
       break;
       case 'comands':
         videoElements.forEach(video => {
@@ -917,6 +907,10 @@ function muestraLados(anguloSel){
               imagen.style.display = 'none';
             }
           });
+          if (!idsArray.includes(elementId)) {
+            idsArray.push(elementId);
+            console.log(idsArray)
+          } 
         break;     
       case 'service':
         videoElements.forEach(video => {
@@ -934,6 +928,10 @@ function muestraLados(anguloSel){
               imagen.style.display = 'none';
             }
           });
+          if (!idsArray.includes(elementId)) {
+            idsArray.push(elementId);
+            console.log(idsArray)
+          } 
       break;
       case 'back':
         videoElements.forEach(video => {
@@ -951,6 +949,10 @@ function muestraLados(anguloSel){
               imagen.style.display = 'none';
             }
           });
+          if (!idsArray.includes(elementId)) {
+            idsArray.push(elementId);
+            console.log(idsArray)
+          } 
       break;
       default:
     }
@@ -1916,12 +1918,30 @@ function abrirPilarMA(){
 }
 function abrirPrepress(elementId) {
   var linksIniciales = ['links-inicialesI', 'links-iniciales'];
+  var arrayImgPress = [];
   var contBotPress = document.getElementById('contene-11');
   var contImgsPrepress = document.getElementById('imgs-prepress');
   var videoBackground = document.getElementById('videoBackground');
-  var prePrensaElemento = document.getElementById('pre-prensa');  
+  var prePrensaElemento = document.getElementById('pre-prensa');
+  
+  contBotPress.style.display = 'block';
+  contImgsPrepress.style.display = 'block';
+  arrayImgPress.forEach(image => {
+    if(image) {
+      image.style.display = 'block'
+    }
+  })
+
   videoBackground.pause();
   videoBackground.style.display = 'none'; // Oculta el video
+
+  videoElements.forEach(video => {
+    if (video) {
+      video.pause();      
+      video.style.display = 'none';
+    }
+    });
+
   // Ocultar todos los elementos
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);
@@ -1929,8 +1949,8 @@ function abrirPrepress(elementId) {
       elemento.style.display = 'none';
     }
   }
-var contBotEspeciales = document.getElementById('conte-botDensitoII')
-contBotEspeciales.style.display='block'
+  var contBotEspeciales = document.getElementById('conte-botDensitoII')
+  contBotEspeciales.style.display='block'
 
   var botEspecial = document.getElementById('conte-botDensitoII');
   // Obtén todos los botones y guárdalos en un array
@@ -1939,9 +1959,6 @@ contBotEspeciales.style.display='block'
   for (var i = 0; i < botones.length; i++) {
       botones[i].style.display = 'flex';
   }
-
-  contBotPress.style.display = 'block';
-  contImgsPrepress.style.display = 'block';
 
   // Mostrar el elemento "pre-prensa"
   if (prePrensaElemento) {
@@ -1956,23 +1973,18 @@ contBotEspeciales.style.display='block'
       }
     }
   }
-  videoElements.forEach(video => {
-    if (video) {
-      video.style.display = 'none';
-      video.pause();      
-    }
-    });
-    const videos = document.querySelectorAll('.vidTeoria');
+  const videos = document.querySelectorAll('.vidTeoria');
     // Reproducir todos los videos simultáneamente
-        videos.forEach(video => {
-          video.style.display='block'
-            video.play();
-        });
-    linkList.style.display = "none";    
-    if (!idsArray.includes(elementId)) {
-      idsArray.push(elementId);
-      console.log(idsArray)
-    } 
+    videos.forEach(video => {
+    video.style.display='block'
+    video.play();
+  });
+
+  linkList.style.display = "none";    
+  if (!idsArray.includes(elementId)) {
+    idsArray.push(elementId);
+    console.log(idsArray)
+  } 
 }
 function abrirDensitometria(elementId){
   var densiitoElemento = document.getElementById('densitometria');  
@@ -2034,6 +2046,12 @@ function abrirDensitometria(elementId){
       }   
 }
 function muestraVidPrisma(elementId) {
+  allContenedores.forEach(contenedor => {
+  if (contenedor === 'vidColor') {
+    contenedor.style.display = 'block';         
+  }  
+  });
+  
   var contImgsTeoria = document.getElementsByClassName('imgTeoria'); // Obtén elementos por su 
   for (var i = 0; i < contImgsTeoria.length; i++) {
     var teorImage = contImgsTeoria[i]; // Accede al elemento actual
@@ -2044,19 +2062,21 @@ function muestraVidPrisma(elementId) {
     video.style.display = 'block';
     video.play();      
   } else {
+    video.pause();
     video.style.display = 'none';
   }
   });
   const videos = document.querySelectorAll('.vidTeoria');
-  // Reproducir todos los videos simultáneamente
-      videos.forEach(video => {
-          video.pause();
-          video.style.display='none'
-      });
-  if (!idsArray.includes(elementId)) {
+  // Detener todos los videos simultáneamente
+  videos.forEach(video => {
+      video.pause();
+      video.style.display='none'
+  });
+     
+  /* if (!idsArray.includes(elementId)) {
     idsArray.push(elementId);
     console.log(idsArray)
-  }   
+  } */  
 }
 function muestraVidColor(elementId){
   var contImgsTeoria = document.getElementsByClassName('imgTeoria'); // Obtén elementos por su
@@ -2078,26 +2098,35 @@ function muestraVidColor(elementId){
           video.pause();
           video.style.display='none'
       });
-  if (!idsArray.includes(elementId)) {
+  /* if (!idsArray.includes(elementId)) {
     idsArray.push(elementId);
     console.log(idsArray)
-  } 
+  } */ 
 }
 function irContenedorAnterior() {
   const coleccion = document.querySelectorAll('.desbobinador, .desbobinador-I, .uTeñido, .alimentador, .unidProceso, .rebobinador, .contTorrImp');
-  var contTrouble = document.getElementById('troubleshooting')
-  if(contTrouble){
+  var contTrouble = document.getElementById('troubleshooting');
+  var linksTemporales = document.getElementById('links-inicialesI');
+  var linksTemporalesII = document.getElementById('links-iniciales')
+  linksTemporales.style.display = 'none'
+  linksTemporalesII.style.display = 'none'
+
+  for (var i = 0; i < allContenedores.length; i++) {
+    var elemento = document.getElementById(allContenedores[i]);
+    elemento.style.display='none'}
+
+  if(contTrouble);{
     contTrouble.style.display = 'none'
-  }
+  } 
   var previousElementID = idsArray[idsArray.length - 2];
   for (var i = 0; i < idsArray.length; i++) { 
     switch (previousElementID) { 
       case "pantalla-inicial":
-        location.reload();
+        location.reload();;
         idsArray = [];
         break;
       case "pantalla-tintero":
-        var botonesInicio = document.getElementById('container01')
+        var botonesInicio = document.getElementById('container01');
         botonesInicio.style.display='block'
         changeButtonStyles('pantalla-tintero');  
       break;
@@ -2174,10 +2203,13 @@ function irContenedorAnterior() {
         muestraTorres('frente')
       break; 
       case "sitema-humedad":
-        changeButtonStyles('sitema-humedad')  
+        changeButtonStyles('sitema-humedad');
       break; 
       case "pre-prensa":
-        /* ocultaMA(); */
+        for (var i = 0; i < allContenedores.length; i++) {
+          var elemento = document.getElementById(allContenedores[i]); 
+          elemento.style.display='none'}
+
         var contenedorPrincipal = document.getElementById('pre-prensa');
         var hijosDelContenedor = contenedorPrincipal.children;
         contenedorPrincipal.style.display='block'        
@@ -2190,9 +2222,13 @@ function irContenedorAnterior() {
             hijo.style.display = 'block';
           }
         }
+
       break; 
       case "densitometria":
-        /* ocultaMA(); */
+        for (var i = 0; i < allContenedores.length; i++) {
+          var elemento = document.getElementById(allContenedores[i]); 
+          elemento.style.display='none'}
+
         var contenedorPrincipal = document.getElementById('densitometria');
         var hijosDelContenedor = contenedorPrincipal.children;
         contenedorPrincipal.style.display='block'        
@@ -2207,21 +2243,36 @@ function irContenedorAnterior() {
         }
       break;  
       case "vidColor":
-      var mostrario = document.getElementById('pre-prensa');
-      var videos = document.getElementById('vidColor');
-      mostrario.style.display='flex'
-      videos.style.style='flex'
-      videoElements.forEach(vide => {
-        if (vide.id === 'prisma-vid') {
-          vide.style.display = 'block';
-          vide.currentTime = 0;
-          vide.loop = true;               
-          vide.play();      
-        } else {
-          vide.style.display = 'none';
+        for (var i = 0; i < allContenedores.length; i++) {
+          var elemento = document.getElementById(allContenedores[i]); 
+          elemento.style.display='none'}
+
+          videoElements.forEach(vide => {
+            if (vide) {
+              vide.pause()
+              vide.style.display = 'none';
+         
+            }        
+            });          
+
+        var contenedorPrincipal = document.getElementById('pre-prensa');
+        var hijosDelContenedor = contenedorPrincipal.children;
+        contenedorPrincipal.style.display='block'        
+        for (var i = 0; i < hijosDelContenedor.length; i++) {
+          var hijo = hijosDelContenedor[i];
+          var idDelHijo = hijo.id;          
+          // Verificar si el ID del hijo coincide con los IDs deseados
+          if (idDelHijo) {
+            // Ocultar el hijo si su ID no coincide
+            hijo.style.display = 'block';
+          }
         }
-        });
-      break; 
+
+
+
+        var contVidCicodelia = document.getElementById('vidCicodelia')
+        contVidCicodelia.style.height = '7px'
+      break;
       case "vidColor-II":
       var mostrari = document.getElementById('pre-prensa');
       var videos = document.getElementById('vidColor-II');
@@ -2237,7 +2288,7 @@ function irContenedorAnterior() {
           vid.style.display = 'none';
         }
         });
-      break; 
+      break;
       case "mantilla1" :
         muestraAngulos('mantilla1')
       break;
@@ -2387,11 +2438,38 @@ function irContenedorAnterior() {
               twinElement.style.display = 'block';
           }
         });       
-      break;  
+      break;
+      case 'forward':
+        muestraLados('forward');
+        var boton01 = document.getElementById('bot-inic');
+        boton01.style.display = 'block'
+      break;
+      case 'comands':
+        var idsButts = ['bot-atras', 'bot-inic','iniciar'];
+        var contIdsArray = document.getElementById('container12')
+        contIdsArray.style.display = 'block'
+        idsButts.forEach(element => {
+          var elemento = document.getElementById(element)          
+          if(elemento){
+            elemento.style.display = 'flex'
+          }
+        });
+        muestraLados('comands')
+      break; 
+      case 'service':
+        var botonPpalForward = document.getElementById('container12');
+        botonPpalForward.style.display = 'block'
+        muestraLados('service')
+      break;
+      case 'back':
+        var botonPpalForward = document.getElementById('container12');
+        botonPpalForward.style.display = 'block'
+        muestraLados('back')
+      break;                   
     default:
   }}
   var eltoAnterior = idsArray[idsArray.length - 2];
-  idsArrayEliminados.push(eltoAnterior)  
+  idsArrayEliminados.push(eltoAnterior);
   console.log('ELIMINADOS',idsArrayEliminados)
   idsArray.pop();  
   console.log(idsArray) 
@@ -2471,7 +2549,7 @@ function irContenedorSiguiente() {
         muestraTorres('frente')
       break; 
       case "sitema-humedad":
-        changeButtonStyles('sitema-humedad')  
+        changeButtonStyles('sitema-humedad');
       break; 
       case "pre-prensa":
         var mostrar = document.getElementById('pre-prensa');
@@ -2705,9 +2783,9 @@ function imagenesPasoApaso(idElto, id) {
   });
 }
 function lubricacion(){
-  var contLubrica = document.getElementById('lubricacion')  
+  var contLubrica = document.getElementById('lubricacion');
   contLubrica.style.display = 'block'
-  var contTorre = document.getElementById('rotatek-1')
+  var contTorre = document.getElementById('rotatek-1');
 
   if (contTorre.style.display === 'none'){
     showButtonsMAconRetrasoDesb()

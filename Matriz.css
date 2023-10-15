@@ -513,6 +513,7 @@ width:447px ;
   z-index: 9999;
   text-decoration: none;
   font-family: "GothamRounded", sans-serif; /* Aplica la fuente deseada */
+  text-decoration-line: underline;
 }
 #vidTintero,
 #imgTorre-s,
@@ -1122,21 +1123,6 @@ elemento {
 }
 #indicaciones-II label{
   margin-top: 140px;
-}
-
-ol {
-  font-family: "GothamRounded", sans-serif;
-  position: absolute;
-  left: 577px;
-  top: 177px;
-  font-size: 23px;
-  color: white;
-}
-
-ul {
-  font-family: "GothamRounded", sans-serif;
-  font-size: 23px;
-  color: white;
 }
 
 /* Para hacerlos visibles nuevamente */
