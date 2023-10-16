@@ -1259,7 +1259,7 @@ function deslizaContenedorII(idElement, idButton) {
   contenedor.style.display = 'flex';
   contenedor.style.left = '257px';
 
-  var inicio = 1300;
+  var inicio = 1100;
   var velocidad = 500;
   var duracion = Math.abs(destino - inicio) / velocidad * 100;
   var inicioTiempo = null;
@@ -1294,7 +1294,7 @@ function deslizaContenedorII(idElement, idButton) {
   // Cambiar el color de fondo del botón al hacer clic
   var boton = document.getElementById(idButton);
   if (originalButtonColors[idButton] === undefined) {
-    originalButtonColors[idButton] = boton.style.backgroundColor; // Guarda el color original
+    originalButtonColors[idButton] = boton.style.backgroundColor; // Guarda el color original 
   }
   boton.style.backgroundColor = 'orange';
   boton.onclick = null;      
