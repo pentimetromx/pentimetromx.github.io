@@ -1202,11 +1202,62 @@ function deslizaContenedor(idElement, idButton) {
   if (!arrayPosicionnador.includes(idElement)) {
     arrayPosicionnador.push(idElement);
   }
+  var contenedor = document.getElementById(idElement);  
+  contenedor.style.display = 'flex';
+  contenedor.style.left = '257px';
+  idsMA.forEach(element => {
+    var elemento = document.getElementById(element);
+    if (elemento === document.getElementById(idElement)) {
+        elemento.style.display = 'flex';
+    } else {
+        elemento.style.display = 'none';
+    }
+  });
+  for (var i = 1; i < arrayPosicionnador.length; i++) {
+    var elementoActual = document.getElementById(arrayPosicionnador[i]);
+    var elementoAnterior = document.getElementById(arrayPosicionnador[i - 1]);
+
+    if (elementoActual && elementoAnterior) {
+      var estiloAnterior = window.getComputedStyle(elementoAnterior);
+      var posicionAnterior = parseFloat(estiloAnterior.getPropertyValue('left'));
+      var anchoAnterior = parseFloat(estiloAnterior.getPropertyValue('width'));
+
+      destino = posicionAnterior + anchoAnterior;
+    }
+  }
+  console.log('El valor final de destino es:', destino);
+  console.log(arrayPosicionnador);
+
+  arrayIdButtsMA.forEach(element => {
+    var elemento = document.getElementById(element);
+    if (elemento) {
+        if (element === idButton) {
+            elemento.style.backgroundColor = 'orange';
+        } else {
+            elemento.style.backgroundColor = 'gray';
+        }
+    }
+});
+}
+function deslizaContenedorII(idElement, idButton) {
+  var contLinkMant = document.getElementById('linksMA');
+  var elementoAnterior = null;
+  var elementoActual = null;
+
+  if (contLinkMant !== null && contImgEntrenos !== null) {
+    contLinkMant.style.display = 'none';
+    contImgEntrenos.style.display = 'none';
+  }
+
+  // Verificar si el elemento ya está en el array
+  if (!arrayPosicionnador.includes(idElement)) {
+    arrayPosicionnador.push(idElement);
+  }
 
   var contenedor = document.getElementById(idElement);
   
   contenedor.style.display = 'flex';
-  contenedor.style.left = '1300px';
+  contenedor.style.left = '257px';
 
   var inicio = 1300;
   var velocidad = 500;
@@ -1224,7 +1275,6 @@ function deslizaContenedor(idElement, idButton) {
       contenedor.style.left = destino + 'px';
     }
   }
-
   requestAnimationFrame(animar);
 
   for (var i = 1; i < arrayPosicionnador.length; i++) {
@@ -1267,22 +1317,22 @@ function deslizAutomatic(){
     }
   });
   //setTimeout(function() {
-    deslizaContenedor('troubleshooting', 'troubleshoot');  
+    deslizaContenedorII('troubleshooting', 'troubleshoot');  
     // Esperar 400 milisegundos y ejecutar la tercera función
     setTimeout(function() {
-      deslizaContenedor('canvasContainer2', 'def1');  
+      deslizaContenedorII('canvasContainer2', 'def1');  
       // Esperar 400 milisegundos y ejecutar la tercera función
       setTimeout(function() {
-        deslizaContenedor('contChecks', 'def2');  
+        deslizaContenedorII('contChecks', 'def2');  
         // Esperar 400 milisegundos y ejecutar la cuarta función
         setTimeout(function() {
-          deslizaContenedor('canvasContainer3', 'adtBut');  
+          deslizaContenedorII('canvasContainer3', 'adtBut');  
           // Esperar 400 milisegundos y ejecutar la quinta función
           setTimeout(function() {
-            deslizaContenedor('contImagNeg', 'fua1');  
+            deslizaContenedorII('contImagNeg', 'fua1');  
             // Esperar 400 milisegundos y ejecutar la sexta función
             setTimeout(function() {
-              deslizaContenedor('contImagGraf', 'lup');
+              deslizaContenedorII('contImagGraf', 'lup');
             }, 300);
           }, 300);
         }, 300);
@@ -2679,6 +2729,18 @@ function irContenedorSiguiente() {
   console.log('ELIMINADOS',idsArrayEliminados)
 }
 function listaEntrenamientosII() {
+
+// Crear un array de IDs de enlaces
+var enlacesIDs = ['vinc1', 'vinc2', 'vinc3', 'vinc4'];
+// Recorrer el array y cambiar el color de los enlaces
+enlacesIDs.forEach(function (id) {
+  var enlace = document.getElementById(id);
+  if (enlace) {
+    enlace.style.color = 'blue';
+  }
+});
+
+
   var elements = ['linksMA','linkLis','contImgEntrenos','largoImpresion'];
 
   var elementos = [
@@ -2700,8 +2762,6 @@ function listaEntrenamientosII() {
   } else {
     listaEntrenamientos();
   }
-
-
 
   var todosOcultos = elements.every(function (id) {
     var elemento = document.getElementById(id);
