@@ -434,6 +434,7 @@
       </div><br>
 
       <div class="conti-boton" id="conti-boton">
+        <button class="butt-mautonomo image-trainings" id="resultados" onclick="resultadosMA()">RESULTADOS</button>
         <button class="butt-mautonomo image-trainings" id="troubleshoot" onclick="deslizaContenedor('troubleshooting','troubleshoot')">TROUBLESHOOTING</button>
         <button class="butt-mautonomo image-trainings" id="def1" onclick="deslizaContenedor('canvasContainer2','def1')">DEFECTOS TIPO 1</button>
         <button class="butt-mautonomo image-trainings" id="def2" onclick="deslizaContenedor('contChecks','def2')">DEFECTOS TIPO 2</button>
@@ -1089,6 +1090,37 @@
         </div>        
        
       </div>
+    </div>
+
+    <h1 id="title-interfaz" style="display: none;">Interfaz de segimiento Mantenimiento Autonomo</h1>
+    <div id="iconos" style="width: 777px;position: absolute;left: 257px;display: flex;flex-direction: row;display: none;">
+
+      <div class="cont-user" id="icon-carlos">
+        <img class="icono-user" onclick="resultadosEmpleado('icon-carlos','iconos')" src="./assets/icono1.jpg" alt="icono">
+        <label for="nombres">Carlos Mario Sanchez</label>
+      </div>
+
+      <div class="cont-user" id="icon-andres">
+        <img class="icono-user" onclick="resultadosEmpleado('icon-andres','iconos')" src="./assets/icono1.jpg" alt="icono">
+        <label for="nombres">Andres Felipe Montoya</label>
+      </div>
+
+      <div class="cont-user" id="icon-jorge">
+        <img class="icono-user" onclick="resultadosEmpleado('icon-jorge','iconos')" src="./assets/icono1.jpg" alt="icono">
+        <label for="nombres">Jorge Alberto Lozada</label>
+      </div>
+      <div class="cont-user" id="icon-jesus">
+        <img class="icono-user" onclick="resultadosEmpleado('icon-jesus','iconos')" src="./assets/icono1.jpg" alt="icono">
+        <label for="nombres">Jesus Norvey Cordoba</label>
+      </div>
+      <div class="cont-user" id="icon-sandra">
+        <img class="icono-user" onclick="resultadosEmpleado('icon-sandra','iconos')" src="./assets/icono1.jpg" alt="icono">
+        <label for="nombres">Sandra Milena Alvarez</label>
+      </div>
+    </div>
+
+    <div id="resume-indiv">
+
     </div>
     <script src="./Matriz.js"></script>    
   </body>

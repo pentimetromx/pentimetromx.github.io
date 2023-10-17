@@ -1,10 +1,11 @@
-var arrayIdButtsMA = ['troubleshoot','def1','def2','adtBut','fua1','lup'];
+var arrayIdButtsMA = ['resultados','troubleshoot','def1','def2','adtBut','fua1','lup'];
 var arrayPosicionnador = [];
 var arrayContador = [];
 var destino = 257;
 var idsArray = [];
 var idsArrayEliminados = [];
 var idsMA = ['canvasContainer2', 'canvasContainer3', 'contChecks','troubleshooting','contImagNeg','contImagGraf'];
+var idsResultados = ['icon-carlos','icon-andres','icon-jorge','icon-jesus','icon-sandra'];
 
 var currentID = null;
 var btnAtras = document.getElementById('bot-atras');
@@ -14,7 +15,7 @@ var imgTorreI = document.getElementById('imgTorre');
 var contInicial = document.getElementById('container1');
 var botonMa = document.getElementById('bot-mantaut');
 var imagPasoApaso = document.querySelectorAll('.img1');
-var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion'];
+var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','iconos','title-interfaz'];
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado'];
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor'];
@@ -1234,7 +1235,7 @@ function deslizaContenedor(idElement, idButton) {
         if (element === idButton) {
             elemento.style.backgroundColor = 'orange';
         } else {
-            elemento.style.backgroundColor = 'gray';
+            elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)';
         }
     }
 });
@@ -2729,20 +2730,16 @@ function irContenedorSiguiente() {
   console.log('ELIMINADOS',idsArrayEliminados)
 }
 function listaEntrenamientosII() {
-
-// Crear un array de IDs de enlaces
-var enlacesIDs = ['vinc1', 'vinc2', 'vinc3', 'vinc4'];
-// Recorrer el array y cambiar el color de los enlaces
-enlacesIDs.forEach(function (id) {
+  // Crear un array de IDs de enlaces
+  var enlacesIDs = ['vinc1', 'vinc2', 'vinc3', 'vinc4'];
+  // Recorrer el array y cambiar el color de los enlaces
+  enlacesIDs.forEach(function (id) {
   var enlace = document.getElementById(id);
   if (enlace) {
     enlace.style.color = 'blue';
   }
-});
-
-
+  });
   var elements = ['linksMA','linkLis','contImgEntrenos','largoImpresion'];
-
   var elementos = [
     'canvasContainer2',
     'canvasContainer3',
@@ -2750,25 +2747,21 @@ enlacesIDs.forEach(function (id) {
     'contImagGraf',
     'contImagNeg'
   ];
-
   var alMenosUnoVisible = elementos.some(function(id) {
     var elemento = document.getElementById(id);
     var estilo = window.getComputedStyle(elemento);
     return estilo.display !== 'none';
   });
-
   if (alMenosUnoVisible) {
     console.log(arrayPosicionnador);
   } else {
     listaEntrenamientos();
   }
-
   var todosOcultos = elements.every(function (id) {
     var elemento = document.getElementById(id);
     var estilo = window.getComputedStyle(elemento);
     return estilo.display === 'none';
   });
-
   if (todosOcultos) {
     // Mostrar los elementos si todos están ocultos
     elements.forEach(function (id) {
@@ -2986,6 +2979,58 @@ function lubricaSemanal(){
   }
 }
 
+function resultadosMA(){
+  var contUsuarios = document.getElementById('iconos');
+  var title = document.getElementById('title-interfaz')
+
+  for (var i = 0; i < allContenedores.length; i++) {
+    var elemento = document.getElementById(allContenedores[i]);
+    if (elemento) {
+      elemento.style.display = 'none';
+    }
+  }   
+  contUsuarios.style.display = 'flex'
+  title.style.display = 'flex'
+
+}
+
+function resultadosEmpleado(idEmpleado, idPadre){
+  var tituloMA = document.getElementById('title-interfaz')
+  allContenedores.forEach(elemen => {
+    var element = document.getElementById(elemen);
+    if (element) {
+      if (element.id !== idPadre) {
+        element.style.display = 'none';
+      } else {
+        element.style.display = 'block'; // o 'flex' si es un elemento flex
+      }
+    }
+  });
+  // Ocultar todos los elementos en el array
+  idsResultados.forEach(id => {
+    var empleado = document.getElementById(id);
+    if (empleado.id === idEmpleado) {
+      empleado.style.display = 'block';
+    }else {
+      empleado.style.display = 'none'
+    }
+  });
+
+  tituloMA.style.display = 'block'
+  
+  var iconEmploy = document.getElementById(idEmpleado);
+  // Obtén el elemento <label> dentro de iconAndres
+  var labelElement = iconEmploy.querySelector("label");
+  console.log(labelElement)
+  // Aplica el estilo "left: 10px" al elemento <label>
+  if (labelElement) {
+    labelElement.style.left = "-20px";
+  }
+
+
+
+}
+
 // Obtén todas las imágenes con la clase "aumentar"
 const imagenesAumentar = document.querySelectorAll('img.aumentar');
 // Agrega un evento click a cada imagen con la clase "aumentar"
@@ -3126,7 +3171,7 @@ imageElementsi.forEach((image, index) => {
     setTimeout(() => {
       image.style.transition = 'transform 0.1s';
       image.style.transform = 'scale(1)';
-    }, 400);
+    }, 400); 
   });
 });
 var chart = new Chart(miCanvas, {
@@ -3412,27 +3457,29 @@ const searchInput = document.getElementById('search-input');
 const suggestionsList = document.getElementById('suggestions'); // Agrega el elemento datalist
 // Definir una lista de sugerencias (puedes cargarla desde una fuente externa si es necesario)
 const sugerencias = [
-  'inicio',
-  'tintero',
-  'bateria',
   'autonomo',
-  'mantenimiento autonomo',
-  'variable',
-  'planas',
-  'secador uv',
-  'secador',
-  'rotatek-1',
-  'torre',
-  'smed',
-  'plancha',
-  'porta plancha',
-  'mantilla',
-  'manta',
-  'porta mantilla',
+  'bateria',
   'contra',
   'contraPresion',
   'impresor',
+  'inicio',
+  'manta',
+  'mantenimiento autonomo',
+  'mantilla',
+  'planas',
+  'plancha',
+  'porta mantilla',
+  'porta plancha',
+  'rotatek-1',
+  'secador uv',
+  'secador',
+  'smed',
+  'tintero',
+  'torre',
+  'variable'
+  
 ];
+
 // Agregamos un evento para manejar la búsqueda
 searchForm.addEventListener('submit', function (e) {
   e.preventDefault(); // Evita que se envíe el formulario

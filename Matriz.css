@@ -1124,6 +1124,45 @@ elemento {
 #indicaciones-II label{
   margin-top: 140px;
 }
+.icono-user{
+  height: 117px;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+}
+#iconos {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+.cont-user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 21px;
+  cursor: pointer;
+}
+.cont-user label{
+  position: relative;
+  color: yellow;
+  font-family: "GothamRounded", sans-serif;
+}
+
+/*.cont-user:first-child {
+  margin-left: 0;
+}*/
+#title-interfaz{
+  display: flex;
+  justify-content: center;  
+  font-family: "GothamRounded", sans-serif;
+  color: rgb(255, 204, 0);
+}
+
+
+
+
+
+
 
 /* Para hacerlos visibles nuevamente */
 elemento.visible {
