@@ -97,7 +97,8 @@ transform: scale(1.1);
 #container5,
 #container6,
 #container7,
-#container8{
+#container8,
+#container9{
   position: absolute;
   left: 27px;
 }
@@ -136,7 +137,8 @@ transform: scale(1.1);
 .contene-6,
 .contene-7,
 .contene-8,
-.contene-9{
+.contene-9,
+.contene-99{
   display: flex;
   flex-direction: row;
   position: absolute;
@@ -948,6 +950,7 @@ header {
 #bot-atras9::before,
 #bot-atras10::before,
 #bot-atras31::before,
+#bot-atras99::before,
 #bot-atras100::before,
 #bot-atras101::before,
 #bot-atras102::before,
@@ -975,7 +978,8 @@ header {
 #bot-atras28::before,
 #bot-atras29::before,
 #bot-atras30::before,
-#bot-atras32::before{
+#bot-atras32::before,
+#bot-atras33::before{
   content: "\25B6"; /* Código HTML para el triángulo de reproducción hacia la derecha */
   font-size: 2em; /* Aumentar el tamaño al doble */
 }
@@ -1132,14 +1136,22 @@ elemento {
 }
 #iconos {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: center;
+  width: 777px;
+  position: absolute;
+  left: 262px;
+  top: 104px;
+  display: flex;
+  flex-direction: row;
+  display: none;
 }
 .cont-user {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-right: 21px;
+  margin-top: 21px;
   cursor: pointer;
 }
 .cont-user label{
@@ -1153,16 +1165,13 @@ elemento {
 }*/
 #title-interfaz{
   display: flex;
+  position: absolute;
+  top: -57px;
+  width: 747px;
   justify-content: center;  
   font-family: "GothamRounded", sans-serif;
   color: rgb(255, 204, 0);
 }
-
-
-
-
-
-
 
 /* Para hacerlos visibles nuevamente */
 elemento.visible {
@@ -1175,4 +1184,71 @@ elemento.visible {
 
 .blue-text {
   color: blue;
+}
+
+/*////////////////////////////////////*/
+.res-def{
+  display: flex;
+  flex-direction: column;
+  display: none;
+  position: absolute;
+  top:77px;
+}
+.res-lup{
+  display: flex;
+  flex-direction: column;
+  display: none;
+  position: absolute;
+  top:137px;
+}
+.res-ada{
+  display: flex;
+  flex-direction: column;
+  display: none;
+  position: absolute;
+  top:197px;
+}
+.res-def label{
+  color: yellow;
+  position: absolute;
+  left: -11px;
+  width: 67px;
+}
+.res-lup label{
+  color: yellow;
+  position: absolute;
+  left: -11px;
+  top: 29px;
+  width: 67px;
+}
+.res-ada label{
+  color: yellow;
+  position: absolute;
+  left: -11px;
+  top: 60px;
+  width: 67px;
+}
+#img-defec-id {
+  transform: rotate(90deg);
+  position: absolute;
+  height: 317px;
+  width: 57px;
+  left: 119px;
+  top: -107px;
+}
+#img-lup-id {
+  transform: rotate(90deg);
+  position: absolute;
+  height: 237px;
+  width: 57px;
+  left: 79px;
+  top: -37px;
+}
+#img-ada-id {
+  transform: rotate(90deg);
+  position: absolute;
+  height: 107px;
+  width: 57px;
+  left: 13px;
+  top: 59px;
 }

@@ -2981,7 +2981,8 @@ function lubricaSemanal(){
 
 function resultadosMA(){
   var contUsuarios = document.getElementById('iconos');
-  var title = document.getElementById('title-interfaz')
+  var title = document.getElementById('title-interfaz');
+  var contButtons = document.getElementById('container99')
 
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);
@@ -2991,11 +2992,14 @@ function resultadosMA(){
   }   
   contUsuarios.style.display = 'flex'
   title.style.display = 'flex'
+  title.style.left = '-7px'
+  contButtons.style.display = 'flex'
 
 }
 
 function resultadosEmpleado(idEmpleado, idPadre){
-  var tituloMA = document.getElementById('title-interfaz')
+  var tituloMA = document.getElementById('title-interfaz');
+  var iconoUser = document.getElementById('iconos')
   allContenedores.forEach(elemen => {
     var element = document.getElementById(elemen);
     if (element) {
@@ -3017,6 +3021,7 @@ function resultadosEmpleado(idEmpleado, idPadre){
   });
 
   tituloMA.style.display = 'block'
+  tituloMA.style.left = '257px'
   
   var iconEmploy = document.getElementById(idEmpleado);
   // Obtén el elemento <label> dentro de iconAndres
@@ -3027,6 +3032,16 @@ function resultadosEmpleado(idEmpleado, idPadre){
     labelElement.style.left = "-20px";
   }
 
+  iconoUser.style.display = 'block'
+  var iconoActual = document.getElementById('iconos');
+  iconoActual.style.left = '27px'
+  //////////////////////////////////////////////////////////////////
+  var grafDef = document.getElementById('res-carlos-def');
+  grafDef.style.display = 'flex'
+  var grafLup = document.getElementById('res-carlos-lup');
+  grafLup.style.display = 'flex'
+  var grafLup = document.getElementById('res-carlos-ada');
+  grafLup.style.display = 'flex'
 
 
 }
@@ -3601,3 +3616,4 @@ canvasElements4.forEach(input => {
       imagenesPasoApaso(link.getAttribute('data-imagen'));
     });
   });
+
