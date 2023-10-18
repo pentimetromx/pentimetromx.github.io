@@ -473,6 +473,17 @@ width:447px ;
   font-family: "GothamRounded", sans-serif;
   color: yellow;
 }
+#canvasContainer4 {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 17px;
+  margin-left:'77px';
+  top: 147px;
+  width: 350px;
+  border-radius: 20px;
+  display: none;
+}
 #canvasContainer2 {
   display: flex;
   flex-direction: column;
@@ -1165,8 +1176,9 @@ elemento {
 }*/
 #title-interfaz{
   display: flex;
-  position: absolute;
+  position: relative;
   top: -57px;
+  left: 257px;
   width: 747px;
   justify-content: center;  
   font-family: "GothamRounded", sans-serif;

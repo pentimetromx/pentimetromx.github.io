@@ -4,8 +4,9 @@ var arrayContador = [];
 var destino = 257;
 var idsArray = [];
 var idsArrayEliminados = [];
-var idsMA = ['canvasContainer2', 'canvasContainer3', 'contChecks','troubleshooting','contImagNeg','contImagGraf'];
+var idsMA = ['canvasContainer2', 'canvasContainer3', 'canvasContainer4', 'contChecks','troubleshooting','contImagNeg','contImagGraf'];
 var idsResultados = ['icon-carlos','icon-andres','icon-jorge','icon-jesus','icon-sandra'];
+var elementosContUser = document.querySelectorAll('.cont-user');
 
 var currentID = null;
 var btnAtras = document.getElementById('bot-atras');
@@ -15,7 +16,7 @@ var imgTorreI = document.getElementById('imgTorre');
 var contInicial = document.getElementById('container1');
 var botonMa = document.getElementById('bot-mantaut');
 var imagPasoApaso = document.querySelectorAll('.img1');
-var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','iconos','title-interfaz'];
+var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4'];
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado'];
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor'];
@@ -98,6 +99,8 @@ let miCanvas3 = document.getElementById('MiTerceraGrafica').getContext('2d');
 let miCanvas4 = document.getElementById('MiCuartaGrafica').getContext('2d');
 let miCanvas5 = document.getElementById('MiQuintaGrafica').getContext('2d');
 let miCanvas = document.getElementById('MiGrafica').getContext('2d');
+let miCanvas6 = document.getElementById('MiGrafica4').getContext('2d');
+
 var botones = document.querySelectorAll('.butt-mautonomo');
 var linksTorre = document.getElementById('contLinksTorre');
 
@@ -1206,6 +1209,7 @@ function deslizaContenedor(idElement, idButton) {
   var contenedor = document.getElementById(idElement);  
   contenedor.style.display = 'flex';
   contenedor.style.left = '257px';
+
   idsMA.forEach(element => {
     var elemento = document.getElementById(element);
     if (elemento === document.getElementById(idElement)) {
@@ -1213,7 +1217,8 @@ function deslizaContenedor(idElement, idButton) {
     } else {
         elemento.style.display = 'none';
     }
-  });
+  }); 
+
   for (var i = 1; i < arrayPosicionnador.length; i++) {
     var elementoActual = document.getElementById(arrayPosicionnador[i]);
     var elementoAnterior = document.getElementById(arrayPosicionnador[i - 1]);
@@ -1226,8 +1231,6 @@ function deslizaContenedor(idElement, idButton) {
       destino = posicionAnterior + anchoAnterior;
     }
   }
-  console.log('El valor final de destino es:', destino);
-  console.log(arrayPosicionnador);
 
   arrayIdButtsMA.forEach(element => {
     var elemento = document.getElementById(element);
@@ -1238,7 +1241,7 @@ function deslizaContenedor(idElement, idButton) {
             elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)';
         }
     }
-});
+  });
 }
 function deslizaContenedorII(idElement, idButton) {
   var contLinkMant = document.getElementById('linksMA');
@@ -1496,6 +1499,8 @@ function deslizarChecks(idElement) {
   /*//////////////////////////////////////////////////////////////////////////////////////////////*/
   var contenedor1 = document.getElementById('contChecks');
   var contenedor2 = document.getElementById('canvasContainer2');
+  var contenedor4 = document.getElementById('canvasContainer4');
+
 
   if (contenedor1) {
     // 1. Hacer visible el contenedor
@@ -2740,13 +2745,7 @@ function listaEntrenamientosII() {
   }
   });
   var elements = ['linksMA','linkLis','contImgEntrenos','largoImpresion'];
-  var elementos = [
-    'canvasContainer2',
-    'canvasContainer3',
-    'contChecks',
-    'contImagGraf',
-    'contImagNeg'
-  ];
+  var elementos = ['canvasContainer2','canvasContainer3','canvasContainer4','contChecks','contImagGraf','contImagNeg'];
   var alMenosUnoVisible = elementos.some(function(id) {
     var elemento = document.getElementById(id);
     var estilo = window.getComputedStyle(elemento);
@@ -2989,15 +2988,21 @@ function resultadosMA(){
     if (elemento) {
       elemento.style.display = 'none';
     }
-  }   
-  contUsuarios.style.display = 'flex'
+  } 
+  
+  elementosContUser.forEach(function(elemento) {
+    elemento.style.display = 'flex';
+  });
+
+  contUsuarios.style.display = 'block'
+  contUsuarios.style.left = '262px'
+
   title.style.display = 'flex'
-  title.style.left = '-7px'
   contButtons.style.display = 'flex'
 
 }
 
-function resultadosEmpleado(idEmpleado, idPadre){
+function resultadosEmpleado(idEmpleado, idPadre,idElement){
   var tituloMA = document.getElementById('title-interfaz');
   var iconoUser = document.getElementById('iconos')
   allContenedores.forEach(elemen => {
@@ -3020,8 +3025,8 @@ function resultadosEmpleado(idEmpleado, idPadre){
     }
   });
 
-  tituloMA.style.display = 'block'
-  tituloMA.style.left = '257px'
+  tituloMA.style.display = 'flex'
+  /* tituloMA.style.left = '257px' */
   
   var iconEmploy = document.getElementById(idEmpleado);
   // Obtén el elemento <label> dentro de iconAndres
@@ -3035,14 +3040,15 @@ function resultadosEmpleado(idEmpleado, idPadre){
   iconoUser.style.display = 'block'
   var iconoActual = document.getElementById('iconos');
   iconoActual.style.left = '27px'
-  //////////////////////////////////////////////////////////////////
-  var grafDef = document.getElementById('res-carlos-def');
-  grafDef.style.display = 'flex'
-  var grafLup = document.getElementById('res-carlos-lup');
-  grafLup.style.display = 'flex'
-  var grafLup = document.getElementById('res-carlos-ada');
-  grafLup.style.display = 'flex'
-
+  //////////////////////////// SELECCIONA GRAFICO DEL ARRAY USANDO ELPARAMETRO //////////////////////////////////////
+  idsMA.forEach(element => {
+    var elemento = document.getElementById(element);
+    if (elemento === document.getElementById(idElement)) {
+      elemento.style.display = 'flex';
+    } else {
+      elemento.style.display = 'none';
+    }
+  });   
 
 }
 
@@ -3397,6 +3403,50 @@ var chart2 = new Chart(miCanvas5, {
         }
     }
 });
+var chart = new Chart(miCanvas6, { 
+  type: 'bar',    
+  data: {
+      labels: ['DEFECTOS IDENTIFICADOS','DEFECTOS COREGIDOS', 'TIPO  1', 'TIPO  2'],
+      datasets: [
+          {
+              label: 'Participación en M.A',
+              backgroundColor: ['rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(0, 0, 255)', 'rgb(255, 255, 0)'],
+              data: [57, 88, 62, 33]
+          }
+      ]
+  },
+  options: {
+      scales: {
+          x: {
+              grid: {
+                  display: false // Ocultar líneas de la cuadrícula en el eje X
+              },
+              ticks: {
+                  color: 'rgb(255,255,255)' // Color de las etiquetas de texto en el eje X
+              }
+          },
+          y: {
+              grid: {
+                  display: false // Ocultar líneas de la cuadrícula en el eje X
+              },
+              ticks: {
+                  color: 'rgb(255,255,255)' ,// Color de las etiquetas de texto en el eje X
+
+                  beginAtZero: true // Empezar el eje Y desde cero
+              }
+
+          }
+      },
+      indexAxis: 'y', // Mostrar barras horizontalmente
+      plugins: {
+          legend: {
+              display: false // Ocultar la leyenda
+          }
+      }
+  }
+});
+
+
 /* //////////////////////////////////AUMENTO Y MOVIMIENTO IMAGENES ///////////////////////////////////////////// */
 const zoomableImages = document.querySelectorAll('.image-trainings');
 const sensitivity = 5; 
