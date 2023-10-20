@@ -3030,7 +3030,8 @@ function deslizaMosaico(){
     }, 300);
   //}, 50); 
 }
-function resultadosEmpleado(idEmpleado, idGrafico,idGraficoII) {
+function resultadosEmpleado(idEmpleado) {
+  var arrayGraficos = [];
   var tituloMA = document.getElementById('title-interfaz');
   tituloMA.style.display = 'flex';
 
@@ -3040,11 +3041,26 @@ function resultadosEmpleado(idEmpleado, idGrafico,idGraficoII) {
     if (element.id === idEmpleado) {
       element.style.display = 'block';
       // Capturar el ancho de idEmpleado
-      var widthUsuarioValue = window.getComputedStyle(element).getPropertyValue('width');
     } else {
       element.style.display = 'none';
     }
   } 
+
+   // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+   setTimeout(function() {
+    graficosAutomaticos('canvasContainer4');
+    arrayGraficos.push('canvasContainer4')
+    console.log(arrayGraficos)
+  },1000); // 0.3 segundos
+
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer5');
+    arrayGraficos.push('canvasContainer5')
+    console.log(arrayGraficos)
+  }, 2000); // 0.3 segundos (300 ms + 300 ms)
+
+}
+function graficosAutomaticos(idGrafico){
 
   for (var i = 0; i < idsMA.length; i++) {
     var elto = idsMA[i];
@@ -3052,29 +3068,9 @@ function resultadosEmpleado(idEmpleado, idGrafico,idGraficoII) {
     
     if (elto === idGrafico) {
       elemento.style.display = 'flex';
-      // Capturar el ancho de idGrafico
-      var izquierda = parseFloat(widthUsuarioValue);
-      elemento.style.left = izquierda + 'px';
-      elemento.style.top = '77px'
-    } else {
-      elemento.style.display = 'none';
+      // Capturar el ancho de idGrafico 
+    }
   }
-}
-
-for (var i = 0; i < idsMA.length; i++) {
-  var elto = idsMA[i];
-  var elemento = document.getElementById(elto);
-  
-  if (elto === idGraficoII) {
-    elemento.style.display = 'flex';
-    // Capturar el ancho de idGrafico
-    var izquierdaII = parseFloat(widthUsuarioValue);
-    elemento.style.left = izquierdaII + 'px';
-    elemento.style.top = '77px'
-  } else {
-    elemento.style.display = 'none';
-}}
-
 }
 function deslizaMosaicoII(idElement) {
   var contLinkMant = document.getElementById('linksMA');
@@ -3313,7 +3309,7 @@ var chart = new Chart(miCanvas, {
         }
     }
 });
-var chart2 = new Chart(miCanvas2, {
+var chart3 = new Chart(miCanvas2, {
     type: 'bar',
     data: {
         labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
@@ -3354,7 +3350,7 @@ var chart2 = new Chart(miCanvas2, {
         }
     }
 });
-var chart2 = new Chart(miCanvas3, {
+var chart4 = new Chart(miCanvas3, {
     type: 'line',
     data: {
         labels: ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
@@ -3395,7 +3391,7 @@ var chart2 = new Chart(miCanvas3, {
         }
     }
 });
-var chart2 = new Chart(miCanvas4, {
+var chart5 = new Chart(miCanvas4, {
     type: 'pie',
     data: {
         labels: ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
@@ -3437,7 +3433,7 @@ var chart2 = new Chart(miCanvas4, {
         }
     }
 });
-var chart2 = new Chart(miCanvas5, {
+var chart6 = new Chart(miCanvas5, {
     type: 'bar',
     data: {
         labels: ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
@@ -3480,7 +3476,7 @@ var chart2 = new Chart(miCanvas5, {
     }
 });
 // BARRAS
-var chart = new Chart(miCanvas6, { 
+var chart7 = new Chart(miCanvas6, { 
   type: 'bar',
   data: {
       labels: ['DEFECTOS IDENTIFICADOS', 'DEFECTOS CORREGIDOS', 'TIPO 1', 'TIPO 2'],
@@ -3533,9 +3529,8 @@ var chart = new Chart(miCanvas6, {
       }
   }
 });
-
 // BARRAS VERTICALES
-var chart = new Chart(miCanvas7, { 
+var chart8 = new Chart(miCanvas7, { 
   type: 'bar',  // Cambiamos 'bar' a 'bar' para barras verticales   
   data: {
       labels: ['DEFECTOS IDENTIFICADOS', 'DEFECTOS CORREGIDOS', 'TIPO 1', 'TIPO 2'],
