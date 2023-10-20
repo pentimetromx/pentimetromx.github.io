@@ -4,8 +4,8 @@ var arrayContador = [];
 var destino = 257;
 var idsArray = [];
 var idsArrayEliminados = [];
-var idsMA = ['canvasContainer2', 'canvasContainer3', 'canvasContainer4', 'contChecks','troubleshooting','contImagNeg','contImagGraf'];
-var idsResultados = ['icon-carlos','icon-andres','icon-jorge','icon-jesus','icon-sandra'];
+var idsMA = ['canvasContainer2', 'canvasContainer3', 'canvasContainer4','canvasContainer5', 'contChecks','troubleshooting','contImagNeg','contImagGraf'];
+var idsResultados = ['icon-fredy','icon-carlos','icon-andres','icon-jorge','icon-jesus','icon-sandra','icon-mario'];
 var elementosContUser = document.querySelectorAll('.cont-user');
 
 var currentID = null;
@@ -16,7 +16,7 @@ var imgTorreI = document.getElementById('imgTorre');
 var contInicial = document.getElementById('container1');
 var botonMa = document.getElementById('bot-mantaut');
 var imagPasoApaso = document.querySelectorAll('.img1');
-var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4'];
+var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5','conte-secundario'];
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado'];
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor'];
@@ -100,6 +100,7 @@ let miCanvas4 = document.getElementById('MiCuartaGrafica').getContext('2d');
 let miCanvas5 = document.getElementById('MiQuintaGrafica').getContext('2d');
 let miCanvas = document.getElementById('MiGrafica').getContext('2d');
 let miCanvas6 = document.getElementById('MiGrafica4').getContext('2d');
+let miCanvas7 = document.getElementById('MiGrafica5').getContext('2d');
 
 var botones = document.querySelectorAll('.butt-mautonomo');
 var linksTorre = document.getElementById('contLinksTorre');
@@ -191,7 +192,7 @@ function showButtonsMAconRetraso() {
       boton.style.display = 'inline-block';
       setTimeout(function() {
         mostrarBotonConRetraso(i + 1);
-      }, 150); // 100 milisegundos de retraso entre botones
+      }, 50); // 100 milisegundos de retraso entre botones
     }
   }
   mostrarBotonConRetraso(0); // Comienza desde el primer botón
@@ -1500,6 +1501,8 @@ function deslizarChecks(idElement) {
   var contenedor1 = document.getElementById('contChecks');
   var contenedor2 = document.getElementById('canvasContainer2');
   var contenedor4 = document.getElementById('canvasContainer4');
+  var contenedor4 = document.getElementById('canvasContainer5');
+
 
 
   if (contenedor1) {
@@ -2745,7 +2748,7 @@ function listaEntrenamientosII() {
   }
   });
   var elements = ['linksMA','linkLis','contImgEntrenos','largoImpresion'];
-  var elementos = ['canvasContainer2','canvasContainer3','canvasContainer4','contChecks','contImagGraf','contImagNeg'];
+  var elementos = ['canvasContainer2','canvasContainer3','canvasContainer4','canvasContainer5','contChecks','contImagGraf','contImagNeg'];
   var alMenosUnoVisible = elementos.some(function(id) {
     var elemento = document.getElementById(id);
     var estilo = window.getComputedStyle(elemento);
@@ -2879,8 +2882,7 @@ function lubricacion(){
   if (contTorre.style.display === 'none'){
     showButtonsMAconRetrasoDesb()
   }
-}
-
+}  
 function showButtonsMAconRetrasoDesb() {
   var botones = document.querySelectorAll('.butt-mautonomo-desb'); // Selecciona todos los botones
   function mostrarBotonConRetrasoDesb(i) {
@@ -2944,7 +2946,6 @@ function lubricaDiario(){
     hijo.style.display = 'block';
   }
 }
-
 function lubricaSemanal(){ 
   var conteLub = document.getElementById('aceitera')
   var contLabel = document.getElementById('aceite')
@@ -2977,81 +2978,156 @@ function lubricaSemanal(){
     hijo.style.display = 'none';
   }
 }
-
 function resultadosMA(){
-  var contUsuarios = document.getElementById('iconos');
+  var contUsuarios = document.getElementById('iconos');    
   var title = document.getElementById('title-interfaz');
-  var contButtons = document.getElementById('container99')
-
+  var contButtons = document.getElementById('container99');
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);
     if (elemento) {
       elemento.style.display = 'none';
     }
   } 
-  
-  elementosContUser.forEach(function(elemento) {
-    elemento.style.display = 'flex';
-  });
+
+  video.pause();
+  video.style.display = 'none'
+
+  contSecundario = document.getElementById('conte-secundario')
+  contSecundario.style.display = 'flex'
 
   contUsuarios.style.display = 'block'
-  contUsuarios.style.left = '262px'
 
   title.style.display = 'flex'
-  contButtons.style.display = 'flex'
-
+  contButtons.style.display = 'flex' 
+  /* deslizaMosaico(); */
 }
+function deslizaMosaico(){
 
-function resultadosEmpleado(idEmpleado, idPadre,idElement){
+  //setTimeout(function() {
+    deslizaMosaicoII('icon-carlos', 'troubleshoot');  
+    // Esperar 400 milisegundos y ejecutar la tercera función
+    setTimeout(function() {
+      deslizaMosaicoII('icon-andres', 'def1');  
+      // Esperar 400 milisegundos y ejecutar la tercera función
+      setTimeout(function() {
+        deslizaMosaicoII('icon-jorge', 'def2');  
+        // Esperar 400 milisegundos y ejecutar la cuarta función
+        setTimeout(function() {
+          deslizaMosaicoII('icon-jesus', 'adtBut');  
+          // Esperar 400 milisegundos y ejecutar la quinta función
+          setTimeout(function() {
+            deslizaMosaicoII('icon-sandra', 'fua1');  
+            // Esperar 400 milisegundos y ejecutar la sexta función
+            setTimeout(function() {
+              deslizaMosaicoII('icon-mario', 'lup');
+              setTimeout(function() {
+              deslizaMosaicoII('icon-fredy', 'lup');
+            }, 300);
+          }, 300);
+        }, 300);
+      }, 300);
+    }, 300);
+    }, 300);
+  //}, 50); 
+}
+function resultadosEmpleado(idEmpleado, idGrafico,idGraficoII) {
   var tituloMA = document.getElementById('title-interfaz');
-  var iconoUser = document.getElementById('iconos')
-  allContenedores.forEach(elemen => {
-    var element = document.getElementById(elemen);
-    if (element) {
-      if (element.id !== idPadre) {
-        element.style.display = 'none';
-      } else {
-        element.style.display = 'block'; // o 'flex' si es un elemento flex
-      }
-    }
-  });
-  // Ocultar todos los elementos en el array
-  idsResultados.forEach(id => {
-    var empleado = document.getElementById(id);
-    if (empleado.id === idEmpleado) {
-      empleado.style.display = 'block';
-    }else {
-      empleado.style.display = 'none'
-    }
-  });
+  tituloMA.style.display = 'flex';
 
-  tituloMA.style.display = 'flex'
-  /* tituloMA.style.left = '257px' */
-  
-  var iconEmploy = document.getElementById(idEmpleado);
-  // Obtén el elemento <label> dentro de iconAndres
-  var labelElement = iconEmploy.querySelector("label");
-  console.log(labelElement)
-  // Aplica el estilo "left: 10px" al elemento <label>
-  if (labelElement) {
-    labelElement.style.left = "-20px";
-  }
+  var contUserElements = document.getElementsByClassName('cont-user');
+  for (var i = 0; i < contUserElements.length; i++) {
+    var element = contUserElements[i];
+    if (element.id === idEmpleado) {
+      element.style.display = 'block';
+      // Capturar el ancho de idEmpleado
+      var widthUsuarioValue = window.getComputedStyle(element).getPropertyValue('width');
+    } else {
+      element.style.display = 'none';
+    }
+  } 
 
-  iconoUser.style.display = 'block'
-  var iconoActual = document.getElementById('iconos');
-  iconoActual.style.left = '27px'
-  //////////////////////////// SELECCIONA GRAFICO DEL ARRAY USANDO ELPARAMETRO //////////////////////////////////////
-  idsMA.forEach(element => {
-    var elemento = document.getElementById(element);
-    if (elemento === document.getElementById(idElement)) {
+  for (var i = 0; i < idsMA.length; i++) {
+    var elto = idsMA[i];
+    var elemento = document.getElementById(elto);
+    
+    if (elto === idGrafico) {
       elemento.style.display = 'flex';
+      // Capturar el ancho de idGrafico
+      var izquierda = parseFloat(widthUsuarioValue);
+      elemento.style.left = izquierda + 'px';
+      elemento.style.top = '77px'
     } else {
       elemento.style.display = 'none';
-    }
-  });   
-
+  }
 }
 
+for (var i = 0; i < idsMA.length; i++) {
+  var elto = idsMA[i];
+  var elemento = document.getElementById(elto);
+  
+  if (elto === idGraficoII) {
+    elemento.style.display = 'flex';
+    // Capturar el ancho de idGrafico
+    var izquierdaII = parseFloat(widthUsuarioValue);
+    elemento.style.left = izquierdaII + 'px';
+    elemento.style.top = '77px'
+  } else {
+    elemento.style.display = 'none';
+}}
+
+}
+function deslizaMosaicoII(idElement) {
+  var contLinkMant = document.getElementById('linksMA');
+  var elementoAnterior = null;
+  var elementoActual = null;
+
+  if (contLinkMant !== null && contImgEntrenos !== null) {
+    contLinkMant.style.display = 'none';
+    contImgEntrenos.style.display = 'none';
+  }
+
+  // Verificar si el elemento ya está en el array
+  if (!arrayPosicionnador.includes(idElement)) {
+    arrayPosicionnador.push(idElement);
+  }
+
+  var contenedor = document.getElementById(idElement);
+  
+  contenedor.style.display = 'flex';
+  contenedor.style.left = '257px';
+
+  var inicio = 1100;
+  var velocidad = 500;
+  var duracion = Math.abs(destino - inicio) / velocidad * 100;
+  var inicioTiempo = null;
+
+  function animar(tiempo) {
+    if (!inicioTiempo) inicioTiempo = tiempo;
+    var progreso = (tiempo - inicioTiempo) / duracion;
+    var izquierda = inicio + progreso * (destino - inicio);
+    if (progreso < 1) {
+      contenedor.style.left = izquierda + 'px';
+      requestAnimationFrame(animar);
+    } else {
+      contenedor.style.left = destino + 'px';
+    }
+  }
+  requestAnimationFrame(animar);
+
+  for (var i = 1; i < arrayPosicionnador.length; i++) {
+    var elementoActual = document.getElementById(arrayPosicionnador[i]);
+    var elementoAnterior = document.getElementById(arrayPosicionnador[i - 1]);
+
+    if (elementoActual && elementoAnterior) {
+      var estiloAnterior = window.getComputedStyle(elementoAnterior);
+      var posicionAnterior = parseFloat(estiloAnterior.getPropertyValue('left'));
+      var anchoAnterior = parseFloat(estiloAnterior.getPropertyValue('width'));
+
+      destino = posicionAnterior + anchoAnterior;
+    }
+  }
+
+}
 // Obtén todas las imágenes con la clase "aumentar"
 const imagenesAumentar = document.querySelectorAll('img.aumentar');
 // Agrega un evento click a cada imagen con la clase "aumentar"
@@ -3403,10 +3479,11 @@ var chart2 = new Chart(miCanvas5, {
         }
     }
 });
+// BARRAS
 var chart = new Chart(miCanvas6, { 
-  type: 'bar',    
+  type: 'bar',
   data: {
-      labels: ['DEFECTOS IDENTIFICADOS','DEFECTOS COREGIDOS', 'TIPO  1', 'TIPO  2'],
+      labels: ['DEFECTOS IDENTIFICADOS', 'DEFECTOS CORREGIDOS', 'TIPO 1', 'TIPO 2'],
       datasets: [
           {
               label: 'Participación en M.A',
@@ -3419,25 +3496,84 @@ var chart = new Chart(miCanvas6, {
       scales: {
           x: {
               grid: {
-                  display: false // Ocultar líneas de la cuadrícula en el eje X
+                  display: false
               },
               ticks: {
-                  color: 'rgb(255,255,255)' // Color de las etiquetas de texto en el eje X
+                  color: 'rgb(255,255,255)',
+                  font: {
+                      size: 9
+                  }
               }
           },
           y: {
               grid: {
+                  display: false
+              },
+              ticks: {
+                  color: 'rgb(255,255,255)',
+                  font: {
+                      size: 10
+                  },
+                  beginAtZero: true
+              }
+          }
+      },
+      indexAxis: 'x',
+      plugins: {
+          legend: {
+              display: false
+          },
+          title: {  // Agregar un título al gráfico
+              display: true,  // Mostrar el título
+              text: 'Participacion semanal',  // Texto del título
+              font: {
+                  size: 16  // Tamaño del texto del título
+              }
+          }
+      }
+  }
+});
+
+// BARRAS VERTICALES
+var chart = new Chart(miCanvas7, { 
+  type: 'bar',  // Cambiamos 'bar' a 'bar' para barras verticales   
+  data: {
+      labels: ['DEFECTOS IDENTIFICADOS', 'DEFECTOS CORREGIDOS', 'TIPO 1', 'TIPO 2'],
+      datasets: [
+          {
+              label: 'Participación en M.A',
+              backgroundColor: ['rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(0, 0, 255)', 'rgb(255, 255, 0)'],
+              data: [57, 88, 62, 33]
+          }
+      ]
+  },
+  options: {
+      scales: {
+          x: { // Cambiamos 'x' a 'y' para el eje vertical
+              grid: {
                   display: false // Ocultar líneas de la cuadrícula en el eje X
               },
               ticks: {
-                  color: 'rgb(255,255,255)' ,// Color de las etiquetas de texto en el eje X
-
+                  color: 'rgb(255,255,255)', // Color de las etiquetas de texto en el eje X
+                  font: {
+                      size: 9 // Cambiar el tamaño del texto en el eje X
+                  }
+              }
+          },
+          y: { // Cambiamos 'y' a 'x' para el eje horizontal
+              grid: {
+                  display: false // Ocultar líneas de la cuadrícula en el eje Y
+              },
+              ticks: {
+                  color: 'rgb(255,255,255)', // Color de las etiquetas de texto en el eje Y
+                  font: {
+                      size: 10 // Cambiar el tamaño del texto en el eje Y
+                  },
                   beginAtZero: true // Empezar el eje Y desde cero
               }
-
           }
       },
-      indexAxis: 'y', // Mostrar barras horizontalmente
+      indexAxis: 'x', // Cambiamos 'y' a 'x' para mostrar barras verticalmente
       plugins: {
           legend: {
               display: false // Ocultar la leyenda
@@ -3665,5 +3801,5 @@ canvasElements4.forEach(input => {
       link.classList.add('orange-text');
       imagenesPasoApaso(link.getAttribute('data-imagen'));
     });
-  });
+  }); 
 

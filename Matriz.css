@@ -480,9 +480,18 @@ width:447px ;
   left: 17px;
   margin-left:'77px';
   top: 147px;
-  width: 350px;
+  width: 300px;
   border-radius: 20px;
-  display: none;
+}
+#canvasContainer5 {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 117px;
+  margin-left:'77px';
+  top: 147px;
+  width: 300px;
+  border-radius: 20px;
 }
 #canvasContainer2 {
   display: flex;
@@ -1140,7 +1149,8 @@ elemento {
   margin-top: 140px;
 }
 .icono-user{
-  height: 117px;
+  position: relative;
+  height: 107px;
   border-radius: 7px;
   display: flex;
   flex-direction: column;
@@ -1151,8 +1161,8 @@ elemento {
   justify-content: center;
   width: 777px;
   position: absolute;
-  left: 262px;
   top: 104px;
+  left: 27px;
   display: flex;
   flex-direction: row;
   display: none;
@@ -1169,11 +1179,11 @@ elemento {
   position: relative;
   color: yellow;
   font-family: "GothamRounded", sans-serif;
+  margin-left: -21px;
 }
-
-/*.cont-user:first-child {
-  margin-left: 0;
-}*/
+.cont-user img{
+  margin-right: 57px;
+}
 #title-interfaz{
   display: flex;
   position: relative;
@@ -1183,6 +1193,12 @@ elemento {
   justify-content: center;  
   font-family: "GothamRounded", sans-serif;
   color: rgb(255, 204, 0);
+}
+#conte-secundario{
+  display: flex;
+  flex-direction: row-reverse;
+  position: absolute;
+  
 }
 
 /* Para hacerlos visibles nuevamente */
@@ -1199,68 +1215,3 @@ elemento.visible {
 }
 
 /*////////////////////////////////////*/
-.res-def{
-  display: flex;
-  flex-direction: column;
-  display: none;
-  position: absolute;
-  top:77px;
-}
-.res-lup{
-  display: flex;
-  flex-direction: column;
-  display: none;
-  position: absolute;
-  top:137px;
-}
-.res-ada{
-  display: flex;
-  flex-direction: column;
-  display: none;
-  position: absolute;
-  top:197px;
-}
-.res-def label{
-  color: yellow;
-  position: absolute;
-  left: -11px;
-  width: 67px;
-}
-.res-lup label{
-  color: yellow;
-  position: absolute;
-  left: -11px;
-  top: 29px;
-  width: 67px;
-}
-.res-ada label{
-  color: yellow;
-  position: absolute;
-  left: -11px;
-  top: 60px;
-  width: 67px;
-}
-#img-defec-id {
-  transform: rotate(90deg);
-  position: absolute;
-  height: 317px;
-  width: 57px;
-  left: 119px;
-  top: -107px;
-}
-#img-lup-id {
-  transform: rotate(90deg);
-  position: absolute;
-  height: 237px;
-  width: 57px;
-  left: 79px;
-  top: -37px;
-}
-#img-ada-id {
-  transform: rotate(90deg);
-  position: absolute;
-  height: 107px;
-  width: 57px;
-  left: 13px;
-  top: 59px;
-}
