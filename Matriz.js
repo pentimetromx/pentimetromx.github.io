@@ -4,7 +4,7 @@ var arrayContador = [];
 var destino = 257;
 var idsArray = [];
 var idsArrayEliminados = [];
-var idsMA = ['canvasContainer2', 'canvasContainer3', 'canvasContainer4','canvasContainer5', 'contChecks','troubleshooting','contImagNeg','contImagGraf'];
+var idsMA = ['canvasContainer2', 'canvasContainer3', 'canvasContainer4','canvasContainer5','canvasContainer6','canvasContainer7', 'contChecks','troubleshooting','contImagNeg','contImagGraf'];
 var idsResultados = ['icon-fredy','icon-carlos','icon-andres','icon-jorge','icon-jesus','icon-sandra','icon-mario'];
 var elementosContUser = document.querySelectorAll('.cont-user');
 
@@ -16,7 +16,7 @@ var imgTorreI = document.getElementById('imgTorre');
 var contInicial = document.getElementById('container1');
 var botonMa = document.getElementById('bot-mantaut');
 var imagPasoApaso = document.querySelectorAll('.img1');
-var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5','conte-secundario'];
+var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','conte-secundario'];
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado'];
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor'];
@@ -101,6 +101,11 @@ let miCanvas5 = document.getElementById('MiQuintaGrafica').getContext('2d');
 let miCanvas = document.getElementById('MiGrafica').getContext('2d');
 let miCanvas6 = document.getElementById('MiGrafica4').getContext('2d');
 let miCanvas7 = document.getElementById('MiGrafica5').getContext('2d');
+let miCanvas8 = document.getElementById('MiGrafica6').getContext('2d');
+let miCanvas9 = document.getElementById('MiGrafica7').getContext('2d');
+let miCanvas10 = document.getElementById('MiGrafica8').getContext('2d');
+
+
 
 var botones = document.querySelectorAll('.butt-mautonomo');
 var linksTorre = document.getElementById('contLinksTorre');
@@ -1501,7 +1506,11 @@ function deslizarChecks(idElement) {
   var contenedor1 = document.getElementById('contChecks');
   var contenedor2 = document.getElementById('canvasContainer2');
   var contenedor4 = document.getElementById('canvasContainer4');
-  var contenedor4 = document.getElementById('canvasContainer5');
+  var contenedor5 = document.getElementById('canvasContainer5');
+  var contenedor6 = document.getElementById('canvasContainer6');
+  var contenedor7 = document.getElementById('canvasContainer7');
+
+
 
 
 
@@ -3031,7 +3040,12 @@ function deslizaMosaico(){
   //}, 50); 
 }
 function resultadosEmpleado(idEmpleado) {
-  var arrayGraficos = [];
+  var canvasContainer4 = document.getElementById('canvasContainer4');
+  var canvasContainer5 = document.getElementById('canvasContainer5');
+  var canvasContainer6 = document.getElementById('canvasContainer6');
+  var canvasContainer7 = document.getElementById('canvasContainer7');
+  var canvasContainer8 = document.getElementById('canvasContainer8');
+
   var tituloMA = document.getElementById('title-interfaz');
   tituloMA.style.display = 'flex';
 
@@ -3040,38 +3054,62 @@ function resultadosEmpleado(idEmpleado) {
     var element = contUserElements[i];
     if (element.id === idEmpleado) {
       element.style.display = 'block';
-      // Capturar el ancho de idEmpleado
+      // Capturar el ancho de idEmpleadoº
     } else {
       element.style.display = 'none';
     }
   } 
+  arrayPosicionnador.push(idEmpleado)
+  console.log(arrayPosicionnador)
 
-   // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+ // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
    setTimeout(function() {
     graficosAutomaticos('canvasContainer4');
-    arrayGraficos.push('canvasContainer4')
-    console.log(arrayGraficos)
-  },1000); // 0.3 segundos
+    canvasContainer4.style.left = '177px'
+    canvasContainer4.style.top = '287px'
+  },500); // 0.3 segundos
+
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer7');
+    canvasContainer7.style.left = '237px'
+    canvasContainer7.style.top = '87px'
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
 
   setTimeout(function() {
     graficosAutomaticos('canvasContainer5');
-    arrayGraficos.push('canvasContainer5')
-    console.log(arrayGraficos)
-  }, 2000); // 0.3 segundos (300 ms + 300 ms)
+    canvasContainer5.style.left = '527px'
+    canvasContainer5.style.top = '87px'
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
+
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer6');
+    canvasContainer6.style.left = '927px'
+    canvasContainer6.style.top = '87px'
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
+
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer8');
+    canvasContainer8.style.display = 'block'
+    canvasContainer8.style.left = '677px'
+    canvasContainer8.style.top = '287px'
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
 
 }
+
+
 function graficosAutomaticos(idGrafico){
+  var destino = '77px';
 
   for (var i = 0; i < idsMA.length; i++) {
     var elto = idsMA[i];
     var elemento = document.getElementById(elto);
     
     if (elto === idGrafico) {
-      elemento.style.display = 'flex';
-      // Capturar el ancho de idGrafico 
+      elemento.style.display = 'flex';      
     }
   }
 }
+
 function deslizaMosaicoII(idElement) {
   var contLinkMant = document.getElementById('linksMA');
   var elementoAnterior = null;
@@ -3483,7 +3521,7 @@ var chart7 = new Chart(miCanvas6, {
       datasets: [
           {
               label: 'Participación en M.A',
-              backgroundColor: ['rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(0, 0, 255)', 'rgb(255, 255, 0)'],
+              backgroundColor: ['rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(128,128,128)', 'rgb(255, 255, 0)'],
               data: [57, 88, 62, 33]
           }
       ]
@@ -3530,53 +3568,227 @@ var chart7 = new Chart(miCanvas6, {
   }
 });
 // BARRAS VERTICALES
-var chart8 = new Chart(miCanvas7, { 
-  type: 'bar',  // Cambiamos 'bar' a 'bar' para barras verticales   
+var chart8 = new Chart(miCanvas7, {
+  type: 'bar',
   data: {
-      labels: ['DEFECTOS IDENTIFICADOS', 'DEFECTOS CORREGIDOS', 'TIPO 1', 'TIPO 2'],
-      datasets: [
-          {
-              label: 'Participación en M.A',
-              backgroundColor: ['rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(0, 0, 255)', 'rgb(255, 255, 0)'],
-              data: [57, 88, 62, 33]
-          }
-      ]
+    labels: ['Propuestas', 'Ejecutadas','Entrenadas'],
+    datasets: [
+      {
+        label: 'Participación en M.A',
+        backgroundColor: ['rgb(255, 165, 0)', 'rgb(0, 255, 0)','rgb(125,77,157)'],
+        data: [17, 9,27]
+      }
+    ]
   },
   options: {
-      scales: {
-          x: { // Cambiamos 'x' a 'y' para el eje vertical
-              grid: {
-                  display: false // Ocultar líneas de la cuadrícula en el eje X
-              },
-              ticks: {
-                  color: 'rgb(255,255,255)', // Color de las etiquetas de texto en el eje X
-                  font: {
-                      size: 9 // Cambiar el tamaño del texto en el eje X
-                  }
-              }
-          },
-          y: { // Cambiamos 'y' a 'x' para el eje horizontal
-              grid: {
-                  display: false // Ocultar líneas de la cuadrícula en el eje Y
-              },
-              ticks: {
-                  color: 'rgb(255,255,255)', // Color de las etiquetas de texto en el eje Y
-                  font: {
-                      size: 10 // Cambiar el tamaño del texto en el eje Y
-                  },
-                  beginAtZero: true // Empezar el eje Y desde cero
-              }
+    scales: {
+      x: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 9
           }
+        }
       },
-      indexAxis: 'x', // Cambiamos 'y' a 'x' para mostrar barras verticalmente
-      plugins: {
-          legend: {
-              display: false // Ocultar la leyenda
-          }
+      y: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 10
+          },
+          beginAtZero: true
+        }
       }
+    },
+    indexAxis: 'y',
+    plugins: {
+      legend: {
+        display: false
+      },
+      title: {
+        display: true,
+        text: 'Lección de un punto',
+        font: {
+          size: 16
+        }
+      }
+    }
+  }
+});
+var chart9 = new Chart(miCanvas8, {
+  type: 'line',
+  data: {
+    labels: ['Mecanicas', 'Layout','Diseño','Temporales','Fijas','Transicion'],
+    datasets: [
+      {
+        label: 'Participación en M.A',
+        borderColor: 'rgb(0, 0, 255)',
+        backgroundColor: ['rgb(255, 165, 0)', 'rgb(0, 255, 0)', 'rgb(255, 165, 0)','rgb(255,255,0)','rgb(255,0,0)','rgb(0,255,255)'],
+        borderWidth: 1,        
+        data: [17, 9,27,55,19,33]
+      }
+    ]
+  },
+  options: {
+    scales: {
+      x: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 9
+          }
+        }
+      },
+      y: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 10
+          },
+          beginAtZero: true
+        }
+      }
+    },
+    indexAxis: 'x',
+    plugins: {
+      legend: {
+        display: false
+      },
+      title: {
+        display: true,
+        text: 'Areas De Dificil Acceso',
+        font: {
+          size: 16
+        }
+      }
+    }
   }
 });
 
+var chart10 = new Chart(miCanvas9, {
+  type: 'doughnut',
+  data: {
+    labels: ['Mecanicas', 'Layout','Diseño','Temporales','Fijas'],
+    datasets: [
+      {
+        label: 'Participación en M.A',
+        backgroundColor: ['rgb(255, 165, 0)', 'rgb(0, 255, 0)','rgb(125,77,157)','rgb(255,255,0)','rgb(255,0,0)','rgb(0,0,255)'],
+        data: [17, 9,27,55,19,33]
+      }
+    ]
+  },
+  options: {
+    scales: {
+      x: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 9
+          }
+        }
+      },
+      y: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 10
+          },
+          beginAtZero: true
+        }
+      }
+    },
+    indexAxis: 'x',
+    plugins: {
+      legend: {
+        display: false
+      },
+      title: {
+        display: true,
+        text: 'Ayudas De Trabajo',
+        font: {
+          size: 16
+        }
+      }
+    }
+  }
+});
+
+var chart11 = new Chart(miCanvas10, {
+  type: 'pie',
+  data: {
+    labels: ['LUP', 'DEF 1','DEF 2','ADA','ADT'],
+    datasets: [
+      {
+        label: 'Participación en M.A',
+        backgroundColor: ['rgb(255, 165, 0)', 'rgb(0, 255, 0)','#d6919a','rgb(255,255,0)','rgb(128,128,128)','rgb(0,255,255)'],
+        data: [7, 19,17,37,9,77]
+      }
+    ]
+  },
+  options: {
+    scales: {
+      x: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 9
+          }
+        }
+      },
+      y: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 10
+          },
+          beginAtZero: true
+        }
+      }
+    },
+    indexAxis: 'x',
+    plugins: {
+      legend: {
+        display: false
+      },
+      title: {
+        display: true,
+        text: 'Ejecución ',
+        font: {
+          size: 16
+        }
+      }
+    }
+  }
+});
+
+
+
+// Aumentar el grosor de las barras
+/* chart8.options.scales.x.barThickness = 100; // Ajusta el valor a un grosor mayor */
 
 /* //////////////////////////////////AUMENTO Y MOVIMIENTO IMAGENES ///////////////////////////////////////////// */
 const zoomableImages = document.querySelectorAll('.image-trainings');
@@ -3796,5 +4008,5 @@ canvasElements4.forEach(input => {
       link.classList.add('orange-text');
       imagenesPasoApaso(link.getAttribute('data-imagen'));
     });
-  }); 
+  });
 
