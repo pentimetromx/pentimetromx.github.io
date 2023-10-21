@@ -1,3 +1,4 @@
+var arrayFunctions = ['updateMario','updateFredy','updateCarlos','updateAndres','updateJorge','updateJesus','updateSandra']; 
 var arrayIdButtsMA = ['resultados','troubleshoot','def1','def2','adtBut','fua1','lup'];
 var arrayPosicionnador = [];
 var arrayContador = [];
@@ -3039,16 +3040,9 @@ function deslizaMosaico(){
     }, 300);
   //}, 50); 
 }
-function resultadosEmpleado(idEmpleado) {
-  var canvasContainer4 = document.getElementById('canvasContainer4');
-  var canvasContainer5 = document.getElementById('canvasContainer5');
-  var canvasContainer6 = document.getElementById('canvasContainer6');
-  var canvasContainer7 = document.getElementById('canvasContainer7');
-  var canvasContainer8 = document.getElementById('canvasContainer8');
-
+function resultadosEmpleado(idEmpleado,functionExe) {
   var tituloMA = document.getElementById('title-interfaz');
   tituloMA.style.display = 'flex';
-
   var contUserElements = document.getElementsByClassName('cont-user');
   for (var i = 0; i < contUserElements.length; i++) {
     var element = contUserElements[i];
@@ -3060,9 +3054,102 @@ function resultadosEmpleado(idEmpleado) {
     }
   } 
   arrayPosicionnador.push(idEmpleado)
-  console.log(arrayPosicionnador)
+  console.log(arrayPosicionnador) 
+  switch (functionExe) {
+    case 'updateFredy':
+      updateFredy();
+    break;
+    case 'updateMario':
+      updateMario();
+    break;
+    case 'updateSandra':
+      updateSandra();
+    break;
+    case 'updateJesus':
+      updateJesus();
+    break; 
+    case 'updateJorge':
+      updateJorge();
+    break; 
+    case 'updateAndres':
+      updateAndres();
+    break;
+    case 'updateCarlos':
+      updateCarlos();
+    break;           
+  default:      
+}}
+function graficosAutomaticos(idGrafico){
 
- // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+  for (var i = 0; i < idsMA.length; i++) {
+    var elto = idsMA[i];
+    var elemento = document.getElementById(elto);
+    
+    if (elto === idGrafico) {
+      elemento.style.display = 'flex';      
+    }
+  }
+}
+function updateFredy() {
+   // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+   setTimeout(function() {
+    graficosAutomaticos('canvasContainer4');
+    canvasContainer4.style.left = '177px'
+    canvasContainer4.style.top = '287px'
+  },500); // 0.3 segundos
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer7');
+    canvasContainer7.style.left = '237px'
+    canvasContainer7.style.top = '87px'
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer5');
+    canvasContainer5.style.left = '527px'
+    canvasContainer5.style.top = '87px'
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer6');
+    canvasContainer6.style.left = '927px'
+    canvasContainer6.style.top = '87px'
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer8');
+    canvasContainer8.style.display = 'block'
+    canvasContainer8.style.left = '677px'
+    canvasContainer8.style.top = '287px'
+  }, 700); // 0.3 segundos (300 ms + 300 ms) 
+  var nuevosDatos = [/* Nuevos valores de datos */ 0,70,30,70,50,90];
+  // Actualiza los datos del gráfico
+  chart7.data.datasets[0].data = nuevosDatos;
+  // Actualiza el gráfico
+  chart7.update();
+  ///////////////////////////////////////////////////////////////////
+  var nuevosDatosI = [/* Nuevos valores de datos */ 55,5,95,30,10,10];
+  // Actualiza los datos del gráfico
+  chart8.data.datasets[0].data = nuevosDatosI;
+  // Actualiza el gráfico
+  chart8.update();
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosII = [/* Nuevos valores de datos */ 30,50,60,77,20,8];
+  // Actualiza los datos del gráfico
+  chart9.data.datasets[0].data = nuevosDatosII;
+  // Actualiza el gráfico
+  chart9.update(); 
+    //////////////////////////////////////////////////////////////////
+    var nuevosDatosIII = [/* Nuevos valores de datos */ 5,17,8,30,44,10];
+    // Actualiza los datos del gráfico
+    chart10.data.datasets[0].data = nuevosDatosIII;
+    // Actualiza el gráfico
+    chart10.update();
+      //////////////////////////////////////////////////////////////////
+  var nuevosDatosIIII = [/* Nuevos valores de datos */ 11,50,20,80,10,100];
+  // Actualiza los datos del gráfico
+  chart11.data.datasets[0].data = nuevosDatosIIII;
+  // Actualiza el gráfico
+  chart11.update(); 
+}
+function updateMario() {
+   // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
    setTimeout(function() {
     graficosAutomaticos('canvasContainer4');
     canvasContainer4.style.left = '177px'
@@ -3094,21 +3181,333 @@ function resultadosEmpleado(idEmpleado) {
     canvasContainer8.style.top = '287px'
   }, 700); // 0.3 segundos (300 ms + 300 ms)
 
+  var nuevosDatos = [/* Nuevos valores de datos */ 100,20,70,10,80,90];
+  // Actualiza los datos del gráfico
+  chart7.data.datasets[0].data = nuevosDatos;
+  // Actualiza el gráfico
+  chart7.update();
+  ///////////////////////////////////////////////////////////////////
+  var nuevosDatosI = [/* Nuevos valores de datos */ 30,25,90,110,50,77];
+  // Actualiza los datos del gráfico
+  chart8.data.datasets[0].data = nuevosDatosI;
+  // Actualiza el gráfico
+  chart8.update();
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosII = [/* Nuevos valores de datos */ 100,90,10,30,70,10];
+  // Actualiza los datos del gráfico
+  chart9.data.datasets[0].data = nuevosDatosII;
+  // Actualiza el gráfico
+  chart9.update(); 
+    //////////////////////////////////////////////////////////////////
+    var nuevosDatosIII = [/* Nuevos valores de datos */ 99,11,70,47,17,80];
+    // Actualiza los datos del gráfico
+    chart10.data.datasets[0].data = nuevosDatosIII;
+    // Actualiza el gráfico
+    chart10.update();
+      //////////////////////////////////////////////////////////////////
+  var nuevosDatosIIII = [/* Nuevos valores de datos */ 10,80,50,20,90,40];
+  // Actualiza los datos del gráfico
+  chart11.data.datasets[0].data = nuevosDatosIIII;
+  // Actualiza el gráfico
+  chart11.update(); 
+}
+function updateSandra() {
+  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+  setTimeout(function() {
+   graficosAutomaticos('canvasContainer4');
+   canvasContainer4.style.left = '177px'
+   canvasContainer4.style.top = '287px'
+ },500); // 0.3 segundos
+
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer7');
+   canvasContainer7.style.left = '237px'
+   canvasContainer7.style.top = '87px'
+ }, 700); // 0.3 segundos (300 ms + 300 ms)
+
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer5');
+   canvasContainer5.style.left = '527px'
+   canvasContainer5.style.top = '87px'
+ }, 700); // 0.3 segundos (300 ms + 300 ms)
+
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer6');
+   canvasContainer6.style.left = '927px'
+   canvasContainer6.style.top = '87px'
+ }, 700); // 0.3 segundos (300 ms + 300 ms)
+
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer8');
+   canvasContainer8.style.display = 'block'
+   canvasContainer8.style.left = '677px'
+   canvasContainer8.style.top = '287px'
+ }, 700); // 0.3 segundos (300 ms + 300 ms)
+
+ var nuevosDatos = [/* Nuevos valores de datos */ 33,20,100,50,80,10];
+ // Actualiza los datos del gráfico
+ chart7.data.datasets[0].data = nuevosDatos;
+ // Actualiza el gráfico
+ chart7.update();
+ ///////////////////////////////////////////////////////////////////
+ var nuevosDatosI = [/* Nuevos valores de datos */ 30,75,20,100,50,17];
+ // Actualiza los datos del gráfico
+ chart8.data.datasets[0].data = nuevosDatosI;
+ // Actualiza el gráfico
+ chart8.update();
+ //////////////////////////////////////////////////////////////////
+ var nuevosDatosII = [/* Nuevos valores de datos */ 33,50,30,90,100,5];
+ // Actualiza los datos del gráfico
+ chart9.data.datasets[0].data = nuevosDatosII;
+ // Actualiza el gráfico
+ chart9.update(); 
+   //////////////////////////////////////////////////////////////////
+   var nuevosDatosIII = [/* Nuevos valores de datos */ 9,5,70,97,37,60];
+   // Actualiza los datos del gráfico
+   chart10.data.datasets[0].data = nuevosDatosIII;
+   // Actualiza el gráfico
+   chart10.update();
+     //////////////////////////////////////////////////////////////////
+ var nuevosDatosIIII = [/* Nuevos valores de datos */ 30,40,250,600,45,800];
+ // Actualiza los datos del gráfico
+ chart11.data.datasets[0].data = nuevosDatosIIII;
+ // Actualiza el gráfico
+ chart11.update(); 
+}
+function updateJesus() {
+  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+  setTimeout(function() {
+   graficosAutomaticos('canvasContainer4');
+   canvasContainer4.style.left = '177px'
+   canvasContainer4.style.top = '287px'
+ },500); // 0.3 segundos
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer7');
+   canvasContainer7.style.left = '237px'
+   canvasContainer7.style.top = '87px'
+ }, 700); // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer5');
+   canvasContainer5.style.left = '527px'
+   canvasContainer5.style.top = '87px'
+ }, 700); // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer6');
+   canvasContainer6.style.left = '927px'
+   canvasContainer6.style.top = '87px'
+ }, 700); // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer8');
+   canvasContainer8.style.display = 'block'
+   canvasContainer8.style.left = '677px'
+   canvasContainer8.style.top = '287px'
+ }, 700); // 0.3 segundos (300 ms + 300 ms)
+ var nuevosDatos = [/* Nuevos valores de datos */ 10,100,10,20,50,90];
+ // Actualiza los datos del gráfico
+ chart7.data.datasets[0].data = nuevosDatos;
+ // Actualiza el gráfico
+ chart7.update();
+ ///////////////////////////////////////////////////////////////////
+ var nuevosDatosI = [/* Nuevos valores de datos */ 100,50,10,100,50,17];
+ // Actualiza los datos del gráfico
+ chart8.data.datasets[0].data = nuevosDatosI;
+ // Actualiza el gráfico
+ chart8.update();
+ //////////////////////////////////////////////////////////////////
+ var nuevosDatosII = [/* Nuevos valores de datos */ 10,100,50,30,10,90];
+ // Actualiza los datos del gráfico
+ chart9.data.datasets[0].data = nuevosDatosII;
+ // Actualiza el gráfico
+ chart9.update(); 
+   //////////////////////////////////////////////////////////////////
+   var nuevosDatosIII = [/* Nuevos valores de datos */ 9,90,70,47,87,10];
+   // Actualiza los datos del gráfico
+   chart10.data.datasets[0].data = nuevosDatosIII;
+   // Actualiza el gráfico
+   chart10.update();
+     //////////////////////////////////////////////////////////////////
+ var nuevosDatosIIII = [/* Nuevos valores de datos */ 100,8,50,70,30,10];
+ // Actualiza los datos del gráfico
+ chart11.data.datasets[0].data = nuevosDatosIIII;
+ // Actualiza el gráfico
+ chart11.update(); 
+}
+function updateJorge() {
+  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+  setTimeout(function() {
+   graficosAutomaticos('canvasContainer4');
+   canvasContainer4.style.left = '177px'
+   canvasContainer4.style.top = '287px'
+ },500); // 0.3 segundos
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer7');
+   canvasContainer7.style.left = '237px'
+   canvasContainer7.style.top = '87px'
+ }, 700); // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer5');
+   canvasContainer5.style.left = '527px'
+   canvasContainer5.style.top = '87px'
+ }, 700); // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer6');
+   canvasContainer6.style.left = '927px'
+   canvasContainer6.style.top = '87px'
+ }, 700); // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer8');
+   canvasContainer8.style.display = 'block'
+   canvasContainer8.style.left = '677px'
+   canvasContainer8.style.top = '287px'
+ }, 700); // 0.3 segundos (300 ms + 300 ms)
+ var nuevosDatos = [/* Nuevos valores de datos */ 10,20,50,10,10,5];
+ // Actualiza los datos del gráfico
+ chart7.data.datasets[0].data = nuevosDatos;
+ // Actualiza el gráfico
+ chart7.update();
+ ///////////////////////////////////////////////////////////////////
+ var nuevosDatosI = [/* Nuevos valores de datos */ 77,33,44,66,55,17];
+ // Actualiza los datos del gráfico
+ chart8.data.datasets[0].data = nuevosDatosI;
+ // Actualiza el gráfico
+ chart8.update();
+ //////////////////////////////////////////////////////////////////
+ var nuevosDatosII = [/* Nuevos valores de datos */ 50,5,5,10,100,77];
+ // Actualiza los datos del gráfico
+ chart9.data.datasets[0].data = nuevosDatosII;
+ // Actualiza el gráfico
+ chart9.update(); 
+   //////////////////////////////////////////////////////////////////
+   var nuevosDatosIII = [/* Nuevos valores de datos */ 55,17,77,100,47,7];
+   // Actualiza los datos del gráfico
+   chart10.data.datasets[0].data = nuevosDatosIII;
+   // Actualiza el gráfico
+   chart10.update();
+     //////////////////////////////////////////////////////////////////
+ var nuevosDatosIIII = [/* Nuevos valores de datos */ 44,99,17,77,10,5];
+ // Actualiza los datos del gráfico
+ chart11.data.datasets[0].data = nuevosDatosIIII;
+ // Actualiza el gráfico
+ chart11.update(); 
+}
+function updateAndres() {
+  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+  setTimeout(function() {
+   graficosAutomaticos('canvasContainer4');
+   canvasContainer4.style.left = '177px'
+   canvasContainer4.style.top = '287px'
+ },500); // 0.3 segundos
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer7');
+   canvasContainer7.style.left = '237px'
+   canvasContainer7.style.top = '87px'
+ }, 700); // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer5');
+   canvasContainer5.style.left = '527px'
+   canvasContainer5.style.top = '87px'
+ }, 700); // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer6');
+   canvasContainer6.style.left = '927px'
+   canvasContainer6.style.top = '87px'
+ }, 700); // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer8');
+   canvasContainer8.style.display = 'block'
+   canvasContainer8.style.left = '677px'
+   canvasContainer8.style.top = '287px'
+ }, 700); // 0.3 segundos (300 ms + 300 ms)
+ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5];
+ // Actualiza los datos del gráfico
+ chart7.data.datasets[0].data = nuevosDatos;
+ // Actualiza el gráfico
+ chart7.update();
+ ///////////////////////////////////////////////////////////////////
+ var nuevosDatosI = [/* Nuevos valores de datos */ 7,3,4,6,5,7];
+ // Actualiza los datos del gráfico
+ chart8.data.datasets[0].data = nuevosDatosI;
+ // Actualiza el gráfico
+ chart8.update();
+ //////////////////////////////////////////////////////////////////
+ var nuevosDatosII = [/* Nuevos valores de datos */ 5,15,55,10,100,77];
+ // Actualiza los datos del gráfico
+ chart9.data.datasets[0].data = nuevosDatosII;
+ // Actualiza el gráfico
+ chart9.update(); 
+   //////////////////////////////////////////////////////////////////
+   var nuevosDatosIII = [/* Nuevos valores de datos */ 0,17,37,50,97,27];
+   // Actualiza los datos del gráfico
+   chart10.data.datasets[0].data = nuevosDatosIII;
+   // Actualiza el gráfico
+   chart10.update();
+     //////////////////////////////////////////////////////////////////
+ var nuevosDatosIIII = [/* Nuevos valores de datos */ 5,29,17,47,3,19];
+ // Actualiza los datos del gráfico
+ chart11.data.datasets[0].data = nuevosDatosIIII;
+ // Actualiza el gráfico
+ chart11.update(); 
+}
+function updateCarlos() {
+  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+  setTimeout(function() {
+   graficosAutomaticos('canvasContainer4');
+   canvasContainer4.style.left = '177px'
+   canvasContainer4.style.top = '287px'
+ },500); // 0.3 segundos
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer7');
+   canvasContainer7.style.left = '237px'
+   canvasContainer7.style.top = '87px'
+ }, 700); // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer5');
+   canvasContainer5.style.left = '527px'
+   canvasContainer5.style.top = '87px'
+ }, 700); // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer6');
+   canvasContainer6.style.left = '927px'
+   canvasContainer6.style.top = '87px'
+ }, 700); // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer8');
+   canvasContainer8.style.display = 'block'
+   canvasContainer8.style.left = '677px'
+   canvasContainer8.style.top = '287px'
+ }, 700); // 0.3 segundos (300 ms + 300 ms)
+ var nuevosDatos = [/* Nuevos valores de datos */ 17,99,44,0,7,5];
+ // Actualiza los datos del gráfico
+ chart7.data.datasets[0].data = nuevosDatos;
+ // Actualiza el gráfico
+ chart7.update();
+ ///////////////////////////////////////////////////////////////////
+ var nuevosDatosI = [/* Nuevos valores de datos */ 27,33,84,6,15,97];
+ // Actualiza los datos del gráfico
+ chart8.data.datasets[0].data = nuevosDatosI;
+ // Actualiza el gráfico
+ chart8.update();
+ //////////////////////////////////////////////////////////////////
+ var nuevosDatosII = [/* Nuevos valores de datos */ 15,5,55,90,100,17];
+ // Actualiza los datos del gráfico
+ chart9.data.datasets[0].data = nuevosDatosII;
+ // Actualiza el gráfico
+ chart9.update(); 
+   //////////////////////////////////////////////////////////////////
+   var nuevosDatosIII = [/* Nuevos valores de datos */ 20,97,27,80,7,77];
+   // Actualiza los datos del gráfico
+   chart10.data.datasets[0].data = nuevosDatosIII;
+   // Actualiza el gráfico
+   chart10.update();
+     //////////////////////////////////////////////////////////////////
+ var nuevosDatosIIII = [/* Nuevos valores de datos */ 50,91,17,77,33,89];
+ // Actualiza los datos del gráfico
+ chart11.data.datasets[0].data = nuevosDatosIIII;
+ // Actualiza el gráfico
+ chart11.update(); 
 }
 
 
-function graficosAutomaticos(idGrafico){
-  var destino = '77px';
-
-  for (var i = 0; i < idsMA.length; i++) {
-    var elto = idsMA[i];
-    var elemento = document.getElementById(elto);
-    
-    if (elto === idGrafico) {
-      elemento.style.display = 'flex';      
-    }
-  }
-}
 
 function deslizaMosaicoII(idElement) {
   var contLinkMant = document.getElementById('linksMA');
@@ -3784,9 +4183,6 @@ var chart11 = new Chart(miCanvas10, {
     }
   }
 });
-
-
-
 // Aumentar el grosor de las barras
 /* chart8.options.scales.x.barThickness = 100; // Ajusta el valor a un grosor mayor */
 
