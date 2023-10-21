@@ -3042,19 +3042,26 @@ function deslizaMosaico(){
 }
 function resultadosEmpleado(idEmpleado,functionExe) {
   var tituloMA = document.getElementById('title-interfaz');
+  var contUserScroll = document.getElementById('contenedor-vertical')
   tituloMA.style.display = 'flex';
   var contUserElements = document.getElementsByClassName('cont-user');
   for (var i = 0; i < contUserElements.length; i++) {
     var element = contUserElements[i];
     if (element.id === idEmpleado) {
       element.style.display = 'block';
-      // Capturar el ancho de idEmpleadoº
+      element.style.top = '-157px'
     } else {
       element.style.display = 'none';
     }
   } 
+
+  if(contUserScroll){
+    contUserScroll.style.display = 'block'
+    contUserScroll.style.top = '117px'
+  }
+
   arrayPosicionnador.push(idEmpleado)
-  console.log(arrayPosicionnador) 
+  console.log(arrayPosicionnador)
   switch (functionExe) {
     case 'updateFredy':
       updateFredy();
@@ -3506,9 +3513,6 @@ function updateCarlos() {
  // Actualiza el gráfico
  chart11.update(); 
 }
-
-
-
 function deslizaMosaicoII(idElement) {
   var contLinkMant = document.getElementById('linksMA');
   var elementoAnterior = null;

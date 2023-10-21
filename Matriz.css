@@ -349,7 +349,6 @@ transform: scale(1.1);
   color: white;
   margin-top: 5px;
 }
-
 #contInput{
   display: flex;
   flex-direction: column;
@@ -426,7 +425,6 @@ width:447px ;
   height:489px;
   border-radius: 17px;
 }
-
 #contImagNeg {
   display: flex;
   flex-direction: column;
@@ -441,7 +439,6 @@ width:447px ;
   height:490px;
   border-radius: 17px;
 }
-
 /*/////////////////////////////////////////////// */
 .butt-mautonomo{
   display: none;
@@ -835,14 +832,12 @@ margin-right: 7px;
   display: flex;
   align-items: center;
 }
-
 /* Estilo para el punto después del título */
 #titleContainerI::after,
 #titleContainer::after {
   content: " ";
   color: transparent;
 }
-
 /* Estilo para la línea debajo del título */
 #lineI {
   position: absolute;
@@ -888,14 +883,12 @@ margin-right: 7px;
 #linkList li {
   margin: 5px 0;
 }
-
 /* Estilo para los enlaces cuando se muestran */
 #linkListI a,
 #linkList a {
   color: black;
   text-decoration: none;
 }
-
 /* Estilo para la línea debajo de los enlaces cuando el puntero está sobre ellos */
 #linkListI li:hover,
 #linkList li:hover {
@@ -1146,7 +1139,6 @@ elemento {
   border-radius: 17px; 
   margin-top: 17px;
 }
-
 #aceitera-II{
   display: flex;
   flex-direction: column;
@@ -1199,13 +1191,22 @@ elemento {
   flex-direction: row;
   display: none;
 }
+.cont-userI,
 .cont-user {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-right: 21px;
+  /* margin-right: 21px; */
   margin-top: 21px;
   cursor: pointer;
+}
+.cont-userI label{
+  position: relative;
+  color: yellow;
+  font-family: "GothamRounded", sans-serif;
+  font-size: 12px;
+  margin-left: -1px; 
 }
 .cont-user label{
   position: relative;
@@ -1213,6 +1214,7 @@ elemento {
   font-family: "GothamRounded", sans-serif;
   margin-left: -21px;
 }
+.cont-userI img,
 .cont-user img{
   margin-right: 57px;
 }
@@ -1232,21 +1234,28 @@ elemento {
   position: absolute;
   
 }
-
 /* Para hacerlos visibles nuevamente */
 elemento.visible {
   opacity: 1;
 }
-
 .orange-text {
   color: orange;
 }
-
 .blue-text {
   color: blue;
 }
 
-/*////////////////////////////////////*/
-#icon-fredy{
-  left: 377px;
+
+.contenedor-vertical {
+  position: fixed;
+  top: 191px;
+  left: 27px;
+  display: flex;
+  flex-direction: column;
+  max-height: 400px; /* Establece la altura máxima para la lista */
+  overflow-y: auto; /* Agrega una barra de desplazamiento vertical cuando sea necesario */
+}
+
+.cont-user {
+  margin-bottom: 10px; /* Espacio entre los contenedores */
 }
