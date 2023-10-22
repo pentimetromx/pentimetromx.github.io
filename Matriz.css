@@ -1191,7 +1191,15 @@ elemento {
   flex-direction: row;
   display: none;
 }
-.cont-userI,
+.cont-userI{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left:17px;
+  margin-top:21px;
+  cursor: pointer;
+}
 .cont-user {
   position: relative;
   display: flex;
@@ -1199,6 +1207,7 @@ elemento {
   justify-content: center;
   /* margin-right: 21px; */
   margin-top: 21px;
+  margin-bottom: 10px; /* Espacio entre los contenedores */
   cursor: pointer;
 }
 .cont-userI label{
@@ -1212,7 +1221,7 @@ elemento {
   position: relative;
   color: yellow;
   font-family: "GothamRounded", sans-serif;
-  margin-left: -21px;
+  margin-left: -1px;
 }
 .cont-userI img,
 .cont-user img{
@@ -1244,18 +1253,14 @@ elemento.visible {
 .blue-text {
   color: blue;
 }
-
-
 .contenedor-vertical {
   position: fixed;
   top: 191px;
-  left: 27px;
+  left: 11px;
+  width: 187px;
   display: flex;
   flex-direction: column;
+  background-color: rgb(22,22,22);
   max-height: 400px; /* Establece la altura máxima para la lista */
   overflow-y: auto; /* Agrega una barra de desplazamiento vertical cuando sea necesario */
-}
-
-.cont-user {
-  margin-bottom: 10px; /* Espacio entre los contenedores */
 }
