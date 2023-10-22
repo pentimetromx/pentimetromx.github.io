@@ -522,6 +522,17 @@ width:447px ;
   border-radius: 20px;
   display: none;
 }
+#canvasContainer9 {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 1017px;
+  margin-left:'77px';
+  top: 147px;
+  width: 207px;
+  border-radius: 20px;
+  display: none;
+}
 #canvasContainer2 {
   display: flex;
   flex-direction: column;
@@ -1221,6 +1232,7 @@ elemento {
   position: relative;
   color: yellow;
   font-family: "GothamRounded", sans-serif;
+  width: 150px;
   margin-left: -1px;
 }
 .cont-userI img,
@@ -1259,6 +1271,7 @@ elemento.visible {
   left: 11px;
   width: 187px;
   display: flex;
+  display: none;
   flex-direction: column;
   background-color: rgb(22,22,22);
   max-height: 400px; /* Establece la altura máxima para la lista */

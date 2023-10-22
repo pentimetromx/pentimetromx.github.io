@@ -55,7 +55,6 @@ var imgesDistribuidor = ['imgs-I','imgs-II','imgs-III','imgs-IV','imgs-V'];
 var imgesPlancha = ['portPlaca','portPlaca1','portPlaca2','portPlaca3','portPlaca4'];
 var contImgsManta = document.getElementById('contPerfilesManta');
 
-
 const coleccImgFront = document.querySelectorAll('.rep-frente');
 const coleccImgIzq = document.querySelectorAll('.rep-izquierda');
 const conteRepDistrib = document.querySelectorAll('.imgRow');
@@ -69,13 +68,11 @@ const seccionFrente = document.getElementById('pantalla-frente');
 const seccionMandos = document.getElementById('pantalla-mandos');
 const pantallas = ['pantalla-frente', 'pantalla-mandos','pantalla-servicio','pantalla-atras'];
 
-
 const contieneLinks = document.getElementById('cont-links');
 const imgsRepuestos = document.getElementById('imgsRepuestos');// HIJO IMAGENES
 const imgsRepuestosII = document.getElementById('imgsRepuestos-II');// HIJO IMAGENES 
 const imgsRepuestosIII = document.getElementById('imgsRepuestos-III');// HIJO IMAGENES      
-const imgsRepuestosIV = document.getElementById('imgsRepuestos-IV');// HIJO IMAGENES      
-
+const imgsRepuestosIV = document.getElementById('imgsRepuestos-IV');// HIJO IMAGENES     
 
 const contPadreMA = document.getElementById('conteneMantaut');
 const videoElements = document.querySelectorAll('.video-training','vidBackGrPress');   
@@ -105,8 +102,7 @@ let miCanvas7 = document.getElementById('MiGrafica5').getContext('2d');
 let miCanvas8 = document.getElementById('MiGrafica6').getContext('2d');
 let miCanvas9 = document.getElementById('MiGrafica7').getContext('2d');
 let miCanvas10 = document.getElementById('MiGrafica8').getContext('2d');
-
-
+let miCanvas11 = document.getElementById('MiGrafica9').getContext('2d');
 
 var botones = document.querySelectorAll('.butt-mautonomo');
 var linksTorre = document.getElementById('contLinksTorre');
@@ -1198,7 +1194,6 @@ function mantAutonomo (idElement) {
 }}
 var botonClicado = false;
 var originalButtonColors = {}; // Objeto para almacenar los colores originales de los botones
-
 function deslizaContenedor(idElement, idButton) {
   var contLinkMant = document.getElementById('linksMA');
   var elementoAnterior = null;
@@ -3124,6 +3119,13 @@ function updateFredy() {
     canvasContainer8.style.left = '677px'
     canvasContainer8.style.top = '287px'
   }, 700); // 0.3 segundos (300 ms + 300 ms) 
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer9');
+    canvasContainer9.style.display = 'block'
+    canvasContainer9.style.left = '927px'
+    canvasContainer9.style.top = '387px'
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
+
   var nuevosDatos = [/* Nuevos valores de datos */ 0,70,30,70,50,90];
   // Actualiza los datos del gráfico
   chart7.data.datasets[0].data = nuevosDatos;
@@ -3141,18 +3143,24 @@ function updateFredy() {
   chart9.data.datasets[0].data = nuevosDatosII;
   // Actualiza el gráfico
   chart9.update(); 
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosIII = [/* Nuevos valores de datos */ 5,17,8,30,44,10];
+  // Actualiza los datos del gráfico
+  chart10.data.datasets[0].data = nuevosDatosIII;
+  // Actualiza el gráfico
+  chart10.update();
     //////////////////////////////////////////////////////////////////
-    var nuevosDatosIII = [/* Nuevos valores de datos */ 5,17,8,30,44,10];
-    // Actualiza los datos del gráfico
-    chart10.data.datasets[0].data = nuevosDatosIII;
-    // Actualiza el gráfico
-    chart10.update();
-      //////////////////////////////////////////////////////////////////
   var nuevosDatosIIII = [/* Nuevos valores de datos */ 11,50,20,80,10,100];
   // Actualiza los datos del gráfico
   chart11.data.datasets[0].data = nuevosDatosIIII;
   // Actualiza el gráfico
   chart11.update(); 
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosV = [/* Nuevos valores de datos */ 5,17,33,45,51,57,67,99];
+  // Actualiza los datos del gráfico
+  chart12.data.datasets[0].data = nuevosDatosV;
+  // Actualiza el gráfico
+  chart12.update(); 
 }
 function updateMario() {
    // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
@@ -3216,6 +3224,12 @@ function updateMario() {
   chart11.data.datasets[0].data = nuevosDatosIIII;
   // Actualiza el gráfico
   chart11.update(); 
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosV = [/* Nuevos valores de datos */ 55,67,73,70,65,80,80,91];
+  // Actualiza los datos del gráfico
+  chart12.data.datasets[0].data = nuevosDatosV;
+  // Actualiza el gráfico
+  chart12.update(); 
 }
 function updateSandra() {
   // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
@@ -3267,18 +3281,24 @@ function updateSandra() {
  chart9.data.datasets[0].data = nuevosDatosII;
  // Actualiza el gráfico
  chart9.update(); 
-   //////////////////////////////////////////////////////////////////
-   var nuevosDatosIII = [/* Nuevos valores de datos */ 9,5,70,97,37,60];
-   // Actualiza los datos del gráfico
-   chart10.data.datasets[0].data = nuevosDatosIII;
-   // Actualiza el gráfico
-   chart10.update();
-     //////////////////////////////////////////////////////////////////
+ //////////////////////////////////////////////////////////////////
+  var nuevosDatosIII = [/* Nuevos valores de datos */ 9,5,70,97,37,60];
+  // Actualiza los datos del gráfico
+  chart10.data.datasets[0].data = nuevosDatosIII;
+  // Actualiza el gráfico
+  chart10.update();
+  //////////////////////////////////////////////////////////////////
  var nuevosDatosIIII = [/* Nuevos valores de datos */ 30,40,250,600,45,800];
  // Actualiza los datos del gráfico
  chart11.data.datasets[0].data = nuevosDatosIIII;
  // Actualiza el gráfico
  chart11.update(); 
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosV = [/* Nuevos valores de datos */ 50,37,33,17,51,77,67,70];
+  // Actualiza los datos del gráfico
+  chart12.data.datasets[0].data = nuevosDatosV;
+  // Actualiza el gráfico
+  chart12.update();  
 }
 function updateJesus() {
   // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
@@ -3325,18 +3345,24 @@ function updateJesus() {
  chart9.data.datasets[0].data = nuevosDatosII;
  // Actualiza el gráfico
  chart9.update(); 
-   //////////////////////////////////////////////////////////////////
-   var nuevosDatosIII = [/* Nuevos valores de datos */ 9,90,70,47,87,10];
-   // Actualiza los datos del gráfico
-   chart10.data.datasets[0].data = nuevosDatosIII;
-   // Actualiza el gráfico
-   chart10.update();
-     //////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosIII = [/* Nuevos valores de datos */ 9,90,70,47,87,10];
+  // Actualiza los datos del gráfico
+  chart10.data.datasets[0].data = nuevosDatosIII;
+  // Actualiza el gráfico
+  chart10.update();
+    //////////////////////////////////////////////////////////////////
  var nuevosDatosIIII = [/* Nuevos valores de datos */ 100,8,50,70,30,10];
  // Actualiza los datos del gráfico
  chart11.data.datasets[0].data = nuevosDatosIIII;
  // Actualiza el gráfico
- chart11.update(); 
+ chart11.update();
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosV = [/* Nuevos valores de datos */ 33,37,33,77,45,77,80,87];
+  // Actualiza los datos del gráfico
+  chart12.data.datasets[0].data = nuevosDatosV;
+  // Actualiza el gráfico
+  chart12.update();   
 }
 function updateJorge() {
   // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
@@ -3395,6 +3421,12 @@ function updateJorge() {
  chart11.data.datasets[0].data = nuevosDatosIIII;
  // Actualiza el gráfico
  chart11.update(); 
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosV = [/* Nuevos valores de datos */ 100,37,55,77,77,77,81,99];
+  // Actualiza los datos del gráfico
+  chart12.data.datasets[0].data = nuevosDatosV;
+  // Actualiza el gráfico
+  chart12.update();  
 }
 function updateAndres() {
   // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
@@ -3452,7 +3484,13 @@ function updateAndres() {
  // Actualiza los datos del gráfico
  chart11.data.datasets[0].data = nuevosDatosIIII;
  // Actualiza el gráfico
- chart11.update(); 
+ chart11.update();
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosV = [/* Nuevos valores de datos */ 77,37,55,41,33,77,50,60];
+  // Actualiza los datos del gráfico
+  chart12.data.datasets[0].data = nuevosDatosV;
+  // Actualiza el gráfico
+  chart12.update();  
 }
 function updateCarlos() {
   // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
@@ -3511,6 +3549,12 @@ function updateCarlos() {
  chart11.data.datasets[0].data = nuevosDatosIIII;
  // Actualiza el gráfico
  chart11.update(); 
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosV = [/* Nuevos valores de datos */ 17,37,22,30,5,60,77,80];
+  // Actualiza los datos del gráfico
+  chart12.data.datasets[0].data = nuevosDatosV;
+  // Actualiza el gráfico
+  chart12.update();  
 }
 function deslizaMosaicoII(idElement) {
   var contLinkMant = document.getElementById('linksMA');
@@ -3592,7 +3636,6 @@ imagenesAumentar.forEach(image => {
     }
   });
 });
-
 //////////////////////////////////////////////////////////////////////////
 // Recorrer todos los botones y hacerlos visibles
 botones.forEach(function(boton) {
@@ -4078,7 +4121,6 @@ var chart9 = new Chart(miCanvas8, {
     }
   }
 });
-
 var chart10 = new Chart(miCanvas9, {
   type: 'doughnut',
   data: {
@@ -4132,7 +4174,6 @@ var chart10 = new Chart(miCanvas9, {
     }
   }
 });
-
 var chart11 = new Chart(miCanvas10, {
   type: 'pie',
   data: {
@@ -4186,9 +4227,63 @@ var chart11 = new Chart(miCanvas10, {
     }
   }
 });
+var chart12 = new Chart(miCanvas11, {
+  type: 'line',
+  data: {
+    labels: ['S1','S2','S3','S4','S5','S6','S7','S8'],
+    datasets: [
+      {
+        label: 'Participación en M.A',
+        borderColor: 'rgb(177,0,255)', 
+        borderWidth: 1,               
+        /* backgroundColor: ['rgb(255, 165, 0)', 'rgb(0, 255, 0)','#d6919a','rgb(255,255,0)','rgb(128,128,128)','rgb(255,255,0)','rgb(0,0,255)','rgb(177,0,255)'], */
+        /* data: [7, 19, 27, 37, 59, 77, 81, 99] */
+      }
+    ]
+  },
+  options: {
+    scales: {
+      x: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 9
+          }
+        }
+      },
+      y: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 10
+          },
+          beginAtZero: true
+        }
+      }
+    },
+    indexAxis: 'x',
+    plugins: {
+      legend: {
+        display: false
+      },
+      title: {
+        display: true,
+        text: 'Tendencia ',
+        font: {
+          size: 16
+        }
+      }
+    }
+  }
+});
 // Aumentar el grosor de las barras
 /* chart8.options.scales.x.barThickness = 100; // Ajusta el valor a un grosor mayor */
-
 /* //////////////////////////////////AUMENTO Y MOVIMIENTO IMAGENES ///////////////////////////////////////////// */
 const zoomableImages = document.querySelectorAll('.image-trainings');
 const sensitivity = 5; 
@@ -4286,7 +4381,6 @@ const sugerencias = [
   'variable'
   
 ];
-
 // Agregamos un evento para manejar la búsqueda
 searchForm.addEventListener('submit', function (e) {
   e.preventDefault(); // Evita que se envíe el formulario
@@ -4396,10 +4490,8 @@ canvasElements4.forEach(input => {
     toggleFullScreen(input);
   });
 });/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-
   // Obten todos los elementos con la clase "colorClick"
   var colorClickLinks = document.querySelectorAll('.colorClick');
-
   // Recorre todos los elementos y agrega el evento a cada uno
   colorClickLinks.forEach(function (link) {
     link.addEventListener('click', function (event) {
@@ -4408,4 +4500,3 @@ canvasElements4.forEach(input => {
       imagenesPasoApaso(link.getAttribute('data-imagen'));
     });
   });
-
