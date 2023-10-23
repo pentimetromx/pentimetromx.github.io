@@ -587,13 +587,13 @@ width:447px ;
 }
 #canvasContainer8 {
   display: flex;
+  display: none;
   flex-direction: column;
   position: relative;
   left: 617px;
   top: -127px;
   width: 207px;
   border-radius: 20px;
-  display: none;
 }
 #canvasContainer9 {
   display: flex;
