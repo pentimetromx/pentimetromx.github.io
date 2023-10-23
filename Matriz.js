@@ -3051,54 +3051,6 @@ function resultadosEmpleado(idEmpleado,functionExe) {
   var lineasGrid = document.getElementById('contLineas');
   lineasGrid.style.display = 'block'
   tituloMA.style.display = 'flex';
-
-  var contUserElements = document.getElementsByClassName('cont-user');
-  for (var i = 0; i < contUserElements.length; i++) {
-    var element = contUserElements[i];
-    if (element.id === idEmpleado) {
-      element.style.display = 'flex';
-      element.style.top = '-157px'
-    } else {
-      element.style.display = 'none';
-    }
-  } 
-  if (contUserScroll) {
-    contUserScroll.style.display = 'flex';
-  }
-  arrayPosicionnador.push(idEmpleado);
-  console.log(arrayPosicionnador);
-  switch (functionExe) {
-    case 'updateFredy':
-      updateFredy();
-    break;
-    case 'updateMario':
-      updateMario();
-    break;
-    case 'updateSandra':
-      updateSandra();
-    break;
-    case 'updateJesus':
-      updateJesus();
-    break; 
-    case 'updateJorge':
-      updateJorge();
-    break; 
-    case 'updateAndres':
-      updateAndres();
-    break;
-    case 'updateCarlos':
-      updateCarlos();
-    break;           
-  default: 
-  
-}}
-
-/*function resultadosEmpleado(idEmpleado,functionExe) {
-  var tituloMA = document.getElementById('title-interfaz');
-  var contUserScroll = document.getElementById('contenedor-vertical'); 
-  var lineasGrid = document.getElementById('contLineas');
-  lineasGrid.style.display = 'block'
-  tituloMA.style.display = 'flex';
   var colors = ['rgb(255, 255, 0)', 'rgb(0, 255, 0)', 'orangered']; // Colores en formato RGB
   var colorIndex = 0; // Índice del color actual  
   var contUserElements = document.getElementsByClassName('cont-user');
@@ -3114,7 +3066,7 @@ function resultadosEmpleado(idEmpleado,functionExe) {
         setInterval(function () {
           label.style.color = colors[colorIndex]; // Cambia el color del texto
           colorIndex = (colorIndex + 1) % colors.length; // Alterna entre los colores
-        }, 200); // Cambia el color cada 0.2 segundos (200 milisegundos)
+        }, 100); // Cambia el color cada 0.2 segundos (200 milisegundos)
       }
 
     } else {
@@ -3150,7 +3102,7 @@ function resultadosEmpleado(idEmpleado,functionExe) {
     break;           
   default: 
   
-}}*/
+}}
 
 function graficosAutomaticos(idGrafico){
 
