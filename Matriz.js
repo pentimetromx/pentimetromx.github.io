@@ -5,7 +5,7 @@ var arrayContador = [];
 var destino = 257;
 var idsArray = [];
 var idsArrayEliminados = [];
-var idsMA = ['canvasContainer2', 'canvasContainer3', 'canvasContainer4','canvasContainer5','canvasContainer6','canvasContainer7', 'contChecks','troubleshooting','contImagNeg','contImagGraf'];
+var idsMA = ['canvasContainer2', 'canvasContainer3', 'canvasContainer4','canvasContainer5','canvasContainer6','canvasContainer7','canvasContainer8', 'canvasContainer9', 'contChecks','troubleshooting','contImagNeg','contImagGraf'];
 var idsResultados = ['icon-fredy','icon-carlos','icon-andres','icon-jorge','icon-jesus','icon-sandra','icon-mario'];
 var elementosContUser = document.querySelectorAll('.cont-user');
 
@@ -3037,7 +3037,9 @@ function deslizaMosaico(){
 }
 function resultadosEmpleado(idEmpleado,functionExe) {
   var tituloMA = document.getElementById('title-interfaz');
-  var contUserScroll = document.getElementById('contenedor-vertical');
+  var contUserScroll = document.getElementById('contenedor-vertical'); 
+  var lineasGrid = document.getElementById('contLineas');
+  lineasGrid.style.display = 'block'
   tituloMA.style.display = 'flex';
   var contUserElements = document.getElementsByClassName('cont-user');
   for (var i = 0; i < contUserElements.length; i++) {
@@ -3049,13 +3051,11 @@ function resultadosEmpleado(idEmpleado,functionExe) {
       element.style.display = 'none';
     }
   } 
-
   if (contUserScroll) {
     contUserScroll.style.display = 'flex';
-}
-
-  arrayPosicionnador.push(idEmpleado)
-  console.log(arrayPosicionnador)
+  }
+  arrayPosicionnador.push(idEmpleado);
+  console.log(arrayPosicionnador);
   switch (functionExe) {
     case 'updateFredy':
       updateFredy();
@@ -3078,7 +3078,8 @@ function resultadosEmpleado(idEmpleado,functionExe) {
     case 'updateCarlos':
       updateCarlos();
     break;           
-  default:      
+  default: 
+  
 }}
 function graficosAutomaticos(idGrafico){
 
@@ -3095,35 +3096,21 @@ function updateFredy() {
    // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
    setTimeout(function() {
     graficosAutomaticos('canvasContainer4');
-    canvasContainer4.style.left = '177px'
-    canvasContainer4.style.top = '287px'
   },500); // 0.3 segundos
   setTimeout(function() {
     graficosAutomaticos('canvasContainer7');
-    canvasContainer7.style.left = '237px'
-    canvasContainer7.style.top = '87px'
   }, 700); // 0.3 segundos (300 ms + 300 ms)
   setTimeout(function() {
     graficosAutomaticos('canvasContainer5');
-    canvasContainer5.style.left = '527px'
-    canvasContainer5.style.top = '87px'
   }, 700); // 0.3 segundos (300 ms + 300 ms)
   setTimeout(function() {
     graficosAutomaticos('canvasContainer6');
-    canvasContainer6.style.left = '927px'
-    canvasContainer6.style.top = '87px'
   }, 700); // 0.3 segundos (300 ms + 300 ms)
   setTimeout(function() {
     graficosAutomaticos('canvasContainer8');
-    canvasContainer8.style.display = 'block'
-    canvasContainer8.style.left = '677px'
-    canvasContainer8.style.top = '287px'
   }, 700); // 0.3 segundos (300 ms + 300 ms) 
   setTimeout(function() {
     graficosAutomaticos('canvasContainer9');
-    canvasContainer9.style.display = 'block'
-    canvasContainer9.style.left = '927px'
-    canvasContainer9.style.top = '387px'
   }, 700); // 0.3 segundos (300 ms + 300 ms)
 
   var nuevosDatos = [/* Nuevos valores de datos */ 0,70,30,70,50,90];
@@ -3166,35 +3153,22 @@ function updateMario() {
    // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
    setTimeout(function() {
     graficosAutomaticos('canvasContainer4');
-    canvasContainer4.style.left = '177px'
-    canvasContainer4.style.top = '287px'
   },500); // 0.3 segundos
-
   setTimeout(function() {
     graficosAutomaticos('canvasContainer7');
-    canvasContainer7.style.left = '237px'
-    canvasContainer7.style.top = '87px'
   }, 700); // 0.3 segundos (300 ms + 300 ms)
-
   setTimeout(function() {
     graficosAutomaticos('canvasContainer5');
-    canvasContainer5.style.left = '527px'
-    canvasContainer5.style.top = '87px'
   }, 700); // 0.3 segundos (300 ms + 300 ms)
-
   setTimeout(function() {
     graficosAutomaticos('canvasContainer6');
-    canvasContainer6.style.left = '927px'
-    canvasContainer6.style.top = '87px'
   }, 700); // 0.3 segundos (300 ms + 300 ms)
-
   setTimeout(function() {
     graficosAutomaticos('canvasContainer8');
-    canvasContainer8.style.display = 'block'
-    canvasContainer8.style.left = '677px'
-    canvasContainer8.style.top = '287px'
+  }, 700); // 0.3 segundos (300 ms + 300 ms) 
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer9');
   }, 700); // 0.3 segundos (300 ms + 300 ms)
-
   var nuevosDatos = [/* Nuevos valores de datos */ 100,20,70,10,80,90];
   // Actualiza los datos del gráfico
   chart7.data.datasets[0].data = nuevosDatos;
@@ -3232,38 +3206,25 @@ function updateMario() {
   chart12.update(); 
 }
 function updateSandra() {
-  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+   // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+   setTimeout(function() {
+    graficosAutomaticos('canvasContainer4');
+  },500); // 0.3 segundos
   setTimeout(function() {
-   graficosAutomaticos('canvasContainer4');
-   canvasContainer4.style.left = '177px'
-   canvasContainer4.style.top = '287px'
- },500); // 0.3 segundos
-
- setTimeout(function() {
-   graficosAutomaticos('canvasContainer7');
-   canvasContainer7.style.left = '237px'
-   canvasContainer7.style.top = '87px'
- }, 700); // 0.3 segundos (300 ms + 300 ms)
-
- setTimeout(function() {
-   graficosAutomaticos('canvasContainer5');
-   canvasContainer5.style.left = '527px'
-   canvasContainer5.style.top = '87px'
- }, 700); // 0.3 segundos (300 ms + 300 ms)
-
- setTimeout(function() {
-   graficosAutomaticos('canvasContainer6');
-   canvasContainer6.style.left = '927px'
-   canvasContainer6.style.top = '87px'
- }, 700); // 0.3 segundos (300 ms + 300 ms)
-
- setTimeout(function() {
-   graficosAutomaticos('canvasContainer8');
-   canvasContainer8.style.display = 'block'
-   canvasContainer8.style.left = '677px'
-   canvasContainer8.style.top = '287px'
- }, 700); // 0.3 segundos (300 ms + 300 ms)
-
+    graficosAutomaticos('canvasContainer7');
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer5');
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer6');
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer8');
+  }, 700); // 0.3 segundos (300 ms + 300 ms) 
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer9');
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
  var nuevosDatos = [/* Nuevos valores de datos */ 33,20,100,50,80,10];
  // Actualiza los datos del gráfico
  chart7.data.datasets[0].data = nuevosDatos;
@@ -3301,39 +3262,31 @@ function updateSandra() {
   chart12.update();  
 }
 function updateJesus() {
-  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+   // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+   setTimeout(function() {
+    graficosAutomaticos('canvasContainer4');
+  },500); // 0.3 segundos
   setTimeout(function() {
-   graficosAutomaticos('canvasContainer4');
-   canvasContainer4.style.left = '177px'
-   canvasContainer4.style.top = '287px'
- },500); // 0.3 segundos
- setTimeout(function() {
-   graficosAutomaticos('canvasContainer7');
-   canvasContainer7.style.left = '237px'
-   canvasContainer7.style.top = '87px'
- }, 700); // 0.3 segundos (300 ms + 300 ms)
- setTimeout(function() {
-   graficosAutomaticos('canvasContainer5');
-   canvasContainer5.style.left = '527px'
-   canvasContainer5.style.top = '87px'
- }, 700); // 0.3 segundos (300 ms + 300 ms)
- setTimeout(function() {
-   graficosAutomaticos('canvasContainer6');
-   canvasContainer6.style.left = '927px'
-   canvasContainer6.style.top = '87px'
- }, 700); // 0.3 segundos (300 ms + 300 ms)
- setTimeout(function() {
-   graficosAutomaticos('canvasContainer8');
-   canvasContainer8.style.display = 'block'
-   canvasContainer8.style.left = '677px'
-   canvasContainer8.style.top = '287px'
- }, 700); // 0.3 segundos (300 ms + 300 ms)
- var nuevosDatos = [/* Nuevos valores de datos */ 10,100,10,20,50,90];
- // Actualiza los datos del gráfico
- chart7.data.datasets[0].data = nuevosDatos;
- // Actualiza el gráfico
- chart7.update();
- ///////////////////////////////////////////////////////////////////
+    graficosAutomaticos('canvasContainer7');
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer5');
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer6');
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer8');
+  }, 700); // 0.3 segundos (300 ms + 300 ms) 
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer9');
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
+  var nuevosDatos = [/* Nuevos valores de datos */ 10,100,10,20,50,90];
+  // Actualiza los datos del gráfico
+  chart7.data.datasets[0].data = nuevosDatos;
+  // Actualiza el gráfico
+  chart7.update();  
+  ///////////////////////////////////////////////////////////////////
  var nuevosDatosI = [/* Nuevos valores de datos */ 100,50,10,100,50,17];
  // Actualiza los datos del gráfico
  chart8.data.datasets[0].data = nuevosDatosI;
@@ -3365,34 +3318,26 @@ function updateJesus() {
   chart12.update();   
 }
 function updateJorge() {
-  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+   // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+   setTimeout(function() {
+    graficosAutomaticos('canvasContainer4');
+  },500); // 0.3 segundos
   setTimeout(function() {
-   graficosAutomaticos('canvasContainer4');
-   canvasContainer4.style.left = '177px'
-   canvasContainer4.style.top = '287px'
- },500); // 0.3 segundos
- setTimeout(function() {
-   graficosAutomaticos('canvasContainer7');
-   canvasContainer7.style.left = '237px'
-   canvasContainer7.style.top = '87px'
- }, 700); // 0.3 segundos (300 ms + 300 ms)
- setTimeout(function() {
-   graficosAutomaticos('canvasContainer5');
-   canvasContainer5.style.left = '527px'
-   canvasContainer5.style.top = '87px'
- }, 700); // 0.3 segundos (300 ms + 300 ms)
- setTimeout(function() {
-   graficosAutomaticos('canvasContainer6');
-   canvasContainer6.style.left = '927px'
-   canvasContainer6.style.top = '87px'
- }, 700); // 0.3 segundos (300 ms + 300 ms)
- setTimeout(function() {
-   graficosAutomaticos('canvasContainer8');
-   canvasContainer8.style.display = 'block'
-   canvasContainer8.style.left = '677px'
-   canvasContainer8.style.top = '287px'
- }, 700); // 0.3 segundos (300 ms + 300 ms)
- var nuevosDatos = [/* Nuevos valores de datos */ 10,20,50,10,10,5];
+    graficosAutomaticos('canvasContainer7');
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer5');
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer6');
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer8');
+  }, 700); // 0.3 segundos (300 ms + 300 ms) 
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer9');
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
+  var nuevosDatos = [/* Nuevos valores de datos */ 10,20,50,10,10,5];
  // Actualiza los datos del gráfico
  chart7.data.datasets[0].data = nuevosDatos;
  // Actualiza el gráfico
@@ -3429,34 +3374,26 @@ function updateJorge() {
   chart12.update();  
 }
 function updateAndres() {
-  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+   // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+   setTimeout(function() {
+    graficosAutomaticos('canvasContainer4');
+  },500); // 0.3 segundos
   setTimeout(function() {
-   graficosAutomaticos('canvasContainer4');
-   canvasContainer4.style.left = '177px'
-   canvasContainer4.style.top = '287px'
- },500); // 0.3 segundos
- setTimeout(function() {
-   graficosAutomaticos('canvasContainer7');
-   canvasContainer7.style.left = '237px'
-   canvasContainer7.style.top = '87px'
- }, 700); // 0.3 segundos (300 ms + 300 ms)
- setTimeout(function() {
-   graficosAutomaticos('canvasContainer5');
-   canvasContainer5.style.left = '527px'
-   canvasContainer5.style.top = '87px'
- }, 700); // 0.3 segundos (300 ms + 300 ms)
- setTimeout(function() {
-   graficosAutomaticos('canvasContainer6');
-   canvasContainer6.style.left = '927px'
-   canvasContainer6.style.top = '87px'
- }, 700); // 0.3 segundos (300 ms + 300 ms)
- setTimeout(function() {
-   graficosAutomaticos('canvasContainer8');
-   canvasContainer8.style.display = 'block'
-   canvasContainer8.style.left = '677px'
-   canvasContainer8.style.top = '287px'
- }, 700); // 0.3 segundos (300 ms + 300 ms)
- var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5];
+    graficosAutomaticos('canvasContainer7');
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer5');
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer6');
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer8');
+  }, 700); // 0.3 segundos (300 ms + 300 ms) 
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer9');
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
+  var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5];
  // Actualiza los datos del gráfico
  chart7.data.datasets[0].data = nuevosDatos;
  // Actualiza el gráfico
@@ -3493,34 +3430,26 @@ function updateAndres() {
   chart12.update();  
 }
 function updateCarlos() {
-  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+   // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+   setTimeout(function() {
+    graficosAutomaticos('canvasContainer4');
+  },500); // 0.3 segundos
   setTimeout(function() {
-   graficosAutomaticos('canvasContainer4');
-   canvasContainer4.style.left = '177px'
-   canvasContainer4.style.top = '287px'
- },500); // 0.3 segundos
- setTimeout(function() {
-   graficosAutomaticos('canvasContainer7');
-   canvasContainer7.style.left = '237px'
-   canvasContainer7.style.top = '87px'
- }, 700); // 0.3 segundos (300 ms + 300 ms)
- setTimeout(function() {
-   graficosAutomaticos('canvasContainer5');
-   canvasContainer5.style.left = '527px'
-   canvasContainer5.style.top = '87px'
- }, 700); // 0.3 segundos (300 ms + 300 ms)
- setTimeout(function() {
-   graficosAutomaticos('canvasContainer6');
-   canvasContainer6.style.left = '927px'
-   canvasContainer6.style.top = '87px'
- }, 700); // 0.3 segundos (300 ms + 300 ms)
- setTimeout(function() {
-   graficosAutomaticos('canvasContainer8');
-   canvasContainer8.style.display = 'block'
-   canvasContainer8.style.left = '677px'
-   canvasContainer8.style.top = '287px'
- }, 700); // 0.3 segundos (300 ms + 300 ms)
- var nuevosDatos = [/* Nuevos valores de datos */ 17,99,44,0,7,5];
+    graficosAutomaticos('canvasContainer7');
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer5');
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer6');
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer8');
+  }, 700); // 0.3 segundos (300 ms + 300 ms) 
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer9');
+  }, 700); // 0.3 segundos (300 ms + 300 ms)
+  var nuevosDatos = [/* Nuevos valores de datos */ 17,99,44,0,7,5];
  // Actualiza los datos del gráfico
  chart7.data.datasets[0].data = nuevosDatos;
  // Actualiza el gráfico
@@ -4234,8 +4163,9 @@ var chart12 = new Chart(miCanvas11, {
     datasets: [
       {
         label: 'Participación en M.A',
-        borderColor: 'rgb(177,0,255)', 
-        borderWidth: 1,               
+        borderColor: 'rgb(255,165,0)', 
+        borderWidth: 1,
+        pointRadius: 0,                       
         /* backgroundColor: ['rgb(255, 165, 0)', 'rgb(0, 255, 0)','#d6919a','rgb(255,255,0)','rgb(128,128,128)','rgb(255,255,0)','rgb(0,0,255)','rgb(177,0,255)'], */
         /* data: [7, 19, 27, 37, 59, 77, 81, 99] */
       }

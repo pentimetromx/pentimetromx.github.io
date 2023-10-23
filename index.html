@@ -433,7 +433,7 @@
       </div><br>
 
       <div class="conti-boton" id="conti-boton">
-        <button class="butt-mautonomo image-trainings" id="resultados" onclick="resultadosMA()">RESULTADOS</button>
+        <button class="butt-mautonomo image-trainings" id="resultados" onclick="resultadosMA()">TRACKING DASHBOARD</button>
         <button class="butt-mautonomo image-trainings" id="troubleshoot" onclick="deslizaContenedor('troubleshooting','troubleshoot')">TROUBLESHOOTING</button>
         <button class="butt-mautonomo image-trainings" id="def1" onclick="deslizaContenedor('canvasContainer2','def1')">DEFECTOS TIPO 1</button>
         <button class="butt-mautonomo image-trainings" id="def2" onclick="deslizaContenedor('contChecks','def2')">DEFECTOS TIPO 2</button>
@@ -1136,7 +1136,7 @@
 
         <div class="cont-user" id="icon-fredy">
           <img class="icono-user" onclick="resultadosEmpleado('icon-fredy','updateFredy')" src="./assets/icono1.jpg" alt="icono">
-          <label for="nombres">Fredy Hernando Duarte</label>
+          <label for="nombres">Ana Maria Duarte</label>
         </div>
   
       </div>
@@ -1144,6 +1144,17 @@
       <div id="canvasContainer4">
         <canvas id="MiGrafica4"></canvas> 
       </div> 
+
+      <div id="contLineas" style="display: none;">
+        <div class="linea-vertical-V"></div> 
+        <div class="linea-vertical-IV"></div> 
+        <div class="linea-vertical-VI"></div> 
+        <div class="linea-horizontal-I"></div> 
+        <div class="linea-vertical-III"></div>
+        <div class="linea-horizontal-II"></div> 
+        <div class="linea-horizontal-III"></div> 
+      </div>
+
       <div id="canvasContainer5">
         <canvas id="MiGrafica5"></canvas> 
       </div>
@@ -1165,7 +1176,7 @@
     <div class="contenedor-vertical" id="contenedor-vertical">
       <div class="cont-userI" id="icon-carlos">
           <img class="icono-user" onclick="resultadosEmpleado('icon-carlos','updateCarlos')" src="./assets/icono1.jpg" alt="icono">
-          <label for="nombres">Carlos Mario Sanchez</label>  
+          <label class="lblNombres" for="nombres">Carlos Mario Sanchez</label>  
       </div><br>
   
       <div class="cont-userI" id="icon-andres">
