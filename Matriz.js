@@ -3043,7 +3043,7 @@ function resultadosMA(){
   iconos.forEach((icono, index) => {
     // Aplica la función de aumentarTamaño con un retraso entre cada imagen
     setTimeout(() => {
-      aumentarTamaño(icono, 1.4, 0.5);
+      aumentarTamaño(icono, 1.8, 0.5);
     }, index * 0.2 * 100); // Aumenta cada imagen con un retraso de 0.2 segundos
   });
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3080,7 +3080,7 @@ function aumentarTamaño(element, factor, tiempo) {
   setTimeout(() => {
     element.style.transition = 'none';
     element.style.transform = 'scale(1)';
-  }, tiempo * 1000);
+  }, tiempo * 500);
 }
 function deslizaMosaico(){
 
@@ -3112,13 +3112,16 @@ function deslizaMosaico(){
   //}, 50); 
 }
 function resultadosEmpleado(idEmpleado, functionExe) {
-  var tituloMA = document.getElementById('title-interfaz');
+  var colors = ['rgb(255, 255, 0)', 'rgb(0, 255, 0)', 'orangered']; // Colores en formato RGB
   var contUserScroll = document.getElementById('contenedor-vertical');
+  var contUserElementsI = document.getElementsByClassName('cont-userI'); 
+  var contUserArrayI = Array.from(contUserElementsI);  
+  var contUserElements = document.getElementsByClassName('cont-user'); 
+  var tituloMA = document.getElementById('title-interfaz');
+  var colorIndex = 0; // Índice del color actual
   lineasGrid.style.display = 'block';
   tituloMA.style.display = 'flex';
-  var colors = ['rgb(255, 255, 0)', 'rgb(0, 255, 0)', 'orangered']; // Colores en formato RGB
-  var colorIndex = 0; // Índice del color actual
-  var contUserElements = document.getElementsByClassName('cont-user');
+
 
   for (var i = 0; i < contUserElements.length; i++) {
     var element = contUserElements[i];
@@ -3143,8 +3146,19 @@ function resultadosEmpleado(idEmpleado, functionExe) {
     contUserScroll.style.display = 'flex';
   }
 
+  contUserArrayI.forEach(element => {
+    if (element.id === idEmpleado) {
+      element.style.background = 'green';
+      (function (element) {
+        setTimeout(function () {
+          element.style.backgroundColor = ''; // Vacío para volver al color normal
+        }, 200); // 0.2 segundos (200 milisegundos)
+      })(element); // Pasa el elemento actual como argumento a la función anónima
+    }
+    
+  });
 
-  var contUserElements = document.getElementsByClassName('cont-userI');
+  /*var contUserElements = document.getElementsByClassName('cont-userI');
   for (var i = 0; i < contUserElements.length; i++) {
     var element = contUserElements[i];
     element.style.backgroundColor = 'green';
@@ -3153,7 +3167,7 @@ function resultadosEmpleado(idEmpleado, functionExe) {
         currentElement.style.backgroundColor = ''; // Vacío para volver al color normal
       }, 200); // 0.2 segundos (200 milisegundos)
     })(element); // Pasa el elemento actual como argumento a la función anónima
-  }
+  }*/
 
 
   switch (functionExe) {
