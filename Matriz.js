@@ -1,4 +1,4 @@
-var arrayFunctions = ['updateMario','updateFredy','updateCarlos','updateAndres','updateJorge','updateJesus','updateSandra']; 
+var arrayFunctions = ['updateMario','updateAna','updateCarlos','updateAndres','updateJorge','updateJesus','updateSandra']; 
 var arrayIdButtsMA = ['resultados','troubleshoot','def1','def2','adtBut','fua1','lup'];
 var arrayPosicionnador = [];
 var arrayContador = [];
@@ -6,8 +6,10 @@ var destino = 257;
 var idsArray = [];
 var idsArrayEliminados = [];
 var idsMA = ['canvasContainer2', 'canvasContainer3', 'canvasContainer4','canvasContainer5','canvasContainer6','canvasContainer7','canvasContainer8', 'canvasContainer9', 'contChecks','troubleshooting','contImagNeg','contImagGraf'];
-var idsResultados = ['icon-fredy','icon-carlos','icon-andres','icon-jorge','icon-jesus','icon-sandra','icon-mario'];
+var idsResultados = ['icon-ana','icon-carlos','icon-andres','icon-jorge','icon-jesus','icon-sandra','icon-mario'];
 var elementosContUser = document.querySelectorAll('.cont-user');
+var lineasGrid = document.getElementById('contLineas');
+
 
 var currentID = null;
 var btnAtras = document.getElementById('bot-atras');
@@ -17,7 +19,7 @@ var imgTorreI = document.getElementById('imgTorre');
 var contInicial = document.getElementById('container1');
 var botonMa = document.getElementById('bot-mantaut');
 var imagPasoApaso = document.querySelectorAll('.img1');
-var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','conte-secundario','contenedor-vertical'];
+var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical'];
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado'];
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor'];
@@ -115,7 +117,7 @@ idsArray.push("pantalla-inicial");
 idsArrayEliminados.push('salir');
 console.log(idsArrayEliminados);
 console.log(idsArray);
-  
+
 function VolveraInicio(){
   location.reload();
   idsArray = [];
@@ -381,65 +383,101 @@ function cambioContenedor(elementId) {
     console.log(idsArray)
   }
 }
+let firstClick = true;
 function cierraContenedores(elementId) {
   const coleccion = document.querySelectorAll('.desbobinador, .desbobinador-I, .uTeñido, .alimentador, .unidProceso, .rebobinador, .contTorrImp');
-  if (!idsArray.includes(elementId)) {
-    idsArray.push(elementId);
-    console.log(idsArray)
-  }
 
-  switch (elementId) {
+  coleccion.forEach(element => {
+    const button = element.querySelector('button'); // Acceder al elemento 'button' dentro de cada elemento
+    if (button) {
+      /* button.style.backgroundColor = 'green';  */
+      /* button.style.background = 'linear-gradient(135deg, green, red)'; */
+      button.style.background = 'linear-gradient(177deg, rgb(0, 252, 0), rgb(0, 255, 0))';
+      button.style.color = 'black'
 
-    case 'desbobinador':
-      coleccion.forEach(elemento => {
-        if (elemento.classList.contains(elementId)) {
-          elemento.style.display = 'flex';
-        } else {
-          elemento.style.display = 'none';
-        }
-      });
-
-      video.style.display = 'none'
-    break; 
-    case 'uTeñido':
-    coleccion.forEach(elemento => {
-    if (elemento.classList.contains(elementId)) {
-    elemento.style.display = 'flex';
-    } else {
-    elemento.style.display = 'none';
-    }
-    });
-    break;
-    case 'alimentador':
-    coleccion.forEach(elemento => {
-    if (elemento.classList.contains(elementId)) {
-    elemento.style.display = 'flex';
-    } else {
-    elemento.style.display = 'none';
-    }
-    });
-    break;
-    case 'unidProceso':
-    coleccion.forEach(elemento => {
-    if (elemento.classList.contains(elementId)) {
-    elemento.style.display = 'flex';
-    } else {
-    elemento.style.display = 'none';
-    }
-    });
-    break;
-    case 'rebobinador':
-    coleccion.forEach(elemento => {
-      if (elemento.classList.contains(elementId)) {
-        elemento.style.display = 'flex';
+      let isIncreased = false;
+      let intervalId; // Variable para almacenar el ID del intervalo
+      function toggleSize() {
+      if (isIncreased) {
+      button.style.transform = 'scale(1)'; // Tamaño normal
       } else {
-        elemento.style.display = 'none';
+      button.style.transform = 'scale(1.3)'; // Aumentar el tamaño 1:1.1
       }
-    });
-    break;
-    default:
+      isIncreased = !isIncreased; // Alternar entre aumentado y normal
+      }
+      // Iniciar el intervalo y almacenar el ID del intervalo en la variable intervalId
+      intervalId = setInterval(toggleSize, 100); // Llamar a la función cada 500 milisegundos (0.5 segundos)
+      // Para detener el intervalo, puedes hacerlo en respuesta a algún evento o condición
+      // Por ejemplo, aquí lo detenemos después de 5 segundos (5000 milisegundos)
+      setTimeout(() => {
+      clearInterval(intervalId); // Detener el intervalo
+      }, 1000);
+    }
+  });
+
+  if (firstClick) {
+    if (!idsArray.includes(elementId)) {
+      idsArray.push(elementId);
+      console.log(idsArray);
+    }
+
+    switch (elementId) {
+      case 'desbobinador':
+        coleccion.forEach(elemento => {
+          if (elemento.classList.contains(elementId)) {
+            elemento.style.display = 'flex';
+          } else {
+            elemento.style.display = 'none';
+          }
+        });
+
+        video.style.display = 'none';
+        break;
+      case 'uTeñido':
+        coleccion.forEach(elemento => {
+          if (elemento.classList.contains(elementId)) {
+            elemento.style = display = 'flex';
+          } else {
+            elemento.style.display = 'none';
+          }
+        });
+        break;
+      case 'alimentador':
+        coleccion.forEach(elemento => {
+          if (elemento.classList.contains(elementId)) {
+            elemento.style.display = 'flex';
+          } else {
+            elemento.style.display = 'none';
+          }
+        });
+        break;
+      case 'unidProceso':
+        coleccion.forEach(elemento => {
+          if (elemento.classList.contains(elementId)) {
+            elemento.style.display = 'flex';
+          } else {
+            elemento.style.display = 'none';
+          }
+        });
+        break;
+      case 'rebobinador':
+        coleccion.forEach(elemento => {
+          if (elemento.classList.contains(elementId)) {
+            elemento.style.display = 'flex';
+          } else {
+            elemento.style.display = 'none';
+          }
+        });
+        break;
+      default:
+    }
+    firstClick = false;
+  } else {
+    // En el segundo clic, recarga la página
+    location.reload();
   }
 }
+
 function muestraRodillo (videoId, imageClas) {
   var botMantaut = document.getElementById('bot-mantaut')
   var contVideos = document.getElementById('videos-training')
@@ -2542,15 +2580,22 @@ function irContenedorAnterior() {
   console.log(idsArray) 
 } 
 function irContenedorSiguiente() {
+  for (var i = 0; i < allContenedores.length; i++) {
+    var elemento = document.getElementById(allContenedores[i]);
+    if (elemento) {
+      elemento.style.display = 'none';
+    }
+  }
+
   var previoElementID = idsArrayEliminados[idsArrayEliminados.length - 2];
   for (var i = 0; i < idsArrayEliminados.length; i++) {
     switch (previoElementID) {
       case "salir":
         location.reload();
         idsArrayEliminados = [];
-        break; 
+      break;        
       case "pantalla-tintero":
-        var botonesInicio = document.getElementById('container01')
+        var botonesInicio = document.getElementById('container01')                  
         botonesInicio.style.display='block'
         changeButtonStyles('pantalla-tintero');  
       break;
@@ -2991,30 +3036,51 @@ function resultadosMA(){
       elemento.style.display = 'none';
     }
   } 
-
   video.pause();
-  video.style.display = 'none'
-
-  contSecundario = document.getElementById('conte-secundario')
-  contSecundario.style.display = 'flex'
-
-
-  /* contUsuarios.style.display = 'block' */
-  if (iconosElement.style.display === 'none' || iconosElement.style.display === '') {
-    // Si está oculto o no tiene un estilo "display" (por defecto), mostrarlo
-    iconosElement.style.display = 'block';
+  video.style.display = 'none'  
+//// AUMENTA TAMANO SECUENCIAL DE IMAGENES /////////////////////////////////////////////////////////////////////////
+  const iconos = document.querySelectorAll('.icono-user'); // Selecciona todos los elementos con la clase .icono-user
+  iconos.forEach((icono, index) => {
+    // Aplica la función de aumentarTamaño con un retraso entre cada imagen
+    setTimeout(() => {
+      aumentarTamaño(icono, 1.4, 0.5);
+    }, index * 0.2 * 100); // Aumenta cada imagen con un retraso de 0.2 segundos
+  });
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Verifica si el elemento está visible
+  var estilos = window.getComputedStyle(lineasGrid);
+  var display = estilos.getPropertyValue('display');
+  if (display === 'none') {
+    contSecundario = document.getElementById('conte-secundario')
+    contSecundario.style.display = 'flex'
+    /* contUsuarios.style.display = 'block' */
+    if (iconosElement.style.display === 'none' || iconosElement.style.display === '') {
+      // Si está oculto o no tiene un estilo "display" (por defecto), mostrarlo
+      iconosElement.style.display = 'block';
+    } else {
+      // Si está visible, ocultarlo
+      iconosElement.style.display = 'none';
+    }
+    title.style.display = 'flex'
+    contButtons.style.display = 'flex' 
   } else {
-    // Si está visible, ocultarlo
-    iconosElement.style.display = 'none';
+    /* location.reload(); */
+    graficosAutomaticos('canvasContainer4');
   }
 
+}
+function aumentarTamaño(element, factor, tiempo) {
+  const originalWidth = element.clientWidth; // Ancho original del elemento
+  const originalHeight = element.clientHeight; // Alto original del elemento
 
+  element.style.transition = `transform ${tiempo}s`; // Aplica una transición CSS para la animación
+  element.style.transform = `scale(${factor})`; // Escala el elemento al tamaño aumentado
 
-
-
-  title.style.display = 'flex'
-  contButtons.style.display = 'flex' 
-  /* deslizaMosaico(); */
+  // Después de un tiempo, quita la transición y restaura el tamaño original
+  setTimeout(() => {
+    element.style.transition = 'none';
+    element.style.transform = 'scale(1)';
+  }, tiempo * 1000);
 }
 function deslizaMosaico(){
 
@@ -3036,7 +3102,7 @@ function deslizaMosaico(){
             setTimeout(function() {
               deslizaMosaicoII('icon-mario', 'lup');
               setTimeout(function() {
-              deslizaMosaicoII('icon-fredy', 'lup');
+              deslizaMosaicoII('icon-ana', 'lup');
             }, 300);
           }, 300);
         }, 300);
@@ -3045,20 +3111,20 @@ function deslizaMosaico(){
     }, 300);
   //}, 50); 
 }
-function resultadosEmpleado(idEmpleado,functionExe) {
+function resultadosEmpleado(idEmpleado, functionExe) {
   var tituloMA = document.getElementById('title-interfaz');
-  var contUserScroll = document.getElementById('contenedor-vertical'); 
-  var lineasGrid = document.getElementById('contLineas');
-  lineasGrid.style.display = 'block'
+  var contUserScroll = document.getElementById('contenedor-vertical');
+  lineasGrid.style.display = 'block';
   tituloMA.style.display = 'flex';
   var colors = ['rgb(255, 255, 0)', 'rgb(0, 255, 0)', 'orangered']; // Colores en formato RGB
-  var colorIndex = 0; // Índice del color actual  
+  var colorIndex = 0; // Índice del color actual
   var contUserElements = document.getElementsByClassName('cont-user');
+
   for (var i = 0; i < contUserElements.length; i++) {
     var element = contUserElements[i];
     if (element.id === idEmpleado) {
       element.style.display = 'flex';
-      element.style.top = '-157px'
+      element.style.top = '-157px';
 
       // Accede al label dentro del div
       var label = element.querySelector('label');
@@ -3066,44 +3132,57 @@ function resultadosEmpleado(idEmpleado,functionExe) {
         setInterval(function () {
           label.style.color = colors[colorIndex]; // Cambia el color del texto
           colorIndex = (colorIndex + 1) % colors.length; // Alterna entre los colores
-        }, 100); // Cambia el color cada 0.2 segundos (200 milisegundos)
+        }, 200); // Cambia el color cada 0.2 segundos (200 milisegundos)
       }
-
     } else {
       element.style.display = 'none';
     }
-  } 
+  }
+
   if (contUserScroll) {
     contUserScroll.style.display = 'flex';
   }
-  arrayPosicionnador.push(idEmpleado);
-  console.log(arrayPosicionnador);
+
+
+  var contUserElements = document.getElementsByClassName('cont-userI');
+  for (var i = 0; i < contUserElements.length; i++) {
+    var element = contUserElements[i];
+    element.style.backgroundColor = 'green';
+    (function (currentElement) {
+      setTimeout(function () {
+        currentElement.style.backgroundColor = ''; // Vacío para volver al color normal
+      }, 200); // 0.2 segundos (200 milisegundos)
+    })(element); // Pasa el elemento actual como argumento a la función anónima
+  }
+
+
   switch (functionExe) {
-    case 'updateFredy':
-      updateFredy();
-    break;
+    case 'updateAna':
+      updateAna();
+      break;
     case 'updateMario':
       updateMario();
-    break;
+      break;
     case 'updateSandra':
       updateSandra();
-    break;
+      break;
     case 'updateJesus':
       updateJesus();
-    break; 
+      break;
     case 'updateJorge':
       updateJorge();
-    break; 
+      break;
     case 'updateAndres':
       updateAndres();
-    break;
+      break;
     case 'updateCarlos':
       updateCarlos();
-    break;           
-  default: 
-  
-}}
-
+      break;
+    default:
+      // Lógica para un caso predeterminado si es necesario
+      break;
+  }
+}
 function graficosAutomaticos(idGrafico){
 
   for (var i = 0; i < idsMA.length; i++) {
@@ -3115,7 +3194,7 @@ function graficosAutomaticos(idGrafico){
     }
   }
 }
-function updateFredy() {
+function updateAna() {
    // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
    setTimeout(function() {
     graficosAutomaticos('canvasContainer4');
@@ -3594,7 +3673,9 @@ botones.forEach(function(boton) {
 var id = boton.getAttribute('id');
 alternarVisibilidad(id);
 });
-document.addEventListener('DOMContentLoaded', () => {
+
+/// LOGICA PARA CAMBIO DE COLOR EN BOTONES ALINICIO 
+/*document.addEventListener('DOMContentLoaded', () => {
   const botonesB = document.querySelectorAll('.boton-b');
   const botonesC = document.querySelectorAll('.boton-c');
   const botonesD = document.querySelectorAll('.boton-d');
@@ -3650,7 +3731,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Llama a la función para los botones con ID 'boton-e'
     recorrerYCambiarColores(botonesE);
-})
+})*/
 document.addEventListener("DOMContentLoaded", function() {
   toggleVideoButton.addEventListener("click", function() {
     video.pause();
@@ -4026,7 +4107,7 @@ var chart9 = new Chart(miCanvas8, {
       {
         label: 'Participación en M.A',
         borderColor: 'rgb(0, 0, 255)',
-        backgroundColor: ['rgb(255, 165, 0)', 'rgb(0, 255, 0)', 'rgb(255, 165, 0)','rgb(255,255,0)','rgb(255,0,0)','rgb(0,255,255)'],
+        backgroundColor: ['rgb(0,255,255)','rgb(0,255,255)','rgb(0,255,255)','rgb(0,255,255)','rgb(0,255,255)','rgb(0,255,255)'],
         borderWidth: 1,        
         data: [17, 9,27,55,19,33]
       }
