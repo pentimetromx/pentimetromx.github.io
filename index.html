@@ -873,7 +873,9 @@
         <button class="boton-f bot-entre" onclick="applyImageEffects()">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
       </div>
 
-      <video class="video-training" id="videoElement1-II" src="./assets/Bateria de entintado.mp4" style="position: absolute;left: 117px;top: 80px;width: 638px;height: 480px;" autoplay loop></video>
+      <div class="video-container" style="position: absolute; left: 147px;top: 80px;">
+        <video class="video-training" id="videoElement1-II" src="./assets/Bateria de entintado.mp4" autoplay loop></video>
+      </div>
 
       <div class="contene-4" id="container7" style="left:-17px;top: 0.1px;">
         <button class="boton-a" id="bot-atras5" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 5px;" onclick="irContenedorAnterior('bateria-entintado-II')"></button>
@@ -997,7 +999,8 @@
         <video class="video-training" id="prisma-vid" style="position: absolute;left: 137px;top: 80px;width: 638px;height: 480px;" src="./assets/prisma.mp4"></video>
       </div>
       <div id="vidDensito-II">
-        <video class="video-training" id="color-vid" style="position: absolute;left: 137px;top: 80px;width: 638px;height: 480px;" src="./assets/color.mp4"></video>
+        <video class="video-training" id="color-vid" style="position: absolute;left: 137px;top: 80px;width: 638px;height: 480px;" src="./assets/color.mp4"></video><br><br><br>
+        <label style="position: absolute; left: 177px;top: 300px;" for="training">Entrenamiento en Densitometría</label>
       </div>
 
        <div id="imgs-densito" class="image-grid" style="display: none;position: absolute;top: 67px;">
@@ -1070,10 +1073,10 @@
         </div>
         <div class="img1" id="imag2" >
           <img src="./assets/freno.jfif" alt="neuma3">
-          <h4>LIMPIEZA ZAPATAS<br>
-              JUEGO EN SEGUROS DE MANO <br>
-              REVISION CAUCHOS <br>
-              SALTO EN EL EJE</h4>
+          <h4>LIMPIEZA ZAPATAS.<br>
+              JUEGO EN SEGUROS DE MANO. <br>
+              REVISION CAUCHOS. <br>
+              JUEGO EN EL EJE.</h4>
           <img src="./assets/freno2.jfif" alt="neuma4">
         </div>
         <div class="img1" id="imag3" >
@@ -1095,7 +1098,7 @@
     <div class="contene-2" id="container99" style="display: none;left: 155px;">
       <button class="boton-a" id="bot-atras99" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 5px;" onclick="irContenedorAnterior('conteneMantaut')"></button>
       <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL PRINCIPAL</button>
-      <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="aumentarSiguienteImagen()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
+      <button class="boton-a" id="fullScreenButton" style="margin-left: 477px;">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
       <button class="boton-a" id="bot-atras33" style="text-align: center;width: 47px;position: absolute;left: 685px;top: 5px;" onclick="irContenedorSiguiente('')"></button>
     </div>
     
@@ -1209,6 +1212,9 @@
       </div>
 
     </div>
-    <script src="./Matriz.js"></script>  
+ 
+
+    <script src="./Matriz.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
   </body>
-</html>
+</html>//

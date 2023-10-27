@@ -1356,3 +1356,6 @@ elemento.visible {
 .icono-user {
   transition: transform 0.1s;
 }
+#bateria-entintado-II video{
+  border-radius: 10px;
+}

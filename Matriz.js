@@ -19,7 +19,7 @@ var imgTorreI = document.getElementById('imgTorre');
 var contInicial = document.getElementById('container1');
 var botonMa = document.getElementById('bot-mantaut');
 var imagPasoApaso = document.querySelectorAll('.img1');
-var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical'];
+var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','contene-11'];
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado'];
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor'];
@@ -477,7 +477,6 @@ function cierraContenedores(elementId) {
     location.reload();
   }
 }
-
 function muestraRodillo (videoId, imageClas) {
   var botMantaut = document.getElementById('bot-mantaut')
   var contVideos = document.getElementById('videos-training')
@@ -2025,6 +2024,12 @@ function abrirPrepress(elementId) {
   var contImgsPrepress = document.getElementById('imgs-prepress');
   var videoBackground = document.getElementById('videoBackground');
   var prePrensaElemento = document.getElementById('pre-prensa');
+
+  allContenedores.forEach(contenedor => {
+    if (contenedor === 'vidColor') {
+      contenedor.style.display = 'none';         
+    }  
+  });
   
   contBotPress.style.display = 'block';
   contImgsPrepress.style.display = 'block';
@@ -2081,6 +2086,7 @@ function abrirPrepress(elementId) {
     video.style.display='block'
     video.play();
   });
+
 
   linkList.style.display = "none";    
   if (!idsArray.includes(elementId)) {
@@ -2150,7 +2156,7 @@ function abrirDensitometria(elementId){
 function muestraVidPrisma(elementId) {
   allContenedores.forEach(contenedor => {
   if (contenedor === 'vidColor') {
-    contenedor.style.display = 'block';         
+    contenedor.style.display = 'none';         
   }  
   });
   
@@ -2181,6 +2187,12 @@ function muestraVidPrisma(elementId) {
   } */  
 }
 function muestraVidColor(elementId){
+  allContenedores.forEach(contenedor => {
+    if (contenedor === 'vidColor') {
+      contenedor.style.display = 'none';         
+    }  
+    });
+
   var contImgsTeoria = document.getElementsByClassName('imgTeoria'); // Obtén elementos por su
   for (var i = 0; i < contImgsTeoria.length; i++) {
     var teorImage = contImgsTeoria[i]; // Accede al elemento actual
@@ -3264,6 +3276,7 @@ function updateAna() {
   chart12.data.datasets[0].data = nuevosDatosV;
   // Actualiza el gráfico
   chart12.update(); 
+
 }
 function updateMario() {
    // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
@@ -3653,6 +3666,7 @@ function deslizaMosaicoII(idElement) {
   }
 
 }
+
 // Obtén todas las imágenes con la clase "aumentar"
 const imagenesAumentar = document.querySelectorAll('img.aumentar');
 // Agrega un evento click a cada imagen con la clase "aumentar"
@@ -4330,6 +4344,7 @@ var chart12 = new Chart(miCanvas11, {
     }
   }
 });
+
 // Aumentar el grosor de las barras
 /* chart8.options.scales.x.barThickness = 100; // Ajusta el valor a un grosor mayor */
 /* //////////////////////////////////AUMENTO Y MOVIMIENTO IMAGENES ///////////////////////////////////////////// */
@@ -4547,4 +4562,4 @@ canvasElements4.forEach(input => {
       link.classList.add('orange-text');
       imagenesPasoApaso(link.getAttribute('data-imagen'));
     });
-  });
+  });//
