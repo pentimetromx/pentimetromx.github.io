@@ -9,7 +9,7 @@ var idsMA = ['canvasContainer2', 'canvasContainer3', 'canvasContainer4','canvasC
 var idsResultados = ['icon-ana','icon-carlos','icon-andres','icon-jorge','icon-jesus','icon-sandra','icon-mario'];
 var elementosContUser = document.querySelectorAll('.cont-user');
 var lineasGrid = document.getElementById('contLineas');
-
+var contTitulo = document.getElementById('cont-titulo');
 
 var currentID = null;
 var btnAtras = document.getElementById('bot-atras');
@@ -19,7 +19,7 @@ var imgTorreI = document.getElementById('imgTorre');
 var contInicial = document.getElementById('container1');
 var botonMa = document.getElementById('bot-mantaut');
 var imagPasoApaso = document.querySelectorAll('.img1');
-var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','contene-11'];
+var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','contene-11','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII'];
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado'];
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor'];
@@ -79,6 +79,7 @@ const imgsRepuestosIV = document.getElementById('imgsRepuestos-IV');// HIJO IMAG
 const contPadreMA = document.getElementById('conteneMantaut');
 const videoElements = document.querySelectorAll('.video-training','vidBackGrPress');   
 const video = document.getElementById("videoBackground");
+const videoII = document.getElementById("videoBackgroundII");
 const imgsDistribuidor = document.getElementById('contImgDistribuidor');
 const imgsForma = document.getElementById('contImgEntintador');
 const toggleVideoButton = document.getElementById("toggleVideoButton");
@@ -3666,6 +3667,21 @@ function deslizaMosaicoII(idElement) {
   }
 
 }
+function muestraOperacion(){
+  var franjaGris = document.getElementById('franja-gris');
+  var franjaBlanca = document.getElementById('franja-Blanca');
+  var pantaInicial = document.getElementById('pantalla-inicial');
+  franjaBlanca.style.display = 'none'
+  franjaGris.style.display = 'none'
+  contTitulo.style.display = 'none'
+  
+  videoII.pause();
+  videoII.style.display = 'none'
+  video.play();
+
+  pantaInicial.style.display = 'flex'
+
+}  
 
 // Obtén todas las imágenes con la clase "aumentar"
 const imagenesAumentar = document.querySelectorAll('img.aumentar');

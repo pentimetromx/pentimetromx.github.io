@@ -23,6 +23,16 @@ body, html {
   z-index: -1;
   opacity: 0.4; /* Ajusta la opacidad según tus preferencias */
 }
+#videoBackgroundII {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.4; /* Ajusta la opacidad según tus preferencias */
+}
 .overlay {
   position: fixed;
   top: 0;
@@ -703,9 +713,11 @@ width:447px ;
 }
 
 #agrupaOblicuos-XI{
+  position: absolute;
   display: flex;
   flex-direction: row;
-  margin-top: -555px;
+  margin-right: 997px;
+  margin-bottom: 387px;
 }
 
 #contFrente-V{
@@ -782,9 +794,6 @@ width:447px ;
   position: absolute;
   margin-top: 1px;
 }
-
-
-
 .Bot-inicio2,
 .Bot-inicio{
   background-color: #302928;
@@ -1418,17 +1427,16 @@ elemento.visible {
   border-radius: 10px;
 }
 #franja-Blanca{
-  position: absolute;
+  position: relative;
   display: flex;
-  left: -10px;
-  top: 42px;
+  margin-top: -37px;
   background-color: white;
 }
 #cont-titulo{
   width:100%; /* Establece el ancho que desees para tu contenedor. Puede ser un valor fijo o relativo. */
   margin: 0 auto; /* Esto centra el contenedor horizontalmente. */
   position: relative;
-  top: -94px;
+  top: -83px;
   display: flex;
   flex-direction: column;
   justify-content: center;
