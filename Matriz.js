@@ -4562,4 +4562,4 @@ canvasElements4.forEach(input => {
       link.classList.add('orange-text');
       imagenesPasoApaso(link.getAttribute('data-imagen'));
     });
-  });//
+  });
