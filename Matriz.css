@@ -711,15 +711,13 @@ width:447px ;
   width: 177px;    
   top: 336px;
 }
-
-#agrupaOblicuos-XI{
+#agrupaOblicuos-XI{ 
   position: absolute;
   display: flex;
   flex-direction: row;
   margin-right: 997px;
   margin-bottom: 387px;
 }
-
 #contFrente-V{
   position: relative;
   left:277px;
@@ -754,7 +752,8 @@ width:447px ;
 }
 #butt-112{
   position: absolute;
-  margin-top: 1px;
+  margin-top: 3px;
+  margin-right: 2px;
 } 
 
 #contLateral-V{
@@ -762,11 +761,42 @@ width:447px ;
   left:417px;
   top:400px;
 }
+#butt-33{
+  position: relative;
+  left: 1087px;
+  top:-517px;  
+}
+#butt-44{
+  position: relative;
+  left: 1091px;
+  top:-562px;  
+}
+#butt-55{
+  position: relative;
+  left: 1091px;
+  top:-537px;
+}
+#butt-66{
+  position: relative;
+  left: 1094px;
+  top:-581px; 
+}
+#butt-77{
+  position: relative;
+  left: 1091px;
+  top:-558px;
+}
+#butt-88{
+  position: relative;
+  left: 1094px;
+  top:-602px;
+}
 #butt-3{
   position: absolute;
 } 
 #butt-4{
-  margin-top: 1px;
+ position: relative;
+ top: 3px;
 }
 
 #contArriba-V{
@@ -779,7 +809,7 @@ width:447px ;
 } 
 #butt-6{
   position: absolute;
-  margin-top: 1px;
+  margin-top: 3px;
 }
 
 #contAtras-V{
@@ -792,7 +822,7 @@ width:447px ;
 } 
 #butt-8{
   position: absolute;
-  margin-top: 1px;
+  margin-top: 3px;
 }
 .Bot-inicio2,
 .Bot-inicio{
@@ -821,7 +851,6 @@ width:447px ;
   z-index: 0;
 }
 #agrupaOblicuos-I,
-#agrupaOblicuos-II,
 #agrupaOblicuos-III,
 #agrupaOblicuos-IV,
 #agrupaOblicuos-V,
@@ -832,20 +861,28 @@ width:447px ;
   flex-direction: column;
   margin-top: -555px;
 }
+
+#agrupaOblicuos-II{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
 #butt-1,
 #butt-11{
-  position: absolute;
-  margin-left: 1107px;
-  margin-top: 77px;
+  position: relative;
+  left: 1087px;
+  top:-497px;  
 }
 #butt-2{
-  position: absolute;
-  margin-left: 1107px;
-  margin-top: 77px;
-}
-.contOblicuosTorre{
   position: relative;
+  left: 1091px;
+  top:-542px;  
 }
+
+
+/* .contOblicuosTorre{
+  position: relative;
+} */
 .imagesTorre{
   height: 377px;
   width: 503px;

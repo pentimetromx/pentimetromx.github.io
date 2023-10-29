@@ -1744,6 +1744,8 @@ function modificarPosicion() {
 }); 
 }
 function muestraTorres(seleccion) {
+  var contOblicuoTorre = document.getElementById('agrupaOblicuos-II')
+
   seccionTintero.style.display = 'none';
   for (var i = 0; i < pantallas.length; i++) {
     var elemento = document.getElementById(pantallas[i]);
@@ -1751,12 +1753,19 @@ function muestraTorres(seleccion) {
       elemento.style.display = 'none';
     }
   }
+
+  if(contOblicuoTorre){
+    contOblicuoTorre.style.display = 'flex'
+  }
+
+  
   switch (seleccion) {
     case 'frente':
       const elementoMandosFrente = document.getElementById('pantalla-frente');
       if (elementoMandosFrente) {
         elementoMandosFrente.style.display = 'block';
       }
+
       if (!idsArray.includes(seleccion)) {
         idsArray.push(seleccion);
         console.log(idsArray);
@@ -3671,15 +3680,20 @@ function muestraOperacion(){
   var franjaGris = document.getElementById('franja-gris');
   var franjaBlanca = document.getElementById('franja-Blanca');
   var pantaInicial = document.getElementById('pantalla-inicial');
+  var links = document.getElementById('links-iniciales');
+  var linksI = document.getElementById('links-inicialesI');
   franjaBlanca.style.display = 'none'
   franjaGris.style.display = 'none'
-  contTitulo.style.display = 'none'
-  
+  contTitulo.style.display = 'none'  
   videoII.pause();
   videoII.style.display = 'none'
   video.play();
 
   pantaInicial.style.display = 'flex'
+  contInicial.style.display = 'flex'
+  links.style.display = 'flex'
+  linksI.style.display = 'flex'
+
 
 }  
 
