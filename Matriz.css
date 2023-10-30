@@ -1,9 +1,11 @@
 @font-face {
   font-family: "GothamRounded"; /* Nombre de la familia de fuentes personalizada */
   src: url('C:\Users\Juan\Documentos\programacion\programar\Pruebas\fonts\Mukta-Medium.ttf') format('ttf'), /* Ruta hacia el archivo .woff2 de la fuente */
-} 
-
+}
 body, html {
+  zoom: 100%;
+  -moz-transform: scale(1.0);
+  transform: scale(1.0);
   font-family: "GothamRounded";
   background-size: cover;
   background-position: center;
@@ -21,7 +23,7 @@ body, html {
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  opacity: 0.4; /* Ajusta la opacidad según tus preferencias */
+  opacity: 0.1; /* Ajusta la opacidad según tus preferencias */
 }
 #videoBackgroundII {
   position: fixed;
@@ -712,17 +714,20 @@ width:447px ;
   top: 336px;
 }
 #agrupaOblicuos-XI{ 
-  position: absolute;
+  position: relative;
   display: flex;
-  flex-direction: row;
-  margin-right: 997px;
-  margin-bottom: 387px;
+  flex-direction: row-reverse;
+  top: 77px;
+  left: -147px;
+}
+#agrupaOblicuos-XI > * {
+  margin-left: 100px; /* Espaciado de 100px entre elementos hijos */
 }
 #contFrente-V{
   position: relative;
-  left:277px;
-  top:400px;
+  /* left:77px; */
 }
+
 .Bot-inicio3{
   background-color:rgb(189, 2, 2);
   color: white;
@@ -749,18 +754,38 @@ width:447px ;
 }
 #butt-111{
   position: absolute;
+  background-color:rgb(189, 2, 2);
+  color: white;
+  border-radius: 7px;
+  width: 155px;
+  height: 47px;
+  font-size: 14px;
+  text-align: center;
+  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+  transform: skewX(-30deg);
+  cursor: pointer;
+  z-index: 1;
 }
 #butt-112{
   position: absolute;
-  margin-top: 3px;
+  margin-top: 4px;
   margin-right: 2px;
+  background-color: rgb(0,0,255);
+  border-radius: 7px;
+  width: 161px;
+  height: 51px;
+  font-size: 14px;
+  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%); 
+  transform: skewX(-30deg);
+  cursor: pointer;
+  z-index: 0;
 } 
 
 #contLateral-V{
   position: relative;
-  left:417px;
-  top:400px;
+  /* left:317px; */
 }
+
 #butt-33{
   position: relative;
   left: 1087px;
@@ -793,35 +818,103 @@ width:447px ;
 }
 #butt-3{
   position: absolute;
+  background-color:rgb(189, 2, 2);
+  color: white;
+  border-radius: 7px;
+  width: 155px;
+  height: 47px;
+  font-size: 14px;
+  text-align: center;
+  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+  transform: skewX(-30deg);
+  cursor: pointer;
+  z-index: 1;
 } 
 #butt-4{
  position: relative;
- top: 3px;
+ top: 1px;
+ margin-top: 3px;
+ margin-right: 2px;
+ background-color: rgb(0,0,255);
+ border-radius: 7px;
+ width: 161px;
+ height: 51px;
+ font-size: 14px;
+ clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%); 
+ transform: skewX(-30deg);
+ cursor: pointer;
+ z-index: 0;
 }
 
 #contArriba-V{
   position: relative;
-  left:459px;
-  top:400px;
+  /* left:459px; */
 }
+
 #butt-5{
   position: absolute;
+  background-color:rgb(189, 2, 2);
+  color: white;
+  border-radius: 7px;
+  width: 155px;
+  height: 47px;
+  font-size: 14px;
+  text-align: center;
+  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+  transform: skewX(-30deg);
+  cursor: pointer;
+  z-index: 1;
 } 
 #butt-6{
-  position: absolute;
-  margin-top: 3px;
+ position: relative;
+ top: 1px;
+ margin-top: 3px;
+ margin-right: 2px;
+ background-color: rgb(0,0,255);
+ border-radius: 7px;
+ width: 161px;
+ height: 51px;
+ font-size: 14px;
+ clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%); 
+ transform: skewX(-30deg);
+ cursor: pointer;
+ z-index: 0;
+ margin-top: 3px;
 }
 
 #contAtras-V{
   position: relative;
-  left:602px;
-  top:400px;
+  /* left:602px; */
 }
+
 #butt-7{
   position: absolute;
+  background-color:rgb(189, 2, 2);
+  color: white;
+  border-radius: 7px;
+  width: 155px;
+  height: 47px;
+  font-size: 14px;
+  text-align: center;
+  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+  transform: skewX(-30deg);
+  cursor: pointer;
+  z-index: 1;
 } 
 #butt-8{
-  position: absolute;
+  top: 1px;
+  margin-top: 3px;
+  margin-right: 2px;
+  background-color: rgb(0,0,255);
+  border-radius: 7px;
+  width: 161px;
+  height: 51px;
+  font-size: 14px;
+  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%); 
+  transform: skewX(-30deg);
+  cursor: pointer;
+  z-index: 0;
+  margin-top: 3px;
   margin-top: 3px;
 }
 .Bot-inicio2,
@@ -1036,15 +1129,15 @@ margin-right: 7px;
 }
 #line {
   position: absolute;
-  left: 807px;
+  left: 837px;
   top: 6px;
   width: 0;
   height: 7px;
   transition: 0.1s;
 }
 #linkListI{
-  left: 600px;
-  top: 30px;
+  left: 667px;
+  top: 20px;
   width: 257px;
   height:auto;
   list-style: none;
@@ -1061,8 +1154,8 @@ margin-right: 7px;
   height:auto;  
   padding: 0;
   position: absolute;
-  left: 807px;
-  top: 30px;
+  left: 777px;
+  top: 20px;
   background-color: blue;
   z-index: 7;
 }

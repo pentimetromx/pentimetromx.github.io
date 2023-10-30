@@ -6,10 +6,15 @@ var destino = 257;
 var idsArray = [];
 var idsArrayEliminados = [];
 var idsMA = ['canvasContainer2', 'canvasContainer3', 'canvasContainer4','canvasContainer5','canvasContainer6','canvasContainer7','canvasContainer8', 'canvasContainer9', 'contChecks','troubleshooting','contImagNeg','contImagGraf'];
+var idsMAhijos = ['troubleshooting','canvasContainer2','contChecks','canvasContainer3','contImagNeg','contImagGraf'];
 var idsResultados = ['icon-ana','icon-carlos','icon-andres','icon-jorge','icon-jesus','icon-sandra','icon-mario'];
 var elementosContUser = document.querySelectorAll('.cont-user');
 var lineasGrid = document.getElementById('contLineas');
 var contTitulo = document.getElementById('cont-titulo');
+var linkList = document.getElementById("linkList");
+var linkListI = document.getElementById("linkListI");
+
+
 
 var currentID = null;
 var btnAtras = document.getElementById('bot-atras');
@@ -228,7 +233,10 @@ function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
   // Después de 3 segundos, ocultar el video
   setTimeout(function() {
   video.style.display = "none"; // Esto ocultará el elemento de video
-  }, 977); // 2000 milisegundos = 2 segundos
+  }, 977); // 2000 milisegundos = 2 
+  var contoblicuosII = document.getElementById('agrupaOblicuos-II');
+  contoblicuosII.style.display = 'flex'
+  
  if (!idsArray.includes(elementId)) {
   idsArray.push(elementId);
   console.log(idsArray)
@@ -359,7 +367,7 @@ if (bancadaVideo) {
   }, 300);
   // Retardo de 0.2 segundos antes de ejecutar esta parte
   setTimeout(function() {
-  }, 200);  
+  }, 200); 
 } 
 function cambioContenedor(elementId) { 
   var elementsToHide = document.querySelectorAll('.alimentador, .uTeñido, .desbobinador,.unidProceso,.rebobinador'); 
@@ -1231,11 +1239,27 @@ function mantAutonomo (idElement) {
   default:
 }}
 var botonClicado = false;
-var originalButtonColors = {}; // Objeto para almacenar los colores originales de los botones
+var originalButtonColors = {}; // Objeto para almacenar los colores originales de los 
+
 function deslizaContenedor(idElement, idButton) {
   var contLinkMant = document.getElementById('linksMA');
   var elementoAnterior = null;
   var elementoActual = null;
+
+  idsMAhijos.forEach(function (elto) {
+    var elemento = document.getElementById(elto);    
+    if (elemento) {
+      elemento.style.display = 'none';
+    }
+  });
+
+  idsMA.forEach(function (elto) {
+    var elemento = document.getElementById(elto);    
+    if (elemento) {
+      elemento.style.display = 'none';
+    }
+  });
+
 
   if (contLinkMant !== null && contImgEntrenos !== null) {
     contLinkMant.style.display = 'none';
@@ -1282,6 +1306,47 @@ function deslizaContenedor(idElement, idButton) {
         }
     }
   });
+
+}
+function deslizAutomatic(){
+  arrayPosicionnador = [];
+  destino = 277;
+  arrayIdButtsMA.forEach(function (elto) {
+    var elemento = document.getElementById(elto);    
+    if (elemento) {
+      elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)'; // Restaura el color original
+    }
+  });
+  idsMA.forEach(function (elto) {
+    var elemento = document.getElementById(elto);    
+    if (elemento) {
+      elemento.style.display = 'none';
+    }
+  });
+  //setTimeout(function() {
+    deslizaContenedorII('troubleshooting', 'troubleshoot');  
+    // Esperar 400 milisegundos y ejecutar la tercera función
+    setTimeout(function() {
+      deslizaContenedorII('canvasContainer2', 'def1');  
+      // Esperar 400 milisegundos y ejecutar la tercera función
+      setTimeout(function() {
+        deslizaContenedorII('contChecks', 'def2');  
+        // Esperar 400 milisegundos y ejecutar la cuarta función
+        setTimeout(function() {
+          deslizaContenedorII('canvasContainer3', 'adtBut');  
+          // Esperar 400 milisegundos y ejecutar la quinta función
+          setTimeout(function() {
+            deslizaContenedorII('contImagNeg', 'fua1');  
+            // Esperar 400 milisegundos y ejecutar la sexta función
+            setTimeout(function() {
+              deslizaContenedorII('contImagGraf', 'lup');
+            }, 300);
+          }, 300);
+        }, 300);
+      }, 300);
+    }, 300);
+  //}, 50); 
+  console.log('al final de la funcion ',arrayPosicionnador)
 }
 function deslizaContenedorII(idElement, idButton) {
   var contLinkMant = document.getElementById('linksMA');
@@ -1341,50 +1406,12 @@ function deslizaContenedorII(idElement, idButton) {
     originalButtonColors[idButton] = boton.style.backgroundColor; // Guarda el color original 
   }
   boton.style.backgroundColor = 'orange';
-  boton.onclick = null;      
+ /* boton.onclick = null;*/      
   setTimeout(function () {    
   }, 300);
 }
-function deslizAutomatic(){
-  arrayPosicionnador = [];
-  destino = 277;
-  arrayIdButtsMA.forEach(function (elto) {
-    var elemento = document.getElementById(elto);    
-    if (elemento) {
-      elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)'; // Restaura el color original
-    }
-  });
-  idsMA.forEach(function (elto) {
-    var elemento = document.getElementById(elto);    
-    if (elemento) {
-      elemento.style.display = 'none';
-    }
-  });
-  //setTimeout(function() {
-    deslizaContenedorII('troubleshooting', 'troubleshoot');  
-    // Esperar 400 milisegundos y ejecutar la tercera función
-    setTimeout(function() {
-      deslizaContenedorII('canvasContainer2', 'def1');  
-      // Esperar 400 milisegundos y ejecutar la tercera función
-      setTimeout(function() {
-        deslizaContenedorII('contChecks', 'def2');  
-        // Esperar 400 milisegundos y ejecutar la cuarta función
-        setTimeout(function() {
-          deslizaContenedorII('canvasContainer3', 'adtBut');  
-          // Esperar 400 milisegundos y ejecutar la quinta función
-          setTimeout(function() {
-            deslizaContenedorII('contImagNeg', 'fua1');  
-            // Esperar 400 milisegundos y ejecutar la sexta función
-            setTimeout(function() {
-              deslizaContenedorII('contImagGraf', 'lup');
-            }, 300);
-          }, 300);
-        }, 300);
-      }, 300);
-    }, 300);
-  //}, 50); 
-  console.log('al final de la funcion ',arrayPosicionnador)
-}
+
+
 function resetBotns() {  
   var contProblema = document.getElementById('linksMA');
   var contProblema2 = document.getElementById('contImgEntrenos');
@@ -1398,7 +1425,6 @@ function resetBotns() {
     var elemento = document.getElementById(elto);    
     if (elemento) {
       elemento.style.display = 'none';
-      elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)'; // Restaura el color original
     }
   });
 
@@ -1744,8 +1770,6 @@ function modificarPosicion() {
 }); 
 }
 function muestraTorres(seleccion) {
-  var contOblicuoTorre = document.getElementById('agrupaOblicuos-II')
-
   seccionTintero.style.display = 'none';
   for (var i = 0; i < pantallas.length; i++) {
     var elemento = document.getElementById(pantallas[i]);
@@ -1754,13 +1778,15 @@ function muestraTorres(seleccion) {
     }
   }
 
-  if(contOblicuoTorre){
-    contOblicuoTorre.style.display = 'flex'
-  }
-
-  
   switch (seleccion) {
     case 'frente':
+      var contOblicuoT = document.getElementById('agrupaOblicuos-II');
+      contOblicuoT.style.display = 'flex'
+      contOblicuoT.style.marginTop = '3px'
+      contOblicuoT.style.marginLeft = '3px'
+
+    
+
       const elementoMandosFrente = document.getElementById('pantalla-frente');
       if (elementoMandosFrente) {
         elementoMandosFrente.style.display = 'block';
@@ -2005,8 +2031,8 @@ function abrirSeccionCurado(elementId){
   }  
 }
 function cerrarSecciones(){
-  var linkList = document.getElementById("linkList");
-  linkList.style.display = "none";
+ linkList.style.display = "none";
+ linkListI.style.display = "none";
 }
 function abrirPilarMA(){
   linkListI.style.display = "none";    
@@ -3060,7 +3086,7 @@ function resultadosMA(){
   } 
   video.pause();
   video.style.display = 'none'  
-//// AUMENTA TAMANO SECUENCIAL DE IMAGENES /////////////////////////////////////////////////////////////////////////
+  //// AUMENTA TAMANO SECUENCIAL DE IMAGENES /////////////////////////////////////////////////////////////////////////
   const iconos = document.querySelectorAll('.icono-user'); // Selecciona todos los elementos con la clase .icono-user
   iconos.forEach((icono, index) => {
     // Aplica la función de aumentarTamaño con un retraso entre cada imagen
@@ -3068,7 +3094,7 @@ function resultadosMA(){
       aumentarTamaño(icono, 1.8, 0.5);
     }, index * 0.2 * 100); // Aumenta cada imagen con un retraso de 0.2 segundos
   });
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   // Verifica si el elemento está visible
   var estilos = window.getComputedStyle(lineasGrid);
   var display = estilos.getPropertyValue('display');
@@ -3688,13 +3714,12 @@ function muestraOperacion(){
   videoII.pause();
   videoII.style.display = 'none'
   video.play();
+  video.style.display = 'flex'
 
   pantaInicial.style.display = 'flex'
   contInicial.style.display = 'flex'
   links.style.display = 'flex'
   linksI.style.display = 'flex'
-
-
 }  
 
 // Obtén todas las imágenes con la clase "aumentar"
@@ -4401,10 +4426,12 @@ textToColor.addEventListener("mouseover", () => {
     hoverTimeout = setTimeout(() => {
       linkList.style.display = "block";
       line.style.width = textToColor.offsetWidth + "px";
+      linkListI.style.display = "none";
     }, 7);
 });
 linkList.addEventListener("mouseover", () => {
     clearTimeout(hideTimeout);
+    linkListI.style.display = 'none'
 });
 textToColor.addEventListener("mouseout", () => {
     clearTimeout(hoverTimeout);
@@ -4419,7 +4446,7 @@ linkList.addEventListener("mouseout", () => {
       textToColor.style.color = "white";
       linkList.style.display = "none";
       line.style.width = "0";
-    }, 7);
+    }, 1);
 });
 textToColorI.addEventListener("mouseover", () => {
   clearTimeout(hideTimeout);
@@ -4444,7 +4471,7 @@ linkListI.addEventListener("mouseout", () => {
     textToColorI.style.color = "white";
     linkListI.style.display = "none";
     lineI.style.width = "0";
-  }, 7);
+  }, 1);
 });
 /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 const searchForm = document.getElementById('search-form');

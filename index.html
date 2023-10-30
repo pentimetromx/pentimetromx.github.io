@@ -38,19 +38,19 @@
 
       <div id="agrupaOblicuos-XI">
         <div id="contFrente-V" class="contOblicuosTorre">
-          <button class="Bot-inicio3" id="butt-111" onclick="muestraOperacion()">Frente</button>
+          <button  class="Bot-inicio3" id="butt-111" onclick="muestraTorresI()">Area Institucional</button>        
           <button class="Bot-inicio3-fondo" id="butt-112"></button>  
         </div> <br> 
         <div id="contLateral-V" class="contOblicuosTorre">
-          <button class="Bot-inicio3" id="butt-3" onclick="muestraTorresI('mandos')">Mandos</button>
+          <button class="Bot-inicio3" id="butt-3" onclick="muestraTorresI('mandos')">Area Comercial</button> 
           <button class="Bot-inicio3-fondo" id="butt-4"></button>  
         </div> <br>
         <div id="contArriba-V" class="contOblicuosTorre">
-          <button class="Bot-inicio3" id="butt-5" onclick="muestraTorresI('servicio')">Servicio</button>
+          <button class="Bot-inicio3" id="butt-5" onclick="muestraTorresI('servicio')">Area Administrativa</button>
           <button class="Bot-inicio3-fondo" id="butt-6"></button>  
         </div> <br>
         <div id="contAtras-V" class="contOblicuosTorre">
-          <button class="Bot-inicio3" id="butt-7" onclick="muestraTorresI('atras')">Atras</button>
+          <button class="Bot-inicio3" id="butt-7" onclick="muestraOperacion('atras')">Area Operativa</button>
           <button class="Bot-inicio3-fondo" id="butt-8"></button>  
         </div> 
       </div>
@@ -80,6 +80,7 @@
         <li><a href="#" onclick="abrirPilarMP()">Pilar Mantenimiento Progresivo</a></li><br>
         <li><a href="#" onclick="abrirPilarME()">Pilar Mejora Enfocada</a></li><br>
         <li><a href="#" onclick="abrirPilarME()">Pilar Administrativo y soporte</a></li><br>
+        <li><a href="#" onclick="cerrarSecciones()">Salir</a></li><br>
       </ul>    
     </div> 
 
@@ -262,20 +263,20 @@
       </div>
 
       <div id="agrupaOblicuos-II">
-          <button class="Bot-inicio2" id="butt-11" onclick="muestraTorres('frente')">Frente</button>
-          <button class="Bot-inicio2-fondo" id="butt-2"></button>
-       
-          <button class="Bot-inicio2" id="butt-33" onclick="muestraTorres('mandos')">Mandos</button>
-          <button class="Bot-inicio2-fondo" id="butt-44" ></button>  
-       
-       
-          <button class="Bot-inicio2" id="butt-55" onclick="muestraTorres('servicio')">Servicio</button>
-          <button class="Bot-inicio2-fondo" id="butt-66"></button>  
-
-
-          <button class="Bot-inicio2" id="butt-77" onclick="muestraTorres('atras')">Atras</button>
-          <button class="Bot-inicio2-fondo" id="butt-88"></button> 
-
+        <button class="Bot-inicio2" id="butt-11" onclick="muestraTorres('frente')">Frente</button>
+        <button class="Bot-inicio2-fondo" id="butt-2"></button>
+      
+        <button class="Bot-inicio2" id="butt-33" onclick="muestraTorres('mandos')">Mandos</button>
+        <button class="Bot-inicio2-fondo" id="butt-44" ></button>  
+      
+      
+        <button class="Bot-inicio2" id="butt-55" onclick="muestraTorres('servicio')">Servicio</button>
+        <button class="Bot-inicio2-fondo" id="butt-66"></button>  
+  
+  
+        <button class="Bot-inicio2" id="butt-77" onclick="muestraTorres('atras')">Atras</button>
+        <button class="Bot-inicio2-fondo" id="butt-88"></button> 
+  
       </div>
 
     </div>
@@ -472,7 +473,6 @@
       </div><br>
 
       <div class="conti-boton" id="conti-boton">
-        <button class="butt-mautonomo image-trainings" id="resultados" onclick="resultadosMA()">TRACKING DASHBOARD</button>
         <button class="butt-mautonomo image-trainings" id="troubleshoot" onclick="deslizaContenedor('troubleshooting','troubleshoot')">TROUBLESHOOTING</button>
         <button class="butt-mautonomo image-trainings" id="def1" onclick="deslizaContenedor('canvasContainer2','def1')">DEFECTOS TIPO 1</button>
         <button class="butt-mautonomo image-trainings" id="def2" onclick="deslizaContenedor('contChecks','def2')">DEFECTOS TIPO 2</button>
@@ -481,6 +481,7 @@
         <button class="butt-mautonomo image-trainings" id="lup" onclick="deslizaContenedor('contImagGraf','lup')">LUP</button>
         <button class="butt-mautonomo image-trainings" id="reset" onclick="resetBotns('troubleshoot')" style="background-color: red;color: white;">Reset</button>
         <button class="butt-mautonomo image-trainings" id="auto" onclick="deslizAutomatic('troubleshooting','troubleshoot')" style="background-color: red;color: white;">Show everything</button>
+        <button class="butt-mautonomo image-trainings" id="resultados" onclick="resultadosMA()">TRACKING DASHBOARD</button>
       </div> 
 
       <div id="troubleshooting" style="display: none;">
@@ -551,7 +552,7 @@
         </div><br> 
 
         <div>
-          <button id="lub-mensual" class="butt-lub labl-lub"></button>
+          <button id="lub-mensual" class="butt-lub labl-lub" onclick="lubricaSemanal()"></button>
           <label class="labl-class labl-lub" style="display: none;" for="lubrica">Frecuencia mensual</label>
         </div>
 
@@ -1257,8 +1258,3 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
   </body>
 </html>
-
-<!--- CONTENEDORES AL INICIO : segundo-bloque  /  links-inicialesI  /  links-iniciales  /  container1  /  videoBackground -->
-
-
-
