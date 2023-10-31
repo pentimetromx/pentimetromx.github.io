@@ -38,19 +38,19 @@
 
       <div id="agrupaOblicuos-XI">
         <div id="contFrente-V" class="contOblicuosTorre">
-          <button  class="Bot-inicio3" id="butt-111" onclick="muestraTorresI()">Area Institucional</button>        
+          <button  class="Bot-inicio3" id="butt-111">Area Institucional</button>        
           <button class="Bot-inicio3-fondo" id="butt-112"></button>  
         </div> <br> 
         <div id="contLateral-V" class="contOblicuosTorre">
-          <button class="Bot-inicio3" id="butt-3" onclick="muestraTorresI('mandos')">Area Comercial</button> 
+          <button class="Bot-inicio3" id="butt-3">Area Comercial</button> 
           <button class="Bot-inicio3-fondo" id="butt-4"></button>  
         </div> <br>
         <div id="contArriba-V" class="contOblicuosTorre">
-          <button class="Bot-inicio3" id="butt-5" onclick="muestraTorresI('servicio')">Area Administrativa</button>
+          <button class="Bot-inicio3" id="butt-5">Area Administrativa</button>
           <button class="Bot-inicio3-fondo" id="butt-6"></button>  
         </div> <br>
         <div id="contAtras-V" class="contOblicuosTorre">
-          <button class="Bot-inicio3" id="butt-7" onclick="muestraOperacion('atras')">Area Operativa</button>
+          <button class="Bot-inicio3" id="butt-7" onclick="muestraOperacion('')">Area Operativa</button>
           <button class="Bot-inicio3-fondo" id="butt-8"></button>  
         </div> 
       </div>
@@ -70,7 +70,7 @@
 
       <div class="iridescent-element" id="lineI"></div>
       <div id="titleContainerI">
-        <p id="textToColorI" style="position: relative;">Pilares<span style="color:blue; position: relative; top: -1px;left: 10px;">&#9660;</span></p>
+        <p id="textToColorI" style="position: relative;">Pilares<span style="color:greenyellow; position: relative; top: -1px;left: 10px;">&#9660;</span></p>
       </div>
       
       <ul class="iridescent-element" id="linkListI">
@@ -87,7 +87,7 @@
     <div id="links-iniciales" style="position: absolute;left: 270px;top: 0.1px;font-family: 'GothamRounded', sans-serif;display: none;">
       <div class="iridescent-element" id="line"></div>
       <div id="titleContainer">
-        <p id="textToColor" style="position: relative;left: 31px;">Entrenamientos <span style="color:blue; position: relative; top: -17px;left: 120px;">&#9660;</span></p>
+        <p id="textToColor" style="position: relative;left: 31px;">Entrenamientos <span style="color:greenyellow; position: relative; top: -17px;left: 120px;">&#9660;</span></p>
       </div>
       
       <ul class="iridescent-element" id="linkList">
@@ -114,14 +114,14 @@
       
       <div class="desbobinador mostrar-cont" id="desbobinadorId">
 
-        <button class="boton-b" onclick="cierraContenedores('desbobinador')">DESBOBINADOR</button><br>
+        <button class="boton-b" id="boton1" onclick="cierraContenedores('desbobinador')">DESBOBINADOR</button><br>
         <div class="contene-7" id="cont-Verticales1">
           <div class="linea-vertical"></div>
-          <button class="boton-c" onclick="lubricacion ()">Lubricacion<div class="linea-horizontal"></div></button>
-          <button class="boton-c">Freno<div class="linea-horizontal"></div></button>
-          <button class="boton-c">Bailarina<div class="linea-horizontal"></div></button>
-          <button class="boton-c">Ensarte<div class="linea-horizontal"></div></button>
-          <button class="boton-c">Regulación neumática<div class="linea-horizontal"></div></button>
+          <button id="boton2" class="boton-c aumentarc" onclick="lubricacion()">Lubricacion<div class="linea-horizontal"></div></button>
+          <button id="boton3" class="boton-c aumentarc">Freno<div class="linea-horizontal"></div></button>
+          <button id="boton4" class="boton-c aumentarc">Bailarina<div class="linea-horizontal"></div></button>
+          <button id="boton5" class="boton-c aumentarc">Ensarte<div class="linea-horizontal"></div></button>
+          <button id="boton6" class="boton-c aumentarc">Regulación neumática<div class="linea-horizontal"></div></button>
         </div>
 
 
@@ -129,58 +129,58 @@
       </div>
 
       <div class="uTeñido mostrar-cont" id="uTeñidos">  
-        <button class="boton-b" onclick="cierraContenedores('uTeñido')">UNIDAD TEÑIDO</button><br>       
+        <button class="boton-b" id="boton7" onclick="cierraContenedores('uTeñido')">UNIDAD TEÑIDO</button><br>       
         <div class="contene-7">
           <div class="linea-vertical"></div>
-          <button class="boton-c">Sistema neumático<div class="linea-horizontal"></div></button>
-          <button class="boton-c">Rodillería<div class="linea-horizontal"></div></button>
-          <button class="boton-c">Circuito de alimentación<div class="linea-horizontal"></div></button>
-          <button class="boton-c">Bomba de succión<div class="linea-horizontal"></div></button>
-          <button class="boton-c">Depositos de anilina<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton8">Sistema neumático<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton9">Rodillería<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton10">Circuito de alimentación<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton11">Bomba de succión<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton12">Depositos de anilina<div class="linea-horizontal"></div></button>
         </div>
       </div>
 
       <div class="alimentador mostrar-cont" id="alimentadorId">
-        <button class="boton-b" onclick="cierraContenedores('alimentador')">ALIMENTADOR</button><br>  
+        <button class="boton-b" id="boton13" onclick="cierraContenedores('alimentador')">ALIMENTADOR</button><br>  
         
         <div class="contene-7">
           <div class="linea-vertical" id="verticales-alimentador"></div>
-          <button class="boton-c">Estructura<div class="linea-horizontal"></div></button>
-          <button class="boton-c">Sistema planetario<div class="linea-horizontal"></div></button>
-          <button class="boton-c">Ajuste mecanico<div class="linea-horizontal"></div></button>
-          <button class="boton-c">Transmision<div class="linea-horizontal"></div></button>
-          <button class="boton-c">Ajuste neumatico<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton14">Estructura<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton15">Sistema planetario<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton16">Ajuste mecanico<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton17">Transmision<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton18">Ajuste neumatico<div class="linea-horizontal"></div></button>
         </div>          
       </div>
 
       <div class="unidProceso mostrar-cont" id="uniProceso">  
-        <button class="boton-b" onclick="cierraContenedores('unidProceso')">UNIDAD DE PROCESO</button><br>  
+        <button class="boton-b" id="boton19" onclick="cierraContenedores('unidProceso')">UNIDAD DE PROCESO</button><br>  
         <div class="contene-7">
           <div class="linea-vertical"></div>
-          <button class="boton-c">Rodillos de transporte<div class="linea-horizontal"></div></button>
-          <button class="boton-c">Función y ensamble<div class="linea-horizontal"></div></button>
-          <button class="boton-c">Anillos perforadores<div class="linea-horizontal"></div></button>
-          <button class="boton-c">Zona de perforación<div class="linea-horizontal"></div></button>
-          <button class="boton-c">Remaliner<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton20">Rodillos de transporte<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton21">Función y ensamble<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton22">Anillos perforadores<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton23">Zona de perforación<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton24">Remaliner<div class="linea-horizontal"></div></button>
         </div>          
       </div>
 
       <div class="rebobinador mostrar-cont" id="rebobinador">
-        <button class="boton-b" onclick="cierraContenedores('rebobinador')">REBOBINADOR</button><br> 
+        <button class="boton-b" id="boton25" onclick="cierraContenedores('rebobinador')">REBOBINADOR</button><br> 
                     
         <div class="contene-7">
           <div class="linea-vertical"></div>
-          <button class="boton-c">Estructura<div class="linea-horizontal"></div></button>
-          <button class="boton-c">Sistema planetario<div class="linea-horizontal"></div></button>
-          <button class="boton-c">Ajuste mecanico<div class="linea-horizontal"></div></button>
-          <button class="boton-c">Transmision<div class="linea-horizontal"></div></button>
-          <button class="boton-c">Ajuste neumatico<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton26">Estructura<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton27">Sistema planetario<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton28">Ajuste mecanico<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton29">Transmision<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton30">Ajuste neumatico<div class="linea-horizontal"></div></button>
         </div>          
       </div>          
 
       <div class="contTorrImp mostrar-cont" id="rotatek-1">
         <button class="boton-a" id="bot-atras10" style="text-align: center;width: 47px;position: absolute;left: 23px;top: 0.01px;display: none;" onclick="irContenedorAnterior('rotatek-1')"></button>
-        <button id="toggleVideoButton" class="boton-b" style="margin-left: -227px;width: 500px;" onclick="cambioContenedor('rotatek-1')">TORRE DE IMPRESIÓN</button>                
+        <button id="toggleVideoButton" class="boton-i" style="margin-left: -227px;width: 500px;" onclick="cambioContenedor('rotatek-1')">TORRE DE IMPRESIÓN</button>                
         <button class="boton-a" id="bot-atras11" style="text-align: center;display: none; width: 47px;position: absolute;left: 590px;top: 0px;" onclick="irContenedorSiguiente('rotatek-1')"></button>
         
 
@@ -300,24 +300,20 @@
 
       <img src="./assets/Arriba abajo.jpg" id="imgTorre-f" alt="imagen-torre">
 
-      <div id="agrupaOblicuos" style="margin-top: -573px;">
-        <div id="contFrente-III" class="contOblicuosTorre">
-          <button class="Bot-inicio2" id="butt-1" onclick="muestraTorresI('pantalla-frente')">Frente</button>
-          <button class="Bot-inicio2-fondo" id="butt-2"></button>  
-        </div>  
-        <div id="contLateral-III" class="contOblicuosTorre">
-          <button class="Bot-inicio2" id="butt-3" onclick="muestraTorresI('mandos')">Mandos</button>
-          <button class="Bot-inicio2-fondo" id="butt-4"></button>  
-        </div> 
-        <div id="contArriba-III" class="contOblicuosTorre">
-          <button class="Bot-inicio2" id="butt-5" onclick="muestraTorresI('servicio')">Servicio</button>
-          <button class="Bot-inicio2-fondo" id="butt-6"></button>  
-        </div> 
-        <div id="contAtras-III" class="contOblicuosTorre">
-          <button class="Bot-inicio2" id="butt-7" onclick="muestraTorresI('atras')">Atras</button>
-          <button class="Bot-inicio2-fondo" id="butt-8"></button>  
-        </div> 
-      </div>
+      <div id="agrupaOblicuos">
+          <button class="Bot-inicio2" id="butt-01" onclick="muestraTorresI('pantalla-frente')">Frente</button>
+          <button class="Bot-inicio2-fondo" id="butt-02"></button>  
+
+          <button class="Bot-inicio2" id="butt-03" onclick="muestraTorresI('mandos')">Mandos</button>
+          <button class="Bot-inicio2-fondo" id="butt-04"></button>  
+
+          <button class="Bot-inicio2" id="butt-05" onclick="muestraTorresI('servicio')">Servicio</button>
+          <button class="Bot-inicio2-fondo" id="butt-06"></button>  
+
+          <button class="Bot-inicio2" id="butt-07" onclick="muestraTorresI('atras')">Atras</button>
+          <button class="Bot-inicio2-fondo" id="butt-08"></button>  
+
+        </div>
     </div>
 
     <div id="pantalla-mandos" style="display: none;">

@@ -393,40 +393,13 @@ function cambioContenedor(elementId) {
   }
 }
 let firstClick = true;
+
 function cierraContenedores(elementId) {
   const coleccion = document.querySelectorAll('.desbobinador, .desbobinador-I, .uTeñido, .alimentador, .unidProceso, .rebobinador, .contTorrImp');
 
-  coleccion.forEach(element => {
-    const button = element.querySelector('button'); // Acceder al elemento 'button' dentro de cada elemento
-    if (button) {
-      /* button.style.backgroundColor = 'green';  */
-      /* button.style.background = 'linear-gradient(135deg, green, red)'; */
-      button.style.background = 'linear-gradient(177deg, rgb(0, 252, 0), rgb(0, 255, 0))';
-      button.style.color = 'black'
-
-      let isIncreased = false;
-      let intervalId; // Variable para almacenar el ID del intervalo
-      function toggleSize() {
-      if (isIncreased) {
-      button.style.transform = 'scale(1)'; // Tamaño normal
-      } else {
-      button.style.transform = 'scale(1.3)'; // Aumentar el tamaño 1:1.1
-      }
-      isIncreased = !isIncreased; // Alternar entre aumentado y normal
-      }
-      // Iniciar el intervalo y almacenar el ID del intervalo en la variable intervalId
-      intervalId = setInterval(toggleSize, 100); // Llamar a la función cada 500 milisegundos (0.5 segundos)
-      // Para detener el intervalo, puedes hacerlo en respuesta a algún evento o condición
-      // Por ejemplo, aquí lo detenemos después de 5 segundos (5000 milisegundos)
-      setTimeout(() => {
-      clearInterval(intervalId); // Detener el intervalo
-      }, 1000);
-    }
-  });
-
   if (firstClick) {
     if (!idsArray.includes(elementId)) {
-      idsArray.push(elementId);
+      idsArray.push(elementId);  
       console.log(idsArray);
     }
 
@@ -439,8 +412,8 @@ function cierraContenedores(elementId) {
             elemento.style.display = 'none';
           }
         });
-
         video.style.display = 'none';
+        aumentarTamanosDeBotones();
         break;
       case 'uTeñido':
         coleccion.forEach(elemento => {
@@ -450,6 +423,7 @@ function cierraContenedores(elementId) {
             elemento.style.display = 'none';
           }
         });
+        aumentarTamanosDeBotonesII();
         break;
       case 'alimentador':
         coleccion.forEach(elemento => {
@@ -459,6 +433,7 @@ function cierraContenedores(elementId) {
             elemento.style.display = 'none';
           }
         });
+        aumentarTamanosDeBotonesIII();
         break;
       case 'unidProceso':
         coleccion.forEach(elemento => {
@@ -468,6 +443,7 @@ function cierraContenedores(elementId) {
             elemento.style.display = 'none';
           }
         });
+        aumentarTamanosDeBotonesIV();        
         break;
       case 'rebobinador':
         coleccion.forEach(elemento => {
@@ -477,9 +453,11 @@ function cierraContenedores(elementId) {
             elemento.style.display = 'none';
           }
         });
+        aumentarTamanosDeBotonesV();
         break;
       default:
     }
+    
     firstClick = false;
   } else {
     // En el segundo clic, recarga la página
@@ -1411,7 +1389,6 @@ function deslizaContenedorII(idElement, idButton) {
   }, 300);
 }
 
-
 function resetBotns() {  
   var contProblema = document.getElementById('linksMA');
   var contProblema2 = document.getElementById('contImgEntrenos');
@@ -1777,18 +1754,15 @@ function muestraTorres(seleccion) {
       elemento.style.display = 'none';
     }
   }
-
   switch (seleccion) {
     case 'frente':
       var contOblicuoT = document.getElementById('agrupaOblicuos-II');
       contOblicuoT.style.display = 'flex'
       contOblicuoT.style.marginTop = '3px'
-      contOblicuoT.style.marginLeft = '3px'
-
-    
+      contOblicuoT.style.marginLeft = '3px'   
 
       const elementoMandosFrente = document.getElementById('pantalla-frente');
-      if (elementoMandosFrente) {
+      if (elementoMandosFrente) {  
         elementoMandosFrente.style.display = 'block';
       }
 
@@ -4619,4 +4593,135 @@ canvasElements4.forEach(input => {
       link.classList.add('orange-text');
       imagenesPasoApaso(link.getAttribute('data-imagen'));
     });
-  });
+});
+
+function aumentarTamanosDeBotones() {
+  const buttons = [
+    document.getElementById("boton1"),
+    document.getElementById("boton2"),
+    document.getElementById("boton3"),
+    document.getElementById("boton4"),
+    document.getElementById("boton5"),
+    document.getElementById("boton6")
+  ];
+  // Función para aumentar el tamaño de un botón y pasar al siguiente
+  function aumentarSiguienteBoton(index) {
+    if (index < buttons.length) {
+      const boton = buttons[index];
+      boton.style.transform = "scale(7)";
+      setTimeout(() => {
+        restaurarTamanosBoton(boton);
+        aumentarSiguienteBoton(index + 1);
+      }, 200); // Restaura el tamaño y pasa al siguiente botón después de 0.2 segundos
+    }
+  }
+  // Función para restaurar el tamaño normal de un botón
+  function restaurarTamanosBoton(boton) {
+    boton.style.transform = "scale(1)";
+  }
+  aumentarSiguienteBoton(0); // Comienza el proceso con el primer botón
+}
+function aumentarTamanosDeBotonesII() {
+  const buttons = [
+    document.getElementById("boton7"),
+    document.getElementById("boton8"),
+    document.getElementById("boton9"),
+    document.getElementById("boton10"),
+    document.getElementById("boton11"),
+    document.getElementById("boton12")
+  ];
+  // Función para aumentar el tamaño de un botón y pasar al siguiente
+  function aumentarSiguienteBoton(index) {
+    if (index < buttons.length) {
+      const boton = buttons[index];
+      boton.style.transform = "scale(7)";
+      setTimeout(() => {
+        restaurarTamanosBoton(boton);
+        aumentarSiguienteBoton(index + 1);
+      }, 200); // Restaura el tamaño y pasa al siguiente botón después de 0.2 segundos
+    }
+  }
+  // Función para restaurar el tamaño normal de un botón
+  function restaurarTamanosBoton(boton) {
+    boton.style.transform = "scale(1)";
+  }
+  aumentarSiguienteBoton(0); // Comienza el proceso con el primer botón
+}
+function aumentarTamanosDeBotonesIII() {
+  const buttons = [
+    document.getElementById("boton13"),
+    document.getElementById("boton14"),
+    document.getElementById("boton15"),
+    document.getElementById("boton16"),
+    document.getElementById("boton17"),
+    document.getElementById("boton18")
+  ];
+  // Función para aumentar el tamaño de un botón y pasar al siguiente
+  function aumentarSiguienteBoton(index) {
+    if (index < buttons.length) {
+      const boton = buttons[index];
+      boton.style.transform = "scale(7)";
+      setTimeout(() => {
+        restaurarTamanosBoton(boton);
+        aumentarSiguienteBoton(index + 1);
+      }, 200); // Restaura el tamaño y pasa al siguiente botón después de 0.2 segundos
+    }
+  }
+  // Función para restaurar el tamaño normal de un botón
+  function restaurarTamanosBoton(boton) {
+    boton.style.transform = "scale(1)";
+  }
+  aumentarSiguienteBoton(0); // Comienza el proceso con el primer botón
+}
+function aumentarTamanosDeBotonesIV() {
+  const buttons = [
+    document.getElementById("boton19"),
+    document.getElementById("boton20"),
+    document.getElementById("boton21"),
+    document.getElementById("boton22"),
+    document.getElementById("boton23"),
+    document.getElementById("boton24")
+  ];
+  // Función para aumentar el tamaño de un botón y pasar al siguiente
+  function aumentarSiguienteBoton(index) {
+    if (index < buttons.length) {
+      const boton = buttons[index];
+      boton.style.transform = "scale(7)";
+      setTimeout(() => {
+        restaurarTamanosBoton(boton);
+        aumentarSiguienteBoton(index + 1);
+      }, 200); // Restaura el tamaño y pasa al siguiente botón después de 0.2 segundos
+    }
+  }
+  // Función para restaurar el tamaño normal de un botón
+  function restaurarTamanosBoton(boton) {
+    boton.style.transform = "scale(1)";
+  }
+  aumentarSiguienteBoton(0); // Comienza el proceso con el primer botón
+}
+function aumentarTamanosDeBotonesV() {
+  const buttons = [
+    document.getElementById("boton25"),
+    document.getElementById("boton26"),
+    document.getElementById("boton27"),
+    document.getElementById("boton28"),
+    document.getElementById("boton29"),
+    document.getElementById("boton30")
+  ];
+  // Función para aumentar el tamaño de un botón y pasar al siguiente
+  function aumentarSiguienteBoton(index) {
+    if (index < buttons.length) {
+      const boton = buttons[index];
+      boton.style.transform = "scale(7)";
+      setTimeout(() => {
+        restaurarTamanosBoton(boton);
+        aumentarSiguienteBoton(index + 1);
+      }, 200); // Restaura el tamaño y pasa al siguiente botón después de 0.2 segundos
+    }
+  }
+  // Función para restaurar el tamaño normal de un botón
+  function restaurarTamanosBoton(boton) {
+    boton.style.transform = "scale(1)";
+  }
+  aumentarSiguienteBoton(0); // Comienza el proceso con el primer botón
+}
