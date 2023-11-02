@@ -24,7 +24,7 @@ var imgTorreI = document.getElementById('imgTorre');
 var contInicial = document.getElementById('container1');
 var botonMa = document.getElementById('bot-mantaut');
 var imagPasoApaso = document.querySelectorAll('.img1');
-var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','contene-11','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII'];
+var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','contene-11','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I'];
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado'];
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor'];
@@ -328,18 +328,18 @@ function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
       } 
       contVid.style.display='block' 
 
-// Ocultar todos los videos excepto el video 'bancada'
-videoElements.forEach(video => {
-  if (video !== bancadaVideo) {
-    video.style.display = 'none';
-  }
-});
+    // Ocultar todos los videos excepto el video 'bancada'
+    videoElements.forEach(video => {
+      if (video !== bancadaVideo) {
+        video.style.display = 'none';
+      }
+    });
 
-// Reproducir el video 'bancada' si está definido
-if (bancadaVideo) {
-  bancadaVideo.style.display = 'block';
-  bancadaVideo.play();
-}
+    // Reproducir el video 'bancada' si está definido
+    if (bancadaVideo) {
+      bancadaVideo.style.display = 'block';
+      bancadaVideo.play();
+    }
       if (!idsArray.includes(elementId)) {
         idsArray.push(elementId);
         console.log(idsArray)
@@ -547,6 +547,7 @@ function showNextGraf() {
   }
 }
 function showRepuesto(elementId) {
+  var container1 = document.getElementById('container01');
   switch (elementId) {
     case 'contImgDistribuidor':  
       allContenedores.forEach(elemen => {
@@ -627,7 +628,9 @@ function showRepuesto(elementId) {
       }});
       var contOblicuoPlaca = document.getElementById('agrupaOblicuos-placa')
       contOblicuoPlaca.style.display='block'  
-      var botonesInicio = document.getElementById('container01')
+      var botonesInicio = document.getElementById('container01');
+      var botPlaca = document.getElementById('container9');
+      botPlaca.style.display = 'block'
       botonesInicio.style.display='none'
      var imagenesPlancha = document.querySelectorAll('.imagesTorre')
      imagenesPlancha.forEach(function (imagen) {
@@ -663,7 +666,9 @@ function showRepuesto(elementId) {
         video.pause();
         video.currentTime = 0;
         video.play();   
-      }}); 
+      }});
+      container1.style.display = 'none'
+
       if (!idsArray.includes(elementId)) {
         idsArray.push(elementId);
         console.log(idsArray)
@@ -679,7 +684,8 @@ function showRepuesto(elementId) {
         if (element) {
           element.style.display = 'none';
         }
-      });  
+      });
+      container1.style.display = 'none'
       contImpresor.style.display='block'
 
   // Obtener el elemento padre
@@ -708,17 +714,21 @@ function showRepuesto(elementId) {
 } 
 function muestraPerfiles(elementId){
   var video = document.getElementById('video-placa');
-  var imgPlancha = document.querySelectorAll('.imagesTorre') 
-  var imagesPlancha = document.getElementById('contPerfilesPlancha')
-  var imgsPlancha = document.getElementById('imagenes-plancha')
-  var cont10 = document.getElementById('container10')
+  var imgPlancha = document.querySelectorAll('.imagesTorre'); 
+  var imagesPlancha = document.getElementById('contPerfilesPlancha');
+  var imgsPlancha = document.getElementById('imagenes-plancha');
+  var cont10 = document.getElementById('container10');
+  cont10.style.display = 'none'
+  var cont9 = document.getElementById('container9');
+
+  cont10.style.display = 'block'
   switch (elementId) {
     case 'imagen1':
       // Detener el video
       video.pause();
       // Ocultar el video estableciendo su estilo de visualización en 'none'
       video.style.display = 'none';
-      cont10.style.display='block'
+      cont9.style.display='none'
       imagesPlancha.style.display='flex'
       imgsPlancha.style.display='flex'
       imgPlancha.forEach(function (imagen) {
@@ -739,7 +749,7 @@ function muestraPerfiles(elementId){
       video.pause();
       // Ocultar el video estableciendo su estilo de visualización en 'none'
       video.style.display = 'none';
-      
+      cont9.style.display='none'
       imagesPlancha.style.display='flex'
       imgsPlancha.style.display='flex'
       imgPlancha.forEach(function (imagen) {
@@ -769,6 +779,7 @@ function muestraPerfiles(elementId){
           imagen.style.display = 'none';
         }
       });
+      cont9.style.display='none'
       contIMPlaca.style.display='none' 
       if (!idsArray.includes(elementId)) {
         idsArray.push(elementId);
@@ -789,6 +800,7 @@ function muestraPerfiles(elementId){
           imagen.style.display = 'none';
         }
       });
+      cont9.style.display='none'
       contIMPlaca.style.display='none' 
       if (!idsArray.includes(elementId)) {
         idsArray.push(elementId);
@@ -1764,6 +1776,8 @@ function muestraTorres(seleccion) {
       const elementoMandosFrente = document.getElementById('pantalla-frente');
       if (elementoMandosFrente) {  
         elementoMandosFrente.style.display = 'block';
+        elementoMandosFrente.style.marginRight = '150px'
+
       }
 
       if (!idsArray.includes(seleccion)) {
@@ -2035,13 +2049,15 @@ function abrirPrepress(elementId) {
   var videoBackground = document.getElementById('videoBackground');
   var prePrensaElemento = document.getElementById('pre-prensa');
 
-  allContenedores.forEach(contenedor => {
-    if (contenedor === 'vidColor') {
-      contenedor.style.display = 'none';         
-    }  
-  });
+  // Ocultar todos los elementos
+  for (var i = 0; i < allContenedores.length; i++) {
+    var elemento = document.getElementById(allContenedores[i]);
+    if (elemento) {
+      elemento.style.display = 'none';
+    }
+  }
   
-  contBotPress.style.display = 'block';
+  contBotPress.style.display = 'flex';
   contImgsPrepress.style.display = 'block';
   arrayImgPress.forEach(image => {
     if(image) {
@@ -2059,13 +2075,6 @@ function abrirPrepress(elementId) {
     }
     });
 
-  // Ocultar todos los elementos
-  for (var i = 0; i < allContenedores.length; i++) {
-    var elemento = document.getElementById(allContenedores[i]);
-    if (elemento) {
-      elemento.style.display = 'none';
-    }
-  }
   var contBotEspeciales = document.getElementById('conte-botDensitoII')
   contBotEspeciales.style.display='block'
 
@@ -2190,6 +2199,15 @@ function muestraVidPrisma(elementId) {
       video.pause();
       video.style.display='none'
   });
+
+  var container = document.getElementById("contene-11");
+  var computedStyle = getComputedStyle(container);
+
+  var displayValue = computedStyle.getPropertyValue("display");
+  if (displayValue.toLowerCase() === "none") {
+    // Cambia el valor de 'display' a 'flex'
+    container.style.display = "flex";
+  }
      
   /* if (!idsArray.includes(elementId)) {
     idsArray.push(elementId);
@@ -2350,6 +2368,15 @@ function irContenedorAnterior() {
             hijo.style.display = 'block';
           }
         }
+
+        var container = document.getElementById("contene-11");
+        var computedStyle = getComputedStyle(container);
+      
+        var displayValue = computedStyle.getPropertyValue("display");
+        if (displayValue.toLowerCase() === "none") {
+          // Cambia el valor de 'display' a 'flex'
+          container.style.display = "flex";
+        }
       break; 
       case "densitometria":
         for (var i = 0; i < allContenedores.length; i++) {
@@ -2428,30 +2455,27 @@ function irContenedorAnterior() {
           }
         muestraAngulos('mantilla3')
       break; 
-      case 'desbobinador':
+      case "mantilla4" :
         for (var i = 0; i < allContenedores.length; i++) {
           var elemento = document.getElementById(allContenedores[i]); 
-          elemento.style.display='none'}              
-          // Obtener el elemento padre
-          var contenedorPadre = document.getElementById("pantalla-inicial");
-          contenedorPadre.style.display='block'
-          // Obtener todos los elementos hijos del contenedor padre
-          var elementosHijos = contenedorPadre.children;
-          // Recorrer los elementos hijos sin usar clases ni 'id'
-          for (var i = 0; i < elementosHijos.length; i++) {
-          var elementoHijo = elementosHijos[i];
-          // Realizar las operaciones que desees con cada elemento hijo aquí
-          elementoHijo.style.display='block'         } 
-          cierraContenedores('desbobinador')
-          contInicial.style.display='block'
-          contInicial.style.marginLeft = '128px'
-          var botTwin = ['bot-atras32','bot-atras31']
-          botTwin.forEach(twinId => {
-            var twinElement = document.getElementById(twinId);
-            if (twinElement) {
-              twinElement.style.display = 'block';
+            elemento.style.display='none'
           }
-        });        
+        muestraAngulos('mantilla4')
+      break; 
+      case 'desbobinador':
+     var contBotn = document.getElementById('container1')   
+     var contiene = document.getElementById('pantalla-inicial')
+     contiene.style.display = 'flex'
+     contBotn.style.display = 'flex'
+
+     var container = document.getElementById("desbobinadorId");
+     var computedStyle = getComputedStyle(container);
+   
+     var displayValue = computedStyle.getPropertyValue("display");
+     if (displayValue.toLowerCase() === "none") {
+       // Cambia el valor de 'display' a 'flex'
+       container.style.display = "flex";
+     }
       break; 
       case 'uTeñido':
       for (var i = 0; i < allContenedores.length; i++) {
@@ -2700,7 +2724,16 @@ function irContenedorSiguiente() {
         vidTeoria.forEach(video => {
           video.style.display='block'
           video.play();
-        });                       
+        });  
+        
+        var container = document.getElementById("contene-11");
+        var computedStyle = getComputedStyle(container);
+      
+        var displayValue = computedStyle.getPropertyValue("display");
+        if (displayValue.toLowerCase() === "none") {
+          // Cambia el valor de 'display' a 'flex'
+          container.style.display = "flex";
+        }
       break; 
       case "densitometria":
         var mostraDensit = document.getElementById('densitometria');
@@ -2800,7 +2833,20 @@ function irContenedorSiguiente() {
 
         var boton01 = document.getElementById('bot-inic');
         boton01.style.display = 'block'        
-      break;                   
+      break; 
+      case 'desbobinador':
+        var contiene = document.getElementById('pantalla-inicial')
+        contiene.style.display = 'flex'
+   
+        var container = document.getElementById("desbobinadorId");
+        var computedStyle = getComputedStyle(container);
+      
+        var displayValue = computedStyle.getPropertyValue("display");
+        if (displayValue.toLowerCase() === "none") {
+          // Cambia el valor de 'display' a 'flex'
+          container.style.display = "flex";
+        }
+      break;      
     default:
     }
   }  
@@ -2944,10 +2990,39 @@ function imagenesPasoApaso(idElto, id) {
     }
   });
 }
-function lubricacion(){
+function lubricacion(buttId){
   var contLubrica = document.getElementById('lubricacion');
   contLubrica.style.display = 'block'
   var contTorre = document.getElementById('rotatek-1');
+  var arrayIdButtsCheck = ['boton2','boton3','boton4','boton5','boton6'];
+
+
+  var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica'];
+  for (var i = 0; i < contVidLub.length; i++) {
+    var elementId = contVidLub[i];
+    var element = document.getElementById(elementId);
+  
+    if (element) { // Verifica si el elemento existe
+      var computedStyleVid = getComputedStyle(element);
+      var displayValueVid = computedStyleVid.getPropertyValue("display");
+      
+      if (displayValueVid.toLowerCase() === "flex") {
+        // Cambia el valor de 'display' a 'none'
+        element.style.display = "none";
+      }
+    }
+  }
+
+  for (var i = 0; i < arrayIdButtsCheck.length; i++) {
+    var button = arrayIdButtsCheck[i];
+    if (button === buttId) {
+      // Cambia el color del botón seleccionado a rojo
+      document.getElementById(button).style.backgroundColor = 'red';
+    } else {
+      // Restablece el color de los otros botones
+      document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
+    }
+  }
 
   if (contTorre.style.display === 'none'){
     showButtonsMAconRetrasoDesb()
@@ -2966,12 +3041,215 @@ function showButtonsMAconRetrasoDesb() {
   }
   mostrarBotonConRetrasoDesb(0); // Comienza desde el primer botón
 }
-function LubricaDesbobinador(){
-   showLablsLubricacion();
-}
-function showLablsLubricacion() {
-  var contLabelsLub = document.getElementById('frec-lubrica')
+function LubricaDesbobinador(idButt) {
+  var conteLub = document.getElementById('aceitera')
+  var contLabel = document.getElementById('aceite')
+  var conteLabels = document.getElementById('indicaciones')
+  var vertLine = document.getElementById('vertcal-line')
+  var botones = document.querySelectorAll('.labl-lub'); // Selecciona todos los botones
+  var arrayIdButtsLub = ['btn1', 'btn2', 'btn3', 'btn4', 'btn5'];
+
+  var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica'];
+  for (var i = 0; i < contVidLub.length; i++) {
+    var elementId = contVidLub[i];
+    var element = document.getElementById(elementId);
   
+    if (element) { // Verifica si el elemento existe
+      var computedStyleVid = getComputedStyle(element);
+      var displayValueVid = computedStyleVid.getPropertyValue("display");
+      
+      if (displayValueVid.toLowerCase() === "none") {
+        // Cambia el valor de 'display' a 'none'
+        element.style.display = "flex";
+      }
+    }
+  }
+
+  var arrayIdButtsCheck = ['lub-diario', 'lub-semanal', 'lub-mensual'];
+  for (var i = 0; i < arrayIdButtsCheck.length; i++) {
+    var button = arrayIdButtsCheck[i];
+    if (button) {
+      // Cambia el color del botón a rojo
+      document.getElementById(button).style.backgroundColor = 'rgba(217, 255, 0, 1)';
+    } 
+  }
+
+  for (var i = 0; i < arrayIdButtsLub.length; i++) {
+    var button = arrayIdButtsLub[i];
+    if (button === idButt) {
+      // Cambia el color del botón a rojo
+      document.getElementById(button).style.backgroundColor = 'red';
+    } else {
+      // Cambia el color del resto de botones a gris
+      document.getElementById(button).style.backgroundColor= '#333333';
+    }
+  }
+
+  switch (idButt) {
+    case 'btn1':
+      showLablsLubricacion();
+      break;
+      case 'btn2':
+        for(var i = 0;i < botones.length; i++ ) {
+          var boton = botones[i];
+          boton.style.display = 'none';
+        }
+        videoElements.forEach(video => {
+        if (video.id === 'lubri-vid') {
+          video.style.display = 'none';
+          video.play();      
+        } else {
+          video.style.display = 'none';
+        }})
+        conteLub.style.display = 'none'
+        contLabel.style.display = 'none'
+        conteLabels.style.display = 'none'
+        vertLine.style.display = 'none'
+
+        var contenedorInic = document.getElementById('lubri-I');
+        contenedorInic.style.display = 'none'
+        var hijosDelInic = contenedorInic.children;
+        for (var i = 0; i < hijosDelInic.length; i++) {
+          var hijo = hijosDelInic[i];  
+          hijo.style.display = 'none';
+        }
+        var contenedorPrincipal = document.getElementById('lubri-II');
+        contenedorPrincipal.style.display = 'none'
+        var hijosDelContenedor = contenedorPrincipal.children;
+        for (var i = 0; i < hijosDelContenedor.length; i++) {
+          var hijo = hijosDelContenedor[i];  
+          hijo.style.display = 'none';
+        }
+        var contenedorPrincipalII = document.getElementById('indicaciones-II');
+        contenedorPrincipalII.style.display = 'none'
+        var hijosDelContenedorII = contenedorPrincipalII.children;
+        for (var i = 0; i < hijosDelContenedorII.length; i++) {
+          var hijo = hijosDelContenedorII[i];  
+          hijo.style.display = 'none';
+        }
+      break; 
+      case 'btn3':
+        for(var i = 0;i < botones.length; i++ ) {
+          var boton = botones[i];
+          boton.style.display = 'none';
+        }
+        videoElements.forEach(video => {
+        if (video.id === 'lubri-vid') {
+          video.style.display = 'none';
+          video.play();      
+        } else {
+          video.style.display = 'none';
+        }})
+        conteLub.style.display = 'none'
+        contLabel.style.display = 'none'
+        conteLabels.style.display = 'none'
+        vertLine.style.display = 'none'
+
+        var contenedorInic = document.getElementById('lubri-I');
+        contenedorInic.style.display = 'none'
+        var hijosDelInic = contenedorInic.children;
+        for (var i = 0; i < hijosDelInic.length; i++) {
+          var hijo = hijosDelInic[i];  
+          hijo.style.display = 'none';
+        }
+        var contenedorPrincipal = document.getElementById('lubri-II');
+        contenedorPrincipal.style.display = 'none'
+        var hijosDelContenedor = contenedorPrincipal.children;
+        for (var i = 0; i < hijosDelContenedor.length; i++) {
+          var hijo = hijosDelContenedor[i];  
+          hijo.style.display = 'none';
+        }
+        var contenedorPrincipalII = document.getElementById('indicaciones-II');
+        contenedorPrincipalII.style.display = 'none'
+        var hijosDelContenedorII = contenedorPrincipalII.children;
+        for (var i = 0; i < hijosDelContenedorII.length; i++) {
+          var hijo = hijosDelContenedorII[i];  
+          hijo.style.display = 'none';
+        }
+      break;
+      case 'btn4':
+        for(var i = 0;i < botones.length; i++ ) {
+          var boton = botones[i];
+          boton.style.display = 'none';
+        }
+        videoElements.forEach(video => {
+        if (video.id === 'lubri-vid') {
+          video.style.display = 'none';
+          video.play();      
+        } else {
+          video.style.display = 'none';
+        }})
+        conteLub.style.display = 'none'
+        contLabel.style.display = 'none'
+        conteLabels.style.display = 'none'
+        vertLine.style.display = 'none'
+
+        var contenedorInic = document.getElementById('lubri-I');
+        contenedorInic.style.display = 'none'
+        var hijosDelInic = contenedorInic.children;
+        for (var i = 0; i < hijosDelInic.length; i++) {
+          var hijo = hijosDelInic[i];  
+          hijo.style.display = 'none';
+        }
+        var contenedorPrincipal = document.getElementById('lubri-II');
+        contenedorPrincipal.style.display = 'none'
+        var hijosDelContenedor = contenedorPrincipal.children;
+        for (var i = 0; i < hijosDelContenedor.length; i++) {
+          var hijo = hijosDelContenedor[i];  
+          hijo.style.display = 'none';
+        }
+        var contenedorPrincipalII = document.getElementById('indicaciones-II');
+        contenedorPrincipalII.style.display = 'none'
+        var hijosDelContenedorII = contenedorPrincipalII.children;
+        for (var i = 0; i < hijosDelContenedorII.length; i++) {
+          var hijo = hijosDelContenedorII[i];  
+          hijo.style.display = 'none';
+        }
+      break; 
+      case 'btn5':
+        for(var i = 0;i < botones.length; i++ ) {
+          var boton = botones[i];
+          boton.style.display = 'none';
+        }
+        videoElements.forEach(video => {
+        if (video.id === 'lubri-vid') {
+          video.style.display = 'none';
+          video.play();      
+        } else {
+          video.style.display = 'none';
+        }})
+        conteLub.style.display = 'none'
+        contLabel.style.display = 'none'
+        conteLabels.style.display = 'none'
+        vertLine.style.display = 'none'
+
+        var contenedorInic = document.getElementById('lubri-I');
+        contenedorInic.style.display = 'none'
+        var hijosDelInic = contenedorInic.children;
+        for (var i = 0; i < hijosDelInic.length; i++) {
+          var hijo = hijosDelInic[i];  
+          hijo.style.display = 'none';
+        }
+        var contenedorPrincipal = document.getElementById('lubri-II');
+        contenedorPrincipal.style.display = 'none'
+        var hijosDelContenedor = contenedorPrincipal.children;
+        for (var i = 0; i < hijosDelContenedor.length; i++) {
+          var hijo = hijosDelContenedor[i];  
+          hijo.style.display = 'none';
+        }
+        var contenedorPrincipalII = document.getElementById('indicaciones-II');
+        contenedorPrincipalII.style.display = 'none'
+        var hijosDelContenedorII = contenedorPrincipalII.children;
+        for (var i = 0; i < hijosDelContenedorII.length; i++) {
+          var hijo = hijosDelContenedorII[i];  
+          hijo.style.display = 'none';
+        }
+      break;                       
+    default:
+  }
+}
+
+function showLablsLubricacion() { 
   var botones = document.querySelectorAll('.labl-lub'); // Selecciona todos los botones
   function mostrarLabelConRetraso(i) {
     if (i < botones.length) {
@@ -2984,68 +3262,134 @@ function showLablsLubricacion() {
   }
   mostrarLabelConRetraso(0); // Comienza desde el primer botón
 }
-function lubricaDiario(){
+function lubricaDiario(butId){
   var conteLub = document.getElementById('aceitera')
   var contLabel = document.getElementById('aceite')
   var conteLabels = document.getElementById('indicaciones')
   var vertLine = document.getElementById('vertcal-line')
-  videoElements.forEach(video => {
-  if (video.id === 'lubri-vid') {
-    video.style.display = 'block';
-    video.play();      
-  } else {
-    video.style.display = 'none';
-  }})
-  conteLub.style.display = 'flex'
-  contLabel.style.display = 'flex'
-  conteLabels.style.display = 'flex'
-  vertLine.style.display = 'flex'
+  var arrayIdButtsLub = ['lub-diario', 'lub-semanal', 'lub-mensual'];
 
-  var contenedorPrincipal = document.getElementById('lubri-II');
-  contenedorPrincipal.style.display = 'flex'
-  var hijosDelContenedor = contenedorPrincipal.children;
-  for (var i = 0; i < hijosDelContenedor.length; i++) {
-    var hijo = hijosDelContenedor[i];  
-    hijo.style.display = 'flex';
+  for (var i = 0; i < arrayIdButtsLub.length; i++) {
+    var button = arrayIdButtsLub[i];
+    if (button === butId) {
+      // Cambia el color del botón a rojo
+      document.getElementById(button).style.backgroundColor = 'red';
+    } else {
+      // Cambia el color del resto de botones a gris
+      document.getElementById(button).style.backgroundColor= 'rgba(217, 255, 0, 1)';
+    }
   }
-  var contenedorPrincipalII = document.getElementById('indicaciones-II');
-  contenedorPrincipalII.style.display = 'block'
-  var hijosDelContenedorII = contenedorPrincipalII.children;
-  for (var i = 0; i < hijosDelContenedorII.length; i++) {
-    var hijo = hijosDelContenedorII[i];  
-    hijo.style.display = 'block';
-  }
-}
-function lubricaSemanal(){ 
-  var conteLub = document.getElementById('aceitera')
-  var contLabel = document.getElementById('aceite')
-  var conteLabels = document.getElementById('indicaciones')
-  var vertLine = document.getElementById('vertcal-line')
 
-  videoElements.forEach(video => {
-    if (video) {
-      video.style.display = 'none';
-      video.play();      
-    }})
+  switch(butId) {
+    case 'lub-diario':
+      videoElements.forEach(video => {
+      if (video.id === 'lubri-vid') {
+        video.style.display = 'flex';
+        video.play();      
+      } else {
+        video.style.display = 'none';
+      }})
+      conteLub.style.display = 'flex'
+      contLabel.style.display = 'flex'
+      conteLabels.style.display = 'flex'
+      vertLine.style.display = 'flex'      
+      var contenedorPrincipal = document.getElementById('lubri-II');
+      contenedorPrincipal.style.display = 'flex'
+      var hijosDelContenedor = contenedorPrincipal.children;
+      for (var i = 0; i < hijosDelContenedor.length; i++) {
+        var hijo = hijosDelContenedor[i];  
+        hijo.style.display = 'flex';
+      }
+      var contenedorPrincipalII = document.getElementById('indicaciones-II');
+      contenedorPrincipalII.style.display = 'flex'
+      var hijosDelContenedorII = contenedorPrincipalII.children;
+      for (var i = 0; i < hijosDelContenedorII.length; i++) {
+        var hijo = hijosDelContenedorII[i];  
+        hijo.style.display = 'flex';
+      }      
+      ///////////GETCOMPUTEDSTYLE///////////////////////////
+      
+      var container = document.getElementById("lubri-I");
+      var computedStyle = getComputedStyle(container);     
+      var displayValue = computedStyle.getPropertyValue("display");
+      if (displayValue.toLowerCase() === "none") {
+        // Cambia el valor de 'display' a 'flex'
+        container.style.display = "flex";
+      }
 
-  conteLub.style.display = 'none'
-  contLabel.style.display = 'none'
-  conteLabels.style.display = 'none'
-  vertLine.style.display = 'none'
-
-  var contenedorPrincipal = document.getElementById('lubri-II');
-  contenedorPrincipal.style.display = 'none'
-  var hijosDelContenedor = contenedorPrincipal.children;
-  for (var i = 0; i < hijosDelContenedor.length; i++) {
-    var hijo = hijosDelContenedor[i];  
-    hijo.style.display = 'none';
-  }
-  var contenedorPrincipalII = document.getElementById('indicaciones-II');
-  contenedorPrincipalII.style.display = 'none'
-  var hijosDelContenedorII = contenedorPrincipalII.children;
-  for (var i = 0; i < hijosDelContenedorII.length; i++) {
-    var hijo = hijosDelContenedorII[i];  
-    hijo.style.display = 'none';
+      var contVidLub = document.getElementById('vidLub')
+      var computedStyleVid = getComputedStyle(contVidLub);      
+      var displayValueVid = computedStyleVid.getPropertyValue("display");
+      if (displayValueVid.toLowerCase() === "none") {
+        // Cambia el valor de 'display' a 'flex'
+        contVidLub.style.display = "flex";
+      }      
+    break;
+    case 'lub-semanal':
+      var conteLub = document.getElementById('aceitera')
+      var contLabel = document.getElementById('aceite')
+      var conteLabels = document.getElementById('indicaciones')
+      var vertLine = document.getElementById('vertcal-line')
+    
+      videoElements.forEach(video => {
+        if (video) {
+          video.style.display = 'none';
+          video.play();      
+        }})
+    
+      conteLub.style.display = 'none'
+      contLabel.style.display = 'none'
+      conteLabels.style.display = 'none'
+      vertLine.style.display = 'none'
+    
+      var contenedorPrincipal = document.getElementById('lubri-II');
+      contenedorPrincipal.style.display = 'none'
+      var hijosDelContenedor = contenedorPrincipal.children;
+      for (var i = 0; i < hijosDelContenedor.length; i++) {
+        var hijo = hijosDelContenedor[i];  
+        hijo.style.display = 'none';
+      }
+      var contenedorPrincipalII = document.getElementById('indicaciones-II');
+      contenedorPrincipalII.style.display = 'none'
+      var hijosDelContenedorII = contenedorPrincipalII.children;
+      for (var i = 0; i < hijosDelContenedorII.length; i++) {
+        var hijo = hijosDelContenedorII[i];  
+        hijo.style.display = 'none';
+      }     
+    break;
+    case 'lub-mensual':
+      var conteLub = document.getElementById('aceitera')
+      var contLabel = document.getElementById('aceite')
+      var conteLabels = document.getElementById('indicaciones')
+      var vertLine = document.getElementById('vertcal-line')
+    
+      videoElements.forEach(video => {
+        if (video) {
+          video.style.display = 'none';
+          video.play();      
+        }})
+    
+      conteLub.style.display = 'none'
+      contLabel.style.display = 'none'
+      conteLabels.style.display = 'none'
+      vertLine.style.display = 'none'
+    
+      var contenedorPrincipal = document.getElementById('lubri-II');
+      contenedorPrincipal.style.display = 'none'
+      var hijosDelContenedor = contenedorPrincipal.children;
+      for (var i = 0; i < hijosDelContenedor.length; i++) {
+        var hijo = hijosDelContenedor[i];  
+        hijo.style.display = 'none';
+      }
+      var contenedorPrincipalII = document.getElementById('indicaciones-II');
+      contenedorPrincipalII.style.display = 'none'
+      var hijosDelContenedorII = contenedorPrincipalII.children;
+      for (var i = 0; i < hijosDelContenedorII.length; i++) {
+        var hijo = hijosDelContenedorII[i];  
+        hijo.style.display = 'none';
+      }       
+    break;
+    default:
   }
 }
 function resultadosMA(){
@@ -3694,7 +4038,7 @@ function muestraOperacion(){
   contInicial.style.display = 'flex'
   links.style.display = 'flex'
   linksI.style.display = 'flex'
-}  
+} 
 
 // Obtén todas las imágenes con la clase "aumentar"
 const imagenesAumentar = document.querySelectorAll('img.aumentar');
