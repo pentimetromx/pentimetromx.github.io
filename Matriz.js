@@ -13,6 +13,7 @@ var lineasGrid = document.getElementById('contLineas');
 var contTitulo = document.getElementById('cont-titulo');
 var linkList = document.getElementById("linkList");
 var linkListI = document.getElementById("linkListI");
+var contiBtt = ['btt1','btt2','btt3','btt4','btt5','btt6','btt7']
 
 
 
@@ -82,13 +83,13 @@ const imgsRepuestosIII = document.getElementById('imgsRepuestos-III');// HIJO IM
 const imgsRepuestosIV = document.getElementById('imgsRepuestos-IV');// HIJO IMAGENES     
 
 const contPadreMA = document.getElementById('conteneMantaut');
-const videoElements = document.querySelectorAll('.video-training','vidBackGrPress');   
+const videoElements = document.querySelectorAll('.video-training');   
 const video = document.getElementById("videoBackground");
 const videoII = document.getElementById("videoBackgroundII");
 const imgsDistribuidor = document.getElementById('contImgDistribuidor');
 const imgsForma = document.getElementById('contImgEntintador');
 const toggleVideoButton = document.getElementById("toggleVideoButton");
-const images = document.querySelectorAll('.image-training, .image-training-a'); 
+const images = document.querySelectorAll('.image-training'); 
 const imageElementsi = document.querySelectorAll('.image-training');
 const contPortaPlancha = document.getElementById('contPortPlaca');
 const contPortaManta = document.getElementById('contPortManta');
@@ -464,44 +465,85 @@ function cierraContenedores(elementId) {
     location.reload();
   }
 }
-function muestraRodillo (videoId, imageClas) {
-  var botMantaut = document.getElementById('bot-mantaut')
-  var contVideos = document.getElementById('videos-training')
+function muestraRodillo (vidElem, imgCont) {
+  const videoElements = document.querySelectorAll('.video-training');
+  const container = document.getElementById(imgCont); // Captura el contenedor por su 
+  const pict = container.getElementsByTagName('img'); // Obtiene todas las etiquetas 'img' dentro del contenedor     
+  for (var i = 0; i < images.length; i ++) {
+    var pic = images[i]
+    pic.style.display = 'none'
+  }
+  switch(vidElem) {
+    case 'videoElement2':
+      var buttRepuest = document.getElementById('butt-repuestos')
+      buttRepuest.style.display='block'
+      // Recorre las imágenes y las muestra
+      for (let i = 0; i < pict.length; i++) {
+        pict[i].style.display = 'block'; // Muestra cada imagen*/
+      }
+      setTimeout(() => {
+        applyImageEffects();
+      }, 200); // Retardo de 0.9 segundos (900 milisegundos)
+      for (const video of videoElements) {
+        if (video.id === vidElem) {
+          video.style.display = 'block'; // Muestra el video
+          video.currentTime = 0;           
+          video.play(); // Reproduce el video
+        } else {
+          video.style.display = 'none'; // Oculta el video
+          video.pause(); // Pausa el video
+        }
+      }
+    break;
+    case 'videoElement3' :
+      var buttRepuest = document.getElementById('butt-repuestos')
+      buttRepuest.style.display='block'      
+      // Recorre las imágenes y las muestra
+      for (let i = 0; i < pict.length; i++) {
+        pict[i].style.display = 'block'; // Muestra cada imagen
+      }
+      setTimeout(() => {
+        applyImageEffects();
+      }, 200); // Retardo de 0.9 segundos (900 milisegundos)
+      for (const video of videoElements) {
+        if (video.id === vidElem) {
+          video.style.display = 'block'; // Muestra el video
+          video.currentTime = 0;           
+          video.play(); // Reproduce el video
+        } else {
+          video.style.display = 'none'; // Oculta el video
+          video.pause(); // Pausa el video
+        }
+      }
+    break;
+    case 'videoElement4' :
+      var buttRepuest = document.getElementById('butt-repuestos')
+      buttRepuest.style.display='block'      
+      // Recorre las imágenes y las muestra
+      for (let i = 0; i < pict.length; i++) {
+        pict[i].style.display = 'block'; // Muestra cada imagen
+      }
+      setTimeout(() => {
+        applyImageEffects();
+      }, 200); // Retardo de 0.9 segundos (900 milisegundos)
+      for (const video of videoElements) {
+        if (video.id === vidElem) {
+          video.style.display = 'block'; // Muestra el video
+          video.currentTime = 0;           
+          video.play(); // Reproduce el video
+        } else {
+          video.style.display = 'none'; // Oculta el video
+          video.pause(); // Pausa el video
+        }
+      }
+    break;    
+    default:
+  }
 
-  botMantaut.style.display='block'
-  botMantaut.style.marginLeft='57px' 
-  contInicial.style.left='107px'
-  videoElements.forEach(video => {
-  if (video.id === videoId) {
-    video.style.display = 'block'; 
-    video.currentTime = 0; // Establecer el tiempo actual al inicio
-    video.play();      
-  } else {
-    video.style.display = 'none';
-    video.pause();
-  }
-  });
-  const imageContainerEras = document.querySelectorAll('.image-training, .image-training-a')
-  for (i=0; i < imageContainerEras.length; i ++){
-    imageContainerEras[i].style.display='none'
-  } 
-  const imageContainer = document.getElementsByClassName(imageClas)
-  for (i=0; i < imageContainer.length; i ++){
-    imageContainer[i].style.display='block'
-  }
-  var buttRepuest = document.getElementById('butt-repuestos')
-  buttRepuest.style.display='block'
-  var contImages = document.getElementById('contene-images')
-  contImages.style.marginLeft='10px'
-  var videoBackground = document.getElementById('videoBackground'); 
-  videoBackground.style.display = 'none';
-  setTimeout(() => {
-    applyImageEffects();
-  }, 300); // Retardo de 0.9 segundos (900 milisegundos)
 
 }
 function applyImageEffects() { // aumento secuencial imagenes repuestos
-  const imageElements = document.querySelectorAll('.image-training, .image-training-a');
+  const imageElements = document.querySelectorAll('.image-training');
   let currentIndex = 0;
   function applyEffect() {
     if (currentIndex < imageElements.length) {
@@ -564,11 +606,11 @@ function showRepuesto(elementId) {
         }
       });
       if (imgsDistribuidor) {
-        imgsDistribuidor.style.display = 'block';
+        imgsDistribuidor.style.display = 'flex';
         // Recorre el arreglo y muestra las imágenes
         var imagenesDistribuidor = document.querySelectorAll('.imag-distri');
         imagenesDistribuidor.forEach(function(imagen) {
-          imagen.style.display = 'block';
+          imagen.style.display = 'flex';
         });
       }
       if (!idsArray.includes(elementId)) {
@@ -1819,10 +1861,13 @@ function muestraTorres(seleccion) {
       break;
   }
 }
-function muestraTorresI (seleccion) {  // BOTON OBLICUO
+function muestraTorresI (elementId) {  // BOTON OBLICUO
+  var imagsTinter = document.getElementById('imgsRepuestos')
   seccionTintero.style.display='none'
-  switch (seleccion) {    
-    case 'frente':
+  imagsTinter.style.display = 'none'
+
+  switch (elementId) {    
+    case 'pantalla-frente':
       for (var i = 0; i < pantallas.length; i++) {
         var elemento = document.getElementById(pantallas[i]);
         if (elemento) {
@@ -1834,15 +1879,19 @@ function muestraTorresI (seleccion) {  // BOTON OBLICUO
         if (pantallas[i] === 'pantalla-frente') {
           const elementoMandos = document.getElementById('pantalla-frente');
           if (elementoMandos) {
-            elementoMandos.style.display = 'block';
+            elementoMandos.style.display = 'flex';
           }else {
             elementoMandos.style.display = 'none';            
           }
         }
       }  
       
+      if (!idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray)
+        }
     break; 
-    case 'mandos':
+    case 'pantalla-mandos':
       for (var i = 0; i < pantallas.length; i++) {
         var elemento = document.getElementById(pantallas[i]);
         if (elemento) {
@@ -1854,14 +1903,19 @@ function muestraTorresI (seleccion) {  // BOTON OBLICUO
         if (pantallas[i] === 'pantalla-mandos') {
           const elementoMandos = document.getElementById('pantalla-mandos');
           if (elementoMandos) {
-            elementoMandos.style.display = 'block';
+            elementoMandos.style.display = 'flex';
           }else {
             elementoMandos.style.display = 'none';            
           }
         }
       } 
+
+      if (!idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray)
+      }
     break;
-    case 'servicio': 
+    case 'pantalla-servicio': 
     for (var i = 0; i < pantallas.length; i++) {
       var elemento = document.getElementById(pantallas[i]);
       if (elemento) {
@@ -1873,14 +1927,19 @@ function muestraTorresI (seleccion) {  // BOTON OBLICUO
       if (pantallas[i] === 'pantalla-servicio') {
         const elementoMandos = document.getElementById('pantalla-servicio');
         if (elementoMandos) {
-          elementoMandos.style.display = 'block';
+          elementoMandos.style.display = 'flex';
         }else {
           elementoMandos.style.display = 'none';            
         }
       }
-    }   
+    }
+
+    if (!idsArray.includes(elementId)) {
+      idsArray.push(elementId);
+      console.log(idsArray)
+    }       
     break;
-    case 'atras':
+    case 'pantalla-atras':
       for (var i = 0; i < pantallas.length; i++) {
         var elemento = document.getElementById(pantallas[i]);
         if (elemento) {
@@ -1892,13 +1951,17 @@ function muestraTorresI (seleccion) {  // BOTON OBLICUO
         if (pantallas[i] === 'pantalla-atras') {
           const elementoMandos = document.getElementById('pantalla-atras');
           if (elementoMandos) {
-            elementoMandos.style.display = 'block';
+            elementoMandos.style.display = 'flex';
           }else {
             elementoMandos.style.display = 'none';            
           }
         }
-      }        
-
+      } 
+             
+      if (!idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray)
+      }
     break;
     default:
   }
@@ -2346,9 +2409,18 @@ function irContenedorAnterior() {
       case "frente":
         muestraTorresI('frente')
       break;  
-      case "pantalla-frente":
-        muestraTorres('frente')
+      case "pantalla-frente":        
+      muestraTorresI('pantalla-frente')
       break; 
+      case "pantalla-mandos":        
+      muestraTorresI('pantalla-mandos')
+      break;
+      case "pantalla-servicio":        
+      muestraTorresI('pantalla-mandos')
+      break;
+      case "pantalla-atras":        
+      muestraTorresI('pantalla-atras')
+      break;             
       case "sitema-humedad":
         changeButtonStyles('sitema-humedad');
       break; 
@@ -2853,7 +2925,13 @@ function irContenedorSiguiente() {
   idsArrayEliminados.pop();  
   console.log('ELIMINADOS',idsArrayEliminados)
 }
-function listaEntrenamientosII() {
+function listaEntrenamientosII(btnId) {
+
+  switch(btnId){
+    case '':
+
+    break;
+  }
   // Crear un array de IDs de enlaces
   var enlacesIDs = ['vinc1', 'vinc2', 'vinc3', 'vinc4'];
   // Recorrer el array y cambiar el color de los enlaces
@@ -2886,6 +2964,16 @@ function listaEntrenamientosII() {
       var elemento = document.getElementById(id);
       elemento.style.display = 'block'; // O el valor apropiado
     });
+  }
+
+  for (var i = 0; i < contiBtt.length; i++) {
+    var elementId = contiBtt[i];
+    var element = document.getElementById(elementId);      
+    if (elementId === btnId) { // Verifica si el elemento existe
+      element.style.background = 'orangered';      
+    }else{
+      element.style.background = '';     
+    }
   }
 }   
 function listaEntrenamientos(){
@@ -2996,37 +3084,182 @@ function lubricacion(buttId){
   var contTorre = document.getElementById('rotatek-1');
   var arrayIdButtsCheck = ['boton2','boton3','boton4','boton5','boton6'];
 
-
-  var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica'];
-  for (var i = 0; i < contVidLub.length; i++) {
-    var elementId = contVidLub[i];
-    var element = document.getElementById(elementId);
-  
-    if (element) { // Verifica si el elemento existe
-      var computedStyleVid = getComputedStyle(element);
-      var displayValueVid = computedStyleVid.getPropertyValue("display");
-      
-      if (displayValueVid.toLowerCase() === "flex") {
-        // Cambia el valor de 'display' a 'none'
-        element.style.display = "none";
+  switch (buttId) {
+    case 'boton2':
+      var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica'];
+      for (var i = 0; i < contVidLub.length; i++) {
+        var elementId = contVidLub[i];
+        var element = document.getElementById(elementId);      
+        if (element) { // Verifica si el elemento existe
+          var computedStyleVid = getComputedStyle(element);
+          var displayValueVid = computedStyleVid.getPropertyValue("display");          
+          if (displayValueVid.toLowerCase() === "flex") {
+            // Cambia el valor de 'display' a 'none'
+            element.style.display = "none";
+          }
+        }
       }
-    }
+
+      var container = document.getElementById('conti-boton-desb');
+      var computedStyle = getComputedStyle(container);     
+      var displayValue = computedStyle.getPropertyValue("display");
+      if (displayValue.toLowerCase() === "none") {
+        // Cambia el valor de 'display' a 'flex'
+        container.style.display = "flex";
+      }
+
+      var contVidLub = ['btn1','btn2','btn3','btn4','btn5'];
+      for (var i = 0; i < contVidLub.length; i++) {
+        var elementId = contVidLub[i];
+        var element = document.getElementById(elementId);      
+        if (element) { // Verifica si el elemento existe
+          element.style.color = "white";
+          element.style.background = '#333333';
+          
+        }
+      }
+    
+      for (var i = 0; i < arrayIdButtsCheck.length; i++) {
+        var button = arrayIdButtsCheck[i];
+        if (button === buttId) {
+          // Cambia el color del botón seleccionado a rojo
+          document.getElementById(button).style.backgroundColor = 'red';
+        } else {
+          // Restablece el color de los otros botones
+          document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
+        }
+      }    
+      if (contTorre.style.display === 'none'){
+        showButtonsMAconRetrasoDesb()
+      }
+    break;
+    case 'boton3':
+      var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica', 'conti-boton-desb'];
+      for (var i = 0; i < contVidLub.length; i++) {
+        var elementId = contVidLub[i];
+        var element = document.getElementById(elementId);
+      
+        if (element) { // Verifica si el elemento existe
+          var computedStyleVid = getComputedStyle(element);
+          var displayValueVid = computedStyleVid.getPropertyValue("display");
+          
+          if (displayValueVid.toLowerCase() === "flex") {
+            // Cambia el valor de 'display' a 'none'
+            element.style.display = "none";
+          }
+        }
+      }
+    
+      for (var i = 0; i < arrayIdButtsCheck.length; i++) {
+        var button = arrayIdButtsCheck[i];
+        if (button === buttId) {
+          // Cambia el color del botón seleccionado a rojo
+          document.getElementById(button).style.backgroundColor = 'red';
+        } else {
+          // Restablece el color de los otros botones
+          document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
+        }
+      }    
+      if (contTorre.style.display === 'none'){
+        showButtonsMAconRetrasoDesb()
+      }      
+    break;
+    case 'boton4':
+      var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica', 'conti-boton-desb'];
+      for (var i = 0; i < contVidLub.length; i++) {
+        var elementId = contVidLub[i];
+        var element = document.getElementById(elementId);
+      
+        if (element) { // Verifica si el elemento existe
+          var computedStyleVid = getComputedStyle(element);
+          var displayValueVid = computedStyleVid.getPropertyValue("display");
+          
+          if (displayValueVid.toLowerCase() === "flex") {
+            // Cambia el valor de 'display' a 'none'
+            element.style.display = "none";
+          }
+        }
+      }
+    
+      for (var i = 0; i < arrayIdButtsCheck.length; i++) {
+        var button = arrayIdButtsCheck[i];
+        if (button === buttId) {
+          // Cambia el color del botón seleccionado a rojo
+          document.getElementById(button).style.backgroundColor = 'red';
+        } else {
+          // Restablece el color de los otros botones
+          document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
+        }
+      }    
+      if (contTorre.style.display === 'none'){
+        showButtonsMAconRetrasoDesb()
+      }      
+    break;
+    case 'boton5':
+      var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica', 'conti-boton-desb'];
+      for (var i = 0; i < contVidLub.length; i++) {
+        var elementId = contVidLub[i];
+        var element = document.getElementById(elementId);
+      
+        if (element) { // Verifica si el elemento existe
+          var computedStyleVid = getComputedStyle(element);
+          var displayValueVid = computedStyleVid.getPropertyValue("display");
+          
+          if (displayValueVid.toLowerCase() === "flex") {
+            // Cambia el valor de 'display' a 'none'
+            element.style.display = "none";
+          }
+        }
+      }
+    
+      for (var i = 0; i < arrayIdButtsCheck.length; i++) {
+        var button = arrayIdButtsCheck[i];
+        if (button === buttId) {
+          // Cambia el color del botón seleccionado a rojo
+          document.getElementById(button).style.backgroundColor = 'red';
+        } else {
+          // Restablece el color de los otros botones
+          document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
+        }
+      }    
+      if (contTorre.style.display === 'none'){
+        showButtonsMAconRetrasoDesb()
+      }    
+    break;
+    case 'boton6':
+      var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica', 'conti-boton-desb'];
+      for (var i = 0; i < contVidLub.length; i++) {
+        var elementId = contVidLub[i];
+        var element = document.getElementById(elementId);
+      
+        if (element) { // Verifica si el elemento existe
+          var computedStyleVid = getComputedStyle(element);
+          var displayValueVid = computedStyleVid.getPropertyValue("display");
+          
+          if (displayValueVid.toLowerCase() === "flex") {
+            // Cambia el valor de 'display' a 'none'
+            element.style.display = "none";
+          }
+        }
+      }
+    
+      for (var i = 0; i < arrayIdButtsCheck.length; i++) {
+        var button = arrayIdButtsCheck[i];
+        if (button === buttId) {
+          // Cambia el color del botón seleccionado a rojo
+          document.getElementById(button).style.backgroundColor = 'red';
+        } else {
+          // Restablece el color de los otros botones
+          document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
+        }
+      }    
+      if (contTorre.style.display === 'none'){
+        showButtonsMAconRetrasoDesb()
+      }      
+    break;
+    default:
   }
 
-  for (var i = 0; i < arrayIdButtsCheck.length; i++) {
-    var button = arrayIdButtsCheck[i];
-    if (button === buttId) {
-      // Cambia el color del botón seleccionado a rojo
-      document.getElementById(button).style.backgroundColor = 'red';
-    } else {
-      // Restablece el color de los otros botones
-      document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
-    }
-  }
-
-  if (contTorre.style.display === 'none'){
-    showButtonsMAconRetrasoDesb()
-  }
 }  
 function showButtonsMAconRetrasoDesb() {
   var botones = document.querySelectorAll('.butt-mautonomo-desb'); // Selecciona todos los botones
@@ -3048,8 +3281,8 @@ function LubricaDesbobinador(idButt) {
   var vertLine = document.getElementById('vertcal-line')
   var botones = document.querySelectorAll('.labl-lub'); // Selecciona todos los botones
   var arrayIdButtsLub = ['btn1', 'btn2', 'btn3', 'btn4', 'btn5'];
-
-  var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica'];
+//////////////////////////////////////////////////////////////////////////////////////  'lubri-I', 'lubri-II', 
+  var contVidLub = ['frec-lubrica'];
   for (var i = 0; i < contVidLub.length; i++) {
     var elementId = contVidLub[i];
     var element = document.getElementById(elementId);
@@ -3064,7 +3297,7 @@ function LubricaDesbobinador(idButt) {
       }
     }
   }
-
+///////////////////////////////////////////////////////////////////////////////////////
   var arrayIdButtsCheck = ['lub-diario', 'lub-semanal', 'lub-mensual'];
   for (var i = 0; i < arrayIdButtsCheck.length; i++) {
     var button = arrayIdButtsCheck[i];
@@ -3078,7 +3311,7 @@ function LubricaDesbobinador(idButt) {
     var button = arrayIdButtsLub[i];
     if (button === idButt) {
       // Cambia el color del botón a rojo
-      document.getElementById(button).style.backgroundColor = 'red';
+      document.getElementById(button).style.backgroundColor = 'rgb(255, 24, 55)';
     } else {
       // Cambia el color del resto de botones a gris
       document.getElementById(button).style.backgroundColor= '#333333';
@@ -3273,7 +3506,7 @@ function lubricaDiario(butId){
     var button = arrayIdButtsLub[i];
     if (button === butId) {
       // Cambia el color del botón a rojo
-      document.getElementById(button).style.backgroundColor = 'red';
+      document.getElementById(button).style.backgroundColor = 'orangered';
     } else {
       // Cambia el color del resto de botones a gris
       document.getElementById(button).style.backgroundColor= 'rgba(217, 255, 0, 1)';

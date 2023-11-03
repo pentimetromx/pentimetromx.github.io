@@ -206,11 +206,12 @@ transform: scale(1.1);
 #images-training-id-1{
   margin-top: -90px;
 }
-.image-training,
-.image-training-a{
+.image-training {
   display: none;
   cursor: pointer;
   height: 80px;
+  transition: transform 0.1s ease, filter 0.1s ease;
+  border-radius: 11px;
 }
 .bot-entre{
   display: flex;
@@ -417,7 +418,7 @@ transform: scale(1.1);
   top: 0;
   width: 27px;
   height: 27px;
-  background-color: #d6919a;
+  background-color: rgba(255, 24, 55);
 }
 #butt-repuestos::before {left: 0;}
 #butt-repuestos::after {
@@ -484,7 +485,7 @@ width:447px ;
 .inpt-class,
 .botnClass:hover {
   background-color: gray;
-  color: red;
+  color: black;
 }
 .input-class{
   margin-bottom: 15px;
@@ -813,7 +814,6 @@ width:447px ;
   z-index: 1;
 }
 .Bot-inicio3-fondo{
-  background-color: rgb(0,0,255);
   border-radius: 7px;
   width: 101px;
   height: 51px;
@@ -1042,6 +1042,27 @@ width:447px ;
   width: 503px;
   border-radius: 10px; 
 }
+#imgsRepuestos-V,
+#imgsRepuestos-IV,
+#imgsRepuestos-III,
+#imgsRepuestos-II{
+  position: relative;
+  left: 67px;
+  top: -13PX;
+  display: flex;
+  flex-direction: column;
+}
+#imgsRepuestos-V img,
+#imgsRepuestos-IV img,
+#imgsRepuestos-III img,
+#imgsRepuestos-II img,
+#imgsRepuestos-II img{
+  height: 112px;
+  width: 150px;
+  border-radius: 20px;
+  padding: 7px;
+}
+
 #contPortManta,
 #contImpresor,
 #contPortPlaca {
@@ -1482,7 +1503,6 @@ elemento {
 #indicaciones label{
   margin-top: 140px;
 }
-
 #indicaciones-II{
   display: flex;
   flex-direction: column;
@@ -1613,4 +1633,33 @@ elemento.visible {
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+/*////////////////////////////////////////////////////////////////////////////////*/
+.boton-inclinado {
+  width: 167px;
+  height: 77px;
+  background-color: #eaeaea; /* Color blanco perla */
+  position: relative;
+  text-align: center;
+  line-height: 77px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.boton-inclinado:before, .boton-inclinado:after {
+  content: "";
+  position: absolute;
+  width: 77px;
+  height: 100%;
+  background-color: #eaeaea; /* Color blanco perla */
+}
+.boton-inclinado:before {
+  left: 0;
+  transform: skewY(45deg);
+}
+.boton-inclinado:after {
+  right: 0;
+  transform: skewY(-45deg);
+}
+.texto {
+  color: #555; /* Color gris */
 }
