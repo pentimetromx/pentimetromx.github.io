@@ -468,7 +468,8 @@ function cierraContenedores(elementId) {
 function muestraRodillo (vidElem, imgCont) {
   const videoElements = document.querySelectorAll('.video-training');
   const container = document.getElementById(imgCont); // Captura el contenedor por su 
-  const pict = container.getElementsByTagName('img'); // Obtiene todas las etiquetas 'img' dentro del contenedor     
+  const pict = container.getElementsByTagName('img'); // Obtiene todas las etiquetas 'img' dentro del contenedor
+  container.style.display = 'flex'
   for (var i = 0; i < images.length; i ++) {
     var pic = images[i]
     pic.style.display = 'none'
@@ -477,13 +478,15 @@ function muestraRodillo (vidElem, imgCont) {
     case 'videoElement2':
       var buttRepuest = document.getElementById('butt-repuestos')
       buttRepuest.style.display='block'
+
       // Recorre las imágenes y las muestra
       for (let i = 0; i < pict.length; i++) {
-        pict[i].style.display = 'block'; // Muestra cada imagen*/
+        pict[i].style.display = 'block'; // Muestra cada imagen
       }
       setTimeout(() => {
-        applyImageEffects();
+        applyImageEffects1();
       }, 200); // Retardo de 0.9 segundos (900 milisegundos)
+
       for (const video of videoElements) {
         if (video.id === vidElem) {
           video.style.display = 'block'; // Muestra el video
@@ -495,16 +498,21 @@ function muestraRodillo (vidElem, imgCont) {
         }
       }
     break;
-    case 'videoElement3' :
+    case 'videoElement3':
+      var contimgCase = document.getElementById('images-entintador')
       var buttRepuest = document.getElementById('butt-repuestos')
-      buttRepuest.style.display='block'      
+      buttRepuest.style.display='block' 
+      
+      contimgCase.style.display = 'flex'
+      var imagesCase = document.getElementsByClassName('image-trainings1')
       // Recorre las imágenes y las muestra
-      for (let i = 0; i < pict.length; i++) {
-        pict[i].style.display = 'block'; // Muestra cada imagen
+      for (let i = 0; i < imagesCase.length; i++) {
+        imagesCase[i].style.display = 'flex'; // Muestra cada imagen
       }
       setTimeout(() => {
         applyImageEffects();
       }, 200); // Retardo de 0.9 segundos (900 milisegundos)
+
       for (const video of videoElements) {
         if (video.id === vidElem) {
           video.style.display = 'block'; // Muestra el video
@@ -518,14 +526,8 @@ function muestraRodillo (vidElem, imgCont) {
     break;
     case 'videoElement4' :
       var buttRepuest = document.getElementById('butt-repuestos')
-      buttRepuest.style.display='block'      
-      // Recorre las imágenes y las muestra
-      for (let i = 0; i < pict.length; i++) {
-        pict[i].style.display = 'block'; // Muestra cada imagen
-      }
-      setTimeout(() => {
-        applyImageEffects();
-      }, 200); // Retardo de 0.9 segundos (900 milisegundos)
+      buttRepuest.style.display='block' 
+      
       for (const video of videoElements) {
         if (video.id === vidElem) {
           video.style.display = 'block'; // Muestra el video
@@ -536,31 +538,70 @@ function muestraRodillo (vidElem, imgCont) {
           video.pause(); // Pausa el video
         }
       }
-    break;    
+
+    break;  
+    case 'plate-smed' :
+      var contimgCase = document.getElementById('images-smed')
+      var buttRepuest = document.getElementById('butt-repuestos')
+      buttRepuest.style.display='block'
+      contimgCase.style.display = 'flex'
+      
+      var imagesCase = document.getElementsByClassName('image-trainings1')
+      // Recorre las imágenes y las muestra
+      for (let i = 0; i < imagesCase.length; i++) {
+        imagesCase[i].style.display = 'flex'; // Muestra cada imagen
+      }
+      setTimeout(() => {
+        applyImageEffects();
+      }, 200); // Retardo de 0.9 segundos (900 milisegundos)      
+      
+      for (const video of videoElements) {
+        if (video.id === vidElem) {
+          video.style.display = 'block'; // Muestra el video
+          video.currentTime = 0;           
+          video.play(); // Reproduce el video
+        } else {
+          video.style.display = 'none'; // Oculta el video
+          video.pause(); // Pausa el video
+        }
+      }
+
+    break;        
     default:
   }
 
-
 }
 function applyImageEffects() { // aumento secuencial imagenes repuestos
-  const imageElements = document.querySelectorAll('.image-training');
+  const imageElements = document.getElementsByClassName('image-trainings1');
   let currentIndex = 0;
   function applyEffect() {
     if (currentIndex < imageElements.length) {
       const currentImage = imageElements[currentIndex];
       currentImage.style.transition = 'transform 0.1s';
       currentImage.style.transform = 'scale(2.0)';
-
       setTimeout(() => {
         currentImage.style.transition = 'transform 0.7s';
         currentImage.style.transform = 'scale(1)';
         currentIndex++;
         applyEffect();
-      }, 100);
-    }
-  }
-  applyEffect();
+      }, 100); }}applyEffect();
 }
+function applyImageEffects1() { // aumento secuencial imagenes repuestos
+  const imageElements = document.querySelectorAll('#imageElement1, #imageElement2, #imageElement3, #imageElement4, #imageElement5');
+  let currentIndex = 0;
+  function applyEffect() {
+    if (currentIndex < imageElements.length) {
+      const currentImage = imageElements[currentIndex];
+      currentImage.style.transition = 'transform 0.1s';
+      currentImage.style.transform = 'scale(2.0)';
+      setTimeout(() => {
+        currentImage.style.transition = 'transform 0.7s';
+        currentImage.style.transform = 'scale(1)';
+        currentIndex++;
+        applyEffect();
+      }, 50); }}applyEffect();
+}
+
 function alternarVisibilidad(docId) {
   var elementosParaAlternar = document.querySelectorAll('.bot-entre, .video-training,.image-training, .butt-partes, .documentos');
   for (var i = 0; i < elementosParaAlternar.length; i++) {

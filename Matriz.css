@@ -1126,6 +1126,7 @@ height: 398px;
  margin-bottom: 15px; 
  cursor: pointer;
 }
+.image-trainings1,
 .image-trainings {
   transition: transform 0.1s ease, filter 0.1s ease;
   border-radius: 11px;
@@ -1662,4 +1663,12 @@ elemento.visible {
 }
 .texto {
   color: #555; /* Color gris */
+}
+#videoElement4{
+  object-fit: fill; /* Utiliza 'fill' para que el video llene el contenedor sin conservar la relación de aspecto */
+  position: absolute;
+  left: 377px;
+  top: 100px;
+  width: 550px; /* Establece el ancho deseado */
+  height: 400px; /* Establece el alto deseado */
 }
