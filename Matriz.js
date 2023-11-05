@@ -15,8 +15,6 @@ var linkList = document.getElementById("linkList");
 var linkListI = document.getElementById("linkListI");
 var contiBtt = ['btt1','btt2','btt3','btt4','btt5','btt6','btt7']
 
-
-
 var currentID = null;
 var btnAtras = document.getElementById('bot-atras');
 var butInicio = document.getElementById('bot-inic');
@@ -370,12 +368,13 @@ function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
   setTimeout(function() {
   }, 200); 
 } 
-function cambioContenedor(elementId) { 
-  var elementsToHide = document.querySelectorAll('.alimentador, .uTeñido, .desbobinador,.unidProceso,.rebobinador'); 
+function cambioContenedor(elementId) {
+  var elementsToHide = document.querySelectorAll('.alimentador, .uTeñido, .desbobinador,.unidProceso,.rebobinador,.links-inicialesI,.links-iniciales'); 
   var torreImpresion = document.getElementById('torre-imp') // PADRE TORRE IMPRESION  */
   var botonTorre = document.getElementById('toggleVideoButton');
   var botAtras = document.getElementById('bot-atras10')
   var botTrasII = document.getElementById('bot-atras11')
+
 
   for (var i = 0; i < elementsToHide.length; i++) {
     elementsToHide[i].style.display = 'none';
@@ -462,7 +461,7 @@ function cierraContenedores(elementId) {
     firstClick = false;
   } else {
     // En el segundo clic, recarga la página
-    location.reload();
+    abrirSeccionContinua()
   }
 }
 function muestraRodillo (vidElem, imgCont) {
@@ -2040,23 +2039,27 @@ function videosImpresor(videoId) {
   } 
 } 
 function abrirSeccionContinua(){
+  cerrarSecciones()
+
   allContenedores.forEach(elemen => {
     var element = document.getElementById(elemen);
     if (element) {
       element.style.display = 'none';
     }
   });
+
   allContIniciales.forEach(elemen => {
     var element = document.getElementById(elemen);
     if (element) {
       element.style.display = 'flex';
     }
   });
-  contVariable.style.display='none'
+  /*contVariable.style.display='none'
   contPlana.style.display='none'
-  contSecador.style.display='none'
-  linkList.style.display = "none";
-  location.reload();
+  contSecador.style.display='none'*/
+
+  firstClick = true;
+
 }
 function abrirSeccionVariable(elementId){
   allContenedores.forEach(elemen => {
@@ -4297,9 +4300,10 @@ function deslizaMosaicoII(idElement) {
 function muestraOperacion(){
   var franjaGris = document.getElementById('franja-gris');
   var franjaBlanca = document.getElementById('franja-Blanca');
-  var pantaInicial = document.getElementById('pantalla-inicial');
+  var pantaInicial = document.getElementById('pantalla-inicial'); 
   var links = document.getElementById('links-iniciales');
   var linksI = document.getElementById('links-inicialesI');
+
   franjaBlanca.style.display = 'none'
   franjaGris.style.display = 'none'
   contTitulo.style.display = 'none'  
