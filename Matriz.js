@@ -545,7 +545,7 @@ function muestraRodillo (vidElem, imgCont) {
       var buttRepuest = document.getElementById('butt-repuestos')
       buttRepuest.style.display='block'
       contimgCase.style.display = 'flex'
-      
+
       var imagesCase = document.getElementsByClassName('image-trainings1')
       // Recorre las imágenes y las muestra
       for (let i = 0; i < imagesCase.length; i++) {

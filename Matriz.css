@@ -727,64 +727,165 @@ width:447px ;
   width: 177px;    
   top: 336px;
 }
-#butt-01{
+#butt-001{
   position: relative;
   margin-right: 5px;
+  margin-top: 4px;
+}
+#butt-002{
+  position: relative;
+  margin-top: -44px;
+  left: 6px;
+}
+#butt-003{
+  position: relative;
+  margin-right: 5px;
+  margin-top: 23px;
+}
+#butt-004{
+  position: relative;
+  margin-top: -44px;
+  margin-left: 7px;
+}
+#butt-005{
+  position: relative;
+  margin-right: 5px;
+  margin-top: 23px;
+}
+#butt-006{
+  position: relative;
+  margin-top: -44px;
+  margin-left: 7px;
+}
+#butt-007{
+  position: relative;
+  margin-right: 5px;
+  margin-top: 23px;
+}
+#butt-008{
+  position: relative;
+  margin-top: -44px;
+  margin-left: 7px;
+}
+#butt-011{
+  position: relative;
+  left: 7px;
+  top: -40px;
+}
+#butt-022{
+  position: relative;
+  left: 12px;
+  top: -80px;
+}
+#butt-033{
+  position: relative;
+  left: 7px;
+  top: -40px;
+}
+#butt-044{
+  position: relative;
+  left: 12px;
+  top: -80px;
+}
+#butt-055{
+  position: relative;
+  left: 7px;
+  top: -40px;
+}
+#butt-066{
+  position: relative;
+  left: 12px;
+  top: -80px;
+}
+#butt-077{
+  position: relative;
+  left: 7px;
+  top: -40px;
+}
+#butt-088{
+  position: relative;
+  left: 12px;
+  top: -80px;
+}
+#butt-010{
+  position: relative;
+  left: 7px;
+  top: -40px;
+}
+#butt-020{
+  position: relative;
+  left: 12px;
+  top: -80px;
+}
+#butt-030{
+  position: relative;
+  left: 7px;
+  top: -40px;
+}
+#butt-040{
+  position: relative;
+  left: 12px;
+  top: -80px;
+}
+#butt-050{
+  position: relative;
+  left: 7px;
+  top: -40px;
+}
+#butt-060{
+  position: relative;
+  left: 12px;
+  top: -80px;
+}
+#butt-070{
+  position: relative;
+  left: 7px;
+  top: -40px;
+}
+#butt-080{
+  position: relative;
+  left: 12px;
+  top: -80px;
+}
+#butt-01{
+  position: relative;
+  left: 7px;
+  top: -40px;
 }
 #butt-02{
   position: relative;
-  margin-top: -44px;
-  left: 6px;
-}
-#butt-020{
-  position: absolute;
-  margin-top: 29px;
-  left: 6px;
-}
-#butt-040{
-  position: absolute;
-  margin-top: 29px;
-  left: 6px;
-}
-#butt-060{
-  position: absolute;
-  margin-top: 29px;
-  left: 6px;
-}
-#butt-080{
-  position: absolute;
-  margin-top: -181px;
-  left: 6px;
+  left: 12px;
+  top: -80px;
 }
 #butt-03{
   position: relative;
-  margin-right: 5px;
-  margin-top: 23px;
+  left: 7px;
+  top: -40px;
 }
 #butt-04{
   position: relative;
-  margin-top: -44px;
-  margin-left: 7px;
+  left: 12px;
+  top: -80px;
 }
 #butt-05{
   position: relative;
-  margin-right: 5px;
-  margin-top: 23px;
+  left: 7px;
+  top: -40px;
 }
 #butt-06{
   position: relative;
-  margin-top: -44px;
-  margin-left: 7px;
+  left: 12px;
+  top: -80px;
 }
 #butt-07{
   position: relative;
-  margin-right: 5px;
-  margin-top: 23px;
+  left: 7px;
+  top: -40px;
 }
 #butt-08{
   position: relative;
-  margin-top: -44px;
-  margin-left: 7px;
+  left: 12px;
+  top: -80px;
 }
 #agrupaOblicuos-XI{ 
   position: relative;
