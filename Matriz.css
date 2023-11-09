@@ -655,8 +655,7 @@ width:447px ;
 #pantalla-mandos,
 #pantalla-frente,
 #pantalla-atras,
-#contLinksTorre,
-#contPortPlaca{
+#contLinksTorre{
   display: flex; /* Usar flexbox para centrar la imagen */
   flex-direction: row;
   justify-content: center; /* Centrar horizontalmente */
@@ -729,43 +728,43 @@ width:447px ;
 }
 #butt-001{
   position: relative;
-  margin-right: 5px;
-  margin-top: 4px;
+  left: 7px;
+  top: -40px;
 }
 #butt-002{
   position: relative;
-  margin-top: -44px;
-  left: 6px;
+  left: 12px;
+  top: -80px;
 }
 #butt-003{
   position: relative;
-  margin-right: 5px;
-  margin-top: 23px;
+  left: 7px;
+  top: -40px;
 }
 #butt-004{
   position: relative;
-  margin-top: -44px;
-  margin-left: 7px;
+  left: 12px;
+  top: -80px;
 }
 #butt-005{
   position: relative;
-  margin-right: 5px;
-  margin-top: 23px;
+  left: 7px;
+  top: -40px;
 }
 #butt-006{
   position: relative;
-  margin-top: -44px;
-  margin-left: 7px;
+  left: 12px;
+  top: -80px;
 }
 #butt-007{
   position: relative;
-  margin-right: 5px;
-  margin-top: 23px;
+  left: 7px;
+  top: -40px;
 }
 #butt-008{
   position: relative;
-  margin-top: -44px;
-  margin-left: 7px;
+  left: 12px;
+  top: -80px;
 }
 #butt-011{
   position: relative;
@@ -1168,6 +1167,7 @@ width:447px ;
 #contImpresor,
 #contPortPlaca {
   position: absolute;
+  justify-content: center; /* Centrar horizontalmente */
   display: flex;
   flex-direction: row;
   top: 90px;

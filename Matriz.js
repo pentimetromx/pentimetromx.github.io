@@ -23,7 +23,7 @@ var imgTorreI = document.getElementById('imgTorre');
 var contInicial = document.getElementById('container1');
 var botonMa = document.getElementById('bot-mantaut');
 var imagPasoApaso = document.querySelectorAll('.img1');
-var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','contene-11','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I'];
+var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','contene-11','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','container99'];
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado'];
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor'];
@@ -129,6 +129,13 @@ function VolveraInicio(){
   idsArrayEliminados = [];
 }
 function botoGrand() {
+  var contaquina = document.getElementById('rotatek-1')
+  var contTorreImp = document.getElementById('torre-imp')
+  contaquina.style.position = 'fixed'
+  contaquina.style.left = '727px'
+  contTorreImp.style.position = 'fixed'
+  contTorreImp.style.left = '740px'
+  contTorreImp.style.top = '154px'
 
 }
 function muestraBateria(elementId) {  
@@ -1929,7 +1936,7 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
       if (!idsArray.includes(elementId)) {
         idsArray.push(elementId);
         console.log(idsArray)
-        }
+      }
     break; 
     case 'pantalla-mandos':
       for (var i = 0; i < pantallas.length; i++) {
@@ -2039,6 +2046,7 @@ function videosImpresor(videoId) {
   } 
 } 
 function abrirSeccionContinua(){
+  var contieneLinks = document.querySelectorAll('links-iniciales, links-inicialesI')
   cerrarSecciones()
 
   allContenedores.forEach(elemen => {
@@ -2054,12 +2062,12 @@ function abrirSeccionContinua(){
       element.style.display = 'flex';
     }
   });
-  /*contVariable.style.display='none'
-  contPlana.style.display='none'
-  contSecador.style.display='none'*/
 
+  for (var i = 0; i < contieneLinks.length; i ++){
+    var elto = contieneLinks[i]
+    elto.style.display = 'flex'
+  }
   firstClick = true;
-
 }
 function abrirSeccionVariable(elementId){
   allContenedores.forEach(elemen => {
@@ -2070,6 +2078,9 @@ function abrirSeccionVariable(elementId){
   });
   contPlana.style.display='none'
   contVariable.style.display='flex'
+  contPlana.style.position = 'absolute'
+
+
   linkList.style.display = "none";
   contSecador.style.display='none'
   if (!idsArray.includes(elementId)) {
@@ -2086,6 +2097,8 @@ function abrirSeccionPlanas(elementId){
   });
   contVariable.style.display='none'
   contPlana.style.display='flex'
+  contPlana.style.position = 'absolute'
+
   linkList.style.display = "none";
   contSecador.style.display='none'
   if (!idsArray.includes(elementId)) {
@@ -2367,13 +2380,25 @@ function irContenedorAnterior() {
   if(contTrouble);{
     contTrouble.style.display = 'none'
   } 
+
   var previousElementID = idsArray[idsArray.length - 2];
   for (var i = 0; i < idsArray.length; i++) { 
     switch (previousElementID) { 
       case "pantalla-inicial":
-        location.reload();;
-        idsArray = [];
-        break;
+        abrirSeccionContinua();
+        var contaquina = document.getElementById('rotatek-1')
+        var contTorreImp = document.getElementById('torre-imp')
+        contaquina.style.position = 'fixed'
+        contaquina.style.left = '727px'
+        contTorreImp.style.position = 'fixed'
+        contTorreImp.style.left = '740px'
+        contTorreImp.style.top = '154px'
+
+        var linksTemporales = document.getElementById('links-inicialesI');
+        var linksTemporalesII = document.getElementById('links-iniciales')
+        linksTemporales.style.display = 'flex'
+        linksTemporalesII.style.display = 'flex'
+      break;
       case "pantalla-tintero":
         var botonesInicio = document.getElementById('container01');
         botonesInicio.style.display='block'
@@ -2738,8 +2763,13 @@ function irContenedorAnterior() {
   var eltoAnterior = idsArray[idsArray.length - 2];
   idsArrayEliminados.push(eltoAnterior);
   console.log('ELIMINADOS',idsArrayEliminados)
-  idsArray.pop();  
-  console.log(idsArray) 
+  idsArray.pop();
+   console.log(idsArray)
+   if (idsArrayEliminados.length === 0){
+    idsArrayEliminados.push ('salir')
+    abrirSeccionContinua();
+  }
+
 } 
 function irContenedorSiguiente() {
   for (var i = 0; i < allContenedores.length; i++) {
@@ -2749,13 +2779,22 @@ function irContenedorSiguiente() {
     }
   }
 
+ /* if (idsArrayEliminados.length === 0){
+    abrirSeccionContinua();
+  }*/
+
   var previoElementID = idsArrayEliminados[idsArrayEliminados.length - 2];
-  for (var i = 0; i < idsArrayEliminados.length; i++) {
+  for (var i = 1; i < idsArrayEliminados.length; i++) {
+
+
     switch (previoElementID) {
       case "salir":
-        location.reload();
+        abrirSeccionContinua();
+      break;
+      case "pantalla-inicial":
+        abrirSeccionContinua();
         idsArrayEliminados = [];
-      break;        
+      break;         
       case "pantalla-tintero":
         var botonesInicio = document.getElementById('container01')                  
         botonesInicio.style.display='block'
@@ -2962,12 +3001,18 @@ function irContenedorSiguiente() {
           // Cambia el valor de 'display' a 'flex'
           container.style.display = "flex";
         }
-      break;      
+      break;
     default:
     }
   }  
+
   idsArrayEliminados.pop();  
   console.log('ELIMINADOS',idsArrayEliminados)
+
+  if (idsArrayEliminados.length === 0){
+    idsArrayEliminados.push ('salir')
+    abrirSeccionContinua();
+  }
 }
 function listaEntrenamientosII(btnId) {
 
