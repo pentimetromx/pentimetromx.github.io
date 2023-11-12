@@ -257,7 +257,7 @@
         <img class="image-trainings rep-frente aumentar" src="./assets/eje.jpg" alt="eje">
         <img class="image-trainings rep-frente aumentar" src="./assets/cónico.jpg" alt="eje">
         <img class="image-trainings rep-frente aumentar" src="./assets/reductor.jpg" alt="eje">
-        <img class="image-trainings rep-frente aumentar" src="./assets/reductorII.png" alt="eje">
+        <img class="image-trainings rep-frente aumentar" src="./assets/reductorII.png" alt="eje">   
       </div>
 
       <div id="agrupaOblicuos-II">
@@ -404,8 +404,8 @@
         <video class="video-training" id="videoElement3" src="./assets/Montaje entintador.mp4" height="400px" loop></video>
         <video class="video-training" id="videoElement4" src="./assets/2.full velocidad2.mp4" height="400px" width="520px" loop></video>
         <video class="video-training" id="videoElement5" src="./assets/1.Rodillo a rodillo.mp4" height="400px" loop></video>
-      </div>  
-
+      </div> 
+       
       <div id="contene-images">
         <button class="butt-partes" id="butt-repuestos" style="display: none;">PARTES  /  REPUESTOS</button>
 
@@ -423,11 +423,11 @@
        </div>
 
        <div class="images-training" id="images-smed"  style="position: absolute;top: -80px;">
-        <img class="image-training image-trainings" id="imageElement1" style="width: 157px;" src="./assets/dobladora.png" alt="Entintador"><br>
-        <img class="image-training image-trainings" id="imageElement2" style="width: 157px;" src="./assets/plancha litografica.png" alt="Rodamiento entintador"><br>
-        <img class="image-training image-trainings" id="imageElement3" style="width: 157px;" src="./assets/instrumento.png" alt="Lupa"><br>
-        <img class="image-training image-trainings" id="imageElement4" style="width: 157px;" src="./assets/rodillos prensa.png" alt="Tornillo lupa"><br>
-        <img class="image-training image-trainings" id="imageElement5" style="width: 157px;" src="./assets/vinil.png" alt="Tuerca lupa"><br>
+        <img class="image-training image-trainings img-propil" id="imageElement1" style="width: 157px;" src="./assets/dobladora.png" alt="Entintador"><br>
+        <img class="image-training image-trainings img-propil" id="imageElement2" style="width: 157px;" src="./assets/plancha litografica.png" alt="Rodamiento entintador"><br>
+        <img class="image-training image-trainings img-propil" id="imageElement3" style="width: 157px;" src="./assets/instrumento.png" alt="Lupa"><br>
+        <img class="image-training image-trainings img-propil" id="imageElement4" style="width: 157px;" src="./assets/rodillos prensa.png" alt="Tornillo lupa"><br>
+        <img class="image-training image-trainings img-propil" id="imageElement5" style="width: 157px;" src="./assets/vinil.png" alt="Tuerca lupa"><br>
      </div> 
 
       </div> 
@@ -456,7 +456,7 @@
 
       <div id="troubleshooting" style="display: none;">
         <label class="labl-class" id="lbl1" for="archivo">Largo de impresion:</label>
-        <button class="inpt-class botnClass" id="btt1" onclick="listaEntrenamientosII('btt1')">Seleccionar archivo</button>
+        <button class="inpt-class botnClass" id="archivo" onclick="listaEntrenamientosII('btt1')">Seleccionar archivo</button>
         <label class="labl-class" id="lbl2" for="archivo">Aditivos solución de fuente:</label>
         <button class="inpt-class botnClass" id="btt2">Seleccionar archivo</button>
         <label class="labl-class" id="lbl3" for="archivo">Reproceso adelantado:</label>
@@ -482,14 +482,14 @@
         <canvas id="MiQuintaGrafica"></canvas>              
       </div>
       <div id="contChecks">
-        <input type="checkbox"class="input-class"> 
-        <input type="checkbox" class="input-class">
-        <input type="checkbox" class="input-class">
-        <input type="checkbox" class="input-class">
-        <input type="checkbox" class="input-class">
-        <input type="checkbox" class="input-class">
-        <input type="checkbox" class="input-class">
-        <input type="checkbox" class="input-class">
+        <input id="nombre" type="checkbox"class="input-class"> 
+        <input id="nombre-I" type="checkbox" class="input-class">
+        <input id="nombre-II" type="checkbox" class="input-class">
+        <input id="nombre-III" type="checkbox" class="input-class">
+        <input id="nombre-IV" type="checkbox" class="input-class">
+        <input id="nombre-V" type="checkbox" class="input-class">
+        <input id="nombre-VI" type="checkbox" class="input-class">
+        <input id="nombre-VII"   type="checkbox" class="input-class">
       </div>    
       <div id="contImagNeg">
         <img id="imagPixelate" src="./assets/pixelate.jpg" alt="Gráfico de Excel 6">
@@ -513,22 +513,20 @@
 
         <div>
           <button id="lub-diario" class="butt-lub labl-lub" onclick="lubricaDiario('lub-diario')"></button>
-          <label class="labl-class labl-lub" style="display: none;" for="lubrica">Frecuencia diaria</label>
+          <label class="labl-class labl-lub" style="display: none;" for="lub-diario">Frecuencia diaria</label>
         </div><br>
 
         <div>
           <button id="lub-semanal" class="butt-lub labl-lub" onclick="lubricaDiario('lub-semanal')"></button>
-          <label class="labl-class labl-lub" style="display: none;" for="lubrica">Frecuencia semanal</label>
+          <label class="labl-class labl-lub" style="display: none;" for="lub-semanal">Frecuencia semanal</label>
         </div><br> 
 
         <div>
           <button id="lub-mensual" class="butt-lub labl-lub" onclick="lubricaDiario('lub-mensual')"></button>
-          <label class="labl-class labl-lub" style="display: none;" for="lubrica">Frecuencia mensual</label>
+          <label class="labl-class labl-lub" style="display: none;" for="lub-mensual">Frecuencia mensual</label>
         </div>
       </div>     
     </div>
-
-
     <div id="lubri-I" style="position: relative;display: none;display: flex;left:577px;top:-40px;">
 
       <div id="aceite" style="position: absolute;display: none;top: -192px;justify-content: center;background: linear-gradient(45deg, blue 15%,  black 85%);font-size: 33px;width: 287px;border-radius: 7px;">
@@ -898,10 +896,10 @@
 
     </div>
 
-    <div id="sitema-humedad" style="position: absolute;left: 170px;top: 6px;"> 
+    <div id="sitema-humedad" style="position: absolute;left: 170px;top: 6px;display: none;"> 
 
       <div id="contenedor-9" class="contene-7" style="position: absolute;left:-177px;display: none;"> 
-        <button class="boton-f bot-entre" onclick="muestraRodillo()">Estacion cassets<div class="linea-horizontal"></div></button>                
+        <button class="boton-f bot-entre" onclick="muestraHumedad()">Estacion cassets<div class="linea-horizontal"></div></button>                
         <button class="boton-f bot-entre" onclick="muestraRodillo()">Puente guía <div class="linea-horizontal"></div></button>  
         <button class="boton-f bot-entre" onclick="muestraRodillo()">Alojamiento del casset <div class="linea-horizontal"></div></button>  
         <button class="boton-f bot-entre" onclick="muestraRodillo()">Expulsión y halado<div class="linea-horizontal"></div></button>                
@@ -914,12 +912,17 @@
         <button class="boton-a" id="bot-atras6" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 5px;" onclick="irContenedorAnterior('bateria-entintado-II')"></button>
         <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
         <button class="boton-a" id="bot-atras27" style="text-align: center;width: 47px;position: absolute;left: 685px;top: 5px;" onclick="irContenedorSiguiente('')"></button>
-      
       </div><br>
+
+      <div id="imgsIsopropil">
+        <img class="image-isopropil" src="./assets/isopropil alcoholimetro.png" alt="iso">
+        <img class="image-isopropil" src="./assets/isopropil ph.png" alt="iso">
+        <img class="image-isopropil" src="./assets/isopropil.png" alt="iso">
+      </div>
     </div>
 
     <div id="pre-prensa" style="position: absolute;left: 170px;top: 6px;">
-      <video id="vidCicodelia" class="vidTeoria video-training" style="display: none;" src="./assets/cicodelia.mp4" loop autoplay ></video>        
+      <video id="vidCicodelia" class="vidTeoria video-training" style="display: none;" src="./assets/cicodelia.mp4" loop autoplay ></video>      
       <div class="contene-5" id="contene-11" style="position: absolute;left: -16px;top: 1px;display: flex;display: none;">
         <button class="boton-a" id="bot-atras6" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 5px;" onclick="irContenedorAnterior('pre-prensa')"></button>
         <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL INICIO</button>
@@ -1205,7 +1208,6 @@
       </div>
 
     </div>
- 
 
     <script src="./Matriz.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>

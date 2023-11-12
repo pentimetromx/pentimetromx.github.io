@@ -13,7 +13,7 @@ var lineasGrid = document.getElementById('contLineas');
 var contTitulo = document.getElementById('cont-titulo');
 var linkList = document.getElementById("linkList");
 var linkListI = document.getElementById("linkListI");
-var contiBtt = ['btt1','btt2','btt3','btt4','btt5','btt6','btt7']
+var contiBtt = ['archivo','btt2','btt3','btt4','btt5','btt6','btt7'] 
 
 var currentID = null;
 var btnAtras = document.getElementById('bot-atras');
@@ -552,7 +552,7 @@ function muestraRodillo (vidElem, imgCont) {
       buttRepuest.style.display='block'
       contimgCase.style.display = 'flex'
 
-      var imagesCase = document.getElementsByClassName('image-trainings1')
+      var imagesCase = document.getElementsByClassName('img-propil')
       // Recorre las imágenes y las muestra
       for (let i = 0; i < imagesCase.length; i++) {
         imagesCase[i].style.display = 'flex'; // Muestra cada imagen
@@ -577,8 +577,17 @@ function muestraRodillo (vidElem, imgCont) {
   }
 
 }
+function muestraHumedad() {
+  var contImgsIsopropil = document.getElementById('imgsIsopropil')
+  const pict = contImgsIsopropil.getElementsByTagName('img'); // Obtiene todas las etiquetas 'img' dentro del 
+  contImgsIsopropil.style.display = 'flex'
+  // Recorre las imágenes y las muestra
+  for (let i = 0; i < pict.length; i++) {
+    pict[i].style.display = 'block'; // Muestra cada imagen
+  }
+}
 function applyImageEffects() { // aumento secuencial imagenes repuestos
-  const imageElements = document.getElementsByClassName('image-trainings1');
+  const imageElements = document.getElementsByClassName('img-propil');
   let currentIndex = 0;
   function applyEffect() {
     if (currentIndex < imageElements.length) {
@@ -2176,6 +2185,26 @@ function abrirPrepress(elementId) {
       elemento.style.display = 'none';
     }
   }
+
+
+
+
+  // Paso 1: Crear un array con todas las imágenes en el contenedor padre
+  const imagenesArray = document.querySelectorAll('#imgs-prepress .imgTeoria');
+
+  // Paso 2: Recorrer las imágenes
+  for (let i = 0; i < imagenesArray.length; i++) {
+      // Paso 3: Verificar y modificar el estilo de visualización
+      const imagenActual = imagenesArray[i];
+      
+      // Verificar si el estilo de visualización es 'none'
+      if (getComputedStyle(imagenActual).display === 'none') {
+          // Cambiar el estilo de visualización a 'flex'
+          imagenActual.style.display = 'flex';
+      }
+  }
+
+
   
   contBotPress.style.display = 'flex';
   contImgsPrepress.style.display = 'block';
@@ -2369,7 +2398,7 @@ function irContenedorAnterior() {
   const coleccion = document.querySelectorAll('.desbobinador, .desbobinador-I, .uTeñido, .alimentador, .unidProceso, .rebobinador, .contTorrImp');
   var contTrouble = document.getElementById('troubleshooting');
   var linksTemporales = document.getElementById('links-inicialesI');
-  var linksTemporalesII = document.getElementById('links-iniciales')
+  var linksTemporalesII = document.getElementById('links-iniciales');
   linksTemporales.style.display = 'none'
   linksTemporalesII.style.display = 'none'
 
@@ -2380,6 +2409,12 @@ function irContenedorAnterior() {
   if(contTrouble);{
     contTrouble.style.display = 'none'
   } 
+
+  // 1. Si el primer elemento del array 'idsArray' corresponde a 'pantalla-inicial', entonces alert 'pantalla-inicial'
+  if (idsArray[0] !== "pantalla-inicial") {
+    idsArray.unshift("pantalla-inicial");
+  }
+  console.log(idsArray);
 
   var previousElementID = idsArray[idsArray.length - 2];
   for (var i = 0; i < idsArray.length; i++) { 
@@ -2398,6 +2433,7 @@ function irContenedorAnterior() {
         var linksTemporalesII = document.getElementById('links-iniciales')
         linksTemporales.style.display = 'flex'
         linksTemporalesII.style.display = 'flex'
+        idsArray = [];
       break;
       case "pantalla-tintero":
         var botonesInicio = document.getElementById('container01');
@@ -2517,6 +2553,21 @@ function irContenedorAnterior() {
         if (displayValue.toLowerCase() === "none") {
           // Cambia el valor de 'display' a 'flex'
           container.style.display = "flex";
+        }
+
+        // Paso 1: Crear un array con todas las imágenes en el contenedor padre
+        const imagenesArray = document.querySelectorAll('#imgs-prepress .imgTeoria');
+
+        // Paso 2: Recorrer las imágenes
+        for (let i = 0; i < imagenesArray.length; i++) {
+            // Paso 3: Verificar y modificar el estilo de visualización
+            const imagenActual = imagenesArray[i];
+            
+            // Verificar si el estilo de visualización es 'none'
+            if (getComputedStyle(imagenActual).display === 'none') {
+                // Cambiar el estilo de visualización a 'flex'
+                imagenActual.style.display = 'flex';
+            }
         }
       break; 
       case "densitometria":
@@ -2779,9 +2830,12 @@ function irContenedorSiguiente() {
     }
   }
 
- /* if (idsArrayEliminados.length === 0){
-    abrirSeccionContinua();
-  }*/
+
+    // 1. Si el primer elemento del array 'idsArray' corresponde a 'pantalla-inicial', entonces alert 'pantalla-inicial'
+    if (idsArrayEliminados[0] !== "salir") {
+      idsArrayEliminados.unshift("salir");
+    }
+    console.log(idsArray);
 
   var previoElementID = idsArrayEliminados[idsArrayEliminados.length - 2];
   for (var i = 1; i < idsArrayEliminados.length; i++) {
@@ -2790,11 +2844,24 @@ function irContenedorSiguiente() {
     switch (previoElementID) {
       case "salir":
         abrirSeccionContinua();
+        var contaquina = document.getElementById('rotatek-1')
+        var contTorreImp = document.getElementById('torre-imp')
+        contaquina.style.position = 'fixed'
+        contaquina.style.left = '727px'
+        contTorreImp.style.position = 'fixed'
+        contTorreImp.style.left = '740px'
+        contTorreImp.style.top = '154px'
+
+        var linksTemporales = document.getElementById('links-inicialesI');
+        var linksTemporalesII = document.getElementById('links-iniciales')
+        linksTemporales.style.display = 'flex'
+        linksTemporalesII.style.display = 'flex'
+        idsArrayEliminados = [];
       break;
       case "pantalla-inicial":
         abrirSeccionContinua();
         idsArrayEliminados = [];
-      break;         
+      break; 
       case "pantalla-tintero":
         var botonesInicio = document.getElementById('container01')                  
         botonesInicio.style.display='block'
@@ -2869,6 +2936,7 @@ function irContenedorSiguiente() {
         var contImg = document.getElementById('imgs-prepress')
         mostrar.style.display='block'
         contImg.style.style='block'
+
         var contImgsTeoria = document.getElementsByClassName('imgTeoria'); // Obtén elementos por su
         for (var i = 0; i < contImgsTeoria.length; i++) {
           var teorImage = contImgsTeoria[i]; // Accede al elemento actual
@@ -2879,7 +2947,24 @@ function irContenedorSiguiente() {
         vidTeoria.forEach(video => {
           video.style.display='block'
           video.play();
-        });  
+        });
+        
+
+
+        // Paso 1: Crear un array con todas las imágenes en el contenedor padre
+        const imagenesArray = document.querySelectorAll('#imgs-prepress .imgTeoria .vidTeoria');
+        // Paso 2: Recorrer las imágenes
+        for (let i = 0; i < imagenesArray.length; i++) {
+          // Paso 3: Verificar y modificar el estilo de visualización
+          const imagenActual = imagenesArray[i];            
+          // Verificar si el estilo de visualización es 'none'
+          if (getComputedStyle(imagenActual).display === 'none') {
+              // Cambiar el estilo de visualización a 'flex'
+              imagenActual.style.display = 'flex';
+          }
+        }
+
+
         
         var container = document.getElementById("contene-11");
         var computedStyle = getComputedStyle(container);
@@ -3570,7 +3655,6 @@ function LubricaDesbobinador(idButt) {
     default:
   }
 }
-
 function showLablsLubricacion() { 
   var botones = document.querySelectorAll('.labl-lub'); // Selecciona todos los botones
   function mostrarLabelConRetraso(i) {
@@ -4389,6 +4473,8 @@ imagenesAumentar.forEach(image => {
         document.msExitFullscreen();
       }
     }
+    var contIndicaciones = document.getElementById('lista-aumenta')
+    contIndicaciones.style.display = 'flex'
   });
 });
 //////////////////////////////////////////////////////////////////////////
@@ -5261,7 +5347,6 @@ canvasElements4.forEach(input => {
       imagenesPasoApaso(link.getAttribute('data-imagen'));
     });
 });
-
 function aumentarTamanosDeBotones() {
   const buttons = [
     document.getElementById("boton1"),
