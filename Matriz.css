@@ -691,7 +691,7 @@ width:447px ;
 }
 .custom-link {
   position: relative; /* Asegura que la posición no sea static */
-  z-index: 9999;
+  z-index: 999;
   text-decoration: none;
   font-family: "GothamRounded", sans-serif; /* Aplica la fuente deseada */
   text-decoration-line: underline;
@@ -1630,11 +1630,12 @@ elemento {
   display: flex;
   flex-direction: column;
   display: none;
-  margin-top: -141px;
+  margin-top: -101px;
   margin-left: 11px;
 }
 #indicaciones-II label{
-  margin-top: 137px;
+  margin-top: 93px;
+  margin-bottom: 49px;
 }
 .icono-user{
   position: relative;
@@ -1793,4 +1794,22 @@ elemento.visible {
   top: 100px;
   width: 550px; /* Establece el ancho deseado */
   height: 400px; /* Establece el alto deseado */
+}
+#indicaciones-eje,
+#indicaciones-conico {
+  font-family: "GothamRounded", sans-serif; 
+  position: fixed;
+  display: flex;
+  display: none;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  height: 100vh; /* 100% de la altura de la ventana */
+  background-color: gray;
+  left: 75%; /* El 75% del ancho de la ventana */
+  top: 0;
+  z-index: 3;
+  border-radius: 14px;
 }

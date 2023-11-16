@@ -117,7 +117,7 @@
         <button class="boton-b" id="boton1" onclick="cierraContenedores('desbobinador')">DESBOBINADOR</button><br>
         <div class="contene-7" id="cont-Verticales1">
           <div class="linea-vertical"></div>
-          <button id="boton2" class="boton-c aumentarc" onclick="lubricacion('boton2')">Lubricacion<div class="linea-horizontal"></div></button>
+          <button id="boton2" class="boton-c aumentarc" onclick="lubricacion('boton2','desbobinadorId')">Lubricacion<div class="linea-horizontal"></div></button>
           <button id="boton3" class="boton-c aumentarc" onclick="lubricacion('boton3')">Freno<div class="linea-horizontal"></div></button>
           <button id="boton4" class="boton-c aumentarc" onclick="lubricacion('boton4')">Bailarina<div class="linea-horizontal"></div></button>
           <button id="boton5" class="boton-c aumentarc" onclick="lubricacion('boton5')">Ensarte<div class="linea-horizontal"></div></button>
@@ -133,7 +133,7 @@
           <button class="boton-c" id="boton8">Sistema neumático<div class="linea-horizontal"></div></button>
           <button class="boton-c" id="boton9">Rodillería<div class="linea-horizontal"></div></button>
           <button class="boton-c" id="boton10">Circuito de alimentación<div class="linea-horizontal"></div></button>
-          <button class="boton-c" id="boton11">Bomba de succión<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton11">Bomba de succión<div class="linea- "></div></button>
           <button class="boton-c" id="boton12">Depositos de anilina<div class="linea-horizontal"></div></button>
         </div>
       </div>
@@ -254,12 +254,12 @@
       <video class="video-training" id="vidTintero" src="./assets/Arriba abajo.mp4"></video>
 
       <div id="imgsRepuestos">
-        <img class="image-trainings rep-frente aumentar" src="./assets/eje.jpg" alt="eje">
-        <img class="image-trainings rep-frente aumentar" src="./assets/cónico.jpg" alt="eje">
-        <img class="image-trainings rep-frente aumentar" src="./assets/reductor.jpg" alt="eje">
-        <img class="image-trainings rep-frente aumentar" src="./assets/reductorII.png" alt="eje">   
+        <img class="image-trainings" id="eje" onclick="ampliaIndicaciones('eje')" src="./assets/eje.jpg" alt="eje">
+        <img class="image-trainings" id="conico" onclick="ampliaIndicaciones('conico')" src="./assets/conico.jpg" alt="cónico">
+        <img class="image-trainings" id="reductor" onclick="ampliaIndicaciones(2)" src="./assets/reductor.jpg" alt="reductor">
+        <img class="image-trainings" id="reductor-II" onclick="ampliaIndicaciones(3)" src="./assets/reductorII.png" alt="reductorII">
       </div>
-
+      
       <div id="agrupaOblicuos-II">
         <button class="Bot-inicio2" id="butt-01" onclick="muestraTorresI('pantalla-frente')">Frente</button>
         <button class="Bot-inicio2-fondo" id="butt-02"></button> 
@@ -269,6 +269,48 @@
         <button class="Bot-inicio2-fondo" id="butt-06"></button>  
         <button class="Bot-inicio2" id="butt-07" onclick="muestraTorresI('pantalla-atras')">Atras</button>
         <button class="Bot-inicio2-fondo" id="butt-08"></button> 
+      </div>
+
+      <div id="indicaciones-eje">
+        <button class="boton-a" id="bot-indicaciones" style="text-align: center;margin-left: 97px;margin-top: 77px; z-index: 1;" onclick="ocultarIndicaciones('eje')">Volver</button>
+        <header style="position: relative;margin-top: 57px;">
+          <h1 style="font-family: 'GothamRounded', sans-serif;color: yellowgreen;text-align: left; ">EJE DESPLAZAMIENTO</h1>
+          <h2 style="font-family: 'GothamRounded', sans-serif;color: yellowgreen;text-align: left; ">Acople</h2>
+        </header>
+  
+        <section id="secion-1" style="position: relative;margin-top: -17px;left: 11px;">
+          <p>1. Cromita de Hierro (FeCr2O4):</pstyle=><br>
+          <p>2. Diametro pomo 51 mm </p>
+          <p>3. Diametro eje 17 mm </p> 
+          <p>4. Largo total 70 mm </p> 
+          <p>5. Rosca ACME </p> 
+          <p>6. Paso de rosca 1.3 mm </p> 
+          <p>6. Largo rosca 30 mm </p> 
+          <p>7. Largo eje 50 mm </p> 
+          <p>8. Alto pomo 20 mm </p>                                       
+        </section>
+
+      </div>
+
+      <div id="indicaciones-conico">
+        <button class="boton-a" id="bot-indicacionesII" style="display: none; text-align: center;margin-left: 97px;margin-top: 77px; z-index: 1;" onclick="ocultarIndicaciones('conico')">Volver</button>
+        <header style="position: relative;margin-top: 57px;">
+          <h1 style="font-family: 'GothamRounded', sans-serif;color: yellowgreen;text-align: left; ">EJE DESPLAZAMIENTO</h1>
+          <h2 style="font-family: 'GothamRounded', sans-serif;color: yellowgreen;text-align: left; ">Acople</h2>
+        </header>
+  
+        <section id="secion-1" style="position: relative;margin-top: -17px;left: 11px;">
+          <p>1. Ángulo de inclinación</pstyle=><br>
+          <p>2. Relación de transmisión</p>
+          <p>3. Ángulo de presión</p> 
+          <p>4. Material</p> 
+          <p>5. Dureza</p> 
+          <p>6. Tolerancias dimensionales</p> 
+          <p>6. Geometría de los dientes</p> 
+          <p>7. Capacidad de carga</p> 
+          <p>8. Lubricación</p>                                       
+        </section>
+
       </div>
 
     </div>
@@ -285,7 +327,7 @@
 
       <div id="imgsRepuestos-II">
         <img src="./assets/eje.jpg" alt="eje">
-        <img src="./assets/cónico.jpg" alt="eje">
+        <img src="./assets/conico.jpg" alt="eje">
         <img src="./assets/reductor.jpg" alt="eje">
         <img src="./assets/reductorII.png" alt="eje">
       </div>
@@ -1054,12 +1096,6 @@
           <li><a href="#" id="vinc4" class="colorClick"data-imagen="imag4" onclick="imagenesPasoApaso('imag4','vinc4')">Calibración / Limpieza / Rugosidad en INFEED</a></li><br>
         </ol> 
 
-        <!---<li><a href="#">Penetración mantilla / impresor</a></li><br>
-        <li><a href="#">Estado rodamientos en rodillería</a></li><br>
-        <li><a href="#">Estado del recubrimiento en rodillería</a></li><br>
-        <li><a href="#">Presión en ruedas de tracción</a></li><br>
-        <li><a href="#">Distancia entre perforaciones de alimentación</a></li><br>
-        <li><a href="#">Calibración / Limpieza / Grabado en REMALINER</a></li><br>--->
       </div>      
       <div class="imgs-entrenos" id="contImgEntrenos">
         <div class="img1" id="imag1">

@@ -61,7 +61,6 @@ var imgesDistribuidor = ['imgs-I','imgs-II','imgs-III','imgs-IV','imgs-V'];
 var imgesPlancha = ['portPlaca','portPlaca1','portPlaca2','portPlaca3','portPlaca4'];
 var contImgsManta = document.getElementById('contPerfilesManta');
 
-const coleccImgFront = document.querySelectorAll('.rep-frente');
 const coleccImgIzq = document.querySelectorAll('.rep-izquierda');
 const conteRepDistrib = document.querySelectorAll('.imgRow');
 const uniTeñido = document.getElementById('uTeñidos');
@@ -3252,60 +3251,87 @@ function imagenesPasoApaso(idElto, id) {
     }
   });
 }
-function lubricacion(buttId){
-  var contLubrica = document.getElementById('lubricacion');
-  contLubrica.style.display = 'block'
-  var contTorre = document.getElementById('rotatek-1');
-  var arrayIdButtsCheck = ['boton2','boton3','boton4','boton5','boton6'];
+function lubricacion(buttId,contId){
+  var alimenta = document.getElementById('alimentadorId');
+  var uTeñido = document.getElementById('uTeñidos')
+  var contOil = document.getElementById('frec-lubrica');
+  var padreLubri = document.getElementById('lubri-I');
+  var padreLubriII = document.getElementById('lubri-II');
 
-  switch (buttId) {
-    case 'boton2':
-      var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica'];
-      for (var i = 0; i < contVidLub.length; i++) {
-        var elementId = contVidLub[i];
-        var element = document.getElementById(elementId);      
-        if (element) { // Verifica si el elemento existe
-          var computedStyleVid = getComputedStyle(element);
-          var displayValueVid = computedStyleVid.getPropertyValue("display");          
-          if (displayValueVid.toLowerCase() === "flex") {
-            // Cambia el valor de 'display' a 'none'
-            element.style.display = "none";
+
+  if(alimenta.style.display === 'none'){
+
+    if (window.getComputedStyle(contOil).display === 'flex') {
+      contOil.style.display = 'none';
+    }
+    if(window.getComputedStyle(padreLubri).display === 'flex') {
+      padreLubri.style.display === 'none'
+    }
+    if(window.getComputedStyle(padreLubriII).display === 'flex') {
+      padreLubriII.style.display === 'none'
+    }
+
+    var contLubrica = document.getElementById('lubricacion');
+    contLubrica.style.display = 'block'
+    var contTorre = document.getElementById('rotatek-1');
+    var arrayIdButtsCheck = ['boton2','boton3','boton4','boton5','boton6'];
+  
+    switch (buttId) {
+      case 'boton2':
+        if(uTeñido.style.display === 'none'){
+
+        var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica'];
+
+        for (var i = 0; i < contVidLub.length; i++) {
+          var elementId = contVidLub[i];
+          var element = document.getElementById(elementId);
+        
+          if (element) {
+            // Obtener el estilo calculado
+            var computedStyleVid = window.getComputedStyle(element);
+        
+            // Obtener el valor de 'display' en minúsculas
+            var displayValueVid = computedStyleVid.getPropertyValue('display').toLowerCase();
+        
+            if (displayValueVid === "flex") {
+              // Cambiar el valor de 'display' a 'none'
+              element.style.display = "none";
+            }
+        }
+        
+
+        var container = document.getElementById('conti-boton-desb');
+        var computedStyle = getComputedStyle(container);     
+        var displayValue = computedStyle.getPropertyValue("display");
+        if (displayValue.toLowerCase() === "none") {
+          // Cambia el valor de 'display' a 'flex'
+          container.style.display = "flex";
+        }
+
+        var contVidLub = ['btn1','btn2','btn3','btn4','btn5'];
+        for (var i = 0; i < contVidLub.length; i++) {
+          var elementId = contVidLub[i];
+          var element = document.getElementById(elementId);      
+          if (element) { // Verifica si el elemento existe
+            element.style.color = "white";
+            element.style.background = '#333333';
+            
           }
         }
-      }
-
-      var container = document.getElementById('conti-boton-desb');
-      var computedStyle = getComputedStyle(container);     
-      var displayValue = computedStyle.getPropertyValue("display");
-      if (displayValue.toLowerCase() === "none") {
-        // Cambia el valor de 'display' a 'flex'
-        container.style.display = "flex";
-      }
-
-      var contVidLub = ['btn1','btn2','btn3','btn4','btn5'];
-      for (var i = 0; i < contVidLub.length; i++) {
-        var elementId = contVidLub[i];
-        var element = document.getElementById(elementId);      
-        if (element) { // Verifica si el elemento existe
-          element.style.color = "white";
-          element.style.background = '#333333';
-          
-        }
-      }
-    
-      for (var i = 0; i < arrayIdButtsCheck.length; i++) {
-        var button = arrayIdButtsCheck[i];
-        if (button === buttId) {
-          // Cambia el color del botón seleccionado a rojo
-          document.getElementById(button).style.backgroundColor = 'red';
-        } else {
-          // Restablece el color de los otros botones
-          document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
-        }
-      }    
-      if (contTorre.style.display === 'none'){
-        showButtonsMAconRetrasoDesb()
-      }
+      
+        for (var i = 0; i < arrayIdButtsCheck.length; i++) {
+          var button = arrayIdButtsCheck[i];
+          if (button === buttId) {
+            // Cambia el color del botón seleccionado a rojo
+            document.getElementById(button).style.backgroundColor = 'red';
+          } else {
+            // Restablece el color de los otros botones
+            document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
+          }
+        }    
+        if (contTorre.style.display === 'none'){
+          showButtonsMAconRetrasoDesb()
+        }}}
     break;
     case 'boton3':
       var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica', 'conti-boton-desb'];
@@ -3432,8 +3458,8 @@ function lubricacion(buttId){
       }      
     break;
     default:
-  }
-
+  }}
+  
 }  
 function showButtonsMAconRetrasoDesb() {
   var botones = document.querySelectorAll('.butt-mautonomo-desb'); // Selecciona todos los botones
@@ -3455,7 +3481,8 @@ function LubricaDesbobinador(idButt) {
   var vertLine = document.getElementById('vertcal-line')
   var botones = document.querySelectorAll('.labl-lub'); // Selecciona todos los botones
   var arrayIdButtsLub = ['btn1', 'btn2', 'btn3', 'btn4', 'btn5'];
-//////////////////////////////////////////////////////////////////////////////////////  'lubri-I', 'lubri-II', 
+
+ //////////////////////////////////////////////////////////////////////////////////////  'lubri-I', 'lubri-II', 
   var contVidLub = ['frec-lubrica'];
   for (var i = 0; i < contVidLub.length; i++) {
     var elementId = contVidLub[i];
@@ -3471,7 +3498,7 @@ function LubricaDesbobinador(idButt) {
       }
     }
   }
-///////////////////////////////////////////////////////////////////////////////////////
+ ///////////////////////////////////////////////////////////////////////////////////////
   var arrayIdButtsCheck = ['lub-diario', 'lub-semanal', 'lub-mensual'];
   for (var i = 0; i < arrayIdButtsCheck.length; i++) {
     var button = arrayIdButtsCheck[i];
@@ -3494,7 +3521,23 @@ function LubricaDesbobinador(idButt) {
 
   switch (idButt) {
     case 'btn1':
+      var contenedorInic = document.getElementById('lubri-I');
+      contenedorInic.style.display = 'none'
+      var hijosDelInic = contenedorInic.children;
+      for (var i = 0; i < hijosDelInic.length; i++) {
+        var hijo = hijosDelInic[i];  
+        hijo.style.display = 'none';
+      }
+      var contenedorPrincipal = document.getElementById('lubri-II');
+      contenedorPrincipal.style.display = 'none'
+      var hijosDelContenedor = contenedorPrincipal.children;
+      for (var i = 0; i < hijosDelContenedor.length; i++) {
+        var hijo = hijosDelContenedor[i];  
+        hijo.style.display = 'none';
+      }
+
       showLablsLubricacion();
+
       break;
       case 'btn2':
         for(var i = 0;i < botones.length; i++ ) {
@@ -3527,6 +3570,7 @@ function LubricaDesbobinador(idButt) {
           var hijo = hijosDelContenedor[i];  
           hijo.style.display = 'none';
         }
+
         var contenedorPrincipalII = document.getElementById('indicaciones-II');
         contenedorPrincipalII.style.display = 'none'
         var hijosDelContenedorII = contenedorPrincipalII.children;
@@ -4445,8 +4489,82 @@ function muestraOperacion(){
   contInicial.style.display = 'flex'
   links.style.display = 'flex'
   linksI.style.display = 'flex'
-} 
+}
 
+
+function ampliaIndicaciones(index) {
+  var botonConico = document.getElementById('bot-indicacionesII');
+  var indicEjeI = document.getElementById('indicaciones-conico');
+  var indicEje = document.getElementById('indicaciones-eje'); 
+  var conico = document.getElementById('conico');
+  var eje = document.getElementById('eje');
+
+  switch (index) {
+    case 'eje':
+    eje.style.width = (window.innerWidth * 0.75) + 'px'; 
+    eje.style.height = window.innerHeight + 'px'; 
+    indicEje.style.display = 'flex'
+    eje.style.position = 'fixed'
+    conico.style.zIndex = '0'     
+    eje.style.zIndex = '999'
+    eje.style.left = '0' 
+    eje.style.top = '0' 
+    
+    break;
+    case 'conico':
+      botonConico.style.display = 'block'
+      indicEjeI.style.display = 'flex' 
+      conico.style.position = 'fixed'
+      conico.style.height = window.innerHeight + 'px'; 
+      conico.style.width = (window.innerWidth * 0.75) + 'px';    
+      conico.style.zIndex = '999'
+      conico.style.left = '0' 
+      conico.style.top = '0'    
+      break;
+    case 2:
+      // Lógica para la tercera imagen (reductor.jpg)
+      console.log('Lógica para la tercera imagen');
+      break;
+    case 3:
+      // Lógica para la cuarta imagen (reductorII.png)
+      console.log('Lógica para la cuarta imagen');
+    break;
+    default:
+      // Lógica para casos no cubiertos
+      console.log('Lógica para casos no cubiertos');
+    break;
+  }
+}
+function ocultarIndicaciones(idIndicador) {
+  /* var contenedor = document.getElementById('imgsRepuestos'); */
+  var eje = document.getElementById('eje');
+  var conico = document.getElementById('conico');
+  var indicEje = document.getElementById('indicaciones-eje');
+  var indicEjeI = document.getElementById('indicaciones-conico');
+
+
+  switch(idIndicador) {
+    case 'eje':
+      indicEje.style.display = 'none'
+      eje.style.position = 'relative'
+      eje.style.height = '117px'
+      eje.style.width = '143px'
+      eje.style.display = 'flex'
+    break;
+    case 'conico':
+      indicEjeI.style.display = 'none'
+      conico.style.position = 'relative'
+      conico.style.height = '117px'
+      conico.style.width = '143px'
+      conico.style.display = 'flex'  
+    break;  
+    default:
+  }
+  linkList.style.display = "none";
+  linkListI.style.display = "none";  
+
+
+}
 // Obtén todas las imágenes con la clase "aumentar"
 const imagenesAumentar = document.querySelectorAll('img.aumentar');
 // Agrega un evento click a cada imagen con la clase "aumentar"
@@ -4473,17 +4591,16 @@ imagenesAumentar.forEach(image => {
         document.msExitFullscreen();
       }
     }
-    var contIndicaciones = document.getElementById('lista-aumenta')
-    contIndicaciones.style.display = 'flex'
   });
 });
+
 //////////////////////////////////////////////////////////////////////////
 // Recorrer todos los botones y hacerlos visibles
 botones.forEach(function(boton) {
 var id = boton.getAttribute('id');
 alternarVisibilidad(id);
 });
-
+ 
 /// LOGICA PARA CAMBIO DE COLOR EN BOTONES ALINICIO 
 /*document.addEventListener('DOMContentLoaded', () => {
   const botonesB = document.querySelectorAll('.boton-b');
