@@ -467,7 +467,8 @@ function cierraContenedores(elementId) {
     firstClick = false;
   } else {
     // En el segundo clic, recarga la página
-    abrirSeccionContinua()
+    abrirSeccionContinua();
+    
   }
 }
 function muestraRodillo (vidElem, imgCont) {
@@ -2054,9 +2055,23 @@ function videosImpresor(videoId) {
   } 
 } 
 function abrirSeccionContinua(){
-  var contieneLinks = document.querySelectorAll('links-iniciales, links-inicialesI')
-  cerrarSecciones()
+  /* var contieneLinks = document.querySelectorAll('links-iniciales, links-inicialesI') */
 
+  var linksII = document.getElementById('links-inicialesI');
+  var links = document.getElementById('links-iniciales');
+  var computado = window.getComputedStyle(links);
+  var estado = computado.getPropertyValue('display')
+  if (estado.toLowerCase() === "none") {
+    // Cambia el valor de 'display' a 'flex'
+    links.style.display = "flex";
+  }
+  var computadoII = window.getComputedStyle(linksII);
+  var estadoII = computadoII.getPropertyValue('display')
+  if (estadoII.toLowerCase() === "none") {
+    // Cambia el valor de 'display' a 'flex'
+    linksII.style.display = "flex";
+  }
+  cerrarSecciones()
   allContenedores.forEach(elemen => {
     var element = document.getElementById(elemen);
     if (element) {
