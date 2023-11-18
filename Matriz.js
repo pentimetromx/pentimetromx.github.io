@@ -402,6 +402,8 @@ let firstClick = true;
 
 function cierraContenedores(elementId) {
   const coleccion = document.querySelectorAll('.desbobinador, .desbobinador-I, .uTeñido, .alimentador, .unidProceso, .rebobinador, .contTorrImp');
+  var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80',];
+
 
   if (firstClick) {
     if (!idsArray.includes(elementId)) {
@@ -462,12 +464,17 @@ function cierraContenedores(elementId) {
         aumentarTamanosDeBotonesV();
         break;
       default:
-    }
-    
+    }    
     firstClick = false;
   } else {
-    // En el segundo clic, recarga la página
+    // En el segundo clic, carga la seccion
     abrirSeccionContinua();
+    arrayGeneral.forEach(element => {
+      var elemento = document.getElementById(element);
+      if (elemento) {
+          elemento.style.display = 'none';
+      } 
+    }); 
     
   }
 }
@@ -3267,12 +3274,12 @@ function imagenesPasoApaso(idElto, id) {
   });
 }
 function lubricacion(buttId,contId){
+  var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80',];
   var alimenta = document.getElementById('alimentadorId');
-  var uTeñido = document.getElementById('uTeñidos')
+  var padreLubriII = document.getElementById('lubri-II');
   var contOil = document.getElementById('frec-lubrica');
   var padreLubri = document.getElementById('lubri-I');
-  var padreLubriII = document.getElementById('lubri-II');
-
+  var uTeñido = document.getElementById('uTeñidos');
 
   if(alimenta.style.display === 'none'){
 
@@ -3286,16 +3293,23 @@ function lubricacion(buttId,contId){
       padreLubriII.style.display === 'none'
     }
 
-    var contLubrica = document.getElementById('lubricacion');
-    contLubrica.style.display = 'block'
-    var contTorre = document.getElementById('rotatek-1');
+    arrayGeneral.forEach(element => {
+      var elemento = document.getElementById(element);
+      if (elemento) {
+          elemento.style.display = 'none';
+      } 
+    }); 
+
     var arrayIdButtsCheck = ['boton2','boton3','boton4','boton5','boton6'];
+    var contLubrica = document.getElementById('lubricacion');
+    var contTorre = document.getElementById('rotatek-1');
+    contLubrica.style.display = 'block'
   
     switch (buttId) {
       case 'boton2':
         if(uTeñido.style.display === 'none'){
-
-        var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica'];
+          ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica', 'freno', 'conti-boton-freno','btn60','btn70','btn80'];                                              /// OCULTA LUBICANTES 
 
         for (var i = 0; i < contVidLub.length; i++) {
           var elementId = contVidLub[i];
@@ -3312,18 +3326,17 @@ function lubricacion(buttId,contId){
               // Cambiar el valor de 'display' a 'none'
               element.style.display = "none";
             }
-        }
-        
-
-        var container = document.getElementById('conti-boton-desb');
+        }        
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+        var container = document.getElementById('conti-boton-desb');                                                         /// MUESTRA PADRE BOTONES ...
         var computedStyle = getComputedStyle(container);     
         var displayValue = computedStyle.getPropertyValue("display");
         if (displayValue.toLowerCase() === "none") {
           // Cambia el valor de 'display' a 'flex'
           container.style.display = "flex";
         }
-
-        var contVidLub = ['btn1','btn2','btn3','btn4','btn5'];
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+        var contVidLub = ['btn1','btn2','btn3','btn4','btn5'];                                                    /// MUESTRA LOS BOTONES  
         for (var i = 0; i < contVidLub.length; i++) {
           var elementId = contVidLub[i];
           var element = document.getElementById(elementId);      
@@ -3331,6 +3344,69 @@ function lubricacion(buttId,contId){
             element.style.color = "white";
             element.style.background = '#333333';
             
+          }
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+        for (var i = 0; i < arrayIdButtsCheck.length; i++) {                                                                    /// PONE ROJO EL BOTON
+          var button = arrayIdButtsCheck[i];
+          if (button === buttId) {
+            // Cambia el color del botón seleccionado a rojo
+            document.getElementById(button).style.backgroundColor = 'red';
+          } else {
+            // Restablece el color de los otros botones
+            document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
+          }
+        }  
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+        if (contTorre.style.display === 'none'){                                                            /// SI ESTA OCULTO EL PADRE EJECUTA FUNCION 
+          showButtonsMAconRetrasoDesb()
+        }}}
+    break;
+      case 'boton3': 
+          ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+          var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica'];                                                    /// OCULTA LUBICANTES 
+          for (var i = 0; i < contVidLub.length; i++) {
+            var elementId = contVidLub[i];
+            var element = document.getElementById(elementId);          
+            if (element) {
+              // Obtener el estilo calculado
+              var computedStyleVid = window.getComputedStyle(element);          
+              // Obtener el valor de 'display' en minúsculas
+              var displayValueVid = computedStyleVid.getPropertyValue('display').toLowerCase();          
+              if (displayValueVid === "flex") {
+                // Cambiar el valor de 'display' a 'none'
+                element.style.display = "none";
+              }
+          }} 
+          ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+          var contVidLub = ['btn1','btn2','btn3','btn4','btn5'];                                                    /// OCULTA LOS BOTONES  
+          for (var i = 0; i < contVidLub.length; i++) {
+            var elementId = contVidLub[i];
+            var element = document.getElementById(elementId);      
+            if (element) { // Verifica si el elemento existe
+              element.style.display = 'none';               
+            }
+          }          
+
+
+        
+        showButtonsFrenoconRetrasoDesb();               
+
+      break;
+      case 'boton4':
+        var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica', 'conti-boton-desb'];
+        for (var i = 0; i < contVidLub.length; i++) {
+          var elementId = contVidLub[i];
+          var element = document.getElementById(elementId);
+        
+          if (element) { // Verifica si el elemento existe
+            var computedStyleVid = getComputedStyle(element);
+            var displayValueVid = computedStyleVid.getPropertyValue("display");
+            
+            if (displayValueVid.toLowerCase() === "flex") {
+              // Cambia el valor de 'display' a 'none'
+              element.style.display = "none";
+            }
           }
         }
       
@@ -3346,149 +3422,107 @@ function lubricacion(buttId,contId){
         }    
         if (contTorre.style.display === 'none'){
           showButtonsMAconRetrasoDesb()
-        }}}
-    break;
-    case 'boton3':
-      var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica', 'conti-boton-desb'];
-      for (var i = 0; i < contVidLub.length; i++) {
-        var elementId = contVidLub[i];
-        var element = document.getElementById(elementId);
-      
-        if (element) { // Verifica si el elemento existe
-          var computedStyleVid = getComputedStyle(element);
-          var displayValueVid = computedStyleVid.getPropertyValue("display");
-          
-          if (displayValueVid.toLowerCase() === "flex") {
-            // Cambia el valor de 'display' a 'none'
-            element.style.display = "none";
+        }      
+      break;
+      case 'boton5':
+        var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica', 'conti-boton-desb'];
+        for (var i = 0; i < contVidLub.length; i++) {
+          var elementId = contVidLub[i];
+          var element = document.getElementById(elementId);
+        
+          if (element) { // Verifica si el elemento existe
+            var computedStyleVid = getComputedStyle(element);
+            var displayValueVid = computedStyleVid.getPropertyValue("display");
+            
+            if (displayValueVid.toLowerCase() === "flex") {
+              // Cambia el valor de 'display' a 'none'
+              element.style.display = "none";
+            }
           }
         }
-      }
-    
-      for (var i = 0; i < arrayIdButtsCheck.length; i++) {
-        var button = arrayIdButtsCheck[i];
-        if (button === buttId) {
-          // Cambia el color del botón seleccionado a rojo
-          document.getElementById(button).style.backgroundColor = 'red';
-        } else {
-          // Restablece el color de los otros botones
-          document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
-        }
-      }    
-      if (contTorre.style.display === 'none'){
-        showButtonsMAconRetrasoDesb()
-      }      
-    break;
-    case 'boton4':
-      var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica', 'conti-boton-desb'];
-      for (var i = 0; i < contVidLub.length; i++) {
-        var elementId = contVidLub[i];
-        var element = document.getElementById(elementId);
       
-        if (element) { // Verifica si el elemento existe
-          var computedStyleVid = getComputedStyle(element);
-          var displayValueVid = computedStyleVid.getPropertyValue("display");
-          
-          if (displayValueVid.toLowerCase() === "flex") {
-            // Cambia el valor de 'display' a 'none'
-            element.style.display = "none";
+        for (var i = 0; i < arrayIdButtsCheck.length; i++) {
+          var button = arrayIdButtsCheck[i];
+          if (button === buttId) {
+            // Cambia el color del botón seleccionado a rojo
+            document.getElementById(button).style.backgroundColor = 'red';
+          } else {
+            // Restablece el color de los otros botones
+            document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
+          }
+        }    
+        if (contTorre.style.display === 'none'){
+          showButtonsMAconRetrasoDesb()
+        }    
+      break;
+      case 'boton6':
+        var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica', 'conti-boton-desb'];
+        for (var i = 0; i < contVidLub.length; i++) {
+          var elementId = contVidLub[i];
+          var element = document.getElementById(elementId);
+        
+          if (element) { // Verifica si el elemento existe
+            var computedStyleVid = getComputedStyle(element);
+            var displayValueVid = computedStyleVid.getPropertyValue("display");
+            
+            if (displayValueVid.toLowerCase() === "flex") {
+              // Cambia el valor de 'display' a 'none'
+              element.style.display = "none";
+            }
           }
         }
-      }
-    
-      for (var i = 0; i < arrayIdButtsCheck.length; i++) {
-        var button = arrayIdButtsCheck[i];
-        if (button === buttId) {
-          // Cambia el color del botón seleccionado a rojo
-          document.getElementById(button).style.backgroundColor = 'red';
-        } else {
-          // Restablece el color de los otros botones
-          document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
-        }
-      }    
-      if (contTorre.style.display === 'none'){
-        showButtonsMAconRetrasoDesb()
-      }      
-    break;
-    case 'boton5':
-      var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica', 'conti-boton-desb'];
-      for (var i = 0; i < contVidLub.length; i++) {
-        var elementId = contVidLub[i];
-        var element = document.getElementById(elementId);
       
-        if (element) { // Verifica si el elemento existe
-          var computedStyleVid = getComputedStyle(element);
-          var displayValueVid = computedStyleVid.getPropertyValue("display");
-          
-          if (displayValueVid.toLowerCase() === "flex") {
-            // Cambia el valor de 'display' a 'none'
-            element.style.display = "none";
+        for (var i = 0; i < arrayIdButtsCheck.length; i++) {
+          var button = arrayIdButtsCheck[i];
+          if (button === buttId) {
+            // Cambia el color del botón seleccionado a rojo
+            document.getElementById(button).style.backgroundColor = 'red';
+          } else {
+            // Restablece el color de los otros botones
+            document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
           }
-        }
-      }
-    
-      for (var i = 0; i < arrayIdButtsCheck.length; i++) {
-        var button = arrayIdButtsCheck[i];
-        if (button === buttId) {
-          // Cambia el color del botón seleccionado a rojo
-          document.getElementById(button).style.backgroundColor = 'red';
-        } else {
-          // Restablece el color de los otros botones
-          document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
-        }
-      }    
-      if (contTorre.style.display === 'none'){
-        showButtonsMAconRetrasoDesb()
-      }    
-    break;
-    case 'boton6':
-      var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica', 'conti-boton-desb'];
-      for (var i = 0; i < contVidLub.length; i++) {
-        var elementId = contVidLub[i];
-        var element = document.getElementById(elementId);
-      
-        if (element) { // Verifica si el elemento existe
-          var computedStyleVid = getComputedStyle(element);
-          var displayValueVid = computedStyleVid.getPropertyValue("display");
-          
-          if (displayValueVid.toLowerCase() === "flex") {
-            // Cambia el valor de 'display' a 'none'
-            element.style.display = "none";
-          }
-        }
-      }
-    
-      for (var i = 0; i < arrayIdButtsCheck.length; i++) {
-        var button = arrayIdButtsCheck[i];
-        if (button === buttId) {
-          // Cambia el color del botón seleccionado a rojo
-          document.getElementById(button).style.backgroundColor = 'red';
-        } else {
-          // Restablece el color de los otros botones
-          document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
-        }
-      }    
-      if (contTorre.style.display === 'none'){
-        showButtonsMAconRetrasoDesb()
-      }      
-    break;
-    default:
+        }    
+        if (contTorre.style.display === 'none'){
+          showButtonsMAconRetrasoDesb()
+        }      
+      break;
+      default:
   }}
   
 }  
 function showButtonsMAconRetrasoDesb() {
   var botones = document.querySelectorAll('.butt-mautonomo-desb'); // Selecciona todos los botones
-  function mostrarBotonConRetrasoDesb(i) {
+  function mostrarBotonConRetrasoFreno(i) {
     if (i < botones.length) {
       var boton = botones[i];
       boton.style.display = 'inline-block';
       setTimeout(function() {
-        mostrarBotonConRetrasoDesb(i + 1);
-      }, 150); // 100 milisegundos de retraso entre botones
+        mostrarBotonConRetrasoFreno(i + 1);
+      }, 150); // 150 milisegundos de retraso entre botones
     }
   }
-  mostrarBotonConRetrasoDesb(0); // Comienza desde el primer botón
+  mostrarBotonConRetrasoFreno(0); // Comienza desde el primer botón
 }
+
+function showButtonsFrenoconRetrasoDesb() {
+  var botones = document.querySelectorAll('.butt-mautonomo-freno'); // Selecciona todos los botones
+  var contBotonesFreno = document.getElementById('freno');
+  var contPadre = document.getElementById('conti-boton-freno');
+
+  contBotonesFreno.style.display = 'flex'
+  contPadre.style.display = 'flex'
+  function mostrarBotonConRetrasoFrenoI (i) {
+    if (i < botones.length) {
+      var boton = botones[i];
+      boton.style.display = 'inline-block';
+      setTimeout(function() {
+        mostrarBotonConRetrasoFrenoI(i + 1);
+      }, 150); // 150 milisegundos de retraso entre botones
+    }
+  }  
+  mostrarBotonConRetrasoFrenoI(0);
+}
+
 function LubricaDesbobinador(idButt) {
   var conteLub = document.getElementById('aceitera')
   var contLabel = document.getElementById('aceite')
@@ -3593,6 +3627,9 @@ function LubricaDesbobinador(idButt) {
           var hijo = hijosDelContenedorII[i];  
           hijo.style.display = 'none';
         }
+
+        var frenoDesbob = document.getElementById('freno')
+        frenoDesbob.style.display = 'flex'
       break; 
       case 'btn3':
         for(var i = 0;i < botones.length; i++ ) {
@@ -4505,8 +4542,6 @@ function muestraOperacion(){
   links.style.display = 'flex'
   linksI.style.display = 'flex'
 }
-
-
 function ampliaIndicaciones(index) {
   var botonConico = document.getElementById('bot-indicacionesII');
   var indicEjeI = document.getElementById('indicaciones-conico');
@@ -5376,7 +5411,6 @@ searchForm.addEventListener('submit', function (e) {
     case 'bateria':
       changeButtonStyles('bateria-entintado-II', 'contene-7');
     break;
-    case 'autonomo':
     case 'mantenimiento autonomo':
       ElementosMa('conteneMantaut');
     break;
@@ -5430,8 +5464,7 @@ searchForm.addEventListener('submit', function (e) {
     showRepuesto('contImpresor', 'videoTrain01')
       break;          
     default:
-      // Manejo por defecto si ningún caso coincide con searchTerm
-      // Puedes agregar un código aquí si es necesario
+      alert("No se encontró ninguna coincidencia para la búsqueda: " + searchTerm);
     break;
   }
 

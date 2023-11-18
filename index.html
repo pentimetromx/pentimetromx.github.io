@@ -255,7 +255,7 @@
 
       <div id="imgsRepuestos">
         <!-- <img class="image-trainings" id="eje" onclick="ampliaIndicaciones('eje')" src="./assets/eje.jpg" alt="eje"> -->
-        <img class="image-trainings" id="conico" onclick="ampliaIndicaciones('eje')" src="./assets/galgas.jfif" alt="cónico">
+        <img class="image-trainings" id="eje" onclick="ampliaIndicaciones('eje')" src="./assets/galgas.jfif" alt="eje">
         <img class="image-trainings" id="conico" onclick="ampliaIndicaciones('conico')" src="./assets/conico.jpg" alt="cónico">
         <img class="image-trainings" id="reductor" onclick="ampliaIndicaciones(2)" src="./assets/reductor.jpg" alt="reductor">
         <img class="image-trainings" id="reductor-II" onclick="ampliaIndicaciones(3)" src="./assets/reductorII.png" alt="reductorII">
@@ -615,6 +615,16 @@
       </div>
     </div>
 
+    <div id="freno"  style="display: none;">
+
+      <div class="conti-boton" id="conti-boton-freno" style="left: 127px;top: 130px;display: none;">
+        <button class="butt-mautonomo butt-mautonomo-freno image-trainings" id="btn60" onclick="frenoDesbobinador('btn60')">DESEMPEÑO</button>
+        <button class="butt-mautonomo butt-mautonomo-freno image-trainings" id="btn70" onclick="frenoDesbobinador('btn70')">ESTRUCTURA</button>
+        <button class="butt-mautonomo butt-mautonomo-freno image-trainings" id="btn80" onclick="frenoDesbobinador('btn80')">PARAMETROS</button>
+      </div> 
+
+    </div>
+
     
     <div id="contPortPlaca" style="display: none;">
       
@@ -625,7 +635,7 @@
         <button class="boton-a" id="bot-atras15" style="text-align: center;width: 47px;position: absolute;left: 685px;top: 5px;" onclick="irContenedorSiguiente('')"></button>
       </div><br>
 
-      <video class="video-training" id="video-placa" style="position: absolute;left: 340px;top:1px;" src="./assets/video-plancha-v2.mp4" loop autoplay ></video>
+      <video class="video-training" id="video-placa" style="position: absolute;left: 340px;top:1px;" src="./assets/video-plancha-v2.mp4" loop autoplay></video>
 
       <div id="agrupaOblicuos-placa">
         <button class="Bot-inicio2" id="butt-010" onclick="muestraPerfiles('imagen1')">Frente</button>

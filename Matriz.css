@@ -1582,7 +1582,8 @@ elemento {
   opacity: 0;
   transition: opacity 0.3s ease; /* Agrega una transición suave si lo deseas */
 }
-#conti-boton-desb button{
+#conti-boton-desb button,
+#conti-boton-freno button{
   margin-bottom: 38px;
 }
 #frec-lubrica{
