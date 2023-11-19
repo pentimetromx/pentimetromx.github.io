@@ -402,15 +402,22 @@ let firstClick = true;
 
 function cierraContenedores(elementId) {
   const coleccion = document.querySelectorAll('.desbobinador, .desbobinador-I, .uTeñido, .alimentador, .unidProceso, .rebobinador, .contTorrImp');
-  var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80',];
+  var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80'];
+  var arrayButtsRojos = ['boton2','boton3','boton4','boton5','boton6'];
+  for (var i = 0; i < arrayButtsRojos.length; i++) {                                                                    /// PONE ROJO EL BOTON
+    var button = arrayButtsRojos[i];
+    if (button) {
+      // Cambia el color del botón seleccionado a rojo
+      document.getElementById(button).style.backgroundColor = '';
+    }
+  } 
 
-
+  
   if (firstClick) {
     if (!idsArray.includes(elementId)) {
       idsArray.push(elementId);  
       console.log(idsArray);
     }
-
     switch (elementId) {
       case 'desbobinador':
         coleccion.forEach(elemento => {
@@ -419,7 +426,7 @@ function cierraContenedores(elementId) {
           } else {
             elemento.style.display = 'none';
           }
-        });
+        });     
         video.style.display = 'none';
         aumentarTamanosDeBotones();
         break;
@@ -467,15 +474,16 @@ function cierraContenedores(elementId) {
     }    
     firstClick = false;
   } else {
-    // En el segundo clic, carga la seccion
-    abrirSeccionContinua();
+
     arrayGeneral.forEach(element => {
       var elemento = document.getElementById(element);
       if (elemento) {
           elemento.style.display = 'none';
       } 
     }); 
-    
+
+    // En el segundo clic, carga la seccion
+    abrirSeccionContinua();    
   }
 }
 function muestraRodillo (vidElem, imgCont) {
@@ -3308,8 +3316,8 @@ function lubricacion(buttId,contId){
     switch (buttId) {
       case 'boton2':
         if(uTeñido.style.display === 'none'){
-          ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica', 'freno', 'conti-boton-freno','btn60','btn70','btn80'];                                              /// OCULTA LUBICANTES 
+          ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////                                                                                         
+        var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica', 'freno', 'conti-boton-freno','btn60','btn70','btn80'];         /// OCULTA LUBRICAS Y DEMAS ...                                         /// OCULTA LUBICANTES 
 
         for (var i = 0; i < contVidLub.length; i++) {
           var elementId = contVidLub[i];
@@ -3328,7 +3336,7 @@ function lubricacion(buttId,contId){
             }
         }        
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-        var container = document.getElementById('conti-boton-desb');                                                         /// MUESTRA PADRE BOTONES ...
+        var container = document.getElementById('conti-boton-desb');                                                               /// MUESTRA PADRE BOTONES ...
         var computedStyle = getComputedStyle(container);     
         var displayValue = computedStyle.getPropertyValue("display");
         if (displayValue.toLowerCase() === "none") {
@@ -3336,7 +3344,7 @@ function lubricacion(buttId,contId){
           container.style.display = "flex";
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-        var contVidLub = ['btn1','btn2','btn3','btn4','btn5'];                                                    /// MUESTRA LOS BOTONES  
+        var contVidLub = ['btn1','btn2','btn3','btn4','btn5'];                                                                      /// MUESTRA LOS BOTONES  
         for (var i = 0; i < contVidLub.length; i++) {
           var elementId = contVidLub[i];
           var element = document.getElementById(elementId);      
@@ -3357,8 +3365,8 @@ function lubricacion(buttId,contId){
             document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
           }
         }  
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-        if (contTorre.style.display === 'none'){                                                            /// SI ESTA OCULTO EL PADRE EJECUTA FUNCION 
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+        if (contTorre.style.display === 'none'){                                                                    /// SI ESTA OCULTO EL PADRE EJECUTA FUNCION 
           showButtonsMAconRetrasoDesb()
         }}}
     break;
@@ -3386,12 +3394,32 @@ function lubricacion(buttId,contId){
             if (element) { // Verifica si el elemento existe
               element.style.display = 'none';               
             }
-          }          
-
-
-        
-        showButtonsFrenoconRetrasoDesb();               
-
+          } 
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+        var contVidLub = ['btn60','btn70','btn80'];                                                                      /// MUESTRA LOS BOTONES  
+        for (var i = 0; i < contVidLub.length; i++) {
+          var elementId = contVidLub[i];
+          var element = document.getElementById(elementId);      
+          if (element) { // Verifica si el elemento existe
+            element.style.color = "white";
+            element.style.background = '#333333';
+            
+          }
+        }                   
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+        for (var i = 0; i < arrayIdButtsCheck.length; i++) {                                                                    /// PONE ROJO EL BOTON
+          var button = arrayIdButtsCheck[i];
+          if (button === buttId) {
+            // Cambia el color del botón seleccionado a rojo
+            document.getElementById(button).style.backgroundColor = 'red';
+          } else {
+            // Restablece el color de los otros botones
+            document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
+          }
+        } 
+        if (contTorre.style.display === 'none'){                                                                   /// SI ESTA OCULTO EL PADRE EJECUTA FUNCION 
+        showButtonsFrenoconRetrasoDesb();
+        }
       break;
       case 'boton4':
         var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica', 'conti-boton-desb'];
@@ -3524,16 +3552,15 @@ function showButtonsFrenoconRetrasoDesb() {
 }
 
 function LubricaDesbobinador(idButt) {
-  var conteLub = document.getElementById('aceitera')
-  var contLabel = document.getElementById('aceite')
-  var conteLabels = document.getElementById('indicaciones')
-  var vertLine = document.getElementById('vertcal-line')
+  var arrayIdButtsLub = ['btn1', 'btn2', 'btn3', 'btn4', 'btn5', 'btn60', 'btn70', 'btn80'];
+  var conteLabels = document.getElementById('indicaciones');
+  var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica']; 
+  var vertLine = document.getElementById('vertcal-line');
   var botones = document.querySelectorAll('.labl-lub'); // Selecciona todos los botones
-  var arrayIdButtsLub = ['btn1', 'btn2', 'btn3', 'btn4', 'btn5'];
-
- //////////////////////////////////////////////////////////////////////////////////////  'lubri-I', 'lubri-II', 
-  var contVidLub = ['frec-lubrica'];
-  for (var i = 0; i < contVidLub.length; i++) {
+  var conteLub = document.getElementById('aceitera');
+  var contLabel = document.getElementById('aceite');
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+  for (var i = 0; i < contVidLub.length; i++) {                                                                     /// MUESTRA BLOQUES  lubri-I', 'lubri-II
     var elementId = contVidLub[i];
     var element = document.getElementById(elementId);
   
@@ -3547,8 +3574,8 @@ function LubricaDesbobinador(idButt) {
       }
     }
   }
- ///////////////////////////////////////////////////////////////////////////////////////
-  var arrayIdButtsCheck = ['lub-diario', 'lub-semanal', 'lub-mensual'];
+ /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  var arrayIdButtsCheck = ['lub-diario', 'lub-semanal', 'lub-mensual'];                                                       /// COLOR AMARILLO A LOS BOTONES                   
   for (var i = 0; i < arrayIdButtsCheck.length; i++) {
     var button = arrayIdButtsCheck[i];
     if (button) {
@@ -3556,8 +3583,8 @@ function LubricaDesbobinador(idButt) {
       document.getElementById(button).style.backgroundColor = 'rgba(217, 255, 0, 1)';
     } 
   }
-
-  for (var i = 0; i < arrayIdButtsLub.length; i++) {
+   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  for (var i = 0; i < arrayIdButtsLub.length; i++) {                                                                         /// COLOR ROJO O GRIS A LOS BOTONES                                                             
     var button = arrayIdButtsLub[i];
     if (button === idButt) {
       // Cambia el color del botón a rojo
@@ -3578,6 +3605,39 @@ function LubricaDesbobinador(idButt) {
         hijo.style.display = 'none';
       }
       var contenedorPrincipal = document.getElementById('lubri-II');
+      contenedorPrincipal.style.display = 'none'  
+      var hijosDelContenedor = contenedorPrincipal.children;
+      for (var i = 0; i < hijosDelContenedor.length; i++) {
+        var hijo = hijosDelContenedor[i];  
+        hijo.style.display = 'none';
+      }
+      showLablsLubricacion();
+      break;
+    case 'btn2':
+      for(var i = 0;i < botones.length; i++ ) {
+        var boton = botones[i];
+        boton.style.display = 'none';
+      }
+      videoElements.forEach(video => {
+      if (video.id === 'lubri-vid') {
+        video.style.display = 'none';
+        video.play();      
+      } else {
+        video.style.display = 'none';
+      }})
+      conteLub.style.display = 'none'
+      contLabel.style.display = 'none'
+      conteLabels.style.display = 'none'
+      vertLine.style.display = 'none'
+
+      var contenedorInic = document.getElementById('lubri-I');
+      contenedorInic.style.display = 'none'
+      var hijosDelInic = contenedorInic.children;
+      for (var i = 0; i < hijosDelInic.length; i++) {
+        var hijo = hijosDelInic[i];  
+        hijo.style.display = 'none';
+      }
+      var contenedorPrincipal = document.getElementById('lubri-II');
       contenedorPrincipal.style.display = 'none'
       var hijosDelContenedor = contenedorPrincipal.children;
       for (var i = 0; i < hijosDelContenedor.length; i++) {
@@ -3585,169 +3645,174 @@ function LubricaDesbobinador(idButt) {
         hijo.style.display = 'none';
       }
 
-      showLablsLubricacion();
+      var contenedorPrincipalII = document.getElementById('indicaciones-II');
+      contenedorPrincipalII.style.display = 'none'
+      var hijosDelContenedorII = contenedorPrincipalII.children;
+      for (var i = 0; i < hijosDelContenedorII.length; i++) {
+        var hijo = hijosDelContenedorII[i];  
+        hijo.style.display = 'none';
+      }
 
-      break;
-      case 'btn2':
-        for(var i = 0;i < botones.length; i++ ) {
-          var boton = botones[i];
-          boton.style.display = 'none';
-        }
-        videoElements.forEach(video => {
-        if (video.id === 'lubri-vid') {
-          video.style.display = 'none';
-          video.play();      
-        } else {
-          video.style.display = 'none';
-        }})
-        conteLub.style.display = 'none'
-        contLabel.style.display = 'none'
-        conteLabels.style.display = 'none'
-        vertLine.style.display = 'none'
+      var frenoDesbob = document.getElementById('freno')
+      frenoDesbob.style.display = 'flex'
+    break; 
+    case 'btn3':
+      for(var i = 0;i < botones.length; i++ ) {
+        var boton = botones[i];
+        boton.style.display = 'none';
+      }
+      videoElements.forEach(video => {
+      if (video.id === 'lubri-vid') {
+        video.style.display = 'none';
+        video.play();      
+      } else {
+        video.style.display = 'none';
+      }})
+      conteLub.style.display = 'none'
+      contLabel.style.display = 'none'
+      conteLabels.style.display = 'none'
+      vertLine.style.display = 'none'
 
-        var contenedorInic = document.getElementById('lubri-I');
-        contenedorInic.style.display = 'none'
-        var hijosDelInic = contenedorInic.children;
-        for (var i = 0; i < hijosDelInic.length; i++) {
-          var hijo = hijosDelInic[i];  
-          hijo.style.display = 'none';
-        }
-        var contenedorPrincipal = document.getElementById('lubri-II');
-        contenedorPrincipal.style.display = 'none'
-        var hijosDelContenedor = contenedorPrincipal.children;
-        for (var i = 0; i < hijosDelContenedor.length; i++) {
-          var hijo = hijosDelContenedor[i];  
-          hijo.style.display = 'none';
-        }
+      var contenedorInic = document.getElementById('lubri-I');
+      contenedorInic.style.display = 'none'
+      var hijosDelInic = contenedorInic.children;
+      for (var i = 0; i < hijosDelInic.length; i++) {
+        var hijo = hijosDelInic[i];  
+        hijo.style.display = 'none';
+      }
+      var contenedorPrincipal = document.getElementById('lubri-II');
+      contenedorPrincipal.style.display = 'none'
+      var hijosDelContenedor = contenedorPrincipal.children;
+      for (var i = 0; i < hijosDelContenedor.length; i++) {
+        var hijo = hijosDelContenedor[i];  
+        hijo.style.display = 'none';
+      }
+      var contenedorPrincipalII = document.getElementById('indicaciones-II');
+      contenedorPrincipalII.style.display = 'none'
+      var hijosDelContenedorII = contenedorPrincipalII.children;
+      for (var i = 0; i < hijosDelContenedorII.length; i++) {
+        var hijo = hijosDelContenedorII[i];  
+        hijo.style.display = 'none';
+      }
+    break;
+    case 'btn4':
+      for(var i = 0;i < botones.length; i++ ) {
+        var boton = botones[i];
+        boton.style.display = 'none';
+      }
+      videoElements.forEach(video => {
+      if (video.id === 'lubri-vid') {
+        video.style.display = 'none';
+        video.play();      
+      } else {
+        video.style.display = 'none';
+      }})
+      conteLub.style.display = 'none'
+      contLabel.style.display = 'none'
+      conteLabels.style.display = 'none'
+      vertLine.style.display = 'none'
 
-        var contenedorPrincipalII = document.getElementById('indicaciones-II');
-        contenedorPrincipalII.style.display = 'none'
-        var hijosDelContenedorII = contenedorPrincipalII.children;
-        for (var i = 0; i < hijosDelContenedorII.length; i++) {
-          var hijo = hijosDelContenedorII[i];  
-          hijo.style.display = 'none';
-        }
+      var contenedorInic = document.getElementById('lubri-I');
+      contenedorInic.style.display = 'none'
+      var hijosDelInic = contenedorInic.children;
+      for (var i = 0; i < hijosDelInic.length; i++) {
+        var hijo = hijosDelInic[i];  
+        hijo.style.display = 'none';
+      }
+      var contenedorPrincipal = document.getElementById('lubri-II');
+      contenedorPrincipal.style.display = 'none'
+      var hijosDelContenedor = contenedorPrincipal.children;
+      for (var i = 0; i < hijosDelContenedor.length; i++) {
+        var hijo = hijosDelContenedor[i];  
+        hijo.style.display = 'none';
+      }
+      var contenedorPrincipalII = document.getElementById('indicaciones-II');
+      contenedorPrincipalII.style.display = 'none'
+      var hijosDelContenedorII = contenedorPrincipalII.children;
+      for (var i = 0; i < hijosDelContenedorII.length; i++) {
+        var hijo = hijosDelContenedorII[i];  
+        hijo.style.display = 'none';
+      }
+    break; 
+    case 'btn5':
+      for(var i = 0;i < botones.length; i++ ) {
+        var boton = botones[i];
+        boton.style.display = 'none';
+      }
+      videoElements.forEach(video => {
+      if (video.id === 'lubri-vid') {
+        video.style.display = 'none';
+        video.play();      
+      } else {
+        video.style.display = 'none';
+      }})
+      conteLub.style.display = 'none'
+      contLabel.style.display = 'none'
+      conteLabels.style.display = 'none'
+      vertLine.style.display = 'none'
 
-        var frenoDesbob = document.getElementById('freno')
-        frenoDesbob.style.display = 'flex'
-      break; 
-      case 'btn3':
-        for(var i = 0;i < botones.length; i++ ) {
-          var boton = botones[i];
-          boton.style.display = 'none';
-        }
-        videoElements.forEach(video => {
-        if (video.id === 'lubri-vid') {
-          video.style.display = 'none';
-          video.play();      
-        } else {
-          video.style.display = 'none';
-        }})
-        conteLub.style.display = 'none'
-        contLabel.style.display = 'none'
-        conteLabels.style.display = 'none'
-        vertLine.style.display = 'none'
+      var contenedorInic = document.getElementById('lubri-I');
+      contenedorInic.style.display = 'none'
+      var hijosDelInic = contenedorInic.children;
+      for (var i = 0; i < hijosDelInic.length; i++) {
+        var hijo = hijosDelInic[i];  
+        hijo.style.display = 'none';
+      }
+      var contenedorPrincipal = document.getElementById('lubri-II');
+      contenedorPrincipal.style.display = 'none'
+      var hijosDelContenedor = contenedorPrincipal.children;
+      for (var i = 0; i < hijosDelContenedor.length; i++) {
+        var hijo = hijosDelContenedor[i];  
+        hijo.style.display = 'none';
+      }
+      var contenedorPrincipalII = document.getElementById('indicaciones-II');
+      contenedorPrincipalII.style.display = 'none'
+      var hijosDelContenedorII = contenedorPrincipalII.children;
+      for (var i = 0; i < hijosDelContenedorII.length; i++) {
+        var hijo = hijosDelContenedorII[i];  
+        hijo.style.display = 'none';
+      }
+    break;
+    case 'btn60' :
+      for(var i = 0;i < botones.length; i++ ) {
+        var boton = botones[i];
+        boton.style.display = 'none';
+      }
+      videoElements.forEach(video => {
+      if (video.id === 'lubri-vid') {
+        video.style.display = 'none';
+        video.play();      
+      } else {
+        video.style.display = 'none';
+      }})
+      conteLub.style.display = 'none'
+      contLabel.style.display = 'none'
+      conteLabels.style.display = 'none'
+      vertLine.style.display = 'none'
 
-        var contenedorInic = document.getElementById('lubri-I');
-        contenedorInic.style.display = 'none'
-        var hijosDelInic = contenedorInic.children;
-        for (var i = 0; i < hijosDelInic.length; i++) {
-          var hijo = hijosDelInic[i];  
-          hijo.style.display = 'none';
-        }
-        var contenedorPrincipal = document.getElementById('lubri-II');
-        contenedorPrincipal.style.display = 'none'
-        var hijosDelContenedor = contenedorPrincipal.children;
-        for (var i = 0; i < hijosDelContenedor.length; i++) {
-          var hijo = hijosDelContenedor[i];  
-          hijo.style.display = 'none';
-        }
-        var contenedorPrincipalII = document.getElementById('indicaciones-II');
-        contenedorPrincipalII.style.display = 'none'
-        var hijosDelContenedorII = contenedorPrincipalII.children;
-        for (var i = 0; i < hijosDelContenedorII.length; i++) {
-          var hijo = hijosDelContenedorII[i];  
-          hijo.style.display = 'none';
-        }
-      break;
-      case 'btn4':
-        for(var i = 0;i < botones.length; i++ ) {
-          var boton = botones[i];
-          boton.style.display = 'none';
-        }
-        videoElements.forEach(video => {
-        if (video.id === 'lubri-vid') {
-          video.style.display = 'none';
-          video.play();      
-        } else {
-          video.style.display = 'none';
-        }})
-        conteLub.style.display = 'none'
-        contLabel.style.display = 'none'
-        conteLabels.style.display = 'none'
-        vertLine.style.display = 'none'
-
-        var contenedorInic = document.getElementById('lubri-I');
-        contenedorInic.style.display = 'none'
-        var hijosDelInic = contenedorInic.children;
-        for (var i = 0; i < hijosDelInic.length; i++) {
-          var hijo = hijosDelInic[i];  
-          hijo.style.display = 'none';
-        }
-        var contenedorPrincipal = document.getElementById('lubri-II');
-        contenedorPrincipal.style.display = 'none'
-        var hijosDelContenedor = contenedorPrincipal.children;
-        for (var i = 0; i < hijosDelContenedor.length; i++) {
-          var hijo = hijosDelContenedor[i];  
-          hijo.style.display = 'none';
-        }
-        var contenedorPrincipalII = document.getElementById('indicaciones-II');
-        contenedorPrincipalII.style.display = 'none'
-        var hijosDelContenedorII = contenedorPrincipalII.children;
-        for (var i = 0; i < hijosDelContenedorII.length; i++) {
-          var hijo = hijosDelContenedorII[i];  
-          hijo.style.display = 'none';
-        }
-      break; 
-      case 'btn5':
-        for(var i = 0;i < botones.length; i++ ) {
-          var boton = botones[i];
-          boton.style.display = 'none';
-        }
-        videoElements.forEach(video => {
-        if (video.id === 'lubri-vid') {
-          video.style.display = 'none';
-          video.play();      
-        } else {
-          video.style.display = 'none';
-        }})
-        conteLub.style.display = 'none'
-        contLabel.style.display = 'none'
-        conteLabels.style.display = 'none'
-        vertLine.style.display = 'none'
-
-        var contenedorInic = document.getElementById('lubri-I');
-        contenedorInic.style.display = 'none'
-        var hijosDelInic = contenedorInic.children;
-        for (var i = 0; i < hijosDelInic.length; i++) {
-          var hijo = hijosDelInic[i];  
-          hijo.style.display = 'none';
-        }
-        var contenedorPrincipal = document.getElementById('lubri-II');
-        contenedorPrincipal.style.display = 'none'
-        var hijosDelContenedor = contenedorPrincipal.children;
-        for (var i = 0; i < hijosDelContenedor.length; i++) {
-          var hijo = hijosDelContenedor[i];  
-          hijo.style.display = 'none';
-        }
-        var contenedorPrincipalII = document.getElementById('indicaciones-II');
-        contenedorPrincipalII.style.display = 'none'
-        var hijosDelContenedorII = contenedorPrincipalII.children;
-        for (var i = 0; i < hijosDelContenedorII.length; i++) {
-          var hijo = hijosDelContenedorII[i];  
-          hijo.style.display = 'none';
-        }
-      break;                       
+      var contenedorInic = document.getElementById('lubri-I');
+      contenedorInic.style.display = 'none'
+      var hijosDelInic = contenedorInic.children;
+      for (var i = 0; i < hijosDelInic.length; i++) {
+        var hijo = hijosDelInic[i];  
+        hijo.style.display = 'none';
+      }
+      var contenedorPrincipal = document.getElementById('lubri-II');
+      contenedorPrincipal.style.display = 'none'
+      var hijosDelContenedor = contenedorPrincipal.children;
+      for (var i = 0; i < hijosDelContenedor.length; i++) {
+        var hijo = hijosDelContenedor[i];  
+        hijo.style.display = 'none';
+      }
+      var contenedorPrincipalII = document.getElementById('indicaciones-II');
+      contenedorPrincipalII.style.display = 'none'
+      var hijosDelContenedorII = contenedorPrincipalII.children;
+      for (var i = 0; i < hijosDelContenedorII.length; i++) {
+        var hijo = hijosDelContenedorII[i];  
+        hijo.style.display = 'none';
+      }      
+    
+    break;
     default:
   }
 }
