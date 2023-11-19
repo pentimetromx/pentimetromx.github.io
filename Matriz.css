@@ -584,6 +584,32 @@ width:447px ;
   top: 0;
   width: 17px;
   height: 27px;
+  background-color: rgb(0, 255, 0);
+}
+.butt-mautonomo-freno{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  font-family: "GothamRounded", sans-serif;
+  color: white;
+  height: 27px;
+  width: 177px;
+  border-radius: 9px;
+  background-color: rgba(83, 82, 82, 0.678); 
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 17px;
+  cursor: pointer;
+  padding-left: 27px;
+}
+.butt-mautonomo-freno::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 17px;
+  height: 27px;
   background-color: rgba(217, 255, 0, 1);
 }
 .labl-class{

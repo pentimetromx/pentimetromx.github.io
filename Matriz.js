@@ -3559,6 +3559,7 @@ function LubricaDesbobinador(idButt) {
   var botones = document.querySelectorAll('.labl-lub'); // Selecciona todos los botones
   var conteLub = document.getElementById('aceitera');
   var contLabel = document.getElementById('aceite');
+  var arrayLabels = ['labl1', 'labl2', 'labl3'];
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
   for (var i = 0; i < contVidLub.length; i++) {                                                                     /// MUESTRA BLOQUES  lubri-I', 'lubri-II
     var elementId = contVidLub[i];
@@ -3588,12 +3589,22 @@ function LubricaDesbobinador(idButt) {
     var button = arrayIdButtsLub[i];
     if (button === idButt) {
       // Cambia el color del botón a rojo
-      document.getElementById(button).style.backgroundColor = 'rgb(255, 24, 55)';
+      document.getElementById(button).style.backgroundColor = 'rgb(0, 255, 0)';
+      document.getElementById(button).style.color = 'black';
+
     } else {
       // Cambia el color del resto de botones a gris
       document.getElementById(button).style.backgroundColor= '#333333';
+      document.getElementById(button).style.color = 'white';
+
     }
   }
+   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+   arrayLabels.forEach(label => {                                                                                                    /// LABELS AL COLOR INICIAL
+    if (label) {
+      document.getElementById(label).style.color = 'rgb(255, 255, 0)';
+    }
+  });
 
   switch (idButt) {
     case 'btn1':
@@ -3829,23 +3840,31 @@ function showLablsLubricacion() {
   }
   mostrarLabelConRetraso(0); // Comienza desde el primer botón
 }
-function lubricaDiario(butId){
+function lubricaDiario(butId,labelId){
   var conteLub = document.getElementById('aceitera')
   var contLabel = document.getElementById('aceite')
   var conteLabels = document.getElementById('indicaciones')
   var vertLine = document.getElementById('vertcal-line')
   var arrayIdButtsLub = ['lub-diario', 'lub-semanal', 'lub-mensual'];
+  var arrayLabels = ['labl1', 'labl2', 'labl3'];
 
   for (var i = 0; i < arrayIdButtsLub.length; i++) {
     var button = arrayIdButtsLub[i];
     if (button === butId) {
       // Cambia el color del botón a rojo
-      document.getElementById(button).style.backgroundColor = 'orangered';
+      document.getElementById(button).style.backgroundColor = 'rgb(0,255,0)';
     } else {
       // Cambia el color del resto de botones a gris
       document.getElementById(button).style.backgroundColor= 'rgba(217, 255, 0, 1)';
     }
   }
+  arrayLabels.forEach(label => {
+    if (label === labelId) {
+      document.getElementById(label).style.color = 'rgb(0, 255, 0)';
+    }else{
+      document.getElementById(label).style.color = 'rgb(255, 255, 0)';
+    }
+  });  
 
   switch(butId) {
     case 'lub-diario':
@@ -3890,7 +3909,8 @@ function lubricaDiario(butId){
       if (displayValueVid.toLowerCase() === "none") {
         // Cambia el valor de 'display' a 'flex'
         contVidLub.style.display = "flex";
-      }      
+      }  
+ 
     break;
     case 'lub-semanal':
       var conteLub = document.getElementById('aceitera')
