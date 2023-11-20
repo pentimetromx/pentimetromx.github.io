@@ -264,6 +264,17 @@ transform: scale(1.1);
   content: "";
   display: none;
 }
+#vertical-lineI{
+  position: absolute;
+  left: -30px;
+  top: -126px;
+  bottom: 0;
+  width: 2px;
+  height: 477px;
+  background-color: white;
+  content: "";
+  display: none;
+}
 .linea-vertical-III{
   position: absolute;
   left: 527px;
@@ -308,6 +319,40 @@ transform: scale(1.1);
   content: "";
   /* display: none; */
 }
+.linea-vertical-VII{
+  position: absolute;
+  left: 340px;
+  top: -127px;
+  bottom: 0;
+  width: 2px;
+  height: 477px;
+  background-color: white;
+  content: "";
+  display: none;
+}
+#vertcal-line-I{
+  position: absolute;
+  left: 240px;
+  top: 17px;
+  bottom: 0;
+  width: 2px;
+  height: 497px;
+  background-color: white;
+  content: "";
+  display: none;
+}
+#vertcal-line-II{
+  position: absolute;
+  left: -237px;
+  top: 17px;
+  bottom: 0;
+  width: 2px;
+  height: 497px;
+  background-color: white;
+  content: "";
+  display: none;
+}
+
 .linea-horizontal {
   position: absolute;
   left: -12px;
@@ -559,7 +604,6 @@ width:447px ;
   height:490px;
   border-radius: 17px;
 }
-/*/////////////////////////////////////////////// */
 .butt-mautonomo{
   display: none;
   flex-direction: column;
@@ -1630,6 +1674,9 @@ elemento {
   /* margin-left: 577px; */
   display: none;
 }
+#balineras,
+
+#balineras-II,
 #aceitera,
 #aceitera-II{
   display: flex;
@@ -1642,6 +1689,13 @@ elemento {
   width: 168.7px;
   border-radius: 17px; 
   margin-bottom: 17px;
+}
+#balineras-II img,
+#balineras img{                        /* 141    169 */
+  height: 117px;
+  width: 160px;
+  border-radius: 17px; 
+  margin-bottom: 10px;
 }
 #indicaciones{
   display: flex;
@@ -1663,6 +1717,26 @@ elemento {
 #indicaciones-II label{
   margin-top: 93px;
   margin-bottom: 49px;
+}
+#indicaciones-III{
+  display: flex;
+  flex-direction: column;
+  display: none;
+  margin-top: 20px;
+  margin-left: 11px;
+}
+#indicaciones-III label{
+  margin-bottom: 117px;
+}
+#indicaciones-VI{
+  display: flex;
+  flex-direction: column;
+  display: none;
+  margin-top: 21px;
+  margin-left: 15px;
+}
+#indicaciones-VI label{
+  margin-bottom: 117px;
 }
 .icono-user{
   position: relative;

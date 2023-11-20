@@ -117,7 +117,7 @@
         <button class="boton-b" id="boton1" onclick="cierraContenedores('desbobinador')">DESBOBINADOR</button><br>
         <div class="contene-7" id="cont-Verticales1">
           <div class="linea-vertical"></div>
-          <button id="boton2" class="boton-c aumentarc" onclick="lubricacion('boton2','desbobinadorId')">Lubricacion<div class="linea-horizontal"></div></button>
+          <button id="boton2" class="boton-c aumentarc" onclick="lubricacion('boton2')">Lubricacion<div class="linea-horizontal"></div></button>
           <button id="boton3" class="boton-c aumentarc" onclick="lubricacion('boton3')">Freno<div class="linea-horizontal"></div></button>
           <button id="boton4" class="boton-c aumentarc" onclick="lubricacion('boton4')">Bailarina<div class="linea-horizontal"></div></button>
           <button id="boton5" class="boton-c aumentarc" onclick="lubricacion('boton5')">Ensarte<div class="linea-horizontal"></div></button>
@@ -573,6 +573,8 @@
     </div>
     <div id="lubri-I" style="position: relative;display: none;display: flex;left:577px;top:-40px;">
 
+      <div id="vertical-lineI"></div>
+
       <div id="aceite" style="position: absolute;display: none;top: -192px;justify-content: center;background: linear-gradient(45deg, blue 15%,  black 85%);font-size: 33px;width: 287px;border-radius: 7px;">
         <label class="labl-class" for="lubrica">ACEITE</label>
       </div>
@@ -615,6 +617,41 @@
       </div>
     </div>
 
+    <div id="lubri-III" style="position: relative;display: flex;left:577px;top: 50px;">
+
+      <div id="vertcal-line-II"></div>
+
+      <div id="balineras" style="margin-top: 17px;margin-left: -217px;">
+        <img src="./assets/rodamiento mandos.jpg" alt="rodamiento">
+        <img src="./assets/rodamiento mandos 2.jpg" alt="rodamiento">
+        <img src="./assets/rodamiento mandos 3.jpg" alt="rodamiento">
+        <img src="./assets/rodamiento mandos 4.jpg" alt="rodamiento">
+      </div>
+
+      <div id="indicaciones-III">
+        <label class="labl-class labl-lub" for="lubrica">Rodamiento de Esferas de Una Hilera</label>
+        <label class="labl-class labl-lub" for="lubrica">Rodamiento de Esferas Sellado</label>
+        <label class="labl-class labl-lub" for="lubrica">Rodamiento Hibrido de Esferas</label> 
+        <label class="labl-class labl-lub" for="lubrica">Rodamiento de Esferas Radial</label>
+      </div>
+      
+      <div id="balineras-II" style="margin-top: 17px;margin-left: 37px;">
+        <img src="./assets/rodamiento conico mandos 2.jpg" alt="rodamiento">
+        <img src="./assets/rodamiento conico mandos.jpg" alt="rodamiento">
+        <img src="./assets/rodamiento conico mandos 1.jpg" alt="rodamiento">
+        <img src="./assets/rodamiento conico mandos 3.jpg" alt="rodamiento">
+      </div>
+
+      <div id="indicaciones-VI">
+        <label class="labl-class labl-lub" for="lubrica">Rodamiento Cónico de Alta Velocidad</label> 
+        <label class="labl-class labl-lub" for="lubrica">Rodamiento Cónico de Una Hilera</label>
+        <label class="labl-class labl-lub" for="lubrica">Rodamiento Cónico de Una Hilera</label>
+        <label class="labl-class labl-lub" for="lubrica">Rodamiento Cónico de Precisión</label>
+      </div>
+
+      <div id="vertcal-line-I"></div>
+    </div>
+
     <div id="freno"  style="display: none;">
       <div class="conti-boton" id="conti-boton-freno" style="left: 127px;top: 130px;display: none;">
         <button class="butt-mautonomo-freno butt-mautonomo-freno image-trainings" id="btn60" onclick="LubricaDesbobinador('btn60')">DESEMPEÑO</button>
@@ -623,7 +660,6 @@
       </div> 
 
     </div>
-
     
     <div id="contPortPlaca" style="display: none;">
       

@@ -23,7 +23,7 @@ var imgTorreI = document.getElementById('imgTorre');
 var contInicial = document.getElementById('container1');
 var botonMa = document.getElementById('bot-mantaut');
 var imagPasoApaso = document.querySelectorAll('.img1');
-var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','contene-11','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','container99','images-smed','images-distribuidor'];
+var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','contene-11','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','container99','images-smed','images-distribuidor','lubri-III'];
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado'];
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor'];
@@ -1348,15 +1348,15 @@ function deslizaContenedor(idElement, idButton) {
   var contLinkMant = document.getElementById('linksMA');
   var elementoAnterior = null;
   var elementoActual = null;
-
-  idsMAhijos.forEach(function (elto) {
-    var elemento = document.getElementById(elto);    
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  idsMAhijos.forEach(function (elto) {                                                          /// OCULTA 6 ELEMENTOS = 'troubleshooting','canvasContainer2' 
+    var elemento = document.getElementById(elto);                                               /// 'contChecks','canvasContainer3','contImagNeg','contImagGraf'    
     if (elemento) {
       elemento.style.display = 'none';
     }
   });
-
-  idsMA.forEach(function (elto) {
+ /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ idsMA.forEach(function (elto) {                                                                                                   /// OCULTA TODOS LOS CANVAS           
     var elemento = document.getElementById(elto);    
     if (elemento) {
       elemento.style.display = 'none';
@@ -3283,14 +3283,17 @@ function imagenesPasoApaso(idElto, id) {
 }
 function lubricacion(buttId,contId){
   var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80',];
+  var arrayIdButtsCheck = ['boton2','boton3','boton4','boton5','boton6'];
+  var contLubrica = document.getElementById('lubricacion');
   var alimenta = document.getElementById('alimentadorId');
   var padreLubriII = document.getElementById('lubri-II');
   var contOil = document.getElementById('frec-lubrica');
+  var contTorre = document.getElementById('rotatek-1');
   var padreLubri = document.getElementById('lubri-I');
   var uTeñido = document.getElementById('uTeñidos');
+  contLubrica.style.display = 'block'  
 
   if(alimenta.style.display === 'none'){
-
     if (window.getComputedStyle(contOil).display === 'flex') {
       contOil.style.display = 'none';
     }
@@ -3300,79 +3303,74 @@ function lubricacion(buttId,contId){
     if(window.getComputedStyle(padreLubriII).display === 'flex') {
       padreLubriII.style.display === 'none'
     }
-
     arrayGeneral.forEach(element => {
       var elemento = document.getElementById(element);
       if (elemento) {
           elemento.style.display = 'none';
       } 
     }); 
-
-    var arrayIdButtsCheck = ['boton2','boton3','boton4','boton5','boton6'];
-    var contLubrica = document.getElementById('lubricacion');
-    var contTorre = document.getElementById('rotatek-1');
-    contLubrica.style.display = 'block'
-  
     switch (buttId) {
       case 'boton2':
-        if(uTeñido.style.display === 'none'){
+        if(uTeñido.style.display === 'none') {
           ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////                                                                                         
-        var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica', 'freno', 'conti-boton-freno','btn60','btn70','btn80'];         /// OCULTA LUBRICAS Y DEMAS ...                                         /// OCULTA LUBICANTES 
+         var contVidLub = ['lubri-I','lubri-II','lubri-III','frec-lubrica','freno','conti-boton-freno','btn60','btn70','btn80'];         /// OCULTA LUBRICAS Y DEMAS ...                                         /// OCULTA LUBICANTES 
 
-        for (var i = 0; i < contVidLub.length; i++) {
-          var elementId = contVidLub[i];
-          var element = document.getElementById(elementId);
-        
-          if (element) {
-            // Obtener el estilo calculado
-            var computedStyleVid = window.getComputedStyle(element);
-        
-            // Obtener el valor de 'display' en minúsculas
-            var displayValueVid = computedStyleVid.getPropertyValue('display').toLowerCase();
-        
-            if (displayValueVid === "flex") {
-              // Cambiar el valor de 'display' a 'none'
-              element.style.display = "none";
+          for (var i = 0; i < contVidLub.length; i++) {
+            var elementId = contVidLub[i];
+            var element = document.getElementById(elementId);
+          
+            if (element) {
+              // Obtener el estilo calculado
+              var computedStyleVid = window.getComputedStyle(element);
+          
+              // Obtener el valor de 'display' en minúsculas
+              var displayValueVid = computedStyleVid.getPropertyValue('display').toLowerCase();
+          
+              if (displayValueVid === "flex") {
+                // Cambiar el valor de 'display' a 'none'
+                element.style.display = "none";
+              }
+            }        
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+            var container = document.getElementById('conti-boton-desb');                                                               /// MUESTRA PADRE BOTONES ...
+            var computedStyle = getComputedStyle(container);     
+            var displayValue = computedStyle.getPropertyValue("display");
+            if (displayValue.toLowerCase() === "none") {
+              // Cambia el valor de 'display' a 'flex'
+              container.style.display = "flex";
             }
-        }        
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-        var container = document.getElementById('conti-boton-desb');                                                               /// MUESTRA PADRE BOTONES ...
-        var computedStyle = getComputedStyle(container);     
-        var displayValue = computedStyle.getPropertyValue("display");
-        if (displayValue.toLowerCase() === "none") {
-          // Cambia el valor de 'display' a 'flex'
-          container.style.display = "flex";
-        }
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-        var contVidLub = ['btn1','btn2','btn3','btn4','btn5'];                                                                      /// MUESTRA LOS BOTONES  
-        for (var i = 0; i < contVidLub.length; i++) {
-          var elementId = contVidLub[i];
-          var element = document.getElementById(elementId);      
-          if (element) { // Verifica si el elemento existe
-            element.style.color = "white";
-            element.style.background = '#333333';
-            
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+            var contVidLub = ['btn1','btn2','btn3','btn4','btn5'];                                                                      /// MUESTRA LOS BOTONES  
+            for (var i = 0; i < contVidLub.length; i++) {
+              var elementId = contVidLub[i];
+              var element = document.getElementById(elementId);      
+              if (element) { // Verifica si el elemento existe
+                element.style.color = "white";
+                element.style.background = '#333333';
+                
+              }
+            }
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+            for (var i = 0; i < arrayIdButtsCheck.length; i++) {                                                                    /// PONE ROJO EL BOTON
+              var button = arrayIdButtsCheck[i];
+              if (button === buttId) {
+                // Cambia el color del botón seleccionado a rojo
+                document.getElementById(button).style.backgroundColor = 'red';
+              } else {
+                // Restablece el color de los otros botones
+                document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
+              }
+            }  
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+            if (contTorre.style.display === 'none'){                                                                    /// SI ESTA OCULTO EL PADRE EJECUTA FUNCION 
+              showButtonsMAconRetrasoDesb()
+            }
           }
         }
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-        for (var i = 0; i < arrayIdButtsCheck.length; i++) {                                                                    /// PONE ROJO EL BOTON
-          var button = arrayIdButtsCheck[i];
-          if (button === buttId) {
-            // Cambia el color del botón seleccionado a rojo
-            document.getElementById(button).style.backgroundColor = 'red';
-          } else {
-            // Restablece el color de los otros botones
-            document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
-          }
-        }  
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-        if (contTorre.style.display === 'none'){                                                                    /// SI ESTA OCULTO EL PADRE EJECUTA FUNCION 
-          showButtonsMAconRetrasoDesb()
-        }}}
-    break;
+      break;
       case 'boton3': 
           ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-          var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica'];                                                    /// OCULTA LUBICANTES 
+          var contVidLub = ['lubri-I','lubri-II','lubri-III','frec-lubrica'];                                                    /// OCULTA LUBICANTES 
           for (var i = 0; i < contVidLub.length; i++) {
             var elementId = contVidLub[i];
             var element = document.getElementById(elementId);          
@@ -3550,33 +3548,15 @@ function showButtonsFrenoconRetrasoDesb() {
   }  
   mostrarBotonConRetrasoFrenoI(0);
 }
-
 function LubricaDesbobinador(idButt) {
   var arrayIdButtsLub = ['btn1', 'btn2', 'btn3', 'btn4', 'btn5', 'btn60', 'btn70', 'btn80'];
-  var conteLabels = document.getElementById('indicaciones');
-  var contVidLub = ['lubri-I', 'lubri-II', 'frec-lubrica']; 
-  var vertLine = document.getElementById('vertcal-line');
-  var botones = document.querySelectorAll('.labl-lub'); // Selecciona todos los botones
-  var conteLub = document.getElementById('aceitera');
-  var contLabel = document.getElementById('aceite');
+  var contVidLub = ['lubri-I', 'lubri-II','lubri-III', 'frec-lubrica']; 
+  var padreLubriIII = document.getElementById('lubri-III');
+  var arrayIdButtsLubII = ['btn60', 'btn70', 'btn80'];
   var arrayLabels = ['labl1', 'labl2', 'labl3'];
- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
-  for (var i = 0; i < contVidLub.length; i++) {                                                                     /// MUESTRA BLOQUES  lubri-I', 'lubri-II
-    var elementId = contVidLub[i];
-    var element = document.getElementById(elementId);
-  
-    if (element) { // Verifica si el elemento existe
-      var computedStyleVid = getComputedStyle(element);
-      var displayValueVid = computedStyleVid.getPropertyValue("display");
-      
-      if (displayValueVid.toLowerCase() === "none") {
-        // Cambia el valor de 'display' a 'none'
-        element.style.display = "flex";
-      }
-    }
-  }
+  var arrayLabels = ['labl1', 'labl2', 'labl3'];
  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  var arrayIdButtsCheck = ['lub-diario', 'lub-semanal', 'lub-mensual'];                                                       /// COLOR AMARILLO A LOS BOTONES                   
+  var arrayIdButtsCheck = ['lub-diario', 'lub-semanal', 'lub-mensual'];                                              /// COLOR AMARILLO A LOS BOTONES REDONDOS                   
   for (var i = 0; i < arrayIdButtsCheck.length; i++) {
     var button = arrayIdButtsCheck[i];
     if (button) {
@@ -3585,11 +3565,25 @@ function LubricaDesbobinador(idButt) {
     } 
   }
    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  for (var i = 0; i < arrayIdButtsLub.length; i++) {                                                                         /// COLOR ROJO O GRIS A LOS BOTONES                                                             
-    var button = arrayIdButtsLub[i];
+  for (var i = 0; i < arrayIdButtsLub.length; i++) {                                                        /// COLOR VERDE A LOS BOTONES Y COLOR NEGRO AL TEXTO                                                       
+    var button = arrayIdButtsLub[i];                                                                                         
     if (button === idButt) {
       // Cambia el color del botón a rojo
       document.getElementById(button).style.backgroundColor = 'rgb(0, 255, 0)';
+      document.getElementById(button).style.color = 'black';
+ 
+    } else {
+      // Cambia el color del resto de botones a gris
+      document.getElementById(button).style.backgroundColor= '#333333';
+      document.getElementById(button).style.color = 'white';
+    }
+  }
+   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+   for (var i = 0; i < arrayIdButtsLubII.length; i++) {                                                  /// COLOR AMARILLO A LOS BOTONES Y COLOR NEGRO AL TEXTO                                                            
+    var button = arrayIdButtsLubII[i];                                                                                         
+    if (button === idButt) {
+      // Cambia el color del botón a rojo
+      document.getElementById(button).style.backgroundColor = 'rgba(217, 255, 0, 1)';
       document.getElementById(button).style.color = 'black';
 
     } else {
@@ -3598,9 +3592,9 @@ function LubricaDesbobinador(idButt) {
       document.getElementById(button).style.color = 'white';
 
     }
-  }
+  }  
    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-   arrayLabels.forEach(label => {                                                                                                    /// LABELS AL COLOR INICIAL
+   arrayLabels.forEach(label => {                                                                                                    ///COLOR AMARILLO A LABELS
     if (label) {
       document.getElementById(label).style.color = 'rgb(255, 255, 0)';
     }
@@ -3608,221 +3602,164 @@ function LubricaDesbobinador(idButt) {
 
   switch (idButt) {
     case 'btn1':
-      var contenedorInic = document.getElementById('lubri-I');
-      contenedorInic.style.display = 'none'
-      var hijosDelInic = contenedorInic.children;
-      for (var i = 0; i < hijosDelInic.length; i++) {
-        var hijo = hijosDelInic[i];  
-        hijo.style.display = 'none';
-      }
-      var contenedorPrincipal = document.getElementById('lubri-II');
-      contenedorPrincipal.style.display = 'none'  
-      var hijosDelContenedor = contenedorPrincipal.children;
-      for (var i = 0; i < hijosDelContenedor.length; i++) {
-        var hijo = hijosDelContenedor[i];  
-        hijo.style.display = 'none';
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      for (var i = 0; i < contVidLub.length; i++) {                                                              /// OCULTA TODOS ELEMENTOS LUBRICACION MENOS UNO
+        var eltoId = contVidLub[i];
+        var eltoLubrica = document.getElementById(eltoId);
+    
+        if (eltoId === 'frec-lubrica') {
+            eltoLubrica.style.display = 'flex';
+        } else {
+            eltoLubrica.style.display = 'none';
+        }
       }
       showLablsLubricacion();
       break;
     case 'btn2':
-      for(var i = 0;i < botones.length; i++ ) {
-        var boton = botones[i];
-        boton.style.display = 'none';
-      }
-      videoElements.forEach(video => {
-      if (video.id === 'lubri-vid') {
-        video.style.display = 'none';
-        video.play();      
-      } else {
-        video.style.display = 'none';
-      }})
-      conteLub.style.display = 'none'
-      contLabel.style.display = 'none'
-      conteLabels.style.display = 'none'
-      vertLine.style.display = 'none'
+      for (var i = 0; i < contVidLub.length; i++) {
+        var eltoId = contVidLub[i];
+        var eltoLubrica = document.getElementById(eltoId);    
 
-      var contenedorInic = document.getElementById('lubri-I');
-      contenedorInic.style.display = 'none'
-      var hijosDelInic = contenedorInic.children;
-      for (var i = 0; i < hijosDelInic.length; i++) {
-        var hijo = hijosDelInic[i];  
-        hijo.style.display = 'none';
+        if (eltoId === 'lubri-III') {
+            // Si es 'lubri-III', establecer la propiedad display a 'flex'
+            eltoLubrica.style.display = 'flex';
+        } else {
+            // Si no es 'lubri-III', ocultar el elemento
+            eltoLubrica.style.display = 'none';
+        }
+    }
+    if (padreLubriIII) {
+      // Recorrer los elementos hijos del padre
+      for (var i = 0; i < padreLubriIII.children.length; i++) {
+          var hijo = padreLubriIII.children[i];
+          
+          // Obtener el valor actual de la propiedad display
+          var displayValue = window.getComputedStyle(hijo).getPropertyValue('display');
+  
+          // Verificar si el valor actual es 'none'
+          if (displayValue === 'none') {
+              // Cambiar la propiedad display a 'flex'
+              hijo.style.display = 'flex';
+          }
       }
-      var contenedorPrincipal = document.getElementById('lubri-II');
-      contenedorPrincipal.style.display = 'none'
-      var hijosDelContenedor = contenedorPrincipal.children;
-      for (var i = 0; i < hijosDelContenedor.length; i++) {
-        var hijo = hijosDelContenedor[i];  
-        hijo.style.display = 'none';
-      }
+    }
 
-      var contenedorPrincipalII = document.getElementById('indicaciones-II');
-      contenedorPrincipalII.style.display = 'none'
-      var hijosDelContenedorII = contenedorPrincipalII.children;
-      for (var i = 0; i < hijosDelContenedorII.length; i++) {
-        var hijo = hijosDelContenedorII[i];  
-        hijo.style.display = 'none';
-      }
-
-      var frenoDesbob = document.getElementById('freno')
-      frenoDesbob.style.display = 'flex'
     break; 
     case 'btn3':
-      for(var i = 0;i < botones.length; i++ ) {
-        var boton = botones[i];
-        boton.style.display = 'none';
-      }
-      videoElements.forEach(video => {
-      if (video.id === 'lubri-vid') {
-        video.style.display = 'none';
-        video.play();      
-      } else {
-        video.style.display = 'none';
-      }})
-      conteLub.style.display = 'none'
-      contLabel.style.display = 'none'
-      conteLabels.style.display = 'none'
-      vertLine.style.display = 'none'
+      for (var i = 0; i < contVidLub.length; i++) {
+        var eltoId = contVidLub[i];
+        var eltoLubrica = document.getElementById(eltoId);    
 
-      var contenedorInic = document.getElementById('lubri-I');
-      contenedorInic.style.display = 'none'
-      var hijosDelInic = contenedorInic.children;
-      for (var i = 0; i < hijosDelInic.length; i++) {
-        var hijo = hijosDelInic[i];  
-        hijo.style.display = 'none';
+        if (eltoId === 'lubri-III') {
+            // Si es 'lubri-III', establecer la propiedad display a 'flex'
+            eltoLubrica.style.display = 'flex';
+        } else {
+            // Si no es 'lubri-III', ocultar el elemento
+            eltoLubrica.style.display = 'none';
+        }
+    }
+    if (padreLubriIII) {
+      // Recorrer los elementos hijos del padre
+      for (var i = 0; i < padreLubriIII.children.length; i++) {
+          var hijo = padreLubriIII.children[i];
+          
+          // Obtener el valor actual de la propiedad display
+          var displayValue = window.getComputedStyle(hijo).getPropertyValue('display');
+  
+          // Verificar si el valor actual es 'none'
+          if (displayValue === 'flex') {
+              // Cambiar la propiedad display a 'flex'
+              hijo.style.display = 'none';
+          }
       }
-      var contenedorPrincipal = document.getElementById('lubri-II');
-      contenedorPrincipal.style.display = 'none'
-      var hijosDelContenedor = contenedorPrincipal.children;
-      for (var i = 0; i < hijosDelContenedor.length; i++) {
-        var hijo = hijosDelContenedor[i];  
-        hijo.style.display = 'none';
-      }
-      var contenedorPrincipalII = document.getElementById('indicaciones-II');
-      contenedorPrincipalII.style.display = 'none'
-      var hijosDelContenedorII = contenedorPrincipalII.children;
-      for (var i = 0; i < hijosDelContenedorII.length; i++) {
-        var hijo = hijosDelContenedorII[i];  
-        hijo.style.display = 'none';
-      }
+    }
     break;
     case 'btn4':
-      for(var i = 0;i < botones.length; i++ ) {
-        var boton = botones[i];
-        boton.style.display = 'none';
-      }
-      videoElements.forEach(video => {
-      if (video.id === 'lubri-vid') {
-        video.style.display = 'none';
-        video.play();      
-      } else {
-        video.style.display = 'none';
-      }})
-      conteLub.style.display = 'none'
-      contLabel.style.display = 'none'
-      conteLabels.style.display = 'none'
-      vertLine.style.display = 'none'
+      for (var i = 0; i < contVidLub.length; i++) {
+        var eltoId = contVidLub[i];
+        var eltoLubrica = document.getElementById(eltoId);    
 
-      var contenedorInic = document.getElementById('lubri-I');
-      contenedorInic.style.display = 'none'
-      var hijosDelInic = contenedorInic.children;
-      for (var i = 0; i < hijosDelInic.length; i++) {
-        var hijo = hijosDelInic[i];  
-        hijo.style.display = 'none';
+        if (eltoId === 'lubri-III') {
+            // Si es 'lubri-III', establecer la propiedad display a 'flex'
+            eltoLubrica.style.display = 'flex';
+        } else {
+            // Si no es 'lubri-III', ocultar el elemento
+            eltoLubrica.style.display = 'none';
+        }
+    }
+    if (padreLubriIII) {
+      // Recorrer los elementos hijos del padre
+      for (var i = 0; i < padreLubriIII.children.length; i++) {
+          var hijo = padreLubriIII.children[i];
+          
+          // Obtener el valor actual de la propiedad display
+          var displayValue = window.getComputedStyle(hijo).getPropertyValue('display');
+  
+          // Verificar si el valor actual es 'none'
+          if (displayValue === 'flex') {
+              // Cambiar la propiedad display a 'flex'
+              hijo.style.display = 'none';
+          }
       }
-      var contenedorPrincipal = document.getElementById('lubri-II');
-      contenedorPrincipal.style.display = 'none'
-      var hijosDelContenedor = contenedorPrincipal.children;
-      for (var i = 0; i < hijosDelContenedor.length; i++) {
-        var hijo = hijosDelContenedor[i];  
-        hijo.style.display = 'none';
-      }
-      var contenedorPrincipalII = document.getElementById('indicaciones-II');
-      contenedorPrincipalII.style.display = 'none'
-      var hijosDelContenedorII = contenedorPrincipalII.children;
-      for (var i = 0; i < hijosDelContenedorII.length; i++) {
-        var hijo = hijosDelContenedorII[i];  
-        hijo.style.display = 'none';
-      }
+    }
     break; 
     case 'btn5':
-      for(var i = 0;i < botones.length; i++ ) {
-        var boton = botones[i];
-        boton.style.display = 'none';
-      }
-      videoElements.forEach(video => {
-      if (video.id === 'lubri-vid') {
-        video.style.display = 'none';
-        video.play();      
-      } else {
-        video.style.display = 'none';
-      }})
-      conteLub.style.display = 'none'
-      contLabel.style.display = 'none'
-      conteLabels.style.display = 'none'
-      vertLine.style.display = 'none'
+      for (var i = 0; i < contVidLub.length; i++) {
+        var eltoId = contVidLub[i];
+        var eltoLubrica = document.getElementById(eltoId);    
 
-      var contenedorInic = document.getElementById('lubri-I');
-      contenedorInic.style.display = 'none'
-      var hijosDelInic = contenedorInic.children;
-      for (var i = 0; i < hijosDelInic.length; i++) {
-        var hijo = hijosDelInic[i];  
-        hijo.style.display = 'none';
+        if (eltoId === 'lubri-III') {
+            // Si es 'lubri-III', establecer la propiedad display a 'flex'
+            eltoLubrica.style.display = 'flex';
+        } else {
+            // Si no es 'lubri-III', ocultar el elemento
+            eltoLubrica.style.display = 'none';
+        }
+    }
+    if (padreLubriIII) {
+      // Recorrer los elementos hijos del padre
+      for (var i = 0; i < padreLubriIII.children.length; i++) {
+          var hijo = padreLubriIII.children[i];
+          
+          // Obtener el valor actual de la propiedad display
+          var displayValue = window.getComputedStyle(hijo).getPropertyValue('display');
+  
+          // Verificar si el valor actual es 'none'
+          if (displayValue === 'flex') {
+              // Cambiar la propiedad display a 'flex'
+              hijo.style.display = 'none';
+          }
       }
-      var contenedorPrincipal = document.getElementById('lubri-II');
-      contenedorPrincipal.style.display = 'none'
-      var hijosDelContenedor = contenedorPrincipal.children;
-      for (var i = 0; i < hijosDelContenedor.length; i++) {
-        var hijo = hijosDelContenedor[i];  
-        hijo.style.display = 'none';
-      }
-      var contenedorPrincipalII = document.getElementById('indicaciones-II');
-      contenedorPrincipalII.style.display = 'none'
-      var hijosDelContenedorII = contenedorPrincipalII.children;
-      for (var i = 0; i < hijosDelContenedorII.length; i++) {
-        var hijo = hijosDelContenedorII[i];  
-        hijo.style.display = 'none';
-      }
+    }
     break;
-    case 'btn60' :
-      for(var i = 0;i < botones.length; i++ ) {
-        var boton = botones[i];
-        boton.style.display = 'none';
-      }
-      videoElements.forEach(video => {
-      if (video.id === 'lubri-vid') {
-        video.style.display = 'none';
-        video.play();      
-      } else {
-        video.style.display = 'none';
-      }})
-      conteLub.style.display = 'none'
-      contLabel.style.display = 'none'
-      conteLabels.style.display = 'none'
-      vertLine.style.display = 'none'
+    case 'btn60':   
+    for (var i = 0; i < contVidLub.length; i++) {
+      var eltoId = contVidLub[i];
+      var eltoLubrica = document.getElementById(eltoId);    
 
-      var contenedorInic = document.getElementById('lubri-I');
-      contenedorInic.style.display = 'none'
-      var hijosDelInic = contenedorInic.children;
-      for (var i = 0; i < hijosDelInic.length; i++) {
-        var hijo = hijosDelInic[i];  
-        hijo.style.display = 'none';
+      if (eltoId === 'lubri-III') {
+          // Si es 'lubri-III', establecer la propiedad display a 'flex'
+          eltoLubrica.style.display = 'flex';
+      } else {
+          // Si no es 'lubri-III', ocultar el elemento
+          eltoLubrica.style.display = 'none';
       }
-      var contenedorPrincipal = document.getElementById('lubri-II');
-      contenedorPrincipal.style.display = 'none'
-      var hijosDelContenedor = contenedorPrincipal.children;
-      for (var i = 0; i < hijosDelContenedor.length; i++) {
-        var hijo = hijosDelContenedor[i];  
-        hijo.style.display = 'none';
-      }
-      var contenedorPrincipalII = document.getElementById('indicaciones-II');
-      contenedorPrincipalII.style.display = 'none'
-      var hijosDelContenedorII = contenedorPrincipalII.children;
-      for (var i = 0; i < hijosDelContenedorII.length; i++) {
-        var hijo = hijosDelContenedorII[i];  
-        hijo.style.display = 'none';
-      }      
-    
+  }
+  if (padreLubriIII) {
+    // Recorrer los elementos hijos del padre
+    for (var i = 0; i < padreLubriIII.children.length; i++) {
+        var hijo = padreLubriIII.children[i];
+        
+        // Obtener el valor actual de la propiedad display
+        var displayValue = window.getComputedStyle(hijo).getPropertyValue('display');
+
+        // Verificar si el valor actual es 'none'
+        if (displayValue === 'flex') {
+            // Cambiar la propiedad display a 'flex'
+            hijo.style.display = 'none';
+        }
+    }
+  }    
     break;
     default:
   }
@@ -3841,10 +3778,8 @@ function showLablsLubricacion() {
   mostrarLabelConRetraso(0); // Comienza desde el primer botón
 }
 function lubricaDiario(butId,labelId){
-  var conteLub = document.getElementById('aceitera')
-  var contLabel = document.getElementById('aceite')
-  var conteLabels = document.getElementById('indicaciones')
-  var vertLine = document.getElementById('vertcal-line')
+  var contLubricador = document.getElementById('lubri-I');
+  var contLubricadorII = document.getElementById('lubri-II');
   var arrayIdButtsLub = ['lub-diario', 'lub-semanal', 'lub-mensual'];
   var arrayLabels = ['labl1', 'labl2', 'labl3'];
 
@@ -3868,113 +3803,132 @@ function lubricaDiario(butId,labelId){
 
   switch(butId) {
     case 'lub-diario':
+      contLubricador.style.display = 'flex';
+      contLubricadorII.style.display = 'flex';  
       videoElements.forEach(video => {
       if (video.id === 'lubri-vid') {
         video.style.display = 'flex';
         video.play();      
       } else {
         video.style.display = 'none';
-      }})
-      conteLub.style.display = 'flex'
-      contLabel.style.display = 'flex'
-      conteLabels.style.display = 'flex'
-      vertLine.style.display = 'flex'      
-      var contenedorPrincipal = document.getElementById('lubri-II');
-      contenedorPrincipal.style.display = 'flex'
-      var hijosDelContenedor = contenedorPrincipal.children;
-      for (var i = 0; i < hijosDelContenedor.length; i++) {
-        var hijo = hijosDelContenedor[i];  
-        hijo.style.display = 'flex';
-      }
-      var contenedorPrincipalII = document.getElementById('indicaciones-II');
-      contenedorPrincipalII.style.display = 'flex'
-      var hijosDelContenedorII = contenedorPrincipalII.children;
-      for (var i = 0; i < hijosDelContenedorII.length; i++) {
-        var hijo = hijosDelContenedorII[i];  
-        hijo.style.display = 'flex';
-      }      
-      ///////////GETCOMPUTEDSTYLE///////////////////////////
-      
-      var container = document.getElementById("lubri-I");
-      var computedStyle = getComputedStyle(container);     
-      var displayValue = computedStyle.getPropertyValue("display");
-      if (displayValue.toLowerCase() === "none") {
-        // Cambia el valor de 'display' a 'flex'
-        container.style.display = "flex";
+      }})    
+
+     // Obtener el elemento padre
+      var contenedorPadre = document.getElementById('lubri-I');
+      var contenedorPadreII = document.getElementById('lubri-II');
+
+      // Verificar si se encontró el elemento padre
+      if (contenedorPadre) {
+          // Recorrer los elementos hijos del padre
+        for (var i = 0; i < contenedorPadre.children.length; i++) {
+          var hijo = contenedorPadre.children[i];
+          // Obtener el valor actual de la propiedad display
+          var displayValue = window.getComputedStyle(hijo).getPropertyValue('display');
+          // Verificar si el valor actual es 'none'
+          if (displayValue === 'none') {
+            // Cambiar la propiedad display a 'flex'
+            hijo.style.display = 'flex';
+          }
+        }
       }
 
-      var contVidLub = document.getElementById('vidLub')
-      var computedStyleVid = getComputedStyle(contVidLub);      
-      var displayValueVid = computedStyleVid.getPropertyValue("display");
-      if (displayValueVid.toLowerCase() === "none") {
-        // Cambia el valor de 'display' a 'flex'
-        contVidLub.style.display = "flex";
-      }  
+      // Verificar si se encontró el elemento padre
+      if (contenedorPadreII) {
+        // Recorrer los elementos hijos del padre
+      for (var i = 0; i < contenedorPadreII.children.length; i++) {
+        var hijoI = contenedorPadreII.children[i];
+        // Obtener el valor actual de la propiedad display
+        var displayValueI= window.getComputedStyle(hijoI).getPropertyValue('display');
+        // Verificar si el valor actual es 'none'
+        if (displayValueI === 'none') {
+          // Cambiar la propiedad display a 'flex'
+          hijoI.style.display = 'flex';
+        }
+      }
+    }      
  
     break;
     case 'lub-semanal':
-      var conteLub = document.getElementById('aceitera')
-      var contLabel = document.getElementById('aceite')
-      var conteLabels = document.getElementById('indicaciones')
-      var vertLine = document.getElementById('vertcal-line')
-    
       videoElements.forEach(video => {
-        if (video) {
+        if (video.id === 'lubri-vid') {
           video.style.display = 'none';
-          video.play();      
-        }})
-    
-      conteLub.style.display = 'none'
-      contLabel.style.display = 'none'
-      conteLabels.style.display = 'none'
-      vertLine.style.display = 'none'
-    
-      var contenedorPrincipal = document.getElementById('lubri-II');
-      contenedorPrincipal.style.display = 'none'
-      var hijosDelContenedor = contenedorPrincipal.children;
-      for (var i = 0; i < hijosDelContenedor.length; i++) {
-        var hijo = hijosDelContenedor[i];  
-        hijo.style.display = 'none';
-      }
-      var contenedorPrincipalII = document.getElementById('indicaciones-II');
-      contenedorPrincipalII.style.display = 'none'
-      var hijosDelContenedorII = contenedorPrincipalII.children;
-      for (var i = 0; i < hijosDelContenedorII.length; i++) {
-        var hijo = hijosDelContenedorII[i];  
-        hijo.style.display = 'none';
-      }     
+          video.pause();      
+        }})     
+  
+       // Obtener el elemento padre
+        var contenedorPadre = document.getElementById('lubri-I');
+        var contenedorPadreII = document.getElementById('lubri-II');
+  
+        // Verificar si se encontró el elemento padre
+        if (contenedorPadre) {
+            // Recorrer los elementos hijos del padre
+          for (var i = 0; i < contenedorPadre.children.length; i++) {
+            var hijo = contenedorPadre.children[i];
+            // Obtener el valor actual de la propiedad display
+            var displayValue = window.getComputedStyle(hijo).getPropertyValue('display');
+            // Verificar si el valor actual es 'none'
+            if (displayValue === 'flex') {
+              // Cambiar la propiedad display a 'flex'
+              hijo.style.display = 'none';
+            }
+          }
+        }
+  
+        // Verificar si se encontró el elemento padre
+        if (contenedorPadreII) {
+          // Recorrer los elementos hijos del padre
+        for (var i = 0; i < contenedorPadreII.children.length; i++) {
+          var hijoI = contenedorPadreII.children[i];
+          // Obtener el valor actual de la propiedad display
+          var displayValueI= window.getComputedStyle(hijoI).getPropertyValue('display');
+          // Verificar si el valor actual es 'none'
+          if (displayValueI === 'flex') {
+            // Cambiar la propiedad display a 'flex'
+            hijoI.style.display = 'none';
+          }
+        }
+      }      
     break;
     case 'lub-mensual':
-      var conteLub = document.getElementById('aceitera')
-      var contLabel = document.getElementById('aceite')
-      var conteLabels = document.getElementById('indicaciones')
-      var vertLine = document.getElementById('vertcal-line')
-    
       videoElements.forEach(video => {
-        if (video) {
+        if (video.id === 'lubri-vid') {
           video.style.display = 'none';
-          video.play();      
-        }})
-    
-      conteLub.style.display = 'none'
-      contLabel.style.display = 'none'
-      conteLabels.style.display = 'none'
-      vertLine.style.display = 'none'
-    
-      var contenedorPrincipal = document.getElementById('lubri-II');
-      contenedorPrincipal.style.display = 'none'
-      var hijosDelContenedor = contenedorPrincipal.children;
-      for (var i = 0; i < hijosDelContenedor.length; i++) {
-        var hijo = hijosDelContenedor[i];  
-        hijo.style.display = 'none';
-      }
-      var contenedorPrincipalII = document.getElementById('indicaciones-II');
-      contenedorPrincipalII.style.display = 'none'
-      var hijosDelContenedorII = contenedorPrincipalII.children;
-      for (var i = 0; i < hijosDelContenedorII.length; i++) {
-        var hijo = hijosDelContenedorII[i];  
-        hijo.style.display = 'none';
-      }       
+          video.pause();      
+        }})     
+  
+       // Obtener el elemento padre
+        var contenedorPadre = document.getElementById('lubri-I');
+        var contenedorPadreII = document.getElementById('lubri-II');
+  
+        // Verificar si se encontró el elemento padre
+        if (contenedorPadre) {
+            // Recorrer los elementos hijos del padre
+          for (var i = 0; i < contenedorPadre.children.length; i++) {
+            var hijo = contenedorPadre.children[i];
+            // Obtener el valor actual de la propiedad display
+            var displayValue = window.getComputedStyle(hijo).getPropertyValue('display');
+            // Verificar si el valor actual es 'none'
+            if (displayValue === 'flex') {
+              // Cambiar la propiedad display a 'flex'
+              hijo.style.display = 'none';
+            }
+          }
+        }
+  
+        // Verificar si se encontró el elemento padre
+        if (contenedorPadreII) {
+          // Recorrer los elementos hijos del padre
+        for (var i = 0; i < contenedorPadreII.children.length; i++) {
+          var hijoI = contenedorPadreII.children[i];
+          // Obtener el valor actual de la propiedad display
+          var displayValueI= window.getComputedStyle(hijoI).getPropertyValue('display');
+          // Verificar si el valor actual es 'none'
+          if (displayValueI === 'flex') {
+            // Cambiar la propiedad display a 'flex'
+            hijoI.style.display = 'none';
+          }
+        }
+      }        
     break;
     default:
   }
