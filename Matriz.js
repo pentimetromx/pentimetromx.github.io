@@ -3283,7 +3283,7 @@ function imagenesPasoApaso(idElto, id) {
 }
 function lubricacion(buttId,contId){
   var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80',];
-  var contVidLub = ['lubri-I', 'lubri-II','lubri-III', 'frec-lubrica']; 
+  var contVidLub = ['lubri-I', 'lubri-II','lubri-III', 'frec-lubrica','freno']; 
   var arrayIdButtsCheck = ['boton2','boton3','boton4','boton5','boton6'];
   var padreLubriIII = document.getElementById('lubri-III');
   var contLubrica = document.getElementById('lubricacion');
