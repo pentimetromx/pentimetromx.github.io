@@ -393,6 +393,29 @@ transform: scale(1.1);
   background-color: white;
   content: "";
 }
+.linea-horizontal-IV{
+  position:relative;
+  left: -3px;
+  top: 150px;
+  transform: translateY(-50%);
+  width: 520px;
+  height: 2px;
+  background-color: white;
+  content: "";
+ /* background-color: rgba(255,255,0,15);*/
+  background-color: rgba(0,255,0,255);
+}
+.linea-horizontal-V{
+  position:relative;
+  left: -3px;
+  top: 311px;
+  transform: translateY(-50%);
+  width: 520px;
+  height: 2px;
+  background-color: white;
+  content: "";
+ /* background-color: rgba(255,255,0,15);*/
+ background-color: rgba(0,255,0,255);}
 .boton-c {
   position: relative;
   display: flex;
@@ -1668,10 +1691,10 @@ elemento {
   cursor: pointer;
   display: none;
 }
+#vidFreno,
 #vidLub{
   display: flex;
   flex-direction: column;
-  /* margin-left: 577px; */
   display: none;
 }
 #balineras,
@@ -1683,6 +1706,13 @@ elemento {
   flex-direction: column;
   display: none;
 }
+#freno-II{
+  display: flex;
+  flex-direction: column;
+  display: none;
+}
+
+#freno-II img,
 #aceitera img,
 #aceitera-II img{
   height: 141px;
