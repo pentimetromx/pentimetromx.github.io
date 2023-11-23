@@ -3834,6 +3834,7 @@ function LubricaDesbobinador(idButt) {
 function UnidadTeñido(buttId){
   var contTeñido = ['uniTeñido'];
   var contBotTeñi = ['btn600','btn700','btn800']; 
+  var videoElement = document.getElementById('teñido-vid');
    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
    for (var i = 0; i < contBotTeñi.length; i++) {                                                            /// COLOR ROJO A LOS BOTONES Y COLOR NEGRO AL TEXTO                                                            
     var button = contBotTeñi[i];                                                                                         
@@ -3849,18 +3850,10 @@ function UnidadTeñido(buttId){
 
     }
   }    
-
   switch (buttId) {
     case 'boton8':
-      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-       /*var container = document.getElementById('conti-boton-teñido');                                                   /// MUESTRA PADRE BOTONES ...
-      var computedStyle = getComputedStyle(container);     
-      var displayValue = computedStyle.getPropertyValue("display");
-      if (displayValue.toLowerCase() === "none") {
-        // Cambia el valor de 'display' a 'flex'
-        container.style.display = "flex";
-      }*/
-      for (var i = 0; i < contTeñido.length; i++) {
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////                                                                    
+      for (var i = 0; i < contTeñido.length; i++) {                                                          /// MUESTRA BOTONES OCULTA TODO EL RESTO
         var padre = document.getElementById(contTeñido[i]);
       
         if (padre) {
@@ -4037,6 +4030,9 @@ function UnidadTeñido(buttId){
           }
         }
       }
+      var videoElement = document.getElementById('teñido-vid');                                                                                 /// REPRODUCE VIDEO    
+      videoElement.currentTime = 0;  
+      videoElement.play();
     break;
     case 'btn700':        
     for (var i = 0; i < contTeñido.length; i++) {
