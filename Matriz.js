@@ -8,14 +8,13 @@ var idsArrayEliminados = [];
 var idsMA = ['canvasContainer2', 'canvasContainer3', 'canvasContainer4','canvasContainer5','canvasContainer6','canvasContainer7','canvasContainer8', 'canvasContainer9', 'contChecks','troubleshooting','contImagNeg','contImagGraf'];
 var idsMAhijos = ['troubleshooting','canvasContainer2','contChecks','canvasContainer3','contImagNeg','contImagGraf'];
 var idsResultados = ['icon-ana','icon-carlos','icon-andres','icon-jorge','icon-jesus','icon-sandra','icon-mario'];
-/* var contVidLub = ['lubri-I', 'lubri-II','lubri-III', 'frec-lubrica','freno','uniTeñido']; 
- */var elementosContUser = document.querySelectorAll('.cont-user');
+var elementosContUser = document.querySelectorAll('.cont-user');
 var lineasGrid = document.getElementById('contLineas');
 var contTitulo = document.getElementById('cont-titulo');
 var linkList = document.getElementById("linkList");
 var linkListI = document.getElementById("linkListI");
 var uTeñido = document.getElementById('uTeñidos');
-var arrayIdButtsCheck = ['boton2','boton3','boton4','boton5','boton6','boton7','boton8','boton9','boton10','boton11','boton12'];
+var arrayIdButtsCheck = ['boton2','boton3','boton4','boton5','boton6','boton7','boton8','boton9','boton10','boton11','boton12','btn600','btn700','btn800'];
 var contiBtt = ['archivo','btt2','btt3','btt4','btt5','btt6','btt7'] 
 
 var currentID = null;
@@ -26,7 +25,7 @@ var imgTorreI = document.getElementById('imgTorre');
 var contInicial = document.getElementById('container1');
 var botonMa = document.getElementById('bot-mantaut');
 var imagPasoApaso = document.querySelectorAll('.img1');
-var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','contene-11','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','container99','images-smed','images-distribuidor','lubri-III','freno'];
+var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','contene-11','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','container99','images-smed','images-distribuidor','lubri-III','freno','uniTeñido'];
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado'];
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor'];
@@ -407,7 +406,7 @@ let firstClick = true;
 function cierraContenedores(elementId) {
   const coleccion = document.querySelectorAll('.desbobinador, .desbobinador-I, .uTeñido, .alimentador, .unidProceso, .rebobinador, .contTorrImp');
   var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80','btn600','btn700','btn800'];
-  var arrayButtsRojos = ['boton2','boton3','boton4','boton5','boton6'];
+  var arrayButtsRojos = ['boton2','boton3','boton4','boton5','boton6','boton8','boton9','boton10','boton11','boton12'];
   for (var i = 0; i < arrayButtsRojos.length; i++) {                                                                    /// PONE ROJO EL BOTON
     var button = arrayButtsRojos[i];
     if (button) {
@@ -3370,7 +3369,7 @@ function lubricacion(buttId,contId){
             var button = arrayIdButtsCheck[i];
             if (button === buttId) {
               // Cambia el color del botón seleccionado a rojo
-              document.getElementById(button).style.backgroundColor = 'red';
+              document.getElementById(button).style.backgroundColor = 'rgb(0,255,0)';
             } else {
               // Restablece el color de los otros botones
               document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
@@ -3399,7 +3398,7 @@ function lubricacion(buttId,contId){
           var button = arrayIdButtsCheck[i];
           if (button === buttId) {
             // Cambia el color del botón seleccionado a rojo
-            document.getElementById(button).style.backgroundColor = 'red';
+            document.getElementById(button).style.backgroundColor = 'rgba(255,255,0,15)';
           } else {
             // Restablece el color de los otros botones
             document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
@@ -3569,15 +3568,21 @@ function LubricaDesbobinador(idButt) {
   var arrayLabels = ['labl1', 'labl2', 'labl3'];
   var arrayLabels = ['labl1', 'labl2', 'labl3'];
   var contFreno = document.getElementById('freno')
- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  var arrayIdButtsCheck = ['lub-diario', 'lub-semanal', 'lub-mensual'];                                              /// COLOR AMARILLO A LOS BOTONES REDONDOS                   
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  var arrayIdButtsCheck = ['lub-diario', 'lub-semanal', 'lub-mensual'];                                                  /// COLOR VERDE A LOS BOTONES REDONDOS                   
   for (var i = 0; i < arrayIdButtsCheck.length; i++) {
     var button = arrayIdButtsCheck[i];
     if (button) {
       // Cambia el color del botón a rojo
-      document.getElementById(button).style.backgroundColor = 'rgba(217, 255, 0, 1)';
+      document.getElementById(button).style.backgroundColor = 'rgb(0, 255, 0)';
     } 
   }
+   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+   arrayLabels.forEach(label => {                                                                                                    ///COLOR AMARILLO A LABELS
+    if (label) {
+      document.getElementById(label).style.color = 'rgb(0, 255, 0)';
+    }
+  });  
    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   for (var i = 0; i < arrayIdButtsLub.length; i++) {                                                        /// COLOR VERDE A LOS BOTONES Y COLOR NEGRO AL TEXTO                                                       
     var button = arrayIdButtsLub[i];                                                                                         
@@ -3607,13 +3612,6 @@ function LubricaDesbobinador(idButt) {
 
     }
   }  
-   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-   arrayLabels.forEach(label => {                                                                                                    ///COLOR AMARILLO A LABELS
-    if (label) {
-      document.getElementById(label).style.color = 'rgb(255, 255, 0)';
-    }
-  });
-
   switch (idButt) {
     case 'btn1':
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3746,8 +3744,9 @@ function LubricaDesbobinador(idButt) {
       }
     }
     break;
-    case 'btn60':   
-      for (var i = 0; i < contVidLub.length; i++) {
+    case 'btn60': 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      for (var i = 0; i < contVidLub.length; i++) {                                         ///  MUESTRA EL CONTENEDOR PADRE DE LUBRICANTES Y OCULTA LOS HIJOS
         var eltoId = contVidLub[i];
         var eltoLubrica = document.getElementById(eltoId);    
 
@@ -3773,9 +3772,10 @@ function LubricaDesbobinador(idButt) {
                 hijo.style.display = 'none';
             }
         }
-      }      
-      // Recorrer los elementos hijos del padre
-      for (var i = 0; i < contFreno.children.length; i++) {
+      }
+      padreLubriIII.style.display = 'none' 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      for (var i = 0; i < contFreno.children.length; i++) {                                                         /// RECORRE HIJOS DE FRENO Y LOS VISIBILIZA
         var hijo = contFreno.children[i];
         // Obtener el valor actual de la propiedad display
         var displayValue = window.getComputedStyle(hijo).getPropertyValue('display');
@@ -3785,8 +3785,8 @@ function LubricaDesbobinador(idButt) {
           hijo.style.display = 'flex';
         }
       }
-
-      var vidFreno = document.getElementById('freno-vid');    
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      var vidFreno = document.getElementById('freno-vid');                                                                                 /// REPRODUCE VIDEO    
       // Establecer el tiempo de reproducción en cero (inicio)
       vidFreno.currentTime = 0;  
       // Reproducir el video
@@ -3832,67 +3832,248 @@ function LubricaDesbobinador(idButt) {
   
 } 
 function UnidadTeñido(buttId){
-  var contVidLub = ['lubri-I', 'lubri-II','lubri-III', 'frec-lubrica','freno','uniTeñido'];
+  var contTeñido = ['uniTeñido'];
   var contBotTeñi = ['btn600','btn700','btn800']; 
-  for (var i = 0; i < contBotTeñi.length; i++) {
-    var elementId = contBotTeñi[i];
-    var element = document.getElementById(elementId);      
-    if (element) { // Verifica si el elemento existe
-      element.style.display= 'none'
+   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+   for (var i = 0; i < contBotTeñi.length; i++) {                                                            /// COLOR ROJO A LOS BOTONES Y COLOR NEGRO AL TEXTO                                                            
+    var button = contBotTeñi[i];                                                                                         
+    if (button === buttId) {
+      // Cambia el color del botón a rojo
+      document.getElementById(button).style.backgroundColor = 'rgba(255,0, 0, 1)';
+      document.getElementById(button).style.color = 'white';
+
+    } else {
+      // Cambia el color del resto de botones a gris
+      document.getElementById(button).style.backgroundColor= '#333333';
+      document.getElementById(button).style.color = 'white';
+
     }
-  }                                                                        /// MUESTRA LOS BOTONES  
+  }    
 
   switch (buttId) {
     case 'boton8':
-      if(reBobinado.style.display === 'none') {
-        
-        for (var i = 0; i < contVidLub.length; i++) {
-          var eltoId = contVidLub[i];
-          var eltoLubrica = document.getElementById(eltoId);    
-  
-          if (eltoId === 'uniTeñido') {
-            // Si es 'lubri-III', establecer la propiedad display a 'flex'
-            eltoLubrica.style.display = 'flex';
-          } else {
-            // Si no es 'lubri-III', ocultar el elemento
-            eltoLubrica.style.display = 'none';
+      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+       /*var container = document.getElementById('conti-boton-teñido');                                                   /// MUESTRA PADRE BOTONES ...
+      var computedStyle = getComputedStyle(container);     
+      var displayValue = computedStyle.getPropertyValue("display");
+      if (displayValue.toLowerCase() === "none") {
+        // Cambia el valor de 'display' a 'flex'
+        container.style.display = "flex";
+      }*/
+      for (var i = 0; i < contTeñido.length; i++) {
+        var padre = document.getElementById(contTeñido[i]);
+      
+        if (padre) {
+          for (var j = 0; j < padre.children.length; j++) {
+            var hijo = padre.children[j];
+            
+            // Verificar si el hijo tiene la clase 'conti-boton'
+            if (hijo.classList.contains('conti-boton')) {
+              hijo.style.display = 'flex';
+            } else {
+              hijo.style.display = 'none';
+            }
           }
         }
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-        var container = document.getElementById('conti-boton-teñido');                                                   /// MUESTRA PADRE BOTONES ...
-        var computedStyle = getComputedStyle(container);     
-        var displayValue = computedStyle.getPropertyValue("display");
-        if (displayValue.toLowerCase() === "none") {
-          // Cambia el valor de 'display' a 'flex'
-          container.style.display = "flex";
+      }
+
+      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+      for (var i = 0; i < arrayIdButtsCheck.length; i++) {                                            /// PONE ROJO EL BOTON ACTUAL / OCULTA LOS OTROS
+        var button = arrayIdButtsCheck[i];
+        if (button === buttId) {
+          // Cambia el color del botón seleccionado a rojo
+          document.getElementById(button).style.backgroundColor = 'red';
+        } else {
+          // Restablece el color de los otros botones
+          document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
         }
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-        for (var i = 0; i < contBotTeñi.length; i++) {
-          var elementId = contBotTeñi[i];
-          var element = document.getElementById(elementId);      
-          if (element) { // Verifica si el elemento existe
-            element.style.color = "white";
-            element.style.background = '#333333';            
+      } 
+      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+      for (var i = 0; i < contBotTeñi.length; i++) {                                                                    /// GRIS CADENA A LOS BOTONES
+        var elementId = contBotTeñi[i];
+        var element = document.getElementById(elementId);      
+        if (element) { // Verifica si el elemento existe
+          element.style.color = "white";
+          element.style.background = '#333333';            
+        }
+      }         
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+      showButtonsUTeñidoconRetraso()                                                                                      /// TRANSICION DE LOS BOTONES
+    break;
+    case 'boton9':
+      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+      var container = document.getElementById('conti-boton-teñido');                                                   /// MUESTRA PADRE BOTONES ...
+      var computedStyle = getComputedStyle(container);     
+      var displayValue = computedStyle.getPropertyValue("display");
+      if (displayValue.toLowerCase() === "none") {
+        // Cambia el valor de 'display' a 'flex'
+        container.style.display = "flex";
+      }
+      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+      for (var i = 0; i < arrayIdButtsCheck.length; i++) {                                            /// PONE ROJO EL BOTON ACTUAL / OCULTA LOS OTROS
+        var button = arrayIdButtsCheck[i];
+        if (button === buttId) {
+          // Cambia el color del botón seleccionado a rojo
+          document.getElementById(button).style.backgroundColor = 'red';
+        } else {
+          // Restablece el color de los otros botones
+          document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
+        }
+      } 
+      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+      for (var i = 0; i < contBotTeñi.length; i++) {                                                                    /// OCULTA LOS BOTONES
+        var elementId = contBotTeñi[i];
+        var element = document.getElementById(elementId);      
+        if (element) { // Verifica si el elemento existe
+          element.style.display = 'none'
+        }
+      }         
+    break;
+    case 'boton10':
+      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+      var container = document.getElementById('conti-boton-teñido');                                                   /// MUESTRA PADRE BOTONES ...
+      var computedStyle = getComputedStyle(container);     
+      var displayValue = computedStyle.getPropertyValue("display");
+      if (displayValue.toLowerCase() === "none") {
+        // Cambia el valor de 'display' a 'flex'
+        container.style.display = "flex";
+      }
+      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+      for (var i = 0; i < arrayIdButtsCheck.length; i++) {                                            /// PONE ROJO EL BOTON ACTUAL / OCULTA LOS OTROS
+        var button = arrayIdButtsCheck[i];
+        if (button === buttId) {
+          // Cambia el color del botón seleccionado a rojo
+          document.getElementById(button).style.backgroundColor = 'red';
+        } else {
+          // Restablece el color de los otros botones
+          document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
+        }
+      } 
+      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+      for (var i = 0; i < contBotTeñi.length; i++) {                                                                    /// OCULTA LOS BOTONES
+        var elementId = contBotTeñi[i];
+        var element = document.getElementById(elementId);      
+        if (element) { // Verifica si el elemento existe
+          element.style.display = 'none'
+        }
+      }  
+    break;    
+    case 'boton11':
+      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+      var container = document.getElementById('conti-boton-teñido');                                                   /// MUESTRA PADRE BOTONES ...
+      var computedStyle = getComputedStyle(container);     
+      var displayValue = computedStyle.getPropertyValue("display");
+      if (displayValue.toLowerCase() === "none") {
+        // Cambia el valor de 'display' a 'flex'
+        container.style.display = "flex";
+      }
+      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+      for (var i = 0; i < arrayIdButtsCheck.length; i++) {                                            /// PONE ROJO EL BOTON ACTUAL / OCULTA LOS OTROS
+        var button = arrayIdButtsCheck[i];
+        if (button === buttId) {
+          // Cambia el color del botón seleccionado a rojo
+          document.getElementById(button).style.backgroundColor = 'red';
+        } else {
+          // Restablece el color de los otros botones
+          document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
+        }
+      } 
+      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+      for (var i = 0; i < contBotTeñi.length; i++) {                                                                    /// OCULTA LOS BOTONES
+        var elementId = contBotTeñi[i];
+        var element = document.getElementById(elementId);      
+        if (element) { // Verifica si el elemento existe
+          element.style.display = 'none'
+        }
+      }  
+    break;
+    case 'boton12':
+      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+      var container = document.getElementById('conti-boton-teñido');                                                   /// MUESTRA PADRE BOTONES ...
+      var computedStyle = getComputedStyle(container);     
+      var displayValue = computedStyle.getPropertyValue("display");
+      if (displayValue.toLowerCase() === "none") {
+        // Cambia el valor de 'display' a 'flex'
+        container.style.display = "flex";
+      }
+      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+      for (var i = 0; i < arrayIdButtsCheck.length; i++) {                                            /// PONE ROJO EL BOTON ACTUAL / OCULTA LOS OTROS
+        var button = arrayIdButtsCheck[i];
+        if (button === buttId) {
+          // Cambia el color del botón seleccionado a rojo
+          document.getElementById(button).style.backgroundColor = 'red';
+        } else {
+          // Restablece el color de los otros botones
+          document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
+        }
+      } 
+      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+      for (var i = 0; i < contBotTeñi.length; i++) {                                                                    /// OCULTA LOS BOTONES
+        var elementId = contBotTeñi[i];
+        var element = document.getElementById(elementId);      
+        if (element) { // Verifica si el elemento existe
+          element.style.display = 'none'
+        }
+      }                                                                                       /// TRANSICION DE LOS BOTONES
+    break;
+    case 'btn600':  
+      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
+      for (var i = 0; i < contTeñido.length; i++) {                                                                       /// MUESTRA TODO EL CONTENEDOR TEÑIDO
+        // Obtiene el elemento usando el ID
+        var padre = document.getElementById(contTeñido[i]);
+
+        // Verifica si el elemento existe
+        if (padre) {
+          // Recorre los hijos del elemento
+          for (var j = 0; j < padre.children.length; j++) {
+            var hijo = padre.children[j];
+            // Obtiene el valor actual de la propiedad display
+            var displayValue = window.getComputedStyle(hijo).getPropertyValue('display');
+            // Verifica si el valor actual es 'none'
+            if (displayValue === 'none') {
+              // Cambia la propiedad display a 'flex'
+              hijo.style.display = 'flex';
+            }
           }
         }
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-        for (var i = 0; i < arrayIdButtsCheck.length; i++) {                                                                    /// PONE ROJO EL BOTON
-          var button = arrayIdButtsCheck[i];
-          if (button === buttId) {
-            // Cambia el color del botón seleccionado a rojo
-            document.getElementById(button).style.backgroundColor = 'red';
-          } else {
-            // Restablece el color de los otros botones
-            document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
-          }
-        }  
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-        showButtonsUTeñidoconRetraso() 
       }
     break;
-    case 'btn600':        
-     showButtonsUTeñidoconRetraso()       
-    break;
+    case 'btn700':        
+    for (var i = 0; i < contTeñido.length; i++) {
+      var padre = document.getElementById(contTeñido[i]);
+    
+      if (padre) {
+        for (var j = 0; j < padre.children.length; j++) {
+          var hijo = padre.children[j];
+          
+          // Verificar si el hijo tiene la clase 'conti-boton'
+          if (hijo.classList.contains('conti-boton')) {
+            hijo.style.display = 'flex';
+          } else {
+            hijo.style.display = 'none';
+          }
+        }
+      }
+    }
+   break;
+    case 'btn800':        
+    for (var i = 0; i < contTeñido.length; i++) {
+      var padre = document.getElementById(contTeñido[i]);
+    
+      if (padre) {
+        for (var j = 0; j < padre.children.length; j++) {
+          var hijo = padre.children[j];
+          
+          // Verificar si el hijo tiene la clase 'conti-boton'
+          if (hijo.classList.contains('conti-boton')) {
+            hijo.style.display = 'flex';
+          } else {
+            hijo.style.display = 'none';
+          }
+        }
+      }
+    }
+    break;   
     default:
   }
 } 

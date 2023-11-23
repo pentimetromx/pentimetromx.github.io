@@ -131,10 +131,10 @@
         <div class="contene-7">
           <div class="linea-vertical"></div>
           <button class="boton-c" id="boton8" onclick="UnidadTeñido('boton8')">Sistema neumático<div class="linea-horizontal"></div></button>
-          <button class="boton-c" id="boton9">Rodillería<div class="linea-horizontal"></div></button>
-          <button class="boton-c" id="boton10">Circuito de alimentación<div class="linea-horizontal"></div></button>
-          <button class="boton-c" id="boton11">Bomba de succión<div class="linea- "></div></button>
-          <button class="boton-c" id="boton12">Depositos de anilina<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton9" onclick="UnidadTeñido('boton9')">Rodillería<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton10" onclick="UnidadTeñido('boton10')">Circuito de alimentación<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton11" onclick="UnidadTeñido('boton11')">Bomba de succión<div class="linea- "></div></button>
+          <button class="boton-c" id="boton12" onclick="UnidadTeñido('boton12')">Depositos de anilina<div class="linea-horizontal"></div></button>
         </div>
       </div>
 
@@ -664,7 +664,7 @@
       </div>
 
       <div id="vidFreno" style="position: relative;display: flex;display: none; margin-top:150px;margin-left: 352px; margin-bottom: 17px;height: 127px;">
-        <video class="" id="freno-vid" style="height: 217px; border-radius: 17px;" src="./assets/freno disco.mp4" autoplay loop muted></video>
+        <video class="" id="freno-vid" style="height: 217px; border: 7px solid rgba(217, 255, 0, 1); border-radius: 17px;" src="./assets/freno disco.mp4" autoplay loop muted></video>
       </div>
 
       <div id="freno-II" style="position: relative;left: 27px; margin-top:94px;">
@@ -683,7 +683,7 @@
         <div class="linea-horizontal-V"></div> 
         <div style="position: absolute;top: 325px;">
           <img src="./assets/freno.jpg" alt="freno">
-          <img src="./assets/freno rotor.jpg" alt="freno">
+          <img src="./assets/neumatica4.jpg" alt="freno">
           <img src="./assets/freno rotor1.jpg" alt="freno">
 
         </div>
@@ -699,33 +699,36 @@
         <button class="butt-mautonomo-teñido image-trainings" id="btn800" onclick="UnidadTeñido('btn800')">PARAMETROS</button>
       </div> 
 
-      <div id="teñido-I" style="position: absolute;top: 130px;left: 353px; display:none;background:linear-gradient(45deg, black 33%, gray 67%);font-size: 33px; width: 287px;border-radius: 7px;justify-content: center;align-items: center;">
+      <div id="teñido-I" style="position: absolute;top: 130px;left: 387px; display:none;background:linear-gradient(45deg, black 33%, gray 67%);font-size: 33px; width: 287px;border-radius: 7px;justify-content: center;align-items: center;">
         <label class="labl-class" for="freno">GP TINTER</label>
-      </div>
+      </div><br>
 
-      <div id="vidTeñido" style="position: relative;display: flex;display: none; margin-top:150px;margin-left: 352px; margin-bottom: 17px;height: 127px;">
-        <video class="" id="teñido-vid" style="height: 217px; border-radius: 17px;" src="./assets/freno disco.mp4" autoplay loop muted></video>
+      <div id="vidTeñido" style="position: relative; display: flex; display: none; margin-top: 150px; margin-left: 352px; margin-bottom: 17px; height: 127px;">
+        <video class="" id="teñido-vid" style="height: 197px; border: 7px solid red; border-radius: 17px;" src="./assets/vid-teñido.mp4" autoplay loop muted></video>
       </div>
 
       <div id="teñido-II" style="position: relative;left: 27px; margin-top:94px;">
 
-        <div style="position: absolute;top: -1px;">
-          <img src="./assets/sist neumatico.jpg" alt="freno">
-          <img src="./assets/sist neumatico 1.jpg" alt="freno">
-          <img src="./assets/sist neumatico 2.jpg" alt="freno">
+        <div style="position: absolute;display: flex;flex-direction: row;top: -1px;">
+          <img class="img-teñido" src="./assets/sist neumatico.jpg" alt="freno">
+          <img class="img-teñido" src="./assets/sist neumatico 1.jpg" alt="freno">
+          <img class="img-teñido" src="./assets/sist neumatico 2.jpg" alt="freno">
         </div>
-        <div class="linea-horizontal-VI"></div> 
-        <div style="position: absolute;top: 160px;">
-          <img src="./assets/freno caliper.jpg" alt="freno">
-          <img src="./assets/freno caliper 2.jpg" alt="freno">
-          <img src="./assets/freno caliper 3.jpg" alt="freno">
-        </div>
-        <div class="linea-horizontal-VII"></div> 
-        <div style="position: absolute;top: 325px;">
-          <img src="./assets/freno.jpg" alt="freno">
-          <img src="./assets/freno rotor.jpg" alt="freno">
-          <img src="./assets/freno rotor1.jpg" alt="freno">
 
+        <div class="linea-horizontal-VI"></div>
+
+        <div style="position: absolute;display: flex;flex-direction: row; top: 160px;">
+          <img class="img-teñido" src="./assets/sist neumatico 6.jpg" alt="freno">
+          <img class="img-teñido" src="./assets/sist neumatico 4.jpg" alt="freno">
+          <img class="img-teñido" src="./assets/sist neumatico 5.jpg" alt="freno">
+        </div>
+
+        <div class="linea-horizontal-VII"></div> 
+
+        <div style="position: absolute;display: flex;flex-direction: row; top: 325px;">
+          <img class="img-teñido" src="./assets/sist neumatico 3.jpg" alt="freno">
+          <img class="img-teñido" src="./assets/sist neumatico 7.jpg" alt="freno">
+          <img class="img-teñido" src="./assets/sist neumatico 8.jpg" alt="freno">
         </div>
 
       </div>

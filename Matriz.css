@@ -260,7 +260,7 @@ transform: scale(1.1);
   bottom: 0;
   width: 2px;
   height: 477px;
-  background-color: white;
+  background-color: rgb(0,255,0);
   content: "";
   display: none;
 }
@@ -271,7 +271,7 @@ transform: scale(1.1);
   bottom: 0;
   width: 2px;
   height: 477px;
-  background-color: white;
+  background-color: rgb(0,255,0);
   content: "";
   display: none;
 }
@@ -337,7 +337,7 @@ transform: scale(1.1);
   bottom: 0;
   width: 2px;
   height: 497px;
-  background-color: white;
+  background-color: rgb(0,255,0);
   content: "";
   display: none;
 }
@@ -348,7 +348,7 @@ transform: scale(1.1);
   bottom: 0;
   width: 2px;
   height: 497px;
-  background-color: white;
+  background-color: rgb(0,255,0);
   content: "";
   display: none;
 }
@@ -402,8 +402,7 @@ transform: scale(1.1);
   height: 2px;
   background-color: white;
   content: "";
- /* background-color: rgba(255,255,0,15);*/
-  background-color: rgba(0,255,0,255);
+  background-color: rgba(255,255,0,15);
 }
 .linea-horizontal-V{
   position:relative;
@@ -414,8 +413,30 @@ transform: scale(1.1);
   height: 2px;
   background-color: white;
   content: "";
- /* background-color: rgba(255,255,0,15);*/
- background-color: rgba(0,255,0,255);}
+  background-color: rgba(255,255,0,15);
+}
+.linea-horizontal-VI{
+  position:relative;
+  left: -3px;
+  top: 311px;
+  transform: translateY(-50%);
+  width: 520px;
+  height: 2px;
+  background-color: white;
+  content: "";
+  background-color: rgb(255,0,0);
+}
+.linea-horizontal-VII{
+  position:relative;
+  left: -3px;
+  top: 150px;
+  transform: translateY(-50%);
+  width: 520px;
+  height: 2px;
+  background-color: white;
+  content: "";
+  background-color: rgb(255,0,0);
+}
 .boton-c {
   position: relative;
   display: flex;
@@ -1708,9 +1729,8 @@ elemento {
   display: flex;
   flex-direction: column;
   display: none;
-}
+ }
 #balineras,
-
 #balineras-II,
 #aceitera,
 #aceitera-II{
@@ -1724,7 +1744,6 @@ elemento {
   flex-direction: column;
   display: none;
 }
-
 #teñido-II img,
 #freno-II img,
 #aceitera img,
@@ -1957,4 +1976,7 @@ elemento.visible {
   top: 0;
   z-index: 3;
   border-radius: 14px;
+}
+.img-teñido{
+  margin-right: 10px;
 }
