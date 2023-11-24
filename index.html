@@ -692,22 +692,23 @@
 
     </div>
 
-    <div id="uniTeñido"  style="display: none;">
+    <div id="uniTeñido">
       <div class="conti-boton" id="conti-boton-teñido" style="left: 127px;top: 130px;display: none;">
         <button class="butt-mautonomo-teñido image-trainings" id="btn600" onclick="UnidadTeñido('btn600')">ACTUADORES</button>
         <button class="butt-mautonomo-teñido image-trainings" id="btn700" onclick="UnidadTeñido('btn700')">NEUMATICA</button>
         <button class="butt-mautonomo-teñido image-trainings" id="btn800" onclick="UnidadTeñido('btn800')">PARAMETROS</button>
       </div> 
 
-      <div id="teñido-I" style="position: absolute;top: 130px;left: 387px; display:none;background:linear-gradient(45deg, black 33%, gray 67%);font-size: 33px; width: 287px;border-radius: 7px;justify-content: center;align-items: center;">
-        <label class="labl-class" for="freno">GP TINTER</label>
-      </div><br>
-
-      <div id="vidTeñido" style="position: relative; display: flex; display: none; margin-top: 150px; margin-left: 352px; margin-bottom: 17px; height: 127px;">
-        <video class="" id="teñido-vid" style="height: 197px; border: 7px solid red; border-radius: 17px;" src="./assets/vid-teñido.mp4" autoplay loop muted></video>
+      <div id="cont-arriba">
+        <div id="teñido-I">
+          <label class="labl-class" for="freno">GP TINTER</label>
+        </div>  
+        <div id="vidTeñido">
+          <video class="" id="teñido-vid" src="./assets/vid-teñido.mp4" autoplay loop muted></video>
+        </div>       
       </div>
 
-      <div id="teñido-II" style="position: relative;left: 27px; margin-top:94px;">
+      <div id="teñido-II">
 
         <div style="position: absolute;display: flex;flex-direction: row;top: -1px;">
           <img class="img-teñido" src="./assets/sist neumatico.jpg" alt="freno">
