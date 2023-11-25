@@ -395,7 +395,7 @@ transform: scale(1.1);
 }
 .linea-horizontal-IV{
   position:relative;
-  left: -3px;
+  left: 7px;
   top: 150px;
   transform: translateY(-50%);
   width: 520px;
@@ -406,7 +406,7 @@ transform: scale(1.1);
 }
 .linea-horizontal-V{
   position:relative;
-  left: -3px;
+  left: 7px;
   top: 311px;
   transform: translateY(-50%);
   width: 520px;
@@ -417,8 +417,8 @@ transform: scale(1.1);
 }
 .linea-horizontal-VII{
   position:absolute;
-  left: -3px;
-  top: 150px;
+  left: 7px;
+  top: 152px;
   transform: translateY(-50%);
   width: 520px;
   height: 2px;
@@ -428,8 +428,8 @@ transform: scale(1.1);
 }
 .linea-horizontal-VI{
   position:absolute;
-  left: -3px;
-  top: 311px;
+  left: 7px;
+  top: 314px;
   transform: translateY(-50%);
   width: 520px;
   height: 2px;
@@ -1976,6 +1976,20 @@ elemento.visible {
 }
 .img-teñido{
   margin-right: 10px;
+  border-radius: 7px;
+  border: 1px solid rgba(255,0,0);
+}
+.img-freno{
+  margin-right: 10px;
+  border: 1px solid rgba(255,255,0,15);
+  border-radius: 7px;
+}
+#cont-arriba-freno {
+  position: absolute;
+  top: 107px;
+  left: 377px;
+  margin-bottom: 20px; /* Añade un margen inferior de 20px al contenedor padre */
+  display: none;  
 }
 #cont-arriba {
   position: absolute;
@@ -1983,6 +1997,18 @@ elemento.visible {
   left: 377px;
   margin-bottom: 20px; /* Añade un margen inferior de 20px al contenedor padre */
   display: none;
+}
+#freno-I{
+  display: flex;
+  position: absolute;
+  top: -21px;
+  left: 21px;
+  background: linear-gradient(45deg, black 33%, gray 67%);
+  font-size: 33px;
+  width: 287px;
+  border-radius: 7px;
+  justify-content: center;
+  align-items: center;
 }
 #teñido-I {
   display: flex;
@@ -1996,6 +2022,14 @@ elemento.visible {
   justify-content: center;
   align-items: center;
 }
+#vidFreno{
+  position: relative;
+  display: flex;
+  top: 37px;
+  left: -37px;
+  margin-bottom: 17px;
+  width: 367px;  
+}
 #vidTeñido {
   position: relative;
   display: flex;
@@ -2003,6 +2037,12 @@ elemento.visible {
   left: -37px;
   margin-bottom: 17px;
   height: 207px;
+}
+#freno-vid{
+  width:100%;
+  height: 100%;
+  border: 7px solid rgba(255,255,0,15);
+  border-radius: 17px;  
 }
 #teñido-vid {
   width:100%;
@@ -2013,6 +2053,11 @@ elemento.visible {
 #uniTeñido{
   position: relative;
   display: none;
+}
+#freno-II{
+  position: relative;
+  top: 87px;
+  left: 737px;  
 }
 #teñido-II{
   position: relative;
