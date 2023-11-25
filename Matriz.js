@@ -409,7 +409,7 @@ function cierraContenedores(elementId) {
   var arrayButtsRojos = ['boton2','boton3','boton4','boton5','boton6','boton8','boton9','boton10','boton11','boton12'];
   var btnsIniciales = document.querySelectorAll('.btn-bloque');
 
-  for (var i = 0; i < arrayButtsRojos.length; i++) {                                                                    /// PONE ROJO EL BOTON
+  for (var i = 0; i < arrayButtsRojos.length; i++) {
     var button = arrayButtsRojos[i];
     if (button) {
       // Cambia el color del botón seleccionado a rojo
@@ -435,7 +435,7 @@ function cierraContenedores(elementId) {
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
         btnsIniciales.forEach(elemento =>{                                                                                    /// PONE BOTON VERDE Y TEXTO NEGRO
           if (elemento.id === 'boton1'){
-            elemento.style.background = 'rgba(0,255,0)';
+            elemento.style.background = 'rgba(255,255,255)';
             elemento.style.color = 'rgba(0,0,0)';
 
           }else{
@@ -456,7 +456,7 @@ function cierraContenedores(elementId) {
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
         btnsIniciales.forEach(elemento =>{                                                                                    /// PONE BOTON VERDE Y TEXTO NEGRO
           if (elemento.id === 'boton7'){
-            elemento.style.background = 'rgba(0,255,0)';
+            elemento.style.background = 'rgba(255,255,255)';
             elemento.style.color = 'rgba(0,0,0)';
 
           }else{
@@ -477,7 +477,7 @@ function cierraContenedores(elementId) {
        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
        btnsIniciales.forEach(elemento =>{                                                                                    /// PONE BOTON VERDE Y TEXTO NEGRO
         if (elemento.id === 'boton13'){
-          elemento.style.background = 'rgba(0,255,0)';
+          elemento.style.background = 'rgba(255,255,255)';
           elemento.style.color = 'rgba(0,0,0)';
 
         }else{
@@ -497,7 +497,7 @@ function cierraContenedores(elementId) {
        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
        btnsIniciales.forEach(elemento =>{                                                                                    /// PONE BOTON VERDE Y TEXTO NEGRO
         if (elemento.id === 'boton19'){
-          elemento.style.background = 'rgba(0,255,0)';
+          elemento.style.background = 'rgba(255,255,255)';
           elemento.style.color = 'rgba(0,0,0)';
 
         }else{
@@ -517,7 +517,7 @@ function cierraContenedores(elementId) {
        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
        btnsIniciales.forEach(elemento =>{                                                                                    /// PONE BOTON VERDE Y TEXTO NEGRO
         if (elemento.id === 'boton25'){
-          elemento.style.background = 'rgba(0,255,0)';
+          elemento.style.background = 'rgba(255,255,255)';
           elemento.style.color = 'rgba(0,0,0)';
 
         }else{
@@ -3342,7 +3342,7 @@ function imagenesPasoApaso(idElto, id) {
     }
   });
 }
-function lubricacion(buttId,contId){
+function lubricacion(buttId,btnIniId){
   var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80',];
   var contVidLub = ['lubri-I', 'lubri-II','lubri-III', 'frec-lubrica','freno','uniTeñido']; 
   var padreLubriIII = document.getElementById('lubri-III');
@@ -3352,6 +3352,7 @@ function lubricacion(buttId,contId){
   var contOil = document.getElementById('frec-lubrica');
   var arrayIdButtsLubII = ['btn60', 'btn70', 'btn80'];
   var padreLubri = document.getElementById('lubri-I');
+  var botones = document.querySelectorAll('.btn-bloque');  
   contLubrica.style.display = 'block'  
 
   if(alimenta.style.display === 'none'){
@@ -3370,6 +3371,7 @@ function lubricacion(buttId,contId){
           elemento.style.display = 'none';
       } 
     }); 
+
     switch (buttId) {
       case 'boton2':
         if(uTeñido.style.display === 'none') {
@@ -3431,7 +3433,14 @@ function lubricacion(buttId,contId){
               // Restablece el color de los otros botones
               document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
             }
-          }  
+          } 
+          /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+          botones.forEach(function(boton) {                                                                                         /// VERDE AL BOTON INICIAL
+            var idBoton = boton.id;
+            if (idBoton === btnIniId) {
+                boton.style.backgroundColor = 'rgb(0,255,0)';
+            }
+          });          
           /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
           if (contTorre.style.display === 'none'){                                                                    /// SI ESTA OCULTO EL PADRE EJECUTA FUNCION 
             showButtonsMAconRetrasoDesb()
@@ -3458,11 +3467,18 @@ function lubricacion(buttId,contId){
             document.getElementById(button).style.backgroundColor = 'rgba(255,255,0,15)';
           } else {
             // Restablece el color de los otros botones
-            document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
+            document.getElementById(button).style.backgroundColor = '';
           }
         } 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+        botones.forEach(function(boton) {                                                                                         /// AMARILLO AL BOTON INICIAL
+          var idBoton = boton.id;
+          if (idBoton === btnIniId) {
+              boton.style.backgroundColor = 'rgba(255,255,0,15)';
+          }
+        });
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        var contenedorFreno = document.getElementById('freno');                                                      /// OCULTA HIJOS DEJA VISIBLE LOS BOTONES
+        var contenedorFreno = document.getElementById('freno');                                                            /// OCULTA HIJOS VISIBILIZA BOTONES
 
         // Obtener todos los hijos del contenedor
         var hijosFreno = contenedorFreno.children;
@@ -3603,7 +3619,7 @@ function showButtonsUTeñidoconRetraso() {
   var contBotonesTeñido = document.getElementById('uniTeñido');
   var contPadre = document.getElementById('conti-boton-teñido');
 
-  contBotonesTeñido.style.display = 'block'
+  contBotonesTeñido.style.display = 'flex'
   contPadre.style.display = 'flex'
   function mostrarBotonConRetrasoTeñido (i) {
     if (i < botones.length) {
@@ -3613,10 +3629,9 @@ function showButtonsUTeñidoconRetraso() {
         mostrarBotonConRetrasoTeñido(i + 1);
       }, 150); // 150 milisegundos de retraso entre botones
     }
-  }  
+  } 
   mostrarBotonConRetrasoTeñido(0);
 }
-
 function LubricaDesbobinador(idButt) {
   var arrayIdButtsLub = ['btn1', 'btn2', 'btn3', 'btn4', 'btn5', 'btn60', 'btn70', 'btn80'];
   var contVidLub = ['lubri-I', 'lubri-II','lubri-III', 'frec-lubrica']; 
@@ -3888,12 +3903,20 @@ function LubricaDesbobinador(idButt) {
   } 
   
 } 
-function UnidadTeñido(buttId){
+function UnidadTeñido(buttId,btnIniId){
   var contTeñido = ['uniTeñido'];
   var contenedorTeñido = document.getElementById('uniTeñido');
   var contBotTeñi = ['btn600','btn700','btn800']; 
   var videoElement = document.getElementById('teñido-vid');
   var botsIzquierdos = ['boton8','boton9','boton10','boton11','boton12'];
+  var botones = document.querySelectorAll('.btn-bloque'); 
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  for (var i = 0; i < contBotTeñi.length; i++) {                                                                                  /// OCULTA BOTONES IZQUIERDOS
+    var boton = document.getElementById(contBotTeñi[i]);
+    if (boton) {
+        boton.style.display = 'none';
+    }
+  }
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   for (var i = 0; i < contBotTeñi.length; i++) {                                                   /// COLOR ROJO A LOS BOTONES DERECHOS Y COLOR NEGRO AL TEXTO                                                            
     var button = contBotTeñi[i];                                                                                         
@@ -3908,17 +3931,11 @@ function UnidadTeñido(buttId){
 
     }
   } 
-  /* for (var i = 0; i < contBotTeñi.length; i++) {                                                                                                              
-    var button = contBotTeñi[i];                                                                                         
-    if (button) {
-      button.style.display = 'none'
-    }      
-  }  */
 
   switch (buttId) {
     case 'boton8': 
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////                                                                    
-      for (var i = 0; i < contTeñido.length; i++) {                                                          /// MUESTRA BOTONES OCULTA TODO EL RESTO
+      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////                                                                    
+      for (var i = 0; i < contTeñido.length; i++) {                                                         /// MUESTRA PADRE BOTONES DERECHOS OCULTA MULTIMEDIA
         var padre = document.getElementById(contTeñido[i]);
       
         if (padre) {
@@ -3934,28 +3951,38 @@ function UnidadTeñido(buttId){
           }
         }
       }
-   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-   for (var i = 0; i < botsIzquierdos.length; i++) {
-    var elementId = botsIzquierdos[i];
-    var element = document.getElementById(elementId);
+     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+      for (var i = 0; i < botsIzquierdos.length; i++) {                                                                 /// BOTON ACTUAL ROJO Y EL RESTO SIN ESTILO
+        var elementId = botsIzquierdos[i];
+        var element = document.getElementById(elementId);
 
-    if (elementId === buttId) {
-      element.style.backgroundColor = 'rgba(255, 0, 0, 1)';
-    } else {
-      element.style.backgroundColor = '';
-    }
-  }      
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-      showButtonsUTeñidoconRetraso()                                                                                      /// TRANSICION DE LOS BOTONES
+        if (elementId === buttId) {
+          element.style.backgroundColor = 'rgba(255, 0, 0, 1)';
+        } else {
+          element.style.backgroundColor = '';
+        }
+      }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+         botones.forEach(function(boton) {                                                                                         /// ROJO AL BOTON INICIAL
+        var idBoton = boton.id;
+        if (idBoton === btnIniId) {
+            boton.style.backgroundColor = 'rgba(255, 0, 0, 1)';
+            boton.style.color = 'rgba(255,255,252)'
+
+        }
+      });       
+
+     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+     showButtonsUTeñidoconRetraso()                                                                                               /// TRANSICION DE LOS BOTONES
     break;
     case 'boton9':
-      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-      var hijosDelContenedor = contenedorTeñido.children;                                                                           /// OCULTA TODO EL TEÑIDO
+      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+      var hijosDelContenedor = contenedorTeñido.children;                                                                             /// OCULTA TODO EL TEÑIDO
       for (var i = 0; i < hijosDelContenedor.length; i++) {
         var hijo = hijosDelContenedor[i];  
         hijo.style.display = 'none';
       } 
-       /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
    for (var i = 0; i < botsIzquierdos.length; i++) {
     var elementId = botsIzquierdos[i];
     var element = document.getElementById(elementId);
