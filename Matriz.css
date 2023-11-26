@@ -2053,6 +2053,7 @@ elemento.visible {
 #uniTeñido{
   position: relative;
   display: none;
+  top: 1px;
 }
 #freno-II{
   position: relative;
