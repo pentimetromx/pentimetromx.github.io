@@ -1,11 +1,13 @@
 var arrayFunctions = ['updateMario','updateAna','updateCarlos','updateAndres','updateJorge','updateJesus','updateSandra']; 
-var arrayIdButtsMA = ['resultados','troubleshoot','def1','def2','adtBut','fua1','lup'];
+var arrayIdButtsMA = ['resultados','troubleshoot','def1','def2','adtBut','fua1','lup','kaizen'];
+var arrayButtsKaizen = ['btn10','btn11','btn12'];
+var arrayButtsPlanos = ['btn13','btn14','btn15'];
 var arrayPosicionnador = [];
 var arrayContador = [];
 var destino = 257;
 var idsArray = [];
 var idsArrayEliminados = [];
-var idsMA = ['troubleshooting','canvasContainer2', 'contChecks', 'canvasContainer3', 'contImagNeg',,'contImagGraf','canvasContainer4','canvasContainer5','canvasContainer6','canvasContainer7','canvasContainer8', 'canvasContainer9'];
+var idsMA = ['conti-boton-planos', 'conti-boton-kaizen','troubleshooting','canvasContainer2', 'contChecks', 'canvasContainer3', 'contImagNeg',,'contImagGraf','canvasContainer4','canvasContainer5','canvasContainer6','canvasContainer7','canvasContainer8', 'canvasContainer9'];
 var idsMAhijos = ['troubleshooting','canvasContainer2','contChecks','canvasContainer3','contImagNeg','contImagGraf'];
 var idsResultados = ['icon-ana','icon-carlos','icon-andres','icon-jorge','icon-jesus','icon-sandra','icon-mario'];
 var elementosContUser = document.querySelectorAll('.cont-user');
@@ -16,7 +18,6 @@ var linkListI = document.getElementById("linkListI");
 var uTeñido = document.getElementById('uTeñidos');
 var arrayIdButtsCheck = ['boton2','boton3','boton4','boton5','boton6','boton7','boton8','boton9','boton10','boton11','boton12','btn600','btn700','btn800'];
 var contiBtt = ['archivo','btt2','btt3','btt4','btt5','btt6','btt7'] 
-
 var currentID = null;
 var btnAtras = document.getElementById('bot-atras');
 var butInicio = document.getElementById('bot-inic');
@@ -25,8 +26,9 @@ var imgTorreI = document.getElementById('imgTorre');
 var contInicial = document.getElementById('container1');
 var botonMa = document.getElementById('bot-mantaut');
 var imagPasoApaso = document.querySelectorAll('.img1');
-var allContenedores = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','contene-11','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','container99','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria'];
-var linksIniciales = ['links-inicialesI','links-iniciales']
+var allContenedores = ['conti-boton-kaizen','kaizenCont','container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','contene-11','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','container99','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria'];
+var 
+    linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado'];
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor'];
 var allContTintero = ['pantalla-tintero','cont-links','imgTorre','vidTintero','imgsRepuestos','agrupaOblicuos-II','container2'];
@@ -215,6 +217,7 @@ function showButtonsMAconRetraso() {
   }
   mostrarBotonConRetraso(0); // Comienza desde el primer botón
 }
+
 function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);
@@ -1403,14 +1406,34 @@ function mantAutonomo (idElement) {
     break;
   default:
 }}
-var botonClicado = false;
-var originalButtonColors = {}; // Objeto para almacenar los colores originales de los 
-
 function deslizaContenedor(idElement, idButton) {
   var contLinkMant = document.getElementById('linksMA');
   var elementoAnterior = null;
   var elementoActual = null;
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  var botones = ['btn10','btn11','btn12'];
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  for(var i = 0; i<botones.length; i ++){                                                                                           /// OCULTA BOTONES IZQUIERDOS
+    var boton = document.getElementById(botones[i]);
+    if (boton) {
+      boton.style.backgroundColor = '';
+      boton.style.color = 'white';
+      boton.style.display = 'none';
+    }
+  }
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  videoElements.forEach(video => {                                                                                                         /// OCULTA VIDEO ACTUAL
+  if (video) {
+    video.pause(); 
+    video.style.display = 'none'; 
+  }}) 
+  var contieneVideo = document.getElementById('kaizenCont');
+  contieneVideo.style.display = 'none'; 
+     
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  if (document.body.style.zoom !== "100%") {                                                                                         /// REGRESA PANTALLA AL 100%
+    document.body.style.zoom = "100%";
+  }
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   idsMAhijos.forEach(function (elto) {                                                          /// OCULTA 6 ELEMENTOS = 'troubleshooting','canvasContainer2' 
     var elemento = document.getElementById(elto);                                               /// 'contChecks','canvasContainer3','contImagNeg','contImagGraf'    
     if (elemento) {
@@ -1418,102 +1441,127 @@ function deslizaContenedor(idElement, idButton) {
     }
   });
  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- idsMA.forEach(function (elto) {                                                                                     /// OCULTA TODOS LOS CANVAS INCLUSO HIJOS           
+  idsMA.forEach(function (elto) {                                                                                     /// OCULTA TODOS LOS CANVAS INCLUSO HIJOS           
     var elemento = document.getElementById(elto);    
     if (elemento) {
       elemento.style.display = 'none';
     }
   });
- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  if (contLinkMant !== null && contImgEntrenos !== null) {
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  if (contLinkMant !== null && contImgEntrenos !== null) {                                                                                     /// MUESTRA LINKS
     contLinkMant.style.display = 'none';
     contImgEntrenos.style.display = 'none';
   }
- 
-
   // Verificar si el elemento ya está en el array
   if (!arrayPosicionnador.includes(idElement)) {
     arrayPosicionnador.push(idElement);
   }
-  var contenedor = document.getElementById(idElement);  
+
+  switch (idElement) {
+    case 'conti-boton-kaizen':
+      var contenedor = document.getElementById('conti-boton-kaizen');
+
+      showButtonsKaizenRetraso();
+
+      idsMA.forEach(element => {
+        var elemento = document.getElementById(element);
+        if (elemento === idElement) {
+          elemento.style.display = 'flex';
+        } else if (elemento) {
+          elemento.style.display = 'none';
+        }
+      });
+    break;
+    default:
+  } 
+  
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  var contenedor = document.getElementById(idElement);                                                                              /// MUESTRA CONTENEDOR PROPIO
   contenedor.style.display = 'flex';
   contenedor.style.left = '257px';
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  idsMA.forEach(element => {
-    var elemento = document.getElementById(element);
-    if (elemento === document.getElementById(idElement)) {
-        elemento.style.display = 'flex';
-    } else {
-        elemento.style.display = 'none';
-    }
-  }); 
 
   for (var i = 1; i < arrayPosicionnador.length; i++) {
     var elementoActual = document.getElementById(arrayPosicionnador[i]);
     var elementoAnterior = document.getElementById(arrayPosicionnador[i - 1]);
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ if (elementoActual && elementoAnterior) {                                                                                 /// OBTIENE POSICION ELEMENTO ANTERIOR
+    var estiloAnterior = window.getComputedStyle(elementoAnterior);
+    var posicionAnterior = parseFloat(estiloAnterior.getPropertyValue('left'));
+    var anchoAnterior = parseFloat(estiloAnterior.getPropertyValue('width'));
 
-    if (elementoActual && elementoAnterior) {
-      var estiloAnterior = window.getComputedStyle(elementoAnterior);
-      var posicionAnterior = parseFloat(estiloAnterior.getPropertyValue('left'));
-      var anchoAnterior = parseFloat(estiloAnterior.getPropertyValue('width'));
-
-      destino = posicionAnterior + anchoAnterior;
+    destino = posicionAnterior + anchoAnterior;
     }
   }
-
-  arrayIdButtsMA.forEach(element => {
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  arrayIdButtsMA.forEach(element => {                                                                                                      /// PONE BOTON NARANJA
     var elemento = document.getElementById(element);
     if (elemento) {
-        if (element === idButton) {
-            elemento.style.backgroundColor = 'orange';
-        } else {
-            elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)';
-        }
+      if (element === idButton) {
+         elemento.style.backgroundColor = 'orange';
+      } else {
+        elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)';
+      }
     }
   });
-
 }
 function deslizAutomatic(){
+  var conteneKaizen = document.getElementById('kaizenCont')
   arrayPosicionnador = [];
   destino = 277;
-  arrayIdButtsMA.forEach(function (elto) {
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  arrayIdButtsMA.forEach(function (elto) {                                                                                            /// RESTAURA GRIS A BOTONES
     var elemento = document.getElementById(elto);    
     if (elemento) {
       elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)'; // Restaura el color original
     }
   });
-  idsMA.forEach(function (elto) {
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  idsMA.forEach(function (elto) {                                                                                                     /// OCULTA TODO M.A
     var elemento = document.getElementById(elto);    
     if (elemento) {
       elemento.style.display = 'none';
     }
   });
+
+
   //setTimeout(function() {
     deslizaContenedorII('troubleshooting', 'troubleshoot');  
     // Esperar 400 milisegundos y ejecutar la tercera función
-    setTimeout(function() {
-      deslizaContenedorII('canvasContainer2', 'def1');  
-      // Esperar 400 milisegundos y ejecutar la tercera función
-      setTimeout(function() {
-        deslizaContenedorII('contChecks', 'def2');  
-        // Esperar 400 milisegundos y ejecutar la cuarta función
+
+        // Esperar 400 milisegundos y ejecutar la sexta función
         setTimeout(function() {
-          deslizaContenedorII('canvasContainer3', 'adtBut');  
-          // Esperar 400 milisegundos y ejecutar la quinta función
+          // Esperar 400 milisegundos y ejecutar la sexta función
+          deslizaContenedorII('canvasContainer2', 'def1');  
+          // Esperar 400 milisegundos y ejecutar la tercera función
           setTimeout(function() {
-            deslizaContenedorII('contImagNeg', 'fua1');  
-            // Esperar 400 milisegundos y ejecutar la sexta función
+            deslizaContenedorII('contChecks', 'def2');  
+            // Esperar 400 milisegundos y ejecutar la cuarta función
             setTimeout(function() {
-              deslizaContenedorII('contImagGraf', 'lup');
+              deslizaContenedorII('canvasContainer3', 'adtBut');  
+              // Esperar 400 milisegundos y ejecutar la quinta función
+              setTimeout(function() {
+                deslizaContenedorII('contImagNeg', 'fua1');  
+                // Esperar 400 milisegundos y ejecutar la sexta función
+                setTimeout(function() {
+                  deslizaContenedorII('contImagGraf', 'lup');
+                  setTimeout(function() {
+                    conteneKaizen.style.display = 'flex'
+                    deslizaContenedorII('kaizenCont', 'kaizen');                  
             }, 300);
           }, 300);
         }, 300);
       }, 300);
     }, 300);
-  //}, 50); 
+  }, 300);
+
+  document.body.style.zoom = "67%";
+
   console.log('al final de la funcion ',arrayPosicionnador)
 }
 function deslizaContenedorII(idElement, idButton) {
+  var originalButtonColors = {}; // Objeto para almacenar los colores originales de los 
   var contLinkMant = document.getElementById('linksMA');
   var elementoAnterior = null;
   var elementoActual = null;
@@ -1575,29 +1623,28 @@ function deslizaContenedorII(idElement, idButton) {
   setTimeout(function () {    
   }, 300);
 }
-
 function resetBotns() {  
   var contProblema = document.getElementById('linksMA');
   var contProblema2 = document.getElementById('contImgEntrenos');
-  
+  var contVidPlanos = document.getElementById('kaizenCont')
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  if (document.body.style.zoom !== "100%") {                                                                                                /// PANTALLA AL 100%
+    document.body.style.zoom = "100%";
+  }
   // Ocultar otros elementos y realizar otras acciones necesarias
   contProblema.style.display = 'none';
   contProblema2.style.display = 'none';
   console.log(arrayPosicionnador);
-
+  // Ocultar elementos de M.A
   idsMA.forEach(function (elto) {
     var elemento = document.getElementById(elto);    
     if (elemento) {
       elemento.style.display = 'none';
     }
   });
-
   arrayPosicionnador = [];
   destino = 257;
   // Restaurar el color original de los botones
-
-
-
   var miBoton1 = document.getElementById("troubleshoot");
   function handleClickEvent(event) {
   deslizaContenedor('troubleshooting', 'troubleshoot');
@@ -1634,13 +1681,20 @@ function resetBotns() {
   }
   miBoton6.addEventListener("click", handleClickEvent6);
 
-  // Itera a través de cada ID de botón
+  // Restaura color gris a los botones
   arrayIdButtsMA.forEach(function (buttonId) {
-  // Obtiene el elemento del botón por su ID
   var button = document.getElementById(buttonId);
-  // Establece el color de fondo del botón
   button.style.backgroundColor = 'rgba(83, 82, 82, 0.678)';
   });
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  videoElements.forEach(video => {                                                                                                       /// OCULTA PADRE / VIDEO
+    if (video) {
+      video.pause();
+      video.style.display = 'none';
+    }
+  });
+  contVidPlanos.style.display = 'none'
 
   arrayPosicionnador = [];
   console.log(arrayPosicionnador)
@@ -2499,6 +2553,10 @@ function irContenedorAnterior() {
   linksTemporales.style.display = 'none'
   linksTemporalesII.style.display = 'none'
 
+  if (document.body.style.zoom !== "100%") {
+    document.body.style.zoom = "100%";
+  }
+
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);
     elemento.style.display='none'}
@@ -2920,14 +2978,16 @@ function irContenedorAnterior() {
 
 } 
 function irContenedorSiguiente() {
+  if (document.body.style.zoom !== "100%") {
+    document.body.style.zoom = "100%";
+  }
+
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);
     if (elemento) {
       elemento.style.display = 'none';
     }
   }
-
-
     // 1. Si el primer elemento del array 'idsArray' corresponde a 'pantalla-inicial', entonces alert 'pantalla-inicial'
     if (idsArrayEliminados[0] !== "salir") {
       idsArrayEliminados.unshift("salir");
@@ -2936,7 +2996,6 @@ function irContenedorSiguiente() {
 
   var previoElementID = idsArrayEliminados[idsArrayEliminados.length - 2];
   for (var i = 1; i < idsArrayEliminados.length; i++) {
-
 
     switch (previoElementID) {
       case "salir":
@@ -4472,6 +4531,9 @@ function resultadosMA(){
       elemento.style.display = 'none';
     }
   } 
+  if (document.body.style.zoom !== "100%") {
+    document.body.style.zoom = "100%";
+  }
   video.pause();
   video.style.display = 'none'  
   //// AUMENTA TAMANO SECUENCIAL DE IMAGENES /////////////////////////////////////////////////////////////////////////
@@ -5090,26 +5152,6 @@ function deslizaMosaicoII(idElement) {
   }
 
 }
-function muestraOperacion(){
-  var franjaGris = document.getElementById('franja-gris');
-  var franjaBlanca = document.getElementById('franja-Blanca');
-  var pantaInicial = document.getElementById('pantalla-inicial'); 
-  var links = document.getElementById('links-iniciales');
-  var linksI = document.getElementById('links-inicialesI');
-
-  franjaBlanca.style.display = 'none'
-  franjaGris.style.display = 'none'
-  contTitulo.style.display = 'none'  
-  videoII.pause();
-  videoII.style.display = 'none'
-  video.play();
-  video.style.display = 'flex'
-
-  pantaInicial.style.display = 'flex'
-  contInicial.style.display = 'flex'
-  links.style.display = 'flex'
-  linksI.style.display = 'flex'
-}
 function ampliaIndicaciones(index) {
   var botonConico = document.getElementById('bot-indicacionesII');
   var indicEjeI = document.getElementById('indicaciones-conico');
@@ -5183,6 +5225,218 @@ function ocultarIndicaciones(idIndicador) {
 
 
 }
+function rodillosKaizen(idButton,vidElem) {
+  var botonesColeccion = document.getElementsByClassName('butt-mautonomo-planos');
+  var contieneKaizen = document.getElementById('kaizenCont');
+  var contButTerceros = document.getElementById('conti-boton-planos');
+  var buttsTerceros = document.getElementsByClassName('butt-mautonomo-planos');
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Array.from(buttsTerceros).forEach(elemento => {                                                                                 ///OCULTA LOS BOTONES TERCEROS
+    var element = document.getElementById(elemento.id); // Aquí asumo que cada elemento tiene un atributo 'id'
+    if (element) {
+      element.style.display = 'none';
+    }
+  });
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  arrayButtsKaizen.forEach(element => {                                                                                             /// BOTON NARANJA TEXTO NEGRO                                                                                                    
+    var elemento = document.getElementById(element);
+    if (elemento) {
+        if (element === idButton) {
+            elemento.style.backgroundColor = 'orange';
+            elemento.style.color = 'black';
+        } else {
+          elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)';
+          elemento.style.color = 'white';
+        }
+    }
+  });
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  videoElements.forEach(video => {                                                                                                               /// OCULTA VIDEO
+    if (video) {
+      video.pause();
+      video.style.display = 'none';
+    }
+  });
+  switch(idButton){
+    case 'btn12':
+      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      contieneKaizen.style.display = 'flex'                                                                                         /// PADRE VIDEO / VIDEO PLAY
+      for (const video of videoElements) {
+        if (video.id === vidElem) {
+          video.style.display = 'block'; // Muestra el video
+          video.currentTime = 0;           
+          video.play(); // Reproduce el video
+        } else { 
+          video.style.display = 'none'; // Oculta el video
+          video.pause(); // Pausa el video
+        }
+      }
+
+
+      contButTerceros.style.display = 'flex';
+
+      // Paso 2: Recorrer la colección y hacer visibles los botones con un intervalo de 0.3 segundos
+      for (var i = 0; i < botonesColeccion.length; i++) {
+        var boton = botonesColeccion[i];
+
+        // Mostrar el botón con un intervalo de 0.3 segundos
+        setTimeout(function(currentBoton) {
+          return function() {
+            currentBoton.style.display = 'block';
+
+            // Paso 3: Aumentar el tamaño al doble y luego volver al tamaño normal después de 0.3 segundos
+            setTimeout(function() {
+              currentBoton.style.transform = 'scale(4)';
+
+              // Después de 0.3 segundos, volver al tamaño normal
+              setTimeout(function() {
+                currentBoton.style.transform = 'scale(1)';
+              }, 100);
+            }, 100);
+          };
+        }(boton), i * 100); // Multiplicar por i para aplicar el intervalo adecuado
+      }      
+    break;
+    case 'btn10':
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      if(vidElem === ''){                                                                                                                 ///OCULTA PADRE Y VIDEO
+        contieneKaizen.style.display = 'none'                                                                                        
+        for (const video of videoElements) {
+          if (video) {
+            video.style.display = 'none'; // Muestra el video
+            video.pause(); // Reproduce el video
+          } 
+        }
+      }
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      for (var i = 0; i < arrayButtsPlanos.length; i++) {                                                                            /// OCULTA TERCEROS BOTONES
+        var elemento = document.getElementById(arrayButtsPlanos[i]);
+        if (elemento) {
+          elemento.style.display = 'none';
+        }
+      }
+    break;
+    case 'btn11':
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      if(vidElem === ''){                                                                                                                 ///OCULTA PADRE Y VIDEO
+        contieneKaizen.style.display = 'none'                                                                                        
+        for (const video of videoElements) {
+          if (video) {
+            video.style.display = 'none'; // Muestra el video
+            video.pause(); // Reproduce el video
+          } 
+        }
+      }
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      for (var i = 0; i < arrayButtsPlanos.length; i++) {                                                                            /// OCULTA TERCEROS BOTONES
+        var elemento = document.getElementById(arrayButtsPlanos[i]);
+        if (elemento) {
+          elemento.style.display = 'none';
+        }
+      }
+    break; 
+    case 'btn13':
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      if(vidElem === ''){                                                                                                                 ///OCULTA PADRE Y VIDEO
+        contieneKaizen.style.display = 'none'                                                                                        
+        for (const video of videoElements) {
+          if (video) {
+            video.style.display = 'none'; // Muestra el video
+            video.pause(); // Reproduce el video
+          } 
+        }
+      }
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      Array.from(buttsTerceros).forEach(elemento => {                                                                                /// MOSTRAR BOTONES TERCEROS
+        var element = document.getElementById(elemento.id); // Aquí asumo que cada elemento tiene un atributo 'id'
+        if (element) {
+          element.style.display = 'inline-block';
+        }
+      });
+    break;  
+    case 'btn14':
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      if(vidElem === ''){                                                                                                                 ///OCULTA PADRE Y VIDEO
+        contieneKaizen.style.display = 'none'                                                                                        
+        for (const video of videoElements) {
+          if (video) {
+            video.style.display = 'none'; // Muestra el video
+            video.pause(); // Reproduce el video
+          } 
+        }
+      }
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      Array.from(buttsTerceros).forEach(elemento => {                                                                                /// MOSTRAR BOTONES TERCEROS
+        var element = document.getElementById(elemento.id); // Aquí asumo que cada elemento tiene un atributo 'id'
+        if (element) {
+          element.style.display = 'inline-block';
+        }
+      });
+    break;  
+    case 'btn15':
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      if(vidElem === ''){                                                                                                                 ///OCULTA PADRE Y VIDEO
+        contieneKaizen.style.display = 'none'                                                                                        
+        for (const video of videoElements) {
+          if (video) {
+            video.style.display = 'none'; // Muestra el video
+            video.pause(); // Reproduce el video
+          } 
+        }
+      }
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      Array.from(buttsTerceros).forEach(elemento => {                                                                                /// MOSTRAR BOTONES TERCEROS
+        var element = document.getElementById(elemento.id); // Aquí asumo que cada elemento tiene un atributo 'id'
+        if (element) {
+          element.style.display = 'inline-block';
+        }
+      });
+    break;  
+    default:
+  }
+}
+
+function showButtonsKaizenRetraso() {
+  var contiButtsKaizen = document.getElementById('conti-boton-kaizen');
+  contiButtsKaizen.style.display = 'flex'
+  function mostrarConRetraso(i) {
+    if (i < arrayButtsKaizen.length) {
+      var botonId = arrayButtsKaizen[i];
+      var boton = document.getElementById(botonId);
+
+      if (boton) {
+        boton.style.display = 'inline-block'; // o 'inline-block' según tus necesidades
+
+        setTimeout(function() {
+          mostrarConRetraso(i + 1);
+        }, 150); // 150 milisegundos de retraso entre botones
+      }
+    }
+  }
+  mostrarConRetraso(0); // Comienza desde el primer botón
+}
+
+function showButtonsPlanosRetraso() {
+  var contiButtsPlanos = document.getElementById('conti-boton-planos');
+  contiButtsPlanos.style.display = 'flex'
+  function mostrarConRetraso(i) {
+    if (i < arrayButtsPlanos.length) {
+      var botonId = arrayButtsPlanos[i];
+      var boton = document.getElementById(botonId);
+
+      if (boton) {
+        boton.style.display = 'inline-block'; // o 'inline-block' según tus necesidades
+
+        setTimeout(function() {
+          mostrarConRetraso(i + 1);
+        }, 150); // 150 milisegundos de retraso entre botones
+      }
+    }
+  }
+  mostrarConRetraso(0); // Comienza desde el primer botón
+}
+  
+
 // Obtén todas las imágenes con la clase "aumentar"
 const imagenesAumentar = document.querySelectorAll('img.aumentar');
 // Agrega un evento click a cada imagen con la clase "aumentar"

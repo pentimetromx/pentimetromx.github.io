@@ -50,7 +50,7 @@
           <button class="Bot-inicio3-fondo" id="butt-6"></button>  
         </div> <br>
         <div id="contAtras-V" class="contOblicuosTorre">
-          <button class="Bot-inicio3" id="butt-7" onclick="muestraOperacion('')">Area Operativa</button>
+          <button class="Bot-inicio3" id="butt-7" onclick="abrirSeccionContinua('')">Area Operativa</button>
           <button class="Bot-inicio3-fondo" id="butt-8"></button>  
         </div> 
       </div>
@@ -493,6 +493,7 @@
         <button class="butt-mautonomo image-trainings" id="adtBut" onclick="deslizaContenedor('canvasContainer3','adtBut')">ADT</button>
         <button class="butt-mautonomo image-trainings" id="fua1" onclick="deslizaContenedor('contImagNeg','fua1')">FUA</button>          
         <button class="butt-mautonomo image-trainings" id="lup" onclick="deslizaContenedor('contImagGraf','lup')">LUP</button>
+        <button class="butt-mautonomo image-trainings" id="kaizen" onclick="deslizaContenedor('conti-boton-kaizen','kaizen')">KAIZEN</button>
         <button class="butt-mautonomo image-trainings" id="reset" onclick="resetBotns('troubleshoot')" style="background-color: red;color: white;">Reset</button>
         <button class="butt-mautonomo image-trainings" id="auto" onclick="deslizAutomatic('troubleshooting','troubleshoot')" style="background-color: red;color: white;">Show everything</button>
         <button class="butt-mautonomo image-trainings" id="resultados" onclick="resultadosMA()">TRACKING DASHBOARD</button>
@@ -541,7 +542,24 @@
       <div id="contImagGraf">
         <img src="./assets/Excel.png" alt="Gráfico de Excel 6">
       </div>      
+    </div>
+    
+    <div id="kaizenCont">
+      <video id="vidElem" class="video-training" src="./assets/kaizen vid.mp4" autoplay loop muted></video>
+    </div>  
+    
+    <div id="conti-boton-kaizen" style="display: flex;flex-direction: column;margin-left: 217px;margin-top: 46px;">
+      <button class="butt-mautonomo-kaizen image-trainings" id="btn12" onclick="rodillosKaizen('btn12','vidElem')">IMPLEMENTADOS</button>
+      <button class="butt-mautonomo-kaizen image-trainings" id="btn10" onclick="rodillosKaizen('btn10','')">BENCH MARK</button>
+      <button class="butt-mautonomo-kaizen image-trainings" id="btn11" onclick="rodillosKaizen('btn11','')">PROYECTOS</button>
+    </div>
+     
+    <div id="conti-boton-planos" style="display: flex;flex-direction: column;margin-left: 1150px;margin-top: 46px;">
+      <button class="butt-mautonomo-planos image-trainings" id="btn13" onclick="rodillosKaizen('btn13','')">PLANOS</button>
+      <button class="butt-mautonomo-planos image-trainings" id="btn14" onclick="rodillosKaizen('btn14','')">LAYOUT</button>
+      <button class="butt-mautonomo-planos image-trainings" id="btn15" onclick="rodillosKaizen('btn15','')">MATERIALES</button>
     </div> 
+
 
     <div id="lubricacion" style="display: none;">
 

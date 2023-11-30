@@ -10,10 +10,11 @@ body, html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; 
-  height: 100vh; /* Ajusta la altura del body para que cubra toda la pantalla */  
+  height: 100%; /* Ajusta la altura del body para que cubra toda la pantalla */  
   margin: 0; /* Elimina los márgenes predeterminados del body */
   padding: 0; /* Elimina los rellenos predeterminados del body */
   overflow:hidden;
+  transition: zoom 0.5s;  
 }
 #videoBackground {
   position: fixed;
@@ -43,6 +44,7 @@ body, html {
   height: 100%;
   background-color:#333333; /* Color de fondo gris con transparencia */
   z-index: -2; /* Coloca el fondo gris detrás del video */
+  pointer-events: none;
 }
 h1, h2, h3 {
   font-family: "GothamRounded";
@@ -707,13 +709,48 @@ width:447px ;
   height: 27px;
   width: 177px;
   border-radius: 9px;
-  background-color: rgba(83, 82, 82, 0.678); 
+  background-color: rgba(83, 82, 82, 0.678);
   position: relative;
   overflow: hidden;
   margin-bottom: 17px;
   cursor: pointer;
   padding-left: 27px;
 }
+.butt-mautonomo-kaizen{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  font-family: "GothamRounded", sans-serif;
+  color: white;
+  height: 27px;
+  width: 157px;
+  border-radius: 9px;
+  background-color: rgba(83, 82, 82, 0.678);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 17px;
+  cursor: pointer;
+  padding-left: 27px;
+}
+.butt-mautonomo-planos{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  font-family: "GothamRounded", sans-serif;
+  color: white;
+  height: 27px;
+  width: 127px;
+  border-radius: 9px;
+  background-color: rgba(83, 82, 82, 0.678);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 17px;
+  cursor: pointer;
+  padding-left: 27px;
+}
+
 .butt-mautonomo-freno::before {
   content: "";
   position: absolute;
@@ -740,9 +777,17 @@ width:447px ;
   width: 17px;
   height: 27px;
   background-color: rgba(255,0,255, 1);
-
 }
-
+.butt-mautonomo-planos::before,
+.butt-mautonomo-kaizen::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 17px;
+  height: 27px;
+  background-color: rgb(255, 174, 0);
+}
 .labl-class{
   font-family: "GothamRounded", sans-serif;
   color: yellow;
@@ -1734,11 +1779,23 @@ header {
   width: 207px;
   border-radius: 20px;
 }
-/* Para ocultar elementos */
-elemento {
-  opacity: 0;
-  transition: opacity 0.3s ease; /* Agrega una transición suave si lo deseas */
+#kaizenCont{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 397px;
+  top: 77px;
+  width: 737px;
+  border-radius: 20px;
+  border: 5px solid orange;   
+  display: none;
 }
+#kaizenCont video{
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+}
+#conti-boton-kaizen button,
 #conti-boton-rodilleria button,
 #conti-boton-teñido button,
 #conti-boton-desb button,
