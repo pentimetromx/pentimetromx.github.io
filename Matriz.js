@@ -7,7 +7,7 @@ var arrayContador = [];
 var destino = 257;
 var idsArray = [];
 var idsArrayEliminados = [];
-var idsMA = ['conti-boton-planos', 'conti-boton-kaizen','troubleshooting','canvasContainer2', 'contChecks', 'canvasContainer3', 'contImagNeg',,'contImagGraf','canvasContainer4','canvasContainer5','canvasContainer6','canvasContainer7','canvasContainer8', 'canvasContainer9'];
+var idsMA = ['kaizenCont','conti-boton-planos', 'conti-boton-kaizen','troubleshooting','canvasContainer2', 'contChecks', 'canvasContainer3', 'contImagNeg',,'contImagGraf','canvasContainer4','canvasContainer5','canvasContainer6','canvasContainer7','canvasContainer8', 'canvasContainer9'];
 var idsMAhijos = ['troubleshooting','canvasContainer2','contChecks','canvasContainer3','contImagNeg','contImagGraf'];
 var idsResultados = ['icon-ana','icon-carlos','icon-andres','icon-jorge','icon-jesus','icon-sandra','icon-mario'];
 var elementosContUser = document.querySelectorAll('.cont-user');
@@ -26,9 +26,9 @@ var imgTorreI = document.getElementById('imgTorre');
 var contInicial = document.getElementById('container1');
 var botonMa = document.getElementById('bot-mantaut');
 var imagPasoApaso = document.querySelectorAll('.img1');
-var allContenedores = ['conti-boton-kaizen','kaizenCont','container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','contene-11','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','container99','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria'];
-var 
-    linksIniciales = ['links-inicialesI','links-iniciales']
+var allContenedores = ['conti-boton-kaizen','conti-boton-planos','kaizenCont','container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','contene-11','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','container99','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria'];
+
+var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado'];
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor'];
 var allContTintero = ['pantalla-tintero','cont-links','imgTorre','vidTintero','imgsRepuestos','agrupaOblicuos-II','container2'];
@@ -1507,9 +1507,16 @@ function deslizaContenedor(idElement, idButton) {
   });
 }
 function deslizAutomatic(){
-  var conteneKaizen = document.getElementById('kaizenCont')
+  var conteneKaizen = document.getElementById('kaizenCont');
   arrayPosicionnador = [];
   destino = 277;
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  idsMA.forEach(function (elto) {                                                                                                            /// OCULTA TODO M.A
+    var elemento = document.getElementById(elto);    
+    if (elemento) {
+      elemento.style.display = 'none';
+    }
+  });
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   arrayIdButtsMA.forEach(function (elto) {                                                                                            /// RESTAURA GRIS A BOTONES
     var elemento = document.getElementById(elto);    
@@ -1517,33 +1524,16 @@ function deslizAutomatic(){
       elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)'; // Restaura el color original
     }
   });
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  idsMA.forEach(function (elto) {                                                                                                     /// OCULTA TODO M.A
-    var elemento = document.getElementById(elto);    
-    if (elemento) {
-      elemento.style.display = 'none';
-    }
-  });
 
-
-  //setTimeout(function() {
     deslizaContenedorII('troubleshooting', 'troubleshoot');  
-    // Esperar 400 milisegundos y ejecutar la tercera función
-
-        // Esperar 400 milisegundos y ejecutar la sexta función
-        setTimeout(function() {
-          // Esperar 400 milisegundos y ejecutar la sexta función
-          deslizaContenedorII('canvasContainer2', 'def1');  
-          // Esperar 400 milisegundos y ejecutar la tercera función
+      setTimeout(function() {
+        deslizaContenedorII('canvasContainer2', 'def1');  
           setTimeout(function() {
             deslizaContenedorII('contChecks', 'def2');  
-            // Esperar 400 milisegundos y ejecutar la cuarta función
             setTimeout(function() {
               deslizaContenedorII('canvasContainer3', 'adtBut');  
-              // Esperar 400 milisegundos y ejecutar la quinta función
               setTimeout(function() {
                 deslizaContenedorII('contImagNeg', 'fua1');  
-                // Esperar 400 milisegundos y ejecutar la sexta función
                 setTimeout(function() {
                   deslizaContenedorII('contImagGraf', 'lup');
                   setTimeout(function() {
@@ -1557,14 +1547,26 @@ function deslizAutomatic(){
   }, 300);
 
   document.body.style.zoom = "67%";
-
-  console.log('al final de la funcion ',arrayPosicionnador)
+  console.log(arrayPosicionnador)
 }
+
 function deslizaContenedorII(idElement, idButton) {
   var originalButtonColors = {}; // Objeto para almacenar los colores originales de los 
   var contLinkMant = document.getElementById('linksMA');
   var elementoAnterior = null;
   var elementoActual = null;
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+   if (idElement === 'kaizenCont') {
+    for (const video of videoElements) {
+      // Compara si el video está dentro del elemento 'kaizenCont'
+      if (video.closest('#kaizenCont')) {
+        video.style.display = 'flex'; // Muestra el video
+        video.currentTime = 0;
+        video.play(); // Reproduce el video
+      }
+    }
+  }
+
 
   if (contLinkMant !== null && contImgEntrenos !== null) {
     contLinkMant.style.display = 'none';
@@ -1680,6 +1682,13 @@ function resetBotns() {
   deslizaContenedor('contImagGraf','lup');
   }
   miBoton6.addEventListener("click", handleClickEvent6);
+
+  var miBoton7 = document.getElementById("kaizen");
+  function handleClickEvent7(event) {
+  deslizaContenedor('conti-boton-kaizen','kaizen');
+  }
+  miBoton7.addEventListener("click", handleClickEvent7);
+
 
   // Restaura color gris a los botones
   arrayIdButtsMA.forEach(function (buttonId) {
@@ -5227,9 +5236,9 @@ function ocultarIndicaciones(idIndicador) {
 }
 function rodillosKaizen(idButton,vidElem) {
   var botonesColeccion = document.getElementsByClassName('butt-mautonomo-planos');
-  var contieneKaizen = document.getElementById('kaizenCont');
   var contButTerceros = document.getElementById('conti-boton-planos');
   var buttsTerceros = document.getElementsByClassName('butt-mautonomo-planos');
+  var contieneKaizen = document.getElementById('kaizenCont');
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   Array.from(buttsTerceros).forEach(elemento => {                                                                                 ///OCULTA LOS BOTONES TERCEROS
     var element = document.getElementById(elemento.id); // Aquí asumo que cada elemento tiene un atributo 'id'
@@ -5260,21 +5269,36 @@ function rodillosKaizen(idButton,vidElem) {
   switch(idButton){
     case 'btn12':
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      contieneKaizen.style.display = 'flex'                                                                                         /// PADRE VIDEO / VIDEO PLAY
+      // Obtén el elemento 'vidElem'                                                                                                
+      var vidElem = document.getElementById('kaizenCont');
+      // Obtén el estilo calculado del elemento
+      var estiloCalculado = window.getComputedStyle(vidElem);      
+      // Verifica si la propiedad 'display' es igual a 'none'
+      if (estiloCalculado.display === 'none') {
+        // Cambia la propiedad 'display' a 'flex'
+        vidElem.style.display = 'flex';      
+        // Verifica la posición virtual en 'left'
+        var leftPosition = estiloCalculado.left.replace('px', ''); // Elimina 'px' y obtén el valor numérico
+        if (parseInt(leftPosition) !== 397) {
+          // Establece la posición virtual en 'left' a 397px
+          vidElem.style.left = '397px';
+        }
+      }
+      
+
+
       for (const video of videoElements) {
-        if (video.id === vidElem) {
-          video.style.display = 'block'; // Muestra el video
-          video.currentTime = 0;           
+        // Compara si el video está dentro del elemento 'kaizenCont'
+        if (video.closest('#kaizenCont')) {
+          video.style.display = 'flex'; // Muestra el video
+          video.currentTime = 0;
           video.play(); // Reproduce el video
-        } else { 
-          video.style.display = 'none'; // Oculta el video
-          video.pause(); // Pausa el video
         }
       }
 
 
-      contButTerceros.style.display = 'flex';
-
+      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      contButTerceros.style.display = 'flex';                                                                               /// BOTONES CON AUMENTO Y TRANSICION
       // Paso 2: Recorrer la colección y hacer visibles los botones con un intervalo de 0.3 segundos
       for (var i = 0; i < botonesColeccion.length; i++) {
         var boton = botonesColeccion[i];
@@ -5300,13 +5324,13 @@ function rodillosKaizen(idButton,vidElem) {
     case 'btn10':
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       if(vidElem === ''){                                                                                                                 ///OCULTA PADRE Y VIDEO
-        contieneKaizen.style.display = 'none'                                                                                        
         for (const video of videoElements) {
           if (video) {
             video.style.display = 'none'; // Muestra el video
             video.pause(); // Reproduce el video
           } 
         }
+        contieneKaizen.style.display = 'none'
       }
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       for (var i = 0; i < arrayButtsPlanos.length; i++) {                                                                            /// OCULTA TERCEROS BOTONES
