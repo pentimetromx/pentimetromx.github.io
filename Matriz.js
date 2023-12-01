@@ -43,6 +43,8 @@ var contIMmanta = document.getElementById('manta');
 
 var allContMA = ['conteneMantaut','conti-boton'];
 var buttonsMA = document.getElementsByClassName("butt-mautonomo");
+var buttsToyota = ['toyota8', 'toyota7', 'toyota6', 'toyota5','toyota4','toyota3','toyota2','toyota1'];
+
 
 const grupOblicuos = document.getElementById('agrupaOblicuos-I');
 const oblicuosVI = document.getElementById('agrupaOblicuos-VI');
@@ -1460,9 +1462,7 @@ function deslizaContenedor(idElement, idButton) {
   switch (idElement) {
     case 'conti-boton-kaizen':
       var contenedor = document.getElementById('conti-boton-kaizen');
-
       showButtonsKaizenRetraso();
-
       idsMA.forEach(element => {
         var elemento = document.getElementById(element);
         if (elemento === idElement) {
@@ -1473,15 +1473,29 @@ function deslizaContenedor(idElement, idButton) {
       });
     break;
     default:
-  } 
-  
+  }   
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  var contenedor = document.getElementById(idElement);                                                                              /// MUESTRA CONTENEDOR PROPIO
-  contenedor.style.display = 'flex';
-  contenedor.style.left = '257px';
+ var contenedor = document.getElementById(idElement);                                                                   /// MUESTRA CONTENEDOR PROPIO (PARAMETRO)
+
+  if (idElement !== 'troubleshooting' && contenedor) {
+    contenedor.style.display = 'flex';
+    contenedor.style.left = '257px';
+  } else{
+    var contenedorPadre = document.getElementById(idElement);
+    // Verifica si el contenedor padre existe
+    if (contenedorPadre) {
+      // Muestra el contenedor padre
+      contenedorPadre.style.display = 'flex';  
+      // Obtén todos los elementos hijos del contenedor
+      var elementosHijos = contenedorPadre.children;  
+      // Oculta cada elemento hijo
+      for (var i = 0; i < elementosHijos.length; i++) {
+        elementosHijos[i].style.display = 'none';
+      }
+    }
+  }
+  mostrarTroublesshIntervalo();
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
   for (var i = 1; i < arrayPosicionnador.length; i++) {
     var elementoActual = document.getElementById(arrayPosicionnador[i]);
     var elementoAnterior = document.getElementById(arrayPosicionnador[i - 1]);
@@ -1506,6 +1520,36 @@ function deslizaContenedor(idElement, idButton) {
     }
   });
 }
+function mostrarTroublesshIntervalo() {
+  console.log('Inicio de la función');
+  
+  // Selecciona el contenedor
+  var contenedor = document.getElementById('troubleshooting');
+  
+  // Obtiene todos los elementos hijos del contenedor
+  var elementos = contenedor.children;
+  
+  // Variable para mantener el índice actual
+  var index = 0;
+  
+  // Función para hacer visible cada elemento con intervalo de 150 ms
+  function hacerVisibleSiguienteElemento() {
+    if (index < elementos.length) {
+      // Muestra el elemento actual
+      elementos[index].style.display = 'block'; // Puedes cambiar 'block' por 'flex' si prefieres
+      
+      // Incrementa el índice para pasar al siguiente elemento
+      index++;
+      
+      // Programa la siguiente visibilidad después de 150 ms
+      setTimeout(hacerVisibleSiguienteElemento, 33);
+    }
+  }
+  
+  // Inicia la primera visibilidad
+  hacerVisibleSiguienteElemento();
+}
+
 function deslizAutomatic(){
   var conteneKaizen = document.getElementById('kaizenCont');
   arrayPosicionnador = [];
@@ -5243,7 +5287,7 @@ function rodillosKaizen(idButton,vidElem) {
   var imgsPlanos = document.getElementsByClassName('imgs-Planos');
   var contPlanos = document.getElementById('planos-kaizen');
   var contMateriales = document.getElementById('materiales-kaizen');
-  var contToyota = document.getElementById('toyota-kaizen')
+  var contToyota = document.getElementById('toyota-kaizen');
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   Array.from(buttsTerceros).forEach(elemento => {                                                                                 ///OCULTA LOS BOTONES TERCEROS
     var element = document.getElementById(elemento.id); // Aquí asumo que cada elemento tiene un atributo 'id'
@@ -5271,12 +5315,66 @@ function rodillosKaizen(idButton,vidElem) {
       video.style.display = 'none';
     }
   });
-
   contPlanos.style.display = 'none'
   contMateriales.style.display = 'none'
   contToyota.style.display = 'none'
 
   switch(idButton){
+    case 'btn10':
+      for (var i = 0; i < buttsToyota.length; i++) {
+        var elemento = document.getElementById(buttsToyota[i]);
+      
+        if (elemento) {
+          // Accede a la propiedad 'display' utilizando window.getComputedStyle
+          var estiloDisplay = window.getComputedStyle(elemento).getPropertyValue('display');
+      
+          // Verifica si la propiedad 'display' es 'none' y cámbiala a 'flex' si es necesario
+          if (estiloDisplay === 'none') {
+            elemento.style.display = 'flex';
+          }
+        }
+      }
+
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      if(vidElem === ''){                                                                                                                 ///OCULTA PADRE Y VIDEO
+        for (const video of videoElements) {
+          if (video) {
+            video.style.display = 'none'; // Muestra el video
+            video.pause(); // Reproduce el video
+          } 
+        }
+        contieneKaizen.style.display = 'none'
+      }
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      for (var i = 0; i < arrayButtsPlanos.length; i++) {                                                                            /// OCULTA TERCEROS BOTONES
+        var elemento = document.getElementById(arrayButtsPlanos[i]);
+        if (elemento) {
+          elemento.style.display = 'none';
+        }
+      }
+
+      contToyota.style.display = 'flex';
+      transicionImagenes();
+    break;
+    case 'btn11':
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      if(vidElem === ''){                                                                                                                 ///OCULTA PADRE Y VIDEO
+        contieneKaizen.style.display = 'none'                                                                                        
+        for (const video of videoElements) {
+          if (video) {
+            video.style.display = 'none'; // Muestra el video
+            video.pause(); // Reproduce el video
+          } 
+        }
+      }
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      for (var i = 0; i < arrayButtsPlanos.length; i++) {                                                                            /// OCULTA TERCEROS BOTONES
+        var elemento = document.getElementById(arrayButtsPlanos[i]);
+        if (elemento) {
+          elemento.style.display = 'none';
+        }
+      }
+    break; 
     case 'btn12':
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       var vidElem = document.getElementById('kaizenCont');                                                                      /// MUESTRA PADRE E HIJO (VIDEO)
@@ -5325,47 +5423,6 @@ function rodillosKaizen(idButton,vidElem) {
         }(boton), i * 100); // Multiplicar por i para aplicar el intervalo adecuado
       }      
     break;
-    case 'btn10':
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      if(vidElem === ''){                                                                                                                 ///OCULTA PADRE Y VIDEO
-        for (const video of videoElements) {
-          if (video) {
-            video.style.display = 'none'; // Muestra el video
-            video.pause(); // Reproduce el video
-          } 
-        }
-        contieneKaizen.style.display = 'none'
-      }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      for (var i = 0; i < arrayButtsPlanos.length; i++) {                                                                            /// OCULTA TERCEROS BOTONES
-        var elemento = document.getElementById(arrayButtsPlanos[i]);
-        if (elemento) {
-          elemento.style.display = 'none';
-        }
-      }
-
-      contToyota.style.display = 'flex';
-      /* hideCurrentButton(); */
-    break;
-    case 'btn11':
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      if(vidElem === ''){                                                                                                                 ///OCULTA PADRE Y VIDEO
-        contieneKaizen.style.display = 'none'                                                                                        
-        for (const video of videoElements) {
-          if (video) {
-            video.style.display = 'none'; // Muestra el video
-            video.pause(); // Reproduce el video
-          } 
-        }
-      }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      for (var i = 0; i < arrayButtsPlanos.length; i++) {                                                                            /// OCULTA TERCEROS BOTONES
-        var elemento = document.getElementById(arrayButtsPlanos[i]);
-        if (elemento) {
-          elemento.style.display = 'none';
-        }
-      }
-    break; 
     case 'btn13':
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       if(vidElem === ''){                                                                                                                 ///OCULTA PADRE Y VIDEO
@@ -5438,21 +5495,35 @@ function rodillosKaizen(idButton,vidElem) {
   }
 }
 
-/*var botonesToyo = document.querySelectorAll('.imgs-toyota');
-var currentButtonIndex = 0;
+function transicionImagenes() {
+  console.log('inicio de la funcion');  
+  var index = 0;
 
-function hideCurrentButton() {
-  if (currentButtonIndex < botonesToyo.length) {
-    botonesToyo[currentButtonIndex].style.display = 'none';
-    currentButtonIndex++;
-  } else {
-    clearInterval(intervalId);
+  function ocultarSiguienteImagen() {
+    var imageId = buttsToyota[index];
+    var image = document.getElementById(imageId);
+
+    if (image) {
+      image.style.display = 'none';
+    }
+
+    index++;
+
+    if (index < buttsToyota.length) {
+      // Si hay más imágenes, programa la siguiente ocultación después de 0.3 segundos
+      setTimeout(ocultarSiguienteImagen, 300);
+    } else {
+      // Después de mostrar todas las imágenes, ejecuta el código adicional
+      var imgToyota = document.getElementById('toyota7');
+      imgToyota.style.display = 'flex';
+    }
   }
+
+  // Inicia la primera ocultación
+  ocultarSiguienteImagen();
 }
 
-var intervalId = setInterval(hideCurrentButton, 200);*/
-
-function showButtonsKaizenRetraso() {
+  function showButtonsKaizenRetraso() {
   var contiButtsKaizen = document.getElementById('conti-boton-kaizen');
   contiButtsKaizen.style.display = 'flex'
   function mostrarConRetraso(i) {
