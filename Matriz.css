@@ -2231,7 +2231,27 @@ elemento.visible {
   border: solid orange;
   border-radius: 7px;
 }
-/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+#toyota-kaizen-antes{
+  position: absolute;
+  left: 394px;
+  top: 71px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 751px;
+  margin: 0 auto;
+  display: none;
+}
+.imgs-Antes {
+  /* width: 236px;
+  height: 177px; */
+  margin: 5px;
+  box-sizing: border-box;
+  border: solid orange;
+  border-radius: 7px;
+  width: calc(33.3333% - 10px); /* 10px es el espacio entre las imágenes */
+  margin-bottom: 10px; /* Espacio entre las filas */
+}
 #toyota1,
 #toyota2,
 #toyota3,

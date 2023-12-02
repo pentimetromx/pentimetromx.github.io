@@ -7,8 +7,8 @@ var arrayContador = [];
 var destino = 257;
 var idsArray = [];
 var idsArrayEliminados = [];
-var idsMA = ['kaizenCont','conti-boton-planos', 'conti-boton-kaizen','troubleshooting','canvasContainer2', 'contChecks', 'canvasContainer3', 'contImagNeg',,'contImagGraf','canvasContainer4','canvasContainer5','canvasContainer6','canvasContainer7','canvasContainer8', 'canvasContainer9'];
-var idsMAhijos = ['troubleshooting','canvasContainer2','contChecks','canvasContainer3','contImagNeg','contImagGraf'];
+var idsMA = ['planos-kaizen','materiales-kaizen','kaizenCont','conti-boton-planos', 'conti-boton-kaizen','troubleshooting','canvasContainer2', 'contChecks', 'canvasContainer3', 'contImagNeg',,'contImagGraf','canvasContainer4','canvasContainer5','canvasContainer6','canvasContainer7','canvasContainer8', 'canvasContainer9'];
+var idsMAhijos = ['materiales-kaizen','troubleshooting','canvasContainer2','contChecks','canvasContainer3','contImagNeg','contImagGraf'];
 var idsResultados = ['icon-ana','icon-carlos','icon-andres','icon-jorge','icon-jesus','icon-sandra','icon-mario'];
 var elementosContUser = document.querySelectorAll('.cont-user');
 var lineasGrid = document.getElementById('contLineas');
@@ -26,7 +26,7 @@ var imgTorreI = document.getElementById('imgTorre');
 var contInicial = document.getElementById('container1');
 var botonMa = document.getElementById('bot-mantaut');
 var imagPasoApaso = document.querySelectorAll('.img1');
-var allContenedores = ['planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','contene-11','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','container99','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria'];
+var allContenedores = ['toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','contene-11','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','container99','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria'];
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado'];
@@ -60,6 +60,7 @@ const line = document.getElementById("line");
 const lineI = document.getElementById("lineI");
 let hoverTimeout;
 let hideTimeout;
+let contadorClicks = 0;
 
 var conteHijosTintero = ['cont-links', 'imgTorre', 'imgsRepuestos','agrupaOblicuos-II'];
 var conteHijosFrente = ['imgTorre-f','imgsRepuestos-II', 'agrupaOblicuos-III'];
@@ -4574,11 +4575,16 @@ function lubricaDiario(butId,labelId){
     default:
   }
 }
+function antesImagenes(){
+  var contImagenAntes = document.getElementById('toyota-kaizen-antes');
+  contImagenAntes.style.display = 'flex'
+}
 function resultadosMA(){
   var iconosElement = document.getElementById('iconos');    
   var title = document.getElementById('title-interfaz');
   var contButtons = document.getElementById('container99');
-  for (var i = 0; i < allContenedores.length; i++) {
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  for (var i = 0; i < allContenedores.length; i++) {                                                                                           /// OCULTA TODO !!!
     var elemento = document.getElementById(allContenedores[i]);
     if (elemento) {
       elemento.style.display = 'none';
@@ -4589,17 +4595,16 @@ function resultadosMA(){
   }
   video.pause();
   video.style.display = 'none'  
-  //// AUMENTA TAMANO SECUENCIAL DE IMAGENES /////////////////////////////////////////////////////////////////////////
-  const iconos = document.querySelectorAll('.icono-user'); // Selecciona todos los elementos con la clase .icono-user
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  const iconos = document.querySelectorAll('.icono-user');                                                               /// AUMENTA TAMANO SECUENCIAL DE IMAGENES
   iconos.forEach((icono, index) => {
     // Aplica la función de aumentarTamaño con un retraso entre cada imagen
     setTimeout(() => {
       aumentarTamaño(icono, 1.8, 0.5);
     }, index * 0.2 * 100); // Aumenta cada imagen con un retraso de 0.2 segundos
   });
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // Verifica si el elemento está visible
-  var estilos = window.getComputedStyle(lineasGrid);
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  var estilos = window.getComputedStyle(lineasGrid);                                                                        /// OBTENER 'window.getComputedStyle' 
   var display = estilos.getPropertyValue('display');
   if (display === 'none') {
     contSecundario = document.getElementById('conte-secundario')
@@ -5279,18 +5284,17 @@ function ocultarIndicaciones(idIndicador) {
 
 }
 function rodillosKaizen(idButton,vidElem) {
-  var botonesColeccion = document.getElementsByClassName('butt-mautonomo-planos');
-  var contButTerceros = document.getElementById('conti-boton-planos');
   var buttsTerceros = document.getElementsByClassName('butt-mautonomo-planos');
-  var contieneKaizen = document.getElementById('kaizenCont');
-  var conPlanos = document.getElementById('planos-kaizen');
-  var imgsPlanos = document.getElementsByClassName('imgs-Planos');
-  var contPlanos = document.getElementById('planos-kaizen');
+  var contImagenAntes = document.getElementById('toyota-kaizen-antes');
+  var contButTerceros = document.getElementById('conti-boton-planos');
   var contMateriales = document.getElementById('materiales-kaizen');
-  var contToyota = document.getElementById('toyota-kaizen');
+  var imgsPlanos = document.getElementsByClassName('imgs-Planos');
+  var contieneKaizen = document.getElementById('kaizenCont');
+  var contToyota = document.getElementById('toyota-kaizen');  
+  var conPlanos = document.getElementById('planos-kaizen');
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  Array.from(buttsTerceros).forEach(elemento => {                                                                                 ///OCULTA LOS BOTONES TERCEROS
-    var element = document.getElementById(elemento.id); // Aquí asumo que cada elemento tiene un atributo 'id'
+  Array.from(buttsTerceros).forEach(elemento => {                                                                   /// INICIALMENTE OCULTA LOS BOTONES TERCEROS
+    var element = document.getElementById(elemento.id);
     if (element) {
       element.style.display = 'none';
     }
@@ -5309,21 +5313,22 @@ function rodillosKaizen(idButton,vidElem) {
     }
   });
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  videoElements.forEach(video => {                                                                                                               /// OCULTA VIDEO
+  videoElements.forEach(video => {                                                                                                             /// OCULTA VIDEOS
     if (video) {
       video.pause();
       video.style.display = 'none';
     }
   });
-  contPlanos.style.display = 'none'
+  contImagenAntes.style.display = 'none'
+  conPlanos.style.display = 'none'
   contMateriales.style.display = 'none'
   contToyota.style.display = 'none'
 
   switch(idButton){
     case 'btn10':
-      for (var i = 0; i < buttsToyota.length; i++) {
-        var elemento = document.getElementById(buttsToyota[i]);
-      
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      for (var i = 0; i < buttsToyota.length; i++) {                                                                        /// OBTENER 'window.getcomputedStyle'
+        var elemento = document.getElementById(buttsToyota[i]);      
         if (elemento) {
           // Accede a la propiedad 'display' utilizando window.getComputedStyle
           var estiloDisplay = window.getComputedStyle(elemento).getPropertyValue('display');
@@ -5334,7 +5339,6 @@ function rodillosKaizen(idButton,vidElem) {
           }
         }
       }
-
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       if(vidElem === ''){                                                                                                                 ///OCULTA PADRE Y VIDEO
         for (const video of videoElements) {
@@ -5377,33 +5381,45 @@ function rodillosKaizen(idButton,vidElem) {
     break; 
     case 'btn12':
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      var vidElem = document.getElementById('kaizenCont');                                                                      /// MUESTRA PADRE E HIJO (VIDEO)
+      contadorClicks++;                                                                                                 /// LOGICA PRIMER CLICK MUESTRA IMAGENES
+      if (contadorClicks === 1) {
+        contButTerceros.style.display = 'none'
+        contieneKaizen.style.display = 'none'
+        contImagenAntes.style.display = 'flex'
+      } else if (contadorClicks === 2) {
+      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      var contieneKaizen = document.getElementById('kaizenCont');                                                 /// SEGUNDO CLICK MUESTRA PADRE E HIJO (VIDEO)
       // Obtén el estilo calculado del elemento
-      var estiloCalculado = window.getComputedStyle(vidElem);      
+      var estiloCalculado = window.getComputedStyle(contieneKaizen);      
       // Verifica si la propiedad 'display' es igual a 'none'
       if (estiloCalculado.display === 'none') {
         // Cambia la propiedad 'display' a 'flex'
-        vidElem.style.display = 'flex';      
+        contieneKaizen.style.display = 'flex';      
         // Verifica la posición virtual en 'left'
         var leftPosition = estiloCalculado.left.replace('px', ''); // Elimina 'px' y obtén el valor numérico
         if (parseInt(leftPosition) !== 397) {
           // Establece la posición virtual en 'left' a 397px
-          vidElem.style.left = '397px';
+          contieneKaizen.style.left = '397px';
         }
       }
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      contImagenAntes.style.display = 'none';                                                                   /// SEGUNDO CLICK OCULTA IMAGENES / MUESTRA VIDEO            
       for (const video of videoElements) {
-        // Compara si el video está dentro del elemento 'kaizenCont'
-        if (video.closest('#kaizenCont')) {
-          video.style.display = 'flex'; // Muestra el video
-          video.currentTime = 0;
-          video.play(); // Reproduce el video
-        }
-      }
+       // Compara si el video está dentro del elemento 'kaizenCont'
+       if (video.closest('#kaizenCont')) {
+         video.style.display = 'flex'; // Muestra el video
+         video.currentTime = 0;
+         video.play(); // Reproduce el video
+       }
+       }
+        contadorClicks = 0;
+      }  
+
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       contButTerceros.style.display = 'flex';                                                                               /// BOTONES CON AUMENTO Y TRANSICION
       // Paso 2: Recorrer la colección y hacer visibles los botones con un intervalo de 0.3 segundos
-      for (var i = 0; i < botonesColeccion.length; i++) {
-        var boton = botonesColeccion[i];
+      for (var i = 0; i < buttsTerceros.length; i++) {
+        var boton = buttsTerceros[i];
 
         // Mostrar el botón con un intervalo de 0.3 segundos
         setTimeout(function(currentBoton) {
@@ -5421,7 +5437,7 @@ function rodillosKaizen(idButton,vidElem) {
             }, 100);
           };
         }(boton), i * 100); // Multiplicar por i para aplicar el intervalo adecuado
-      }      
+      }       
     break;
     case 'btn13':
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -5492,6 +5508,20 @@ function rodillosKaizen(idButton,vidElem) {
       });
     break;  
     default:
+  }
+}
+// Función que maneja el clic
+function manejarClick() {
+  contadorClicks++;
+
+  // Verifica el número de clics y muestra el alert correspondiente
+  if (contadorClicks === 1) {
+    alert('Primer click');
+  } else if (contadorClicks === 2) {
+    alert('Segundo click');
+    
+    // Reinicia la variable contadorClicks después del segundo clic
+    contadorClicks = 0;
   }
 }
 
