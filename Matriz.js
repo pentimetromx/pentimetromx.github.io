@@ -7,7 +7,7 @@ var arrayContador = [];
 var destino = 257;
 var idsArray = [];
 var idsArrayEliminados = [];
-var idsMA = ['toyota-kaizen','toyota-kaizen-antes','planos-kaizen','materiales-kaizen','kaizenCont','conti-boton-planos', 'conti-boton-kaizen','troubleshooting','canvasContainer2', 'contChecks', 'canvasContainer3', 'contImagNeg',,'contImagGraf','canvasContainer4','canvasContainer5','canvasContainer6','canvasContainer7','canvasContainer8', 'canvasContainer9'];
+var idsMA = ['kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','planos-kaizen','materiales-kaizen','kaizenCont','conti-boton-planos', 'conti-boton-kaizen','troubleshooting','canvasContainer2', 'contChecks', 'canvasContainer3', 'contImagNeg',,'contImagGraf','canvasContainer4','canvasContainer5','canvasContainer6','canvasContainer7','canvasContainer8', 'canvasContainer9'];
 var idsMAhijos = ['materiales-kaizen','troubleshooting','canvasContainer2','contChecks','canvasContainer3','contImagNeg','contImagGraf'];
 var idsResultados = ['icon-ana','icon-carlos','icon-andres','icon-jorge','icon-jesus','icon-sandra','icon-mario'];
 var elementosContUser = document.querySelectorAll('.cont-user');
@@ -26,7 +26,7 @@ var imgTorreI = document.getElementById('imgTorre');
 var contInicial = document.getElementById('container1');
 var botonMa = document.getElementById('bot-mantaut');
 var imagPasoApaso = document.querySelectorAll('.img1');
-var allContenedores = ['toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','contene-11','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','container99','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria'];
+var allContenedores = ['kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','contene-11','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','container99','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria'];
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado'];
@@ -5286,6 +5286,7 @@ function ocultarIndicaciones(idIndicador) {
 function rodillosKaizen(idButton,vidElem) {
   var buttsTerceros = document.getElementsByClassName('butt-mautonomo-planos');
   var contImagenAntes = document.getElementById('toyota-kaizen-antes');
+  var kaizenPropuestos = document.getElementById('kaizen-propuestos');
   var contButTerceros = document.getElementById('conti-boton-planos');
   var contMateriales = document.getElementById('materiales-kaizen');
   var imgsPlanos = document.getElementsByClassName('imgs-Planos');
@@ -5320,17 +5321,19 @@ function rodillosKaizen(idButton,vidElem) {
       video.style.display = 'none';
     }
   });
-  contImagenAntes.style.display = 'none'
-  conPlanos.style.display = 'none'
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  kaizenPropuestos.style.display = 'none'                                                                                                 /// ELEMENTOS A OCULTAR
+  contImagenAntes.style.display = 'none'                                                                                                  
   contMateriales.style.display = 'none'
   contToyota.style.display = 'none'
-  if (bton12 !== null) {
+  conPlanos.style.display = 'none'
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  if (bton12 !== null) {                                                                                                             /// DEVUELVE ESTILO A BOTON
     bton12.style.backgroundColor = ''; // Elimina el fondo
     bton12.style.color = ''; // Restablece el color del texto
     bton12.innerText = 'IMPLEMENTADOS';
-} else {
-    console.error('El elemento con ID "btn12" no existe.');
-}      
+  }
+
   switch(idButton){
     case 'btn10':
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -5520,6 +5523,7 @@ function rodillosKaizen(idButton,vidElem) {
       });
     break;
     case 'btn17':
+      kaizenPropuestos.style.display = 'flex';
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       if(vidElem === ''){                                                                                                                 ///OCULTA PADRE Y VIDEO
         contieneKaizen.style.display = 'none'                                                                                        
@@ -5530,18 +5534,9 @@ function rodillosKaizen(idButton,vidElem) {
           } 
         }
       }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      Array.from(buttsTerceros).forEach(elemento => {                                                                                /// MOSTRAR BOTONES TERCEROS
-        var element = document.getElementById(elemento.id); // Aquí asumo que cada elemento tiene un atributo 'id'
-        if (element) {
-          element.style.display = 'inline-block';
-        }
-      });
     break;       
     default:
-
   }
-
 }
 // Función que maneja el clic
 function manejarClick() {
