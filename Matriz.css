@@ -14,7 +14,7 @@ body, html {
   margin: 0; /* Elimina los márgenes predeterminados del body */
   padding: 0; /* Elimina los rellenos predeterminados del body */
   overflow:hidden;
-  transition: zoom 0.5s;  
+  transition: zoom 0.5s;   
 }
 #videoBackground {
   position: fixed;
@@ -1123,32 +1123,17 @@ width:447px ;
   position: relative;
   /* left:77px; */
 }
-.Bot-inicio3{
-  background-color:rgb(189, 2, 2);
+#butt-111:hover,
+#butt-3:hover,
+#butt-5:hover,
+#butt-7:hover {
+  background-color: rgb(189, 2, 2);
   color: white;
-  border-radius: 7px;
-  width: 97px;
-  height: 47px;
-  font-size: 14px;
-  text-align: center;
-  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
-  transform: skewX(-30deg);
-  cursor: pointer;
-  z-index: 1;
 }
-.Bot-inicio3-fondo{
-  border-radius: 7px;
-  width: 101px;
-  height: 51px;
-  font-size: 14px;
-  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%); 
-  transform: skewX(-30deg);
-  cursor: pointer;
-  z-index: 0;
-}
-#butt-111{
+.Bot-inicio3 {
   position: absolute;
-  background-color:rgb(189, 2, 2);
+  background-color: rgba(0, 0, 0, 0.423);
+  transition: background-color 0.6s ease;
   color: white;
   border-radius: 7px;
   width: 155px;
@@ -1159,6 +1144,17 @@ width:447px ;
   transform: skewX(-30deg);
   cursor: pointer;
   z-index: 1;
+}
+
+.Bot-inicio3-fondo{
+  border-radius: 7px;
+  width: 101px;
+  height: 51px;
+  font-size: 14px;
+  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%); 
+  transform: skewX(-30deg);
+  cursor: pointer;
+  z-index: 0;
 }
 #butt-112{
   position: absolute;
@@ -1219,20 +1215,6 @@ width:447px ;
   left: 1094px;
   top:-602px;
 }
-#butt-3{
-  position: absolute;
-  background-color:rgb(189, 2, 2);
-  color: white;
-  border-radius: 7px;
-  width: 155px;
-  height: 47px;
-  font-size: 14px;
-  text-align: center;
-  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
-  transform: skewX(-30deg);
-  cursor: pointer;
-  z-index: 1;
-} 
 #butt-4{
  position: relative;
  margin-top: 6px;
@@ -1250,20 +1232,6 @@ width:447px ;
   position: relative;
   /* left:459px; */
 }
-#butt-5{
-  position: absolute;
-  background-color:rgb(189, 2, 2);
-  color: white;
-  border-radius: 7px;
-  width: 155px;
-  height: 47px;
-  font-size: 14px;
-  text-align: center;
-  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
-  transform: skewX(-30deg);
-  cursor: pointer;
-  z-index: 1;
-} 
 #butt-6{
  position: relative;
  margin-top: 6px;
@@ -1282,20 +1250,6 @@ width:447px ;
   position: relative;
   /* left:602px; */
 }
-#butt-7{
-  position: absolute;
-  background-color:rgb(189, 2, 2);
-  color: white;
-  border-radius: 7px;
-  width: 155px;
-  height: 47px;
-  font-size: 14px;
-  text-align: center;
-  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
-  transform: skewX(-30deg);
-  cursor: pointer;
-  z-index: 1;
-} 
 #butt-8{
   margin-right: 2px;
   background: linear-gradient(15deg, rgb(0, 255, 0) 15%,  rgba(0, 0, 0, 0.423) 60%);

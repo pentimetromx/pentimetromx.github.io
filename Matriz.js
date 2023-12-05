@@ -2,6 +2,8 @@ var arrayFunctions = ['updateMario','updateAna','updateCarlos','updateAndres','u
 var arrayIdButtsMA = ['resultados','troubleshoot','def1','def2','adtBut','fua1','lup','kaizen']
 var arrayButtsKaizen = ['btn10','btn11','btn12','btn17']
 var arrayButtsPlanos = ['btn13','btn14','btn15']
+var arrayButtsInicio = ['butt-111','butt-3','butt-5','butt-7']
+
 var arrayPosicionnador = []
 var arrayContador = []
 var destino = 257;
@@ -3353,9 +3355,7 @@ function listaEntrenamientosII(btnId) {
       var elemento = document.getElementById(id);
     
       if (elemento) {
-        /* elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)' */
         elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)'
-
       }
     }
   }  
