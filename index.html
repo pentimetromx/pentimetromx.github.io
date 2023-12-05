@@ -482,7 +482,7 @@
       <div class="contene-2" id="container8" style="left: 155px;display: none;">
         <button class="boton-a" id="bot-atras9" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 5px;" onclick="irContenedorAnterior('conteneMantaut')"></button>
         <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL INICIO</button>
-        <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="manejarClick()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
+        <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="aumentarTamanosDeBotonesVI()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
         <button class="boton-a" id="bot-atras14" style="text-align: center;width: 47px;position: absolute;left: 685px;top: 5px;" onclick="irContenedorSiguiente('')"></button>
       </div><br>
 
@@ -586,6 +586,15 @@
       <img id="toyota8" class="imgs-toyota aumentar" src="./assets/toyota 8.jpg" alt="toyota">
     </div>
 
+    <h1 id="casos-kaizen" style="display: none;position: absolute;left: 894px;top: 70px;font-family: GothamRounded , sans-serif;color:rgba(255, 24, 55);">Casos de estudio</h1>
+   
+   <div id="mejoras-kai" style="position: absolute;left: 957px;top: 117px;display: flex;flex-direction: column;gap: 6px;display: none;">
+      <img id="caso1" class="caso-estudio" src="./assets/caso 1.png" alt="casos">
+      <img id="caso2" class="caso-estudio" src="./assets/caso.jpg" alt="casos">
+      <img id="caso3" class="caso-estudio" src="./assets/caso 2.png" alt="casos">
+   </div>
+
+
     <div id="toyota-kaizen-antes" style="display: none;">
       <img id="antes1" class="imgs-Antes" src="./assets/antes 1.jpg" alt="toyota">
       <img id="antes2" class="imgs-Antes" src="./assets/antes 2.jpg" alt="antes">
@@ -598,32 +607,32 @@
     <div id="kaizen-propuestos" style="position: absolute; display: flex; flex-direction: column; left: 380px; top: 80px; display: none;gap: 5px;">
 
       <div style="position: relative; display: flex; flex-direction: row;left:4px; top:4px;gap: 3px;">
-        <div style="position: relative; display: flex; flex-direction: column;left:4px; top:4px;border: 5px solid orange; border-radius: 11px;">
+        <div style="position: relative; display: flex; flex-direction: column;left:4px; top:4px;border: 2px solid orange; border-radius: 11px;">
           <h1 style="font-family: GothamRounded, sans-serif;color: whitesmoke;font-size: 17px;">Salva manos en maquina colectora</h1>
           <img class="aumentar" id="imagen-colectora" style="width: 284px;height: 100%; border-radius: 7px;" src="./assets/kaizen colectora.jpg" alt="colectora">
         </div>  
-        <div style="position: relative; display: flex; flex-direction: column;left:4px; top:4px;border: 5px solid orange; border-radius: 11px;">
-          <h1 style="font-family: GothamRounded, sans-serif;color: whitesmoke;font-size: 17px;text-align: center;">Filosofia kaizen japonesa</h1>
-          <img class="aumentar" id="imagen-kaizen" style="width: 284px;height: 100%; border-radius: 7px;" src="./assets/kaizen japones.jpg" alt="colectora">
+        <div style="position: relative; display: flex; flex-direction: column;left:4px; top:4px;border: 2px solid orange; border-radius: 11px;">
+          <h1 style="font-family: GothamRounded, sans-serif;color: whitesmoke;font-size: 17px;text-align: center;">Mejora en linea de ensamble</h1>
+          <img class="aumentar" id="imagen-colectora" style="width: 284px;height: 100%; border-radius: 7px;" src="./assets/kaizen fresa.jpg" alt="colectora">
         </div>         
-        <div style="position: relative; display: flex; flex-direction: column;left:4px; top:4px;border: 5px solid orange; border-radius: 11px;">
+        <div style="position: relative; display: flex; flex-direction: column;left:4px; top:4px;border: 2px solid orange; border-radius: 11px;">
           <h1 style="font-family: GothamRounded, sans-serif;color: whitesmoke;font-size: 17px;text-align: center;">Bodega estanteria lijera</h1>
           <img class="aumentar" id="imagen-colectora" style="width: 284px;height: 100%; border-radius: 7px;" src="./assets/kaizen estante.jpg" alt="colectora">
         </div> 
       </div>
 
       <div style="position: relative; display: flex; flex-direction: row;left:4px; top:4px;gap: 3px;">
-        <div style="position: relative; display: flex; flex-direction: column;left:4px; top:4px;border: 5px solid orange; border-radius: 11px;">
+        <div style="position: relative; display: flex; flex-direction: column;left:4px; top:4px;border: 2px solid orange; border-radius: 11px;">
           <h1 style="font-family: GothamRounded, sans-serif;color: whitesmoke;font-size: 17px;text-align: center;">Metodologia 5S</h1>
           <img class="aumentar" id="imagen-colectora" style="width: 284px;height: 197px; border-radius: 7px;" src="./assets/kaizen 5S.jpg" alt="colectora">
         </div>  
-        <div style="position: relative; display: flex; flex-direction: column;left:4px; top:4px;border: 5px solid orange; border-radius: 11px;">
+        <div style="position: relative; display: flex; flex-direction: column;left:4px; top:4px;border: 2px solid orange; border-radius: 11px;">
           <h1 style="font-family: GothamRounded, sans-serif;color: whitesmoke;font-size: 17px;text-align: center;">Lean manufacturing</h1>
           <img class="aumentar" id="imagen-kaizen" style="width: 284px;height: 100%; border-radius: 7px;" src="./assets/kaizen lean.jpg" alt="colectora">
         </div>         
-        <div style="position: relative; display: flex; flex-direction: column;left:4px; top:4px;border: 5px solid orange; border-radius: 11px;">
-          <h1 style="font-family: GothamRounded, sans-serif;color: whitesmoke;font-size: 17px;text-align: center;">Mejora linea de ensamble</h1>
-          <img class="aumentar" id="imagen-colectora" style="width: 284px;height: 100%; border-radius: 7px;" src="./assets/kaizen fresa.jpg" alt="colectora">
+        <div style="position: relative; display: flex; flex-direction: column;left:4px; top:4px;border: 2px solid orange; border-radius: 11px;">
+          <h1 style="font-family: GothamRounded, sans-serif;color: whitesmoke;font-size: 17px;text-align: center;">Filosofia kaizen japones</h1>
+          <img class="aumentar" id="imagen-kaizen" style="width: 284px;height: 100%; border-radius: 7px;" src="./assets/kaizen japones.jpg" alt="colectora">
         </div> 
       </div>
     

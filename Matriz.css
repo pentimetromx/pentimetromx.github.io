@@ -2231,6 +2231,7 @@ elemento.visible {
   border: solid orange;
   border-radius: 7px;
 }
+#casos-kaizen,
 #toyota-kaizen-antes{
   position: absolute;
   left: 394px;
@@ -2263,7 +2264,14 @@ elemento.visible {
   position: absolute;
   top: 79px;
   left: 400px;
-  border: orange solid 7px;
+  border: orange solid 3px;
   border-radius: 9px;
   width: 447px;
+}
+.caso-estudio{
+  display: flex;
+  width: 150px;
+  border: orange solid 2px;
+  border-radius: 7px;
+  transition: transform 0.9s;
 }
