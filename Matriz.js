@@ -3353,7 +3353,9 @@ function listaEntrenamientosII(btnId) {
       var elemento = document.getElementById(id);
     
       if (elemento) {
+        /* elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)' */
         elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)'
+
       }
     }
   }  
