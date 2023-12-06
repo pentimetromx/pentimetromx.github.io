@@ -2231,3 +2231,16 @@ elemento.visible {
   border-radius: 7px;
   transition: transform 0.9s;
 }
+.casos-h1{
+  font-family: GothamRounded , sans-serif;
+  font-size: 21px;
+  color: orange;
+}
+.parrafo-casos{
+  font-family: GothamRounded , sans-serif;
+  font-size: 21px;
+  color: whitesmoke;
+}
+#puesta-punto > * {
+  margin-left: 17px;
+}
