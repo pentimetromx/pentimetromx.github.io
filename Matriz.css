@@ -1143,6 +1143,7 @@ width:447px ;
   clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
   transform: skewX(-30deg);
   cursor: pointer;
+  transition: transform 0.9s;
   z-index: 1;
 }
 

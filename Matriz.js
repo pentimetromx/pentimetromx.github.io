@@ -434,16 +434,15 @@ function cierraContenedores(elementId) {
   var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80','btn600','btn700','btn800']
   var arrayButtsRojos = ['boton2','boton3','boton4','boton5','boton6','boton8','boton9','boton10','boton11','boton12']
   var btnsIniciales = document.querySelectorAll('.btn-bloque')
-
-  for (var i = 0; i < arrayButtsRojos.length; i++) {
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  for (var i = 0; i < arrayButtsRojos.length; i++) {                                                                            /// BOTTON SELECCIONADO EN ROJO
     var button = arrayButtsRojos[i]
     if (button) {
-      // Cambia el color del botón seleccionado a rojo
       document.getElementById(button).style.backgroundColor = '';
     }
   } 
-  
-  if (firstClick) {
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  if (firstClick) {                                                                                                                      /// LOGICA PRIMER CLICK
     if (!idsArray.includes(elementId)) {
       idsArray.push(elementId)  
       console.log(idsArray)
@@ -5726,6 +5725,43 @@ function showButtonsPlanosRetraso() {
   }
   mostrarConRetraso(0) // Comienza desde el primer botón
 }
+
+function aumentoBotonesBody() {
+  const buttonsIds = ['butt-7', 'butt-5', 'butt-3', 'butt-111'];
+  // Función para aumentar el tamaño de un botón y luego restaurarlo
+  function aumentarYRestaurar(index) {
+    if (index < buttonsIds.length) {
+      const buttonId = buttonsIds[index];
+      const button = document.getElementById(buttonId);
+      // Aumentar el tamaño del botón
+      if (button) {
+        button.style.transform = 'scale(3)';
+        // Después de 0.5 segundos, devolverlo al tamaño normal
+        setTimeout(function () {
+          button.style.transform = 'scale(1)';
+          // Llamada a la función para eliminar estilos después de restaurar el tamaño
+          eliminarEstilosEnLinea();
+          // Llamada recursiva para pasar al siguiente botón en el array
+          aumentarYRestaurar(index + 1);
+        }, 300);
+      }
+    }
+  }
+  // Iniciar el proceso con el primer botón
+  aumentarYRestaurar(0);
+}
+
+function eliminarEstilosEnLinea() {
+  for (var i = 0; i < arrayButtsInicio.length; i++) {
+    var buttonId = arrayButtsInicio[i];
+    var button = document.getElementById(buttonId);
+    if (button) {
+      button.removeAttribute('style');
+    }
+  }
+}
+
+
 
 // Obtén todas las imágenes con la clase "aumentar"
 const imagenesAumentar = document.querySelectorAll('img.aumentar')
