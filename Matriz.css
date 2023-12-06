@@ -1801,8 +1801,8 @@ header {
 #rodillos-II img{
   height: 195px;
   width: 260px;
-  border-radius: 17px; 
-  margin-bottom: 17px;
+  /*border-radius: 17px; 
+  margin-bottom: 17px;*/
 }
 #balineras-II img,
 #balineras img{                        /* 141    169 */
@@ -2160,6 +2160,7 @@ elemento.visible {
   top: 87px;
   left: 737px;
 }
+#durezas,
 #rodillos-II{
   position: relative;
   top: 87px;

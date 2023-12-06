@@ -2,8 +2,8 @@ var arrayFunctions = ['updateMario','updateAna','updateCarlos','updateAndres','u
 var arrayIdButtsMA = ['resultados','troubleshoot','def1','def2','adtBut','fua1','lup','kaizen']
 var arrayButtsKaizen = ['btn10','btn11','btn12','btn17']
 var arrayButtsPlanos = ['btn13','btn14','btn15']
-var arrayButtsInicio = ['butt-111','butt-3','butt-5','butt-7']
-
+var arrayImgsRodilleria = document.querySelectorAll ('.durezas')
+var arrayButtsInicio = ['butt-1','butt-5','butt-7','butt-111']
 var arrayPosicionnador = []
 var arrayContador = []
 var destino = 257;
@@ -155,27 +155,27 @@ function muestraBateria(elementId) {
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])
     if (elemento) {
-      elemento.style.display = 'none';
+      elemento.style.display = 'none'
     }
   }
     // Recorre el array y oculta los elementos por su ID
     for (var i = 0; i < allContTintero.length; i++) {
       var elemento = document.getElementById(allContTintero[i])
       if (elemento) {
-        elemento.style.display = 'flex';
+        elemento.style.display = 'flex'
       }
     }  
 
     for (var i = 0; i < linksIniciales.length; i++) {
       var elemento = document.getElementById(linksIniciales[i])
       if (elemento) {
-        elemento.style.display = 'block';
+        elemento.style.display = 'block'
       }
     }
 
   var videoBackground = document.getElementById('videoBackground')
   videoBackground.pause()
-  videoBackground.style.display = 'none'; // Oculta el video
+  videoBackground.style.display = 'none' // Oculta el video
   seccionTintero.style.display='block'
 
   const video = document.getElementById("vidTintero")
@@ -199,13 +199,13 @@ function ElementosMa(elementId) {
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])
     if (elemento) {
-      elemento.style.display = 'none';
+      elemento.style.display = 'none'
     }
   }
   if (contPadreMA) {
-    contPadreMA.style.display = 'flex';
+    contPadreMA.style.display = 'flex'
   }
-  contenedor.style.display = 'block';
+  contenedor.style.display = 'block'
   showButtonsMAconRetraso()
   linkListI.style.display = "none";  
   if (!idsArray.includes(elementId)) {
@@ -223,7 +223,7 @@ function ElementosMa(elementId) {
   arrayIdButtsMA .forEach(function (elto) {                                                                                              /// RESTAURA GRIS A BOTONES
     var elemento = document.getElementById(elto)    
     if (elemento) {
-      elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)';    }
+      elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)'    }
   })
 
 }
@@ -232,7 +232,7 @@ function showButtonsMAconRetraso() {
   function mostrarBotonConRetraso(i) {
     if (i < botones.length) {
       var boton = botones[i]
-      boton.style.display = 'inline-block';
+      boton.style.display = 'inline-block'
       setTimeout(function() {
         mostrarBotonConRetraso(i + 1)
       }, 50) // 100 milisegundos de retraso entre botones
@@ -245,19 +245,19 @@ function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])
     if (elemento) {
-      elemento.style.display = 'none';
+      elemento.style.display = 'none'
     }
   }
   var videoBackground = document.getElementById('videoBackground')
   videoBackground.pause()
-  videoBackground.style.display = 'none'; // Oculta el video
+  videoBackground.style.display = 'none' // Oculta el video
   switch (elementId) {
     case 'pantalla-tintero':
     // Recorre el array y muestra los elementos por su ID
     for (var i = 0; i < allContTintero.length; i++) {
       var elemento = document.getElementById(allContTintero[i])
       if (elemento) {
-        elemento.style.display = 'flex';
+        elemento.style.display = 'flex'
       }
     }
   seccionTintero.style.display='block'
@@ -283,7 +283,7 @@ function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
     for (var i = 0; i < allContBaterImp.length; i++) {
       var elemento = document.getElementById(allContBaterImp[i])
       if (elemento) {
-        elemento.style.display = 'flex';
+        elemento.style.display = 'flex'
       }
     }
     var contBateria = document.getElementById('bateria-entintado-II')
@@ -292,16 +292,16 @@ function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
     var delay = 100;
     for (var i = 0; i < buttonElements.length; i++) {
       setTimeout(function(index) {
-        buttonElements[index].style.display = 'block';
+        buttonElements[index].style.display = 'block'
       }, delay * i,i)
     } 
     contVid.style.display='block' 
     videoElements.forEach(video => {
       if (video.id === 'videoElement1-II') {
-        video.style.display = 'block';
+        video.style.display = 'block'
         video.play()      
       } else {
-        video.style.display = 'none';
+        video.style.display = 'none'
       }
     })
     if (!idsArray.includes(elementId)) {
@@ -316,7 +316,7 @@ function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
     for (var i = 0; i < allContBaterImp.length; i++) {
       var elemento = document.getElementById(allContBaterImp[i])
       if (elemento) {
-        elemento.style.display = 'flex';
+        elemento.style.display = 'flex'
       }
     }    
     var contBateria = document.getElementById('bancada-torre-II')
@@ -325,16 +325,16 @@ function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
     var delay = 100;
     for (var i = 0; i < botonElement.length; i++) {
       setTimeout(function(index) {
-        botonElement[index].style.display = 'block';
+        botonElement[index].style.display = 'block'
       }, delay * i,i)
     } 
     contVid.style.display='block' 
     videoElements.forEach(video => {
       if (video.id === 'plate-smed') {
-        video.style.display = 'block';
+        video.style.display = 'block'
         video.play()      
       } else {
-        video.style.display = 'none';
+        video.style.display = 'none'
       }
     })
     if (!idsArray.includes(elementId)) {
@@ -350,14 +350,14 @@ function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
       for (var i = 0; i < allContSisHumedad.length; i++) {
         var elemento = document.getElementById(allContSisHumedad[i])
         if (elemento) {
-          elemento.style.display = 'block';
+          elemento.style.display = 'block'
         }
       }    
       const botonElemento = document.querySelectorAll('.boton-f')
       var delay = 100;
       for (var i = 0; i < botonElemento.length; i++) {
         setTimeout(function(index) {
-          botonElemento[index].style.display = 'block';
+          botonElemento[index].style.display = 'block'
         }, delay * i,i)
       } 
       contVid.style.display='block' 
@@ -365,13 +365,13 @@ function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
     // Ocultar todos los videos excepto el video 'bancada'
     videoElements.forEach(video => {
       if (video !== bancadaVideo) {
-        video.style.display = 'none';
+        video.style.display = 'none'
       }
     })
 
     // Reproducir el video 'bancada' si está definido
     if (bancadaVideo) {
-      bancadaVideo.style.display = 'block';
+      bancadaVideo.style.display = 'block'
       bancadaVideo.play()
     }
       if (!idsArray.includes(elementId)) {
@@ -392,8 +392,8 @@ function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
   var originalBackgroundColor = button.style.backgroundColor;
   var originalColor = button.style.color;
   // Cambiar estilos con click
-  button.style.backgroundColor = 'white';
-  button.style.color = 'red';
+  button.style.backgroundColor = 'white'
+  button.style.color = 'red'
   // Restablecer estilos después de ... segundos
   setTimeout(function() {
       button.style.backgroundColor = originalBackgroundColor;
@@ -412,7 +412,7 @@ function cambioContenedor(elementId) {
 
 
   for (var i = 0; i < elementsToHide.length; i++) {
-    elementsToHide[i].style.display = 'none';
+    elementsToHide[i].style.display = 'none'
   }
 
   botAtras.style.display='block'
@@ -434,76 +434,76 @@ function cierraContenedores(elementId) {
   var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80','btn600','btn700','btn800']
   var arrayButtsRojos = ['boton2','boton3','boton4','boton5','boton6','boton8','boton9','boton10','boton11','boton12']
   var btnsIniciales = document.querySelectorAll('.btn-bloque')
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  for (var i = 0; i < arrayButtsRojos.length; i++) {                                                                            /// BOTTON SELECCIONADO EN ROJO
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  for (var i = 0; i < arrayButtsRojos.length; i++) {                                                                                       /// QUITAR ESTILOS A BOTONES
     var button = arrayButtsRojos[i]
     if (button) {
-      document.getElementById(button).style.backgroundColor = '';
+      document.getElementById(button).style.backgroundColor = ''
     }
   } 
-  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  if (firstClick) {                                                                                                                      /// LOGICA PRIMER CLICK
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  if (firstClick) {                                                                                                                             /// LOGICA PRIMER CLICK
     if (!idsArray.includes(elementId)) {
       idsArray.push(elementId)  
       console.log(idsArray)
     }
     switch (elementId) {
       case 'desbobinador':
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
-        coleccion.forEach(elemento => {                                                                            /// MUESTRA CONTENEDOR HIJO / OCULTA EL RESTO
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
+        coleccion.forEach(elemento => {                                                                                    /// MUESTRA CONTENEDOR HIJO / OCULTA EL RESTO
           if (elemento.classList.contains(elementId)) {
-            elemento.style.display = 'flex';
+            elemento.style.display = 'flex'
           } else {
-            elemento.style.display = 'none';
+            elemento.style.display = 'none'
           }
         }) 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
-        btnsIniciales.forEach(elemento =>{                                                                                    /// PONE BOTON VERDE Y TEXTO NEGRO
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
+        btnsIniciales.forEach(elemento =>{                                                                                            /// PONE BOTON VERDE Y TEXTO NEGRO
           if (elemento.id === 'boton1'){
-            elemento.style.background = 'rgba(255,255,255)';
-            elemento.style.color = 'rgba(0,0,0)';
+            elemento.style.background = 'rgba(255,255,255)'
+            elemento.style.color = 'rgba(0,0,0)'
 
           }else{
             elemento.style.background = ''
           }
         })    
-        video.style.display = 'none';
+        video.style.display = 'none'
         aumentarTamanosDeBotones()
       break;
       case 'uTeñido':
         coleccion.forEach(elemento => {
           if (elemento.classList.contains(elementId)) {
-            elemento.style = display = 'flex';
+            elemento.style = display = 'flex'
           } else {
-            elemento.style.display = 'none';
+            elemento.style.display = 'none'
           }
         })
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
         btnsIniciales.forEach(elemento =>{                                                                                    /// PONE BOTON VERDE Y TEXTO NEGRO
           if (elemento.id === 'boton7'){
-            elemento.style.background = 'rgba(255,255,255)';
-            elemento.style.color = 'rgba(0,0,0)';
+            elemento.style.background = 'rgba(255,255,255)'
+            elemento.style.color = 'rgba(0,0,0)'
 
           }else{
             elemento.style.background = ''
           }
         })         
-        video.style.display = 'none';        
+        video.style.display = 'none'        
         aumentarTamanosDeBotonesII()
       break;
       case 'alimentador':
         coleccion.forEach(elemento => {
           if (elemento.classList.contains(elementId)) {
-            elemento.style.display = 'flex';
+            elemento.style.display = 'flex'
           } else {
-            elemento.style.display = 'none';
+            elemento.style.display = 'none'
           }
         })
        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
        btnsIniciales.forEach(elemento =>{                                                                                    /// PONE BOTON VERDE Y TEXTO NEGRO
         if (elemento.id === 'boton13'){
-          elemento.style.background = 'rgba(255,255,255)';
-          elemento.style.color = 'rgba(0,0,0)';
+          elemento.style.background = 'rgba(255,255,255)'
+          elemento.style.color = 'rgba(0,0,0)'
 
         }else{
           elemento.style.background = ''
@@ -514,16 +514,16 @@ function cierraContenedores(elementId) {
       case 'unidProceso':
         coleccion.forEach(elemento => {
           if (elemento.classList.contains(elementId)) {
-            elemento.style.display = 'flex';
+            elemento.style.display = 'flex'
           } else {
-            elemento.style.display = 'none';
+            elemento.style.display = 'none'
           }
         })
        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
        btnsIniciales.forEach(elemento =>{                                                                                    /// PONE BOTON VERDE Y TEXTO NEGRO
         if (elemento.id === 'boton19'){
-          elemento.style.background = 'rgba(255,255,255)';
-          elemento.style.color = 'rgba(0,0,0)';
+          elemento.style.background = 'rgba(255,255,255)'
+          elemento.style.color = 'rgba(0,0,0)'
 
         }else{
           elemento.style.background = ''
@@ -534,16 +534,16 @@ function cierraContenedores(elementId) {
       case 'rebobinador':
         coleccion.forEach(elemento => {
           if (elemento.classList.contains(elementId)) {
-            elemento.style.display = 'flex';
+            elemento.style.display = 'flex'
           } else {
-            elemento.style.display = 'none';
+            elemento.style.display = 'none'
           }
         })
        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
        btnsIniciales.forEach(elemento =>{                                                                                    /// PONE BOTON VERDE Y TEXTO NEGRO
         if (elemento.id === 'boton25'){
-          elemento.style.background = 'rgba(255,255,255)';
-          elemento.style.color = 'rgba(0,0,0)';
+          elemento.style.background = 'rgba(255,255,255)'
+          elemento.style.color = 'rgba(0,0,0)'
 
         }else{
           elemento.style.background = ''
@@ -559,7 +559,7 @@ function cierraContenedores(elementId) {
     arrayGeneral.forEach(element => {                                                                   /// SEGUNDO CLICK OCULTA BOTONES / CARGA SECCION CONINUA
       var elemento = document.getElementById(element)
       if (elemento) {
-          elemento.style.display = 'none';
+          elemento.style.display = 'none'
       } 
     }) 
 
@@ -567,8 +567,8 @@ function cierraContenedores(elementId) {
 
     btnsIniciales.forEach(elemento =>{
       if (elemento){
-        elemento.style.background = '';
-        elemento.style.color = '';
+        elemento.style.background = ''
+        elemento.style.color = ''
       }
     })    
     abrirSeccionContinua()    
@@ -590,7 +590,7 @@ function muestraRodillo (vidElem, imgCont) {
 
       // Recorre las imágenes y las muestra
       for (let i = 0; i < pict.length; i++) {
-        pict[i].style.display = 'block'; // Muestra cada imagen
+        pict[i].style.display = 'block' // Muestra cada imagen
       }
       setTimeout(() => {
         applyImageEffects1()
@@ -598,11 +598,11 @@ function muestraRodillo (vidElem, imgCont) {
 
       for (const video of videoElements) {
         if (video.id === vidElem) {
-          video.style.display = 'block'; // Muestra el video
+          video.style.display = 'block' // Muestra el video
           video.currentTime = 0;           
           video.play() // Reproduce el video
         } else {
-          video.style.display = 'none'; // Oculta el video
+          video.style.display = 'none' // Oculta el video
           video.pause() // Pausa el video
         }
       }
@@ -616,7 +616,7 @@ function muestraRodillo (vidElem, imgCont) {
       var imagesCase = document.getElementsByClassName('image-trainings1')
       // Recorre las imágenes y las muestra
       for (let i = 0; i < imagesCase.length; i++) {
-        imagesCase[i].style.display = 'flex'; // Muestra cada imagen
+        imagesCase[i].style.display = 'flex' // Muestra cada imagen
       }
       setTimeout(() => {
         applyImageEffects()
@@ -624,11 +624,11 @@ function muestraRodillo (vidElem, imgCont) {
 
       for (const video of videoElements) {
         if (video.id === vidElem) {
-          video.style.display = 'block'; // Muestra el video
+          video.style.display = 'block' // Muestra el video
           video.currentTime = 0;           
           video.play() // Reproduce el video
         } else {
-          video.style.display = 'none'; // Oculta el video
+          video.style.display = 'none' // Oculta el video
           video.pause() // Pausa el video
         }
       }
@@ -639,11 +639,11 @@ function muestraRodillo (vidElem, imgCont) {
       
       for (const video of videoElements) {
         if (video.id === vidElem) {
-          video.style.display = 'block'; // Muestra el video
+          video.style.display = 'block' // Muestra el video
           video.currentTime = 0;           
           video.play() // Reproduce el video
         } else {
-          video.style.display = 'none'; // Oculta el video
+          video.style.display = 'none' // Oculta el video
           video.pause() // Pausa el video
         }
       }
@@ -658,7 +658,7 @@ function muestraRodillo (vidElem, imgCont) {
       var imagesCase = document.getElementsByClassName('img-propil')
       // Recorre las imágenes y las muestra
       for (let i = 0; i < imagesCase.length; i++) {
-        imagesCase[i].style.display = 'flex'; // Muestra cada imagen
+        imagesCase[i].style.display = 'flex' // Muestra cada imagen
       }
       setTimeout(() => {
         applyImageEffects()
@@ -666,11 +666,11 @@ function muestraRodillo (vidElem, imgCont) {
       
       for (const video of videoElements) {
         if (video.id === vidElem) {
-          video.style.display = 'block'; // Muestra el video
+          video.style.display = 'block' // Muestra el video
           video.currentTime = 0;           
           video.play() // Reproduce el video
         } else {
-          video.style.display = 'none'; // Oculta el video
+          video.style.display = 'none' // Oculta el video
           video.pause() // Pausa el video
         }
       }
@@ -686,7 +686,7 @@ function muestraHumedad() {
   contImgsIsopropil.style.display = 'flex'
   // Recorre las imágenes y las muestra
   for (let i = 0; i < pict.length; i++) {
-    pict[i].style.display = 'block'; // Muestra cada imagen
+    pict[i].style.display = 'block' // Muestra cada imagen
   }
 }
 function applyImageEffects() { // aumento secuencial imagenes repuestos
@@ -695,11 +695,11 @@ function applyImageEffects() { // aumento secuencial imagenes repuestos
   function applyEffect() {
     if (currentIndex < imageElements.length) {
       const currentImage = imageElements[currentIndex]
-      currentImage.style.transition = 'transform 0.1s';
-      currentImage.style.transform = 'scale(2.0)';
+      currentImage.style.transition = 'transform 0.1s'
+      currentImage.style.transform = 'scale(2.0)'
       setTimeout(() => {
-        currentImage.style.transition = 'transform 0.7s';
-        currentImage.style.transform = 'scale(1)';
+        currentImage.style.transition = 'transform 0.7s'
+        currentImage.style.transform = 'scale(1)'
         currentIndex++;
         applyEffect()
       }, 100) }}applyEffect()
@@ -710,11 +710,11 @@ function applyImageEffects1() { // aumento secuencial imagenes repuestos
   function applyEffect() {
     if (currentIndex < imageElements.length) {
       const currentImage = imageElements[currentIndex]
-      currentImage.style.transition = 'transform 0.1s';
-      currentImage.style.transform = 'scale(2.0)';
+      currentImage.style.transition = 'transform 0.1s'
+      currentImage.style.transform = 'scale(2.0)'
       setTimeout(() => {
-        currentImage.style.transition = 'transform 0.7s';
-        currentImage.style.transform = 'scale(1)';
+        currentImage.style.transition = 'transform 0.7s'
+        currentImage.style.transform = 'scale(1)'
         currentIndex++;
         applyEffect()
       }, 50) }}applyEffect()
@@ -733,15 +733,15 @@ function alternarVisibilidad(docId) {
 function mostrarBotMa(id) {
   var elemento = document.getElementById(id)
   if (elemento.style.display === 'none') {
-      elemento.style.display = 'block';
+      elemento.style.display = 'block'
   } else {
-      elemento.style.display = 'none';
+      elemento.style.display = 'none'
   }
 }
 ////////////////////////////////////////////////////////////////////////
 function showNextGraf() {
   if (nowIndex < inpt.length ){
-    inpt[nowIndex].style.display = 'block';
+    inpt[nowIndex].style.display = 'block'
     nowIndex++;
     setTimeout(showNextGraf, 57)
   }
@@ -753,22 +753,22 @@ function showRepuesto(elementId) {
       allContenedores.forEach(elemen => {
       var element = document.getElementById(elemen)
       if (element) {
-        element.style.display = 'none';
+        element.style.display = 'none'
       }
     })
     
       conteHijosTintero.forEach(elementCont => {
         var element = document.getElementById(elementCont)
         if (element) {
-          element.style.display = 'none';
+          element.style.display = 'none'
         }
       })
       if (imgsDistribuidor) {
-        imgsDistribuidor.style.display = 'flex';
+        imgsDistribuidor.style.display = 'flex'
         // Recorre el arreglo y muestra las imágenes
         var imagenesDistribuidor = document.querySelectorAll('.imag-distri')
         imagenesDistribuidor.forEach(function(imagen) {
-          imagen.style.display = 'flex';
+          imagen.style.display = 'flex'
         })
       }
       if (!idsArray.includes(elementId)) {
@@ -780,22 +780,22 @@ function showRepuesto(elementId) {
       allContenedores.forEach(elemen => {
         var element = document.getElementById(elemen)
         if (element) {
-          element.style.display = 'none';
+          element.style.display = 'none'
         }
       })
 
       conteHijosTintero.forEach(elementId => {
         var element = document.getElementById(elementId)
         if (element) {
-          element.style.display = 'none';
+          element.style.display = 'none'
         }
       })
       if (imgsForma) {
-        imgsForma.style.display = 'block';
+        imgsForma.style.display = 'block'
         // Recorre el arreglo y muestra las imágenes
         var imagenesForma = document.querySelectorAll('.imag-distri')
         imagenesForma.forEach(function(imagen) {
-          imagen.style.display = 'block';
+          imagen.style.display = 'block'
         })
       } 
       if (!idsArray.includes(elementId)) {
@@ -807,22 +807,22 @@ function showRepuesto(elementId) {
       conteHijosTintero.forEach(elementId => {
         var element = document.getElementById(elementId)
         if (element) {
-          element.style.display = 'none';
+          element.style.display = 'none'
         }
       }) 
       var contenedorPrincipal = document.getElementById('contPerfilesPlancha')
       var hijosDelContenedor = contenedorPrincipal.children;
       for (var i = 0; i < hijosDelContenedor.length; i++) {
         var hijo = hijosDelContenedor[i]  
-        hijo.style.display = 'none';
+        hijo.style.display = 'none'
       }
       
       contPortaPlancha.style.display='block'
       videoElements.forEach(video => {
       if (video.id !== 'video-placa') {
-        video.style.display = 'none';   
+        video.style.display = 'none'   
         } else {
-        video.style.display = 'block';
+        video.style.display = 'block'
         video.currentTime = 0;
         video.play()   
       }})
@@ -836,7 +836,7 @@ function showRepuesto(elementId) {
      imagenesPlancha.forEach(function (imagen) {
       var elementosPortPlaca = imagen.querySelectorAll('portPlaca')
       elementosPortPlaca.forEach(function (elemento) {
-        elemento.style.display = 'flex';
+        elemento.style.display = 'flex'
       })
     })
     if (!idsArray.includes(elementId)) {
@@ -848,21 +848,21 @@ function showRepuesto(elementId) {
       conteHijosTintero.forEach(elemento => {
         var element = document.getElementById(elemento)
         if (element) {
-          element.style.display = 'none';
+          element.style.display = 'none'
         }
       })
       var contenedorPrincipal = document.getElementById('contPerfilesManta')
       var hijosDelContenedor = contenedorPrincipal.children;
       for (var i = 0; i < hijosDelContenedor.length; i++) {
         var hijo = hijosDelContenedor[i]  
-        hijo.style.display = 'none';
+        hijo.style.display = 'none'
       }
       contPortaManta.style.display='block'
       videoElements.forEach(video => {
       if (video.id !== 'videoManta') {
-        video.style.display = 'none';   
+        video.style.display = 'none'   
         } else {
-        video.style.display = 'block';
+        video.style.display = 'block'
         video.pause()
         video.currentTime = 0;
         video.play()   
@@ -882,7 +882,7 @@ function showRepuesto(elementId) {
       conteHijosTintero.forEach(elementId => {
         var element = document.getElementById(elementId)
         if (element) {
-          element.style.display = 'none';
+          element.style.display = 'none'
         }
       })
       container1.style.display = 'none'
@@ -901,9 +901,9 @@ function showRepuesto(elementId) {
 
       videoElements.forEach(video => {
       if (video.id !== 'video-impresor') {
-        video.style.display = 'none';   
+        video.style.display = 'none'   
         } else {
-        video.style.display = 'block';
+        video.style.display = 'block'
         video.pause()
         video.currentTime = 0;
         video.play()   
@@ -927,15 +927,15 @@ function muestraPerfiles(elementId){
       // Detener el video
       video.pause()
       // Ocultar el video estableciendo su estilo de visualización en 'none'
-      video.style.display = 'none';
+      video.style.display = 'none'
       cont9.style.display='none'
       imagesPlancha.style.display='flex'
       imgsPlancha.style.display='flex'
       imgPlancha.forEach(function (imagen) {
         if (imagen.id === 'portPlaca') {
-          imagen.style.display = 'block';
+          imagen.style.display = 'block'
         }else{
-          imagen.style.display = 'none';
+          imagen.style.display = 'none'
         }
       })
       contIMPlaca.style.display='none' 
@@ -948,15 +948,15 @@ function muestraPerfiles(elementId){
       // Detener el video
       video.pause()
       // Ocultar el video estableciendo su estilo de visualización en 'none'
-      video.style.display = 'none';
+      video.style.display = 'none'
       cont9.style.display='none'
       imagesPlancha.style.display='flex'
       imgsPlancha.style.display='flex'
       imgPlancha.forEach(function (imagen) {
         if (imagen.id === 'portPlaca2') {
-          imagen.style.display = 'block';
+          imagen.style.display = 'block'
         }else{
-          imagen.style.display = 'none';
+          imagen.style.display = 'none'
         }
       })
       contIMPlaca.style.display='none' 
@@ -969,14 +969,14 @@ function muestraPerfiles(elementId){
       // Detener el video
       video.pause()
       // Ocultar el video estableciendo su estilo de visualización en 'none'
-      video.style.display = 'none';    
+      video.style.display = 'none'    
       imagesPlancha.style.display='flex'
       imgsPlancha.style.display='flex'
       imgPlancha.forEach(function (imagen) {
         if (imagen.id === 'portPlaca3') {
-          imagen.style.display = 'block';
+          imagen.style.display = 'block'
         }else{
-          imagen.style.display = 'none';
+          imagen.style.display = 'none'
         }
       })
       cont9.style.display='none'
@@ -990,14 +990,14 @@ function muestraPerfiles(elementId){
       // Detener el video
       video.pause()
       // Ocultar el video estableciendo su estilo de visualización en 'none'
-      video.style.display = 'none';    
+      video.style.display = 'none'    
       imagesPlancha.style.display='flex'
       imgsPlancha.style.display='flex'
       imgPlancha.forEach(function (imagen) {
         if (imagen.id === 'portPlaca4') {
-          imagen.style.display = 'block';
+          imagen.style.display = 'block'
         }else{
-          imagen.style.display = 'none';
+          imagen.style.display = 'none'
         }
       })
       cont9.style.display='none'
@@ -1019,7 +1019,7 @@ var imgsManta = document.querySelectorAll('.imgMant')
     contPortaManta.style.display='block'  
     videoElements.forEach(video => {
     if (video.id == 'videoManta') {
-      video.style.display = 'none';   
+      video.style.display = 'none'   
       }}) 
 
       contPadManta.style.display='block'
@@ -1027,9 +1027,9 @@ var imgsManta = document.querySelectorAll('.imgMant')
   
       imgsManta.forEach(function (imagen) {
         if (imagen.id === 'manta' || imagen.id === 'manta1') {
-          imagen.style.display = 'block';
+          imagen.style.display = 'block'
         }else{
-          imagen.style.display = 'none';
+          imagen.style.display = 'none'
         }
       })
       contIMmanta.style.display='none' 
@@ -1042,15 +1042,15 @@ var imgsManta = document.querySelectorAll('.imgMant')
       contPortaManta.style.display='block'
       videoElements.forEach(video => {
       if (video.id == 'videoManta') {
-        video.style.display = 'none';   
+        video.style.display = 'none'   
         }})   
         contPadManta.style.display='flex'
         contChildManta.style.display='flex'    
         imgsManta.forEach(function (imagen) {
           if (imagen.id === 'manta2' || imagen.id === 'manta3') {
-            imagen.style.display = 'block';
+            imagen.style.display = 'block'
           }else{
-            imagen.style.display = 'none';
+            imagen.style.display = 'none'
           }
         })
         contIMmanta.style.display='none' 
@@ -1063,7 +1063,7 @@ var imgsManta = document.querySelectorAll('.imgMant')
       contPortaManta.style.display='block'
       videoElements.forEach(video => {
       if (video.id == 'videoManta') {
-        video.style.display = 'none';   
+        video.style.display = 'none'   
         }}) 
   
         contPadManta.style.display='flex'
@@ -1071,9 +1071,9 @@ var imgsManta = document.querySelectorAll('.imgMant')
     
         imgsManta.forEach(function (imagen) {
           if (imagen.id === 'manta4' || imagen.id === 'manta5') {
-            imagen.style.display = 'block';
+            imagen.style.display = 'block'
           }else{
-            imagen.style.display = 'none';
+            imagen.style.display = 'none'
           }
         })
         contIMmanta.style.display='none' 
@@ -1086,7 +1086,7 @@ var imgsManta = document.querySelectorAll('.imgMant')
       contPortaManta.style.display='block'
       videoElements.forEach(video => {
       if (video.id == 'videoManta') {
-        video.style.display = 'none';   
+        video.style.display = 'none'   
         }}) 
   
         contPadManta.style.display='flex'
@@ -1094,9 +1094,9 @@ var imgsManta = document.querySelectorAll('.imgMant')
     
         imgsManta.forEach(function (imagen) {
           if (imagen.id === 'manta6' || imagen.id === 'manta7') {
-            imagen.style.display = 'block';
+            imagen.style.display = 'block'
           }else{
-            imagen.style.display = 'none';
+            imagen.style.display = 'none'
           }
         })
         contIMmanta.style.display='none' 
@@ -1118,15 +1118,15 @@ function muestraLados(elementId){
       case 'forward':
         videoElements.forEach(video => {
         if (video.id == 'video-impresor') {
-        video.style.display = 'none';   
+        video.style.display = 'none'   
         }}) 
         contPadImpresor.style.display='flex'
         contChildImpresor.style.display='flex'      
         imgsImpresor.forEach(function (imagen) {
         if (imagen.id === 'impresor' || imagen.id === 'impresor1') {
-          imagen.style.display = 'block';
+          imagen.style.display = 'block'
         }else{
-          imagen.style.display = 'none';
+          imagen.style.display = 'none'
         }
         })
         if (!idsArray.includes(elementId)) {
@@ -1137,7 +1137,7 @@ function muestraLados(elementId){
       case 'comands':
         videoElements.forEach(video => {
         if (video.id == 'video-impresor') {
-          video.style.display = 'none';   
+          video.style.display = 'none'   
           }}) 
     
           contPadImpresor.style.display='flex'
@@ -1145,9 +1145,9 @@ function muestraLados(elementId){
       
           imgsImpresor.forEach(function (imagen) {
             if (imagen.id === 'impresor2' || imagen.id === 'impresor3') {
-              imagen.style.display = 'block';
+              imagen.style.display = 'block'
             }else{
-              imagen.style.display = 'none';
+              imagen.style.display = 'none'
             }
           })
           if (!idsArray.includes(elementId)) {
@@ -1158,7 +1158,7 @@ function muestraLados(elementId){
       case 'service':
         videoElements.forEach(video => {
         if (video.id == 'video-impresor') {
-          video.style.display = 'none';   
+          video.style.display = 'none'   
           }}) 
     
           contPadImpresor.style.display='flex'
@@ -1166,9 +1166,9 @@ function muestraLados(elementId){
       
           imgsImpresor.forEach(function (imagen) {
             if (imagen.id === 'impresor4' || imagen.id === 'impresor5') {
-              imagen.style.display = 'block';
+              imagen.style.display = 'block'
             }else{
-              imagen.style.display = 'none';
+              imagen.style.display = 'none'
             }
           })
           if (!idsArray.includes(elementId)) {
@@ -1179,7 +1179,7 @@ function muestraLados(elementId){
       case 'back':
         videoElements.forEach(video => {
         if (video.id == 'video-impresor') {
-          video.style.display = 'none';   
+          video.style.display = 'none'   
           }}) 
     
           contPadImpresor.style.display='flex'
@@ -1187,9 +1187,9 @@ function muestraLados(elementId){
       
           imgsImpresor.forEach(function (imagen) {
             if (imagen.id === 'impresor6' || imagen.id === 'impresor7') {
-              imagen.style.display = 'block';
+              imagen.style.display = 'block'
             }else{
-              imagen.style.display = 'none';
+              imagen.style.display = 'none'
             }
           })
           if (!idsArray.includes(elementId)) {
@@ -1204,13 +1204,13 @@ function showNextInputChec() {
   var conteneChecks = document.getElementById('contChecks')
   if (conteneChecks.style.display === 'block') {
     for (var i = 0; i < checks.length; i++) {
-      checks[i].style.display = 'none';
+      checks[i].style.display = 'none'
     }
-    conteneChecks.style.display = 'none';
+    conteneChecks.style.display = 'none'
   } else {
-    conteneChecks.style.display = 'block';
+    conteneChecks.style.display = 'block'
     if (actualtIndex < input.length) {
-      input[actualtIndex].style.display = 'block';
+      input[actualtIndex].style.display = 'block'
       actualtIndex++;
     } else {
       actualtIndex = 0; // Restablecer el índice si alcanza el final
@@ -1222,7 +1222,7 @@ function mantAutonomo (idElement) {
   var conteLinksI = document.getElementById('links-inicialesI') 
   var videoBackground = document.getElementById('videoBackground')
   videoBackground.pause()
-  videoBackground.style.display = 'none'; // Oculta el video
+  videoBackground.style.display = 'none' // Oculta el video
   switch (idElement) {
     case 'troubleshooting':       
         deslizarTrouble(idElement)
@@ -1258,25 +1258,25 @@ function mantAutonomo (idElement) {
       }
       // Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
       if (linksMAVisible && imgsEntrenosVisible) {
-      document.getElementById('linksMA').style.display = 'none';
-      document.getElementById('contImgEntrenos').style.display = 'none';
+      document.getElementById('linksMA').style.display = 'none'
+      document.getElementById('contImgEntrenos').style.display = 'none'
       }
       var contCheck = document.getElementById('contChecks')
       var inpts = document.querySelectorAll('.input-class')
       if (contCheck.style.display === 'block') {
       // Ocultar los elementos
-      contCheck.style.display = 'none';
+      contCheck.style.display = 'none'
       for (var i = 0; i < inpts.length; i++) {
-      inpts[i].style.display = 'none';
+      inpts[i].style.display = 'none'
       }
       } else {
       // Ejecutar la lógica si el contenedor está visible
-      contCheck.style.display = 'block';
+      contCheck.style.display = 'block'
       // Mostrar cada input con un intervalo de 77 milisegundos
       for (var i = 0; i < inpts.length; i++) {
       (function(index) {
       setTimeout(function() {
-      inpts[index].style.display = 'block';
+      inpts[index].style.display = 'block'
       }, 77 * index)
       })(i)
       }
@@ -1316,15 +1316,15 @@ function mantAutonomo (idElement) {
       }
       // Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
       if (linksMAVisible && imgsEntrenosVisible) {
-      document.getElementById('linksMA').style.display = 'none';
-      document.getElementById('contImgEntrenos').style.display = 'none';
+      document.getElementById('linksMA').style.display = 'none'
+      document.getElementById('contImgEntrenos').style.display = 'none'
       }
       const contGrafitos = document.getElementById('canvasContainer3')
       if (contGrafitos.style.display !== 'block') {
-        contGrafitos.style.display = 'block'; 
+        contGrafitos.style.display = 'block' 
         conteLinksI.style.left='547px'
       } else {
-        contGrafitos.style.display = 'none';
+        contGrafitos.style.display = 'none'
         conteLinksI.style.left='187px'
       }
         /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -1361,15 +1361,15 @@ function mantAutonomo (idElement) {
       }
       // Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
       if (linksMAVisible && imgsEntrenosVisible) {
-      document.getElementById('linksMA').style.display = 'none';
-      document.getElementById('contImgEntrenos').style.display = 'none';
+      document.getElementById('linksMA').style.display = 'none'
+      document.getElementById('contImgEntrenos').style.display = 'none'
       }
         /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/    
       var contGrafColor = document.getElementById('contImagNeg')
       if (contGrafColor.style.display === 'block') {
-      contGrafColor.style.display = 'none'; 
+      contGrafColor.style.display = 'none' 
       } else {
-      contGrafColor.style.display = 'block';
+      contGrafColor.style.display = 'block'
       }
         /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
       if (index !== -1) {
@@ -1404,15 +1404,15 @@ function mantAutonomo (idElement) {
       }}
       // Si tanto 'linksMA' como 'imgs-entrenos' están visibles, ocultarlos
       if (linksMAVisible && imgsEntrenosVisible) {
-      document.getElementById('linksMA').style.display = 'none';
-      document.getElementById('contImgEntrenos').style.display = 'none';
+      document.getElementById('linksMA').style.display = 'none'
+      document.getElementById('contImgEntrenos').style.display = 'none'
       }
         /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////*/    
       var contGrafNeg = document.getElementById('contImagGraf')
       if (contGrafNeg.style.display === 'block') {
-      contGrafNeg.style.display = 'none'; 
+      contGrafNeg.style.display = 'none' 
       } else {
-      contGrafNeg.style.display = 'block';
+      contGrafNeg.style.display = 'block'
       }
         /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
       if (index !== -1) {
@@ -1437,19 +1437,19 @@ function deslizaContenedor(idElement, idButton) {
   for(var i = 0; i<botones.length; i ++){                                                                                           /// OCULTA BOTONES IZQUIERDOS
     var boton = document.getElementById(botones[i])
     if (boton) {
-      boton.style.backgroundColor = '';
-      boton.style.color = 'white';
-      boton.style.display = 'none';
+      boton.style.backgroundColor = ''
+      boton.style.color = 'white'
+      boton.style.display = 'none'
     }
   }
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   videoElements.forEach(video => {                                                                                                         /// OCULTA VIDEO ACTUAL
   if (video) {
     video.pause() 
-    video.style.display = 'none'; 
+    video.style.display = 'none' 
   }}) 
   var contieneVideo = document.getElementById('kaizenCont')
-  contieneVideo.style.display = 'none'; 
+  contieneVideo.style.display = 'none' 
      
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   if (document.body.style.zoom !== "100%") {                                                                                         /// REGRESA PANTALLA AL 100%
@@ -1459,20 +1459,20 @@ function deslizaContenedor(idElement, idButton) {
   idsMAhijos.forEach(function (elto) {                                                          /// OCULTA 6 ELEMENTOS = 'troubleshooting','canvasContainer2' 
     var elemento = document.getElementById(elto)                                               /// 'contChecks','canvasContainer3','contImagNeg','contImagGraf'    
     if (elemento) {
-      elemento.style.display = 'none';
+      elemento.style.display = 'none'
     }
   })
  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   idsMA.forEach(function (elto) {                                                                                     /// OCULTA TODOS LOS CANVAS INCLUSO HIJOS           
     var elemento = document.getElementById(elto)    
     if (elemento) {
-      elemento.style.display = 'none';
+      elemento.style.display = 'none'
     }
   })
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   if (contLinkMant !== null && contImgEntrenos !== null) {                                                                                     /// MUESTRA LINKS
-    contLinkMant.style.display = 'none';
-    contImgEntrenos.style.display = 'none';
+    contLinkMant.style.display = 'none'
+    contImgEntrenos.style.display = 'none'
   }
   // Verificar si el elemento ya está en el array
   if (!arrayPosicionnador.includes(idElement)) {
@@ -1486,9 +1486,9 @@ function deslizaContenedor(idElement, idButton) {
       idsMA.forEach(element => {
         var elemento = document.getElementById(element)
         if (elemento === idElement) {
-          elemento.style.display = 'flex';
+          elemento.style.display = 'flex'
         } else if (elemento) {
-          elemento.style.display = 'none';
+          elemento.style.display = 'none'
         }
       })
     break;
@@ -1498,19 +1498,19 @@ function deslizaContenedor(idElement, idButton) {
  var contenedor = document.getElementById(idElement)                                                                   /// MUESTRA CONTENEDOR PROPIO (PARAMETRO)
 
   if (idElement !== 'troubleshooting' && contenedor) {
-    contenedor.style.display = 'flex';
-    contenedor.style.left = '257px';
+    contenedor.style.display = 'flex'
+    contenedor.style.left = '257px'
   } else{
     var contenedorPadre = document.getElementById(idElement)
     // Verifica si el contenedor padre existe
     if (contenedorPadre) {
       // Muestra el contenedor padre
-      contenedorPadre.style.display = 'flex';  
+      contenedorPadre.style.display = 'flex'  
       // Obtén todos los elementos hijos del contenedor
       var elementosHijos = contenedorPadre.children;  
       // Oculta cada elemento hijo
       for (var i = 0; i < elementosHijos.length; i++) {
-        elementosHijos[i].style.display = 'none';
+        elementosHijos[i].style.display = 'none'
       }
     }
   }
@@ -1533,9 +1533,9 @@ function deslizaContenedor(idElement, idButton) {
     var elemento = document.getElementById(element)
     if (elemento) {
       if (element === idButton) {
-         elemento.style.backgroundColor = 'orange';
+         elemento.style.backgroundColor = 'orange'
       } else {
-        elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)';
+        elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)'
       }
     }
   })
@@ -1556,7 +1556,7 @@ function mostrarTroublesshIntervalo() {
   function hacerVisibleSiguienteElemento() {
     if (index < elementos.length) {
       // Muestra el elemento actual
-      elementos[index].style.display = 'block'; // Puedes cambiar 'block' por 'flex' si prefieres
+      elementos[index].style.display = 'block' // Puedes cambiar 'block' por 'flex' si prefieres
       
       // Incrementa el índice para pasar al siguiente elemento
       index++;
@@ -1578,14 +1578,14 @@ function deslizAutomatic(){
   idsMA.forEach(function (elto) {                                                                                                            /// OCULTA TODO M.A
     var elemento = document.getElementById(elto)    
     if (elemento) {
-      elemento.style.display = 'none';
+      elemento.style.display = 'none'
     }
   })
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   arrayIdButtsMA.forEach(function (elto) {                                                                                            /// RESTAURA GRIS A BOTONES
     var elemento = document.getElementById(elto)    
     if (elemento) {
-      elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)'; // Restaura el color original
+      elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)' // Restaura el color original
     }
   })
 
@@ -1623,7 +1623,7 @@ function deslizaContenedorII(idElement, idButton) {
     for (const video of videoElements) {
       // Compara si el video está dentro del elemento 'kaizenCont'
       if (video.closest('#kaizenCont')) {
-        video.style.display = 'flex'; // Muestra el video
+        video.style.display = 'flex' // Muestra el video
         video.currentTime = 0;
         video.play() // Reproduce el video
       }
@@ -1632,8 +1632,8 @@ function deslizaContenedorII(idElement, idButton) {
 
 
   if (contLinkMant !== null && contImgEntrenos !== null) {
-    contLinkMant.style.display = 'none';
-    contImgEntrenos.style.display = 'none';
+    contLinkMant.style.display = 'none'
+    contImgEntrenos.style.display = 'none'
   }
 
   // Verificar si el elemento ya está en el array
@@ -1643,8 +1643,8 @@ function deslizaContenedorII(idElement, idButton) {
 
   var contenedor = document.getElementById(idElement)
   
-  contenedor.style.display = 'flex';
-  contenedor.style.left = '257px';
+  contenedor.style.display = 'flex'
+  contenedor.style.left = '257px'
 
   var inicio = 1100;
   var velocidad = 500;
@@ -1656,10 +1656,10 @@ function deslizaContenedorII(idElement, idButton) {
     var progreso = (tiempo - inicioTiempo) / duracion;
     var izquierda = inicio + progreso * (destino - inicio)
     if (progreso < 1) {
-      contenedor.style.left = izquierda + 'px';
+      contenedor.style.left = izquierda + 'px'
       requestAnimationFrame(animar)
     } else {
-      contenedor.style.left = destino + 'px';
+      contenedor.style.left = destino + 'px'
     }
   }
   requestAnimationFrame(animar)
@@ -1683,7 +1683,7 @@ function deslizaContenedorII(idElement, idButton) {
   if (originalButtonColors[idButton] === undefined) {
     originalButtonColors[idButton] = boton.style.backgroundColor; // Guarda el color original 
   }
-  boton.style.backgroundColor = 'orange';
+  boton.style.backgroundColor = 'orange'
  /* boton.onclick = null;*/      
   setTimeout(function () {    
   }, 300)
@@ -1697,14 +1697,14 @@ function resetBotns() {
     document.body.style.zoom = "100%";
   }
   // Ocultar otros elementos y realizar otras acciones necesarias
-  contProblema.style.display = 'none';
-  contProblema2.style.display = 'none';
+  contProblema.style.display = 'none'
+  contProblema2.style.display = 'none'
   console.log(arrayPosicionnador)
   // Ocultar elementos de M.A
   idsMA.forEach(function (elto) {
     var elemento = document.getElementById(elto)    
     if (elemento) {
-      elemento.style.display = 'none';
+      elemento.style.display = 'none'
     }
   })
   arrayPosicionnador = []
@@ -1756,14 +1756,14 @@ function resetBotns() {
   // Restaura color gris a los botones
   arrayIdButtsMA.forEach(function (buttonId) {
   var button = document.getElementById(buttonId)
-  button.style.backgroundColor = 'rgba(83, 82, 82, 0.678)';
+  button.style.backgroundColor = 'rgba(83, 82, 82, 0.678)'
   })
 
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   videoElements.forEach(video => {                                                                                                       /// OCULTA PADRE / VIDEO
     if (video) {
       video.pause()
-      video.style.display = 'none';
+      video.style.display = 'none'
     }
   })
   contVidPlanos.style.display = 'none'
@@ -1812,9 +1812,9 @@ function deslizarCanvas2(idElement) {
   /*////////////////////////////////////////////////////////////////////////////////////////////////*/  
   if (contenedor1) {
     // 1. Hacer visible el contenedor
-    contenedor1.style.display = 'block';
+    contenedor1.style.display = 'block'
     // 2. Iniciar en la posición left=1200px
-    contenedor1.style.left = '1200px';
+    contenedor1.style.left = '1200px'
     // 3. Calcular el destino como la suma de left y width de troubleshooting
     var destino = parseInt(contenedor.style.left) + contenedor.clientWidth;
     // 4. Animación para desplazarse hacia la izquierda
@@ -1828,7 +1828,7 @@ function deslizarCanvas2(idElement) {
       if (!inicioTiempo) inicioTiempo = tiempo;
       var progreso = (tiempo - inicioTiempo) / duracion;
       var izquierda = inicio + progreso * (destino - inicio)
-      contenedor1.style.left = izquierda + 'px';
+      contenedor1.style.left = izquierda + 'px'
     
       if (progreso < 1) {
         requestAnimationFrame(animar)
@@ -1866,9 +1866,9 @@ function deslizarChecks(idElement) {
 
   if (contenedor1) {
     // 1. Hacer visible el contenedor
-    contenedor1.style.display = 'flex';
+    contenedor1.style.display = 'flex'
     // 2. Iniciar en la posición left=1200px
-    contenedor1.style.left = '1200px';
+    contenedor1.style.left = '1200px'
     // 3. Calcular el destino como la suma de left y width de troubleshooting
     var destino = parseInt(contenedor2.style.left) + contenedor2.clientWidth;
     // 4. Animación para desplazarse hacia la izquierda
@@ -1882,12 +1882,12 @@ function deslizarChecks(idElement) {
       if (!inicioTiempo) inicioTiempo = tiempo;
       var progreso = (tiempo - inicioTiempo) / duracion;
       var izquierda = inicio + progreso * (destino - inicio)
-      contenedor1.style.left = izquierda + 'px';
+      contenedor1.style.left = izquierda + 'px'
 
       if (progreso < 1) {
         requestAnimationFrame(animar)
       } else {
-        contenedor1.style.left = destino + 'px';
+        contenedor1.style.left = destino + 'px'
       }
     }
     requestAnimationFrame(animar)
@@ -1911,9 +1911,9 @@ function deslizarCanvas3(idElement) {
 
   if (contenedor1) {
     // 1. Hacer visible el contenedor
-    contenedor1.style.display = 'block';
+    contenedor1.style.display = 'block'
     // 2. Iniciar en la posición left=1200px
-    contenedor1.style.left = '1200px';
+    contenedor1.style.left = '1200px'
     // 3. Calcular el destino como la suma de left y width de troubleshooting
     var destino = parseInt(contenedor2.style.left) + contenedor2.clientWidth;
     // 4. Animación para desplazarse hacia la izquierda
@@ -1927,12 +1927,12 @@ function deslizarCanvas3(idElement) {
       if (!inicioTiempo) inicioTiempo = tiempo;
       var progreso = (tiempo - inicioTiempo) / duracion;
       var izquierda = inicio + progreso * (destino - inicio)
-      contenedor1.style.left = izquierda + 'px';
+      contenedor1.style.left = izquierda + 'px'
 
       if (progreso < 1) {
         requestAnimationFrame(animar)
       } else {
-        contenedor1.style.left = destino + 'px';
+        contenedor1.style.left = destino + 'px'
       }
     }
     requestAnimationFrame(animar)
@@ -1956,9 +1956,9 @@ function deslizarContImagNeg(idElement) {
 
   if (contenedor1) {
     // 1. Hacer visible el contenedor
-    contenedor1.style.display = 'block';
+    contenedor1.style.display = 'block'
     // 2. Iniciar en la posición left=1200px
-    contenedor1.style.left = '1200px';
+    contenedor1.style.left = '1200px'
     // 3. Calcular el destino como la suma de left y width de troubleshooting
     var destino = parseInt(contenedor2.style.left) + contenedor2.clientWidth;
     // 4. Animación para desplazarse hacia la izquierda
@@ -1972,12 +1972,12 @@ function deslizarContImagNeg(idElement) {
       if (!inicioTiempo) inicioTiempo = tiempo;
       var progreso = (tiempo - inicioTiempo) / duracion;
       var izquierda = inicio + progreso * (destino - inicio)
-      contenedor1.style.left = izquierda + 'px';
+      contenedor1.style.left = izquierda + 'px'
 
       if (progreso < 1) {
         requestAnimationFrame(animar)
       } else {
-        contenedor1.style.left = destino + 'px';
+        contenedor1.style.left = destino + 'px'
       }
     }
     requestAnimationFrame(animar)
@@ -2001,9 +2001,9 @@ function deslizarContImagGraf(idElement) {
 
   if (contenedor1) {
     // 1. Hacer visible el contenedor
-    contenedor1.style.display = 'block';
+    contenedor1.style.display = 'block'
     // 2. Iniciar en la posición left=1200px
-    contenedor1.style.left = '1200px';
+    contenedor1.style.left = '1200px'
     // 3. Calcular el destino como la suma de left y width de troubleshooting
     var destino = parseInt(contenedor2.style.left) + contenedor2.clientWidth;
     // 4. Animación para desplazarse hacia la izquierda
@@ -2017,12 +2017,12 @@ function deslizarContImagGraf(idElement) {
       if (!inicioTiempo) inicioTiempo = tiempo;
       var progreso = (tiempo - inicioTiempo) / duracion;
       var izquierda = inicio + progreso * (destino - inicio)
-      contenedor1.style.left = izquierda + 'px';
+      contenedor1.style.left = izquierda + 'px'
 
       if (progreso < 1) {
         requestAnimationFrame(animar)
       } else {
-        contenedor1.style.left = destino + 'px';
+        contenedor1.style.left = destino + 'px'
       }
     }
     requestAnimationFrame(animar)
@@ -2032,7 +2032,7 @@ function deslizarContImagGraf(idElement) {
 }
 function modificarPosicion() {  
   // Valor fijo para el primer elemento
-  var destino = '257px';
+  var destino = '257px'
 
   // Iterar a través de los IDs y calcular la posición left
   arrayPosicionnador.forEach(function(id) {
@@ -2050,7 +2050,7 @@ function modificarPosicion() {
     var ancho = parseFloat(width)
 
     // Calcular la nueva posición left para el próximo elemento
-    destino = parseInt(destino) + ancho + 'px';
+    destino = parseInt(destino) + ancho + 'px'
 
     // Mostrar la posición en la consola
     console.log(id + " - posicion left:", destino)
@@ -2060,11 +2060,11 @@ function modificarPosicion() {
 }) 
 }
 function muestraTorres(seleccion) {
-  seccionTintero.style.display = 'none';
+  seccionTintero.style.display = 'none'
   for (var i = 0; i < pantallas.length; i++) {
     var elemento = document.getElementById(pantallas[i])
     if (elemento) {
-      elemento.style.display = 'none';
+      elemento.style.display = 'none'
     }
   }
   switch (seleccion) {
@@ -2076,7 +2076,7 @@ function muestraTorres(seleccion) {
 
       const elementoMandosFrente = document.getElementById('pantalla-frente')
       if (elementoMandosFrente) {  
-        elementoMandosFrente.style.display = 'block';
+        elementoMandosFrente.style.display = 'block'
         elementoMandosFrente.style.marginRight = '150px'
 
       }
@@ -2089,7 +2089,7 @@ function muestraTorres(seleccion) {
     case 'mandos':
       const elementoMandos = document.getElementById('pantalla-mandos')
       if (elementoMandos) {
-        elementoMandos.style.display = 'block';
+        elementoMandos.style.display = 'block'
       }
       if (!idsArray.includes(seleccion)) {
         idsArray.push(seleccion)
@@ -2099,7 +2099,7 @@ function muestraTorres(seleccion) {
     case 'servicio':
       const elementoServicio = document.getElementById('pantalla-servicio')
       if (elementoServicio) {
-        elementoServicio.style.display = 'block';
+        elementoServicio.style.display = 'block'
       }
       if (!idsArray.includes(seleccion)) {
         idsArray.push(seleccion)
@@ -2109,7 +2109,7 @@ function muestraTorres(seleccion) {
     case 'atras':
       const elementoAtras = document.getElementById('pantalla-atras')
       if (elementoAtras) {
-        elementoAtras.style.display = 'block';
+        elementoAtras.style.display = 'block'
       }
       if (!idsArray.includes(seleccion)) {
         idsArray.push(seleccion)
@@ -2130,7 +2130,7 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
       for (var i = 0; i < pantallas.length; i++) {
         var elemento = document.getElementById(pantallas[i])
         if (elemento) {
-          elemento.style.display = 'none';
+          elemento.style.display = 'none'
         }
       }
 
@@ -2138,9 +2138,9 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
         if (pantallas[i] === 'pantalla-frente') {
           const elementoMandos = document.getElementById('pantalla-frente')
           if (elementoMandos) {
-            elementoMandos.style.display = 'flex';
+            elementoMandos.style.display = 'flex'
           }else {
-            elementoMandos.style.display = 'none';            
+            elementoMandos.style.display = 'none'            
           }
         }
       }  
@@ -2154,7 +2154,7 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
       for (var i = 0; i < pantallas.length; i++) {
         var elemento = document.getElementById(pantallas[i])
         if (elemento) {
-          elemento.style.display = 'none';
+          elemento.style.display = 'none'
         }
       }
 
@@ -2162,9 +2162,9 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
         if (pantallas[i] === 'pantalla-mandos') {
           const elementoMandos = document.getElementById('pantalla-mandos')
           if (elementoMandos) {
-            elementoMandos.style.display = 'flex';
+            elementoMandos.style.display = 'flex'
           }else {
-            elementoMandos.style.display = 'none';            
+            elementoMandos.style.display = 'none'            
           }
         }
       } 
@@ -2178,7 +2178,7 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
     for (var i = 0; i < pantallas.length; i++) {
       var elemento = document.getElementById(pantallas[i])
       if (elemento) {
-        elemento.style.display = 'none';
+        elemento.style.display = 'none'
       }
     }
 
@@ -2186,9 +2186,9 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
       if (pantallas[i] === 'pantalla-servicio') {
         const elementoMandos = document.getElementById('pantalla-servicio')
         if (elementoMandos) {
-          elementoMandos.style.display = 'flex';
+          elementoMandos.style.display = 'flex'
         }else {
-          elementoMandos.style.display = 'none';            
+          elementoMandos.style.display = 'none'            
         }
       }
     }
@@ -2202,7 +2202,7 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
       for (var i = 0; i < pantallas.length; i++) {
         var elemento = document.getElementById(pantallas[i])
         if (elemento) {
-          elemento.style.display = 'none';
+          elemento.style.display = 'none'
         }
       }      
       
@@ -2210,9 +2210,9 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
         if (pantallas[i] === 'pantalla-atras') {
           const elementoMandos = document.getElementById('pantalla-atras')
           if (elementoMandos) {
-            elementoMandos.style.display = 'flex';
+            elementoMandos.style.display = 'flex'
           }else {
-            elementoMandos.style.display = 'none';            
+            elementoMandos.style.display = 'none'            
           }
         }
       } 
@@ -2232,9 +2232,9 @@ function videosImpresor(videoId) {
     case 'videoTrain00':
       videoElements.forEach(video => {
       if (video.id !== videoId) {
-        video.style.display = 'none';   
+        video.style.display = 'none'   
         } else {
-        video.style.display = 'block';
+        video.style.display = 'block'
         video.pause()
         video.currentTime = 0;
         video.play()   
@@ -2244,9 +2244,9 @@ function videosImpresor(videoId) {
     case 'videoTrain02':
       videoElements.forEach(video => {
       if (video.id !== videoId) {
-        video.style.display = 'none';     
+        video.style.display = 'none'     
         } else {
-        video.style.display = 'block';
+        video.style.display = 'block'
         video.pause()
         video.currentTime = 0;
         video.play()           
@@ -2267,13 +2267,13 @@ function abrirSeccionContinua() {
   document.body.style.zoom = "100%";
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   botonesC.forEach(function(boton) {                                                                                     /// DEVUELVE ESTILOS A BOTONES AMARILLOS                 
-      boton.style.background = 'linear-gradient(45deg, rgba(250, 250, 1) 15%, rgb(27, 27, 28, 0.076) 85%)';
-      boton.style.color = 'rgb(0, 0, 0)';
+      boton.style.background = 'linear-gradient(45deg, rgba(250, 250, 1) 15%, rgb(27, 27, 28, 0.076) 85%)'
+      boton.style.color = 'rgb(0, 0, 0)'
   })
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   botonesIniciales.forEach(function(botton) {                                                                                /// DEVUELVE ESTILOS A BOTONES ROJOS
     botton.style.background = 'linear-gradient(45deg,  rgb(255, 24, 55) 55%,  rgba(255, 24, 55, 0.33) 99%)' ;    
-    botton.style.color = 'white';
+    botton.style.color = 'white'
   })
 
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2290,14 +2290,14 @@ function abrirSeccionContinua() {
   allContenedores.forEach(elemen => {
     var element = document.getElementById(elemen)
     if (element) {
-      element.style.display = 'none';
+      element.style.display = 'none'
     }
   })
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   allContIniciales.forEach(elemen => {                                                                                          /// MUESTRA CONTENEDORES INICIALES
     var element = document.getElementById(elemen)
     if (element) {
-      element.style.display = 'flex';
+      element.style.display = 'flex'
     }
   })
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2317,7 +2317,7 @@ function abrirSeccionVariable(elementId){
   allContenedores.forEach(elemen => {
     var element = document.getElementById(elemen)  
     if (element) {
-      element.style.display = 'none';
+      element.style.display = 'none'
     }
   })
   contPlana.style.display='none'
@@ -2336,7 +2336,7 @@ function abrirSeccionPlanas(elementId){
   allContenedores.forEach(elemen => {
     var element = document.getElementById(elemen)  
     if (element) {
-      element.style.display = 'none';
+      element.style.display = 'none'
     }
   })
   contVariable.style.display='none'
@@ -2355,7 +2355,7 @@ function abrirSeccionCurado(elementId){
   allContenedores.forEach(elemen => {
     var element = document.getElementById(elemen)  
     if (element) {
-      element.style.display = 'none';
+      element.style.display = 'none'
     }
   })
   contVariable.style.display='none'
@@ -2367,9 +2367,9 @@ function abrirSeccionCurado(elementId){
   videoElements.forEach(video => {
     try {
       if (video.id !== 'curado-uv') {             
-        video.style.display = 'none';     
+        video.style.display = 'none'     
       } else {
-        video.style.display = 'block';
+        video.style.display = 'block'
         video.pause()
         video.currentTime = 0;
         video.play()           
@@ -2394,7 +2394,7 @@ function abrirPilarMA(){
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])
     if (elemento) {
-      elemento.style.display = 'none';
+      elemento.style.display = 'none'
     }
   }
   botonMa.style.display='block'
@@ -2403,7 +2403,7 @@ function abrirPilarMA(){
   var delay = 100;
   for (var i = 0; i < buttonElements.length; i++) {
     setTimeout(function(index) {
-      buttonElements[index].style.display = 'block';
+      buttonElements[index].style.display = 'block'
     }, delay * i,i)
   }    
 }
@@ -2419,7 +2419,7 @@ function abrirPrepress(elementId) {
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])
     if (elemento) {
-      elemento.style.display = 'none';
+      elemento.style.display = 'none'
     }
   }
   document.body.style.zoom = "100%";
@@ -2435,14 +2435,14 @@ function abrirPrepress(elementId) {
       // Verificar si el estilo de visualización es 'none'
       if (getComputedStyle(imagenActual).display === 'none') {
           // Cambiar el estilo de visualización a 'flex'
-          imagenActual.style.display = 'flex';
+          imagenActual.style.display = 'flex'
       }
   }
 
 
   
-  contBotPress.style.display = 'flex';
-  contImgsPrepress.style.display = 'block';
+  contBotPress.style.display = 'flex'
+  contImgsPrepress.style.display = 'block'
   arrayImgPress.forEach(image => {
     if(image) {
       image.style.display = 'block'
@@ -2450,12 +2450,12 @@ function abrirPrepress(elementId) {
   })
 
   videoBackground.pause()
-  videoBackground.style.display = 'none'; // Oculta el video
+  videoBackground.style.display = 'none' // Oculta el video
 
   videoElements.forEach(video => {
     if (video) {
       video.pause()      
-      video.style.display = 'none';
+      video.style.display = 'none'
     }
     })
 
@@ -2467,19 +2467,19 @@ function abrirPrepress(elementId) {
   var botones = botEspecial.querySelectorAll('button')    
   // Recorre el array de botones y muestra cada botón
   for (var i = 0; i < botones.length; i++) {
-      botones[i].style.display = 'flex';
+      botones[i].style.display = 'flex'
   }
 
   // Mostrar el elemento "pre-prensa"
   if (prePrensaElemento) {
-    prePrensaElemento.style.display = 'block';
-    prePrensaElemento.style.zIndex = '0';
+    prePrensaElemento.style.display = 'block'
+    prePrensaElemento.style.zIndex = '0'
 
     // Establecer el mismo z-index para linksIniciales
     for (var j = 0; j < linksIniciales.length; j++) {
       var linkInicial = document.getElementById(linksIniciales[j])
       if (linkInicial) {
-        linkInicial.style.zIndex = '1';
+        linkInicial.style.zIndex = '1'
       }
     }
   }
@@ -2507,23 +2507,23 @@ function abrirDensitometria(elementId){
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])
     if (elemento) {
-      elemento.style.display = 'none';
+      elemento.style.display = 'none'
     }
   } 
   document.body.style.zoom = "100%";
   videoBackground.pause()
-  videoBackground.style.display = 'none'; // Oculta el video
+  videoBackground.style.display = 'none' // Oculta el video
   // Mostrar el elemento "densitometria"
   if (densiitoElemento) {
-    densiitoElemento.style.display = 'block';
-    densiitoElemento.style.zIndex = '0';
+    densiitoElemento.style.display = 'block'
+    densiitoElemento.style.zIndex = '0'
 
     var botEspecial = document.getElementById('conte-botDensito')
     // Obtén todos los botones y guárdalos en un array
     var botones = botEspecial.querySelectorAll('button')    
     // Recorre el array de botones y muestra cada botón
     for (var i = 0; i < botones.length; i++) {
-        botones[i].style.display = 'flex';
+        botones[i].style.display = 'flex'
     }
 
 
@@ -2531,17 +2531,17 @@ function abrirDensitometria(elementId){
     for (var j = 0; j < linksIniciales.length; j++) {
       var linkInicial = document.getElementById(linksIniciales[j])
       if (linkInicial) {
-        linkInicial.style.zIndex = '1';
+        linkInicial.style.zIndex = '1'
       }
     }
   }
  
-  contBotDensito.style.display = 'block';
-  contImgsDensito.style.display = 'block'; 
+  contBotDensito.style.display = 'block'
+  contImgsDensito.style.display = 'block' 
 
     videoElements.forEach(video => {
       if (video) {
-        video.style.display = 'none';
+        video.style.display = 'none'
         video.pause()      
       }
       })
@@ -2560,22 +2560,22 @@ function abrirDensitometria(elementId){
 function muestraVidPrisma(elementId) {
   allContenedores.forEach(contenedor => {
   if (contenedor === 'vidColor') {
-    contenedor.style.display = 'none';         
+    contenedor.style.display = 'none'         
   }  
   })
   
   var contImgsTeoria = document.getElementsByClassName('imgTeoria') // Obtén elementos por su 
   for (var i = 0; i < contImgsTeoria.length; i++) {
     var teorImage = contImgsTeoria[i] // Accede al elemento actual
-    teorImage.style.display = 'none'; // Oculta el elemento  
+    teorImage.style.display = 'none' // Oculta el elemento  
   }
   videoElements.forEach(video => {
   if (video.id === 'prisma-vid') {
-    video.style.display = 'block';
+    video.style.display = 'block'
     video.play()      
   } else {
     video.pause()
-    video.style.display = 'none';
+    video.style.display = 'none'
   }
   })
   const videos = document.querySelectorAll('.vidTeoria')
@@ -2602,21 +2602,21 @@ function muestraVidPrisma(elementId) {
 function muestraVidColor(elementId){
   allContenedores.forEach(contenedor => {
     if (contenedor === 'vidColor') {
-      contenedor.style.display = 'none';         
+      contenedor.style.display = 'none'         
     }  
     })
 
   var contImgsTeoria = document.getElementsByClassName('imgTeoria') // Obtén elementos por su
   for (var i = 0; i < contImgsTeoria.length; i++) {
     var teorImage = contImgsTeoria[i] // Accede al elemento actual
-    teorImage.style.display = 'none'; // Oculta el elemento  
+    teorImage.style.display = 'none' // Oculta el elemento  
   }
   videoElements.forEach(video => {
   if (video.id === 'color-vid') {
-    video.style.display = 'block';
+    video.style.display = 'block'
     video.play()      
   } else {
-    video.style.display = 'none';
+    video.style.display = 'none'
   }
   })
   const videos = document.querySelectorAll('.vidTeoria') 
@@ -2740,7 +2740,7 @@ function irContenedorAnterior() {
           // Verificar si el ID del hijo coincide con los IDs deseados
           if (idDelHijo !== 'container8' && idDelHijo !== 'conti-boton') {
             // Ocultar el hijo si su ID no coincide
-            hijo.style.display = 'none';
+            hijo.style.display = 'none'
           }
         }
         ElementosMa('conteneMantaut')
@@ -2782,7 +2782,7 @@ function irContenedorAnterior() {
           // Verificar si el ID del hijo coincide con los IDs deseados
           if (idDelHijo) {
             // Ocultar el hijo si su ID no coincide
-            hijo.style.display = 'block';
+            hijo.style.display = 'block'
           }
         }
 
@@ -2806,7 +2806,7 @@ function irContenedorAnterior() {
             // Verificar si el estilo de visualización es 'none'
             if (getComputedStyle(imagenActual).display === 'none') {
                 // Cambiar el estilo de visualización a 'flex'
-                imagenActual.style.display = 'flex';
+                imagenActual.style.display = 'flex'
             }
         }
       break; 
@@ -2824,7 +2824,7 @@ function irContenedorAnterior() {
           // Verificar si el ID del hijo coincide con los IDs deseados
           if (idDelHijo) {
             // Ocultar el hijo si su ID no coincide
-            hijo.style.display = 'block';
+            hijo.style.display = 'block'
           }
         }
       break;  
@@ -2835,7 +2835,7 @@ function irContenedorAnterior() {
           videoElements.forEach(vide => {
             if (vide) {
               vide.pause()
-              vide.style.display = 'none';
+              vide.style.display = 'none'
          
             }        
             })          
@@ -2848,7 +2848,7 @@ function irContenedorAnterior() {
           // Verificar si el ID del hijo coincide con los IDs deseados
           if (idDelHijo) {
             // Ocultar el hijo si su ID no coincide
-            hijo.style.display = 'block';
+            hijo.style.display = 'block'
           }
         }
         var contVidCicodelia = document.getElementById('vidCicodelia')
@@ -2861,12 +2861,12 @@ function irContenedorAnterior() {
       videos.style.style='flex'
       videoElements.forEach(vid => {
         if (vid.id === 'color-vid') {
-          vid.style.display = 'block';
+          vid.style.display = 'block'
           vid.currentTime = 0;
           vid.loop = true;                            
           vid.play()      
         } else {
-          vid.style.display = 'none';
+          vid.style.display = 'none'
         }
         })
       break;
@@ -2932,7 +2932,7 @@ function irContenedorAnterior() {
       botTwin.forEach(twinId => {
         var twinElement = document.getElementById(twinId)
         if (twinElement) {
-          twinElement.style.display = 'block';
+          twinElement.style.display = 'block'
         }
       })        
       break;
@@ -2959,7 +2959,7 @@ function irContenedorAnterior() {
           botTwin.forEach(twinId => {
             var twinElement = document.getElementById(twinId)
             if (twinElement) {
-              twinElement.style.display = 'block';
+              twinElement.style.display = 'block'
             }
           })       
       break;
@@ -2986,7 +2986,7 @@ function irContenedorAnterior() {
           botTwin.forEach(twinId => {
             var twinElement = document.getElementById(twinId)
             if (twinElement) {
-              twinElement.style.display = 'block';
+              twinElement.style.display = 'block'
             }
           })       
       break;
@@ -3013,7 +3013,7 @@ function irContenedorAnterior() {
           botTwin.forEach(twinId => {
             var twinElement = document.getElementById(twinId)
             if (twinElement) {
-              twinElement.style.display = 'block';
+              twinElement.style.display = 'block'
           }
         })       
       break;
@@ -3070,7 +3070,7 @@ function irContenedorSiguiente() {
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])
     if (elemento) {
-      elemento.style.display = 'none';
+      elemento.style.display = 'none'
     }
   }
     // 1. Si el primer elemento del array 'idsArray' corresponde a 'pantalla-inicial', entonces alert 'pantalla-inicial'
@@ -3181,7 +3181,7 @@ function irContenedorSiguiente() {
         var contImgsTeoria = document.getElementsByClassName('imgTeoria') // Obtén elementos por su
         for (var i = 0; i < contImgsTeoria.length; i++) {
           var teorImage = contImgsTeoria[i] // Accede al elemento actual
-          teorImage.style.display = 'block'; // muestra el elemento  
+          teorImage.style.display = 'block' // muestra el elemento  
         } 
         const vidTeoria = document.querySelectorAll('.vidTeoria')
         // Reproducir todos los videos simultáneamente
@@ -3201,7 +3201,7 @@ function irContenedorSiguiente() {
           // Verificar si el estilo de visualización es 'none'
           if (getComputedStyle(imagenActual).display === 'none') {
               // Cambiar el estilo de visualización a 'flex'
-              imagenActual.style.display = 'flex';
+              imagenActual.style.display = 'flex'
           }
         }
 
@@ -3224,7 +3224,7 @@ function irContenedorSiguiente() {
         var contImgsDensito = document.getElementsByClassName('imgDensito') // Obtén elementos por su
         for (var i = 0; i < contImgsDensito.length; i++) {
           var teorImage = contImgsDensito[i] // Accede al elemento actual
-          teorImage.style.display = 'block'; // muestra el elemento  
+          teorImage.style.display = 'block' // muestra el elemento  
         }            
       break;  
       case "vidColor":
@@ -3234,12 +3234,12 @@ function irContenedorSiguiente() {
       videos.style.style='flex'
       videoElements.forEach(vide => {
         if (vide.id === 'prisma-vid') {
-          vide.style.display = 'block';
+          vide.style.display = 'block'
           vide.currentTime = 0;
           vide.loop = true;               
           vide.play()      
         } else {
-          vide.style.display = 'none';
+          vide.style.display = 'none'
         }
         })
       break; 
@@ -3250,12 +3250,12 @@ function irContenedorSiguiente() {
       videos.style.style='flex'
       videoElements.forEach(vid => {
         if (vid.id === 'color-vid') {
-          vid.style.display = 'block';
+          vid.style.display = 'block'
           vid.currentTime = 0;
           vid.loop = true;                            
           vid.play()      
         } else {
-          vid.style.display = 'none';
+          vid.style.display = 'none'
         }
         })
       break; 
@@ -3364,7 +3364,7 @@ function listaEntrenamientosII(btnId) {
   enlacesIDs.forEach(function (id) {                                                                                                      // VINCULOS COLOR AZUL
   var enlace = document.getElementById(id)
   if (enlace) {
-    enlace.style.color = 'blue';
+    enlace.style.color = 'blue'
   }
   })                                                                                                                    
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3373,7 +3373,7 @@ function listaEntrenamientosII(btnId) {
     var elemento = document.getElementById(id);
   
     if (elemento) {
-      elemento.style.display = 'none';
+      elemento.style.display = 'none'
     }
   }
 
@@ -3382,7 +3382,7 @@ function listaEntrenamientosII(btnId) {
       var alMenosUnoVisible = elementos.some(function(id) {
       var elemento = document.getElementById(id)
       var estilo = window.getComputedStyle(elemento)
-      return estilo.display !== 'none';
+      return estilo.display !== 'none'
       })
     
       if (alMenosUnoVisible) {
@@ -3393,13 +3393,13 @@ function listaEntrenamientosII(btnId) {
       var todosOcultos = elements.every(function (id) {
       var elemento = document.getElementById(id)
       var estilo = window.getComputedStyle(elemento)
-      return estilo.display === 'none';
+      return estilo.display === 'none'
       })
       if (todosOcultos) {
       // Mostrar los elementos si todos están ocultos
       elements.forEach(function (id) {
         var elemento = document.getElementById(id)
-        elemento.style.display = 'block'; // O el valor apropiado
+        elemento.style.display = 'block' // O el valor apropiado
       })
       }      
     break;
@@ -3407,7 +3407,7 @@ function listaEntrenamientosII(btnId) {
       var hijosDelContenedor = contLargos.children;
       for (var i = 0; i < hijosDelContenedor.length; i++) {
         var hijo = hijosDelContenedor[i]  
-        hijo.style.display = 'none';      }   
+        hijo.style.display = 'none'      }   
 
     break;  
     default:
@@ -3420,7 +3420,7 @@ function listaEntrenamientos(){
   var contLinksMA = document.getElementById('linksMA')
 
   videoBackground.pause()
-  videoBackground.style.display = 'none';  
+  videoBackground.style.display = 'none'  
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]) 
     if(elemento.id !== 'conteneMantaut'){
@@ -3465,72 +3465,72 @@ function imagenesPasoApaso(idElto, id) {
   if (id !== 'vinc5') {
     switch (id) {
       case 'vinc1':
-        botOrange.style.color = 'orange';
+        botOrange.style.color = 'orange'
         // Cambiar otros enlaces a azul
         var botones = document.getElementsByClassName('colorClick')
         for (var i = 0; i < botones.length; i++) {
         if (botones[i].id !== id) {
-        botones[i].style.color = 'blue';
+        botones[i].style.color = 'blue'
         }}
       break; 
       case 'vinc2':
-        botOrange.style.color = 'orange';
+        botOrange.style.color = 'orange'
         // Cambiar otros enlaces a azul
         var botones = document.getElementsByClassName('colorClick')
         for (var i = 0; i < botones.length; i++) {
         if (botones[i].id !== id) {
-        botones[i].style.color = 'blue';
+        botones[i].style.color = 'blue'
         }}
        break;
        case 'vinc3':
-        botOrange.style.color = 'orange';
+        botOrange.style.color = 'orange'
         // Cambiar otros enlaces a azul
         var botones = document.getElementsByClassName('colorClick')
         for (var i = 0; i < botones.length; i++) {
         if (botones[i].id !== id) {
-        botones[i].style.color = 'blue';
+        botones[i].style.color = 'blue'
         }}
        break; 
        case 'vinc4':
-        botOrange.style.color = 'orange';
+        botOrange.style.color = 'orange'
         // Cambiar otros enlaces a azul
         var botones = document.getElementsByClassName('colorClick')
         for (var i = 0; i < botones.length; i++) {
         if (botones[i].id !== id) {
-        botones[i].style.color = 'blue';
+        botones[i].style.color = 'blue'
         }}
        break;  
       default:
     } 
-    contImgEntrenos.style.display = 'flex';
+    contImgEntrenos.style.display = 'flex'
     imagPasoApaso.forEach(imag => {
       if (imag.id == idElto) {
-        imag.style.display = 'block';
+        imag.style.display = 'block'
         document.body.style.zoom = "100%";
       } else {
-        imag.style.display = 'none';
+        imag.style.display = 'none'
       }
     })
     }else{
       document.body.style.zoom = "67%";
       switch (id) {
         case 'vinc5':
-        botOrange.style.color = 'orange';
+        botOrange.style.color = 'orange'
         // Cambiar otros enlaces a azul
         var botones = document.getElementsByClassName('colorClick')
         for (var i = 0; i < botones.length; i++) {
         if (botones[i].id !== id) {
-        botones[i].style.color = 'blue';
+        botones[i].style.color = 'blue'
         }}
       break;              
       default:
     } 
-    contImgEntrenos.style.display = 'flex';
+    contImgEntrenos.style.display = 'flex'
     imagPasoApaso.forEach(imag => {
       if (imag.id == idElto) {
-        imag.style.display = 'block';
+        imag.style.display = 'block'
       } else {
-        imag.style.display = 'none';
+        imag.style.display = 'none'
       }
     })    
   }
@@ -3560,14 +3560,14 @@ function lubricacion(buttId,btnIniId){
 
       // Verificar si el estilo es 'none' y convertirlo a 'flex'
       if (estiloDisplay === 'none') {
-          elemento.style.display = 'flex';
+          elemento.style.display = 'flex'
       }
     }
 
     arrayGeneral.forEach(element => {
       var elemento = document.getElementById(element)
       if (elemento) {
-          elemento.style.display = 'none';
+          elemento.style.display = 'none'
       } 
     }) 
 
@@ -3580,10 +3580,10 @@ function lubricacion(buttId,btnIniId){
 
           if (eltoId === 'lubri-III') {
             // Si es 'lubri-III', establecer la propiedad display a 'flex'
-            eltoLubrica.style.display = 'flex';
+            eltoLubrica.style.display = 'flex'
           } else {
             // Si no es 'lubri-III', ocultar el elemento
-            eltoLubrica.style.display = 'none';
+            eltoLubrica.style.display = 'none'
           }
         }
         if (padreLubriIII) {
@@ -3597,7 +3597,7 @@ function lubricacion(buttId,btnIniId){
             // Verificar si el valor actual es 'none'
             if (displayValue === 'flex') {
                 // Cambiar la propiedad display a 'flex'
-                hijo.style.display = 'none';
+                hijo.style.display = 'none'
             }
           }
         }
@@ -3617,7 +3617,7 @@ function lubricacion(buttId,btnIniId){
           var element = document.getElementById(elementId)      
           if (element) { // Verifica si el elemento existe
             element.style.color = "white";
-            element.style.background = '#333333';
+            element.style.background = '#333333'
             
           }
         }
@@ -3626,17 +3626,17 @@ function lubricacion(buttId,btnIniId){
           var button = arrayIdButtsCheck[i]
           if (button === buttId) {
             // Cambia el color del botón seleccionado a rojo
-            document.getElementById(button).style.backgroundColor = 'rgb(0,255,0)';
+            document.getElementById(button).style.backgroundColor = 'rgb(0,255,0)'
           } else {
             // Restablece el color de los otros botones
-            document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
+            document.getElementById(button).style.backgroundColor = '' // Esto elimina cualquier estilo en línea
           }
         } 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
         botones.forEach(function(boton) {                                                                                            /// VERDE AL BOTON INICIAL
           var idBoton = boton.id;
           if (idBoton === btnIniId) {
-              boton.style.backgroundColor = 'rgb(0,255,0)';
+              boton.style.backgroundColor = 'rgb(0,255,0)'
           }
         })          
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
@@ -3652,7 +3652,7 @@ function lubricacion(buttId,btnIniId){
 
           if (eltoId) {
             // Si es 'lubri-III', establecer la propiedad display a 'flex'
-            eltoLubrica.style.display = 'none';
+            eltoLubrica.style.display = 'none'
           } 
         }
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
@@ -3660,17 +3660,17 @@ function lubricacion(buttId,btnIniId){
           var button = arrayIdButtsCheck[i]
           if (button === buttId) {
             // Cambia el color del botón seleccionado a rojo
-            document.getElementById(button).style.backgroundColor = 'rgba(255,255,0,15)';
+            document.getElementById(button).style.backgroundColor = 'rgba(255,255,0,15)'
           } else {
             // Restablece el color de los otros botones
-            document.getElementById(button).style.backgroundColor = '';
+            document.getElementById(button).style.backgroundColor = ''
           }
         } 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
         botones.forEach(function(boton) {                                                                                         /// AMARILLO AL BOTON INICIAL
           var idBoton = boton.id;
           if (idBoton === btnIniId) {
-              boton.style.backgroundColor = 'rgba(255,255,0,15)';
+              boton.style.backgroundColor = 'rgba(255,255,0,15)'
           }
         })
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3686,19 +3686,19 @@ function lubricacion(buttId,btnIniId){
           // Verificar si el hijo es visible ('flex') y si no es el contenedor de botones
           if (estiloDisplay === 'flex' && !hijo.classList.contains('conti-boton')) {
             // Cambiar el valor de 'display' a 'none'
-            hijo.style.display = 'none';
+            hijo.style.display = 'none'
           }
         }
         // Mostrar solo el contenedor de botones
         var contiBotonFreno = document.getElementById('conti-boton-freno')
-        contiBotonFreno.style.display = 'flex';
+        contiBotonFreno.style.display = 'flex'
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
         for (var i = 0; i < arrayIdButtsLubII.length; i++) {                                                                     /// COLOR GRIS A LOS BOTONES                                                            
           var button = arrayIdButtsLubII[i]                                                                                         
           if (button) {
             // Cambia el color del botón a rojo
-            document.getElementById(button).style.backgroundColor = '#333333';
-            document.getElementById(button).style.color = 'white';      
+            document.getElementById(button).style.backgroundColor = '#333333'
+            document.getElementById(button).style.color = 'white'      
           } 
         }  
 
@@ -3715,7 +3715,7 @@ function lubricacion(buttId,btnIniId){
 
           if (eltoId) {
             // Si es 'lubri-III', establecer la propiedad display a 'flex'
-            eltoLubrica.style.display = 'none';
+            eltoLubrica.style.display = 'none'
           } 
         }
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
@@ -3723,10 +3723,10 @@ function lubricacion(buttId,btnIniId){
           var button = arrayIdButtsCheck[i]
           if (button === buttId) {
             // Cambia el color del botón seleccionado a rojo
-            document.getElementById(button).style.backgroundColor = '';
+            document.getElementById(button).style.backgroundColor = ''
           } else {
             // Restablece el color de los otros botones
-            document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
+            document.getElementById(button).style.backgroundColor = '' // Esto elimina cualquier estilo en línea
           }
         } 
       break;
@@ -3738,7 +3738,7 @@ function lubricacion(buttId,btnIniId){
 
           if (eltoId) {
             // Si es 'lubri-III', establecer la propiedad display a 'flex'
-            eltoLubrica.style.display = 'none';
+            eltoLubrica.style.display = 'none'
           } 
         }
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
@@ -3746,10 +3746,10 @@ function lubricacion(buttId,btnIniId){
           var button = arrayIdButtsCheck[i]
           if (button === buttId) {
             // Cambia el color del botón seleccionado a rojo
-            document.getElementById(button).style.backgroundColor = '';
+            document.getElementById(button).style.backgroundColor = ''
           } else {
             // Restablece el color de los otros botones
-            document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
+            document.getElementById(button).style.backgroundColor = '' // Esto elimina cualquier estilo en línea
           }
         } 
       break;
@@ -3761,7 +3761,7 @@ function lubricacion(buttId,btnIniId){
 
           if (eltoId) {
             // Si es 'lubri-III', establecer la propiedad display a 'flex'
-            eltoLubrica.style.display = 'none';
+            eltoLubrica.style.display = 'none'
           } 
         }
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
@@ -3769,10 +3769,10 @@ function lubricacion(buttId,btnIniId){
           var button = arrayIdButtsCheck[i]
           if (button === buttId) {
             // Cambia el color del botón seleccionado a rojo
-            document.getElementById(button).style.backgroundColor = '';
+            document.getElementById(button).style.backgroundColor = ''
           } else {
             // Restablece el color de los otros botones
-            document.getElementById(button).style.backgroundColor = ''; // Esto elimina cualquier estilo en línea
+            document.getElementById(button).style.backgroundColor = '' // Esto elimina cualquier estilo en línea
           }
         } 
       break;
@@ -3785,7 +3785,7 @@ function showButtonsMAconRetrasoDesb() {
   function mostrarBotonConRetrasoFreno(i) {
     if (i < botones.length) {
       var boton = botones[i]
-      boton.style.display = 'inline-block';
+      boton.style.display = 'inline-block'
       setTimeout(function() {
         mostrarBotonConRetrasoFreno(i + 1)
       }, 150) // 150 milisegundos de retraso entre botones
@@ -3807,13 +3807,13 @@ function LubricaDesbobinador(idButt) {
     var button = arrayIdButtsCheck[i]
     if (button) {
       // Cambia el color del botón a rojo
-      document.getElementById(button).style.backgroundColor = 'rgb(0, 255, 0)';
+      document.getElementById(button).style.backgroundColor = 'rgb(0, 255, 0)'
     } 
   }
    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
    arrayLabels.forEach(label => {                                                                                                    ///COLOR AMARILLO A LABELS
     if (label) {
-      document.getElementById(label).style.color = 'rgb(0, 255, 0)';
+      document.getElementById(label).style.color = 'rgb(0, 255, 0)'
     }
   })  
    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3821,13 +3821,13 @@ function LubricaDesbobinador(idButt) {
     var button = arrayIdButtsLub[i]                                                                                         
     if (button === idButt) {
       // Cambia el color del botón a rojo
-      document.getElementById(button).style.backgroundColor = 'rgb(0, 255, 0)';
-      document.getElementById(button).style.color = 'black';
+      document.getElementById(button).style.backgroundColor = 'rgb(0, 255, 0)'
+      document.getElementById(button).style.color = 'black'
  
     } else {
       // Cambia el color del resto de botones a gris
-      document.getElementById(button).style.backgroundColor= '#333333';
-      document.getElementById(button).style.color = 'white';
+      document.getElementById(button).style.backgroundColor= '#333333'
+      document.getElementById(button).style.color = 'white'
     }
   }
    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3835,13 +3835,13 @@ function LubricaDesbobinador(idButt) {
     var button = arrayIdButtsLubII[i]                                                                                         
     if (button === idButt) {
       // Cambia el color del botón a rojo
-      document.getElementById(button).style.backgroundColor = 'rgba(217, 255, 0, 1)';
-      document.getElementById(button).style.color = 'black';
+      document.getElementById(button).style.backgroundColor = 'rgba(217, 255, 0, 1)'
+      document.getElementById(button).style.color = 'black'
 
     } else {
       // Cambia el color del resto de botones a gris
-      document.getElementById(button).style.backgroundColor= '#333333';
-      document.getElementById(button).style.color = 'white';
+      document.getElementById(button).style.backgroundColor= '#333333'
+      document.getElementById(button).style.color = 'white'
 
     }
   }  
@@ -3853,9 +3853,9 @@ function LubricaDesbobinador(idButt) {
         var eltoLubrica = document.getElementById(eltoId)
     
         if (eltoId === 'frec-lubrica') {
-            eltoLubrica.style.display = 'flex';
+            eltoLubrica.style.display = 'flex'
         } else {
-            eltoLubrica.style.display = 'none';
+            eltoLubrica.style.display = 'none'
         }
       }
       showLablsLubricacion()
@@ -3867,10 +3867,10 @@ function LubricaDesbobinador(idButt) {
 
         if (eltoId === 'lubri-III') {
             // Si es 'lubri-III', establecer la propiedad display a 'flex'
-            eltoLubrica.style.display = 'flex';
+            eltoLubrica.style.display = 'flex'
         } else {
             // Si no es 'lubri-III', ocultar el elemento
-            eltoLubrica.style.display = 'none';
+            eltoLubrica.style.display = 'none'
         }
     }
     if (padreLubriIII) {
@@ -3884,7 +3884,7 @@ function LubricaDesbobinador(idButt) {
           // Verificar si el valor actual es 'none'
           if (displayValue === 'none') {
               // Cambiar la propiedad display a 'flex'
-              hijo.style.display = 'flex';
+              hijo.style.display = 'flex'
           }
       }
     }
@@ -3897,10 +3897,10 @@ function LubricaDesbobinador(idButt) {
 
         if (eltoId === 'lubri-III') {
             // Si es 'lubri-III', establecer la propiedad display a 'flex'
-            eltoLubrica.style.display = 'flex';
+            eltoLubrica.style.display = 'flex'
         } else {
             // Si no es 'lubri-III', ocultar el elemento
-            eltoLubrica.style.display = 'none';
+            eltoLubrica.style.display = 'none'
         }
       }
     if (padreLubriIII) {
@@ -3914,7 +3914,7 @@ function LubricaDesbobinador(idButt) {
           // Verificar si el valor actual es 'none'
           if (displayValue === 'flex') {
               // Cambiar la propiedad display a 'flex'
-              hijo.style.display = 'none';
+              hijo.style.display = 'none'
           }
       }
     }
@@ -3926,10 +3926,10 @@ function LubricaDesbobinador(idButt) {
 
         if (eltoId === 'lubri-III') {
             // Si es 'lubri-III', establecer la propiedad display a 'flex'
-            eltoLubrica.style.display = 'flex';
+            eltoLubrica.style.display = 'flex'
         } else {
             // Si no es 'lubri-III', ocultar el elemento
-            eltoLubrica.style.display = 'none';
+            eltoLubrica.style.display = 'none'
         }
     }
     if (padreLubriIII) {
@@ -3943,7 +3943,7 @@ function LubricaDesbobinador(idButt) {
           // Verificar si el valor actual es 'none'
           if (displayValue === 'flex') {
               // Cambiar la propiedad display a 'flex'
-              hijo.style.display = 'none';
+              hijo.style.display = 'none'
           }
       }
     }
@@ -3955,10 +3955,10 @@ function LubricaDesbobinador(idButt) {
 
         if (eltoId === 'lubri-III') {
             // Si es 'lubri-III', establecer la propiedad display a 'flex'
-            eltoLubrica.style.display = 'flex';
+            eltoLubrica.style.display = 'flex'
         } else {
             // Si no es 'lubri-III', ocultar el elemento
-            eltoLubrica.style.display = 'none';
+            eltoLubrica.style.display = 'none'
         }
     }
     if (padreLubriIII) {
@@ -3972,7 +3972,7 @@ function LubricaDesbobinador(idButt) {
           // Verificar si el valor actual es 'none'
           if (displayValue === 'flex') {
               // Cambiar la propiedad display a 'flex'
-              hijo.style.display = 'none';
+              hijo.style.display = 'none'
           }
       }
     }
@@ -3985,10 +3985,10 @@ function LubricaDesbobinador(idButt) {
 
         if (eltoId === 'lubri-III') {
             // Si es 'lubri-III', establecer la propiedad display a 'flex'
-            eltoLubrica.style.display = 'flex';
+            eltoLubrica.style.display = 'flex'
         } else {
             // Si no es 'lubri-III', ocultar el elemento
-            eltoLubrica.style.display = 'none';
+            eltoLubrica.style.display = 'none'
         }
       }
       if (padreLubriIII) {
@@ -4002,7 +4002,7 @@ function LubricaDesbobinador(idButt) {
             // Verificar si el valor actual es 'flex'
             if (displayValue === 'flex') {
                 // Cambiar la propiedad display a 'none'
-                hijo.style.display = 'none';
+                hijo.style.display = 'none'
             }
         }
       }
@@ -4015,7 +4015,7 @@ function LubricaDesbobinador(idButt) {
         // Verificar si el valor actual es 'none'
         if (displayValue === 'none') {
           // Cambiar la propiedad display a 'flex'
-          hijo.style.display = 'flex';
+          hijo.style.display = 'flex'
         }
       }
       ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4035,12 +4035,12 @@ function LubricaDesbobinador(idButt) {
         var estiloCalculado = window.getComputedStyle(hijo)
         if (estiloCalculado.getPropertyValue('display') === 'flex') {
           // Paso 4: Cambiar la propiedad de estilo 'display' a 'none'
-          hijo.style.display = 'none';
+          hijo.style.display = 'none'
         }
       }
       // Paso 5: Hacer visible solo el hijo con la clase 'conti-boton'
       var contiBoton = document.getElementById('conti-boton-freno')
-      contiBoton.style.display = 'flex';  // Suponiendo que 'flex' es la propiedad de estilo 
+      contiBoton.style.display = 'flex'  // Suponiendo que 'flex' es la propiedad de estilo 
     break;
     case 'btn80': 
       // Paso 1: Obtener el elemento padre
@@ -4052,12 +4052,12 @@ function LubricaDesbobinador(idButt) {
         var estiloCalculado = window.getComputedStyle(hijo)
         if (estiloCalculado.getPropertyValue('display') === 'flex') {
           // Paso 4: Cambiar la propiedad de estilo 'display' a 'none'
-          hijo.style.display = 'none';
+          hijo.style.display = 'none'
         }
       }
       // Paso 5: Hacer visible solo el hijo con la clase 'conti-boton'
       var contiBoton = document.getElementById('conti-boton-freno')
-      contiBoton.style.display = 'flex';  // Suponiendo que 'flex' es la propiedad de estilo 
+      contiBoton.style.display = 'flex'  // Suponiendo que 'flex' es la propiedad de estilo 
     break;    
     default:
   } 
@@ -4070,22 +4070,22 @@ function UnidadTeñido(buttId,btnIniId){
   var botsDesplegables = ['btn600','btn700','btn800','btn06','btn07','btn08']
   arrayPadres = ['uniTeñido',`rodilleria`]
   var contenedorPadre = document.getElementById('uniTeñido')
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-  botsDesplegables.forEach(boton => {                                                                                              ///OCULTA BOTONES INICIALMENTE
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
+  botsDesplegables.forEach(boton => {                                                                                                    ///OCULTA BOTONES INICIALMENTE
     botDesplegable = document.getElementById(boton)
     if(botDesplegable){
       botDesplegable.style.display = 'none'
     }
   })
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-  arrayPadres.forEach(unidad => {                                                                                                   ///OCULTA PADRES INICIALMENTE
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
+  arrayPadres.forEach(unidad => {                                                                                                         ///OCULTA PADRES INICIALMENTE
     padre = document.getElementById(unidad)
     if(padre){
       padre.style.display = 'none'
     }
   })  
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  if(alimenta.style.display === 'none'){
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  if(alimenta.style.display === 'none'){                                                                                                  /// SI "ALIMENTA" ESTÁ OCULTA
 
     switch (buttId) {
       case 'boton8' :
@@ -4094,7 +4094,7 @@ function UnidadTeñido(buttId,btnIniId){
         var currentId = botsTorre[i]
         var currentElement = document.getElementById(currentId)
         if (currentId === btnIniId && currentElement) {
-          currentElement.style.backgroundColor = 'rgb(255, 24, 55)';                         
+          currentElement.style.backgroundColor = 'rgb(255, 24, 55)'                         
           currentElement.style.color = 'white'
           break;
         }
@@ -4104,7 +4104,7 @@ function UnidadTeñido(buttId,btnIniId){
         var currentId = botsUnidadT[i]
         var currentElement = document.getElementById(currentId)
         if (currentId === buttId && currentElement) {
-          currentElement.style.backgroundColor = 'rgba(255,0,0, 1)';                              
+          currentElement.style.backgroundColor = 'rgba(255,0,0, 1)'                              
         }else{
           currentElement.style.backgroundColor = ''
 
@@ -4115,7 +4115,7 @@ function UnidadTeñido(buttId,btnIniId){
         var currentId = botsDesplegables[i]
         var currentElement = document.getElementById(currentId)
         if (currentId === btnIniId && currentElement) {
-          currentElement.style.backgroundColor = 'rgba(255,0,0, 1)';                              
+          currentElement.style.backgroundColor = 'rgba(255,0,0, 1)'                              
         }else{
           currentElement.style.backgroundColor = ''
 
@@ -4144,7 +4144,7 @@ function UnidadTeñido(buttId,btnIniId){
         var currentId = botsTorre[i]
         var currentElement = document.getElementById(currentId)
         if (currentId === btnIniId && currentElement) {
-          currentElement.style.backgroundColor = 'rgba(255,0,255, 1)';                         
+          currentElement.style.backgroundColor = 'rgba(255,0,255, 1)'                         
           currentElement.style.color = 'white'
           break;
         }
@@ -4154,7 +4154,7 @@ function UnidadTeñido(buttId,btnIniId){
         var currentId = botsUnidadT[i]
         var currentElement = document.getElementById(currentId)
         if (currentId === buttId && currentElement) {
-          currentElement.style.backgroundColor = 'rgba(255,0,255, 1)';                              
+          currentElement.style.backgroundColor = 'rgba(255,0,255, 1)'                              
         }else{
           currentElement.style.backgroundColor = ''
 
@@ -4175,7 +4175,7 @@ function UnidadTeñido(buttId,btnIniId){
         var currentId = botsTorre[i]
         var currentElement = document.getElementById(currentId)
         if (currentId === btnIniId && currentElement) {
-          currentElement.style.backgroundColor = 'rgba(255,0,0, 1)';                         
+          currentElement.style.backgroundColor = 'rgba(255,0,0, 1)'                         
           currentElement.style.color = 'white'
           break;
         }
@@ -4185,7 +4185,7 @@ function UnidadTeñido(buttId,btnIniId){
         var currentId = botsUnidadT[i]
         var currentElement = document.getElementById(currentId)
         if (currentId === buttId && currentElement) {
-          currentElement.style.backgroundColor = 'rgba(255,0,0, 1)';                              
+          currentElement.style.backgroundColor = 'rgba(255,0,0, 1)'                              
         }else{
           currentElement.style.backgroundColor = ''
 
@@ -4206,7 +4206,7 @@ function UnidadTeñido(buttId,btnIniId){
         var currentId = botsTorre[i]
         var currentElement = document.getElementById(currentId)
         if (currentId === btnIniId && currentElement) {
-          currentElement.style.backgroundColor = 'rgba(255,0,0, 1)';                         
+          currentElement.style.backgroundColor = 'rgba(255,0,0, 1)'                         
           currentElement.style.color = 'white'
           break;
         }
@@ -4216,7 +4216,7 @@ function UnidadTeñido(buttId,btnIniId){
         var currentId = botsUnidadT[i]
         var currentElement = document.getElementById(currentId)
         if (currentId === buttId && currentElement) {
-          currentElement.style.backgroundColor = 'rgba(255,0,0, 1)';                              
+          currentElement.style.backgroundColor = 'rgba(255,0,0, 1)'                              
         }else{
           currentElement.style.backgroundColor = ''
 
@@ -4237,7 +4237,7 @@ function UnidadTeñido(buttId,btnIniId){
         var currentId = botsTorre[i]
         var currentElement = document.getElementById(currentId)
         if (currentId === btnIniId && currentElement) {
-          currentElement.style.backgroundColor = 'rgba(255,0,0, 1)';                         
+          currentElement.style.backgroundColor = 'rgba(255,0,0, 1)'                         
           currentElement.style.color = 'white'
           break;
         }
@@ -4247,7 +4247,7 @@ function UnidadTeñido(buttId,btnIniId){
         var currentId = botsUnidadT[i]
         var currentElement = document.getElementById(currentId)
         if (currentId === buttId && currentElement) {
-          currentElement.style.backgroundColor = 'rgba(255,0,0, 1)';                              
+          currentElement.style.backgroundColor = 'rgba(255,0,0, 1)'                              
         }else{
           currentElement.style.backgroundColor = ''
 
@@ -4260,14 +4260,14 @@ function UnidadTeñido(buttId,btnIniId){
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
        for (var i = 0; i < contenedorPadre.children.length; i++) {                                                           /// MUESTRA TODOS LOS HIJOS DEL PADRE
           var hijo = contenedorPadre.children[i]
-          hijo.style.display = 'flex'; // O el valor que prefieras
+          hijo.style.display = 'flex' // O el valor que prefieras
        }
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
         for (var i = 0; i < botsDesplegables.length; i++) {                                                                         /// ROJO MISMO BOTON IZQUIERDO
         var currentId = botsDesplegables[i]
         var currentElement = document.getElementById(currentId)
         if (currentId === buttId) {
-          currentElement.style.backgroundColor = 'rgba(255,0,0, 1)';                              
+          currentElement.style.backgroundColor = 'rgba(255,0,0, 1)'                              
         }else{
           currentElement.style.backgroundColor = '#333333'
 
@@ -4281,15 +4281,20 @@ function UnidadTeñido(buttId,btnIniId){
         vidFreno.play()        
       break; 
       case 'btn700' :
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
-        for (var i = 0; i < contenedorPadre.children.length; i++) {                                                               /// OOCULTAR HIJOS MENOS BOTONES
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
+        for (var i = 0; i < contenedorPadre.children.length; i++) {                                                                    /// OOCULTAR HIJOS MENOS BOTONES
           var hijo = contenedorPadre.children[i]
-          hijo.style.display = 'none';
+          hijo.style.display = 'none'
         }
 
         var contiBotonTeñido = document.getElementById('conti-boton-teñido')
         if (contiBotonTeñido) {
-            contiBotonTeñido.style.display = 'flex'; // O el valor que prefieras
+            contiBotonTeñido.style.display = 'flex' // O el valor que prefieras
+        }
+
+        var contiPadreTeñido = document.getElementById('uniTeñido')
+        if (contiPadreTeñido) {
+          contiPadreTeñido.style.display = 'flex' // O el valor que prefieras
         }
 
         // Recorre los hijos del contenedor padre
@@ -4298,18 +4303,17 @@ function UnidadTeñido(buttId,btnIniId){
     
             // Verifica si el hijo es un botón y lo muestra
             if (hijo.tagName.toLowerCase() === 'button') {
-                hijo.style.display = 'flex'; // O el valor que prefieras
+                hijo.style.display = 'none' // O el valor que prefieras
             }
         }
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
-        for (var i = 0; i < botsDesplegables.length; i++) {                                                                         /// ROJO MISMO BOTON IZQUIERDO
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
+        for (var i = 0; i < botsDesplegables.length; i++) {                                                                              /// ROJO MISMO BOTON IZQUIERDO
           var currentId = botsDesplegables[i]
           var currentElement = document.getElementById(currentId)
           if (currentId === buttId) {
-            currentElement.style.backgroundColor = 'rgba(255,0,0, 1)';                              
+            currentElement.style.backgroundColor = 'rgba(255,0,0, 1)'                              
           }else{
-            currentElement.style.backgroundColor = '#333333'
-  
+            currentElement.style.backgroundColor = '#333333'  
           }
         } 
         showButtonsUTeñidoconRetraso()        
@@ -4318,12 +4322,12 @@ function UnidadTeñido(buttId,btnIniId){
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
         for (var i = 0; i < contenedorPadre.children.length; i++) {                                                               /// OOCULTAR HIJOS MENOS BOTONES
           var hijo = contenedorPadre.children[i]
-          hijo.style.display = 'none';
+          hijo.style.display = 'none'
         }
 
         var contiBotonTeñido = document.getElementById('conti-boton-teñido')
         if (contiBotonTeñido) {
-            contiBotonTeñido.style.display = 'flex'; // O el valor que prefieras
+            contiBotonTeñido.style.display = 'flex' // O el valor que prefieras
         }
 
         // Recorre los hijos del contenedor padre
@@ -4332,7 +4336,7 @@ function UnidadTeñido(buttId,btnIniId){
     
             // Verifica si el hijo es un botón y lo muestra
             if (hijo.tagName.toLowerCase() === 'button') {
-                hijo.style.display = 'flex'; // O el valor que prefieras
+                hijo.style.display = 'flex' // O el valor que prefieras
             }
         }
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
@@ -4340,7 +4344,7 @@ function UnidadTeñido(buttId,btnIniId){
           var currentId = botsDesplegables[i]
           var currentElement = document.getElementById(currentId)
           if (currentId === buttId) {
-            currentElement.style.backgroundColor = 'rgba(255,0,0, 1)';                              
+            currentElement.style.backgroundColor = 'rgba(255,0,0, 1)'                              
           }else{
             currentElement.style.backgroundColor = '#333333'
   
@@ -4350,32 +4354,31 @@ function UnidadTeñido(buttId,btnIniId){
       break;                               
       default:
     }
-
   }
-
 } 
+
 function showButtonsUTeñidoconRetraso() {
   var botones = document.querySelectorAll('.butt-mautonomo-teñido') // Selecciona los botones
   var contPadre = document.getElementById('conti-boton-teñido')
   var parentContainer = document.getElementById('uniTeñido')
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  parentContainer.style.display='flex'                                                                                         /// OCULTA HIJOS MENOS LOS BOTONES
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  parentContainer.style.display='flex'                                                                                                /// OCULTA HIJOS MENOS LOS BOTONES
   contPadre.style.display='flex'
 
   var childContainers = parentContainer.children;
   for (var i = 0; i < childContainers.length; i++) {
     var container = childContainers[i]
     if (container.id === 'conti-boton-teñido') {
-      container.style.display = 'flex';
+      container.style.display = 'flex'
     } else {
-      container.style.display = 'none';
+      container.style.display = 'none'
     }
   }
 
   function mostrarBotonConRetrasoTeñido (i) {
     if (i < botones.length) {
       var boton = botones[i]
-      boton.style.display = 'inline-block';
+      boton.style.display = 'inline-block'
       setTimeout(function() {
       mostrarBotonConRetrasoTeñido(i + 1)
       }, 150) // 150 milisegundos de retraso entre botones
@@ -4393,7 +4396,7 @@ function showButtonsFrenoconRetrasoDesb() {
   function mostrarBotonConRetrasoFrenoI (i) {
     if (i < botones.length) {
       var boton = botones[i]
-      boton.style.display = 'inline-block';
+      boton.style.display = 'inline-block'
       setTimeout(function() {
         mostrarBotonConRetrasoFrenoI(i + 1)
       }, 150) // 150 milisegundos de retraso entre botones
@@ -4413,16 +4416,16 @@ function showButtonsRodilleria() {
   for (var i = 0; i < childContainers.length; i++) {
     var container = childContainers[i]
     if (container.id === 'conti-boton-rodilleria') {
-      container.style.display = 'flex';
+      container.style.display = 'flex'
     } else {
-      container.style.display = 'none';
+      container.style.display = 'none'
     }
   }
 
   function mostrarBotonRodilleria (i) {
     if (i < botones.length) {
       var boton = botones[i]
-      boton.style.display = 'inline-block';
+      boton.style.display = 'inline-block'
       setTimeout(function() {
         mostrarBotonRodilleria(i + 1)
       }, 150) // 150 milisegundos de retraso entre botones
@@ -4432,12 +4435,14 @@ function showButtonsRodilleria() {
 }
 function rodillosTeñido(botId) {
   var rodilleria = document.getElementById('rodilleria')
+  var contVideoTeñido = document.getElementById('rodilleria-vid')
+  var padreDurezas = document.getElementById('durezas')
   var contenedoresHijos = rodilleria.children;
   for (var i = 0; i < contenedoresHijos.length; i++) {
     var hijo = contenedoresHijos[i]
     var estiloComputado = window.getComputedStyle(hijo)
     if (estiloComputado.display === 'flex' && hijo === 'conti-boton-rodilleria') {
-      hijo.style.display = 'none';
+      hijo.style.display = 'none'
     }
   }
 
@@ -4448,11 +4453,21 @@ function rodillosTeñido(botId) {
       for (var i = 0; i < childContainers.length; i++) {
         var container = childContainers[i]
         if (container) {
-          container.style.display = 'flex';
+          container.style.display = 'flex'
         } else {
-          container.style.display = 'none';
+          container.style.display = 'none'
         }
       }
+      
+      padreDurezas.style.display = 'none'                                                                                             /// MUESTRA IMAGENES DUREZA
+      for (var i = 0; i < arrayImgsRodilleria.length; i++) {                                                                           
+        var imagen = arrayImgsRodilleria[i];
+        imagen.style.display = 'none';
+      }
+
+      contVideoTeñido.style.display = 'flex'
+      contVideoTeñido.currentTime = '0'
+      contVideoTeñido.play()
     break;
     case 'btn07':
       /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
@@ -4460,10 +4475,17 @@ function rodillosTeñido(botId) {
       for (var i = 0; i < childContainers.length; i++) {
         var container = childContainers[i]
         if (container.id !== 'conti-boton-rodilleria') {
-          container.style.display = 'none';
+          container.style.display = 'none'
         } else {
-          container.style.display = 'flex';
+          container.style.display = 'flex'
         }
+      }
+
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      padreDurezas.style.display = 'flex'                                                                                             /// MUESTRA IMAGENES DUREZA
+      for (var i = 0; i < arrayImgsRodilleria.length; i++) {                                                                           
+        var imagen = arrayImgsRodilleria[i];
+        imagen.style.display = 'flex';
       }
     break;
     case 'btn08':
@@ -4472,9 +4494,9 @@ function rodillosTeñido(botId) {
       for (var i = 0; i < childContainers.length; i++) {
         var container = childContainers[i]
         if (container.id !== 'conti-boton-rodilleria') {
-          container.style.display = 'none';
+          container.style.display = 'none'
         } else {
-          container.style.display = 'flex';
+          container.style.display = 'flex'
         }
       }
     break;
@@ -4487,7 +4509,7 @@ function showLablsLubricacion() {
   function mostrarLabelConRetraso(i) {
     if (i < botones.length) {
       var boton = botones[i]
-      boton.style.display = 'inline-block';
+      boton.style.display = 'inline-block'
       setTimeout(function() {
         mostrarLabelConRetraso(i + 1)
       }, 150) // 100 milisegundos de retraso entre botones
@@ -4505,32 +4527,32 @@ function lubricaDiario(butId,labelId){
     var button = arrayIdButtsLub[i]
     if (button === butId) {
       // Cambia el color del botón a rojo
-      document.getElementById(button).style.backgroundColor = 'rgb(0,255,0)';
+      document.getElementById(button).style.backgroundColor = 'rgb(0,255,0)'
     } else {
       // Cambia el color del resto de botones a gris
-      document.getElementById(button).style.backgroundColor= 'rgba(217, 255, 0, 1)';
+      document.getElementById(button).style.backgroundColor= 'rgba(217, 255, 0, 1)'
     }
   }
   arrayLabels.forEach(label => {
     if (label === labelId) {
-      document.getElementById(label).style.color = 'rgb(0, 255, 0)';
+      document.getElementById(label).style.color = 'rgb(0, 255, 0)'
     }else{
-      document.getElementById(label).style.color = 'rgb(255, 255, 0)';
+      document.getElementById(label).style.color = 'rgb(255, 255, 0)'
     }
   })  
 
   switch(butId) {
     
     case 'lub-diario':
-      contLubricador.style.display = 'flex';
-      contLubricadorII.style.display = 'flex';  
+      contLubricador.style.display = 'flex'
+      contLubricadorII.style.display = 'flex'  
       videoElements.forEach(video => {
       if (video.id === 'lubri-vid') {
-        video.style.display = 'flex';
+        video.style.display = 'flex'
         video.currentTime = 0;          
         video.play()      
       } else {
-        video.style.display = 'none';
+        video.style.display = 'none'
       }})   
      // Obtener el elemento padre
       var contenedorPadre = document.getElementById('lubri-I')
@@ -4545,7 +4567,7 @@ function lubricaDiario(butId,labelId){
           // Verificar si el valor actual es 'none'
           if (displayValue === 'none') {
             // Cambiar la propiedad display a 'flex'
-            hijo.style.display = 'flex';
+            hijo.style.display = 'flex'
           }
         }
       }
@@ -4559,7 +4581,7 @@ function lubricaDiario(butId,labelId){
         // Verificar si el valor actual es 'none'
         if (displayValueI === 'none') {
           // Cambiar la propiedad display a 'flex'
-          hijoI.style.display = 'flex';
+          hijoI.style.display = 'flex'
         }
       }
     }      
@@ -4568,7 +4590,7 @@ function lubricaDiario(butId,labelId){
     case 'lub-semanal':
       videoElements.forEach(video => {
         if (video.id === 'lubri-vid') {
-          video.style.display = 'none';
+          video.style.display = 'none'
           video.pause()      
         }})     
   
@@ -4586,7 +4608,7 @@ function lubricaDiario(butId,labelId){
             // Verificar si el valor actual es 'none'
             if (displayValue === 'flex') {
               // Cambiar la propiedad display a 'flex'
-              hijo.style.display = 'none';
+              hijo.style.display = 'none'
             }
           }
         }
@@ -4601,7 +4623,7 @@ function lubricaDiario(butId,labelId){
           // Verificar si el valor actual es 'none'
           if (displayValueI === 'flex') {
             // Cambiar la propiedad display a 'flex'
-            hijoI.style.display = 'none';
+            hijoI.style.display = 'none'
           }
         }
       }      
@@ -4609,7 +4631,7 @@ function lubricaDiario(butId,labelId){
     case 'lub-mensual':
       videoElements.forEach(video => {
         if (video.id === 'lubri-vid') {
-          video.style.display = 'none';
+          video.style.display = 'none'
           video.pause()      
         }})     
   
@@ -4627,7 +4649,7 @@ function lubricaDiario(butId,labelId){
             // Verificar si el valor actual es 'none'
             if (displayValue === 'flex') {
               // Cambiar la propiedad display a 'flex'
-              hijo.style.display = 'none';
+              hijo.style.display = 'none'
             }
           }
         }
@@ -4642,7 +4664,7 @@ function lubricaDiario(butId,labelId){
           // Verificar si el valor actual es 'none'
           if (displayValueI === 'flex') {
             // Cambiar la propiedad display a 'flex'
-            hijoI.style.display = 'none';
+            hijoI.style.display = 'none'
           }
         }
       }        
@@ -4662,7 +4684,7 @@ function resultadosMA(){
   for (var i = 0; i < allContenedores.length; i++) {                                                                                           /// OCULTA TODO !!!
     var elemento = document.getElementById(allContenedores[i])
     if (elemento) {
-      elemento.style.display = 'none';
+      elemento.style.display = 'none'
     }
   } 
   if (document.body.style.zoom !== "100%") {
@@ -4687,10 +4709,10 @@ function resultadosMA(){
     /* contUsuarios.style.display = 'block' */
     if (iconosElement.style.display === 'none' || iconosElement.style.display === '') {
       // Si está oculto o no tiene un estilo "display" (por defecto), mostrarlo
-      iconosElement.style.display = 'block';
+      iconosElement.style.display = 'block'
     } else {
       // Si está visible, ocultarlo
-      iconosElement.style.display = 'none';
+      iconosElement.style.display = 'none'
     }
     title.style.display = 'flex'
     contButtons.style.display = 'flex' 
@@ -4709,8 +4731,8 @@ function aumentarTamaño(element, factor, tiempo) {
 
   // Después de un tiempo, quita la transición y restaura el tamaño original
   setTimeout(() => {
-    element.style.transition = 'none';
-    element.style.transform = 'scale(1)';
+    element.style.transition = 'none'
+    element.style.transform = 'scale(1)'
   }, tiempo * 500)
 }
 function deslizaMosaico(){
@@ -4750,15 +4772,15 @@ function resultadosEmpleado(idEmpleado, functionExe) {
   var contUserElements = document.getElementsByClassName('cont-user') 
   var tituloMA = document.getElementById('title-interfaz')
   var colorIndex = 0; // Índice del color actual
-  lineasGrid.style.display = 'block';
-  tituloMA.style.display = 'flex';
+  lineasGrid.style.display = 'block'
+  tituloMA.style.display = 'flex'
 
 
   for (var i = 0; i < contUserElements.length; i++) {
     var element = contUserElements[i]
     if (element.id === idEmpleado) {
-      element.style.display = 'flex';
-      element.style.top = '-157px';
+      element.style.display = 'flex'
+      element.style.top = '-157px'
 
       // Accede al label dentro del div
       var label = element.querySelector('label')
@@ -4769,20 +4791,20 @@ function resultadosEmpleado(idEmpleado, functionExe) {
         }, 200) // Cambia el color cada 0.2 segundos (200 milisegundos)
       }
     } else {
-      element.style.display = 'none';
+      element.style.display = 'none'
     }
   }
 
   if (contUserScroll) {
-    contUserScroll.style.display = 'flex';
+    contUserScroll.style.display = 'flex'
   }
 
   contUserArrayI.forEach(element => {
     if (element.id === idEmpleado) {
-      element.style.background = 'green';
+      element.style.background = 'green'
       (function (element) {
         setTimeout(function () {
-          element.style.backgroundColor = ''; // Vacío para volver al color normal
+          element.style.backgroundColor = '' // Vacío para volver al color normal
         }, 200) // 0.2 segundos (200 milisegundos)
       })(element) // Pasa el elemento actual como argumento a la función anónima
     }
@@ -4792,10 +4814,10 @@ function resultadosEmpleado(idEmpleado, functionExe) {
   /*var contUserElements = document.getElementsByClassName('cont-userI')
   for (var i = 0; i < contUserElements.length; i++) {
     var element = contUserElements[i]
-    element.style.backgroundColor = 'green';
+    element.style.backgroundColor = 'green'
     (function (currentElement) {
       setTimeout(function () {
-        currentElement.style.backgroundColor = ''; // Vacío para volver al color normal
+        currentElement.style.backgroundColor = '' // Vacío para volver al color normal
       }, 200) // 0.2 segundos (200 milisegundos)
     })(element) // Pasa el elemento actual como argumento a la función anónima
   }*/
@@ -4835,7 +4857,7 @@ function graficosAutomaticos(idGrafico){
     var elemento = document.getElementById(elto)
     
     if (elto === idGrafico) {
-      elemento.style.display = 'flex';      
+      elemento.style.display = 'flex'      
     }
   }
 }
@@ -5239,8 +5261,8 @@ function deslizaMosaicoII(idElement) {
   var elementoActual = null;
 
   if (contLinkMant !== null && contImgEntrenos !== null) {
-    contLinkMant.style.display = 'none';
-    contImgEntrenos.style.display = 'none';
+    contLinkMant.style.display = 'none'
+    contImgEntrenos.style.display = 'none'
   }
 
   // Verificar si el elemento ya está en el array
@@ -5250,8 +5272,8 @@ function deslizaMosaicoII(idElement) {
 
   var contenedor = document.getElementById(idElement)
   
-  contenedor.style.display = 'flex';
-  contenedor.style.left = '257px';
+  contenedor.style.display = 'flex'
+  contenedor.style.left = '257px'
 
   var inicio = 1100;
   var velocidad = 500;
@@ -5263,10 +5285,10 @@ function deslizaMosaicoII(idElement) {
     var progreso = (tiempo - inicioTiempo) / duracion;
     var izquierda = inicio + progreso * (destino - inicio)
     if (progreso < 1) {
-      contenedor.style.left = izquierda + 'px';
+      contenedor.style.left = izquierda + 'px'
       requestAnimationFrame(animar)
     } else {
-      contenedor.style.left = destino + 'px';
+      contenedor.style.left = destino + 'px'
     }
   }
   requestAnimationFrame(animar)
@@ -5294,8 +5316,8 @@ function ampliaIndicaciones(index) {
 
   switch (index) {
     case 'eje':
-    eje.style.width = (window.innerWidth * 0.75) + 'px'; 
-    eje.style.height = window.innerHeight + 'px'; 
+    eje.style.width = (window.innerWidth * 0.75) + 'px' 
+    eje.style.height = window.innerHeight + 'px' 
     indicEje.style.display = 'flex'
     eje.style.position = 'fixed'
     conico.style.zIndex = '0'     
@@ -5308,8 +5330,8 @@ function ampliaIndicaciones(index) {
       botonConico.style.display = 'block'
       indicEjeI.style.display = 'flex' 
       conico.style.position = 'fixed'
-      conico.style.height = window.innerHeight + 'px'; 
-      conico.style.width = (window.innerWidth * 0.75) + 'px';    
+      conico.style.height = window.innerHeight + 'px' 
+      conico.style.width = (window.innerWidth * 0.75) + 'px'    
       conico.style.zIndex = '999'
       conico.style.left = '0' 
       conico.style.top = '0'    
@@ -5373,7 +5395,7 @@ function rodillosKaizen(idButton,vidElem) {
   Array.from(buttsTerceros).forEach(elemento => {                                                                   /// INICIALMENTE OCULTA LOS BOTONES TERCEROS
     var element = document.getElementById(elemento.id)
     if (element) {
-      element.style.display = 'none';
+      element.style.display = 'none'
     }
   })
   ////////////////////////////2//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -5382,7 +5404,7 @@ function rodillosKaizen(idButton,vidElem) {
     var elto = document.getElementById(eltoId);
 
     if (elto) {
-        elto.style.display = 'none';
+        elto.style.display = 'none'
     }
 }
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -5390,11 +5412,11 @@ function rodillosKaizen(idButton,vidElem) {
     var elemento = document.getElementById(element)
     if (elemento) {
         if (element === idButton) {
-            elemento.style.backgroundColor = 'orange';
-            elemento.style.color = 'black';
+            elemento.style.backgroundColor = 'orange'
+            elemento.style.color = 'black'
         } else {
-          elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)';
-          elemento.style.color = 'white';
+          elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)'
+          elemento.style.color = 'white'
         }
     }
   })
@@ -5402,7 +5424,7 @@ function rodillosKaizen(idButton,vidElem) {
   videoElements.forEach(video => {                                                                                                             /// OCULTA VIDEOS
     if (video) {
       video.pause()
-      video.style.display = 'none';
+      video.style.display = 'none'
     }
   })
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -5421,7 +5443,7 @@ function rodillosKaizen(idButton,vidElem) {
   
       // Verifica si la propiedad 'display' es 'none' y cámbiala a 'flex' si es necesario
       if (estiloDisplay === 'flex') {
-        elemento.style.display = 'none';
+        elemento.style.display = 'none'
       }
     }
   }
@@ -5430,9 +5452,9 @@ function rodillosKaizen(idButton,vidElem) {
   
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   if (bton12 !== null) {                                                                                                             /// DEVUELVE ESTILO A BOTON
-    bton12.style.backgroundColor = ''; // Elimina el fondo
-    bton12.style.color = ''; // Restablece el color del texto
-    bton12.innerText = 'IMPLEMENTADOS';
+    bton12.style.backgroundColor = '' // Elimina el fondo
+    bton12.style.color = '' // Restablece el color del texto
+    bton12.innerText = 'IMPLEMENTADOS'
   }
 
   switch(idButton){
@@ -5446,7 +5468,7 @@ function rodillosKaizen(idButton,vidElem) {
       
           // Verifica si la propiedad 'display' es 'none' y cámbiala a 'flex' si es necesario
           if (estiloDisplay === 'none') {
-            elemento.style.display = 'flex';
+            elemento.style.display = 'flex'
           }
         }
       }
@@ -5454,7 +5476,7 @@ function rodillosKaizen(idButton,vidElem) {
       if(vidElem === ''){                                                                                                                 ///OCULTA PADRE Y VIDEO
         for (const video of videoElements) {
           if (video) {
-            video.style.display = 'none'; // Muestra el video
+            video.style.display = 'none' // Muestra el video
             video.pause() // Reproduce el video
           } 
         }
@@ -5464,7 +5486,7 @@ function rodillosKaizen(idButton,vidElem) {
       for (var i = 0; i < arrayButtsPlanos.length; i++) {                                                                            /// OCULTA TERCEROS BOTONES
         var elemento = document.getElementById(arrayButtsPlanos[i])
         if (elemento) {
-          elemento.style.display = 'none';
+          elemento.style.display = 'none'
         }
       }
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -5477,7 +5499,7 @@ function rodillosKaizen(idButton,vidElem) {
         contieneKaizen.style.display = 'none'                                                                                        
         for (const video of videoElements) {
           if (video) {
-            video.style.display = 'none'; // Muestra el video
+            video.style.display = 'none' // Muestra el video
             video.pause() // Reproduce el video
           } 
         }
@@ -5486,7 +5508,7 @@ function rodillosKaizen(idButton,vidElem) {
       for (var i = 0; i < arrayButtsPlanos.length; i++) {                                                                            /// OCULTA TERCEROS BOTONES
         var elemento = document.getElementById(arrayButtsPlanos[i])
         if (elemento) {
-          elemento.style.display = 'none';
+          elemento.style.display = 'none'
         }
       }
     break; 
@@ -5494,15 +5516,15 @@ function rodillosKaizen(idButton,vidElem) {
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       contadorClicks++;                                                                                                 /// LOGICA PRIMER CLICK MUESTRA IMAGENES
       if (contadorClicks === 1) {
-        bton12.style.backgroundColor = 'rgb(255,0,0)';
+        bton12.style.backgroundColor = 'rgb(255,0,0)'
         bton12.style.color = 'white'
-        bton12.innerText = 'ANTES';
+        bton12.innerText = 'ANTES'
         contButTerceros.style.display = 'none'
         contieneKaizen.style.display = 'none'
         contImagenAntes.style.display = 'flex'
       } else if (contadorClicks === 2) {
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        bton12.style.backgroundColor = 'rgb(0,255,0)';
+        bton12.style.backgroundColor = 'rgb(0,255,0)'
         bton12.style.color = 'black'
         bton12.innerText = 'DESPUES'   
         var contieneKaizen = document.getElementById('kaizenCont')                                                /// SEGUNDO CLICK MUESTRA PADRE E HIJO (VIDEO)
@@ -5511,20 +5533,20 @@ function rodillosKaizen(idButton,vidElem) {
         // Verifica si la propiedad 'display' es igual a 'none'
         if (estiloCalculado.display === 'none') {
           // Cambia la propiedad 'display' a 'flex'
-          contieneKaizen.style.display = 'flex';      
+          contieneKaizen.style.display = 'flex'      
           // Verifica la posición virtual en 'left'
           var leftPosition = estiloCalculado.left.replace('px', '') // Elimina 'px' y obtén el valor numérico
           if (parseInt(leftPosition) !== 397) {
             // Establece la posición virtual en 'left' a 397px
-            contieneKaizen.style.left = '397px';
+            contieneKaizen.style.left = '397px'
           }
         }
        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-       contImagenAntes.style.display = 'none';                                                                   /// SEGUNDO CLICK OCULTA IMAGENES / MUESTRA VIDEO            
+       contImagenAntes.style.display = 'none'                                                                   /// SEGUNDO CLICK OCULTA IMAGENES / MUESTRA VIDEO            
        for (const video of videoElements) {
         // Compara si el video está dentro del elemento 'kaizenCont'
        if (video.closest('#kaizenCont')) {
-         video.style.display = 'flex'; // Muestra el video
+         video.style.display = 'flex' // Muestra el video
          video.currentTime = 0;
          video.play() // Reproduce el video
        }
@@ -5533,7 +5555,7 @@ function rodillosKaizen(idButton,vidElem) {
       }  
 
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      contButTerceros.style.display = 'flex';                                                                               /// BOTONES CON AUMENTO Y TRANSICION
+      contButTerceros.style.display = 'flex'                                                                               /// BOTONES CON AUMENTO Y TRANSICION
       // Paso 2: Recorrer la colección y hacer visibles los botones con un intervalo de 0.3 segundos
       for (var i = 0; i < buttsTerceros.length; i++) {
         var boton = buttsTerceros[i]
@@ -5541,15 +5563,15 @@ function rodillosKaizen(idButton,vidElem) {
         // Mostrar el botón con un intervalo de 0.3 segundos
         setTimeout(function(currentBoton) {
           return function() {
-            currentBoton.style.display = 'block';
+            currentBoton.style.display = 'block'
 
             // Paso 3: Aumentar el tamaño al doble y luego volver al tamaño normal después de 0.3 segundos
             setTimeout(function() {
-              currentBoton.style.transform = 'scale(4)';
+              currentBoton.style.transform = 'scale(4)'
 
               // Después de 0.3 segundos, volver al tamaño normal
               setTimeout(function() {
-                currentBoton.style.transform = 'scale(1)';
+                currentBoton.style.transform = 'scale(1)'
               }, 100)
             }, 100)
           };
@@ -5562,7 +5584,7 @@ function rodillosKaizen(idButton,vidElem) {
         contieneKaizen.style.display = 'none'                                                                                        
         for (const video of videoElements) {
           if (video) {
-            video.style.display = 'none'; // Muestra el video
+            video.style.display = 'none' // Muestra el video
             video.pause() // Reproduce el video
           } 
         }
@@ -5571,11 +5593,11 @@ function rodillosKaizen(idButton,vidElem) {
       Array.from(buttsTerceros).forEach(elemento => {                                                                                /// MOSTRAR BOTONES TERCEROS
         var element = document.getElementById(elemento.id) // Aquí asumo que cada elemento tiene un atributo 'id'
         if (element) {
-          element.style.display = 'inline-block';
+          element.style.display = 'inline-block'
         }
       })
 
-      conPlanos.style.display = 'flex';
+      conPlanos.style.display = 'flex'
       for(var i = 0; i < imgsPlanos.length; i ++ ){
         var elto = imgsPlanos[i]
         if(elto){
@@ -5590,7 +5612,7 @@ function rodillosKaizen(idButton,vidElem) {
         contieneKaizen.style.display = 'none'                                                                                        
         for (const video of videoElements) {
           if (video) {
-            video.style.display = 'none'; // Muestra el video
+            video.style.display = 'none' // Muestra el video
             video.pause() // Reproduce el video
           } 
         }
@@ -5599,11 +5621,11 @@ function rodillosKaizen(idButton,vidElem) {
       Array.from(buttsTerceros).forEach(elemento => {                                                                                /// MOSTRAR BOTONES TERCEROS
         var element = document.getElementById(elemento.id) // Aquí asumo que cada elemento tiene un atributo 'id'
         if (element) {
-          element.style.display = 'inline-block';
+          element.style.display = 'inline-block'
         }
       })
 
-      contMateriales.style.display = 'flex';
+      contMateriales.style.display = 'flex'
     break;  
     case 'btn15':
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -5611,7 +5633,7 @@ function rodillosKaizen(idButton,vidElem) {
         contieneKaizen.style.display = 'none'                                                                                        
         for (const video of videoElements) {
           if (video) {
-            video.style.display = 'none'; // Muestra el video
+            video.style.display = 'none' // Muestra el video
             video.pause() // Reproduce el video
           } 
         }
@@ -5620,18 +5642,18 @@ function rodillosKaizen(idButton,vidElem) {
       Array.from(buttsTerceros).forEach(elemento => {                                                                                /// MOSTRAR BOTONES TERCEROS
         var element = document.getElementById(elemento.id) // Aquí asumo que cada elemento tiene un atributo 'id'
         if (element) {
-          element.style.display = 'inline-block';
+          element.style.display = 'inline-block'
         }
       })
     break;
     case 'btn17':
-      kaizenPropuestos.style.display = 'flex';
+      kaizenPropuestos.style.display = 'flex'
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       if(vidElem === ''){                                                                                                                 ///OCULTA PADRE Y VIDEO
         contieneKaizen.style.display = 'none'                                                                                        
         for (const video of videoElements) {
           if (video) {
-            video.style.display = 'none'; // Muestra el video
+            video.style.display = 'none' // Muestra el video
             video.pause() // Reproduce el video
           } 
         }
@@ -5644,13 +5666,13 @@ function rodillosKaizen(idButton,vidElem) {
 function transicionImagenes() {
   var casoEstudio = document.getElementById('casos-kaizen')
   var index = 0;
-  casoEstudio.style.display = 'none';
+  casoEstudio.style.display = 'none'
 
   function ocultarSiguienteImagen() {
       var imageId = buttsToyota[index]
       var image = document.getElementById(imageId)
       if (image) {
-        image.style.display = 'none';
+        image.style.display = 'none'
       }
       index++;
       if (index < buttsToyota.length) {
@@ -5659,8 +5681,8 @@ function transicionImagenes() {
       } else {
         // Después de mostrar todas las imágenes, ejecuta el código adicional
         var imgToyota = document.getElementById('toyota7')
-        imgToyota.style.display = 'flex';
-        casoEstudio.style.display = 'flex';                                                                     
+        imgToyota.style.display = 'flex'
+        casoEstudio.style.display = 'flex'                                                                     
         // Aquí, pasa el índice 0 a la función mostrarBotonConRetardo
         /* mostrarBotonConRetardo(0) */
         aumentarTamanosDeBotonesVI()
@@ -5673,12 +5695,12 @@ function transicionImagenes() {
 function mostrarBotonConRetardo(index) {
   let arrayButtCasos = ['caso1', 'caso2', 'caso3']
 
-  contiButtCasos.style.display = 'flex';
+  contiButtCasos.style.display = 'flex'
 
   if (index < arrayButtCasos.length) {
 
     let casoId = arrayButtCasos[index]
-    document.getElementById(casoId).style.display = 'flex';
+    document.getElementById(casoId).style.display = 'flex'
 
     // Luego de 1 segundo, mostrar el siguiente botón
     setTimeout(function () {
@@ -5695,7 +5717,7 @@ function showButtonsKaizenRetraso() {
       var boton = document.getElementById(botonId)
 
       if (boton) {
-        boton.style.display = 'inline-block'; // o 'inline-block' según tus necesidades
+        boton.style.display = 'inline-block' // o 'inline-block' según tus necesidades
 
         setTimeout(function() {
           mostrarConRetraso(i + 1)
@@ -5715,7 +5737,7 @@ function showButtonsPlanosRetraso() {
       var boton = document.getElementById(botonId)
 
       if (boton) {
-        boton.style.display = 'inline-block'; // o 'inline-block' según tus necesidades
+        boton.style.display = 'inline-block' // o 'inline-block' según tus necesidades
 
         setTimeout(function() {
           mostrarConRetraso(i + 1)
@@ -5735,10 +5757,10 @@ function aumentoBotonesBody() {
       const button = document.getElementById(buttonId);
       // Aumentar el tamaño del botón
       if (button) {
-        button.style.transform = 'scale(3)';
+        button.style.transform = 'scale(7)'
         // Después de 0.5 segundos, devolverlo al tamaño normal
         setTimeout(function () {
-          button.style.transform = 'scale(1)';
+          button.style.transform = 'scale(1)'
           // Llamada a la función para eliminar estilos después de restaurar el tamaño
           eliminarEstilosEnLinea();
           // Llamada recursiva para pasar al siguiente botón en el array
@@ -5810,19 +5832,19 @@ alternarVisibilidad(id)
   const originalColor = boton.getAttribute('data-original-color')
   
   // Cambia el color de fondo del botón a blanco y espera 80 milisegundos
-  boton.style.backgroundColor = 'white';
+  boton.style.backgroundColor = 'white'
   await new Promise(resolve => setTimeout(resolve, 80))
   
   // Cambia el color a azul y espera nuevamente
-  boton.style.backgroundColor = 'blue';
+  boton.style.backgroundColor = 'blue'
   await new Promise(resolve => setTimeout(resolve, 80))  
-  boton.style.backgroundColor = 'green';
+  boton.style.backgroundColor = 'green'
   await new Promise(resolve => setTimeout(resolve, 80))
-  boton.style.backgroundColor = 'red';
+  boton.style.backgroundColor = 'red'
   await new Promise(resolve => setTimeout(resolve, 80))
-  boton.style.backgroundColor = 'yellow';
+  boton.style.backgroundColor = 'yellow'
   await new Promise(resolve => setTimeout(resolve, 80))
-  boton.style.backgroundColor = 'black';
+  boton.style.backgroundColor = 'black'
   await new Promise(resolve => setTimeout(resolve, 80))    
 
   // Restaura el color original del botón
@@ -5899,12 +5921,12 @@ imageElementsi.forEach((image, index) => {
     const originalWidth = image.width;
     const originalHeight = image.height;
     // Aumentar el tamaño de la imagen en un 30% durante 0.1 segundos
-    image.style.transition = 'transform 0.1s';
-    image.style.transform = 'scale(1.3)';    
+    image.style.transition = 'transform 0.1s'
+    image.style.transform = 'scale(1.3)'    
     // Volver al tamaño original después de 0.1 segundos
     setTimeout(() => {
-      image.style.transition = 'transform 0.1s';
-      image.style.transform = 'scale(1)';
+      image.style.transition = 'transform 0.1s'
+      image.style.transform = 'scale(1)'
     }, 400) 
   })
 })
@@ -6449,7 +6471,7 @@ const zoomableImages = document.querySelectorAll('.image-trainings')
 const sensitivity = 5; 
 zoomableImages.forEach((zoomableImage) => {
   zoomableImage.addEventListener('mouseenter', () => {
-    zoomableImage.style.transition = 'transform 0.1s ease, filter 0.1s ease';
+    zoomableImage.style.transition = 'transform 0.1s ease, filter 0.1s ease'
   })
   zoomableImage.addEventListener('mousemove', (e) => {
     const x = (zoomableImage.clientWidth / 2 - e.clientX + zoomableImage.getBoundingClientRect().left) / sensitivity;
@@ -6458,8 +6480,8 @@ zoomableImages.forEach((zoomableImage) => {
     zoomableImage.style.transform = `translate(${x}px, ${y}px) scale(1.5)`;
   })
   zoomableImage.addEventListener('mouseleave', () => {
-    zoomableImage.style.transition = 'transform 0.1s ease';
-    zoomableImage.style.transform = 'translate(0, 0) scale(1)';
+    zoomableImage.style.transition = 'transform 0.1s ease'
+    zoomableImage.style.transform = 'translate(0, 0) scale(1)'
   })
 })
 /* /////////////////////////////////////////////VINCULOS INICIALES//////////////////////////////////////////// */
@@ -6584,7 +6606,7 @@ searchForm.addEventListener('submit', function (e) {
       for (var i = 0; i < allContenedores.length; i++) {
         var elemento = document.getElementById(allContenedores[i])
         if (elemento) {
-          elemento.style.display = 'none';
+          elemento.style.display = 'none'
         }
       }             
       showRepuesto('contPortPlaca')
@@ -6595,7 +6617,7 @@ searchForm.addEventListener('submit', function (e) {
     for (var i = 0; i < allContenedores.length; i++) {
       var elemento = document.getElementById(allContenedores[i])
       if (elemento) {
-        elemento.style.display = 'none';
+        elemento.style.display = 'none'
       }
     }          
     showRepuesto('contPortManta', 'videoTrain03')
@@ -6606,7 +6628,7 @@ searchForm.addEventListener('submit', function (e) {
       for (var i = 0; i < allContenedores.length; i++) {
         var elemento = document.getElementById(allContenedores[i])
         if (elemento) {
-          elemento.style.display = 'none';
+          elemento.style.display = 'none'
         }
       }       
     showRepuesto('contImpresor', 'videoTrain01')
@@ -6620,7 +6642,7 @@ searchForm.addEventListener('submit', function (e) {
   // Puedes agregar una lógica para autocompletar el término de búsqueda
   if (sugerencias.includes(searchTerm)) {
     // Si el término de búsqueda coincide con una sugerencia, lo autocompletamos
-    suggestionsList.innerHTML = ''; // Borra cualquier sugerencia anterior
+    suggestionsList.innerHTML = '' // Borra cualquier sugerencia anterior
     const suggestionOption = document.createElement('option')
     suggestionOption.value = searchTerm;
     suggestionsList.appendChild(suggestionOption)
@@ -6797,7 +6819,7 @@ function aumentarTamanosDeBotonesVI() {
       document.getElementById("caso3")
   ];
   let caso1 = document.getElementById ('caso1')
-  contiButtCasos.style.display = 'flex';
+  contiButtCasos.style.display = 'flex'
   /* caso1.style.display = 'flex' */
 
   function aumentarBotonCasos(index) {
