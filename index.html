@@ -46,7 +46,7 @@
           <button class="Bot-inicio3-fondo" id="butt-4"></button>  
         </div> <br>
         <div id="contArriba-V" class="contOblicuosTorre">
-          <button class="Bot-inicio3" id="butt-5">Area Administrativa</button>
+          <button class="Bot-inicio3" id="butt-5" onclick="eliminarEstilosEnLinea()">Area Administrativa</button>
           <button class="Bot-inicio3-fondo" id="butt-6"></button>  
         </div> <br>
         <div id="contAtras-V" class="contOblicuosTorre">
@@ -482,7 +482,7 @@
       <div class="contene-2" id="container8" style="left: 155px;display: none;">
         <button class="boton-a" id="bot-atras9" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 5px;" onclick="irContenedorAnterior('conteneMantaut')"></button>
         <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL INICIO</button>
-        <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="aumentarTamanosDeBotonesVI()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
+        <button class="boton-a" id="iniciar" style="margin-left: 477px;">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
         <button class="boton-a" id="bot-atras14" style="text-align: center;width: 47px;position: absolute;left: 685px;top: 5px;" onclick="irContenedorSiguiente('')"></button>
       </div><br>
 
@@ -1395,7 +1395,12 @@
       </div>
     </div>
 
-    <div id="puesta-punto" style="position: absolute;left:1000px;top: 307px;width: 1077px;height: 687px; display: flex;flex-direction: column;border: 3px solid orange;border-radius: 20px; display: none;overflow: auto;background-color: #000;; ">
+    <div id="contBotCasos" class="contOblicuosTorre" style="left: 1357px;top: 207px;display: none;">
+      <button class="Bot-inicio33" id="butt-17" onclick="tamaño100()">Ampliar</button>
+      <button class="Bot-inicio33-fondo" id="butt-8"></button>  
+    </div>   
+
+    <div id="puesta-punto">
       <h1 class="casos-h1" >1. Inspección de la Máquina</h1>
       <p class="parrafo-casos">
         Antes de comenzar, realiza una inspección visual de la impresora litográfica. Verifica que todos los componentes estén en buen estado, desde los rodillos hasta los sistemas de alimentación de papel. Asegúrate de que no haya residuos de tinta seca u otros obstrucciones.

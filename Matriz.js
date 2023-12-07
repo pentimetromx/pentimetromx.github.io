@@ -9,8 +9,8 @@ var arrayContador = []
 var destino = 257;
 var idsArray = []
 var idsArrayEliminados = []
-var idsMA = ['puesta-punto','casos-kaizen','mejoras-kai','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','planos-kaizen','materiales-kaizen','kaizenCont','conti-boton-planos', 'conti-boton-kaizen','troubleshooting','canvasContainer2', 'contChecks', 'canvasContainer3', 'contImagNeg',,'contImagGraf','canvasContainer4','canvasContainer5','canvasContainer6','canvasContainer7','canvasContainer8', 'canvasContainer9']
-var idsMAhijos = ['materiales-kaizen','troubleshooting','canvasContainer2','contChecks','canvasContainer3','contImagNeg','contImagGraf']
+var idsMA = ['contBotCasos','puesta-punto','casos-kaizen','mejoras-kai','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','planos-kaizen','materiales-kaizen','kaizenCont','conti-boton-planos', 'conti-boton-kaizen','troubleshooting','canvasContainer2', 'contChecks', 'canvasContainer3', 'contImagNeg',,'contImagGraf','canvasContainer4','canvasContainer5','canvasContainer6','canvasContainer7','canvasContainer8', 'canvasContainer9']
+var idsMAhijos = ['contBotCasos','materiales-kaizen','troubleshooting','canvasContainer2','contChecks','canvasContainer3','contImagNeg','contImagGraf']
 var arrayElementMA = ['kaizenCont','contImagGraf','contImagNeg','canvasContainer3','contChecks','canvasContainer2','kaizenCont']
 var idsResultados = ['icon-ana','icon-carlos','icon-andres','icon-jorge','icon-jesus','icon-sandra','icon-mario']
 var elementosContUser = document.querySelectorAll('.cont-user')
@@ -29,7 +29,7 @@ var imgTorreI = document.getElementById('imgTorre')
 var contInicial = document.getElementById('container1')
 var botonMa = document.getElementById('bot-mantaut')
 var imagPasoApaso = document.querySelectorAll('.img1')
-var allContenedores = ['puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','contene-11','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','container99','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
+var allContenedores = ['contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','contene-11','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','container99','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado']
@@ -3486,8 +3486,8 @@ function toggleFullScreen(element) {
 }
 function imagenesPasoApaso(idElto, id) {
   var contImgEntrenos = document.getElementById('contImgEntrenos') 
+  var contbuttCasos = document.getElementById('contBotCasos')
   var botOrange = document.getElementById(id)
-
 
   if (id !== 'vinc5') {
     switch (id) {
@@ -3499,7 +3499,8 @@ function imagenesPasoApaso(idElto, id) {
         if (botones[i].id !== id) {
         botones[i].style.color = 'blue'
         }}
-        contienePasos.style.display = 'none'        
+        contienePasos.style.display = 'none'  
+        contbuttCasos.style.display = 'none'     
       break; 
       case 'vinc2':
         botOrange.style.color = 'orange'
@@ -3509,7 +3510,8 @@ function imagenesPasoApaso(idElto, id) {
         if (botones[i].id !== id) {
         botones[i].style.color = 'blue'
         }}
-        contienePasos.style.display = 'none'        
+        contienePasos.style.display = 'none' 
+        contbuttCasos.style.display = 'none'
        break;
        case 'vinc3':
         botOrange.style.color = 'orange'
@@ -3519,7 +3521,8 @@ function imagenesPasoApaso(idElto, id) {
         if (botones[i].id !== id) {
         botones[i].style.color = 'blue'
         }}
-        contienePasos.style.display = 'none'        
+        contienePasos.style.display = 'none'  
+        contbuttCasos.style.display = 'none'
        break; 
        case 'vinc4':
         botOrange.style.color = 'orange'
@@ -3529,7 +3532,8 @@ function imagenesPasoApaso(idElto, id) {
         if (botones[i].id !== id) {
         botones[i].style.color = 'blue'
         }}
-        contienePasos.style.display = 'none'        
+        contienePasos.style.display = 'none'  
+        contbuttCasos.style.display = 'none'
        break;  
       default:        
     }
@@ -3554,11 +3558,13 @@ function imagenesPasoApaso(idElto, id) {
           if (botones[i].id !== id) {
           botones[i].style.color = 'blue'
           }}
-          contienePasos.style.display = 'flex'        
+          contienePasos.style.display = 'flex' 
+          contbuttCasos.style.display = 'flex'
+          iniciarMovimiento()
         break;              
         default:
-      } 
-      contImgEntrenos.style.display = 'flex'
+      }                   
+       contImgEntrenos.style.display = 'flex'
       imagPasoApaso.forEach(imag => {
       if (imag.id == idElto) {
         imag.style.display = 'block'
@@ -5795,7 +5801,7 @@ function aumentoBotonesBody() {
         setTimeout(function () {
           button.style.transform = 'scale(1)'
           // Llamada a la función para eliminar estilos después de restaurar el tamaño
-          eliminarEstilosEnLinea();
+          /* eliminarEstilosEnLinea(); */
           // Llamada recursiva para pasar al siguiente botón en el array
           aumentarYRestaurar(index + 1);
         }, 300);
@@ -5806,18 +5812,13 @@ function aumentoBotonesBody() {
   aumentarYRestaurar(0);
 }
 
-function eliminarEstilosEnLinea() {
-  for (var i = 0; i < arrayButtsInicio.length; i++) {
-    var buttonId = arrayButtsInicio[i];
-    var button = document.getElementById(buttonId);
-    if (button) {
-      button.removeAttribute('style');
-    }
-  }
+function tamaño100(){
+  var contbuttCasos = document.getElementById('contBotCasos')
+  contienePasos.style.display = 'none'
+  contbuttCasos.style.display = 'none'
+  document.body.style.zoom = '100%'
 }
-
-
-
+  
 // Obtén todas las imágenes con la clase "aumentar"
 const imagenesAumentar = document.querySelectorAll('img.aumentar')
 // Agrega un evento click a cada imagen con la clase "aumentar"
@@ -6873,3 +6874,38 @@ function aumentarTamanosDeBotonesVI() {
 
   aumentarBotonCasos(0);
 }
+
+// Función para mover el scroll
+function moveScroll(container) {
+  // Mover el scroll 100px hacia abajo
+  container.scrollTop += 100;
+  // Reducir el número de iteraciones en 1
+  iterations--;
+
+  // Verificar si quedan más iteraciones
+  if (iterations > 0) {
+    // Llamar a la función nuevamente después de 1 segundo
+    setTimeout(function() {
+      // Restaurar el color de fondo del botón antes de mover el scroll
+      moveScroll(container);
+    }, 57);
+  } else {
+    // Cuando termina el desplazamiento, regresar a la parte superior
+    container.scrollTop = 0;
+  }
+}
+
+// Función para iniciar el movimiento del scroll
+function iniciarMovimiento() {
+  // Obtener el elemento con ID "puesta-punto"
+  var container = document.getElementById("puesta-punto");
+  // Asegurarse de que el scroll esté en la parte superior
+  container.scrollTop = 0;
+  // Restablecer el número de iteraciones
+  iterations = 11;
+  // Iniciar el movimiento del scroll
+  moveScroll(container);}
+
+// Número de iteraciones deseadas
+var iterations;
+
