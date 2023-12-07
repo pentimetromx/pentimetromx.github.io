@@ -3485,7 +3485,7 @@ function toggleFullScreen(element) {
   }
 }
 function imagenesPasoApaso(idElto, id) {
-  var contImgEntrenos = document.getElementById('contImgEntrenos') 
+  /*var contImgEntrenos = document.getElementById('contImgEntrenos') 
   var contbuttCasos = document.getElementById('contBotCasos')
   var botOrange = document.getElementById(id)
 
@@ -3572,7 +3572,89 @@ function imagenesPasoApaso(idElto, id) {
         imag.style.display = 'none'
       }     
     })    
-  }
+  }*/
+
+  var contImgEntrenos = document.getElementById('contImgEntrenos') 
+  var contbuttCasos = document.getElementById('contBotCasos')
+  var botOrange = document.getElementById(id)
+
+  document.body.style.zoom = "67%";
+
+    switch (id) {
+      case 'vinc1':
+        botOrange.style.color = 'orange'
+        // Cambiar otros enlaces a azul
+        var botones = document.getElementsByClassName('colorClick')
+        for (var i = 0; i < botones.length; i++) {
+        if (botones[i].id !== id) {
+        botones[i].style.color = 'blue'
+        }}
+        contienePasos.style.display = 'none'  
+        contbuttCasos.style.display = 'none'     
+      break; 
+      case 'vinc2':
+        botOrange.style.color = 'orange'
+        // Cambiar otros enlaces a azul
+        var botones = document.getElementsByClassName('colorClick')
+        for (var i = 0; i < botones.length; i++) {
+        if (botones[i].id !== id) {
+        botones[i].style.color = 'blue'
+        }}
+        contienePasos.style.display = 'none' 
+        contbuttCasos.style.display = 'none'
+       break;
+       case 'vinc3':
+        botOrange.style.color = 'orange'
+        // Cambiar otros enlaces a azul
+        var botones = document.getElementsByClassName('colorClick')
+        for (var i = 0; i < botones.length; i++) {
+        if (botones[i].id !== id) {
+        botones[i].style.color = 'blue'
+        }}
+        contienePasos.style.display = 'none'  
+        contbuttCasos.style.display = 'none'
+       break; 
+       case 'vinc4':
+        botOrange.style.color = 'orange'
+        // Cambiar otros enlaces a azul
+        var botones = document.getElementsByClassName('colorClick')
+        for (var i = 0; i < botones.length; i++) {
+        if (botones[i].id !== id) {
+        botones[i].style.color = 'blue'
+        }}
+        contienePasos.style.display = 'none'  
+        contbuttCasos.style.display = 'none'
+       break;  
+       case 'vinc5':
+        botOrange.style.color = 'orange'
+        // Cambiar otros enlaces a azul
+        var botones = document.getElementsByClassName('colorClick')
+        for (var i = 0; i < botones.length; i++) {
+        if (botones[i].id !== id) {
+        botones[i].style.color = 'blue'
+        }}
+        contienePasos.style.display = 'flex' 
+        contbuttCasos.style.display = 'flex'
+        iniciarMovimiento()
+      break;  
+      default:  
+      contImgEntrenos.style.display = 'flex'
+      imagPasoApaso.forEach(imag => {
+        if (imag.id == idElto) {
+          imag.style.display = 'block'
+        } 
+      })
+      
+              
+        }                   
+         contImgEntrenos.style.display = 'flex'
+         imagPasoApaso.forEach(imag => {
+          if (imag.id == idElto) {
+            imag.style.display = 'block';
+          } else {
+            imag.style.display = 'none';
+          }
+        });  
 }
 function lubricacion(buttId,btnIniId){
   var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80',]

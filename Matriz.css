@@ -2275,9 +2275,9 @@ elemento.visible {
 #puesta-punto {
   position: absolute;
   left: 1000px;
-  top: 307px;
+  top: 150px;
   width: 877px;
-  height: 577px;
+  height: 727px;
   display: flex;
   flex-direction: column;
   border: 3px solid orange;
