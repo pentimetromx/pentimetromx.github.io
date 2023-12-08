@@ -1357,11 +1357,11 @@
       <div id="linksMA"  style="margin-top: 7px;display: none;" >
         <h2 style="margin-left: 20px;width: 517px;">Largo de impresión ajustes preliminares</h2>  
         <ol class="linksTraining" id="linkLis">
-          <li><a href="#" id="vinc1" class="colorClick"data-imagen="imag1" onclick="imagenesPasoApaso('imag1','vinc1')">Asegurar PSI neumática</a></li><br>
-          <li><a href="#" id="vinc2" class="colorClick"data-imagen="imag2" onclick="imagenesPasoApaso('imag2','vinc2')">Optimización al freno de bobina</a></li><br>
-          <li><a href="#" id="vinc3" class="colorClick"data-imagen="imag3" onclick="imagenesPasoApaso('imag3','vinc3')">Ajuste parámetros en basculante</a></li><br>  
-          <li><a href="#" id="vinc4" class="colorClick"data-imagen="imag4" onclick="imagenesPasoApaso('imag4','vinc4')">Calibración / Limpieza / Rugosidad en INFEED</a></li><br>
-          <li><a href="#" id="vinc5" class="colorClick"data-imagen="imag5" onclick="imagenesPasoApaso('imag5','vinc5')">Paso a paso puesta a punto</a></li><br>
+          <li><a href="#" id="link1" class="colorClick"data-imagen="imag1" onclick="imagenesPasoApaso('','','imag1','link1')">Asegurar PSI neumática</a></li><br>
+          <li><a href="#" id="link2" class="colorClick"data-imagen="imag22" onclick="imagenesPasoApaso('','','imag2','link2')">Optimización al freno de bobina</a></li><br>
+          <li><a href="#" id="link3" class="colorClick"data-imagen="imag33" onclick="imagenesPasoApaso('','','imag3','link3')">Ajuste parámetros en basculante</a></li><br>  
+          <li><a href="#" id="link4" class="colorClick"data-imagen="imag44" onclick="imagenesPasoApaso('rodillo-infeed','contBotInfeed','imag4','link4')">Calibración / Limpieza / Rugosidad en INFEED</a></li><br>
+          <li><a href="#" id="link5" class="colorClick"data-imagen="imag55" onclick="imagenesPasoApaso('puesta-punto','contBotCasos','imag5','link5')">Paso a paso puesta a punto</a></li><br>
         </ol> 
 
       </div>      
@@ -1386,18 +1386,18 @@
           <img src="./assets/neumatica4.jpg" alt="neuma6">
         </div>
         <div class="img1" id="imag4" >
-          <img src="./assets/grafilado.jfif" alt="neuma7">
-          <img src="./assets/grafilado2.jfif" alt="neuma8">
-          <img src="./assets/grafilado4.jpg" alt="neuma9">
-          <img src="./assets/grafilado5.jfif" alt="neuma10">
+          <img id="imgGrafilado1" src="./assets/grafilado.jpg" alt="neuma7">
+          <img id="imgGrafilado2" src="./assets/grafilado2.jpg" alt="neuma8">
+          <img id="imgGrafilado3" src="./assets/grafilado4.jpg" alt="neuma9">
+          <img id="imgGrafilado4" src="./assets/grafilado5.jpg" alt="neuma10">
         </div>        
        
       </div>
     </div>
 
     <div id="contBotCasos" class="contOblicuosTorre" style="left: 1357px;top: 44px;display: none;">
-      <button class="Bot-inicio33" id="butt-17" onclick="tamaño100()">Ampliar</button>
-      <button class="Bot-inicio33-fondo" id="butt-8"></button>  
+      <button class="Bot-inicio33" id="butt-17" onclick="tamaño100()">Cerrar</button>
+      <button class="Bot-inicio33-fondo" id="butt-18"></button>  
     </div>   
 
     <div id="puesta-punto">
@@ -1441,6 +1441,54 @@
       <h1 class="casos-h1" >10. Pruebas de Impresión y Ajustes Finales </h1>
       <p class="parrafo-casos">
         Realiza pruebas de impresión en pequeñas cantidades antes de la producción completa. Analiza la calidad de impresión y realiza ajustes finos según sea necesario en la velocidad, presión, y otros parámetros para optimizar el rendimiento.      
+      </p>     
+    </div>
+
+    <div id="contBotInfeed" class="contOblicuosTorre" style="left: 1477px;top: 21px;display: none;">
+      <button class="Bot-inicio333" id="butt-19" onclick="tamaño100()">Cerrar</button>
+      <button class="Bot-inicio333-fondo" id="butt-20"></button>  
+    </div> 
+
+    <div id="rodillo-infeed">
+      <h1 class="casos-h1" >1. Inspección Visual Regular</h1>
+      <p class="parrafo-casos">
+        La clave para el rendimiento óptimo de un rodillo grafilado es realizar inspecciones visuales regulares. Examina la superficie del rodillo en busca de desgaste, daños o acumulación de residuos
+      </p>
+      <h1 class="casos-h1" >2. Limpieza Cuidadosa</h1>
+      <p class="parrafo-casos">
+        La limpieza adecuada es esencial. Utiliza solventes suaves para eliminar cualquier acumulación de material en la superficie. Evita productos abrasivos que puedan dañar el recubrimiento del rodillo
+      </p>
+      <h1 class="casos-h1" >3. Control de la Lubricación</h1>
+      <p class="parrafo-casos">
+        Verifica y ajusta los niveles de lubricación según las especificaciones del fabricante. Una lubricación inadecuada puede afectar la eficiencia y la vida útil del rodillo.
+      </p>
+      <h1 class="casos-h1" >4. Ajuste de Tensión</h1>
+      <p class="parrafo-casos">
+        Mantén la tensión correcta en el rodillo para garantizar un rendimiento constante. Ajusta según sea necesario para prevenir deformaciones o desalineaciones.     
+      </p>
+      <h1 class="casos-h1" >5. Monitoreo de la Temperatura</h1>
+      <p class="parrafo-casos">
+        Controla la temperatura del rodillo durante su funcionamiento. Temperaturas extremas pueden afectar la durabilidad y eficiencia del grafilado
+      </p>
+      <h1 class="casos-h1" >6. Reemplazo de Elementos Desgastados</h1>
+      <p class="parrafo-casos">
+        Cambia cualquier elemento del rodillo, como cojinetes o sellos, que muestre signos de desgaste. Esto ayuda a prevenir fallos mayores y garantiza un funcionamiento suave.
+      </p>
+      <h1 class="casos-h1" >7. Verificación de la Geometría</h1>
+      <p class="parrafo-casos">
+        Comprueba la geometría del rodillo para asegurarte de que se mantiene dentro de las tolerancias especificadas. Ajusta según sea necesario para mantener la precisión del grafilado.
+      </p>
+      <h1 class="casos-h1" >8. Análisis de Vibraciones</h1>
+      <p class="parrafo-casos">
+        Realiza análisis de vibraciones periódicos para identificar posibles problemas mecánicos. Las vibraciones inusuales pueden ser indicativas de desequilibrios o desalineaciones
+      </p>
+      <h1 class="casos-h1" >9. Capacitación del Personal</h1>
+      <p class="parrafo-casos">
+        Asegúrate de que el personal a cargo del mantenimiento esté debidamente capacitado. Esto garantiza procedimientos adecuados y mejora la eficacia del mantenimiento
+      </p> 
+      <h1 class="casos-h1" >10. Registro Documentado</h1>
+      <p class="parrafo-casos">
+        Lleva un registro detallado de todas las actividades de mantenimiento. Un historial documentado facilita el seguimiento del rendimiento y ayuda en la planificación de futuras intervenciones
       </p>     
     </div>
 

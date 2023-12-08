@@ -4,12 +4,16 @@ var arrayButtsKaizen = ['btn10','btn11','btn12','btn17']
 var arrayButtsPlanos = ['btn13','btn14','btn15']
 var arrayImgsRodilleria = document.querySelectorAll ('.durezas')
 var arrayButtsInicio = ['butt-1','butt-5','butt-7','butt-111']
+var arrayInstructivos = ['puesta-punto','rodillo-infeed']
+var arrayButtsInstructivos = ['contBotCasos','contBotInfeed']
+var arrayImgsEntreno = ['imag1','imag2','imag3','imag4']
+var arrayImgsGrafilado = ['imgGrafilado1','imgGrafilado2','imgGrafilado3','imgGrafilado4',]
 var arrayPosicionnador = []
 var arrayContador = []
 var destino = 257;
 var idsArray = []
 var idsArrayEliminados = []
-var idsMA = ['contBotCasos','puesta-punto','casos-kaizen','mejoras-kai','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','planos-kaizen','materiales-kaizen','kaizenCont','conti-boton-planos', 'conti-boton-kaizen','troubleshooting','canvasContainer2', 'contChecks', 'canvasContainer3', 'contImagNeg',,'contImagGraf','canvasContainer4','canvasContainer5','canvasContainer6','canvasContainer7','canvasContainer8', 'canvasContainer9']
+var idsMA = ['rodillo-infeed','contBotCasos','puesta-punto','casos-kaizen','mejoras-kai','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','planos-kaizen','materiales-kaizen','kaizenCont','conti-boton-planos', 'conti-boton-kaizen','troubleshooting','canvasContainer2', 'contChecks', 'canvasContainer3', 'contImagNeg',,'contImagGraf','canvasContainer4','canvasContainer5','canvasContainer6','canvasContainer7','canvasContainer8', 'canvasContainer9']
 var idsMAhijos = ['contBotCasos','materiales-kaizen','troubleshooting','canvasContainer2','contChecks','canvasContainer3','contImagNeg','contImagGraf']
 var arrayElementMA = ['kaizenCont','contImagGraf','contImagNeg','canvasContainer3','contChecks','canvasContainer2','kaizenCont']
 var idsResultados = ['icon-ana','icon-carlos','icon-andres','icon-jorge','icon-jesus','icon-sandra','icon-mario']
@@ -29,7 +33,7 @@ var imgTorreI = document.getElementById('imgTorre')
 var contInicial = document.getElementById('container1')
 var botonMa = document.getElementById('bot-mantaut')
 var imagPasoApaso = document.querySelectorAll('.img1')
-var allContenedores = ['contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','contene-11','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','container99','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
+var allContenedores = ['rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','contene-11','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','container99','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado']
@@ -48,8 +52,6 @@ var allContMA = ['conteneMantaut','conti-boton']
 var buttonsMA = document.getElementsByClassName("butt-mautonomo")
 var buttsToyota = ['toyota8', 'toyota7', 'toyota6', 'toyota5','toyota4','toyota3','toyota2','toyota1']
 var contienePasos = document.getElementById('puesta-punto')
-
-
 
 const grupOblicuos = document.getElementById('agrupaOblicuos-I')
 const oblicuosVI = document.getElementById('agrupaOblicuos-VI')
@@ -3484,177 +3486,248 @@ function toggleFullScreen(element) {
     }
   }
 }
-function imagenesPasoApaso(idElto, id) {
-  /*var contImgEntrenos = document.getElementById('contImgEntrenos') 
-  var contbuttCasos = document.getElementById('contBotCasos')
+function imagenesPasoApaso(idCont,idButt,idImg,id) {
   var botOrange = document.getElementById(id)
-
-  if (id !== 'vinc5') {
-    switch (id) {
-      case 'vinc1':
-        botOrange.style.color = 'orange'
-        // Cambiar otros enlaces a azul
-        var botones = document.getElementsByClassName('colorClick')
-        for (var i = 0; i < botones.length; i++) {
-        if (botones[i].id !== id) {
-        botones[i].style.color = 'blue'
-        }}
-        contienePasos.style.display = 'none'  
-        contbuttCasos.style.display = 'none'     
-      break; 
-      case 'vinc2':
-        botOrange.style.color = 'orange'
-        // Cambiar otros enlaces a azul
-        var botones = document.getElementsByClassName('colorClick')
-        for (var i = 0; i < botones.length; i++) {
-        if (botones[i].id !== id) {
-        botones[i].style.color = 'blue'
-        }}
-        contienePasos.style.display = 'none' 
-        contbuttCasos.style.display = 'none'
-       break;
-       case 'vinc3':
-        botOrange.style.color = 'orange'
-        // Cambiar otros enlaces a azul
-        var botones = document.getElementsByClassName('colorClick')
-        for (var i = 0; i < botones.length; i++) {
-        if (botones[i].id !== id) {
-        botones[i].style.color = 'blue'
-        }}
-        contienePasos.style.display = 'none'  
-        contbuttCasos.style.display = 'none'
-       break; 
-       case 'vinc4':
-        botOrange.style.color = 'orange'
-        // Cambiar otros enlaces a azul
-        var botones = document.getElementsByClassName('colorClick')
-        for (var i = 0; i < botones.length; i++) {
-        if (botones[i].id !== id) {
-        botones[i].style.color = 'blue'
-        }}
-        contienePasos.style.display = 'none'  
-        contbuttCasos.style.display = 'none'
-       break;  
-      default:        
-    }
-
-    contImgEntrenos.style.display = 'flex'
-    imagPasoApaso.forEach(imag => {
-      if (imag.id == idElto) {
-        imag.style.display = 'block'
-        document.body.style.zoom = "100%";
-      } else {
-        imag.style.display = 'none'
-      }
-    })
-    }else{
-      document.body.style.zoom = "67%";
-      switch (id) {
-        case 'vinc5':
-          botOrange.style.color = 'orange'
-          // Cambiar otros enlaces a azul
-          var botones = document.getElementsByClassName('colorClick')
-          for (var i = 0; i < botones.length; i++) {
-          if (botones[i].id !== id) {
-          botones[i].style.color = 'blue'
-          }}
-          contienePasos.style.display = 'flex' 
-          contbuttCasos.style.display = 'flex'
-          iniciarMovimiento()
-        break;              
-        default:
-      }                   
-       contImgEntrenos.style.display = 'flex'
-      imagPasoApaso.forEach(imag => {
-      if (imag.id == idElto) {
-        imag.style.display = 'block'
-      } else {
-        imag.style.display = 'none'
-      }     
-    })    
-  }*/
-
-  var contImgEntrenos = document.getElementById('contImgEntrenos') 
-  var contbuttCasos = document.getElementById('contBotCasos')
-  var botOrange = document.getElementById(id)
-
+  var contImgsEntrenos = document.getElementById('contImgEntrenos')
   document.body.style.zoom = "67%";
-
     switch (id) {
-      case 'vinc1':
+      case 'link1':
         botOrange.style.color = 'orange'
         // Cambiar otros enlaces a azul
         var botones = document.getElementsByClassName('colorClick')
         for (var i = 0; i < botones.length; i++) {
-        if (botones[i].id !== id) {
-        botones[i].style.color = 'blue'
+          if (botones[i].id !== id) {
+          botones[i].style.color = ''
         }}
-        contienePasos.style.display = 'none'  
-        contbuttCasos.style.display = 'none'     
-      break; 
-      case 'vinc2':
-        botOrange.style.color = 'orange'
-        // Cambiar otros enlaces a azul
-        var botones = document.getElementsByClassName('colorClick')
-        for (var i = 0; i < botones.length; i++) {
-        if (botones[i].id !== id) {
-        botones[i].style.color = 'blue'
-        }}
-        contienePasos.style.display = 'none' 
-        contbuttCasos.style.display = 'none'
-       break;
-       case 'vinc3':
-        botOrange.style.color = 'orange'
-        // Cambiar otros enlaces a azul
-        var botones = document.getElementsByClassName('colorClick')
-        for (var i = 0; i < botones.length; i++) {
-        if (botones[i].id !== id) {
-        botones[i].style.color = 'blue'
-        }}
-        contienePasos.style.display = 'none'  
-        contbuttCasos.style.display = 'none'
-       break; 
-       case 'vinc4':
-        botOrange.style.color = 'orange'
-        // Cambiar otros enlaces a azul
-        var botones = document.getElementsByClassName('colorClick')
-        for (var i = 0; i < botones.length; i++) {
-        if (botones[i].id !== id) {
-        botones[i].style.color = 'blue'
-        }}
-        contienePasos.style.display = 'none'  
-        contbuttCasos.style.display = 'none'
-       break;  
-       case 'vinc5':
-        botOrange.style.color = 'orange'
-        // Cambiar otros enlaces a azul
-        var botones = document.getElementsByClassName('colorClick')
-        for (var i = 0; i < botones.length; i++) {
-        if (botones[i].id !== id) {
-        botones[i].style.color = 'blue'
-        }}
-        contienePasos.style.display = 'flex' 
-        contbuttCasos.style.display = 'flex'
-        iniciarMovimiento()
-      break;  
-      default:  
-      contImgEntrenos.style.display = 'flex'
-      imagPasoApaso.forEach(imag => {
-        if (imag.id == idElto) {
-          imag.style.display = 'block'
-        } 
-      })
-      
-              
-        }                   
-         contImgEntrenos.style.display = 'flex'
-         imagPasoApaso.forEach(imag => {
-          if (imag.id == idElto) {
-            imag.style.display = 'block';
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+        for (var i = 0; i < arrayInstructivos.length; i++) {                                                                    /// MUESTRA INSTRUCTIVO PARAMETRO
+          var currentId = arrayInstructivos[i];
+          var element = document.getElementById(currentId);      
+          if (currentId === idCont) {
+            // Muestra el elemento cuyo nombre coincide con idCont
+            element.style.display = 'flex';
           } else {
-            imag.style.display = 'none';
+            // Oculta los demás elementos
+            element.style.display = 'none';
           }
-        });  
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+        for (var i = 0; i < arrayButtsInstructivos.length; i++) {                                                                     /// MUESTRA BOTON PARAMETRO
+          var currentId = arrayButtsInstructivos[i];
+          var element = document.getElementById(currentId);      
+          if (currentId === idButt) {
+            // Muestra el elemento cuyo nombre coincide con idButt
+            element.style.display = 'flex';
+          } else {
+            // Oculta los demás elementos
+            element.style.display = 'none';
+          }
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+        contImgsEntrenos.style.display = 'flex'                                                                                    /// MUESTRA IMAGENES PARAMETRO
+        for (var i = 0; i < arrayImgsEntreno.length; i++) {                                                                        
+          var currentId = arrayImgsEntreno[i];
+          var element = document.getElementById(currentId);      
+          if (currentId === idImg) {
+            // Muestra el elemento cuyo nombre coincide con idImg
+            element.style.display = 'flex';
+          } else {
+            // Oculta los demás elementos
+            element.style.display = 'none';
+          }
+        } 
+      break; 
+      case 'link2':
+        botOrange.style.color = 'orange'
+        // Cambiar otros enlaces a azul
+        var botones = document.getElementsByClassName('colorClick')
+        for (var i = 0; i < botones.length; i++) {
+          if (botones[i].id !== id) {
+          botones[i].style.color = ''
+        }}
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+        for (var i = 0; i < arrayInstructivos.length; i++) {                                                                    /// MUESTRA INSTRUCTIVO PARAMETRO
+          var currentId = arrayInstructivos[i];
+          var element = document.getElementById(currentId);      
+          if (currentId === idCont) {
+            // Muestra el elemento cuyo nombre coincide con idCont
+            element.style.display = 'flex';
+          } else {
+            // Oculta los demás elementos
+            element.style.display = 'none';
+          }
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+        for (var i = 0; i < arrayButtsInstructivos.length; i++) {                                                                     /// MUESTRA BOTON PARAMETRO
+          var currentId = arrayButtsInstructivos[i];
+          var element = document.getElementById(currentId);      
+          if (currentId === idButt) {
+            // Muestra el elemento cuyo nombre coincide con idButt
+            element.style.display = 'flex';
+          } else {
+            // Oculta los demás elementos
+            element.style.display = 'none';
+          }
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+        contImgsEntrenos.style.display = 'flex'                                                                                    /// MUESTRA IMAGENES PARAMETRO
+        for (var i = 0; i < arrayImgsEntreno.length; i++) {                                                                        
+          var currentId = arrayImgsEntreno[i];
+          var element = document.getElementById(currentId);      
+          if (currentId === idImg) {
+            // Muestra el elemento cuyo nombre coincide con idImg
+            element.style.display = 'flex';
+          } else {
+            // Oculta los demás elementos
+            element.style.display = 'none';
+          }
+        } 
+       break;
+       case 'link3':
+        botOrange.style.color = 'orange'
+        // Cambiar otros enlaces a azul
+        var botones = document.getElementsByClassName('colorClick')
+        for (var i = 0; i < botones.length; i++) {
+          if (botones[i].id !== id) {
+          botones[i].style.color = ''
+        }}
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+        for (var i = 0; i < arrayInstructivos.length; i++) {                                                                    /// MUESTRA INSTRUCTIVO PARAMETRO
+          var currentId = arrayInstructivos[i];
+          var element = document.getElementById(currentId);      
+          if (currentId === idCont) {
+            // Muestra el elemento cuyo nombre coincide con idCont
+            element.style.display = 'flex';
+          } else {
+            // Oculta los demás elementos
+            element.style.display = 'none';
+          }
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+        for (var i = 0; i < arrayButtsInstructivos.length; i++) {                                                                     /// MUESTRA BOTON PARAMETRO
+          var currentId = arrayButtsInstructivos[i];
+          var element = document.getElementById(currentId);      
+          if (currentId === idButt) {
+            // Muestra el elemento cuyo nombre coincide con idButt
+            element.style.display = 'flex';
+          } else {
+            // Oculta los demás elementos
+            element.style.display = 'none';
+          }
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+        contImgsEntrenos.style.display = 'flex'                                                                                    /// MUESTRA IMAGENES PARAMETRO
+        for (var i = 0; i < arrayImgsEntreno.length; i++) {                                                                        
+          var currentId = arrayImgsEntreno[i];
+          var element = document.getElementById(currentId);      
+          if (currentId === idImg) {
+            // Muestra el elemento cuyo nombre coincide con idImg
+            element.style.display = 'flex';
+          } else {
+            // Oculta los demás elementos
+            element.style.display = 'none';
+          }
+        } 
+
+       break; 
+       case 'link4':
+        botOrange.style.color = 'orange'
+        // Cambiar otros enlaces a azul
+        var botones = document.getElementsByClassName('colorClick')
+        for (var i = 0; i < botones.length; i++) {
+          if (botones[i].id !== id) {
+          botones[i].style.color = ''
+        }}
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+        for (var i = 0; i < arrayInstructivos.length; i++) {                                                                    /// MUESTRA INSTRUCTIVO PARAMETRO
+          var currentId = arrayInstructivos[i];
+          var element = document.getElementById(currentId);      
+          if (currentId === idCont) {
+            // Muestra el elemento cuyo nombre coincide con idCont
+            element.style.display = 'flex';
+          } else {
+            // Oculta los demás elementos
+            element.style.display = 'none';
+          }
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+        for (var i = 0; i < arrayButtsInstructivos.length; i++) {                                                                     /// MUESTRA BOTON PARAMETRO
+          var currentId = arrayButtsInstructivos[i];
+          var element = document.getElementById(currentId);      
+          if (currentId === idButt) {
+            // Muestra el elemento cuyo nombre coincide con idButt
+            element.style.display = 'flex';
+          } else {
+            // Oculta los demás elementos
+            element.style.display = 'none';
+          }
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+        contImgsEntrenos.style.display = 'flex'                                                                                    /// MUESTRA IMAGENES PARAMETRO
+        for (var i = 0; i < arrayImgsEntreno.length; i++) {                                                                        
+          var currentId = arrayImgsEntreno[i];
+          var element = document.getElementById(currentId);      
+          if (currentId === idImg) {
+            // Muestra el elemento cuyo nombre coincide con idImg
+            element.style.display = 'flex';
+          } else {
+            // Oculta los demás elementos
+            element.style.display = 'none';
+          }
+        }        
+        
+        iniciarMovimiento('rodillo-infeed')                               
+       break;  
+       case 'link5':
+        botOrange.style.color = 'orange'
+        // Cambiar otros enlaces a azul
+        var botones = document.getElementsByClassName('colorClick')
+        for (var i = 0; i < botones.length; i++) {
+          if (botones[i].id !== id) {
+          botones[i].style.color = ''
+        }}
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+        for (var i = 0; i < arrayInstructivos.length; i++) {                                                                    /// MUESTRA INSTRUCTIVO PARAMETRO
+          var currentId = arrayInstructivos[i];
+          var element = document.getElementById(currentId);      
+          if (currentId === idCont) {
+            // Muestra el elemento cuyo nombre coincide con idCont
+            element.style.display = 'flex';
+          } else {
+            // Oculta los demás elementos
+            element.style.display = 'none';
+          }
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+        for (var i = 0; i < arrayButtsInstructivos.length; i++) {                                                                     /// MUESTRA BOTON PARAMETRO
+          var currentId = arrayButtsInstructivos[i];
+          var element = document.getElementById(currentId);      
+          if (currentId === idButt) {
+            // Muestra el elemento cuyo nombre coincide con idButt
+            element.style.display = 'flex';
+          } else {
+            // Oculta los demás elementos
+            element.style.display = 'none';
+          }
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+        contImgsEntrenos.style.display = 'flex'                                                                                    /// MUESTRA IMAGENES PARAMETRO
+        for (var i = 0; i < arrayImgsEntreno.length; i++) {                                                                        
+          var currentId = arrayImgsEntreno[i];
+          var element = document.getElementById(currentId);      
+          if (currentId === idImg) {
+            // Muestra el elemento cuyo nombre coincide con idImg
+            element.style.display = 'flex';
+          } else {
+            // Oculta los demás elementos
+            element.style.display = 'none';
+          }
+        }  
+        iniciarMovimiento('puesta-punto')
+      break;  
+    default: 
+  }           
+          
 }
 function lubricacion(buttId,btnIniId){
   var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80',]
@@ -5895,10 +5968,42 @@ function aumentoBotonesBody() {
 }
 
 function tamaño100(){
-  var contbuttCasos = document.getElementById('contBotCasos')
-  contienePasos.style.display = 'none'
-  contbuttCasos.style.display = 'none'
+  var contImgsEntrenos = document.getElementById('contImgEntrenos')
   document.body.style.zoom = '100%'
+
+/*   var botones = document.getElementsByClassName('colorClick')
+  for (var i = 0; i < botones.length; i++) {
+    if (botones[i].id) {
+    botones[i].style.color = ''
+  }} */
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+  for (var i = 0; i < arrayInstructivos.length; i++) {                                                                              /// OCULTA INSTRUCTIVOS
+    var currentId = arrayInstructivos[i];
+    var element = document.getElementById(currentId);      
+    if (currentId) {
+      // Muestra el elemento cuyo nombre coincide con idCont
+      element.style.display = 'none';
+    } 
+  }
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+  contImgsEntrenos.style.display = 'flex'                                                                                               /// OCULTA IMAGENES 
+  for (var i = 0; i < arrayImgsEntreno.length; i++) {                                                                        
+    var currentId = arrayImgsEntreno[i];
+    var element = document.getElementById(currentId);      
+    if (currentId) {
+      // Muestra el elemento cuyo nombre coincide con idImg
+      element.style.display = 'none';
+    }
+  } 
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+  for (var i = 0; i < arrayButtsInstructivos.length; i++) {                                                                              /// OCULTA BOTONES
+    var currentId = arrayButtsInstructivos[i];
+    var element = document.getElementById(currentId);      
+    if (currentId) {
+      // Muestra el elemento cuyo nombre coincide con idButt
+      element.style.display = 'none';
+    } 
+  }
 }
   
 // Obtén todas las imágenes con la clase "aumentar"
@@ -6963,7 +7068,6 @@ function moveScroll(container) {
   container.scrollTop += 100;
   // Reducir el número de iteraciones en 1
   iterations--;
-
   // Verificar si quedan más iteraciones
   if (iterations > 0) {
     // Llamar a la función nuevamente después de 1 segundo
@@ -6978,16 +7082,16 @@ function moveScroll(container) {
 }
 
 // Función para iniciar el movimiento del scroll
-function iniciarMovimiento() {
+function iniciarMovimiento(instrucId) {
   // Obtener el elemento con ID "puesta-punto"
-  var container = document.getElementById("puesta-punto");
+  var container = document.getElementById(instrucId);
   // Asegurarse de que el scroll esté en la parte superior
   container.scrollTop = 0;
   // Restablecer el número de iteraciones
   iterations = 11;
   // Iniciar el movimiento del scroll
-  moveScroll(container);}
+  moveScroll(container);
+}
 
 // Número de iteraciones deseadas
 var iterations;
-
