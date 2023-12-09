@@ -1572,6 +1572,7 @@ margin-right: 7px;
   display: flex;
   flex-direction: column;
   gap: 4px;
+  display: none;
 }
 .img1 img{
   width: 220px;

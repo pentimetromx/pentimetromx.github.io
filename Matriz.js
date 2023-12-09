@@ -3487,16 +3487,21 @@ function toggleFullScreen(element) {
   }
 }
 function imagenesPasoApaso(idCont,idButt,idImg,id) {
-  var botOrange = document.getElementById(id)
-  var contImgsEntrenos = document.getElementById('contImgEntrenos')
-  var vidBasculante = document.getElementById('vid-basculante')
-  var contBailarina = document.getElementById('bailarina')
-  var container = document.getElementById("instrumentos")
+  var botOrange = document.getElementById(id);
+  var contImgsEntrenos = document.getElementById('contImgEntrenos');
+  var vidBasculante = document.getElementById('vid-basculante');
+  var contBailarina = document.getElementById('bailarina');
 
   document.body.style.zoom = "67%";
+
+  /* var children = contImgsEntrenos.children;
+  for (var i = 0; i < children.length; i++) {
+    children[i].style.display = 'none';
+  }*/
     switch (id) {
       case 'link1':
-        container.style.display = 'none';
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+        /* container.style.display = 'none'; */                                                                                                ///  BOTON NARANJA
         botOrange.style.color = 'orange'
         // Cambiar otros enlaces a azul
         var botones = document.getElementsByClassName('colorClick')
@@ -3516,11 +3521,6 @@ function imagenesPasoApaso(idCont,idButt,idImg,id) {
             element.style.display = 'none';
           }
         }
-        var computedStyle = getComputedStyle(container);
-        var displayValue = computedStyle.getPropertyValue('display');
-        if (displayValue.toLowerCase() === 'none') {
-          container.style.display = 'flex';
-        }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
         for (var i = 0; i < arrayButtsInstructivos.length; i++) {                                                                     /// MUESTRA BOTON PARAMETRO
           var currentId = arrayButtsInstructivos[i];
@@ -3535,20 +3535,19 @@ function imagenesPasoApaso(idCont,idButt,idImg,id) {
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
         contImgsEntrenos.style.display = 'flex'                                                                                    /// MUESTRA IMAGENES PARAMETRO
-        for (var i = 0; i < arrayImgsEntreno.length; i++) {                                                                        
+        // Recorrer el array y hacer visible el elemento cuyo ID coincida con idImg
+        for (var i = 0; i < arrayImgsEntreno.length; i++) {
           var currentId = arrayImgsEntreno[i];
-          var element = document.getElementById(currentId);      
-          if (currentId === idImg) {
-            // Muestra el elemento cuyo nombre coincide con idImg
-            element.style.display = 'flex';
-          } else {
-            // Oculta los demás elementos
-            element.style.display = 'none';
+          var imgElement = document.getElementById(currentId);
+
+          if (currentId === idImg && imgElement) {
+            imgElement.style.display = 'flex';
+          }else{
+            imgElement.style.display = 'none';
           }
-        } 
+        }
       break;
       case 'link2':
-        container.style.display = 'flex';
         botOrange.style.color = 'orange'
         // Cambiar otros enlaces a azul
         var botones = document.getElementsByClassName('colorClick')
@@ -3582,20 +3581,19 @@ function imagenesPasoApaso(idCont,idButt,idImg,id) {
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
         contImgsEntrenos.style.display = 'flex'                                                                                    /// MUESTRA IMAGENES PARAMETRO
-        for (var i = 0; i < arrayImgsEntreno.length; i++) {                                                                        
+        // Recorrer el array y hacer visible el elemento cuyo ID coincida con idImg
+        for (var i = 0; i < arrayImgsEntreno.length; i++) {
           var currentId = arrayImgsEntreno[i];
-          var element = document.getElementById(currentId);      
-          if (currentId === idImg) {
-            // Muestra el elemento cuyo nombre coincide con idImg
-            element.style.display = 'flex';
-          } else {
-            // Oculta los demás elementos
-            element.style.display = 'none';
+          var imgElement = document.getElementById(currentId);
+
+          if (currentId === idImg && imgElement) {
+            imgElement.style.display = 'flex';
+          }else{
+            imgElement.style.display = 'none';
           }
-        } 
+        }
        break;
        case 'link3':
-        container.style.display = 'none';
         botOrange.style.color = 'orange'
         // Cambiar otros enlaces a azul
         var botones = document.getElementsByClassName('colorClick')
@@ -3633,21 +3631,18 @@ function imagenesPasoApaso(idCont,idButt,idImg,id) {
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
         contImgsEntrenos.style.display = 'flex'                                                                                    /// MUESTRA IMAGENES PARAMETRO
-        for (var i = 0; i < arrayImgsEntreno.length; i++) {                                                                        
+        // Recorrer el array y hacer visible el elemento cuyo ID coincida con idImg
+        for (var i = 0; i < arrayImgsEntreno.length; i++) {
           var currentId = arrayImgsEntreno[i];
-          var element = document.getElementById(currentId);      
-          if (currentId === idImg) {
-            // Muestra el elemento cuyo nombre coincide con idImg
-            element.style.display = 'flex';
-          } else {
-            // Oculta los demás elementos
-            element.style.display = 'none';
-          }
-        } 
+          var imgElement = document.getElementById(currentId);
 
-       break; 
+          if (currentId === idImg && imgElement) {
+            imgElement.style.display = 'flex';
+          }else{
+            imgElement.style.display = 'none';
+          }
+        }       break; 
        case 'link4':  
-       container.style.display = 'none';     
         botOrange.style.color = 'orange'
         // Cambiar otros enlaces a azul
         var botones = document.getElementsByClassName('colorClick')
@@ -3681,22 +3676,20 @@ function imagenesPasoApaso(idCont,idButt,idImg,id) {
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
         contImgsEntrenos.style.display = 'flex'                                                                                    /// MUESTRA IMAGENES PARAMETRO
-        for (var i = 0; i < arrayImgsEntreno.length; i++) {                                                                        
+        // Recorrer el array y hacer visible el elemento cuyo ID coincida con idImg
+        for (var i = 0; i < arrayImgsEntreno.length; i++) {
           var currentId = arrayImgsEntreno[i];
-          var element = document.getElementById(currentId);      
-          if (currentId === idImg) {
-            // Muestra el elemento cuyo nombre coincide con idImg
-            element.style.display = 'flex';
-          } else {
-            // Oculta los demás elementos
-            element.style.display = 'none';
+          var imgElement = document.getElementById(currentId);
+
+          if (currentId === idImg && imgElement) {
+            imgElement.style.display = 'flex';
+          }else{
+            imgElement.style.display = 'none';
           }
-        }        
-        
+        }      
         iniciarMovimiento('rodillo-infeed')                               
        break;  
        case 'link5':
-        container.style.display = 'none';
         botOrange.style.color = 'orange'
         // Cambiar otros enlaces a azul
         var botones = document.getElementsByClassName('colorClick')
@@ -3730,17 +3723,17 @@ function imagenesPasoApaso(idCont,idButt,idImg,id) {
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
         contImgsEntrenos.style.display = 'flex'                                                                                    /// MUESTRA IMAGENES PARAMETRO
-        for (var i = 0; i < arrayImgsEntreno.length; i++) {                                                                        
+        // Recorrer el array y hacer visible el elemento cuyo ID coincida con idImg
+        for (var i = 0; i < arrayImgsEntreno.length; i++) {
           var currentId = arrayImgsEntreno[i];
-          var element = document.getElementById(currentId);      
-          if (currentId === idImg) {
-            // Muestra el elemento cuyo nombre coincide con idImg
-            element.style.display = 'flex';
-          } else {
-            // Oculta los demás elementos
-            element.style.display = 'none';
+          var imgElement = document.getElementById(currentId);
+
+          if (currentId === idImg && imgElement) {
+            imgElement.style.display = 'flex';
+          }else{
+            imgElement.style.display = 'none';
           }
-        }  
+        }
         iniciarMovimiento('puesta-punto')
       break;  
     default: 
