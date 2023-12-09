@@ -1357,40 +1357,62 @@
       <div id="linksMA"  style="margin-top: 7px;display: none;" >
         <h2 style="margin-left: 20px;width: 517px;">Largo de impresión ajustes preliminares</h2>  
         <ol class="linksTraining" id="linkLis">
-          <li><a href="#" id="link1" class="colorClick"data-imagen="imag1" onclick="imagenesPasoApaso('','','imag1','link1')">Asegurar PSI neumática</a></li><br>
+          <li><a href="#" id="link1" class="colorClick"data-imagen="imag1" onclick="imagenesPasoApaso('control-neumatico','','imag1','link1')">Asegurar PSI neumática</a></li><br>
           <li><a href="#" id="link2" class="colorClick"data-imagen="imag22" onclick="imagenesPasoApaso('','','imag2','link2')">Optimización al freno de bobina</a></li><br>
-          <li><a href="#" id="link3" class="colorClick"data-imagen="imag33" onclick="imagenesPasoApaso('','','imag3','link3')">Ajuste parámetros en basculante</a></li><br>  
+          <li><a href="#" id="link3" class="colorClick"data-imagen="imag33" onclick="imagenesPasoApaso('contImaginario','contBotInfeed','imag3','link3')">Ajuste parámetros en basculante</a></li><br>  
           <li><a href="#" id="link4" class="colorClick"data-imagen="imag44" onclick="imagenesPasoApaso('rodillo-infeed','contBotInfeed','imag4','link4')">Calibración / Limpieza / Rugosidad en INFEED</a></li><br>
           <li><a href="#" id="link5" class="colorClick"data-imagen="imag55" onclick="imagenesPasoApaso('puesta-punto','contBotCasos','imag5','link5')">Paso a paso puesta a punto</a></li><br>
         </ol> 
 
       </div>      
-      <div class="imgs-entrenos" id="contImgEntrenos">
-        <div class="img1" id="imag1">
-          <img src="./assets/neumatica.jfif" alt="neuma1">
-          <h4>PRESIÓN NEUMÁTICA 90 PSI <br></h4>
-          <img src="./assets/neumatica2.jfif" alt="neuma2">
+      <div class="imgs-entrenos" id="contImgEntrenos" style="display: flex; display: none;">
+
+        <div id="instrumentos" style="position: relative;margin-left: -37px; height: 437px;width: 225px;border: 1px solid orange;border-radius: 14px; padding: 13px; background-color: black;">
+          <div class="img1" id="imag1">
+            <img class="img-1" src="./assets/neumatica.jfif" alt="neuma1">
+            <h4>PRESIÓN NEUMÁTICA 90 PSI <br></h4>
+            <img class="img-1" src="./assets/neumatica2.jfif" alt="neuma2">
+          </div>
+        </div>  
+  
+          <div class="img1" id="imag2" >
+            <img class="img-1" src="./assets/freno.jpg" alt="neuma3">
+            <h4>LIMPIEZA ZAPATAS.<br>
+                JUEGO EN SEGUROS DE MANO. <br>    
+                REVISION CAUCHOS. <br>
+                JUEGO EN EL EJE.</h4>
+            <img class="img-1" src="./assets/freno2.jpg" alt="neuma4">
+          </div>
+
+
+
+        <div id="contImaginario" style="position: absolute;display: flex;flex-direction: column; height: 760px;width: 892px;display: none; border-radius: 21px; background-color:black">
+          
+          <div id="imag3" >
+            <div style="display: flex;flex-direction: column;align-items: center;">
+              <img class="img-1" src="./assets/neumatica3.jpg" alt="neuma5"><br>
+              <h44>CARRERA DE CILINDRO </h44>
+            </div>
+            <div style="display: flex;flex-direction: column;align-items: center">
+              <img class="img-1" src="./assets/neumatica4.jpg" alt="neuma6"><br>
+              <h44>ACOPLES DE CILINDRO</h44>
+            </div>
+            <div style="display: flex;flex-direction: column;align-items: center">
+              <img class="img-1" src="./assets/neumatica33.jpg" alt="neuma6"><br>
+              <h44>CONTROL NEUMATICO</h44>
+            </div>
+          </div>
+          <div id="bailarina">
+            <video id="vid-basculante" src="./assets/oscilante rotativa.mp4" loop></video> 
+          </div>          
+
+          <div class="img1" id="imag4" >
+            <img id="imgGrafilado1" src="./assets/grafilado.jpg" alt="neuma7">
+            <img id="imgGrafilado2" src="./assets/grafilado2.jpg" alt="neuma8">
+            <img id="imgGrafilado3" src="./assets/grafilado4.jpg" alt="neuma9">
+            <img id="imgGrafilado4" src="./assets/grafilado5.jpg" alt="neuma10">
+          </div>        
         </div>
-        <div class="img1" id="imag2" >
-          <img src="./assets/freno.jpg" alt="neuma3">
-          <h4>LIMPIEZA ZAPATAS.<br>
-              JUEGO EN SEGUROS DE MANO. <br>
-              REVISION CAUCHOS. <br>
-              JUEGO EN EL EJE.</h4>
-          <img src="./assets/freno2.jpg" alt="neuma4">
-        </div>
-        <div class="img1" id="imag3" >
-          <img src="./assets/neumatica3.jfif" alt="neuma5">
-          <h4>CARRERA DE CILINDRO <br>
-              ACOPLES DE CILINDRO</h4>
-          <img src="./assets/neumatica4.jpg" alt="neuma6">
-        </div>
-        <div class="img1" id="imag4" >
-          <img id="imgGrafilado1" src="./assets/grafilado.jpg" alt="neuma7">
-          <img id="imgGrafilado2" src="./assets/grafilado2.jpg" alt="neuma8">
-          <img id="imgGrafilado3" src="./assets/grafilado4.jpg" alt="neuma9">
-          <img id="imgGrafilado4" src="./assets/grafilado5.jpg" alt="neuma10">
-        </div>        
        
       </div>
     </div>
@@ -1490,6 +1512,25 @@
       <p class="parrafo-casos">
         Lleva un registro detallado de todas las actividades de mantenimiento. Un historial documentado facilita el seguimiento del rendimiento y ayuda en la planificación de futuras intervenciones
       </p>     
+    </div>
+
+    <div id="control-neumatico">
+      <h1 class="casos-h1" >Estándar 1: Presión Nominal</h1>
+      <p class="parrafo-casos">
+        La presión nominal para un cilindro neumático debe cumplir con las especificaciones del fabricante y no exceder los límites establecidos para garantizar un rendimiento óptimo y seguro.
+      </p>
+      <h1 class="casos-h1" >Estándar 2: Tolerancias de Presión</h1>
+      <p class="parrafo-casos">
+        Las tolerancias de presión deben cumplir con las normativas internacionales para garantizar la precisión y consistencia en la operación del cilindro, evitando daños y asegurando una vida útil prolongada.
+      </p>
+      <h1 class="casos-h1" >Estándar 3: Seguridad de Operación</h1>
+      <p class="parrafo-casos">
+        Se deben seguir prácticas seguras de operación para evitar presiones excesivas que puedan comprometer la integridad del cilindro, asegurando un entorno de trabajo seguro y protegiendo a los operadores.
+      </p>
+      <h1 class="casos-h1" >Estándar 4: Mantenimiento Preventivo</h1>
+      <p class="parrafo-casos">
+        Se recomienda realizar un mantenimiento preventivo periódico para verificar y ajustar la presión neumática, asegurando un funcionamiento eficiente del cilindro y evitando posibles fallas y desgastes prematuros.
+      </p>
     </div>
 
     <div class="contene-2" id="container99" style="display: none;left: 155px;">

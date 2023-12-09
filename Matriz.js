@@ -4,7 +4,7 @@ var arrayButtsKaizen = ['btn10','btn11','btn12','btn17']
 var arrayButtsPlanos = ['btn13','btn14','btn15']
 var arrayImgsRodilleria = document.querySelectorAll ('.durezas')
 var arrayButtsInicio = ['butt-1','butt-5','butt-7','butt-111']
-var arrayInstructivos = ['puesta-punto','rodillo-infeed']
+var arrayInstructivos = ['contImaginario','puesta-punto','rodillo-infeed','control-neumatico']
 var arrayButtsInstructivos = ['contBotCasos','contBotInfeed']
 var arrayImgsEntreno = ['imag1','imag2','imag3','imag4']
 var arrayImgsGrafilado = ['imgGrafilado1','imgGrafilado2','imgGrafilado3','imgGrafilado4',]
@@ -13,7 +13,7 @@ var arrayContador = []
 var destino = 257;
 var idsArray = []
 var idsArrayEliminados = []
-var idsMA = ['rodillo-infeed','contBotCasos','puesta-punto','casos-kaizen','mejoras-kai','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','planos-kaizen','materiales-kaizen','kaizenCont','conti-boton-planos', 'conti-boton-kaizen','troubleshooting','canvasContainer2', 'contChecks', 'canvasContainer3', 'contImagNeg',,'contImagGraf','canvasContainer4','canvasContainer5','canvasContainer6','canvasContainer7','canvasContainer8', 'canvasContainer9']
+var idsMA = ['control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','casos-kaizen','mejoras-kai','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','planos-kaizen','materiales-kaizen','kaizenCont','conti-boton-planos', 'conti-boton-kaizen','troubleshooting','canvasContainer2', 'contChecks', 'canvasContainer3', 'contImagNeg',,'contImagGraf','canvasContainer4','canvasContainer5','canvasContainer6','canvasContainer7','canvasContainer8', 'canvasContainer9']
 var idsMAhijos = ['contBotCasos','materiales-kaizen','troubleshooting','canvasContainer2','contChecks','canvasContainer3','contImagNeg','contImagGraf']
 var arrayElementMA = ['kaizenCont','contImagGraf','contImagNeg','canvasContainer3','contChecks','canvasContainer2','kaizenCont']
 var idsResultados = ['icon-ana','icon-carlos','icon-andres','icon-jorge','icon-jesus','icon-sandra','icon-mario']
@@ -33,7 +33,7 @@ var imgTorreI = document.getElementById('imgTorre')
 var contInicial = document.getElementById('container1')
 var botonMa = document.getElementById('bot-mantaut')
 var imagPasoApaso = document.querySelectorAll('.img1')
-var allContenedores = ['rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','contene-11','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','container99','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
+var allContenedores = ['control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','contene-11','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','container99','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado']
@@ -3489,9 +3489,14 @@ function toggleFullScreen(element) {
 function imagenesPasoApaso(idCont,idButt,idImg,id) {
   var botOrange = document.getElementById(id)
   var contImgsEntrenos = document.getElementById('contImgEntrenos')
+  var vidBasculante = document.getElementById('vid-basculante')
+  var contBailarina = document.getElementById('bailarina')
+  var container = document.getElementById("instrumentos")
+
   document.body.style.zoom = "67%";
     switch (id) {
       case 'link1':
+        container.style.display = 'none';
         botOrange.style.color = 'orange'
         // Cambiar otros enlaces a azul
         var botones = document.getElementsByClassName('colorClick')
@@ -3510,6 +3515,11 @@ function imagenesPasoApaso(idCont,idButt,idImg,id) {
             // Oculta los demás elementos
             element.style.display = 'none';
           }
+        }
+        var computedStyle = getComputedStyle(container);
+        var displayValue = computedStyle.getPropertyValue('display');
+        if (displayValue.toLowerCase() === 'none') {
+          container.style.display = 'flex';
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
         for (var i = 0; i < arrayButtsInstructivos.length; i++) {                                                                     /// MUESTRA BOTON PARAMETRO
@@ -3536,8 +3546,9 @@ function imagenesPasoApaso(idCont,idButt,idImg,id) {
             element.style.display = 'none';
           }
         } 
-      break; 
+      break;
       case 'link2':
+        container.style.display = 'flex';
         botOrange.style.color = 'orange'
         // Cambiar otros enlaces a azul
         var botones = document.getElementsByClassName('colorClick')
@@ -3584,6 +3595,7 @@ function imagenesPasoApaso(idCont,idButt,idImg,id) {
         } 
        break;
        case 'link3':
+        container.style.display = 'none';
         botOrange.style.color = 'orange'
         // Cambiar otros enlaces a azul
         var botones = document.getElementsByClassName('colorClick')
@@ -3598,11 +3610,15 @@ function imagenesPasoApaso(idCont,idButt,idImg,id) {
           if (currentId === idCont) {
             // Muestra el elemento cuyo nombre coincide con idCont
             element.style.display = 'flex';
+            vidBasculante.style.display = 'block'
+            vidBasculante.currentTime = 0
+            vidBasculante.play()
           } else {
             // Oculta los demás elementos
             element.style.display = 'none';
           }
         }
+        contBailarina.style.display = 'flex'
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
         for (var i = 0; i < arrayButtsInstructivos.length; i++) {                                                                     /// MUESTRA BOTON PARAMETRO
           var currentId = arrayButtsInstructivos[i];
@@ -3630,7 +3646,8 @@ function imagenesPasoApaso(idCont,idButt,idImg,id) {
         } 
 
        break; 
-       case 'link4':
+       case 'link4':  
+       container.style.display = 'none';     
         botOrange.style.color = 'orange'
         // Cambiar otros enlaces a azul
         var botones = document.getElementsByClassName('colorClick')
@@ -3679,6 +3696,7 @@ function imagenesPasoApaso(idCont,idButt,idImg,id) {
         iniciarMovimiento('rodillo-infeed')                               
        break;  
        case 'link5':
+        container.style.display = 'none';
         botOrange.style.color = 'orange'
         // Cambiar otros enlaces a azul
         var botones = document.getElementsByClassName('colorClick')
@@ -3726,8 +3744,7 @@ function imagenesPasoApaso(idCont,idButt,idImg,id) {
         iniciarMovimiento('puesta-punto')
       break;  
     default: 
-  }           
-          
+  }        
 }
 function lubricacion(buttId,btnIniId){
   var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80',]
