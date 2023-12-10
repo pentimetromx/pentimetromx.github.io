@@ -9,7 +9,7 @@
 
   <body  onload="aumentoBotonesBody()">
 
-    <header id="buscador" style="position: absolute;left: 3px;top: 2px;">
+    <header class="buscador" id="buscador" style="position: absolute;left: 3px;top: 2px;">
       <form id="search-form">
           <input type="text" id="search-input" placeholder="Buscar...">       
           <button type="submit" id="search-button">
@@ -1373,16 +1373,21 @@
           <img class="img-1" src="./assets/neumatica2.jfif" alt="neuma2">
         </div>
 
-        <div class="img1" id="imag2" >
-          <img class="img-1" src="./assets/freno.jpg" alt="neuma3">
-          <h4>LIMPIEZA ZAPATAS.<br>
-              JUEGO EN SEGUROS DE MANO. <br>    
-              REVISION CAUCHOS. <br>
-              JUEGO EN EL EJE.</h4>
-          <img class="img-1" src="./assets/freno2.jpg" alt="neuma4">
+        <div id="padre-neumat" style="display: flex;flex-direction: row;gap: 3px; display: none;">
+          <div class="img1" id="imag2" >
+            <img class="img-1" src="./assets/freno.jpg" alt="neuma3">
+            <h4>LIMPIEZA ZAPATAS.<br>
+                JUEGO EN SEGUROS DE MANO. <br>    
+                REVISION CAUCHOS. <br>
+                JUEGO EN EL EJE.</h4>
+            <img class="img-1" src="./assets/freno2.jpg" alt="neuma4">
+          </div>
+
+          <div id="pneumatico" style="border: 2px solid orange;">
+            <video id="vid-pneumatic" src="./assets/pneumatic video.mp4" loop muted autoplay></video> 
+          </div> 
+
         </div>
-
-
 
         <div id="contImaginario" style="position: absolute;display: flex;flex-direction: column; height: 760px;width: 892px;display: none; border-radius: 21px; background-color:black">
           

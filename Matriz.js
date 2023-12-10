@@ -3487,17 +3487,12 @@ function toggleFullScreen(element) {
   }
 }
 function imagenesPasoApaso(idCont,idButt,idImg,id) {
-  var botOrange = document.getElementById(id);
-  var contImgsEntrenos = document.getElementById('contImgEntrenos');
-  var vidBasculante = document.getElementById('vid-basculante');
-  var contBailarina = document.getElementById('bailarina');
-
-  document.body.style.zoom = "67%";
-
-  /* var children = contImgsEntrenos.children;
-  for (var i = 0; i < children.length; i++) {
-    children[i].style.display = 'none';
-  }*/
+  var botOrange = document.getElementById(id)
+  var vidBasculante = document.getElementById('vid-basculante')
+  var contBailarina = document.getElementById('bailarina')
+  var arrayPneumatic = ['contImgEntrenos','padre-neumat','pneumatico','imag2']
+  var arrayPneumaticII = ['padre-neumat','pneumatico','imag2']
+  document.body.style.zoom = "67%"
     switch (id) {
       case 'link1':
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
@@ -3534,6 +3529,13 @@ function imagenesPasoApaso(idCont,idButt,idImg,id) {
           }
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+        for(var i = 0; i < arrayPneumatic.length;i ++){                                                                             /// OCULTA IMAGENES HARDCODE
+          var neumatId = document.getElementById(arrayPneumatic[i]);
+          if(neumatId){
+            neumatId.style.display = 'none'
+          }
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         contImgsEntrenos.style.display = 'flex'                                                                                    /// MUESTRA IMAGENES PARAMETRO
         // Recorrer el array y hacer visible el elemento cuyo ID coincida con idImg
         for (var i = 0; i < arrayImgsEntreno.length; i++) {
@@ -3546,9 +3548,16 @@ function imagenesPasoApaso(idCont,idButt,idImg,id) {
             imgElement.style.display = 'none';
           }
         }
+
+        for(var i = 0; i < arrayPneumatic.length;i ++){                                                                             /// MUESTRA IMAGENES HARDCODE
+          var neumatId = document.getElementById(arrayPneumatic[i]);
+          if(neumatId){
+            neumatId.style.display = 'none'
+          }
+        }
       break;
       case 'link2':
-        botOrange.style.color = 'orange'
+       /* botOrange.style.color = 'orange'
         // Cambiar otros enlaces a azul
         var botones = document.getElementsByClassName('colorClick')
         for (var i = 0; i < botones.length; i++) {
@@ -3578,18 +3587,12 @@ function imagenesPasoApaso(idCont,idButt,idImg,id) {
             // Oculta los demás elementos
             element.style.display = 'none';
           }
-        }
+        }*/
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
-        contImgsEntrenos.style.display = 'flex'                                                                                    /// MUESTRA IMAGENES PARAMETRO
-        // Recorrer el array y hacer visible el elemento cuyo ID coincida con idImg
-        for (var i = 0; i < arrayImgsEntreno.length; i++) {
-          var currentId = arrayImgsEntreno[i];
-          var imgElement = document.getElementById(currentId);
-
-          if (currentId === idImg && imgElement) {
-            imgElement.style.display = 'flex';
-          }else{
-            imgElement.style.display = 'none';
+        for(var i = 0; i < arrayPneumatic.length;i ++){                                                                             /// MUESTRA IMAGENES HARDCODE
+          var neumatId = document.getElementById(arrayPneumatic[i]);
+          if(neumatId){
+            neumatId.style.display = 'flex'
           }
         }
        break;
