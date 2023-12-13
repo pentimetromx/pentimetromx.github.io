@@ -6,9 +6,7 @@
     <link rel="stylesheet" href="./Matriz.css"> 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
-
   <body  onload="aumentoBotonesBody()">
-
     <header class="buscador" id="buscador" style="position: absolute;left: 3px;top: 2px;">
       <form id="search-form">
           <input type="text" id="search-input" placeholder="Buscar...">       
@@ -17,18 +15,15 @@
           </button>
       </form>
     </header>
-
-    <div id="franja-gris">
+    <div class="franja-gris-ini" id="franja-gris">
       <section id="seccion-gris" style="display: flex;width: 100%;height: 77px;background-color: #333333;"></section>
       <img src="./assets/cadena titulos.png" style="position: absolute;left: 384px;top: 3px; " alt="logo">
 
     </div>
-
-    <div id="franja-Blanca">
+    <div class="franja-blamca-ini" id="franja-Blanca">
       <section id="seccion-blamca" style="display: flex;width: 100%;height: 79px;background-color: white;"></section>
       <img src="./assets/cadena logo.png" style="position: relative;left:-318px;top: -1px; " alt="logo">
     </div>
-
     <div id="cont-titulo">
       <h4 id="subtitulo" style="font-family: 'Candara', sans-serif; font-size: 51px; font-weight: bold; color: white; margin-bottom: 10px;">Aplicamos la transformación tecnológica</h4>
       <p id="descripcion" style="font-family: 'Candara', sans-serif; font-size: 20px; color: white; text-align: center; margin-top: 10px;">
@@ -36,7 +31,7 @@
         <button style="display: flex;position: relative;left: 300px;top: 37px; height: 19px;width: 147px;background: linear-gradient(45deg,#ff1837 15%, #333333 85%);opacity: 50%; border-radius: 9px; box-shadow: none;"></button>
       </p>
 
-      <div id="agrupaOblicuos-XI">
+      <div class="oblicuos-XI" id="agrupaOblicuos-XI">
         <div id="contFrente-V" class="contOblicuosTorre">
           <button  class="Bot-inicio3" id="butt-111">Area Institucional</button>        
           <button class="Bot-inicio3-fondo" id="butt-112"></button>  
@@ -63,7 +58,6 @@
     <video id="videoBackgroundII" autoplay loop muted>
       <source src="./assets/matrix.mp4" type="video/mp4">  
     </video>
-
     <div class="links-inicialesI" id="links-inicialesI" style="position: absolute;left: 187px;top: 0.1px; font-family: 'GothamRounded', sans-serif;display: none;">
       
       <button class="boton-a" id="bot-ini-link" style="text-align: center;margin-left: 507px;display: none;" onclick="VolveraInicio()">PANEL INICIO</button>
@@ -83,7 +77,6 @@
         <li><a href="#" onclick="cerrarSecciones()">Salir</a></li><br>
       </ul>    
     </div> 
-
     <div class="links-iniciales" id="links-iniciales" style="position: absolute;left: 270px;top: 0.1px;font-family: 'GothamRounded', sans-serif;display: none;">
       <div class="iridescent-element" id="line"></div>
       <div id="titleContainer">
@@ -101,7 +94,6 @@
 
       </ul>    
     </div>    
-
     <div class="contene-1" id="container1" style="display: none;">
       <button class="boton-a" id="bot-atras31" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 5px;display: none;" onclick="irContenedorAnterior('contPortPlaca')"></button>
       <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL INICIO</button>
@@ -109,7 +101,6 @@
       <button class="boton-a" id="bot-atras32" style="text-align: center;width: 47px;position: relative;left: 685px;top: 5px;;display: none" onclick="irContenedorSiguiente('rotatek-1')"></button>
     
     </div><br>
-
     <div class="segundo-bloque " id="pantalla-inicial"> 
       
       <div class="desbobinador mostrar-cont" id="desbobinadorId">
@@ -232,16 +223,17 @@
       </div>  
     </div>
 
+    <div class="contene-2" id="container01">
+      <button class="boton-a" id="bot-atras" style="text-align: center;width: 47px;position: relative;top: 5px;" onclick="irContenedorAnterior('contPortPlaca')"></button>
+      <button class="boton-a" id="bot-inic" style="text-align: center;;position: relative" onclick="VolveraInicio()">PANEL INICIO</button>
+      <button class="boton-a" id="iniciar" style="position: relative;">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
+      <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position:relative;top: 5px;" onclick="irContenedorSiguiente('contPortPlaca')"></button>
+    </div><br>
+
+
+
     <div id="pantalla-tintero">       
       
-      <div class="contene-2" id="container01" style="top: -77px;left: 197px;">
-        <button class="boton-a" id="bot-atras" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 5px;" onclick="irContenedorAnterior('contPortPlaca')"></button>
-        <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL INICIO</button>
-        <button class="boton-a" id="iniciar" style="margin-left: 477px;">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
-        <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position: absolute;left: 687px;top: 5px;" onclick="irContenedorSiguiente('contPortPlaca')"></button>
-      
-      </div><br>
-
       <div id="cont-links">
         <a href="#" class="custom-link" id="linkDistribuidor" onclick="showRepuesto ('contImgDistribuidor')">Rodillo distribuidor</a>
         <a href="#" class="custom-link" id="linkForma" onclick="showRepuesto('contImgEntintador')">Rodillo forma</a>
@@ -252,7 +244,6 @@
       </div>
       <img src="./assets/Arriba abajo.jpg" id="imgTorre" alt="imagen-torre"> 
       <video class="video-training" id="vidTintero" src="./assets/Arriba abajo.mp4"></video>
-
       <div id="imgsRepuestos">
         <!-- <img class="image-trainings" id="eje" onclick="ampliaIndicaciones('eje')" src="./assets/eje.jpg" alt="eje"> -->
         <img class="image-trainings" id="eje" onclick="ampliaIndicaciones('eje')" src="./assets/galgas.jfif" alt="eje">
@@ -260,7 +251,6 @@
         <img class="image-trainings" id="reductor" onclick="ampliaIndicaciones(2)" src="./assets/reductor.jpg" alt="reductor">
         <img class="image-trainings" id="reductor-II" onclick="ampliaIndicaciones(3)" src="./assets/reductorII.png" alt="reductorII">
       </div>
-      
       <div id="agrupaOblicuos-II">
         <button class="Bot-inicio2" id="butt-01" onclick="muestraTorresI('pantalla-frente')">Frente</button>
         <button class="Bot-inicio2-fondo" id="butt-02"></button> 
@@ -271,7 +261,6 @@
         <button class="Bot-inicio2" id="butt-07" onclick="muestraTorresI('pantalla-atras')">Atras</button>
         <button class="Bot-inicio2-fondo" id="butt-08"></button> 
       </div>
-
       <div id="indicaciones-eje">
         <button class="boton-a" id="bot-indicaciones" style="text-align: center;margin-left: 97px;margin-top: 77px; z-index: 1;" onclick="ocultarIndicaciones('eje')">Volver</button>
         <header style="position: relative;margin-top: 57px;">
@@ -292,7 +281,6 @@
         </section>
 
       </div>
-
       <div id="indicaciones-conico">
         <button class="boton-a" id="bot-indicacionesII" style="display: none; text-align: center;margin-left: 97px;margin-top: 77px; z-index: 1;" onclick="ocultarIndicaciones('conico')">Volver</button>
         <header style="position: relative;margin-top: 57px;">
@@ -313,9 +301,7 @@
         </section>
 
       </div>
-
     </div>
-
     <div id="pantalla-frente" style="display: none;">  
 
       <div class="contene-2" id="container2" style="top: -77px;left: 197px;">
@@ -346,7 +332,6 @@
         <button class="Bot-inicio2-fondo" id="butt-008"></button>  
       </div>
     </div>
-
     <div id="pantalla-mandos" style="display: none;">
 
       <div class="contene-2" id="container3" style="top: -77px;left: 197px;">
@@ -377,7 +362,6 @@
       </div>
       
     </div>
-
     <div id="pantalla-servicio" style="display: none;">
 
       <div class="contene-2" id="container4" style="top: -77px;left: 197px;">
@@ -407,7 +391,6 @@
         </div> 
       </div>
     </div>
-
     <div id="pantalla-atras" style="display: none;">
 
       <div class="contene-2" id="container5" style="top: -77px;left: 197px;">
@@ -438,7 +421,6 @@
         <button class="Bot-inicio2-fondo" id="butt-08"></button> 
       </div>
     </div>
-
     <div id="videosTraining" style="display: none;">  
 
       <div class="videos-training" id="videos-training">
@@ -476,7 +458,6 @@
 
       </div> 
     </div> 
-
     <div id="conteneMantaut" class="mantAuto">
 
       <div class="contene-2" id="container8" style="left: 155px;display: none;">
@@ -501,19 +482,19 @@
 
       <div id="troubleshooting" style="display: none;">
         <label class="labl-class" id="lbl1" for="archivo">Largo de impresion:</label>
-        <button class="inpt-class botnClass" id="archivo" onclick="listaEntrenamientosII('btt1','archivo')">Seleccionar archivo</button>
+        <button class="inpt-class botnClass" id="archivo" onclick="listaEntrenamientosII('archivo')">Seleccionar archivo</button>
         <label class="labl-class" id="lbl2" for="archivo">Aditivos solución de fuente:</label>
-        <button class="inpt-class botnClass" id="btt2">Seleccionar archivo</button>
+        <button class="inpt-class botnClass" id="btt2" onclick="listaEntrenamientosII('btt2')">Seleccionar archivo</button>
         <label class="labl-class" id="lbl3" for="archivo">Reproceso adelantado:</label>
-        <button class="inpt-class botnClass" id="btt3">Seleccionar archivo</button>
-        <label class="labl-class" id="lbl4" for="archivo">Reproceso atrazado:</label>
-        <button class="inpt-class botnClass" id="btt4">Seleccionar archivo</button>
+        <button class="inpt-class botnClass" id="btt3" onclick="listaEntrenamientosII('btt3')">Seleccionar archivo</button>
+        <label class="labl-class" id="lbl4" for="archivo" >Reproceso atrazado:</label>
+        <button class="inpt-class botnClass" id="btt4" onclick="listaEntrenamientosII('btt4')">Seleccionar archivo</button>
         <label class="labl-class" id="lbl5" for="archivo">Largos fuera de rango:</label>
-        <button class="inpt-class botnClass" id="btt5">Seleccionar archivo</button>
+        <button class="inpt-class botnClass" id="btt5" onclick="listaEntrenamientosII('btt5')">Seleccionar archivo</button>
         <label class="labl-class" id="lbl6" for="archivo">Desprendimiento de mantilla:</label>
-        <button class="inpt-class botnClass" id="btt6">Seleccionar archivo</button>
+        <button class="inpt-class botnClass" id="btt6" onclick="listaEntrenamientosII('btt6')">Seleccionar archivo</button>
         <label class="labl-class" id="lbl7" for="archivo">Problemas de teñido:</label>
-        <button class="inpt-class botnClass" id="btt7">Seleccionar archivo</button>       
+        <button class="inpt-class botnClass" id="btt7" onclick="listaEntrenamientosII('btt7')">Seleccionar archivo</button>       
       </div>
 
       <div id="canvasContainer2" style="display: none;">
@@ -543,38 +524,32 @@
         <img src="./assets/Excel.png" alt="Gráfico de Excel 6">
       </div>      
     </div>
-    
     <div id="kaizenCont">
       <video id="vidElem" class="video-training" src="./assets/kaizen vid.mp4" autoplay loop muted></video>
     </div>  
-    
     <div id="conti-boton-kaizen" style="display: flex;flex-direction: column;margin-left: 217px;margin-top: 46px;">
       <button class="butt-mautonomo-kaizen image-trainings" id="btn17" onclick="rodillosKaizen('btn17','')">PROPUESTOS</button>
       <button class="butt-mautonomo-kaizen image-trainings" id="btn12" onclick="rodillosKaizen('btn12','vidElem')">IMPLEMENTADOS</button>
       <button class="butt-mautonomo-kaizen image-trainings" id="btn10" onclick="rodillosKaizen('btn10','')">BENCH MARK</button>
       <button class="butt-mautonomo-kaizen image-trainings" id="btn11" onclick="rodillosKaizen('btn11','')">PROYECTOS</button>
     </div>
-     
     <div id="conti-boton-planos" style="position: absolute; display: flex;flex-direction: column;left:1150px;top: 341px;">
       <button class="butt-mautonomo-planos image-trainings" id="btn13" onclick="rodillosKaizen('btn13','')">PLANOS</button>
       <button class="butt-mautonomo-planos image-trainings" id="btn14" onclick="rodillosKaizen('btn14','')">MATERIALES</button>
       <button class="butt-mautonomo-planos image-trainings" id="btn15" onclick="rodillosKaizen('btn15','')">LAYOUT</button>
     </div> 
-
     <div id="planos-kaizen">
       <img class="imgs-Planos aumentar" src="./assets/planos kaizen.jpg" alt="planos">
       <img class="imgs-Planos aumentar" src="./assets/planos kaizen 1.jpg" alt="planos">
       <img class="imgs-Planos aumentar" src="./assets/planos kaizen 2.jpg" alt="planos">
       <img class="imgs-Planos aumentar" src="./assets/planos kaizen 3.jpg" alt="planos">
     </div>
-
     <div id="materiales-kaizen">
       <img class="imgs-kaizen aumentar" src="./assets/materiales kaizen.jpg" alt="materiales">
       <img class="imgs-kaizen aumentar" src="./assets/materiales kaizen 1.jpg" alt="materiales">
       <img class="imgs-kaizen aumentar" src="./assets/materiales kaizen 2.jpg" alt="materiales">
       <img class="imgs-kaizen aumentar" src="./assets/materiales kaizen 3.jpg" alt="materiales">
     </div>
-
     <div id="toyota-kaizen" style="display: none;">
       <img id="toyota1" class="imgs-toyota aumentar" src="./assets/toyota 1.jpg" alt="toyota">
       <img id="toyota2" class="imgs-toyota aumentar" src="./assets/toyota 2.jpg" alt="toyota">
@@ -585,16 +560,12 @@
       <img id="toyota7" class="imgs-toyota aumentar" src="./assets/toyota 7.jpg" alt="toyota">
       <img id="toyota8" class="imgs-toyota aumentar" src="./assets/toyota 8.jpg" alt="toyota">
     </div>
-
     <h1 id="casos-kaizen" style="display: none;position: absolute;left: 894px;top: 70px;font-family: GothamRounded , sans-serif;color:rgba(255, 24, 55);">Casos de estudio</h1>
-   
    <div id="mejoras-kai" style="position: absolute;left: 957px;top: 117px;display: flex;flex-direction: column;gap: 6px;display: none;">
       <img id="caso1" class="caso-estudio" src="./assets/caso 1.png" alt="casos">
       <img id="caso2" class="caso-estudio" src="./assets/caso.jpg" alt="casos">
       <img id="caso3" class="caso-estudio" src="./assets/caso 2.png" alt="casos">
    </div>
-
-
     <div id="toyota-kaizen-antes" style="display: none;">
       <img id="antes1" class="imgs-Antes" src="./assets/antes 1.jpg" alt="toyota">
       <img id="antes2" class="imgs-Antes" src="./assets/antes 2.jpg" alt="antes">
@@ -603,7 +574,6 @@
       <img id="antes4" class="imgs-Antes" src="./assets/antes 4.jpg" alt="antes">
       <img id="antes5" class="imgs-Antes" src="./assets/antes 5.jpg" alt="antes">
     </div>
-
     <div id="kaizen-propuestos" style="position: absolute; display: flex; flex-direction: column; left: 380px; top: 80px; display: none;gap: 5px;">
 
       <div style="position: relative; display: flex; flex-direction: row;left:4px; top:4px;gap: 3px;">
@@ -638,7 +608,6 @@
     
       
     </div>
-
     <div id="lubricacion" style="display: none;">
 
       <div class="conti-boton" id="conti-boton-desb" style="left: 127px;top: 130px;">
@@ -693,7 +662,6 @@
       <div class="linea-vertical-II" id="vertcal-line"></div>
 
     </div>
-
     <div id="lubri-II" style="position: relative;display: none;display: flex;left:954px;top:-496px;">
 
       <div id="grasa" style="position: absolute;display: none;top: -69px; background: linear-gradient(45deg, black 15%, blue 85%);font-size: 33px; width: 287px;border-radius: 7px;justify-content: center;align-items: center; ">
@@ -712,7 +680,6 @@
         <label class="labl-class" for="lubrica">Viscosidad 80 - 120</label>
       </div>
     </div>
-
     <div id="lubri-III" style="position: relative;display: flex;left:577px;top: 50px;">
 
       <div id="vertcal-line-II"></div>
@@ -747,7 +714,6 @@
 
       <div id="vertcal-line-I"></div>
     </div>
-
     <div id="freno">
       <div class="conti-boton" id="conti-boton-freno" style="left: 127px;top: 130px;display: none;">
         <button class="butt-mautonomo-freno image-trainings" id="btn60" onclick="LubricaDesbobinador('btn60')">DESEMPEÑO</button>
@@ -785,7 +751,6 @@
         </div>
       </div>
     </div>
-
     <div id="uniTeñido">
       <div class="conti-boton" id="conti-boton-teñido" style="left: 127px;top: 130px;display: none;">
         <button class="butt-mautonomo-teñido image-trainings" id="btn600" onclick="UnidadTeñido('btn600')">ACTUADORES</button>
@@ -829,7 +794,6 @@
       </div>
 
     </div>
-
     <div id="rodilleria">
       <div class="conti-boton" id="conti-boton-rodilleria" style="left: 127px;top: 130px;display: none;">
         <button class="butt-mautonomo-rodilleria image-trainings" id="btn06" onclick="rodillosTeñido('btn06')">TIPOLOGIA</button>
@@ -877,15 +841,14 @@
       </div>
 
     </div>
-    
     <div id="contPortPlaca" style="display: none;">
       
-      <div class="contene-2" id="container9" style="position: absolute; top: -77px;margin-left:170px;">
+      <!-- <div class="contene-2" id="container9" style="position: absolute; top: -77px;margin-left:170px;">
         <button class="boton-a" id="bot-atras" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 6px;" onclick="irContenedorAnterior('contPortPlaca')"></button>
         <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL INICIO</button>
         <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
         <button class="boton-a" id="bot-atras15" style="text-align: center;width: 47px;position: absolute;left: 685px;top: 5px;" onclick="irContenedorSiguiente('')"></button>
-      </div><br>
+      </div><br> -->
 
       <video class="video-training" id="video-placa" style="position: absolute;left: 340px;top:1px;" src="./assets/video-plancha-v2.mp4" loop autoplay></video>
 
@@ -906,7 +869,6 @@
         <img class="image-trainings aumentar" src="./assets/plancha.jfif" alt="placa" style="width: 240px;height: 150px;border-radius: 11px;"> <br>
       </div>
     </div>
-
     <div id="contPerfilesPlancha" style="display: none;">
       
       <div class="contene-2" id="container10" style="display: none;top: 7px;left: 155px;">
@@ -938,15 +900,14 @@
       </div>
 
     </div>
-
     <div id="contPortManta" style="display: none;">
 
-      <div class="contene-2" id="container11" style="position: absolute; top: -77px;margin-left:197px;">
+      <!-- <div class="contene-2" id="container11" style="position: absolute; top: -77px;margin-left:197px;">
         <button class="boton-a" id="bot-atras-m" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 6px;" onclick="irContenedorAnterior('contPortManta')"></button>
         <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL INICIO</button>
         <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
         <button class="boton-a" id="bot-atras30" style="text-align: center;width: 47px;position: absolute;left: 685px;top: 5px;" onclick="irContenedorSiguiente('')"></button>
-      </div><br>
+      </div><br> -->
 
       <video class="video-training" id="videoManta" style="position: absolute;left: 340px;top:1px;"  src="./assets/video-portaManta-v2.mp4" loop autoplay></video>
 
@@ -967,7 +928,6 @@
         <img class="image-trainings aumentar" src="./assets/mantilla2.png" alt="manta1" style="width: 240px;height: 160px;border-radius: 11px;">
       </div>     
     </div>
-
     <div id="contPerfilesManta">
       <div id="imagenes-manta">
 
@@ -992,14 +952,13 @@
         </div>
       </div>       
     </div>
-
     <div id="contImpresor" style="display: none;">
-      <div class="contene-2" id="container12" style="position: absolute; top: -77px;margin-left:197px;">
+      <!-- <div class="contene-2" id="container12" style="position: absolute; top: -77px;margin-left:197px;">
         <button class="boton-a" id="bot-atras" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 6px;" onclick="irContenedorAnterior('')"></button>
         <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL INICIO</button>
         <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
         <button class="boton-a" id="bot-atras20" style="text-align: center;width: 47px;position: absolute;left: 685px;top: 5px;" onclick="irContenedorSiguiente('')"></button>
-      </div><br>
+      </div><br> -->
 
       <video class="video-training" id="video-impresor" style="position: absolute;left: 340px;top:-1px;" src="./assets/video-impresor.mp4" loop muted autoplay></video>
 
@@ -1044,15 +1003,15 @@
         </div>
       </div>       
     </div>
-    
-    <div id="contImgDistribuidor" style="display: none;">
-      <div class="contene-2" id="container02" style="top: -86px;left: -33px;">
-        <button class="boton-a" id="bot-atras" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 5px;" onclick="irContenedorAnterior('contPortPlaca')"></button>
-        <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL INICIO</button>
-        <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
-        <button class="boton-a" id="bot-atras20" style="text-align: center;width: 47px;position: absolute;left: 685px;top: 5px;" onclick="irContenedorSiguiente('')"></button>
-      </div><br>
 
+    <div class="contene-2" id="container02" >
+      <button class="boton-a" id="bot-atras" style="text-align: center;width: 47px;position: relative;top: 5px;" onclick="irContenedorAnterior('contPortPlaca')"></button>
+      <button class="boton-a" id="bot-inic" style="text-align: center;;position: relative" onclick="VolveraInicio()">PANEL INICIO</button>
+      <button class="boton-a" id="iniciar" style="text-align: center;;position: relative" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
+      <button class="boton-a" id="bot-atras20" style="text-align: center;width: 47px;position: relative;top: 5px;" onclick="irContenedorSiguiente('')"></button>
+    </div><br>
+
+    <div id="contImgDistribuidor">
       <div class="imgRow" id="imgs-I">
         <img src="./assets/Distri-0.jpg    " class="imag-distri image-trainings aumentar" alt="imgDistrib-4">
         <img src="./assets/Distri-14.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-17">
@@ -1077,18 +1036,14 @@
         <img src="./assets/DIstri-12.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-15">
         <img src="./assets/Distri-13.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-16">
       </div>
-      <div class="imgRow" id="imgs-V">
-        <img src="./assets/Distri-1.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-1">
-      </div>
     </div>
-
     <div id="contImgEntintador" style="display: none;">
-      <div class="contene-2" id="container03" style="top: -86px;left: -33px;">
+      <!-- <div class="contene-2" id="container03" style="top: -86px;left: -33px;">
         <button class="boton-a" id="bot-atras" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 5px;" onclick="irContenedorAnterior('contPortPlaca')"></button>
         <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL INICIO</button>
         <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
         <button class="boton-a" id="bot-atras21" style="text-align: center;width: 47px;position: absolute;left: 685px;top: 5px;" onclick="irContenedorSiguiente('')"></button>
-      </div><br>
+      </div><br> -->
 
       <div class="imgRow">
         <img src="./assets/forma-1.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-18">
@@ -1114,7 +1069,6 @@
         <img class="imag-distri image-trainings">
       </div>
     </div> 
-
     <div id="cont-variable" class="secciones" style="display: none;">  
 
       <div class="contene-2" id="container6" style="margin-left: 127px;">
@@ -1129,7 +1083,6 @@
       <img class="maq-seccion aumentar" src="./assets/info print.jpg" alt="IBM4000">
 
     </div>
-
     <div id="cont-plana" class="secciones" style="display: none;">
 
       <div class="contene-3" id="container3" style="margin-left: 127px;margin-top: -18px;">
@@ -1143,7 +1096,6 @@
       <img class="maq-seccion aumentar" src="./assets/GTO 52.jpg" alt="GTO52">
       <img class="maq-seccion aumentar" src="./assets/pinza heidelberg.jpg" alt="GTO52">
     </div>
-
     <div id="cont-secador" style="position: absolute;left: 170px;top: 6px;display: none;">
       <video class="video-training" id="curado-uv" src="./assets/secador.mp4" style="position: absolute;left: 117px;top: 80px;width: 620px;height: 465px;" autoplay loop></video>
       <div class="contene-5" id="contene-9" style="position: absolute;left: -16px;top: 1px;">
@@ -1160,7 +1112,6 @@
 
 
     </div>
-
     <div id="bateria-entintado-II" style="position: absolute;left: 170px;top: 6px;display: none;">
 
       <div id="contenedor-7" class="contene-7" style="position: absolute;left:-177px;"> 
@@ -1176,15 +1127,14 @@
         <video class="video-training" id="videoElement1-II" src="./assets/Bateria de entintado.mp4" autoplay loop></video>
       </div>
 
-      <div class="contene-4" id="container7" style="left:-17px;top: 0.1px;">
+      <!-- <div class="contene-4" id="container7" style="left:-17px;top: 0.1px;">
         <button class="boton-a" id="bot-atras5" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 5px;" onclick="irContenedorAnterior('bateria-entintado-II')"></button>
         <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL INICIO</button>
         <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
         <button class="boton-a" id="bot-atras25" style="text-align: center;width: 47px;position: absolute;left: 685px;top: 5px;" onclick="irContenedorSiguiente('')"></button>
-      </div><br>
+      </div><br> -->
 
     </div>
-
     <div id="bancada-torre-II" style="position: absolute;left: 170px;top: 6px;display: none;">
 
       <div id="contenedor-8" class="contene-7" style="position: absolute;left:-177px;"> 
@@ -1196,15 +1146,14 @@
 
       <video class="video-training" id="plate-smed" src="./assets/plate smed.mp4" style="position: absolute;left: 137px;top: 80px;width: 638px;height: 480px;" autoplay loop></video>
 
-      <div class="contene-5" id="contene-8" style="position: absolute;left: -16px;top: 1px;">
+      <!-- <div class="contene-5" id="contene-8" style="position: absolute;left: -16px;top: 1px;">
         <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL INICIO</button>
         <button class="boton-a" id="bot-atras6" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 5px;" onclick="irContenedorAnterior('bateria-entintado-II')"></button>
         <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
         <button class="boton-a" id="bot-atras26" style="text-align: center;width: 47px;position: absolute;left: 685px;top: 5px;" onclick="irContenedorSiguiente('')"></button>
-      </div><br>
+      </div><br> -->
 
     </div>
-
     <div id="sitema-humedad" style="position: absolute;left: 170px;top: 6px;display: none;"> 
 
       <div id="contenedor-9" class="contene-7" style="position: absolute;left:-177px;display: none;"> 
@@ -1216,12 +1165,12 @@
 
       <video class="video-training" id="bancada" src="./assets/bancada torre.mp4" style="position: absolute;left: 137px;top: 80px;width: 638px;height: 480px;" autoplay loop></video>
 
-      <div class="contene-5" id="contene-10" style="position: absolute;left: -16px;top: 1px;display: none;">
+      <!-- <div class="contene-5" id="contene-10" style="position: absolute;left: -16px;top: 1px;display: none;">
         <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL INICIO</button>
         <button class="boton-a" id="bot-atras6" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 5px;" onclick="irContenedorAnterior('bateria-entintado-II')"></button>
         <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
         <button class="boton-a" id="bot-atras27" style="text-align: center;width: 47px;position: absolute;left: 685px;top: 5px;" onclick="irContenedorSiguiente('')"></button>
-      </div><br>
+      </div><br> -->
 
       <div id="imgsIsopropil">
         <img class="image-isopropil" src="./assets/isopropil alcoholimetro.png" alt="iso">
@@ -1229,7 +1178,6 @@
         <img class="image-isopropil" src="./assets/isopropil.png" alt="iso">
       </div>
     </div>
-
     <div id="pre-prensa" style="position: absolute;left: 170px;top: 6px;">
       <video id="vidCicodelia" class="vidTeoria video-training" style="display: none;" src="./assets/cicodelia.mp4" loop autoplay ></video>      
       <div class="contene-5" id="contene-11" style="position: absolute;left: -16px;top: 1px;display: flex;display: none;">
@@ -1287,8 +1235,7 @@
           <button class="butt-mautonomo image-trainings" id="lup" onclick="mantAutonomo('lup')">CALIBRES</button>
         </div> 
       </div>
-    </div>   
-
+    </div>  
     <div id="densitometria" style="position: absolute;left: 170px;top: 6px;display: none;">
       <video id="vidCicodeliaII" class="vidTeoria" style="display: none;" src="./assets/cicodelia.mp4" loop ></video>        
 
@@ -1351,26 +1298,25 @@
         <button class="butt-mautonomo image-trainings" id="lup" onclick="mantAutonomo('lup')">CALIBRES</button>
       </div> 
     </div>
-
     <div id="largoImpresion">
 
       <div id="linksMA"  style="margin-top: 7px;display: none;" >
-        <h2 style="margin-left: 20px;width: 517px;">Largo de impresión ajustes preliminares</h2>  
+        <h2 style="margin-left: 20px;width: 517px;color: orange;">Largo de impresión ajustes preliminares</h2>  
         <ol class="linksTraining" id="linkLis">
-          <li><a href="#" id="link1" class="colorClick"data-imagen="imag1" onclick="imagenesPasoApaso('control-neumatico','','imag1','link1')">Asegurar PSI neumática</a></li><br>
-          <li><a href="#" id="link2" class="colorClick"data-imagen="imag22" onclick="imagenesPasoApaso('','','imag2','link2')">Optimización al freno de bobina</a></li><br>
-          <li><a href="#" id="link3" class="colorClick"data-imagen="imag33" onclick="imagenesPasoApaso('contImaginario','contBotInfeed','imag3','link3')">Ajuste parámetros en basculante</a></li><br>  
-          <li><a href="#" id="link4" class="colorClick"data-imagen="imag44" onclick="imagenesPasoApaso('rodillo-infeed','contBotInfeed','imag4','link4')">Calibración / Limpieza / Rugosidad en INFEED</a></li><br>
-          <li><a href="#" id="link5" class="colorClick"data-imagen="imag55" onclick="imagenesPasoApaso('puesta-punto','contBotCasos','imag5','link5')">Paso a paso puesta a punto</a></li><br>
+          <li><a href="#" id="link1" class="colorClick"data-imagen="imag11" onclick="imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')">Asegurar PSI neumática</a></li><br>
+          <li><a href="#" id="link2" class="colorClick"data-imagen="imag22" onclick="imagenesPasoApaso('contImgEntrenos','padre-neumat','pneumatico','imag2','link2','vid-pneumatic')">Optimización al freno de bobina</a></li><br> 
+          <li><a href="#" id="link3" class="colorClick"data-imagen="imag33" onclick="imagenesPasoApaso('contImgEntrenos','bailarina','vid-basculante','imag3','link3','contImaginario')">Ajuste parámetros en basculante</a></li><br>  
+          <li><a href="#" id="link4" class="colorClick"data-imagen="imag44" onclick="imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag4','link4','rodillo-infeed')">Calibración / Limpieza / Rugosidad en INFEED</a></li><br>
+          <li><a href="#" id="link5" class="colorClick"data-imagen="imag55" onclick="imagenesPasoApaso('','','contBotInfeed','','link5','puesta-punto',)">Paso a paso puesta a punto</a></li><br>
         </ol> 
 
       </div>      
       <div class="imgs-entrenos" id="contImgEntrenos" style="display: flex;">
 
         <div class="img1" id="imag1">
-          <img class="img-1" src="./assets/neumatica.jfif" alt="neuma1">
+          <img id="img-pneuma" class="img-1" src="./assets/neumatica.jpg" alt="neuma1">
           <h4>PRESIÓN NEUMÁTICA 90 PSI <br></h4>
-          <img class="img-1" src="./assets/neumatica2.jfif" alt="neuma2">
+          <img class="img-1" src="./assets/neumatica2.jpg" alt="neuma2">
         </div>
 
         <div id="padre-neumat" style="display: flex;flex-direction: row;gap: 3px; display: none;">
@@ -1389,7 +1335,7 @@
 
         </div>
 
-        <div id="contImaginario" style="position: absolute;display: flex;flex-direction: column; height: 760px;width: 892px;display: none; border-radius: 21px; background-color:black">
+        <div id="contImaginario" style="position: absolute;display: flex;flex-direction: column; height: 760px;width: 892px;display: none; border-radius: 21px; background-color:black;border: solid 2px orange;">
           
           <div id="imag3" >
             <div style="display: flex;flex-direction: column;align-items: center;">
@@ -1407,25 +1353,24 @@
           </div>
           <div id="bailarina">
             <video id="vid-basculante" src="./assets/oscilante rotativa.mp4" loop></video> 
-          </div>  
-        </div>
-          
+          </div>
+  
+        </div> 
 
         <div class="img1" id="imag4" >
           <img id="imgGrafilado1" src="./assets/grafilado.jpg" alt="neuma7">
           <img id="imgGrafilado2" src="./assets/grafilado2.jpg" alt="neuma8">
           <img id="imgGrafilado3" src="./assets/grafilado4.jpg" alt="neuma9">
           <img id="imgGrafilado4" src="./assets/grafilado5.jpg" alt="neuma10">
-        </div>        
-       
-      </div>
-    </div>
+        </div>  
 
+      </div>
+
+    </div>      
     <div id="contBotCasos" class="contOblicuosTorre" style="left: 1357px;top: 44px;display: none;">
       <button class="Bot-inicio33" id="butt-17" onclick="tamaño100()">Cerrar</button>
       <button class="Bot-inicio33-fondo" id="butt-18"></button>  
-    </div>   
-
+    </div> 
     <div id="puesta-punto">
       <h1 class="casos-h1" >1. Inspección de la Máquina</h1>
       <p class="parrafo-casos">
@@ -1469,12 +1414,10 @@
         Realiza pruebas de impresión en pequeñas cantidades antes de la producción completa. Analiza la calidad de impresión y realiza ajustes finos según sea necesario en la velocidad, presión, y otros parámetros para optimizar el rendimiento.      
       </p>     
     </div>
-
-    <div id="contBotInfeed" class="contOblicuosTorre" style="left: 1477px;top: 21px;display: none;">
+    <div id="contBotInfeed" class="contOblicuosTorre" style="left: 1297px;top: 21px;display: none;">
       <button class="Bot-inicio333" id="butt-19" onclick="tamaño100()">Cerrar</button>
       <button class="Bot-inicio333-fondo" id="butt-20"></button>  
     </div> 
-
     <div id="rodillo-infeed">
       <h1 class="casos-h1" >1. Inspección Visual Regular</h1>
       <p class="parrafo-casos">
@@ -1517,7 +1460,6 @@
         Lleva un registro detallado de todas las actividades de mantenimiento. Un historial documentado facilita el seguimiento del rendimiento y ayuda en la planificación de futuras intervenciones
       </p>     
     </div>
-
     <div id="control-neumatico">
       <h1 class="casos-h1" >Estándar 1: Presión Nominal</h1>
       <p class="parrafo-casos">
@@ -1536,14 +1478,12 @@
         Se recomienda realizar un mantenimiento preventivo periódico para verificar y ajustar la presión neumática, asegurando un funcionamiento eficiente del cilindro y evitando posibles fallas y desgastes prematuros.
       </p>
     </div>
-
     <div class="contene-2" id="container99" style="display: none;left: 155px;">
       <button class="boton-a" id="bot-atras99" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 5px;" onclick="irContenedorAnterior('conteneMantaut')"></button>
       <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL INICIO</button>
       <button class="boton-a" id="fullScreenButton" style="margin-left: 477px;">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
       <button class="boton-a" id="bot-atras33" style="text-align: center;width: 47px;position: absolute;left: 685px;top: 5px;" onclick="irContenedorSiguiente('')"></button>
-    </div>
-    
+    </div>    
     <div id="iconos">     
 
       <h1 id="title-interfaz" style="display: none;width: 767px;">Interfaz de seguimiento Mantenimiento Autonomo</h1>
@@ -1576,12 +1516,12 @@
 
         <div class="cont-user" id="icon-mario">
           <img class="icono-user" onclick="resultadosEmpleado('icon-mario','updateMario')" src="./assets/icono1.jpg" alt="icono">
-          <label for="nombres">John Mario Mira</label>
+          <label for="nombres">John Mario Mira Pineda</label>
         </div>
 
         <div class="cont-user" id="icon-ana">
           <img class="icono-user" onclick="resultadosEmpleado('icon-ana','updateAna')" src="./assets/icono1.jpg" alt="icono">
-          <label for="nombres">Ana Maria Duarte</label>
+          <label for="nombres">Ana Maria Duarte Pineda</label>
         </div>
   
       </div>
@@ -1644,17 +1584,16 @@
   
         <div class="cont-userI" id="icon-mario">
             <img class="icono-user" onclick="resultadosEmpleado('icon-mario','updateMario')" src="./assets/icono1.jpg" alt="icono">
-            <label for="nombres">John Mario Mira</label>
+            <label for="nombres">John Mario Mira Pineda</label>
         </div><br>
   
         <div class="cont-userI" id="icon-ana">
             <img class="icono-user" onclick="resultadosEmpleado('icon-ana','updateAna')" src="./assets/icono1.jpg" alt="icono">
-            <label for="nombres">Ana Maria Duarte</label>
+            <label for="nombres">Ana Maria Duarte Pineda</label>
         </div>
       </div>
 
     </div>
-
     <script src="./Matriz.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
   </body>
