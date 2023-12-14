@@ -780,6 +780,7 @@ function showRepuesto(elementId) {
           imagen.style.display = 'flex'
         })
       }
+      container1.style.display = 'flex'
       if (!idsArray.includes(elementId)) {
         idsArray.push(elementId)
         console.log(idsArray)
@@ -792,7 +793,6 @@ function showRepuesto(elementId) {
           element.style.display = 'none'
         }
       })
-
       conteHijosTintero.forEach(elementId => {
         var element = document.getElementById(elementId)
         if (element) {
@@ -807,6 +807,7 @@ function showRepuesto(elementId) {
           imagen.style.display = 'block'
         })
       } 
+      container1.style.display = 'flex'
       if (!idsArray.includes(elementId)) {
         idsArray.push(elementId)
         console.log(idsArray)
@@ -838,9 +839,9 @@ function showRepuesto(elementId) {
       var contOblicuoPlaca = document.getElementById('agrupaOblicuos-placa')
       contOblicuoPlaca.style.display='block'  
       var botonesInicio = document.getElementById('container01')
-      var botPlaca = document.getElementById('container9')
-      botPlaca.style.display = 'block'
-      botonesInicio.style.display='none'
+      /* var botPlaca = document.getElementById('container9')
+      botPlaca.style.display = 'block' */
+      botonesInicio.style.display='flex'
      var imagenesPlancha = document.querySelectorAll('.imagesTorre')
      imagenesPlancha.forEach(function (imagen) {
       var elementosPortPlaca = imagen.querySelectorAll('portPlaca')
@@ -923,18 +924,12 @@ function muestraPerfiles(elementId){
   var imgPlancha = document.querySelectorAll('.imagesTorre') 
   var imagesPlancha = document.getElementById('contPerfilesPlancha')
   var imgsPlancha = document.getElementById('imagenes-plancha')
-  var cont10 = document.getElementById('container10')
-  cont10.style.display = 'none'
-  var cont9 = document.getElementById('container9')
-
-  cont10.style.display = 'block'
   switch (elementId) {
     case 'imagen1':
       // Detener el video
       video.pause()
       // Ocultar el video estableciendo su estilo de visualización en 'none'
       video.style.display = 'none'
-      cont9.style.display='none'
       imagesPlancha.style.display='flex'
       imgsPlancha.style.display='flex'
       imgPlancha.forEach(function (imagen) {
@@ -955,7 +950,6 @@ function muestraPerfiles(elementId){
       video.pause()
       // Ocultar el video estableciendo su estilo de visualización en 'none'
       video.style.display = 'none'
-      cont9.style.display='none'
       imagesPlancha.style.display='flex'
       imgsPlancha.style.display='flex'
       imgPlancha.forEach(function (imagen) {
@@ -985,7 +979,6 @@ function muestraPerfiles(elementId){
           imagen.style.display = 'none'
         }
       })
-      cont9.style.display='none'
       contIMPlaca.style.display='none' 
       if (!idsArray.includes(elementId)) {
         idsArray.push(elementId)
@@ -1006,7 +999,6 @@ function muestraPerfiles(elementId){
           imagen.style.display = 'none'
         }
       })
-      cont9.style.display='none'
       contIMPlaca.style.display='none' 
       if (!idsArray.includes(elementId)) {
         idsArray.push(elementId)
@@ -5579,16 +5571,10 @@ function ampliaIndicaciones(index) {
       conico.style.top = '0'    
       break;
     case 2:
-      // Lógica para la tercera imagen (reductor.jpg)
-      console.log('Lógica para la tercera imagen')
-      break;
+    break;
     case 3:
-      // Lógica para la cuarta imagen (reductorII.png)
-      console.log('Lógica para la cuarta imagen')
     break;
     default:
-      // Lógica para casos no cubiertos
-      console.log('Lógica para casos no cubiertos')
     break;
   }
 }
