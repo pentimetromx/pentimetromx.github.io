@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <title>Interfaz de entrenamiento</title>
     <link rel="stylesheet" href="./Matriz.css"> 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -9,7 +10,8 @@
   <body  onload="aumentoBotonesBody()">
     <header class="buscador" id="buscador" style="position: absolute;left: 3px;top: 2px;">
       <form id="search-form">
-          <input type="text" id="search-input" placeholder="Buscar...">       
+          <input type="text" id="search-input" placeholder="Buscar..."> 
+          <datalist id="suggestions"></datalist>      
           <button type="submit" id="search-button">
               <img src="./assets/lupa.jpg" alt="Buscar">
           </button>
@@ -99,7 +101,6 @@
       <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL INICIO</button>
       <button class="boton-a" id="toggleVideoButton" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
       <button class="boton-a" id="bot-atras32" style="text-align: center;width: 47px;position: relative;left: 685px;top: 5px;;display: none" onclick="irContenedorSiguiente('rotatek-1')"></button>
-    
     </div><br>
     <div class="segundo-bloque " id="pantalla-inicial"> 
       
@@ -413,7 +414,6 @@
        </div>
 
        <div class="images-training" id="images-smed"  style="position: absolute;top: -80px;">
-        <!-- <img class="image-training image-trainings img-propil" id="imageElement1" style="width: 157px;" src="./assets/dobladora.png" alt="Entintador"><br> -->
         <img class="image-training image-trainings img-propil" id="imageElement1" style="width: 157px;" src="./assets/multimetro.png" alt="Entintador"><br>
         <img class="image-training image-trainings img-propil" id="imageElement2" style="width: 157px;" src="./assets/plancha litografica.png" alt="Rodamiento entintador"><br>
         <img class="image-training image-trainings img-propil" id="imageElement3" style="width: 157px;" src="./assets/instrumento.png" alt="Lupa"><br>
@@ -424,13 +424,6 @@
       </div> 
     </div> 
     <div id="conteneMantaut" class="mantAuto">
-
-      <div class="contene-2" id="container8" style="left: 155px;display: none;">
-        <button class="boton-a" id="bot-atras9" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 5px;" onclick="irContenedorAnterior('conteneMantaut')"></button>
-        <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL INICIO</button>
-        <button class="boton-a" id="iniciar" style="margin-left: 477px;">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
-        <button class="boton-a" id="bot-atras14" style="text-align: center;width: 47px;position: absolute;left: 685px;top: 5px;" onclick="irContenedorSiguiente('')"></button>
-      </div><br>
 
       <div class="conti-boton" id="conti-boton">
         <button class="butt-mautonomo image-trainings" id="troubleshoot" onclick="deslizaContenedor('troubleshooting','troubleshoot')">TROUBLESHOOTING</button>
@@ -928,12 +921,6 @@
         </div>
       </div>       
     </div>
-    <div class="contene-2" id="container02" >
-      <button class="boton-a" id="bot-atras" style="text-align: center;width: 47px;position: relative;top: 5px;" onclick="irContenedorAnterior('contPortPlaca')"></button>
-      <button class="boton-a" id="bot-inic" style="text-align: center;;position: relative" onclick="VolveraInicio()">PANEL INICIO</button>
-      <button class="boton-a" id="iniciar" style="text-align: center;;position: relative" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
-      <button class="boton-a" id="bot-atras20" style="text-align: center;width: 47px;position: relative;top: 5px;" onclick="irContenedorSiguiente('')"></button>
-    </div><br>
     <div id="contImgDistribuidor">
       <div class="imgRow" id="imgs-I">
         <img src="./assets/Distri-0.jpg    " class="imag-distri image-trainings aumentar" alt="imgDistrib-4">
@@ -989,13 +976,6 @@
     </div> 
     <div id="cont-variable" class="secciones" style="display: none;">  
 
-      <div class="contene-2" id="container6" style="margin-left: 127px;">
-        <button class="boton-a" id="bot-atras7" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 5px;" onclick="irContenedorAnterior('cont-variable')"></button>
-        <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL INICIO</button>
-        <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
-        <button class="boton-a" id="bot-atras22" style="text-align: center;width: 47px;position: absolute;left: 685px;top: 5px;" onclick="irContenedorSiguiente('')"></button>
-      </div><br>      
-
       <img class="maq-seccion aumentar" src="./assets/IBM 4000.jpg" alt="IBM4000">
       <img class="maq-seccion aumentar" src="./assets/IBM 5000.jpg" alt="IBM4000">
       <img class="maq-seccion aumentar" src="./assets/info print.jpg" alt="IBM4000">
@@ -1009,18 +989,10 @@
     </div>
     <div id="cont-secador" style="position: absolute;left: 170px;top: 6px;display: none;">
       <video class="video-training" id="curado-uv" src="./assets/secador.mp4" style="position: absolute;left: 117px;top: 80px;width: 620px;height: 465px;" autoplay loop></video>
-      <div class="contene-5" id="contene-9" style="position: absolute;left: -16px;top: 1px;">
-        <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL INICIO</button>
-        <button class="boton-a" id="bot-atras6" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 5px;" onclick="irContenedorAnterior('cont-secador')"></button>
-        <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
-        <button class="boton-a" id="bot-atras24" style="text-align: center;width: 47px;position: absolute;left: 685px;top: 5px;" onclick="irContenedorSiguiente('')"></button>
-      </div><br>
-
       <div id="imgsSecador" style="position:absolute;left:-157px;top: 77px;">
         <img class="maq-seccion aumentar" src="./assets/secado uv3.png" alt="">
 
       </div>
-
 
     </div>
     <div id="bateria-entintado-II" style="position: absolute;left: 170px;top: 6px;display: none;">
@@ -1063,12 +1035,7 @@
     </div>
     <div id="pre-prensa" style="position: absolute;left: 170px;top: 6px;">
       <video id="vidCicodelia" class="vidTeoria video-training" style="display: none;" src="./assets/cicodelia.mp4" loop autoplay ></video>      
-      <div class="contene-5" id="contene-11" style="position: absolute;left: -16px;top: 1px;display: flex;display: none;">
-        <button class="boton-a" id="bot-atras6" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 5px;" onclick="irContenedorAnterior('pre-prensa')"></button>
-        <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL INICIO</button>
-        <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
-        <button class="boton-a" id="bot-atras28" style="text-align: center;width: 47px;position: absolute;left: 685px;top: 5px;" onclick="irContenedorSiguiente('')"></button>
-      </div><br>
+
       <div id="vidColor">
         <video class="video-training" id="prisma-vid" style="position: absolute;left: 137px;top: 80px;width: 638px;height: 480px;" src="./assets/prisma.mp4"></video>
       </div>
@@ -1119,16 +1086,8 @@
         </div> 
       </div>
     </div>  
-    <div id="densitometria" style="position: absolute;left: 170px;top: 6px;display: none;">
-      <video id="vidCicodeliaII" class="vidTeoria" style="display: none;" src="./assets/cicodelia.mp4" loop ></video>        
-
-
-      <div class="contene-5" id="contene-12" style="position: absolute;left: -16px;top: 1px;display: none;">
-        <button class="boton-a" id="bot-atras6" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 5px;" onclick="irContenedorAnterior('densitometria')"></button>
-        <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL INICIO</button>
-        <button class="boton-a" id="iniciar" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
-        <button class="boton-a" id="bot-atras29" style="text-align: center;width: 47px;position: absolute;left: 685px;top: 5px;" onclick="irContenedorSiguiente('')"></button>
-      </div><br>
+    <div id="densitometria" style="position: absolute;left: 170px;top: 57px;display: none;">
+      <video id="vidCicodeliaII" class="vidTeoria" src="./assets/cicodelia.mp4" loop ></video>        
 
       <div id="vidDensito">
         <video class="video-training" id="prisma-vid" style="position: absolute;left: 137px;top: 80px;width: 638px;height: 480px;" src="./assets/prisma.mp4"></video>
@@ -1138,7 +1097,7 @@
         <label style="position: absolute; left: 177px;top: 300px;" for="training">Entrenamiento en Densitometría</label>
       </div>
 
-       <div id="imgs-densito" class="image-grid" style="display: none;position: absolute;top: 67px;">
+      <div id="imgs-densito" class="image-grid" style="display: none;position: absolute;top: 27px;">
         <div id="contDensito" class="contColor">
           <img class='imgDensito' src="./assets/densito906.jfif" alt="pre10018">
           <img class='imgDensito' src="./assets/densito1.jpg" alt="pre1002">
@@ -1351,12 +1310,6 @@
         Se recomienda realizar un mantenimiento preventivo periódico para verificar y ajustar la presión neumática, asegurando un funcionamiento eficiente del cilindro y evitando posibles fallas y desgastes prematuros.
       </p>
     </div>
-    <div class="contene-2" id="container99" style="display: none;left: 155px;">
-      <button class="boton-a" id="bot-atras99" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 5px;" onclick="irContenedorAnterior('conteneMantaut')"></button>
-      <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL INICIO</button>
-      <button class="boton-a" id="fullScreenButton" style="margin-left: 477px;">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
-      <button class="boton-a" id="bot-atras33" style="text-align: center;width: 47px;position: absolute;left: 685px;top: 5px;" onclick="irContenedorSiguiente('')"></button>
-    </div>    
     <div id="iconos">     
       <h1 id="title-interfaz" style="display: none;width: 767px;">Interfaz de seguimiento Mantenimiento Autonomo</h1>
       <div id="conte-secundario">

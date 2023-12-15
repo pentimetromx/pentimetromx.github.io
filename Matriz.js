@@ -35,7 +35,7 @@ var imgTorreI = document.getElementById('imgTorre')
 var contInicial = document.getElementById('container1')
 var botonMa = document.getElementById('bot-mantaut')
 var imagPasoApaso = document.querySelectorAll('.img1')
-var allContenedores = ['control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','contene-11','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','container99','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
+var allContenedores = ['container1','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado']
@@ -201,7 +201,6 @@ function muestraBateria(elementId) {
 }
 function ElementosMa(elementId) {
   document.body.style.zoom = "100%";
-  var contenedor = document.getElementById("container8") 
   // Recorre el array y oculta los elementos por su ID
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])
@@ -212,7 +211,6 @@ function ElementosMa(elementId) {
   if (contPadreMA) {
     contPadreMA.style.display = 'flex'
   }
-  contenedor.style.display = 'block'
   showButtonsMAconRetraso()
   linkListI.style.display = "none";  
   if (!idsArray.includes(elementId)) {
@@ -2329,6 +2327,7 @@ function abrirSeccionVariable(elementId){
     }
   })
   contPlana.style.display='none'
+  container1.style.display = 'flex'
   contVariable.style.display='flex'
   contPlana.style.position = 'absolute'
   document.body.style.zoom = "100%";
@@ -2348,6 +2347,7 @@ function abrirSeccionPlanas(elementId){
     }
   })
   contVariable.style.display='none'
+  container1.style.display = 'flex'
   contPlana.style.display='flex'
   contPlana.style.position = 'absolute'
   document.body.style.zoom = "100%";
@@ -2369,6 +2369,7 @@ function abrirSeccionCurado(elementId){
   contVariable.style.display='none'
   contPlana.style.display='none'
   linkList.style.display = "none";
+  container1.style.display = 'flex'
   contSecador.style.display='block'
   document.body.style.zoom = "100%";
 
@@ -2418,7 +2419,6 @@ function abrirPilarMA(){
 function abrirPrepress(elementId) {
   var linksIniciales = ['links-inicialesI', 'links-iniciales']
   var arrayImgPress = []
-  var contBotPress = document.getElementById('contene-11')
   var contImgsPrepress = document.getElementById('imgs-prepress')
   var videoBackground = document.getElementById('videoBackground')
   var prePrensaElemento = document.getElementById('pre-prensa')
@@ -2431,32 +2431,25 @@ function abrirPrepress(elementId) {
     }
   }
   document.body.style.zoom = "100%";
-
   // Paso 1: Crear un array con todas las imágenes en el contenedor padre
   const imagenesArray = document.querySelectorAll('#imgs-prepress .imgTeoria')
-
   // Paso 2: Recorrer las imágenes
   for (let i = 0; i < imagenesArray.length; i++) {
       // Paso 3: Verificar y modificar el estilo de visualización
-      const imagenActual = imagenesArray[i]
-      
+      const imagenActual = imagenesArray[i]      
       // Verificar si el estilo de visualización es 'none'
       if (getComputedStyle(imagenActual).display === 'none') {
           // Cambiar el estilo de visualización a 'flex'
           imagenActual.style.display = 'flex'
       }
   }
-
-
-  
-  contBotPress.style.display = 'flex'
+  container1.style.display = 'flex'
   contImgsPrepress.style.display = 'block'
   arrayImgPress.forEach(image => {
     if(image) {
       image.style.display = 'block'
     }
   })
-
   videoBackground.pause()
   videoBackground.style.display = 'none' // Oculta el video
 
@@ -2466,10 +2459,8 @@ function abrirPrepress(elementId) {
       video.style.display = 'none'
     }
     })
-
   var contBotEspeciales = document.getElementById('conte-botDensitoII')
   contBotEspeciales.style.display='block'
-
   var botEspecial = document.getElementById('conte-botDensitoII')
   // Obtén todos los botones y guárdalos en un array
   var botones = botEspecial.querySelectorAll('button')    
@@ -2477,7 +2468,6 @@ function abrirPrepress(elementId) {
   for (var i = 0; i < botones.length; i++) {
       botones[i].style.display = 'flex'
   }
-
   // Mostrar el elemento "pre-prensa"
   if (prePrensaElemento) {
     prePrensaElemento.style.display = 'block'
@@ -2491,14 +2481,15 @@ function abrirPrepress(elementId) {
       }
     }
   }
-  const videos = document.querySelectorAll('.vidTeoria')
-    // Reproducir todos los videos simultáneamente
-    videos.forEach(video => {
-    video.style.display='block'
-    video.play()
-  })
-
-
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  var vidDensitometria = document.getElementById('vidCicodelia')
+  vidDensitometria.style.display = 'block'
+  vidDensitometria.pause();
+  setTimeout(function() {
+    vidDensitometria.currentTime = '0'
+    vidDensitometria.play();
+  }, 77);
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   linkList.style.display = "none";    
   if (!idsArray.includes(elementId)) {
     idsArray.push(elementId)
@@ -2508,17 +2499,17 @@ function abrirPrepress(elementId) {
 function abrirDensitometria(elementId){
   var densiitoElemento = document.getElementById('densitometria')  
   var linksIniciales = ['links-inicialesI', 'links-iniciales']
-  var contBotDensito = document.getElementById('contene-12')
   var contImgsDensito = document.getElementById('imgs-densito')
   var videoBackground = document.getElementById('videoBackground')
-  // Ocultar todos los elementos
-  for (var i = 0; i < allContenedores.length; i++) {
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  for (var i = 0; i < allContenedores.length; i++) {                                                                                            /// OCULTAR TODO
     var elemento = document.getElementById(allContenedores[i])
     if (elemento) {
       elemento.style.display = 'none'
     }
   } 
   document.body.style.zoom = "100%";
+  container1.style.display = 'flex'
   videoBackground.pause()
   videoBackground.style.display = 'none' // Oculta el video
   // Mostrar el elemento "densitometria"
@@ -2542,28 +2533,28 @@ function abrirDensitometria(elementId){
         linkInicial.style.zIndex = '1'
       }
     }
-  }
- 
-  contBotDensito.style.display = 'block'
+  } 
   contImgsDensito.style.display = 'block' 
-
-    videoElements.forEach(video => {
-      if (video) {
-        video.style.display = 'none'
-        video.pause()      
-      }
-      })
-      const videos = document.querySelectorAll('.vidTeoria')
-      // Reproducir todos los videos simultáneamente
-          videos.forEach(video => {
-            video.style.display='block'
-              video.play()
-          })      
-      linkList.style.display = "none";
-      if (!idsArray.includes(elementId)) {
-        idsArray.push(elementId)
-        console.log(idsArray)
-      }   
+  videoElements.forEach(video => {
+  if (video) {
+    video.pause()     
+    video.style.display = 'none'
+  }
+  })
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
+  var vidDensitometria = document.getElementById('vidCicodeliaII')
+  vidDensitometria.style.display = 'block'
+  vidDensitometria.pause();
+  setTimeout(function() {
+    vidDensitometria.currentTime = '0'
+    vidDensitometria.play();
+  }, 77);
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
+  linkList.style.display = "none";                                                                                                    
+  if (!idsArray.includes(elementId)) {
+    idsArray.push(elementId)
+    console.log(idsArray)
+  }   
 }
 function muestraVidPrisma(elementId) {
   allContenedores.forEach(contenedor => {
@@ -2592,15 +2583,6 @@ function muestraVidPrisma(elementId) {
       video.pause()
       video.style.display='none'
   })
-
-  var container = document.getElementById("contene-11")
-  var computedStyle = getComputedStyle(container)
-
-  var displayValue = computedStyle.getPropertyValue("display")
-  if (displayValue.toLowerCase() === "none") {
-    // Cambia el valor de 'display' a 'flex'
-    container.style.display = "flex";
-  }
      
   /* if (!idsArray.includes(elementId)) {
     idsArray.push(elementId)
@@ -2652,7 +2634,8 @@ function irContenedorAnterior() {
 
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])
-    elemento.style.display='none'}
+    elemento.style.display='none'
+  }
 
   if(contTrouble){
     contTrouble.style.display = 'none'
@@ -2676,7 +2659,6 @@ function irContenedorAnterior() {
 
 
 
-  for (var i = 0; i < idsArray.length; i++) { 
     switch (previousElementID) { 
       case "pantalla-inicial":
         abrirSeccionContinua()
@@ -2805,8 +2787,8 @@ function irContenedorAnterior() {
           }
         }
 
-        var container = document.getElementById("contene-11")
-        var computedStyle = getComputedStyle(container)
+        /* var container = document.getElementById("contene-11")
+        var computedStyle = getComputedStyle(container) */
       
         var displayValue = computedStyle.getPropertyValue("display")
         if (displayValue.toLowerCase() === "none") {
@@ -2914,14 +2896,10 @@ function irContenedorAnterior() {
         muestraAngulos('mantilla4')
       break; 
       case 'desbobinador':
-     var contBotn = document.getElementById('container1')   
      var contiene = document.getElementById('pantalla-inicial')
      contiene.style.display = 'flex'
-     contBotn.style.display = 'flex'
-
      var container = document.getElementById("desbobinadorId")
-     var computedStyle = getComputedStyle(container)
-   
+     var computedStyle = getComputedStyle(container)   
      var displayValue = computedStyle.getPropertyValue("display")
      if (displayValue.toLowerCase() === "none") {
        // Cambia el valor de 'display' a 'flex'
@@ -2931,8 +2909,7 @@ function irContenedorAnterior() {
       case 'uTeñido':
       for (var i = 0; i < allContenedores.length; i++) {
       var elemento = document.getElementById(allContenedores[i]) 
-      elemento.style.display='none'}
-          
+      elemento.style.display='none'}          
       // Obtener el elemento padre
       var contenedorPadre = document.getElementById("pantalla-inicial")
       contenedorPadre.style.display='block'
@@ -3069,7 +3046,7 @@ function irContenedorAnterior() {
         boton01.style.display = 'block'        
       break;                   
     default:
-  }}
+  }
   var eltoAnterior = idsArray[idsArray.length - 2]
   idsArrayEliminados.push(eltoAnterior)
   console.log('ELIMINADOS',idsArrayEliminados)
@@ -3208,9 +3185,6 @@ function irContenedorSiguiente() {
           video.style.display='block'
           video.play()
         })
-        
-
-
         // Paso 1: Crear un array con todas las imágenes en el contenedor padre
         const imagenesArray = document.querySelectorAll('#imgs-prepress .imgTeoria .vidTeoria')
         // Paso 2: Recorrer las imágenes
@@ -3222,17 +3196,6 @@ function irContenedorSiguiente() {
               // Cambiar el estilo de visualización a 'flex'
               imagenActual.style.display = 'flex'
           }
-        }
-
-
-        
-        var container = document.getElementById("contene-11")
-        var computedStyle = getComputedStyle(container)
-      
-        var displayValue = computedStyle.getPropertyValue("display")
-        if (displayValue.toLowerCase() === "none") {
-          // Cambia el valor de 'display' a 'flex'
-          container.style.display = "flex";
         }
       break; 
       case "densitometria":
@@ -4937,7 +4900,6 @@ function antesImagenes(){
 function resultadosMA(){
   var iconosElement = document.getElementById('iconos')    
   var title = document.getElementById('title-interfaz')
-  var contButtons = document.getElementById('container99')
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   for (var i = 0; i < allContenedores.length; i++) {                                                                                           /// OCULTA TODO !!!
     var elemento = document.getElementById(allContenedores[i])
@@ -4973,7 +4935,6 @@ function resultadosMA(){
       iconosElement.style.display = 'none'
     }
     title.style.display = 'flex'
-    contButtons.style.display = 'flex' 
    } else {
     /* location.reload() */
     graficosAutomaticos('canvasContainer4')
@@ -6803,10 +6764,11 @@ const sugerencias = [
   'plancha',
   'porta mantilla',
   'porta plancha',
-  'rotatek-1',
+  'rotatek',
   'secador uv',
   'secador',
   'smed',
+  'resultados',
   'tintero',
   'torre',
   'variable'
@@ -6841,7 +6803,6 @@ searchForm.addEventListener('submit', function (e) {
     case 'secador':      
       abrirSeccionCurado('cont-secador')
     break;
-    case 'rotatek-1':
     case 'torre':      
       cambioContenedor('rotatek-1')
     break;
@@ -6879,23 +6840,37 @@ searchForm.addEventListener('submit', function (e) {
         }
       }       
     showRepuesto('contImpresor', 'videoTrain01')
-      break;          
+    break;
+    case 'empleados':
+    case 'resultados':
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i])
+        if (elemento) {
+          elemento.style.display = 'none'
+        }
+      } 
+      resultadosMA() 
+      container1.style.display = 'flex'           
+    break;
     default:
       alert("No se encontró ninguna coincidencia para la búsqueda: " + searchTerm)
     break;
   }
-
-
-  // Puedes agregar una lógica para autocompletar el término de búsqueda
-  if (sugerencias.includes(searchTerm)) {
-    // Si el término de búsqueda coincide con una sugerencia, lo autocompletamos
-    suggestionsList.innerHTML = '' // Borra cualquier sugerencia anterior
-    const suggestionOption = document.createElement('option')
-    suggestionOption.value = searchTerm;
-    suggestionsList.appendChild(suggestionOption)
+  // Verifica si suggestionsList no es nulo antes de intentar establecer su propiedad innerHTML
+  if (suggestionsList) {
+    // Puedes agregar una lógica para autocompletar el término de búsqueda
+    if (sugerencias.includes(searchTerm)) {
+      // Si el término de búsqueda coincide con una sugerencia, lo autocompletamos
+      suggestionsList.innerHTML = ''; // Borra cualquier sugerencia anterior
+      const suggestionOption = document.createElement('option');
+      suggestionOption.value = searchTerm;
+      suggestionsList.appendChild(suggestionOption);
+    }
+  } else {
+    console.error('No se encontró el elemento con ID "suggestions"');
   }
 })
-/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Obtén los elementos canvas de canvasContainer2 y canvasContainer3
 const canvasElements2 = document.querySelectorAll('#canvasContainer2 canvas')
 const canvasElements3 = document.querySelectorAll('#canvasContainer3 canvas')
@@ -6918,10 +6893,11 @@ canvasElements4.forEach(input => {
   input.addEventListener('click', () => {
     toggleFullScreen(input)
   })
-})/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-  // Obten todos los elementos con la clase "colorClick"
-  var colorClickLinks = document.querySelectorAll('.colorClick')
-  // Recorre todos los elementos y agrega el evento a cada uno
+})
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Obten todos los elementos con la clase "colorClick"
+var colorClickLinks = document.querySelectorAll('.colorClick')
+// Recorre todos los elementos y agrega el evento a cada uno
   colorClickLinks.forEach(function (link) {
     link.addEventListener('click', function (event) {
       event.preventDefault()
