@@ -5,7 +5,7 @@
 @media screen and (max-width: 599px) {
   #pantalla-inicial{
     /* Estilos específicos para dispositivos móviles */
-    width: 100%; /* Puedes ajustar según tus necesidades */
+    width: 70%; /* Puedes ajustar según tus necesidades */
     margin: 0;   /* Puedes ajustar según tus necesidades */
   }
 }
