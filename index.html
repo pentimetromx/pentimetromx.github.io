@@ -39,11 +39,11 @@
           <button class="Bot-inicio3-fondo" id="butt-112"></button>  
         </div> <br> 
         <div id="contLateral-V" class="contOblicuosTorre">
-          <button class="Bot-inicio3" id="butt-3">Area Comercial</button> 
+          <button class="Bot-inicio3" id="butt-3" onclick="abrirSeccionComercial()">Area Comercial</button> 
           <button class="Bot-inicio3-fondo" id="butt-4"></button>  
         </div> <br>
         <div id="contArriba-V" class="contOblicuosTorre">
-          <button class="Bot-inicio3" id="butt-5" onclick="eliminarEstilosEnLinea()">Area Administrativa</button>
+          <button class="Bot-inicio3" id="butt-5" onclick="abrirSeccionAdministrativa()">Area Administrativa</button>
           <button class="Bot-inicio3-fondo" id="butt-6"></button>  
         </div> <br>
         <div id="contAtras-V" class="contOblicuosTorre">
@@ -51,8 +51,104 @@
           <button class="Bot-inicio3-fondo" id="butt-8"></button>  
         </div> 
       </div>
-
     </div>
+    <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+    <div id="cont-titulo-admin" style="display: none;">
+      <h4 id="subtitulo-admin" style="font-family: 'Candara', sans-serif; font-size: 51px; font-weight: bold; color: white; margin-bottom: 10px;">Aplicamos la transformación tecnológica</h4>
+      <p id="descripcion" style="font-family: 'Candara', sans-serif; font-size: 20px; color: white; text-align: center; margin-top: 10px;">
+        En cadena experimentamos internamente el crecimiento que ofrecemos a nuestros clientes<br>usando las mismas herramientas
+        <button style="display: flex;position: relative;left: 300px;top: 37px; height: 19px;width: 147px;background: linear-gradient(45deg,#ff1837 15%, #333333 85%);opacity: 50%; border-radius: 9px; box-shadow: none;"></button>
+      </p>
+      <!---///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+      <div class="oblicuos-XI" id="agrupaOblicuos-XII">
+        <div id="contFrente-V-admin" class="contOblicuosTorre">
+          <button  class="Bot-inicio3" id="butt-113">Operaciones y Logística</button>        
+          <button class="Bot-inicio3333-fondo" id="butt-112"></button>  
+        </div> <br> 
+        <div id="contLateral-V-admin" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-12">Area Legal</button> 
+          <button class="Bot-inicio3333-fondo" id="butt-13"></button>  
+        </div> <br>
+        <div id="contArriba-V-admin" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-16">Tecnologías de la Información</button>
+          <button class="Bot-inicio3333-fondo" id="butt-15"></button>  
+        </div> <br>
+        <div id="contAtras-V-admin" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-21">Finanzas y Contabilidad</button>
+          <button class="Bot-inicio3333-fondo" id="butt-24"></button>  
+        </div> 
+        <div id="contMedio-V-admin" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-22" onclick="devolverColoresConRetraso()">Recursos Humanos</button>
+          <button class="Bot-inicio3333-fondo" id="butt-23"></button>  
+        </div> 
+      </div>
+      <!---///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+      <div class="oblicuos-XI" id="agrupaOblicuos-XIII">
+        <div id="contFrente-V-admin" class="contOblicuosTorre">
+          <button  class="Bot-inicio3" id="butt-1130">Compras y Abastecimiento</button>        
+          <button class="Bot-inicio3333-fondo" id="butt-112"></button>  
+        </div> <br> 
+        <div id="contLateral-V-admin" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-120">Marketing y Ventas</button> 
+          <button class="Bot-inicio3333-fondo" id="butt-13"></button>  
+        </div> <br>
+        <div id="contArriba-V-admin" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-160">Desarrollo Organizacional</button>
+          <button class="Bot-inicio3333-fondo" id="butt-15"></button>  
+        </div> <br>
+        <div id="contAtras-V-admin" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-210">Comunicación Corporativa</button>
+          <button class="Bot-inicio3333-fondo" id="butt-24"></button>  
+        </div> 
+        <div id="contMedio-V-admin-I" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-220">Gestión de Proyectos</button>
+          <button class="Bot-inicio3333-fondo" id="butt-23"></button>  
+        </div> 
+      </div>
+    </div>
+    <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+    <div id="cont-titulo-comercial" style="display: none;">
+      <h4 id="subtitulo-comercial" style="font-family: 'Candara', sans-serif; font-size: 51px; font-weight: bold; color: white; margin-bottom: 10px;">Aplicamos la transformación tecnológica</h4>
+      <p id="descripcion" style="font-family: 'Candara', sans-serif; font-size: 20px; color: white; text-align: center; margin-top: 10px;">
+        En cadena experimentamos internamente el crecimiento que ofrecemos a nuestros clientes<br>usando las mismas herramientas
+        <button style="display: flex;position: relative;left: 300px;top: 37px; height: 19px;width: 147px;background: linear-gradient(45deg,#ff1837 15%, #333333 85%);opacity: 50%; border-radius: 9px; box-shadow: none;"></button>
+      </p>
+      <!---///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+      <div class="oblicuos-XI" id="agrupaOblicuos-XIV">
+        <div id="contFrente-V-comercial" class="contOblicuosTorre">
+          <button  class="Bot-inicio3" id="butt-01130">Marketing y Publicidad</button>        
+          <button class="Bot-inicio3333-fondo" id="butt-112"></button>  
+        </div> <br> 
+        <div id="contLateral-V-comercial" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-012">Productos o Servicios</button> 
+          <button class="Bot-inicio3333-fondo" id="butt-13"></button>  
+        </div> <br>
+        <div id="contArriba-V-comercial" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-016">Análisis de Datos</button>
+          <button class="Bot-inicio3333-fondo" id="butt-15"></button>  
+        </div> <br>
+        <div id="contAtras-V-comercial" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-021">Finanzas</button>
+          <button class="Bot-inicio3333-fondo" id="butt-24"></button>  
+        </div> 
+      </div>
+      <!---///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+      <div class="oblicuos-XI" id="agrupaOblicuos-XV">
+        <div id="contMedio-V-comercial" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-0202">Servicio al Cliente</button>
+          <button class="Bot-inicio3333-fondo" id="butt-23"></button>  
+        </div>
+        <div id="contFrente-V-comercial" class="contOblicuosTorre">
+          <button  class="Bot-inicio3" id="butt-011300">Business Intelligence</button>        
+          <button class="Bot-inicio3333-fondo" id="butt-112"></button>  
+        </div> <br> 
+        <div id="contLateral-V-comercial" class="contOblicuosTorre">
+          <button class="Bot-inicio3" id="butt-0120">Alianzas Estratégicas</button> 
+          <button class="Bot-inicio3333-fondo" id="butt-13"></button>  
+        </div> <br>
+      </div>
+    </div>
+
     <div class="overlay"></div>
     <video id="videoBackground" style="display: none;" loop muted autoplay>
       <source src="./assets/Rotatek.mp4" type="video/mp4">  
@@ -114,8 +210,8 @@
           <button id="boton4" class="boton-c aumentarc" onclick="lubricacion('boton4')">Bailarina<div class="linea-horizontal"></div></button>
           <button id="boton5" class="boton-c aumentarc" onclick="lubricacion('boton5')">Ensarte<div class="linea-horizontal"></div></button>
           <button id="boton6" class="boton-c aumentarc" onclick="lubricacion('boton6')">Regulación neumática<div class="linea-horizontal"></div></button>
-        </div>
-
+        </div> 
+        
       </div>
 
       <div class="uTeñido mostrar-cont" id="uTeñidos" style="display: flex;">  

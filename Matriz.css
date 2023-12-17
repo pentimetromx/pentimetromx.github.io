@@ -7,6 +7,8 @@
     /* Estilos específicos para dispositivos móviles */
     width: 70%; /* Puedes ajustar según tus necesidades */
     margin: 0;   /* Puedes ajustar según tus necesidades */
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -1126,25 +1128,81 @@ width:447px ;
   left: 12px;
   top: -80px;
 }
-#agrupaOblicuos-XI{ 
+#agrupaOblicuos-XI {
   position: relative;
   display: flex;
   flex-direction: row-reverse;
+  justify-content: center; 
+  margin-right: 117px;
   top: 77px;
-  left: -147px;
 }
-#agrupaOblicuos-XI > * {
-  margin-left: 100px; /* Espaciado de 100px entre elementos hijos */
+#agrupaOblicuos-XII{ 
+  position: absolute;
+  display: flex;
+  flex-direction: row-reverse;
+  top: 477px;
+  gap: 7px;
 }
-#contFrente-V{
+#agrupaOblicuos-XIII{ 
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  top: 577px;
+  left: 201px;
+  gap: 7px;
+}
+#agrupaOblicuos-XIV{
   position: relative;
-  /* left:77px; */
+  display: flex;
+  flex-direction: row;
+  top: 100px;
+  gap: 7px;
+  margin-left: auto; /* Establece el margen izquierdo automático */
+  margin-right: auto; /* Establece el margen derecho automático */
 }
+#agrupaOblicuos-XV{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  top: 107px;
+  gap: 7px;
+  margin-left: auto; /* Establece el margen izquierdo automático */
+  margin-right: auto; /* Establece el margen derecho automático */
+}
+#contMedio-V-admin-I{
+  position: relative;
+  left:7px;
+}
+#contMedio-V-admin{
+  position: relative;
+  left:-7px;
+}
+ #agrupaOblicuos-XI > * {
+  margin-left: 100px; 
+}
+#butt-016:hover,
+#butt-021:hover,
+#butt-0202:hover,
+#butt-011300:hover,
+#butt-0120:hover,
+#butt-012:hover,
+#butt-01130:hover,
+#butt-113:hover,
 #butt-111:hover,
 #butt-3:hover,
 #butt-5:hover,
 #butt-7:hover,
+#butt-12:hover,
+#butt-14:hover,
+#butt-16:hover,
 #butt-17:hover,
+#butt-21:hover,
+#butt-22:hover,
+#butt-120:hover,
+#butt-160:hover,
+#butt-210:hover,
+#butt-220:hover,
+#butt-1130:hover,
 #butt-18:hover {
   background-color: rgb(189, 2, 2);
   color: white;
@@ -1193,7 +1251,17 @@ width:447px ;
   cursor: pointer;
   z-index: 0;
 }
-#butt-112{
+.Bot-inicio3333-fondo{
+  border-radius: 7px;
+  width: 111px;
+  height: 51px;
+  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%); 
+  transform: skewX(-30deg);
+  cursor: pointer;
+  z-index: 0;
+}
+
+#butt-114{
   position: absolute;
   margin-top: 6px;
   margin-right: 2px;
@@ -1206,10 +1274,6 @@ width:447px ;
   transform: skewX(-30deg);
   cursor: pointer;
   z-index: 0;
-} 
-#contLateral-V{
-  position: relative;
-  /* left:317px; */
 }
 #butt-1,
 #butt-11{
@@ -1252,38 +1316,19 @@ width:447px ;
   left: 1094px;
   top:-602px;
 }
-#butt-4{
- position: relative;
- margin-top: 6px;
- background: linear-gradient(15deg, rgb(0, 255, 0) 15%,  rgba(0, 0, 0, 0.423) 60%);
- border-radius: 7px;
- width: 161px;
- height: 51px;
- font-size: 14px;
- clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%); 
- transform: skewX(-30deg);
- cursor: pointer;
- z-index: 0;
-}
-#contArriba-V{
-  position: relative;
-  /* left:459px; */
-}
-#butt-6{
- position: relative;
- margin-top: 6px;
- margin-right: 2px;
- background: linear-gradient(15deg, rgb(0, 255, 0) 15%,  rgba(0, 0, 0, 0.423) 60%);
- border-radius: 7px;
- width: 161px;
- height: 51px;
- font-size: 14px;
- clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%); 
- transform: skewX(-30deg);
- cursor: pointer;
- z-index: 0;
-}
-#contAtras-V{
+#contMedio-V-comercial,
+#contAtras-V-comercial,
+#contArriba-V-comercial,
+#contLateral-V-comercial,
+#contFrente-V-comercial,
+#contArriba-V,
+#contArriba-V-admin,
+#contAtras-V-admin,
+#contAtras-V,
+#contFrente-V-admin,
+#contFrente-V,
+#contLateral-V-admin,
+#contLateral-V{
   position: relative;
 }
 #contBotInfeed{
@@ -1292,7 +1337,14 @@ width:447px ;
 #contBotCasos{
   position: relative;  
 }
-#butt-8{
+#butt-4,
+#butt-6,
+#butt-8,
+#butt-13,
+#butt-15,
+#butt-23,
+#butt-24,
+#butt-112{
   margin-right: 2px;
   background: linear-gradient(15deg, rgb(0, 255, 0) 15%,  rgba(0, 0, 0, 0.423) 60%);
   border-radius: 7px;
@@ -2016,10 +2068,12 @@ elemento.visible {
   margin-top: -35px;
   background-color: white;
 }
+#cont-titulo-comercial,
+#cont-titulo-admin,
 #cont-titulo{
   width:100%; /* Establece el ancho que desees para tu contenedor. Puede ser un valor fijo o relativo. */
   margin: 0 auto; /* Esto centra el contenedor horizontalmente. */
-  position: relative;
+  position: absolute;
   top: -83px;
   display: flex;
   flex-direction: column;
