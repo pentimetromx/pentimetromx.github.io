@@ -1,29 +1,30 @@
-var arrayFunctions = ['updateMario','updateAna','updateCarlos','updateAndres','updateJorge','updateJesus','updateSandra'] 
+/* var arrayFunctions = ['updateMario','updateAna','updateCarlos','updateAndres','updateJorge','updateJesus','updateSandra'] */ 
 var arrayIdButtsMA = ['resultados','troubleshoot','def1','def2','adtBut','fua1','lup','kaizen']
 var arrayButtsKaizen = ['btn10','btn11','btn12','btn17']
 var arrayButtsPlanos = ['btn13','btn14','btn15']
 var arrayImgsRodilleria = document.querySelectorAll ('.durezas')
-var arrayButtsInicio = ['butt-1','butt-5','butt-7','butt-111']
-var arrayInstructivos = ['contImaginario','puesta-punto','rodillo-infeed','control-neumatico']
+/* var arrayButtsInicio = ['butt-1','butt-5','butt-7','butt-111'] */
+/* var arrayInstructivos = ['contImaginario','puesta-punto','rodillo-infeed','control-neumatico'] */
 var arrayAllPneumatica = ['vid-pneumatic','bailarina','padre-neumat','pneumatico','control-neumatico','imag1','imag2','imag3','imag4','contImaginario','vid-basculante','rodillo-infeed','puesta-punto','contImgEntrenos']
 var arrayButtsInstructivos = ['contBotCasos','contBotInfeed']
-var arrayImgsEntreno = ['imag1','imag2','imag3','imag4']
-let arrayImgsGrafilado = ['imgGrafilado1','imgGrafilado2','imgGrafilado3','imgGrafilado4']
+/* var arrayImgsEntreno = ['imag1','imag2','imag3','imag4'] */
+/* let arrayImgsGrafilado = ['imgGrafilado1','imgGrafilado2','imgGrafilado3','imgGrafilado4'] */
 var enlacesIDs = ['link1', 'link2', 'link3', 'link4','link5'] 
 var arrayPosicionnador = []
-var arrayContador = []
+/* var arrayContador = [] */
 var destino = 257;
 var idsArray = []
 var idsArrayEliminados = []
 var idsMA = ['control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','casos-kaizen','mejoras-kai','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','planos-kaizen','materiales-kaizen','kaizenCont','conti-boton-planos', 'conti-boton-kaizen','troubleshooting','canvasContainer2', 'contChecks', 'canvasContainer3', 'contImagNeg',,'contImagGraf','canvasContainer4','canvasContainer5','canvasContainer6','canvasContainer7','canvasContainer8', 'canvasContainer9']
 var idsMAhijos = ['contBotCasos','materiales-kaizen','troubleshooting','canvasContainer2','contChecks','canvasContainer3','contImagNeg','contImagGraf']
 var arrayElementMA = ['kaizenCont','contImagGraf','contImagNeg','canvasContainer3','contChecks','canvasContainer2','kaizenCont']
-var idsResultados = ['icon-ana','icon-carlos','icon-andres','icon-jorge','icon-jesus','icon-sandra','icon-mario']
-var elementosContUser = document.querySelectorAll('.cont-user')
+/* var idsResultados = ['icon-ana','icon-carlos','icon-andres','icon-jorge','icon-jesus','icon-sandra','icon-mario'] */
+/* var elementosContUser = document.querySelectorAll('.cont-user') */
 var lineasGrid = document.getElementById('contLineas')
-var contTitulo = document.getElementById('cont-titulo')
+/* var contTitulo = document.getElementById('cont-titulo') */
 var contAdministrar = document.getElementById('cont-titulo-admin')
 var contComercial = document.getElementById('cont-titulo-comercial')
+var contCalidad = document.getElementById('cont-titulo-calidad')
 
 var linkList = document.getElementById("linkList")
 var linkListI = document.getElementById("linkListI")
@@ -31,14 +32,14 @@ var uTeñido = document.getElementById('uTeñidos')
 var arrayIdButtsCheck = ['boton2','boton3','boton4','boton5','boton6','boton7','boton8','boton9','boton10','boton11','boton12','btn600','btn700','btn800']
 var contiBtt = ['archivo','btt2','btt3','btt4','btt5','btt6','btt7'] 
 var currentID = null;
-var btnAtras = document.getElementById('bot-atras')
+/* var btnAtras = document.getElementById('bot-atras') */
 var butInicio = document.getElementById('bot-inic')
 var botGrande = document.getElementById('iniciar')
 var imgTorreI = document.getElementById('imgTorre')
 var contInicial = document.getElementById('container1')
 var botonMa = document.getElementById('bot-mantaut')
 var imagPasoApaso = document.querySelectorAll('.img1')
-var allContenedores = ['cont-titulo-comercial','cont-titulo-admin','container1','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
+var allContenedores = ['cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','container1','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado']
@@ -54,6 +55,7 @@ var contIMPlaca = document.getElementById('placa')
 var contIMmanta = document.getElementById('manta')
 var arrayButtsRutilantes = ['butt-113','butt-12','butt-16','butt-21','butt-22','butt-1130','butt-120','butt-160','butt-210','butt-220']
 var arrayButtsRutilantesII = ['butt-01130','butt-012','butt-016','butt-021','butt-0202','butt-011300','butt-0120']
+var arrayButtsRutilantesIII = ['butt-001130','butt-0012','butt-0016','butt-0021','butt-00202']
 
 
 var allContMA = ['conteneMantaut','conti-boton']
@@ -2332,12 +2334,28 @@ function abrirSeccionAdministrativa() {
       element.style.display = 'none'
     }
   });
-  contAdministrar.style.display = 'flex'
-  container1.style.display = 'flex'
-  // Retrasar la llamada a cambiarColoresConRetraso después de 1 segundo
+
+  // Retrasar la llamada a cambiarColoresConRetraso después de 100 msg
   setTimeout(function () {
     cambiarColoresConRetraso();
   }, 100);
+
+  contAdministrar.style.display = 'flex'
+  container1.style.display = 'flex'
+
+    // Obtener todos los elementos con la clase 'oblicuosInicio'
+  var elementosOblicuos = document.getElementsByClassName('oblicuosInicio');
+
+  // Convertir la colección de elementos a un array
+  var arrayOblicuos = Array.from(elementosOblicuos);
+
+  // Recorrer los elementos y hacerlos visibles
+  for (var i = 0; i < arrayOblicuos.length; i++) {
+      var elemento = arrayOblicuos[i];
+
+      // Hacer visible el elemento (asumiendo que los elementos son elementos con estilo)
+      elemento.style.display = "block"; // Puedes cambiar "block" por "inline", "flex", u otro valor según tus necesidades
+  }
 }
 function abrirSeccionComercial() {
   allContenedores.forEach(elemen => {
@@ -2352,6 +2370,21 @@ function abrirSeccionComercial() {
     setTimeout(function () {
       cambiarColoresConRetrasoII();
     }, 100);
+}
+function abrirSeccionCalidad(){
+  allContenedores.forEach(elemen => {
+    var element = document.getElementById(elemen)
+    if (element) {
+      element.style.display = 'none'
+    }
+  });
+  contCalidad.style.display = 'flex'
+  container1.style.display = 'flex'
+    // Retrasar la llamada a cambiarColoresConRetraso después de 1 segundo
+    setTimeout(function () {
+      cambiarColoresConRetrasoIII();
+    }, 100);
+
 }
 function cambiarColoresConRetraso() {
   function cambiarColorConRetraso(indice) {
@@ -2370,7 +2403,7 @@ function cambiarColoresConRetraso() {
 
   setTimeout(function () {
     cambiarColorConRetraso(0);
-  }, 37);
+  }, 7);
 }
 function devolverColoresConRetraso() {
   // Función para cambiar el color de un botón y programar el siguiente cambio después de 77 milisegundos
@@ -2386,7 +2419,7 @@ function devolverColoresConRetraso() {
       // Programar el cambio de color para el siguiente botón después de 77 milisegundos
       setTimeout(function () {
         cambiarColorConRetraso(indice);
-      }, 77);
+      }, 37);
     }
   }
 
@@ -2395,23 +2428,23 @@ function devolverColoresConRetraso() {
     cambiarColorConRetraso(0);
   }, 77);
 }
-function cambiarColoresConRetrasoII() {
-  function cambiarColorConRetrasoII(indice) {
-    document.getElementById(arrayButtsRutilantesII[indice]).style.backgroundColor = 'red';
+function cambiarColoresConRetrasoIII() {
+  function cambiarColorConRetrasoIII(indice) {
+    document.getElementById(arrayButtsRutilantesIII[indice]).style.backgroundColor = 'red';
     indice++;
 
-    if (indice < arrayButtsRutilantesII.length) {
+    if (indice < arrayButtsRutilantesIII.length) {
       setTimeout(function () {
-        cambiarColorConRetrasoII(indice);
+        cambiarColorConRetrasoIII(indice);
       }, 37);
     } else {
       // Todas las iteraciones han terminado, ahora puedes llamar a devolverColoresConRetraso
-      devolverColoresConRetrasoII();
+      devolverColoresConRetrasoIII();
     }
   }
 
   setTimeout(function () {
-    cambiarColorConRetrasoII(0);
+    cambiarColorConRetrasoIII(0);
   }, 37);
 }
 function devolverColoresConRetrasoII() {
@@ -2437,7 +2470,48 @@ function devolverColoresConRetrasoII() {
     cambiarColorConRetrasoII(0);
   }, 77);
 }
+function cambiarColoresConRetrasoII() {
+  function cambiarColorConRetrasoII(indice) {
+    document.getElementById(arrayButtsRutilantesII[indice]).style.backgroundColor = 'red';
+    indice++;
 
+    if (indice < arrayButtsRutilantesII.length) {
+      setTimeout(function () {
+        cambiarColorConRetrasoII(indice);
+      }, 37);
+    } else {
+      // Todas las iteraciones han terminado, ahora puedes llamar a devolverColoresConRetraso
+      devolverColoresConRetrasoII();
+    }
+  }
+
+  setTimeout(function () {
+    cambiarColorConRetrasoII(0);
+  }, 37);
+}
+function devolverColoresConRetrasoIII() {
+  // Función para cambiar el color de un botón y programar el siguiente cambio después de 77 milisegundos
+  function cambiarColorConRetrasoIII(indice) {
+    // Cambiar el color del botón en el índice dado a rojo
+    document.getElementById(arrayButtsRutilantesIII[indice]).style.backgroundColor = '';
+
+    // Incrementar el índice
+    indice++;
+
+    // Verificar si hay más botones
+    if (indice < arrayButtsRutilantesIII.length) {
+      // Programar el cambio de color para el siguiente botón después de 77 milisegundos
+      setTimeout(function () {
+        cambiarColorConRetrasoIII(indice);
+      }, 77);
+    }
+  }
+
+  // Iniciar el proceso cambiando el color del primer botón después de 77 milisegundos
+  setTimeout(function () {
+    cambiarColorConRetrasoIII(0);
+  }, 77);
+}
 function abrirSeccionVariable(elementId){
   allContenedores.forEach(elemen => {
     var element = document.getElementById(elemen)  

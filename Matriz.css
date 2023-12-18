@@ -1169,6 +1169,42 @@ width:447px ;
   margin-left: auto; /* Establece el margen izquierdo automático */
   margin-right: auto; /* Establece el margen derecho automático */
 }
+#agrupaOblicuos-XVI{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  top: 107px;
+  gap: 7px;
+  margin-left: auto; /* Establece el margen izquierdo automático */
+  margin-right: auto; /* Establece el margen derecho automático */
+}
+#agrupaOblicuos-XVII{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  top: 107px;
+  gap: 7px;
+  margin-left: auto; /* Establece el margen izquierdo automático */
+  margin-right: auto; /* Establece el margen derecho automático */
+}
+#agrupaOblicuos-XVIII{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  top: -227px;
+  gap: 7px;
+  margin-left: auto; /* Establece el margen izquierdo automático */
+  margin-right: auto; /* Establece el margen derecho automático */
+}
+#agrupaOblicuos-XIX{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  top: -127px;
+  gap: 7px;
+  margin-left: auto; /* Establece el margen izquierdo automático */
+  margin-right: auto; /* Establece el margen derecho automático */
+}
 #contMedio-V-admin-I{
   position: relative;
   left:7px;
@@ -1321,6 +1357,13 @@ width:447px ;
 #contArriba-V-comercial,
 #contLateral-V-comercial,
 #contFrente-V-comercial,
+#contFrente-V-calidad,
+#contLateral-V-calidad,
+#contArriba-V-calidad,
+#contAtras-V-calidad,
+#contMedio-V-calidad,
+
+
 #contArriba-V,
 #contArriba-V-admin,
 #contAtras-V-admin,
@@ -1343,6 +1386,7 @@ width:447px ;
 #butt-13,
 #butt-15,
 #butt-23,
+#butt-203,
 #butt-24,
 #butt-112{
   margin-right: 2px;
@@ -2068,6 +2112,7 @@ elemento.visible {
   margin-top: -35px;
   background-color: white;
 }
+#cont-titulo-calidad,
 #cont-titulo-comercial,
 #cont-titulo-admin,
 #cont-titulo{
