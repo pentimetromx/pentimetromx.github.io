@@ -1,27 +1,18 @@
-/* var arrayFunctions = ['updateMario','updateAna','updateCarlos','updateAndres','updateJorge','updateJesus','updateSandra'] */ 
 var arrayIdButtsMA = ['resultados','troubleshoot','def1','def2','adtBut','fua1','lup','kaizen']
 var arrayButtsKaizen = ['btn10','btn11','btn12','btn17']
 var arrayButtsPlanos = ['btn13','btn14','btn15']
 var arrayImgsRodilleria = document.querySelectorAll ('.durezas')
-/* var arrayButtsInicio = ['butt-1','butt-5','butt-7','butt-111'] */
-/* var arrayInstructivos = ['contImaginario','puesta-punto','rodillo-infeed','control-neumatico'] */
 var arrayAllPneumatica = ['vid-pneumatic','bailarina','padre-neumat','pneumatico','control-neumatico','imag1','imag2','imag3','imag4','contImaginario','vid-basculante','rodillo-infeed','puesta-punto','contImgEntrenos']
 var arrayButtsInstructivos = ['contBotCasos','contBotInfeed']
-/* var arrayImgsEntreno = ['imag1','imag2','imag3','imag4'] */
-/* let arrayImgsGrafilado = ['imgGrafilado1','imgGrafilado2','imgGrafilado3','imgGrafilado4'] */
 var enlacesIDs = ['link1', 'link2', 'link3', 'link4','link5'] 
 var arrayPosicionnador = []
-/* var arrayContador = [] */
 var destino = 257;
 var idsArray = []
 var idsArrayEliminados = []
 var idsMA = ['control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','casos-kaizen','mejoras-kai','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','planos-kaizen','materiales-kaizen','kaizenCont','conti-boton-planos', 'conti-boton-kaizen','troubleshooting','canvasContainer2', 'contChecks', 'canvasContainer3', 'contImagNeg',,'contImagGraf','canvasContainer4','canvasContainer5','canvasContainer6','canvasContainer7','canvasContainer8', 'canvasContainer9']
 var idsMAhijos = ['contBotCasos','materiales-kaizen','troubleshooting','canvasContainer2','contChecks','canvasContainer3','contImagNeg','contImagGraf']
 var arrayElementMA = ['kaizenCont','contImagGraf','contImagNeg','canvasContainer3','contChecks','canvasContainer2','kaizenCont']
-/* var idsResultados = ['icon-ana','icon-carlos','icon-andres','icon-jorge','icon-jesus','icon-sandra','icon-mario'] */
-/* var elementosContUser = document.querySelectorAll('.cont-user') */
 var lineasGrid = document.getElementById('contLineas')
-/* var contTitulo = document.getElementById('cont-titulo') */
 var contAdministrar = document.getElementById('cont-titulo-admin')
 var contComercial = document.getElementById('cont-titulo-comercial')
 var contCalidad = document.getElementById('cont-titulo-calidad')
@@ -32,7 +23,6 @@ var uTeñido = document.getElementById('uTeñidos')
 var arrayIdButtsCheck = ['boton2','boton3','boton4','boton5','boton6','boton7','boton8','boton9','boton10','boton11','boton12','btn600','btn700','btn800']
 var contiBtt = ['archivo','btt2','btt3','btt4','btt5','btt6','btt7'] 
 var currentID = null;
-/* var btnAtras = document.getElementById('bot-atras') */
 var butInicio = document.getElementById('bot-inic')
 var botGrande = document.getElementById('iniciar')
 var imgTorreI = document.getElementById('imgTorre')
@@ -140,6 +130,7 @@ let miCanvas11 = document.getElementById('MiGrafica9').getContext('2d')
 
 var botones = document.querySelectorAll('.butt-mautonomo')
 var linksTorre = document.getElementById('contLinksTorre')
+var arrayButtsIniciales = ['bot-atras','bot-inicial','iniciar','bot-atras12']
 
 let currentIndex = 0;
 let actualtIndex = 0;
@@ -2343,19 +2334,24 @@ function abrirSeccionAdministrativa() {
   contAdministrar.style.display = 'flex'
   container1.style.display = 'flex'
 
-    // Obtener todos los elementos con la clase 'oblicuosInicio'
-  var elementosOblicuos = document.getElementsByClassName('oblicuosInicio');
-
-  // Convertir la colección de elementos a un array
-  var arrayOblicuos = Array.from(elementosOblicuos);
-
-  // Recorrer los elementos y hacerlos visibles
+  var elementosOblicuos = document.getElementsByClassName('oblicuosInicio')
+  var arrayOblicuos = Array.from(elementosOblicuos)
   for (var i = 0; i < arrayOblicuos.length; i++) {
-      var elemento = arrayOblicuos[i];
-
-      // Hacer visible el elemento (asumiendo que los elementos son elementos con estilo)
-      elemento.style.display = "block"; // Puedes cambiar "block" por "inline", "flex", u otro valor según tus necesidades
+    var elemento = arrayOblicuos[i];
+    elemento.style.display = "block"; // Puedes cambiar "block" por "inline", "flex", u otro valor según tus necesidades
   }
+
+  for (var i = 0; i < arrayButtsIniciales.length; i++) {
+    var botonId = arrayButtsIniciales[i];
+    // Obtener el elemento del DOM por su ID
+    var boton = document.getElementById(botonId);
+    // Verificar si el elemento existe antes de intentar cambiar su estilo
+    if (boton) {
+      // Cambiar el color de fondo a 'rgb
+      boton.style.backgroundColor = 'rgb(213, 245, 7)'
+      boton.style.color = 'black'
+  }}
+
 }
 function abrirSeccionComercial() {
   allContenedores.forEach(elemen => {
@@ -2366,10 +2362,22 @@ function abrirSeccionComercial() {
   });
   contComercial.style.display = 'flex'
   container1.style.display = 'flex'
-    // Retrasar la llamada a cambiarColoresConRetraso después de 1 segundo
-    setTimeout(function () {
-      cambiarColoresConRetrasoII();
-    }, 100);
+  // Retrasar la llamada a cambiarColoresConRetraso después de 1 segundo
+  setTimeout(function () {
+    cambiarColoresConRetrasoII();
+  }, 100);
+
+  for (var i = 0; i < arrayButtsIniciales.length; i++) {
+    var botonId = arrayButtsIniciales[i];
+    // Obtener el elemento del DOM por su ID
+    var boton = document.getElementById(botonId);
+    // Verificar si el elemento existe antes de intentar cambiar su estilo
+    if (boton) {
+      // Cambiar el color de fondo a 'rgb(252, 5, 224)'
+      boton.style.backgroundColor = 'rgb(0, 255, 0)'
+      boton.style.color = 'black'
+  }}
+  
 }
 function abrirSeccionCalidad(){
   allContenedores.forEach(elemen => {
@@ -2384,6 +2392,17 @@ function abrirSeccionCalidad(){
     setTimeout(function () {
       cambiarColoresConRetrasoIII();
     }, 100);
+
+    for (var i = 0; i < arrayButtsIniciales.length; i++) {
+    var botonId = arrayButtsIniciales[i];
+    // Obtener el elemento del DOM por su ID
+    var boton = document.getElementById(botonId);
+    // Verificar si el elemento existe antes de intentar cambiar su estilo
+    if (boton) {
+    // Cambiar el color de fondo a 'rgb(252, 5, 224)'
+    boton.style.backgroundColor = 'rgb(252, 5, 224)'
+    boton.style.color = 'white'
+  }}
 
 }
 function cambiarColoresConRetraso() {

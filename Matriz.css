@@ -1398,12 +1398,56 @@ width:447px ;
 #butt-8,
 #butt-13,
 #butt-15,
-#butt-23,
 #butt-203,
-#butt-24,
-#butt-112{
+#butt-112,
+#butt-24{
   margin-right: 2px;
   background: linear-gradient(15deg, rgb(0, 255, 0) 15%,  rgba(0, 0, 0, 0.423) 60%);
+  border-radius: 7px;
+  width: 161px;
+  height: 51px;
+  font-size: 14px;
+  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%); 
+  transform: skewX(-30deg);
+  cursor: pointer;
+  z-index: 0;
+  margin-top:6px;
+}
+#butt-013,
+#butt-015,
+#butt-024,
+#butt-023,
+#butt-0130,
+#butt-0150,
+#butt-40,
+#butt-60,
+#butt-80,
+#butt-23,
+#butt-240,
+#butt-7112{
+  margin-right: 2px;
+  background: linear-gradient(15deg, rgb(213, 245, 7) 15%,  rgba(0, 0, 0, 0.423) 60%);
+  border-radius: 7px;
+  width: 161px;
+  height: 51px;
+  font-size: 14px;
+  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%); 
+  transform: skewX(-30deg);
+  cursor: pointer;
+  z-index: 0;
+  margin-top:6px;
+}
+#butt-800,
+#butt-600,
+#butt-11200,
+#butt-2400,
+#butt-150,
+#butt-2030,
+#butt-130,
+#butt-400,
+#butt-1120{
+  margin-right: 2px;
+  background: linear-gradient(15deg, rgb(252, 5, 224) 15%,  rgba(0, 0, 0, 0.423) 60%);
   border-radius: 7px;
   width: 161px;
   height: 51px;
