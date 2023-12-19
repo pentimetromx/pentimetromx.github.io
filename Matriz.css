@@ -1229,24 +1229,15 @@ width:447px ;
  #agrupaOblicuos-XI > * {
   margin-left: 100px; 
 }
-#butt-016:hover,
+/*#butt-016:hover,
 #butt-021:hover,
 #butt-0202:hover,
 #butt-011300:hover,
 #butt-0120:hover,
-#butt-012:hover,
 #butt-01130:hover,
-#butt-113:hover,
 #butt-111:hover,
-#butt-3:hover,
-#butt-5:hover,
-#butt-7:hover,
-#butt-12:hover,
 #butt-14:hover,
-#butt-16:hover,
 #butt-17:hover,
-#butt-21:hover,
-#butt-22:hover,
 #butt-120:hover,
 #butt-160:hover,
 #butt-210:hover,
@@ -1255,7 +1246,8 @@ width:447px ;
 #butt-18:hover {
   background-color: rgb(189, 2, 2);
   color: white;
-}
+  transition: background-color 0.3s;
+}*/
 .Bot-inicio3 {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.423);
@@ -1414,12 +1406,16 @@ width:447px ;
   margin-top:6px;
 }
 #butt-013,
+#butt-01300,
 #butt-015,
+#butt-01500,
 #butt-024,
+#butt-02400,
 #butt-023,
+#butt-40,
+#butt-02300,
 #butt-0130,
 #butt-0150,
-#butt-40,
 #butt-60,
 #butt-80,
 #butt-23,
@@ -1436,6 +1432,28 @@ width:447px ;
   cursor: pointer;
   z-index: 0;
   margin-top:6px;
+}
+#butt-023000,
+#butt-024000,
+#butt-015000,
+#butt-013000,
+#butt-7112000,
+#butt-8000,
+#butt-6000,
+#butt-4000,
+#butt-711200{
+  margin-right: 2px;
+  background: linear-gradient(15deg, rgb(0,0,255) 15%,  rgba(0, 0, 0, 0.423) 60%);
+  border-radius: 7px;
+  width: 161px;
+  height: 51px;
+  font-size: 14px;
+  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%); 
+  transform: skewX(-30deg);
+  cursor: pointer;
+  z-index: 0;
+  margin-top:6px;
+
 }
 #butt-800,
 #butt-600,
@@ -2173,7 +2191,19 @@ elemento.visible {
   width:100%; /* Establece el ancho que desees para tu contenedor. Puede ser un valor fijo o relativo. */
   margin: 0 auto; /* Esto centra el contenedor horizontalmente. */
   position: relative;
+  margin-top: -177px;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#cont-titulo-operacion{
+  width:100%; /* Establece el ancho que desees para tu contenedor. Puede ser un valor fijo o relativo. */
+  margin: 0 auto; /* Esto centra el contenedor horizontalmente. */
+  position: relative;
+  display: flex;
+  margin-top: -56px;
   flex-direction: column;
   justify-content: center;
   align-items: center;

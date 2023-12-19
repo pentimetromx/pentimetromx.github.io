@@ -16,6 +16,7 @@ var lineasGrid = document.getElementById('contLineas')
 var contAdministrar = document.getElementById('cont-titulo-admin')
 var contComercial = document.getElementById('cont-titulo-comercial')
 var contCalidad = document.getElementById('cont-titulo-calidad')
+var contOperativa = document.getElementById('cont-titulo-operacion')
 
 var linkList = document.getElementById("linkList")
 var linkListI = document.getElementById("linkListI")
@@ -29,7 +30,7 @@ var imgTorreI = document.getElementById('imgTorre')
 var contInicial = document.getElementById('container1')
 var botonMa = document.getElementById('bot-mantaut')
 var imagPasoApaso = document.querySelectorAll('.img1')
-var allContenedores = ['cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','container1','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
+var allContenedores = ['cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','container1','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado']
@@ -44,9 +45,9 @@ var contVid = document.getElementById('videosTraining')
 var contIMPlaca = document.getElementById('placa')
 var contIMmanta = document.getElementById('manta')
 var arrayButtsRutilantes = ['butt-113','butt-12','butt-16','butt-21','butt-22','butt-1130','butt-120','butt-160','butt-210','butt-220']
+var arrayButtsRutilantesI = ['butt-711200','butt-01300','butt-01500','butt-02400','butt-02300']
 var arrayButtsRutilantesII = ['butt-01130','butt-012','butt-016','butt-021','butt-0202','butt-011300','butt-0120']
 var arrayButtsRutilantesIII = ['butt-001130','butt-0012','butt-0016','butt-0021','butt-00202']
-
 
 var allContMA = ['conteneMantaut','conti-boton']
 var buttonsMA = document.getElementsByClassName("butt-mautonomo")
@@ -61,7 +62,6 @@ let contVariable = document.getElementById('cont-variable')
 let contPlana = document.getElementById('cont-plana')
 let contSecador = document.getElementById('cont-secador')
 let contiButtCasos = document.getElementById('mejoras-kai')
-
 
 const textToColor = document.getElementById("textToColor")
 const textToColorI = document.getElementById("textToColorI")
@@ -2318,6 +2318,43 @@ function abrirSeccionContinua() {
 
   firstClick = true;  
 }
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+document.addEventListener("DOMContentLoaded", function () {                                                                   // BOTON EN ROJO * 0.2 SEGUNDOS 
+  var buttons = document.querySelectorAll('.Bot-inicio3');
+  buttons.forEach(function(currentButton) {
+    currentButton.addEventListener("mouseover", function () {
+      currentButton.style.backgroundColor = "red"; 
+      setTimeout(function () {
+        currentButton.style.backgroundColor = "";
+      }, 200);
+    });
+  });
+});
+function abrirSeccionOperativa(){
+  allContenedores.forEach(elemen => {
+    var element = document.getElementById(elemen)
+    if (element) {
+      element.style.display = 'none'
+    }
+  });
+
+  contOperativa.style.display = 'flex'
+  container1.style.display = 'flex'
+  // Retrasar la llamada a cambiarColoresConRetraso después de 100 msg
+  setTimeout(function () {
+    cambiarColoresConRetrasoI();
+  }, 100);
+  for (var i = 0; i < arrayButtsIniciales.length; i++) {
+  var botonId = arrayButtsIniciales[i];
+  // Obtener el elemento del DOM por su ID
+  var boton = document.getElementById(botonId);
+  // Verificar si el elemento existe antes de intentar cambiar su estilo
+  if (boton) {
+  // Cambiar el color de fondo a 'rgb
+  boton.style.backgroundColor = 'rgb(0,0,255)'
+  boton.style.color = 'white'
+  }}  
+}
 function abrirSeccionAdministrativa() {
   allContenedores.forEach(elemen => {
     var element = document.getElementById(elemen)
@@ -2338,16 +2375,13 @@ function abrirSeccionAdministrativa() {
   var arrayOblicuos = Array.from(elementosOblicuos)
   for (var i = 0; i < arrayOblicuos.length; i++) {
     var elemento = arrayOblicuos[i];
-    elemento.style.display = "block"; // Puedes cambiar "block" por "inline", "flex", u otro valor según tus necesidades
+    elemento.style.display = "block";
   }
-
-  for (var i = 0; i < arrayButtsIniciales.length; i++) {
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  for (var i = 0; i < arrayButtsIniciales.length; i++) {                                                                          /// COLECCION BOTONES DAR COLOR
     var botonId = arrayButtsIniciales[i];
-    // Obtener el elemento del DOM por su ID
     var boton = document.getElementById(botonId);
-    // Verificar si el elemento existe antes de intentar cambiar su estilo
     if (boton) {
-      // Cambiar el color de fondo a 'rgb
       boton.style.backgroundColor = 'rgb(213, 245, 7)'
       boton.style.color = 'black'
   }}
@@ -2373,7 +2407,7 @@ function abrirSeccionComercial() {
     var boton = document.getElementById(botonId);
     // Verificar si el elemento existe antes de intentar cambiar su estilo
     if (boton) {
-      // Cambiar el color de fondo a 'rgb(252, 5, 224)'
+      // Cambiar el color de fondo a 'rgb
       boton.style.backgroundColor = 'rgb(0, 255, 0)'
       boton.style.color = 'black'
   }}
@@ -2388,26 +2422,25 @@ function abrirSeccionCalidad(){
   });
   contCalidad.style.display = 'flex'
   container1.style.display = 'flex'
-    // Retrasar la llamada a cambiarColoresConRetraso después de 1 segundo
-    setTimeout(function () {
-      cambiarColoresConRetrasoIII();
-    }, 100);
+  // Retrasar la llamada a cambiarColoresConRetraso después de 1 segundo
+  setTimeout(function () {
+    cambiarColoresConRetrasoIII();
+  }, 100);
 
-    for (var i = 0; i < arrayButtsIniciales.length; i++) {
-    var botonId = arrayButtsIniciales[i];
-    // Obtener el elemento del DOM por su ID
-    var boton = document.getElementById(botonId);
-    // Verificar si el elemento existe antes de intentar cambiar su estilo
-    if (boton) {
-    // Cambiar el color de fondo a 'rgb(252, 5, 224)'
-    boton.style.backgroundColor = 'rgb(252, 5, 224)'
-    boton.style.color = 'white'
+  for (var i = 0; i < arrayButtsIniciales.length; i++) {
+  var botonId = arrayButtsIniciales[i];
+  // Obtener el elemento del DOM por su ID
+  var boton = document.getElementById(botonId);
+  // Verificar si el elemento existe antes de intentar cambiar su estilo
+  if (boton) {
+  // Cambiar el color de fondo a 'rgb
+  boton.style.backgroundColor = 'rgb(252, 5, 224)'
+  boton.style.color = 'white'
   }}
-
 }
 function cambiarColoresConRetraso() {
   function cambiarColorConRetraso(indice) {
-    document.getElementById(arrayButtsRutilantes[indice]).style.backgroundColor = 'red';
+    document.getElementById(arrayButtsRutilantes[indice]).style.backgroundColor = 'black';
     indice++;
 
     if (indice < arrayButtsRutilantes.length) {
@@ -2449,7 +2482,7 @@ function devolverColoresConRetraso() {
 }
 function cambiarColoresConRetrasoIII() {
   function cambiarColorConRetrasoIII(indice) {
-    document.getElementById(arrayButtsRutilantesIII[indice]).style.backgroundColor = 'red';
+    document.getElementById(arrayButtsRutilantesIII[indice]).style.backgroundColor = 'black';
     indice++;
 
     if (indice < arrayButtsRutilantesIII.length) {
@@ -2491,7 +2524,7 @@ function devolverColoresConRetrasoII() {
 }
 function cambiarColoresConRetrasoII() {
   function cambiarColorConRetrasoII(indice) {
-    document.getElementById(arrayButtsRutilantesII[indice]).style.backgroundColor = 'red';
+    document.getElementById(arrayButtsRutilantesII[indice]).style.backgroundColor = 'black';
     indice++;
 
     if (indice < arrayButtsRutilantesII.length) {
@@ -2508,6 +2541,47 @@ function cambiarColoresConRetrasoII() {
     cambiarColorConRetrasoII(0);
   }, 37);
 }
+function cambiarColoresConRetrasoI(){
+  function cambiarColorConRetrasoI(indice) {
+    document.getElementById(arrayButtsRutilantesI[indice]).style.backgroundColor = 'black';
+    indice++;
+    if (indice < arrayButtsRutilantesI.length) {
+      setTimeout(function () {
+        cambiarColorConRetrasoI(indice);
+      }, 37);
+    } else {
+      // Todas las iteraciones han terminado, ahora puedes llamar a devolverColoresConRetraso
+      devolverColoresConRetrasoI();
+    }
+  }
+  setTimeout(function () {
+    cambiarColorConRetrasoI(0);
+  }, 37);
+}
+function devolverColoresConRetrasoI() {
+  // Función para cambiar el color de un botón y programar el siguiente cambio después de 77 milisegundos
+  function cambiarColorConRetrasoI(indice) {
+    // Cambiar el color del botón en el índice dado a rojo
+    document.getElementById(arrayButtsRutilantesI[indice]).style.backgroundColor = '';
+
+    // Incrementar el índice
+    indice++;
+
+    // Verificar si hay más botones
+    if (indice < arrayButtsRutilantesI.length) {
+      // Programar el cambio de color para el siguiente botón después de 77 milisegundos
+      setTimeout(function () {
+        cambiarColorConRetrasoI(indice);
+      }, 77);
+    }
+  }
+
+  // Iniciar el proceso cambiando el color del primer botón después de 77 milisegundos
+  setTimeout(function () {
+    cambiarColorConRetrasoI(0);
+  }, 77);
+}
+
 function devolverColoresConRetrasoIII() {
   // Función para cambiar el color de un botón y programar el siguiente cambio después de 77 milisegundos
   function cambiarColorConRetrasoIII(indice) {
@@ -6174,7 +6248,7 @@ function aumentoBotonesBody() {
           /* eliminarEstilosEnLinea(); */
           // Llamada recursiva para pasar al siguiente botón en el array
           aumentarYRestaurar(index + 1);
-        }, 300);
+        }, 177);
       }
     }
   }
