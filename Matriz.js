@@ -45,7 +45,7 @@ var contVid = document.getElementById('videosTraining')
 var contIMPlaca = document.getElementById('placa')
 var contIMmanta = document.getElementById('manta')
 var arrayButtsRutilantes = ['butt-113','butt-12','butt-16','butt-21','butt-22','butt-1130','butt-120','butt-160','butt-210','butt-220']
-var arrayButtsRutilantesI = ['butt-711200','butt-01300','butt-01500','butt-02400','butt-02300']
+var arrayButtsRutilantesI = ['butt-024000','butt-023000','butt-015000','butt-013000','butt-7112000']
 var arrayButtsRutilantesII = ['butt-01130','butt-012','butt-016','butt-021','butt-0202','butt-011300','butt-0120']
 var arrayButtsRutilantesIII = ['butt-001130','butt-0012','butt-0016','butt-0021','butt-00202']
 
@@ -6232,7 +6232,10 @@ function showButtonsPlanosRetraso() {
   mostrarConRetraso(0) // Comienza desde el primer botón
 }
 function aumentoBotonesBody() {
+  var contiRebobinador = document.getElementById('rebobinador')
+  contiRebobinador.style.display = 'none'
   const buttonsIds = ['butt-7', 'butt-5', 'butt-3', 'butt-111'];
+  container1.style.display = 'none'
   // Función para aumentar el tamaño de un botón y luego restaurarlo
   function aumentarYRestaurar(index) {
     if (index < buttonsIds.length) {
@@ -7041,6 +7044,7 @@ const sugerencias = [
   'bateria',
   'contra',
   'contraPresion',
+  'densitometria',
   'impresor',
   'inicio',
   'manta',
@@ -7050,9 +7054,11 @@ const sugerencias = [
   'plancha',
   'porta mantilla',
   'porta plancha',
+  'pre',
+  'preprensa',
   'rotatek',
-  'secador uv',
   'secador',
+  'secador uv',
   'smed',
   'resultados',
   'tintero',
@@ -7067,6 +7073,13 @@ searchForm.addEventListener('submit', function (e) {
 
   // ... Tu código de manejo de búsqueda actual ...
   switch (searchTerm) {
+    case 'autonomo':
+    case 'mantenimiento autonomo':
+      ElementosMa('conteneMantaut')
+    break;
+    case 'densitometria':
+      abrirDensitometria()
+    break;
     case 'inicio':
       VolveraInicio()
     break;
@@ -7075,9 +7088,6 @@ searchForm.addEventListener('submit', function (e) {
     break;
     case 'bateria':
       changeButtonStyles('bateria-entintado-II', 'contene-7')
-    break;
-    case 'mantenimiento autonomo':
-      ElementosMa('conteneMantaut')
     break;
     case 'variable':
       abrirSeccionVariable('cont-variable')
@@ -7104,6 +7114,9 @@ searchForm.addEventListener('submit', function (e) {
         }
       }             
       showRepuesto('contPortPlaca')
+    break;
+    case 'preprensa':
+    abrirPrepress('pre-prensa')
     break;
     case 'mantilla': 
     case 'manta':      
