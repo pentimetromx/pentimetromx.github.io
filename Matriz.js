@@ -2330,14 +2330,13 @@ document.addEventListener("DOMContentLoaded", function () {                     
     });
   });
 });
-function abrirSeccionOperativa(){
+function abrirSeccionOperativa(elementId){
   allContenedores.forEach(elemen => {
     var element = document.getElementById(elemen)
     if (element) {
-      element.style.display = 'none'
-    }
+    element.style.display = 'none'
+    }    
   });
-
   contOperativa.style.display = 'flex'
   container1.style.display = 'flex'
   // Retrasar la llamada a cambiarColoresConRetraso después de 100 msg
@@ -2354,8 +2353,12 @@ function abrirSeccionOperativa(){
   boton.style.backgroundColor = 'rgb(0,0,255)'
   boton.style.color = 'white'
   }}  
+  if (!idsArray.includes(elementId)) {
+    idsArray.push(elementId)
+    console.log(idsArray)
+  }    
 }
-function abrirSeccionAdministrativa() {
+function abrirSeccionAdministrativa(elementId) {
   allContenedores.forEach(elemen => {
     var element = document.getElementById(elemen)
     if (element) {
@@ -2385,9 +2388,12 @@ function abrirSeccionAdministrativa() {
       boton.style.backgroundColor = 'rgb(213, 245, 7)'
       boton.style.color = 'black'
   }}
-
+  if (!idsArray.includes(elementId)) {
+    idsArray.push(elementId)
+    console.log(idsArray)
+  }    
 }
-function abrirSeccionComercial() {
+function abrirSeccionComercial(elementId) {
   allContenedores.forEach(elemen => {
     var element = document.getElementById(elemen)
     if (element) {
@@ -2411,9 +2417,12 @@ function abrirSeccionComercial() {
       boton.style.backgroundColor = 'rgb(0, 255, 0)'
       boton.style.color = 'black'
   }}
-  
+  if (!idsArray.includes(elementId)) {
+    idsArray.push(elementId)
+    console.log(idsArray)
+  }   
 }
-function abrirSeccionCalidad(){
+function abrirSeccionCalidad(elementId){
   allContenedores.forEach(elemen => {
     var element = document.getElementById(elemen)
     if (element) {
@@ -2437,6 +2446,10 @@ function abrirSeccionCalidad(){
   boton.style.backgroundColor = 'rgb(252, 5, 224)'
   boton.style.color = 'white'
   }}
+  if (!idsArray.includes(elementId)) {
+    idsArray.push(elementId)
+    console.log(idsArray)
+  }    
 }
 function cambiarColoresConRetraso() {
   function cambiarColorConRetraso(indice) {
@@ -2907,7 +2920,8 @@ function muestraVidColor(elementId){
   } */ 
 }
 function irContenedorAnterior() {
-  const coleccion = document.querySelectorAll('.desbobinador, .desbobinador-I, .uTeñido, .alimentador, .unidProceso, .rebobinador, .contTorrImp')
+  /* const coleccion = document.querySelectorAll('.desbobinador, .desbobinador-I, .uTeñido, .alimentador, .unidProceso, .rebobinador, .contTorrImp') */
+  var contInicio = document.getElementById('cont-titulo')
   var contTrouble = document.getElementById('troubleshooting')
   var linksTemporales = document.getElementById('links-inicialesI')
   var linksTemporalesII = document.getElementById('links-iniciales')
@@ -3330,7 +3344,19 @@ function irContenedorAnterior() {
 
         var boton01 = document.getElementById('bot-inic')
         boton01.style.display = 'block'        
-      break;                   
+      break; 
+      case 'cont-titulo-operacion':
+        abrirSeccionOperativa()        
+      break;
+      case 'cont-titulo-admin':
+        abrirSeccionAdministrativa()        
+      break; 
+      case 'cont-titulo-comercial':
+        abrirSeccionComercial()        
+      break; 
+      case 'cont-titulo-calidad':
+        abrirSeccionCalidad()        
+      break;       
     default:
   }
   var eltoAnterior = idsArray[idsArray.length - 2]
@@ -3340,7 +3366,7 @@ function irContenedorAnterior() {
    console.log(idsArray)
    if (idsArrayEliminados.length === 0){
     idsArrayEliminados.push ('salir')
-    abrirSeccionContinua()
+    contInicio.style.display = 'flex'
   }
 
 } 
