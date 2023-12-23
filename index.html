@@ -97,7 +97,7 @@
           <button class="Bot-inicio3333-fondo" id="butt-024000"></button>  
         </div> 
         <div id="contMedio-V-operacion" class="contOblicuosTorre">
-          <button class="Bot-inicio3" id="butt-22" onclick="abrirSeccionContinua('')">Rotativas</button>
+          <button class="Bot-inicio3" id="butt-22" onclick="abrirSeccionContinua('pantalla-inicial')">Rotativas</button>
           <button class="Bot-inicio3333-fondo" id="butt-023000"></button>  
         </div> 
       </div>
@@ -293,8 +293,8 @@
     <video id="videoBackground" style="display: none;" loop muted autoplay>
       <source src="./assets/Rotatek.mp4" type="video/mp4">  
     </video>
-    <video id="videoBackgroundII" autoplay loop muted>
-      <source src="./assets/matrix.mp4" type="video/mp4">  
+    <video id="videoBackgroundII" src="./assets/matrix.mp4" autoplay loop>
+      <!-- <source src="./assets/matrix.mp4" type="video/mp4"> -->  
     </video>
     <div class="links-inicialesI" id="links-inicialesI" style="position: absolute;left: 187px;top: 0.1px; font-family: 'GothamRounded', sans-serif;display: none;">
       
@@ -333,7 +333,7 @@
       </ul>    
     </div>    
     <div class="contene-1" id="container1" style="display: none;">
-      <button class="boton-a" id="bot-atras31" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 5px;display: none;" onclick="irContenedorAnterior('contPortPlaca')"></button>
+      <button class="boton-a" id="bot-atras31" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 5px;display: none;" onclick="irContenedorAnterior('')"></button>
       <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL INICIO</button>
       <button class="boton-a" id="toggleVideoButton" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
       <button class="boton-a" id="bot-atras32" style="text-align: center;width: 47px;position: relative;left: 685px;top: 5px;;display: none" onclick="irContenedorSiguiente('rotatek-1')"></button>
@@ -674,6 +674,7 @@
 
       <div id="troubleshooting" style="display: none;">
         <label class="labl-class" id="lbl1" for="archivo">Largo de impresion:</label>
+        <input type="file" id="archivo" name="archivo">
         <button class="inpt-class botnClass" id="archivo" onclick="listaEntrenamientosII('archivo')">Seleccionar archivo</button>
         <label class="labl-class" id="lbl2" for="archivo">Aditivos solución de fuente:</label>
         <button class="inpt-class botnClass" id="btt2" onclick="listaEntrenamientosII('btt2')">Seleccionar archivo</button>

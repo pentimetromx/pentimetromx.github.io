@@ -6,8 +6,8 @@ var arrayAllPneumatica = ['vid-pneumatic','bailarina','padre-neumat','pneumatico
 var arrayButtsInstructivos = ['contBotCasos','contBotInfeed']
 var enlacesIDs = ['link1', 'link2', 'link3', 'link4','link5'] 
 var arrayPosicionnador = []
-var destino = 257;
-var idsArray = []
+var destino = 257
+var idsArray = [];
 var idsArrayEliminados = []
 var idsMA = ['control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','casos-kaizen','mejoras-kai','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','planos-kaizen','materiales-kaizen','kaizenCont','conti-boton-planos', 'conti-boton-kaizen','troubleshooting','canvasContainer2', 'contChecks', 'canvasContainer3', 'contImagNeg',,'contImagGraf','canvasContainer4','canvasContainer5','canvasContainer6','canvasContainer7','canvasContainer8', 'canvasContainer9']
 var idsMAhijos = ['contBotCasos','materiales-kaizen','troubleshooting','canvasContainer2','contChecks','canvasContainer3','contImagNeg','contImagGraf']
@@ -17,6 +17,8 @@ var contAdministrar = document.getElementById('cont-titulo-admin')
 var contComercial = document.getElementById('cont-titulo-comercial')
 var contCalidad = document.getElementById('cont-titulo-calidad')
 var contOperativa = document.getElementById('cont-titulo-operacion')
+var previousElementID
+var elementoEliminado
 
 var linkList = document.getElementById("linkList")
 var linkListI = document.getElementById("linkListI")
@@ -136,10 +138,8 @@ let currentIndex = 0;
 let actualtIndex = 0;
 let nowIndex = 0;
 
-idsArray.push("pantalla-inicial")
-idsArrayEliminados.push('salir')
-console.log(idsArrayEliminados)
-console.log(idsArray)
+idsArray.push("cont-titulo") 
+idsArrayEliminados.push('cont-titulo')
 
 function VolveraInicio(){
   location.reload()
@@ -2261,13 +2261,17 @@ function videosImpresor(videoId) {
     default: 
   } 
 } 
-function abrirSeccionContinua() {
+function abrirSeccionContinua(elementId) {
   var botonesIniciales = document.querySelectorAll('.btn-bloque')
   var botonesC = document.querySelectorAll('.boton-c')   
   var linksII = document.getElementById('links-inicialesI')                                                                                    
   var links = document.getElementById('links-iniciales')
   var computado = window.getComputedStyle(links)
   var estado = computado.getPropertyValue('display')
+  var botonUp = document.getElementById('bot-atras31')
+  var botonDwn = document.getElementById('bot-atras32')
+  botonDwn.style.display = 'flex'
+  botonUp.style.display = 'flex'
   document.body.style.zoom = "100%";
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   botonesC.forEach(function(boton) {                                                                                     /// DEVUELVE ESTILOS A BOTONES AMARILLOS                 
@@ -2315,6 +2319,10 @@ function abrirSeccionContinua() {
       eliminarEstilosEnLinea(elemento);
     }
   });
+  if (!idsArray.includes(elementId)) {
+    idsArray.push(elementId)
+    console.log(idsArray)
+  } 
 
   firstClick = true;  
 }
@@ -2353,12 +2361,12 @@ function abrirSeccionOperativa(elementId){
   boton.style.backgroundColor = 'rgb(0,0,255)'
   boton.style.color = 'white'
   }}  
-  if (!idsArray.includes(elementId)) {
-    idsArray.push(elementId)
-    console.log(idsArray)
-  }    
+  if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+    idsArray.push(elementId);
+    console.log(idsArray);
+  }  
 }
-function abrirSeccionAdministrativa(elementId) {
+function abrirSeccionAdministrativa(elementId) {  
   allContenedores.forEach(elemen => {
     var element = document.getElementById(elemen)
     if (element) {
@@ -2388,10 +2396,10 @@ function abrirSeccionAdministrativa(elementId) {
       boton.style.backgroundColor = 'rgb(213, 245, 7)'
       boton.style.color = 'black'
   }}
-  if (!idsArray.includes(elementId)) {
-    idsArray.push(elementId)
-    console.log(idsArray)
-  }    
+  if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+    idsArray.push(elementId);
+    console.log(idsArray);
+  }  
 }
 function abrirSeccionComercial(elementId) {
   allContenedores.forEach(elemen => {
@@ -2417,12 +2425,12 @@ function abrirSeccionComercial(elementId) {
       boton.style.backgroundColor = 'rgb(0, 255, 0)'
       boton.style.color = 'black'
   }}
-  if (!idsArray.includes(elementId)) {
-    idsArray.push(elementId)
-    console.log(idsArray)
-  }   
+  if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+    idsArray.push(elementId);
+    console.log(idsArray);
+  }  
 }
-function abrirSeccionCalidad(elementId){
+function abrirSeccionCalidad(elementId){ 
   allContenedores.forEach(elemen => {
     var element = document.getElementById(elemen)
     if (element) {
@@ -2446,10 +2454,10 @@ function abrirSeccionCalidad(elementId){
   boton.style.backgroundColor = 'rgb(252, 5, 224)'
   boton.style.color = 'white'
   }}
-  if (!idsArray.includes(elementId)) {
-    idsArray.push(elementId)
-    console.log(idsArray)
-  }    
+  if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+    idsArray.push(elementId);
+    console.log(idsArray);
+  }  
 }
 function cambiarColoresConRetraso() {
   function cambiarColorConRetraso(indice) {
@@ -2920,46 +2928,277 @@ function muestraVidColor(elementId){
   } */ 
 }
 function irContenedorAnterior() {
-  /* const coleccion = document.querySelectorAll('.desbobinador, .desbobinador-I, .uTeñido, .alimentador, .unidProceso, .rebobinador, .contTorrImp') */
-  var contInicio = document.getElementById('cont-titulo')
-  var contTrouble = document.getElementById('troubleshooting')
-  var linksTemporales = document.getElementById('links-inicialesI')
-  var linksTemporalesII = document.getElementById('links-iniciales')
-  linksTemporales.style.display = 'none'
-  linksTemporalesII.style.display = 'none'
 
-  if (document.body.style.zoom !== "100%") {
-    document.body.style.zoom = "100%";
-  }
+  console.log('ALMACENADOS = ',idsArray)
 
-  for (var i = 0; i < allContenedores.length; i++) {
-    var elemento = document.getElementById(allContenedores[i])
-    elemento.style.display='none'
-  }
+  var previousElementID = idsArray[idsArray.length - 1];
+  // Ahora 'previousElementID' contiene el último elemento del array
+  console.log('ULTIMO ELEMENTO = ',previousElementID);
 
-  if(contTrouble){
-    contTrouble.style.display = 'none'
+
+
+ switch (previousElementID ) {  
+    case "cont-titulo":
+    location.reload()
+    break;
+    case 'cont-titulo-operacion':
+      abrirSeccionOperativa()        
+    break;
+    case 'cont-titulo-admin':
+      abrirSeccionAdministrativa()        
+    break; 
+    case 'cont-titulo-comercial':
+      abrirSeccionComercial()        
+    break; 
+    case 'cont-titulo-calidad':
+      abrirSeccionCalidad()        
+    break;     
+    case "pantalla-inicial":        
+      abrirSeccionOperativa()
+      var contaquina = document.getElementById('rotatek-1')
+      var contTorreImp = document.getElementById('torre-imp')
+      contaquina.style.position = 'fixed'
+      contaquina.style.left = '727px'
+      contTorreImp.style.position = 'fixed'
+      contTorreImp.style.left = '740px'
+      contTorreImp.style.top = '154px'
+      var linksTemporales = document.getElementById('links-inicialesI')
+      var linksTemporalesII = document.getElementById('links-iniciales')
+      linksTemporales.style.display = 'flex'
+      linksTemporalesII.style.display = 'flex'        
+    break; 
+    case "pantalla-tintero":
+      var botonesInicio = document.getElementById('container01')                  
+      botonesInicio.style.display='block'
+      changeButtonStyles('pantalla-tintero')  
+    break;
+    case "videoElement1-II":
+      changeButtonStyles('videoElement1-II')  
+    break;          
+    case "contImgEntintador":
+      showRepuesto('contImgEntintador')
+    break; 
+    case "contImgDistribuidor":
+      showRepuesto ('contImgDistribuidor') 
+    break;          
+    case "contPortPlaca":
+      contIMPlaca.style.display='block'
+      showRepuesto('contPortPlaca')
+    break;
+    case "contPortManta":
+      var contBotManta = document.getElementById('container01')
+      contBotManta.style.display='block'
+      contIMmanta.style.display='block'
+      showRepuesto('contPortManta', 'videoTrain03')  
+    break;
+    case "contImpresor":
+      showRepuesto('contImpresor', 'videoTrain01')
+    break;
+    case "imagen1":
+      muestraPerfiles('imagen1')
+    break;
+    case "imagen2":
+      muestraPerfiles('imagen2')
+    break; 
+    case "imagen3":
+      muestraPerfiles('imagen3')
+    break;
+    case "imagen4":
+      muestraPerfiles('imagen4')
+    break; 
+    case "cont-variable":
+      abrirSeccionVariable('cont-variable')
+    break; 
+    case "cont-plana":
+      abrirSeccionPlanas('cont-plana')
+    break; 
+    case "cont-secador":
+      abrirSeccionCurado('cont-secador')
+    break;
+    case "bateria-entintado-II":
+      changeButtonStyles('bateria-entintado-II', 'contene-7')
+    break; 
+    case "bancada-torre-II":
+      changeButtonStyles('bancada-torre-II')
+    break; 
+    case "conteneMantaut":
+      ElementosMa('conteneMantaut')
+    break; 
+    case "rotatek-1":
+      location.reload()
+    break; 
+    case "frente":
+      muestraTorresI('frente')
+    break;  
+    case "pantalla-frente":
+      muestraTorres('frente')
+    break; 
+    case "sitema-humedad":
+      changeButtonStyles('sitema-humedad')
+    break; 
+    case "pre-prensa":
+      var mostrar = document.getElementById('pre-prensa')
+      var contImg = document.getElementById('imgs-prepress')
+      mostrar.style.display='block'
+      contImg.style.style='block'
+
+      var contImgsTeoria = document.getElementsByClassName('imgTeoria') // Obtén elementos por su
+      for (var i = 0; i < contImgsTeoria.length; i++) {
+        var teorImage = contImgsTeoria[i] // Accede al elemento actual
+        teorImage.style.display = 'block' // muestra el elemento  
+      } 
+      const vidTeoria = document.querySelectorAll('.vidTeoria')
+      // Reproducir todos los videos simultáneamente
+      vidTeoria.forEach(video => {
+        video.style.display='block'
+        video.play()
+      })
+      // Paso 1: Crear un array con todas las imágenes en el contenedor padre
+      const imagenesArray = document.querySelectorAll('#imgs-prepress .imgTeoria .vidTeoria')
+      // Paso 2: Recorrer las imágenes
+      for (let i = 0; i < imagenesArray.length; i++) {
+        // Paso 3: Verificar y modificar el estilo de visualización
+        const imagenActual = imagenesArray[i]            
+        // Verificar si el estilo de visualización es 'none'
+        if (getComputedStyle(imagenActual).display === 'none') {
+            // Cambiar el estilo de visualización a 'flex'
+            imagenActual.style.display = 'flex'
+        }
+      }
+    break; 
+    case "densitometria":
+      var mostraDensit = document.getElementById('densitometria')
+      var contDensit = document.getElementById('imgs-densito')
+      mostraDensit.style.display='block'
+      contDensit.style.style='block'
+      var contImgsDensito = document.getElementsByClassName('imgDensito') // Obtén elementos por su
+      for (var i = 0; i < contImgsDensito.length; i++) {
+        var teorImage = contImgsDensito[i] // Accede al elemento actual
+        teorImage.style.display = 'block' // muestra el elemento  
+      }            
+    break;  
+    case "vidColor":
+      var mostrario = document.getElementById('pre-prensa')
+      var videos = document.getElementById('vidColor')
+      mostrario.style.display='flex'
+      videos.style.style='flex'
+      videoElements.forEach(vide => {
+      if (vide.id === 'prisma-vid') {
+        vide.style.display = 'block'
+        vide.currentTime = 0;
+        vide.loop = true;               
+        vide.play()      
+      } else {
+        vide.style.display = 'none'
+      }
+      })
+    break; 
+    case "vidColor-II":
+      var mostrari = document.getElementById('pre-prensa')
+      var videos = document.getElementById('vidColor-II')
+      mostrari.style.display='flex'
+      videos.style.style='flex'
+      videoElements.forEach(vid => {
+      if (vid.id === 'color-vid') {
+        vid.style.display = 'block'
+        vid.currentTime = 0;
+        vid.loop = true;                            
+        vid.play()      
+      } else {
+        vid.style.display = 'none'
+      }
+      })
+    break; 
+    case "mantilla1" :
+      muestraAngulos('mantilla1')
+    break;
+    case "mantilla2" :
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i]) 
+          elemento.style.display='none'
+        }
+      muestraAngulos('mantilla2')
+    break;
+    case "mantilla3" :
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i]) 
+          elemento.style.display='none'
+        }
+      muestraAngulos('mantilla3')
+    break; 
+    case "mantilla4" :
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i]) 
+          elemento.style.display='none'
+        }
+      muestraAngulos('mantilla4')
+    break;
+    case 'forward':
+      muestraLados('forward')
+      var contImpresor = document.getElementById('contImpresor')
+      contImpresor.style.display = 'block'
+
+      var boton01 = document.getElementById('bot-inic')
+      boton01.style.display = 'block'
+    break;
+    case 'comands':
+      muestraLados('comands')
+      var contImpresor = document.getElementById('contImpresor')
+      contImpresor.style.display = 'block'
+
+      var boton01 = document.getElementById('bot-inic')
+      boton01.style.display = 'block'
+    break; 
+    case 'service':
+      muestraLados('service')
+      var contImpresor = document.getElementById('contImpresor')
+      contImpresor.style.display = 'block'
+
+      var boton01 = document.getElementById('bot-inic')
+      boton01.style.display = 'block'
+    break;
+    case 'back':
+      muestraLados('back')
+      var contImpresor = document.getElementById('contImpresor')
+      contImpresor.style.display = 'block'
+
+      var boton01 = document.getElementById('bot-inic')
+      boton01.style.display = 'block'        
+    break; 
+    case 'desbobinador':
+    var contiene = document.getElementById('pantalla-inicial')
+    contiene.style.display = 'flex'
+
+    var container = document.getElementById("desbobinadorId")
+    var computedStyle = getComputedStyle(container)
+  
+    var displayValue = computedStyle.getPropertyValue("display")
+    if (displayValue.toLowerCase() === "none") {
+      // Cambia el valor de 'display' a 'flex'
+      container.style.display = "flex";
+    }
+  break;
+    default:
   } 
+  idsArray.pop();
 
-  // 1. Si el primer elemento del array 'idsArray' corresponde a 'pantalla-inicial', entonces alert 'pantalla-inicial'
-  if (idsArray[0] !== "pantalla-inicial") {
-    idsArray.unshift("pantalla-inicial")
-  }
-  console.log(idsArray)
-  var previousElementID = idsArray[idsArray.length - 2]
-
-  var computedStyle = window.getComputedStyle(container1);
-  // Obtén el valor de la propiedad 'flex'
-  var flexPropertyValue = computedStyle.getPropertyValue('flex');  
-  // Imprime el valor actual
-  // Convierte a 'flex' si no es 'flex' actualmente
-  if (flexPropertyValue !== 'flex') {
-    container1.style.flex = '1'; // O el valor que desees asignar
-  }
+  console.log('DESPUES DE HABER ELIMINADO = ', idsArray);
+}
 
 
+/*function irContenedorAnterior() {
+  var previousElementID = idsArray[idsArray.length - 1];
+  console.log('CONTENEDOR A MOSTRAR',previousElementID)
+  var ultimoEliminado = idsArray.pop();
 
-    switch (previousElementID) { 
+  for (var i = 1; i < idsArrayEliminados.length; i++) {
+
+
+    switch (previousElementID){ 
+      case 'cont-titulo':
+      idsArray = []
+      location.reload()
+      break;
       case "pantalla-inicial":
         abrirSeccionContinua()
         var contaquina = document.getElementById('rotatek-1')
@@ -2969,12 +3208,10 @@ function irContenedorAnterior() {
         contTorreImp.style.position = 'fixed'
         contTorreImp.style.left = '740px'
         contTorreImp.style.top = '154px'
-
         var linksTemporales = document.getElementById('links-inicialesI')
         var linksTemporalesII = document.getElementById('links-iniciales')
         linksTemporales.style.display = 'flex'
         linksTemporalesII.style.display = 'flex'
-        idsArray = []
       break;
       case "pantalla-tintero":
         var botonesInicio = document.getElementById('container01')
@@ -3055,14 +3292,14 @@ function irContenedorAnterior() {
       case "frente":
         muestraTorresI('frente')
       break;  
-      case "pantalla-frente":        
-      muestraTorresI('pantalla-frente')
+      case "pantalla-frente":
+        muestraTorresI('pantalla-frente')
       break; 
-      case "pantalla-mandos":        
-      muestraTorresI('pantalla-mandos')
+      case "pantalla-mandos":
+        muestraTorresI('pantalla-mandos')
       break;
-      case "pantalla-servicio":        
-      muestraTorresI('pantalla-mandos')
+      case "pantalla-servicio":
+        muestraTorresI('pantalla-mandos')
       break;
       case "pantalla-atras":        
       muestraTorresI('pantalla-atras')
@@ -3073,7 +3310,8 @@ function irContenedorAnterior() {
       case "pre-prensa":
         for (var i = 0; i < allContenedores.length; i++) {
           var elemento = document.getElementById(allContenedores[i]) 
-          elemento.style.display='none'}
+          elemento.style.display='none'
+        }
         var contenedorPrincipal = document.getElementById('pre-prensa')
         var hijosDelContenedor = contenedorPrincipal.children;
         contenedorPrincipal.style.display='block'        
@@ -3086,10 +3324,6 @@ function irContenedorAnterior() {
             hijo.style.display = 'block'
           }
         }
-
-        /* var container = document.getElementById("contene-11")
-        var computedStyle = getComputedStyle(container) */
-      
         var displayValue = computedStyle.getPropertyValue("display")
         if (displayValue.toLowerCase() === "none") {
           // Cambia el valor de 'display' a 'flex'
@@ -3101,14 +3335,14 @@ function irContenedorAnterior() {
 
         // Paso 2: Recorrer las imágenes
         for (let i = 0; i < imagenesArray.length; i++) {
-            // Paso 3: Verificar y modificar el estilo de visualización
-            const imagenActual = imagenesArray[i]
-            
-            // Verificar si el estilo de visualización es 'none'
-            if (getComputedStyle(imagenActual).display === 'none') {
-                // Cambiar el estilo de visualización a 'flex'
-                imagenActual.style.display = 'flex'
-            }
+          // Paso 3: Verificar y modificar el estilo de visualización
+          const imagenActual = imagenesArray[i]
+          
+          // Verificar si el estilo de visualización es 'none'
+          if (getComputedStyle(imagenActual).display === 'none') {
+            // Cambiar el estilo de visualización a 'flex'
+            imagenActual.style.display = 'flex'
+          }
         }
       break; 
       case "densitometria":
@@ -3137,7 +3371,7 @@ function irContenedorAnterior() {
             if (vide) {
               vide.pause()
               vide.style.display = 'none'
-         
+          
             }        
             })          
         var contenedorPrincipal = document.getElementById('pre-prensa')
@@ -3196,15 +3430,15 @@ function irContenedorAnterior() {
         muestraAngulos('mantilla4')
       break; 
       case 'desbobinador':
-     var contiene = document.getElementById('pantalla-inicial')
-     contiene.style.display = 'flex'
-     var container = document.getElementById("desbobinadorId")
-     var computedStyle = getComputedStyle(container)   
-     var displayValue = computedStyle.getPropertyValue("display")
-     if (displayValue.toLowerCase() === "none") {
-       // Cambia el valor de 'display' a 'flex'
-       container.style.display = "flex";
-     }
+      var contiene = document.getElementById('pantalla-inicial')
+      contiene.style.display = 'flex'
+      var container = document.getElementById("desbobinadorId")
+      var computedStyle = getComputedStyle(container)   
+      var displayValue = computedStyle.getPropertyValue("display")
+      if (displayValue.toLowerCase() === "none") {
+        // Cambia el valor de 'display' a 'flex'
+        container.style.display = "flex";
+      }
       break; 
       case 'uTeñido':
       for (var i = 0; i < allContenedores.length; i++) {
@@ -3346,53 +3580,42 @@ function irContenedorAnterior() {
         boton01.style.display = 'block'        
       break; 
       case 'cont-titulo-operacion':
-        abrirSeccionOperativa()        
+        abrirSeccionOperativa() 
       break;
       case 'cont-titulo-admin':
-        abrirSeccionAdministrativa()        
+        abrirSeccionAdministrativa()
       break; 
       case 'cont-titulo-comercial':
-        abrirSeccionComercial()        
+        abrirSeccionComercial() 
       break; 
       case 'cont-titulo-calidad':
-        abrirSeccionCalidad()        
+        abrirSeccionCalidad()
       break;       
-    default:
-  }
-  var eltoAnterior = idsArray[idsArray.length - 2]
-  idsArrayEliminados.push(eltoAnterior)
-  console.log('ELIMINADOS',idsArrayEliminados)
-  idsArray.pop()
-   console.log(idsArray)
-   if (idsArrayEliminados.length === 0){
-    idsArrayEliminados.push ('salir')
-    contInicio.style.display = 'flex'
-  }
+      default:
+    }
+  }   
+  // Filtrar el array para eliminar los elementos undefined
+  idsArray = idsArray.filter(function(element) {
+  return element !== undefined;
+  });
+  console.log('ULTIMO ELIMINADO',ultimoEliminado)
+  console.log('ARRAY ACTUALIZADO',idsArray)
 
-} 
+}*/
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function irContenedorSiguiente() {
-  if (document.body.style.zoom !== "100%") {
-    document.body.style.zoom = "100%";
-  }
+  var previoElementID = idsArrayEliminados[idsArrayEliminados.length - 2];
 
-  for (var i = 0; i < allContenedores.length; i++) {
-    var elemento = document.getElementById(allContenedores[i])
-    if (elemento) {
-      elemento.style.display = 'none'
-    }
-  }
-    // 1. Si el primer elemento del array 'idsArray' corresponde a 'pantalla-inicial', entonces alert 'pantalla-inicial'
-    if (idsArrayEliminados[0] !== "salir") {
-      idsArrayEliminados.unshift("salir")
-    }
-    console.log(idsArray)
-
-  var previoElementID = idsArrayEliminados[idsArrayEliminados.length - 2]
   for (var i = 1; i < idsArrayEliminados.length; i++) {
 
     switch (previoElementID) {
-      case "salir":
-        abrirSeccionContinua()
+      case "cont-titulo":
+      location.reload()
+      break;
+      case "pantalla-inicial":        
+        abrirSeccionOperativa()
         var contaquina = document.getElementById('rotatek-1')
         var contTorreImp = document.getElementById('torre-imp')
         contaquina.style.position = 'fixed'
@@ -3400,16 +3623,10 @@ function irContenedorSiguiente() {
         contTorreImp.style.position = 'fixed'
         contTorreImp.style.left = '740px'
         contTorreImp.style.top = '154px'
-
         var linksTemporales = document.getElementById('links-inicialesI')
         var linksTemporalesII = document.getElementById('links-iniciales')
         linksTemporales.style.display = 'flex'
-        linksTemporalesII.style.display = 'flex'
-        idsArrayEliminados = []
-      break;
-      case "pantalla-inicial":
-        abrirSeccionContinua()
-        idsArrayEliminados = []
+        linksTemporalesII.style.display = 'flex'        
       break; 
       case "pantalla-tintero":
         var botonesInicio = document.getElementById('container01')                  
@@ -3622,17 +3839,37 @@ function irContenedorSiguiente() {
           container.style.display = "flex";
         }
       break;
+      case 'cont-titulo-operacion':
+        abrirSeccionOperativa()        
+      break;
+      case 'cont-titulo-admin':
+        abrirSeccionAdministrativa()        
+      break; 
+      case 'cont-titulo-comercial':
+        abrirSeccionComercial()        
+      break; 
+      case 'cont-titulo-calidad':
+        abrirSeccionCalidad()        
+      break;      
     default:
     }
   }  
 
-  idsArrayEliminados.pop()  
-  console.log('ELIMINADOS',idsArrayEliminados)
+  idsArrayEliminados.pop();
 
-  if (idsArrayEliminados.length === 0){
-    idsArrayEliminados.push ('salir')
-    abrirSeccionContinua()
+
+  // Recorre el array idsArrayEliminados y elimina los elementos undefined
+  for (var i = 0; i < idsArrayEliminados.length; i--) {
+    if (idsArrayEliminados[i] === 'undefined') {
+      idsArrayEliminados.splice(i, 1);
+    }
   }
+
+
+  console.log('ARRAY PRIMARIO',idsArray); 
+  console.log('ARRAY SECUNDARIO',idsArrayEliminados);
+
+
 }
 function listaEntrenamientosII(btnList) {
   var elementos = ['canvasContainer2','canvasContainer3','canvasContainer4','canvasContainer5','contChecks','contImagGraf','contImagNeg']
