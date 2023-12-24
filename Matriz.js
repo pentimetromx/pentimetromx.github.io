@@ -35,7 +35,7 @@ var imagPasoApaso = document.querySelectorAll('.img1')
 var allContenedores = ['cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','container1','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
-var allContIniciales = ['container1','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado']
+var allContIniciales = ['pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado']
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor']
 var allContTintero = ['pantalla-tintero','cont-links','imgTorre','vidTintero','imgsRepuestos','agrupaOblicuos-II','container2']
 var allContPantafrente = ['pantalla-frente','container2','imgsRepuestos-II','imgTorre-f','agrupaOblicuos-III']
@@ -164,20 +164,20 @@ function muestraBateria(elementId) {
       elemento.style.display = 'none'
     }
   }
-    // Recorre el array y oculta los elementos por su ID
-    for (var i = 0; i < allContTintero.length; i++) {
-      var elemento = document.getElementById(allContTintero[i])
-      if (elemento) {
-        elemento.style.display = 'flex'
-      }
-    }  
-
-    for (var i = 0; i < linksIniciales.length; i++) {
-      var elemento = document.getElementById(linksIniciales[i])
-      if (elemento) {
-        elemento.style.display = 'block'
-      }
+  // Recorre el array y oculta los elementos por su ID
+  for (var i = 0; i < allContTintero.length; i++) {
+    var elemento = document.getElementById(allContTintero[i])
+    if (elemento) {
+      elemento.style.display = 'flex'
     }
+  }  
+
+  for (var i = 0; i < linksIniciales.length; i++) {
+    var elemento = document.getElementById(linksIniciales[i])
+    if (elemento) {
+      elemento.style.display = 'block'
+    }
+  }
 
   var videoBackground = document.getElementById('videoBackground')
   videoBackground.pause()
@@ -192,10 +192,16 @@ function muestraBateria(elementId) {
   setTimeout(function() {
   video.style.display = "none"; // Esto ocultará el elemento de video
   }, 977) // 2000 milisegundos = 2 segundos
-
- if (!idsArray.includes(elementId)) {
-  idsArray.push(elementId)
-  console.log(idsArray)
+  // 4. Verificar si el elemento está definido y si ya existe en arrayIds
+  if (typeof elementId !== 'undefined') {
+    const index = idsArray.indexOf(elementId);
+    if (index !== -1) {
+      // 4. Si el elemento ya existe, moverlo a la última posición
+      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+    }
+    // 5. Agregar el elemento al final de arrayIds
+    idsArray.push(elementId);
+    console.log(idsArray);
   }
 }
 function ElementosMa(elementId) {
@@ -212,9 +218,16 @@ function ElementosMa(elementId) {
   }
   showButtonsMAconRetraso()
   linkListI.style.display = "none";  
-  if (!idsArray.includes(elementId)) {
-    idsArray.push(elementId)
-    console.log(idsArray)
+  // 4. Verificar si el elemento está definido y si ya existe en arrayIds
+  if (typeof elementId !== 'undefined') {
+    const index = idsArray.indexOf(elementId);
+    if (index !== -1) {
+      // 4. Si el elemento ya existe, moverlo a la última posición
+      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+    }
+    // 5. Agregar el elemento al final de arrayIds
+    idsArray.push(elementId);
+    console.log(idsArray);
   } 
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   idsMAhijos .forEach(function (elto) {                                                                                                   ///OCULTA ELEMENTOS MA
@@ -310,10 +323,10 @@ function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
         video.style.display = 'none'
       }
     })
-    if (!idsArray.includes(elementId)) {
-      idsArray.push(elementId)
-      console.log(idsArray)
-      }    
+      if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray);
+      }
     break;
     case 'bancada-torre-II': 
     var contenedor = document.getElementById("bancada-torre-II")
@@ -344,10 +357,10 @@ function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
         video.style.display = 'none'
       }
     })
-    if (!idsArray.includes(elementId)) {
-      idsArray.push(elementId)
-      console.log(idsArray)
-      } 
+      if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray);
+      }
     break;
     case 'sitema-humedad':
       const bancadaVideo = document.getElementById('bancada')
@@ -381,10 +394,10 @@ function changeButtonStyles(elementId) { //TINTERO-BATERIA-BANCADA-HUMEDAD
       bancadaVideo.style.display = 'block'
       bancadaVideo.play()
     }
-      if (!idsArray.includes(elementId)) {
-        idsArray.push(elementId)
-        console.log(idsArray)
-      } 
+      if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray);
+      }
   
     break;
     case 'fua':
@@ -429,9 +442,16 @@ function cambioContenedor(elementId) {
   botonTorre.style.position='absolute'
   botonTorre.style.left='307px'
 
-  if (!idsArray.includes(elementId)) {
-    idsArray.push(elementId)
-    console.log(idsArray)
+  // 4. Verificar si el elemento está definido y si ya existe en arrayIds
+  if (typeof elementId !== 'undefined') {
+    const index = idsArray.indexOf(elementId);
+    if (index !== -1) {
+      // 4. Si el elemento ya existe, moverlo a la última posición
+      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+    }
+    // 5. Agregar el elemento al final de arrayIds
+    idsArray.push(elementId);
+    console.log(idsArray);
   }
 }
 let firstClick = true;
@@ -778,10 +798,10 @@ function showRepuesto(elementId) {
         })
       }
       container1.style.display = 'flex'
-      if (!idsArray.includes(elementId)) {
-        idsArray.push(elementId)
-        console.log(idsArray)
-      }       
+      if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray);
+      }
    break;
     case 'contImgEntintador':
       allContenedores.forEach(elemen => {
@@ -805,10 +825,17 @@ function showRepuesto(elementId) {
         })
       } 
       container1.style.display = 'flex'
-      if (!idsArray.includes(elementId)) {
-        idsArray.push(elementId)
-        console.log(idsArray)
-        }    
+      // 4. Verificar si el elemento está definido y si ya existe en arrayIds
+  if (typeof elementId !== 'undefined') {
+    const index = idsArray.indexOf(elementId);
+    if (index !== -1) {
+      // 4. Si el elemento ya existe, moverlo a la última posición
+      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+    }
+    // 5. Agregar el elemento al final de arrayIds
+    idsArray.push(elementId);
+    console.log(idsArray);
+  }    
     break;
     case 'contPortPlaca':     
       conteHijosTintero.forEach(elementId => {
@@ -846,12 +873,19 @@ function showRepuesto(elementId) {
         elemento.style.display = 'flex'
       })
     })
-    if (!idsArray.includes(elementId)) {
-      idsArray.push(elementId)
-      console.log(idsArray)
+      if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray);
       }
     break;       
     case 'contPortManta':
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i])
+        if (elemento) {
+          elemento.style.display = 'none'
+        }
+      }
+   
       conteHijosTintero.forEach(elemento => {
         var element = document.getElementById(elemento)
         if (element) {
@@ -875,16 +909,29 @@ function showRepuesto(elementId) {
         video.currentTime = 0;
         video.play()   
       }})
-      if (!idsArray.includes(elementId)) {
-        idsArray.push(elementId)
-        console.log(idsArray)
-        }       
+      if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+      idsArray.push(elementId);
+      console.log(idsArray);
+      } 
     break;
     case 'contImpresor':
-      if (!idsArray.includes(elementId)) {
-        idsArray.push(elementId)
-        console.log(idsArray)
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i])
+        if (elemento) {
+            elemento.style.display = 'none'
         }
+      }   
+
+      if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+      idsArray.push(elementId);
+      console.log(idsArray);
+      }
+
+      if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray);
+      }
+
       conteHijosTintero.forEach(elementId => {
         var element = document.getElementById(elementId)
         if (element) {
@@ -918,11 +965,33 @@ function showRepuesto(elementId) {
 } 
 function muestraPerfiles(elementId){
   var video = document.getElementById('video-placa')
+  var contButtOblicuos = document.getElementById('agrupaOblicuos-placa')
+  var contAbueloOblicuos = document.getElementById('contPortPlaca')
   var imgPlancha = document.querySelectorAll('.imagesTorre') 
   var imagesPlancha = document.getElementById('contPerfilesPlancha')
   var imgsPlancha = document.getElementById('imagenes-plancha')
+
+  for (var i = 0; i < allContenedores.length; i++) {
+    var elemento = document.getElementById(allContenedores[i])
+    if (elemento !== 'contPortPlaca') {
+      elemento.style.display = 'none'
+    }else{
+      elemento.style.display = 'flex'
+    }
+  }
+
   switch (elementId) {
     case 'imagen1':
+
+      contAbueloOblicuos.style.display = 'block'
+      if (contButtOblicuos) {
+        // Loop through the child elements of the parent
+        for (var i = 0; i < contButtOblicuos.children.length; i++) {
+          var child = contButtOblicuos.children[i];
+          child.style.display = 'block'; // or any other display value based on your layout needs
+        }
+      }
+
       // Detener el video
       video.pause()
       // Ocultar el video estableciendo su estilo de visualización en 'none'
@@ -937,10 +1006,10 @@ function muestraPerfiles(elementId){
         }
       })
       contIMPlaca.style.display='none' 
-      if (!idsArray.includes(elementId)) {
-        idsArray.push(elementId)
-        console.log(idsArray)
-      }
+      if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray);
+      }      
     break;
     case 'imagen2':
       // Detener el video
@@ -957,11 +1026,11 @@ function muestraPerfiles(elementId){
         }
       })
       contIMPlaca.style.display='none' 
-      if (!idsArray.includes(elementId)) {
-        idsArray.push(elementId)
-        console.log(idsArray)
+      if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray);
       }
-    break; 
+      break; 
     case 'imagen3':
       // Detener el video
       video.pause()
@@ -977,11 +1046,11 @@ function muestraPerfiles(elementId){
         }
       })
       contIMPlaca.style.display='none' 
-      if (!idsArray.includes(elementId)) {
-        idsArray.push(elementId)
-        console.log(idsArray)
+      if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray);
       }
-    break;
+      break;
     case 'imagen4':
       // Detener el video
       video.pause()
@@ -997,11 +1066,11 @@ function muestraPerfiles(elementId){
         }
       })
       contIMPlaca.style.display='none' 
-      if (!idsArray.includes(elementId)) {
-        idsArray.push(elementId)
-        console.log(idsArray)
+      if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray);
       }
-    break;
+      break;
     default:
   }
 }
@@ -1011,9 +1080,15 @@ var contChildManta = document.getElementById('imagenes-manta')
 var imgsManta = document.querySelectorAll('.imgMant')
   switch (elementId) {
     case 'mantilla1':
-    contPortaManta.style.display='block'  
-    videoElements.forEach(video => {
-    if (video.id == 'videoManta') {
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i])
+        if (elemento) {
+          elemento.style.display = 'none'
+        }
+      }    
+      contPortaManta.style.display='block'  
+      videoElements.forEach(video => {
+      if (video.id == 'videoManta') {
       video.style.display = 'none'   
       }}) 
 
@@ -1028,11 +1103,11 @@ var imgsManta = document.querySelectorAll('.imgMant')
         }
       })
       contIMmanta.style.display='none' 
-      if (!idsArray.includes(elementId)) {
-        idsArray.push(elementId)
-        console.log(idsArray)
-      }    
-    break;
+      if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray);
+      }
+      break;
     case 'mantilla2':
       contPortaManta.style.display='block'
       videoElements.forEach(video => {
@@ -1049,11 +1124,11 @@ var imgsManta = document.querySelectorAll('.imgMant')
           }
         })
         contIMmanta.style.display='none' 
-        if (!idsArray.includes(elementId)) {
-          idsArray.push(elementId)
-          console.log(idsArray)
-        } 
-      break;     
+        if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+          idsArray.push(elementId);
+          console.log(idsArray);
+        }
+        break;     
     case 'mantilla3':
       contPortaManta.style.display='block'
       videoElements.forEach(video => {
@@ -1072,11 +1147,11 @@ var imgsManta = document.querySelectorAll('.imgMant')
           }
         })
         contIMmanta.style.display='none' 
-        if (!idsArray.includes(elementId)) {
-          idsArray.push(elementId)
-          console.log(idsArray)
-        } 
-    break;
+        if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+          idsArray.push(elementId);
+          console.log(idsArray);
+        }
+        break;
     case 'mantilla4':
       contPortaManta.style.display='block'
       videoElements.forEach(video => {
@@ -1095,105 +1170,124 @@ var imgsManta = document.querySelectorAll('.imgMant')
           }
         })
         contIMmanta.style.display='none' 
-        if (!idsArray.includes(elementId)) {
-          idsArray.push(elementId)
-          console.log(idsArray)
-        } 
-    break;
+        if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+          idsArray.push(elementId);
+          console.log(idsArray);
+        }
+        break;
     default:
   }
 }
 function muestraLados(elementId){
-  var contPadImpresor = document.getElementById('contPerfilesImpresor')      
+  var contPadImpresor = document.getElementById('contPerfilesImpresor') 
+  var contButtOblicuos = document.getElementById('agrupaOblicuos-XXIII')
+  var contAbueloOblicuos = document.getElementById('contImpresor')
   var contChildImpresor = document.getElementById('imagenes-impresor')
   var imgsImpresor = document.querySelectorAll('.imgImpresor')
   var imgImpresorI = document.getElementById('impresor')
   imgImpresorI.style.display = 'none'
-      switch (elementId) {
-      case 'forward':
-        videoElements.forEach(video => {
-        if (video.id == 'video-impresor') {
+
+  switch (elementId) {
+    case 'forward':
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i])
+        if (elemento) {
+          elemento.style.display = 'none'
+        }
+      } 
+      contAbueloOblicuos.style.display = 'block'
+      if (contButtOblicuos) {
+        // Loop through the child elements of the parent
+        for (var i = 0; i < contButtOblicuos.children.length; i++) {
+          var child = contButtOblicuos.children[i];
+          child.style.display = 'block'; // or any other display value based on your layout needs
+        }
+      }
+      
+      
+      videoElements.forEach(video => {
+      if (video.id == 'video-impresor') {
+      video.style.display = 'none'   
+      }}) 
+      contPadImpresor.style.display='flex'
+      contChildImpresor.style.display='flex'      
+      imgsImpresor.forEach(function (imagen) {
+      if (imagen.id === 'impresor' || imagen.id === 'impresor1') {
+        imagen.style.display = 'block'
+      }else{
+        imagen.style.display = 'none'
+      }
+      })
+      if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray);
+      }
+      break;
+    case 'comands':
+      videoElements.forEach(video => {
+      if (video.id == 'video-impresor') {
         video.style.display = 'none'   
         }}) 
+
         contPadImpresor.style.display='flex'
-        contChildImpresor.style.display='flex'      
+        contChildImpresor.style.display='flex'
+    
         imgsImpresor.forEach(function (imagen) {
-        if (imagen.id === 'impresor' || imagen.id === 'impresor1') {
-          imagen.style.display = 'block'
-        }else{
-          imagen.style.display = 'none'
+          if (imagen.id === 'impresor2' || imagen.id === 'impresor3') {
+            imagen.style.display = 'block'
+          }else{
+            imagen.style.display = 'none'
+          }
+        })
+        if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+          idsArray.push(elementId);
+          console.log(idsArray);
         }
+        break;     
+    case 'service':
+      videoElements.forEach(video => {
+      if (video.id == 'video-impresor') {
+        video.style.display = 'none'   
+        }}) 
+
+        contPadImpresor.style.display='flex'
+        contChildImpresor.style.display='flex'
+    
+        imgsImpresor.forEach(function (imagen) {
+          if (imagen.id === 'impresor4' || imagen.id === 'impresor5') {
+            imagen.style.display = 'block'
+          }else{
+            imagen.style.display = 'none'
+          }
         })
         if (!idsArray.includes(elementId)) {
           idsArray.push(elementId)
           console.log(idsArray)
         } 
-      break;
-      case 'comands':
-        videoElements.forEach(video => {
-        if (video.id == 'video-impresor') {
-          video.style.display = 'none'   
-          }}) 
+    break;
+    case 'back':
+      videoElements.forEach(video => {
+      if (video.id == 'video-impresor') {
+        video.style.display = 'none'   
+        }}) 
+
+        contPadImpresor.style.display='flex'
+        contChildImpresor.style.display='flex'
     
-          contPadImpresor.style.display='flex'
-          contChildImpresor.style.display='flex'
-      
-          imgsImpresor.forEach(function (imagen) {
-            if (imagen.id === 'impresor2' || imagen.id === 'impresor3') {
-              imagen.style.display = 'block'
-            }else{
-              imagen.style.display = 'none'
-            }
-          })
-          if (!idsArray.includes(elementId)) {
-            idsArray.push(elementId)
-            console.log(idsArray)
-          } 
-        break;     
-      case 'service':
-        videoElements.forEach(video => {
-        if (video.id == 'video-impresor') {
-          video.style.display = 'none'   
-          }}) 
-    
-          contPadImpresor.style.display='flex'
-          contChildImpresor.style.display='flex'
-      
-          imgsImpresor.forEach(function (imagen) {
-            if (imagen.id === 'impresor4' || imagen.id === 'impresor5') {
-              imagen.style.display = 'block'
-            }else{
-              imagen.style.display = 'none'
-            }
-          })
-          if (!idsArray.includes(elementId)) {
-            idsArray.push(elementId)
-            console.log(idsArray)
-          } 
-      break;
-      case 'back':
-        videoElements.forEach(video => {
-        if (video.id == 'video-impresor') {
-          video.style.display = 'none'   
-          }}) 
-    
-          contPadImpresor.style.display='flex'
-          contChildImpresor.style.display='flex'
-      
-          imgsImpresor.forEach(function (imagen) {
-            if (imagen.id === 'impresor6' || imagen.id === 'impresor7') {
-              imagen.style.display = 'block'
-            }else{
-              imagen.style.display = 'none'
-            }
-          })
-          if (!idsArray.includes(elementId)) {
-            idsArray.push(elementId)
-            console.log(idsArray)
-          } 
-      break;
-      default:
-    }
+        imgsImpresor.forEach(function (imagen) {
+          if (imagen.id === 'impresor6' || imagen.id === 'impresor7') {
+            imagen.style.display = 'block'
+          }else{
+            imagen.style.display = 'none'
+          }
+        })
+        if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+          idsArray.push(elementId);
+          console.log(idsArray);
+        }
+        break;
+    default:
+  }
 } 
 function showNextInputChec() {
   var conteneChecks = document.getElementById('contChecks')
@@ -2172,12 +2266,11 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
           }
         }
       } 
-
-      if (!idsArray.includes(elementId)) {
-        idsArray.push(elementId)
-        console.log(idsArray)
+      if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray);
       }
-    break;
+      break;
     case 'pantalla-servicio': 
     for (var i = 0; i < pantallas.length; i++) {
       var elemento = document.getElementById(pantallas[i])
@@ -2196,11 +2289,10 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
         }
       }
     }
-
-    if (!idsArray.includes(elementId)) {
-      idsArray.push(elementId)
-      console.log(idsArray)
-    }       
+    if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+      idsArray.push(elementId);
+      console.log(idsArray);
+    }
     break;
     case 'pantalla-atras':
       for (var i = 0; i < pantallas.length; i++) {
@@ -2220,18 +2312,17 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
           }
         }
       } 
-             
-      if (!idsArray.includes(elementId)) {
-        idsArray.push(elementId)
-        console.log(idsArray)
+      if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray);
       }
+
     break;
     default:
   }
 }
 function videosImpresor(videoId) {
-  const video = document.getElementById(videoId)
-  
+  const video = document.getElementById(videoId)  
   switch (videoId) {
     case 'videoTrain00':
       videoElements.forEach(video => {
@@ -2275,8 +2366,8 @@ function abrirSeccionContinua(elementId) {
   document.body.style.zoom = "100%";
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   botonesC.forEach(function(boton) {                                                                                     /// DEVUELVE ESTILOS A BOTONES AMARILLOS                 
-      boton.style.background = 'linear-gradient(45deg, rgba(250, 250, 1) 15%, rgb(27, 27, 28, 0.076) 85%)'
-      boton.style.color = 'rgb(0, 0, 0)'
+    boton.style.background = 'linear-gradient(45deg, rgba(250, 250, 1) 15%, rgb(27, 27, 28, 0.076) 85%)'
+    boton.style.color = 'rgb(0, 0, 0)'
   })
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   botonesIniciales.forEach(function(botton) {                                                                                /// DEVUELVE ESTILOS A BOTONES ROJOS
@@ -2301,7 +2392,7 @@ function abrirSeccionContinua(elementId) {
       element.style.display = 'none'
     }
   })
-  container1.style.display = 'none'
+  /* container1.style.display = 'none' */
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   allContIniciales.forEach(elemen => {                                                                                          /// MUESTRA CONTENEDORES INICIALES
     var element = document.getElementById(elemen)
@@ -2314,15 +2405,23 @@ function abrirSeccionContinua(elementId) {
     elemento.removeAttribute('style');
   }
   arrayIdButtsMA.forEach(function (id) {
-    var elemento = document.getElementById(id);
-    if (elemento) {
-      eliminarEstilosEnLinea(elemento);
-    }
+  var elemento = document.getElementById(id);
+  if (elemento) {
+    eliminarEstilosEnLinea(elemento);
+  }
   });
-  if (!idsArray.includes(elementId)) {
-    idsArray.push(elementId)
-    console.log(idsArray)
-  } 
+
+  // 4. Verificar si el elemento está definido y si ya existe en arrayIds
+  if (typeof elementId !== 'undefined') {
+    const index = idsArray.indexOf(elementId);
+    if (index !== -1) {
+      // 4. Si el elemento ya existe, moverlo a la última posición
+      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+    }
+    // 5. Agregar el elemento al final de arrayIds
+    idsArray.push(elementId);
+    console.log(idsArray);
+  }
 
   firstClick = true;  
 }
@@ -2361,7 +2460,14 @@ function abrirSeccionOperativa(elementId){
   boton.style.backgroundColor = 'rgb(0,0,255)'
   boton.style.color = 'white'
   }}  
-  if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+  // 4. Verificar si el elemento está definido y si ya existe en arrayIds
+  if (typeof elementId !== 'undefined') {
+    const index = idsArray.indexOf(elementId);
+    if (index !== -1) {
+      // 4. Si el elemento ya existe, moverlo a la última posición
+      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+    }
+    // 5. Agregar el elemento al final de arrayIds
     idsArray.push(elementId);
     console.log(idsArray);
   }  
@@ -2396,7 +2502,14 @@ function abrirSeccionAdministrativa(elementId) {
       boton.style.backgroundColor = 'rgb(213, 245, 7)'
       boton.style.color = 'black'
   }}
-  if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+  // 4. Verificar si el elemento está definido y si ya existe en arrayIds
+  if (typeof elementId !== 'undefined') {
+    const index = idsArray.indexOf(elementId);
+    if (index !== -1) {
+      // 4. Si el elemento ya existe, moverlo a la última posición
+      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+    }
+    // 5. Agregar el elemento al final de arrayIds
     idsArray.push(elementId);
     console.log(idsArray);
   }  
@@ -2425,7 +2538,14 @@ function abrirSeccionComercial(elementId) {
       boton.style.backgroundColor = 'rgb(0, 255, 0)'
       boton.style.color = 'black'
   }}
-  if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+  // 4. Verificar si el elemento está definido y si ya existe en arrayIds
+  if (typeof elementId !== 'undefined') {
+    const index = idsArray.indexOf(elementId);
+    if (index !== -1) {
+      // 4. Si el elemento ya existe, moverlo a la última posición
+      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+    }
+    // 5. Agregar el elemento al final de arrayIds
     idsArray.push(elementId);
     console.log(idsArray);
   }  
@@ -2454,7 +2574,14 @@ function abrirSeccionCalidad(elementId){
   boton.style.backgroundColor = 'rgb(252, 5, 224)'
   boton.style.color = 'white'
   }}
-  if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+  // 4. Verificar si el elemento está definido y si ya existe en arrayIds
+  if (typeof elementId !== 'undefined') {
+    const index = idsArray.indexOf(elementId);
+    if (index !== -1) {
+      // 4. Si el elemento ya existe, moverlo a la última posición
+      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+    }
+    // 5. Agregar el elemento al final de arrayIds
     idsArray.push(elementId);
     console.log(idsArray);
   }  
@@ -2641,9 +2768,16 @@ function abrirSeccionVariable(elementId){
 
   linkList.style.display = "none";
   contSecador.style.display='none'
-  if (!idsArray.includes(elementId)) {
-    idsArray.push(elementId)
-    console.log(idsArray)
+  // 4. Verificar si el elemento está definido y si ya existe en arrayIds
+  if (typeof elementId !== 'undefined') {
+    const index = idsArray.indexOf(elementId);
+    if (index !== -1) {
+      // 4. Si el elemento ya existe, moverlo a la última posición
+      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+    }
+    // 5. Agregar el elemento al final de arrayIds
+    idsArray.push(elementId);
+    console.log(idsArray);
   }
 } 
 function abrirSeccionPlanas(elementId){
@@ -2661,10 +2795,19 @@ function abrirSeccionPlanas(elementId){
 
   linkList.style.display = "none";
   contSecador.style.display='none'
-  if (!idsArray.includes(elementId)) {
-    idsArray.push(elementId)
-    console.log(idsArray)
-  }  
+
+  // 4. Verificar si el elemento está definido y si ya existe en arrayIds
+  if (typeof elementId !== 'undefined') {
+    const index = idsArray.indexOf(elementId);
+    if (index !== -1) {
+      // 4. Si el elemento ya existe, moverlo a la última posición
+      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+    }
+    // 5. Agregar el elemento al final de arrayIds
+    idsArray.push(elementId);
+    console.log(idsArray);
+  }
+
 }
 function abrirSeccionCurado(elementId){
   allContenedores.forEach(elemen => {
@@ -2695,9 +2838,16 @@ function abrirSeccionCurado(elementId){
       console.error('Error al manipular videos:', error)
     }
   })  
-  if (!idsArray.includes(elementId)) {
-    idsArray.push(elementId)
-    console.log(idsArray)
+  // 4. Verificar si el elemento está definido y si ya existe en arrayIds
+  if (typeof elementId !== 'undefined') {
+    const index = idsArray.indexOf(elementId);
+    if (index !== -1) {
+      // 4. Si el elemento ya existe, moverlo a la última posición
+      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+    }
+    // 5. Agregar el elemento al final de arrayIds
+    idsArray.push(elementId);
+    console.log(idsArray);
   }  
 }
 function cerrarSecciones(){
@@ -2791,17 +2941,24 @@ function abrirPrepress(elementId) {
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   var vidDensitometria = document.getElementById('vidCicodelia')
   vidDensitometria.style.display = 'block'
-  vidDensitometria.pause();
+  vidDensitometria.pause()
   setTimeout(function() {
     vidDensitometria.currentTime = '0'
     vidDensitometria.play();
   }, 77);
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  linkList.style.display = "none";    
-  if (!idsArray.includes(elementId)) {
-    idsArray.push(elementId)
-    console.log(idsArray)
-  } 
+  linkList.style.display = "none";   
+  // 4. Verificar si el elemento está definido y si ya existe en arrayIds
+  if (typeof elementId !== 'undefined') {
+    const index = idsArray.indexOf(elementId);
+    if (index !== -1) {
+      // 4. Si el elemento ya existe, moverlo a la última posición
+      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+    }
+    // 5. Agregar el elemento al final de arrayIds
+    idsArray.push(elementId);
+    console.log(idsArray);
+  }
 }
 function abrirDensitometria(elementId){
   var densiitoElemento = document.getElementById('densitometria')  
@@ -2858,10 +3015,17 @@ function abrirDensitometria(elementId){
   }, 77);
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
   linkList.style.display = "none";                                                                                                    
-  if (!idsArray.includes(elementId)) {
-    idsArray.push(elementId)
-    console.log(idsArray)
-  }   
+  // 4. Verificar si el elemento está definido y si ya existe en arrayIds
+  if (typeof elementId !== 'undefined') {
+    const index = idsArray.indexOf(elementId);
+    if (index !== -1) {
+      // 4. Si el elemento ya existe, moverlo a la última posición
+      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+    }
+    // 5. Agregar el elemento al final de arrayIds
+    idsArray.push(elementId);
+    console.log(idsArray);
+  }
 }
 function muestraVidPrisma(elementId) {
   allContenedores.forEach(contenedor => {
@@ -2891,9 +3055,16 @@ function muestraVidPrisma(elementId) {
       video.style.display='none'
   })
      
-  /* if (!idsArray.includes(elementId)) {
-    idsArray.push(elementId)
-    console.log(idsArray)
+  /* // 4. Verificar si el elemento está definido y si ya existe en arrayIds
+  if (typeof elementId !== 'undefined') {
+    const index = idsArray.indexOf(elementId);
+    if (index !== -1) {
+      // 4. Si el elemento ya existe, moverlo a la última posición
+      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+    }
+    // 5. Agregar el elemento al final de arrayIds
+    idsArray.push(elementId);
+    console.log(idsArray);
   } */  
 }
 function muestraVidColor(elementId){
@@ -2922,21 +3093,23 @@ function muestraVidColor(elementId){
           video.pause()
           video.style.display='none'
       })
-  /* if (!idsArray.includes(elementId)) {
-    idsArray.push(elementId)
-    console.log(idsArray)
+  /* // 4. Verificar si el elemento está definido y si ya existe en arrayIds
+  if (typeof elementId !== 'undefined') {
+    const index = idsArray.indexOf(elementId);
+    if (index !== -1) {
+      // 4. Si el elemento ya existe, moverlo a la última posición
+      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+    }
+    // 5. Agregar el elemento al final de arrayIds
+    idsArray.push(elementId);
+    console.log(idsArray);
   } */ 
 }
 function irContenedorAnterior() {
-
   console.log('ALMACENADOS = ',idsArray)
-
-  var previousElementID = idsArray[idsArray.length - 1];
+  var previousElementID = idsArray[idsArray.length - 2];
   // Ahora 'previousElementID' contiene el último elemento del array
   console.log('ULTIMO ELEMENTO = ',previousElementID);
-
-
-
  switch (previousElementID ) {  
     case "cont-titulo":
     location.reload()
@@ -2954,7 +3127,7 @@ function irContenedorAnterior() {
       abrirSeccionCalidad()        
     break;     
     case "pantalla-inicial":        
-      abrirSeccionOperativa()
+      abrirSeccionContinua()
       var contaquina = document.getElementById('rotatek-1')
       var contTorreImp = document.getElementById('torre-imp')
       contaquina.style.position = 'fixed'
@@ -3037,6 +3210,15 @@ function irContenedorAnterior() {
       changeButtonStyles('sitema-humedad')
     break; 
     case "pre-prensa":
+      abrirPrepress()
+      /*// Recorre el array y oculta los elementos por su ID
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i])
+        if (elemento) {
+          elemento.style.display = 'none'
+        }
+      }
+     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       var mostrar = document.getElementById('pre-prensa')
       var contImg = document.getElementById('imgs-prepress')
       mostrar.style.display='block'
@@ -3051,6 +3233,7 @@ function irContenedorAnterior() {
       // Reproducir todos los videos simultáneamente
       vidTeoria.forEach(video => {
         video.style.display='block'
+        video.currentTime = '0'
         video.play()
       })
       // Paso 1: Crear un array con todas las imágenes en el contenedor padre
@@ -3064,9 +3247,17 @@ function irContenedorAnterior() {
             // Cambiar el estilo de visualización a 'flex'
             imagenActual.style.display = 'flex'
         }
-      }
+      }*/
     break; 
     case "densitometria":
+      // Recorre el array y oculta los elementos por su ID
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i])
+        if (elemento) {
+          elemento.style.display = 'none'
+        }
+      }
+     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       var mostraDensit = document.getElementById('densitometria')
       var contDensit = document.getElementById('imgs-densito')
       mostraDensit.style.display='block'
@@ -3181,10 +3372,8 @@ function irContenedorAnterior() {
     default:
   } 
   idsArray.pop();
-
   console.log('DESPUES DE HABER ELIMINADO = ', idsArray);
 }
-
 
 /*function irContenedorAnterior() {
   var previousElementID = idsArray[idsArray.length - 1];
@@ -3602,7 +3791,6 @@ function irContenedorAnterior() {
   console.log('ARRAY ACTUALIZADO',idsArray)
 
 }*/
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function irContenedorSiguiente() {
