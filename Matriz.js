@@ -1,3 +1,7 @@
+const coleccion = document.querySelectorAll('.desbobinador, .desbobinador-I, .uTeñido, .alimentadorId, .unidProceso, .rebobinador, .contTorrImp')
+var btnsIniciales = document.querySelectorAll('.btn-bloque')
+let firstClick = true;
+
 var arrayIdButtsMA = ['resultados','troubleshoot','def1','def2','adtBut','fua1','lup','kaizen']
 var arrayButtsKaizen = ['btn10','btn11','btn12','btn17']
 var arrayButtsPlanos = ['btn13','btn14','btn15']
@@ -32,10 +36,10 @@ var imgTorreI = document.getElementById('imgTorre')
 var contInicial = document.getElementById('container1')
 var botonMa = document.getElementById('bot-mantaut')
 var imagPasoApaso = document.querySelectorAll('.img1')
-var allContenedores = ['cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','container1','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
+var allContenedores = ['cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','container1','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
-var allContIniciales = ['pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','uniProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado']
+var allContIniciales = ['pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado']
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor']
 var allContTintero = ['pantalla-tintero','cont-links','imgTorre','vidTintero','imgsRepuestos','agrupaOblicuos-II','container2']
 var allContPantafrente = ['pantalla-frente','container2','imgsRepuestos-II','imgTorre-f','agrupaOblicuos-III']
@@ -85,7 +89,7 @@ const coleccImgIzq = document.querySelectorAll('.rep-izquierda')
 const conteRepDistrib = document.querySelectorAll('.imgRow')
 const uniTeñido = document.getElementById('uTeñidos')
 const alimentadorId = document.getElementById('alimentadorId')
-const unidadProcess = document.getElementById('uniProceso')
+const unidadProcess = document.getElementById('unidProceso')
 const reBobinado = document.getElementById('rebobinador')
 const rotatPanel = document.getElementById('rotatek-1')
 const seccionTintero = document.getElementById('pantalla-tintero')
@@ -147,13 +151,33 @@ function VolveraInicio(){
   idsArrayEliminados = []
 }
 function botoGrand() {
-  var contaquina = document.getElementById('rotatek-1')
-  var contTorreImp = document.getElementById('torre-imp')
-  contaquina.style.position = 'fixed'
-  contaquina.style.left = '727px'
-  contTorreImp.style.position = 'fixed'
-  contTorreImp.style.left = '740px'
-  contTorreImp.style.top = '154px'
+  // Loop to hide all elements
+  alert('inicia borrado todo')
+  for (var i = 0; i < allContenedores.length; i++) {
+    var elemento = document.getElementById(allContenedores[i]);
+    if (elemento !== 'desbobinadorId') {
+      elemento.style.display = 'none';
+    }
+  }
+  alert('inicia mostrar desbobina')
+
+  for (var i = 0; i < allContenedores.length; i++) {
+    var elemento = document.getElementById(allContenedores[i]);
+    if (elemento === 'desbobinadorId') {
+      elemento.style.display = 'flex';
+    }
+  }
+
+  
+  /* var contButtshijos = document.getElementById('cont-Verticales1')
+
+  if (contButtshijos) {
+    var computedStyle = window.getComputedStyle(contButtshijos);
+  
+    if (computedStyle.display === 'none') {
+      contButtshijos.style.display = 'flex';
+    }
+  } */
 
 }
 function muestraBateria(elementId) {  
@@ -218,17 +242,6 @@ function ElementosMa(elementId) {
   }
   showButtonsMAconRetraso()
   linkListI.style.display = "none";  
-  // 4. Verificar si el elemento está definido y si ya existe en arrayIds
-  if (typeof elementId !== 'undefined') {
-    const index = idsArray.indexOf(elementId);
-    if (index !== -1) {
-      // 4. Si el elemento ya existe, moverlo a la última posición
-      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
-    }
-    // 5. Agregar el elemento al final de arrayIds
-    idsArray.push(elementId);
-    console.log(idsArray);
-  } 
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   idsMAhijos .forEach(function (elto) {                                                                                                   ///OCULTA ELEMENTOS MA
     var elemento = document.getElementById(elto)    
@@ -242,7 +255,18 @@ function ElementosMa(elementId) {
     if (elemento) {
       elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)'    }
   })
-
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // 4. Verificar si el elemento está definido y si ya existe en arrayIds
+  if (typeof elementId !== 'undefined') {
+    const index = idsArray.indexOf(elementId);
+    if (index !== -1) {
+      // 4. Si el elemento ya existe, moverlo a la última posición
+      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+    }
+    // 5. Agregar el elemento al final de arrayIds
+    idsArray.push(elementId);
+    console.log(idsArray);
+  } 
 }
 function showButtonsMAconRetraso() {
   var botones = document.querySelectorAll('.butt-mautonomo') // Selecciona todos los botones
@@ -454,129 +478,119 @@ function cambioContenedor(elementId) {
     console.log(idsArray);
   }
 }
-let firstClick = true;
 
 function cierraContenedores(elementId) {
-  const coleccion = document.querySelectorAll('.desbobinador, .desbobinador-I, .uTeñido, .alimentador, .unidProceso, .rebobinador, .contTorrImp')
   var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80','btn600','btn700','btn800']
   var arrayButtsRojos = ['boton2','boton3','boton4','boton5','boton6','boton8','boton9','boton10','boton11','boton12']
-  var btnsIniciales = document.querySelectorAll('.btn-bloque')
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  for (var i = 0; i < arrayButtsRojos.length; i++) {                                                                                       /// QUITAR ESTILOS A BOTONES
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  for (var i = 0; i < arrayButtsRojos.length; i++) {                                                                                  /// QUITAR ESTILOS A BOTONES
     var button = arrayButtsRojos[i]
     if (button) {
       document.getElementById(button).style.backgroundColor = ''
     }
   } 
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  if (firstClick) {                                                                                                                             /// LOGICA PRIMER CLICK
+  if (firstClick) {                                                                                                                       /// LOGICA PRIMER CLICK
     if (!idsArray.includes(elementId)) {
       idsArray.push(elementId)  
       console.log(idsArray)
     }
     switch (elementId) {
-      case 'desbobinador':
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
-        coleccion.forEach(elemento => {                                                                                    /// MUESTRA CONTENEDOR HIJO / OCULTA EL RESTO
-          if (elemento.classList.contains(elementId)) {
-            elemento.style.display = 'flex'
-          } else {
-            elemento.style.display = 'none'
+      case 'desbobinadorId':
+        // Obtén el elemento padre 'pantalla-inicial'
+        var pantallaInicial = document.getElementById('pantalla-inicial');
+        if (pantallaInicial) {
+          // Oculta todos los hijos directos de 'pantalla-inicial'
+          for (var i = 0; i < pantallaInicial.children.length; i++) {
+            var hijo = pantallaInicial.children[i];
+            if (i === 0) {
+              // Deja visible el primer hijo
+              hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
+            } else {
+              // Oculta el resto de los hijos
+              hijo.style.display = 'none';
+            }
           }
-        }) 
+        }      
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
-        btnsIniciales.forEach(elemento =>{                                                                                            /// PONE BOTON VERDE Y TEXTO NEGRO
-          if (elemento.id === 'boton1'){
-            elemento.style.background = 'rgba(255,255,255)'
-            elemento.style.color = 'rgba(0,0,0)'
-
-          }else{
-            elemento.style.background = ''
-          }
-        })    
         video.style.display = 'none'
         aumentarTamanosDeBotones()
       break;
       case 'uTeñido':
-        coleccion.forEach(elemento => {
-          if (elemento.classList.contains(elementId)) {
-            elemento.style = display = 'flex'
-          } else {
-            elemento.style.display = 'none'
+        // Obtén el elemento padre 'pantalla-inicial'
+        var pantallaInicial = document.getElementById('pantalla-inicial');
+        if (pantallaInicial) {
+          // Oculta todos los hijos directos de 'pantalla-inicial'
+          for (var i = 0; i < pantallaInicial.children.length; i++) {
+            var hijo = pantallaInicial.children[i];
+            if (i === 1) {
+              // Deja visible el primer hijo
+              hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
+            } else {
+              // Oculta el resto de los hijos
+              hijo.style.display = 'none';
+            }
           }
-        })
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
-        btnsIniciales.forEach(elemento =>{                                                                                    /// PONE BOTON VERDE Y TEXTO NEGRO
-          if (elemento.id === 'boton7'){
-            elemento.style.background = 'rgba(255,255,255)'
-            elemento.style.color = 'rgba(0,0,0)'
-
-          }else{
-            elemento.style.background = ''
-          }
-        })         
+        }      
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         video.style.display = 'none'        
         aumentarTamanosDeBotonesII()
       break;
-      case 'alimentador':
-        coleccion.forEach(elemento => {
-          if (elemento.classList.contains(elementId)) {
-            elemento.style.display = 'flex'
-          } else {
-            elemento.style.display = 'none'
+      case 'alimentadorId':
+        // Obtén el elemento padre 'pantalla-inicial'
+        var pantallaInicial = document.getElementById('pantalla-inicial');
+        if (pantallaInicial) {
+          // Oculta todos los hijos directos de 'pantalla-inicial'
+          for (var i = 0; i < pantallaInicial.children.length; i++) {
+            var hijo = pantallaInicial.children[i];
+            if (i === 2) {
+              // Deja visible el primer hijo
+              hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
+            } else {
+              // Oculta el resto de los hijos
+              hijo.style.display = 'none';
+            }
           }
-        })
-       ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
-       btnsIniciales.forEach(elemento =>{                                                                                    /// PONE BOTON VERDE Y TEXTO NEGRO
-        if (elemento.id === 'boton13'){
-          elemento.style.background = 'rgba(255,255,255)'
-          elemento.style.color = 'rgba(0,0,0)'
-
-        }else{
-          elemento.style.background = ''
-        }
-      })         
-        aumentarTamanosDeBotonesIII()
+        }      
+       aumentarTamanosDeBotonesIII()
       break;
       case 'unidProceso':
-        coleccion.forEach(elemento => {
-          if (elemento.classList.contains(elementId)) {
-            elemento.style.display = 'flex'
-          } else {
-            elemento.style.display = 'none'
+        // Obtén el elemento padre 'pantalla-inicial'
+        var pantallaInicial = document.getElementById('pantalla-inicial');
+        if (pantallaInicial) {
+          // Oculta todos los hijos directos de 'pantalla-inicial'
+          for (var i = 0; i < pantallaInicial.children.length; i++) {
+            var hijo = pantallaInicial.children[i];
+            if (i === 3) {
+              // Deja visible el primer hijo
+              hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
+            } else {
+              // Oculta el resto de los hijos
+              hijo.style.display = 'none';
+            }
           }
-        })
-       ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
-       btnsIniciales.forEach(elemento =>{                                                                                    /// PONE BOTON VERDE Y TEXTO NEGRO
-        if (elemento.id === 'boton19'){
-          elemento.style.background = 'rgba(255,255,255)'
-          elemento.style.color = 'rgba(0,0,0)'
-
-        }else{
-          elemento.style.background = ''
-        }
-      })         
-        aumentarTamanosDeBotonesIV()        
+        }      
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
+       aumentarTamanosDeBotonesIV()        
       break;
       case 'rebobinador':
-        coleccion.forEach(elemento => {
-          if (elemento.classList.contains(elementId)) {
-            elemento.style.display = 'flex'
-          } else {
-            elemento.style.display = 'none'
+        // Obtén el elemento padre 'pantalla-inicial'
+        var pantallaInicial = document.getElementById('pantalla-inicial');
+        if (pantallaInicial) {
+          // Oculta todos los hijos directos de 'pantalla-inicial'
+          for (var i = 0; i < pantallaInicial.children.length; i++) {
+            var hijo = pantallaInicial.children[i];
+            if (i === 4) {
+              // Deja visible el primer hijo
+              hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
+            } else {
+              // Oculta el resto de los hijos
+              hijo.style.display = 'none';
+            }
           }
-        })
-       ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
-       btnsIniciales.forEach(elemento =>{                                                                                    /// PONE BOTON VERDE Y TEXTO NEGRO
-        if (elemento.id === 'boton25'){
-          elemento.style.background = 'rgba(255,255,255)'
-          elemento.style.color = 'rgba(0,0,0)'
-
-        }else{
-          elemento.style.background = ''
-        }
-      })         
-        aumentarTamanosDeBotonesV()
+        }      
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
+       aumentarTamanosDeBotonesV()
       break;
       default:
     }    
@@ -589,9 +603,7 @@ function cierraContenedores(elementId) {
           elemento.style.display = 'none'
       } 
     }) 
-
     // En el segundo clic, carga la seccion
-
     btnsIniciales.forEach(elemento =>{
       if (elemento){
         elemento.style.background = ''
@@ -965,33 +977,25 @@ function showRepuesto(elementId) {
 } 
 function muestraPerfiles(elementId){
   var video = document.getElementById('video-placa')
-  var contButtOblicuos = document.getElementById('agrupaOblicuos-placa')
-  var contAbueloOblicuos = document.getElementById('contPortPlaca')
   var imgPlancha = document.querySelectorAll('.imagesTorre') 
   var imagesPlancha = document.getElementById('contPerfilesPlancha')
   var imgsPlancha = document.getElementById('imagenes-plancha')
-
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  var elementosExcluidos = ['contPortPlaca', 'agrupaOblicuos-placa'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)          
+  // Bucle para recorrer todos los elementos
   for (var i = 0; i < allContenedores.length; i++) {
-    var elemento = document.getElementById(allContenedores[i])
-    if (elemento !== 'contPortPlaca') {
-      elemento.style.display = 'none'
-    }else{
-      elemento.style.display = 'flex'
+    var elemento = document.getElementById(allContenedores[i]);
+    // Verificar si el elemento no está en la lista de elementos excluidos
+    if (!elementosExcluidos.includes(allContenedores[i])) {
+      // Ocultar el elemento
+      if (elemento) {
+          elemento.style.display = 'none';
+      }
     }
   }
 
   switch (elementId) {
-    case 'imagen1':
-
-      contAbueloOblicuos.style.display = 'block'
-      if (contButtOblicuos) {
-        // Loop through the child elements of the parent
-        for (var i = 0; i < contButtOblicuos.children.length; i++) {
-          var child = contButtOblicuos.children[i];
-          child.style.display = 'block'; // or any other display value based on your layout needs
-        }
-      }
-
+    case 'imagen1':    
       // Detener el video
       video.pause()
       // Ocultar el video estableciendo su estilo de visualización en 'none'
@@ -2131,25 +2135,19 @@ function deslizarContImagGraf(idElement) {
 function modificarPosicion() {  
   // Valor fijo para el primer elemento
   var destino = '257px'
-
   // Iterar a través de los IDs y calcular la posición left
   arrayPosicionnador.forEach(function(id) {
   // Seleccionar el elemento por su ID
   var elemento = document.getElementById(id)
-
   if (elemento) {
     // Asignar el valor de destino como posición left al elemento actual
     elemento.style.left = destino;
-
     // Obtener el ancho (width) de cada elemento
-    var width = window.getComputedStyle(elemento).getPropertyValue('width')
-    
+    var width = window.getComputedStyle(elemento).getPropertyValue('width')   
     // Eliminar 'px' del valor y convertirlo a un número
     var ancho = parseFloat(width)
-
     // Calcular la nueva posición left para el próximo elemento
     destino = parseInt(destino) + ancho + 'px'
-
     // Mostrar la posición en la consola
     console.log(id + " - posicion left:", destino)
   } else {
@@ -2225,6 +2223,13 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
 
   switch (elementId) {    
     case 'pantalla-frente':
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i])
+        if (elemento) {
+          elemento.style.display = 'none'
+        }
+      }
+    
       for (var i = 0; i < pantallas.length; i++) {
         var elemento = document.getElementById(pantallas[i])
         if (elemento) {
@@ -2243,12 +2248,27 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
         }
       }  
       
-      if (!idsArray.includes(elementId)) {
-        idsArray.push(elementId)
-        console.log(idsArray)
-      }
+      // 4. Verificar si el elemento está definido y si ya existe en arrayIds
+      if (typeof elementId !== 'undefined') {
+        const index = idsArray.indexOf(elementId);
+        if (index !== -1) {
+          // 4. Si el elemento ya existe, moverlo a la última posición
+          idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+        }
+        // 5. Agregar el elemento al final de arrayIds
+        idsArray.push(elementId);
+        console.log(idsArray);
+      }  
+
     break; 
     case 'pantalla-mandos':
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i])
+        if (elemento) {
+          elemento.style.display = 'none'
+        }
+      }
+
       for (var i = 0; i < pantallas.length; i++) {
         var elemento = document.getElementById(pantallas[i])
         if (elemento) {
@@ -2266,35 +2286,65 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
           }
         }
       } 
-      if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+      // 4. Verificar si el elemento está definido y si ya existe en arrayIds
+      if (typeof elementId !== 'undefined') {
+        const index = idsArray.indexOf(elementId);
+        if (index !== -1) {
+          // 4. Si el elemento ya existe, moverlo a la última posición
+          idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+        }
+        // 5. Agregar el elemento al final de arrayIds
         idsArray.push(elementId);
         console.log(idsArray);
-      }
-      break;
-    case 'pantalla-servicio': 
-    for (var i = 0; i < pantallas.length; i++) {
-      var elemento = document.getElementById(pantallas[i])
-      if (elemento) {
-        elemento.style.display = 'none'
-      }
-    }
+      }  
 
-    for (var i = 0; i < pantallas.length; i++) {
-      if (pantallas[i] === 'pantalla-servicio') {
-        const elementoMandos = document.getElementById('pantalla-servicio')
-        if (elementoMandos) {
-          elementoMandos.style.display = 'flex'
-        }else {
-          elementoMandos.style.display = 'none'            
+    break;
+    case 'pantalla-servicio': 
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i])
+        if (elemento) {
+          elemento.style.display = 'none'
         }
       }
-    }
-    if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
-      idsArray.push(elementId);
-      console.log(idsArray);
-    }
+
+      for (var i = 0; i < pantallas.length; i++) {
+        var elemento = document.getElementById(pantallas[i])
+        if (elemento) {
+          elemento.style.display = 'none'
+        }
+      }
+
+      for (var i = 0; i < pantallas.length; i++) {
+        if (pantallas[i] === 'pantalla-servicio') {
+          const elementoMandos = document.getElementById('pantalla-servicio')
+          if (elementoMandos) {
+            elementoMandos.style.display = 'flex'
+          }else {
+            elementoMandos.style.display = 'none'            
+          }
+        }
+      }
+      // 4. Verificar si el elemento está definido y si ya existe en arrayIds
+      if (typeof elementId !== 'undefined') {
+        const index = idsArray.indexOf(elementId);
+        if (index !== -1) {
+          // 4. Si el elemento ya existe, moverlo a la última posición
+          idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+        }
+        // 5. Agregar el elemento al final de arrayIds
+        idsArray.push(elementId);
+        console.log(idsArray);
+      } 
+
     break;
     case 'pantalla-atras':
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i])
+        if (elemento) {
+          elemento.style.display = 'none'
+        }
+      }
+
       for (var i = 0; i < pantallas.length; i++) {
         var elemento = document.getElementById(pantallas[i])
         if (elemento) {
@@ -2312,11 +2362,18 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
           }
         }
       } 
-      if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+      // 4. Verificar si el elemento está definido y si ya existe en arrayIds
+      if (typeof elementId !== 'undefined') {
+        const index = idsArray.indexOf(elementId);
+        if (index !== -1) {
+          // 4. Si el elemento ya existe, moverlo a la última posición
+          idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+        }
+        // 5. Agregar el elemento al final de arrayIds
         idsArray.push(elementId);
         console.log(idsArray);
-      }
-
+      }  
+      
     break;
     default:
   }
@@ -3127,18 +3184,7 @@ function irContenedorAnterior() {
       abrirSeccionCalidad()        
     break;     
     case "pantalla-inicial":        
-      abrirSeccionContinua()
-      var contaquina = document.getElementById('rotatek-1')
-      var contTorreImp = document.getElementById('torre-imp')
-      contaquina.style.position = 'fixed'
-      contaquina.style.left = '727px'
-      contTorreImp.style.position = 'fixed'
-      contTorreImp.style.left = '740px'
-      contTorreImp.style.top = '154px'
-      var linksTemporales = document.getElementById('links-inicialesI')
-      var linksTemporalesII = document.getElementById('links-iniciales')
-      linksTemporales.style.display = 'flex'
-      linksTemporalesII.style.display = 'flex'        
+    abrirSeccionContinua('pantalla-inicial')
     break; 
     case "pantalla-tintero":
       var botonesInicio = document.getElementById('container01')                  
@@ -3203,15 +3249,14 @@ function irContenedorAnterior() {
     case "frente":
       muestraTorresI('frente')
     break;  
-    case "pantalla-frente":
-      muestraTorres('frente')
-    break; 
     case "sitema-humedad":
       changeButtonStyles('sitema-humedad')
     break; 
     case "pre-prensa":
       abrirPrepress()
-      /*// Recorre el array y oculta los elementos por su ID
+    break; 
+    case "densitometria":
+      // Recorre el array y oculta los elementos por su ID
       for (var i = 0; i < allContenedores.length; i++) {
         var elemento = document.getElementById(allContenedores[i])
         if (elemento) {
@@ -3219,35 +3264,302 @@ function irContenedorAnterior() {
         }
       }
      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      var mostrar = document.getElementById('pre-prensa')
-      var contImg = document.getElementById('imgs-prepress')
-      mostrar.style.display='block'
-      contImg.style.style='block'
-
-      var contImgsTeoria = document.getElementsByClassName('imgTeoria') // Obtén elementos por su
-      for (var i = 0; i < contImgsTeoria.length; i++) {
-        var teorImage = contImgsTeoria[i] // Accede al elemento actual
+      var mostraDensit = document.getElementById('densitometria')
+      var contDensit = document.getElementById('imgs-densito')
+      mostraDensit.style.display='block'
+      contDensit.style.style='block'
+      var contImgsDensito = document.getElementsByClassName('imgDensito') // Obtén elementos por su
+      for (var i = 0; i < contImgsDensito.length; i++) {
+        var teorImage = contImgsDensito[i] // Accede al elemento actual
         teorImage.style.display = 'block' // muestra el elemento  
-      } 
-      const vidTeoria = document.querySelectorAll('.vidTeoria')
-      // Reproducir todos los videos simultáneamente
-      vidTeoria.forEach(video => {
-        video.style.display='block'
-        video.currentTime = '0'
-        video.play()
+      }            
+    break;  
+    case "vidColor":
+      var mostrario = document.getElementById('pre-prensa')
+      var videos = document.getElementById('vidColor')
+      mostrario.style.display='flex'
+      videos.style.style='flex'
+      videoElements.forEach(vide => {
+      if (vide.id === 'prisma-vid') {
+        vide.style.display = 'block'
+        vide.currentTime = 0;
+        vide.loop = true;               
+        vide.play()      
+      } else {
+        vide.style.display = 'none'
+      }
       })
-      // Paso 1: Crear un array con todas las imágenes en el contenedor padre
-      const imagenesArray = document.querySelectorAll('#imgs-prepress .imgTeoria .vidTeoria')
-      // Paso 2: Recorrer las imágenes
-      for (let i = 0; i < imagenesArray.length; i++) {
-        // Paso 3: Verificar y modificar el estilo de visualización
-        const imagenActual = imagenesArray[i]            
-        // Verificar si el estilo de visualización es 'none'
-        if (getComputedStyle(imagenActual).display === 'none') {
-            // Cambiar el estilo de visualización a 'flex'
-            imagenActual.style.display = 'flex'
+    break; 
+    case "vidColor-II":
+      var mostrari = document.getElementById('pre-prensa')
+      var videos = document.getElementById('vidColor-II')
+      mostrari.style.display='flex'
+      videos.style.style='flex'
+      videoElements.forEach(vid => {
+      if (vid.id === 'color-vid') {
+        vid.style.display = 'block'
+        vid.currentTime = 0;
+        vid.loop = true;                            
+        vid.play()      
+      } else {
+        vid.style.display = 'none'
+      }
+      })
+    break; 
+    case "mantilla1" :
+      muestraAngulos('mantilla1')
+    break;
+    case "mantilla2" :
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i]) 
+          elemento.style.display='none'
         }
-      }*/
+      muestraAngulos('mantilla2')
+    break;
+    case "mantilla3" :
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i]) 
+          elemento.style.display='none'
+        }
+      muestraAngulos('mantilla3')
+    break; 
+    case "mantilla4" :
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i]) 
+          elemento.style.display='none'
+        }
+      muestraAngulos('mantilla4')
+    break;
+    case 'forward':
+      muestraLados('forward')
+      var contImpresor = document.getElementById('contImpresor')
+      contImpresor.style.display = 'block'
+
+      var boton01 = document.getElementById('bot-inic')
+      boton01.style.display = 'block'
+    break;
+    case 'comands':
+      muestraLados('comands')
+      var contImpresor = document.getElementById('contImpresor')
+      contImpresor.style.display = 'block'
+
+      var boton01 = document.getElementById('bot-inic')
+      boton01.style.display = 'block'
+    break; 
+    case 'service':
+      muestraLados('service')
+      var contImpresor = document.getElementById('contImpresor')
+      contImpresor.style.display = 'block'
+
+      var boton01 = document.getElementById('bot-inic')
+      boton01.style.display = 'block'
+    break;
+    case 'back':
+      muestraLados('back')
+      var contImpresor = document.getElementById('contImpresor')
+      contImpresor.style.display = 'block'
+
+      var boton01 = document.getElementById('bot-inic')
+      boton01.style.display = 'block'        
+    break; 
+    case 'desbobinadorId':
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i])
+        if (elemento) {
+          elemento.style.display = 'none'
+        }
+      }   
+      // Obtén el elemento padre 'pantalla-inicial'
+      var pantallaAbuelo = document.getElementById('pantalla-inicial')
+      var pantallaInicial = document.getElementById('desbobinadorId')
+      var  pantallaInicialElem = document.getElementById('cont-Verticales1')
+      pantallaAbuelo.style.display = 'flex'      
+      pantallaInicial.style.display = 'flex'
+      pantallaInicialElem.style.display = 'flex' 
+      video.style.display = 'none'
+      aumentarTamanosDeBotones()
+    break;
+    case 'uTeñido':
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i])
+        if (elemento) {
+          elemento.style.display = 'none'
+        }
+      }   
+      // Obtén el elemento padre 'pantalla-inicial'
+      var pantallaAbuelo = document.getElementById('pantalla-inicial')
+      var pantallaInicial1 = document.getElementById('uTeñidos')
+      var  pantallaInicialElem1 = document.getElementById('cont-Verticales2')
+      pantallaAbuelo.style.display = 'flex'      
+      pantallaInicial1.style.display = 'flex'
+      pantallaInicialElem1.style.display = 'flex' 
+      video.style.display = 'none'
+      aumentarTamanosDeBotones()
+    break;
+    case 'alimentadorId':
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i])
+        if (elemento) {
+          elemento.style.display = 'none'
+        }
+      }   
+      // Obtén el elemento padre 'pantalla-inicial'
+      var pantallaAbuelo = document.getElementById('pantalla-inicial')
+      var pantallaInicial2 = document.getElementById('alimentadorId')
+      var  pantallaInicialElem2 = document.getElementById('verticales-alimentador')
+      pantallaAbuelo.style.display = 'flex'      
+      pantallaInicial2.style.display = 'flex'
+      pantallaInicialElem2.style.display = 'flex' 
+      video.style.display = 'none'
+      aumentarTamanosDeBotones()
+    break;
+    case 'unidProceso':
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i])
+        if (elemento) {
+          elemento.style.display = 'none'
+        }
+      }   
+      // Obtén el elemento padre 'pantalla-inicial'
+      var pantallaAbuelo = document.getElementById('pantalla-inicial')
+      var pantallaInicial2 = document.getElementById('unidProceso')
+      var  pantallaInicialElem2 = document.getElementById('cont-Verticales7')
+      pantallaAbuelo.style.display = 'flex'      
+      pantallaInicial2.style.display = 'flex'
+      pantallaInicialElem2.style.display = 'flex' 
+      video.style.display = 'none'
+      aumentarTamanosDeBotones()
+    break;
+    case 'rebobinador':
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i])
+        if (elemento) {
+          elemento.style.display = 'none'
+        }
+      }   
+      // Obtén el elemento padre 'pantalla-inicial'
+      var pantallaAbuelo = document.getElementById('pantalla-inicial')
+      var pantallaInicial2 = document.getElementById('rebobinador')
+      var  pantallaInicialElem2 = document.getElementById('cont-Verticales7')
+      pantallaAbuelo.style.display = 'flex'      
+      pantallaInicial2.style.display = 'flex'
+      pantallaInicialElem2.style.display = 'flex' 
+      video.style.display = 'none'
+      aumentarTamanosDeBotones()
+    break;
+    case 'pantalla-frente':
+      muestraTorresI('pantalla-frente')
+    break;
+    case 'pantalla-mandos':
+      muestraTorresI('pantalla-mandos')
+    break;
+    case 'pantalla-servicio':
+      muestraTorresI('pantalla-servicio')
+    break;
+    case 'pantalla-atras':
+      muestraTorresI('pantalla-atras')
+    break;
+    default:
+  } 
+  idsArray.pop();
+  console.log('DESPUES DE HABER ELIMINADO = ', idsArray);
+  idsArrayEliminados.push(idsArray[idsArray.length - 1])
+  console.log('ELEMENTOS SEGUNDOARRAY = ', idsArrayEliminados);
+
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function irContenedorSiguiente() {
+  console.log('ALMACENADOS = ',idsArrayEliminados)
+  var previousElementID = idsArrayEliminados[idsArrayEliminados.length - 2];
+  // Ahora 'previousElementID' contiene el último elemento del array
+  console.log('ULTIMO ELEMENTO = ',previousElementID);
+ switch (previousElementID ) {  
+    case "cont-titulo":
+    location.reload()
+    break;
+    case 'cont-titulo-operacion':
+      abrirSeccionOperativa()        
+    break;
+    case 'cont-titulo-admin':
+      abrirSeccionAdministrativa()        
+    break; 
+    case 'cont-titulo-comercial':
+      abrirSeccionComercial()        
+    break; 
+    case 'cont-titulo-calidad':
+      abrirSeccionCalidad()        
+    break;     
+    case "pantalla-inicial":        
+    abrirSeccionContinua('pantalla-inicial')     
+    break; 
+    case "pantalla-tintero":
+      var botonesInicio = document.getElementById('container01')                  
+      botonesInicio.style.display='block'
+      changeButtonStyles('pantalla-tintero')  
+    break;
+    case "videoElement1-II":
+      changeButtonStyles('videoElement1-II')  
+    break;          
+    case "contImgEntintador":
+      showRepuesto('contImgEntintador')
+    break; 
+    case "contImgDistribuidor":
+      showRepuesto ('contImgDistribuidor') 
+    break;          
+    case "contPortPlaca":
+      contIMPlaca.style.display='block'
+      showRepuesto('contPortPlaca')
+    break;
+    case "contPortManta":
+      var contBotManta = document.getElementById('container01')
+      contBotManta.style.display='block'
+      contIMmanta.style.display='block'
+      showRepuesto('contPortManta', 'videoTrain03')  
+    break;
+    case "contImpresor":
+      showRepuesto('contImpresor', 'videoTrain01')
+    break;
+    case "imagen1":
+      muestraPerfiles('imagen1')
+    break;
+    case "imagen2":
+      muestraPerfiles('imagen2')
+    break; 
+    case "imagen3":
+      muestraPerfiles('imagen3')
+    break;
+    case "imagen4":
+      muestraPerfiles('imagen4')
+    break; 
+    case "cont-variable":
+      abrirSeccionVariable('cont-variable')
+    break; 
+    case "cont-plana":
+      abrirSeccionPlanas('cont-plana')
+    break; 
+    case "cont-secador":
+      abrirSeccionCurado('cont-secador')
+    break;
+    case "bateria-entintado-II":
+      changeButtonStyles('bateria-entintado-II', 'contene-7')
+    break; 
+    case "bancada-torre-II":
+      changeButtonStyles('bancada-torre-II')
+    break; 
+    case "conteneMantaut":
+      ElementosMa('conteneMantaut')
+    break; 
+    case "rotatek-1":
+      location.reload()
+    break; 
+    case "frente":
+      muestraTorresI('frente')
+    break;  
+    case "sitema-humedad":
+      changeButtonStyles('sitema-humedad')
+    break; 
+    case "pre-prensa":
+      abrirPrepress()
     break; 
     case "densitometria":
       // Recorre el array y oculta los elementos por su ID
@@ -3369,694 +3681,22 @@ function irContenedorAnterior() {
       container.style.display = "flex";
     }
   break;
+    case 'pantalla-frente':
+      muestraTorresI('pantalla-frente')
+    break;
+    case 'pantalla-mandos':
+      muestraTorresI('pantalla-mandos')
+    break;
+    case 'pantalla-servicio':
+      muestraTorresI('pantalla-servicio')
+    break;
+    case 'pantalla-atras':
+      muestraTorresI('pantalla-atras')
+    break;
     default:
   } 
-  idsArray.pop();
-  console.log('DESPUES DE HABER ELIMINADO = ', idsArray);
-}
-
-/*function irContenedorAnterior() {
-  var previousElementID = idsArray[idsArray.length - 1];
-  console.log('CONTENEDOR A MOSTRAR',previousElementID)
-  var ultimoEliminado = idsArray.pop();
-
-  for (var i = 1; i < idsArrayEliminados.length; i++) {
-
-
-    switch (previousElementID){ 
-      case 'cont-titulo':
-      idsArray = []
-      location.reload()
-      break;
-      case "pantalla-inicial":
-        abrirSeccionContinua()
-        var contaquina = document.getElementById('rotatek-1')
-        var contTorreImp = document.getElementById('torre-imp')
-        contaquina.style.position = 'fixed'
-        contaquina.style.left = '727px'
-        contTorreImp.style.position = 'fixed'
-        contTorreImp.style.left = '740px'
-        contTorreImp.style.top = '154px'
-        var linksTemporales = document.getElementById('links-inicialesI')
-        var linksTemporalesII = document.getElementById('links-iniciales')
-        linksTemporales.style.display = 'flex'
-        linksTemporalesII.style.display = 'flex'
-      break;
-      case "pantalla-tintero":
-        var botonesInicio = document.getElementById('container01')
-        botonesInicio.style.display='block'
-        changeButtonStyles('pantalla-tintero')  
-      break;
-      case "videoElement1-II":
-        changeButtonStyles('videoElement1-II')  
-      break;          
-      case "contImgEntintador":
-        showRepuesto('contImgEntintador')
-      break; 
-      case "contImgDistribuidor":
-        showRepuesto ('contImgDistribuidor') 
-      break;          
-      case "contPortPlaca":
-        contIMPlaca.style.display='block'
-        showRepuesto('contPortPlaca')
-      break;
-      case "contPortManta":
-        var contBotManta = document.getElementById('container01')
-        contBotManta.style.display='block'
-        contIMmanta.style.display='block'
-        showRepuesto('contPortManta', 'videoTrain03')  
-      break;
-      case "contImpresor":
-        showRepuesto('contImpresor', 'videoTrain01')
-      break;
-      case "imagen1":
-        muestraPerfiles('imagen1')
-      break;
-      case "imagen2":
-        muestraPerfiles('imagen2')
-      break; 
-      case "imagen3":
-        muestraPerfiles('imagen3')
-      break;
-      case "imagen4":
-        muestraPerfiles('imagen4')
-      break; 
-      case "cont-variable":
-        abrirSeccionVariable('cont-variable')
-      break; 
-      case "cont-plana":
-        abrirSeccionPlanas('cont-plana')
-      break; 
-      case "cont-secador":
-        abrirSeccionCurado('cont-secador')
-      break;
-      case "bateria-entintado-II":
-        changeButtonStyles('bateria-entintado-II', 'contene-7')
-      break; 
-      case "bancada-torre-II":
-        changeButtonStyles('bancada-torre-II')
-      break; 
-      case "conteneMantaut":
-        var contIconos = document.getElementById('iconos')
-        var contUsers = document.getElementById('contenedor-vertical')
-        var contenedorPrincipal = document.getElementById('conteneMantaut')
-        var hijosDelContenedor = contenedorPrincipal.children;        
-        for (var i = 0; i < hijosDelContenedor.length; i++) {
-          var hijo = hijosDelContenedor[i]
-          var idDelHijo = hijo.id;          
-          // Verificar si el ID del hijo coincide con los IDs deseados
-          if (idDelHijo !== 'container8' && idDelHijo !== 'conti-boton') {
-            // Ocultar el hijo si su ID no coincide
-            hijo.style.display = 'none'
-          }
-        }
-        ElementosMa('conteneMantaut')
-        contIconos.style.display = 'none'
-        contUsers.style.display = 'none'
-
-      break; 
-      case "rotatek-1":
-        location.reload()
-      break; 
-      case "frente":
-        muestraTorresI('frente')
-      break;  
-      case "pantalla-frente":
-        muestraTorresI('pantalla-frente')
-      break; 
-      case "pantalla-mandos":
-        muestraTorresI('pantalla-mandos')
-      break;
-      case "pantalla-servicio":
-        muestraTorresI('pantalla-mandos')
-      break;
-      case "pantalla-atras":        
-      muestraTorresI('pantalla-atras')
-      break;             
-      case "sitema-humedad":
-        changeButtonStyles('sitema-humedad')
-      break; 
-      case "pre-prensa":
-        for (var i = 0; i < allContenedores.length; i++) {
-          var elemento = document.getElementById(allContenedores[i]) 
-          elemento.style.display='none'
-        }
-        var contenedorPrincipal = document.getElementById('pre-prensa')
-        var hijosDelContenedor = contenedorPrincipal.children;
-        contenedorPrincipal.style.display='block'        
-        for (var i = 0; i < hijosDelContenedor.length; i++) {
-          var hijo = hijosDelContenedor[i]
-          var idDelHijo = hijo.id;          
-          // Verificar si el ID del hijo coincide con los IDs deseados
-          if (idDelHijo) {
-            // Ocultar el hijo si su ID no coincide
-            hijo.style.display = 'block'
-          }
-        }
-        var displayValue = computedStyle.getPropertyValue("display")
-        if (displayValue.toLowerCase() === "none") {
-          // Cambia el valor de 'display' a 'flex'
-          container.style.display = "flex";
-        }
-
-        // Paso 1: Crear un array con todas las imágenes en el contenedor padre
-        const imagenesArray = document.querySelectorAll('#imgs-prepress .imgTeoria')
-
-        // Paso 2: Recorrer las imágenes
-        for (let i = 0; i < imagenesArray.length; i++) {
-          // Paso 3: Verificar y modificar el estilo de visualización
-          const imagenActual = imagenesArray[i]
-          
-          // Verificar si el estilo de visualización es 'none'
-          if (getComputedStyle(imagenActual).display === 'none') {
-            // Cambiar el estilo de visualización a 'flex'
-            imagenActual.style.display = 'flex'
-          }
-        }
-      break; 
-      case "densitometria":
-        for (var i = 0; i < allContenedores.length; i++) {
-          var elemento = document.getElementById(allContenedores[i]) 
-          elemento.style.display='none'}
-
-        var contenedorPrincipal = document.getElementById('densitometria')
-        var hijosDelContenedor = contenedorPrincipal.children;
-        contenedorPrincipal.style.display='block'        
-        for (var i = 0; i < hijosDelContenedor.length; i++) {
-          var hijo = hijosDelContenedor[i]
-          var idDelHijo = hijo.id;          
-          // Verificar si el ID del hijo coincide con los IDs deseados
-          if (idDelHijo) {
-            // Ocultar el hijo si su ID no coincide
-            hijo.style.display = 'block'
-          }
-        }
-      break;  
-      case "vidColor":
-        for (var i = 0; i < allContenedores.length; i++) {
-          var elemento = document.getElementById(allContenedores[i]) 
-          elemento.style.display='none'}
-          videoElements.forEach(vide => {
-            if (vide) {
-              vide.pause()
-              vide.style.display = 'none'
-          
-            }        
-            })          
-        var contenedorPrincipal = document.getElementById('pre-prensa')
-        var hijosDelContenedor = contenedorPrincipal.children;
-        contenedorPrincipal.style.display='block'        
-        for (var i = 0; i < hijosDelContenedor.length; i++) {
-          var hijo = hijosDelContenedor[i]
-          var idDelHijo = hijo.id;          
-          // Verificar si el ID del hijo coincide con los IDs deseados
-          if (idDelHijo) {
-            // Ocultar el hijo si su ID no coincide
-            hijo.style.display = 'block'
-          }
-        }
-        var contVidCicodelia = document.getElementById('vidCicodelia')
-        contVidCicodelia.style.height = '7px'
-      break;
-      case "vidColor-II":
-      var mostrari = document.getElementById('pre-prensa')
-      var videos = document.getElementById('vidColor-II')
-      mostrari.style.display='flex'
-      videos.style.style='flex'
-      videoElements.forEach(vid => {
-        if (vid.id === 'color-vid') {
-          vid.style.display = 'block'
-          vid.currentTime = 0;
-          vid.loop = true;                            
-          vid.play()      
-        } else {
-          vid.style.display = 'none'
-        }
-        })
-      break;
-      case "mantilla1" :
-        muestraAngulos('mantilla1')
-      break;
-      case "mantilla2" :
-        for (var i = 0; i < allContenedores.length; i++) {
-          var elemento = document.getElementById(allContenedores[i]) 
-            elemento.style.display='none'
-          }
-        muestraAngulos('mantilla2')
-      break;
-      case "mantilla3" :
-        for (var i = 0; i < allContenedores.length; i++) {
-          var elemento = document.getElementById(allContenedores[i]) 
-            elemento.style.display='none'
-          }
-        muestraAngulos('mantilla3')
-      break; 
-      case "mantilla4" :
-        for (var i = 0; i < allContenedores.length; i++) {
-          var elemento = document.getElementById(allContenedores[i]) 
-            elemento.style.display='none'
-          }
-        muestraAngulos('mantilla4')
-      break; 
-      case 'desbobinador':
-      var contiene = document.getElementById('pantalla-inicial')
-      contiene.style.display = 'flex'
-      var container = document.getElementById("desbobinadorId")
-      var computedStyle = getComputedStyle(container)   
-      var displayValue = computedStyle.getPropertyValue("display")
-      if (displayValue.toLowerCase() === "none") {
-        // Cambia el valor de 'display' a 'flex'
-        container.style.display = "flex";
-      }
-      break; 
-      case 'uTeñido':
-      for (var i = 0; i < allContenedores.length; i++) {
-      var elemento = document.getElementById(allContenedores[i]) 
-      elemento.style.display='none'}          
-      // Obtener el elemento padre
-      var contenedorPadre = document.getElementById("pantalla-inicial")
-      contenedorPadre.style.display='block'
-      // Obtener todos los elementos hijos del contenedor padre
-      var elementosHijos = contenedorPadre.children;
-      // Recorrer los elementos hijos sin usar clases ni 'id'
-      for (var i = 0; i < elementosHijos.length; i++) {
-      var elementoHijo = elementosHijos[i]
-      // Realizar las operaciones que desees con cada elemento hijo aquí
-      elementoHijo.style.display='block'
-      }          
-      cierraContenedores('uTeñido')
-      contInicial.style.display='block'
-      contInicial.style.marginLeft = '128px'
-      var botTwin = ['bot-atras32','bot-atras31']
-      botTwin.forEach(twinId => {
-        var twinElement = document.getElementById(twinId)
-        if (twinElement) {
-          twinElement.style.display = 'block'
-        }
-      })        
-      break;
-      case 'alimentador':
-        for (var i = 0; i < allContenedores.length; i++) {
-          var elemento = document.getElementById(allContenedores[i]) 
-          elemento.style.display='none'}
-              
-          // Obtener el elemento padre
-          var contenedorPadre = document.getElementById("pantalla-inicial")
-          contenedorPadre.style.display='block'
-          // Obtener todos los elementos hijos del contenedor padre
-          var elementosHijos = contenedorPadre.children;
-          // Recorrer los elementos hijos sin usar clases ni 'id'
-          for (var i = 0; i < elementosHijos.length; i++) {
-          var elementoHijo = elementosHijos[i]
-          // Realizar las operaciones que desees con cada elemento hijo aquí
-          elementoHijo.style.display='block'
-          }          
-          cierraContenedores('alimentador')
-          contInicial.style.display='block'
-          contInicial.style.marginLeft = '128px'
-          var botTwin = ['bot-atras32','bot-atras31']
-          botTwin.forEach(twinId => {
-            var twinElement = document.getElementById(twinId)
-            if (twinElement) {
-              twinElement.style.display = 'block'
-            }
-          })       
-      break;
-      case 'unidProceso':
-        for (var i = 0; i < allContenedores.length; i++) {
-          var elemento = document.getElementById(allContenedores[i]) 
-          elemento.style.display='none'}
-              
-          // Obtener el elemento padre
-          var contenedorPadre = document.getElementById("pantalla-inicial")
-          contenedorPadre.style.display='block'
-          // Obtener todos los elementos hijos del contenedor padre
-          var elementosHijos = contenedorPadre.children;
-          // Recorrer los elementos hijos sin usar clases ni 'id'
-          for (var i = 0; i < elementosHijos.length; i++) {
-          var elementoHijo = elementosHijos[i]
-          // Realizar las operaciones que desees con cada elemento hijo aquí
-          elementoHijo.style.display='block'
-          }          
-          cierraContenedores('unidProceso')
-          contInicial.style.display='block'
-          contInicial.style.marginLeft = '128px'
-          var botTwin = ['bot-atras32','bot-atras31']
-          botTwin.forEach(twinId => {
-            var twinElement = document.getElementById(twinId)
-            if (twinElement) {
-              twinElement.style.display = 'block'
-            }
-          })       
-      break;
-      case 'rebobinador':
-        for (var i = 0; i < allContenedores.length; i++) {
-          var elemento = document.getElementById(allContenedores[i]) 
-          elemento.style.display='none'}
-              
-          // Obtener el elemento padre
-          var contenedorPadre = document.getElementById("pantalla-inicial")
-          contenedorPadre.style.display='block'
-          // Obtener todos los elementos hijos del contenedor padre
-          var elementosHijos = contenedorPadre.children;
-          // Recorrer los elementos hijos sin usar clases ni 'id'
-          for (var i = 0; i < elementosHijos.length; i++) {
-          var elementoHijo = elementosHijos[i]
-          // Realizar las operaciones que desees con cada elemento hijo aquí
-          elementoHijo.style.display='block'
-          }          
-          cierraContenedores('rebobinador')
-          contInicial.style.display='block'
-          contInicial.style.marginLeft = '128px'
-          var botTwin = ['bot-atras32','bot-atras31']
-          botTwin.forEach(twinId => {
-            var twinElement = document.getElementById(twinId)
-            if (twinElement) {
-              twinElement.style.display = 'block'
-          }
-        })       
-      break;
-      case 'forward':
-        muestraLados('forward')
-        var contImpresor = document.getElementById('contImpresor')
-        contImpresor.style.display = 'block'
-
-        var boton01 = document.getElementById('bot-inic')
-        boton01.style.display = 'block'
-      break;
-      case 'comands':
-        muestraLados('comands')
-        var contImpresor = document.getElementById('contImpresor')
-        contImpresor.style.display = 'block'
-
-        var boton01 = document.getElementById('bot-inic')
-        boton01.style.display = 'block'
-      break; 
-      case 'service':
-        muestraLados('service')
-        var contImpresor = document.getElementById('contImpresor')
-        contImpresor.style.display = 'block'
-
-        var boton01 = document.getElementById('bot-inic')
-        boton01.style.display = 'block'
-      break;
-      case 'back':
-        muestraLados('back')
-        var contImpresor = document.getElementById('contImpresor')
-        contImpresor.style.display = 'block'
-
-        var boton01 = document.getElementById('bot-inic')
-        boton01.style.display = 'block'        
-      break; 
-      case 'cont-titulo-operacion':
-        abrirSeccionOperativa() 
-      break;
-      case 'cont-titulo-admin':
-        abrirSeccionAdministrativa()
-      break; 
-      case 'cont-titulo-comercial':
-        abrirSeccionComercial() 
-      break; 
-      case 'cont-titulo-calidad':
-        abrirSeccionCalidad()
-      break;       
-      default:
-    }
-  }   
-  // Filtrar el array para eliminar los elementos undefined
-  idsArray = idsArray.filter(function(element) {
-  return element !== undefined;
-  });
-  console.log('ULTIMO ELIMINADO',ultimoEliminado)
-  console.log('ARRAY ACTUALIZADO',idsArray)
-
-}*/
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-function irContenedorSiguiente() {
-  var previoElementID = idsArrayEliminados[idsArrayEliminados.length - 2];
-
-  for (var i = 1; i < idsArrayEliminados.length; i++) {
-
-    switch (previoElementID) {
-      case "cont-titulo":
-      location.reload()
-      break;
-      case "pantalla-inicial":        
-        abrirSeccionOperativa()
-        var contaquina = document.getElementById('rotatek-1')
-        var contTorreImp = document.getElementById('torre-imp')
-        contaquina.style.position = 'fixed'
-        contaquina.style.left = '727px'
-        contTorreImp.style.position = 'fixed'
-        contTorreImp.style.left = '740px'
-        contTorreImp.style.top = '154px'
-        var linksTemporales = document.getElementById('links-inicialesI')
-        var linksTemporalesII = document.getElementById('links-iniciales')
-        linksTemporales.style.display = 'flex'
-        linksTemporalesII.style.display = 'flex'        
-      break; 
-      case "pantalla-tintero":
-        var botonesInicio = document.getElementById('container01')                  
-        botonesInicio.style.display='block'
-        changeButtonStyles('pantalla-tintero')  
-      break;
-      case "videoElement1-II":
-        changeButtonStyles('videoElement1-II')  
-      break;          
-      case "contImgEntintador":
-        showRepuesto('contImgEntintador')
-      break; 
-      case "contImgDistribuidor":
-        showRepuesto ('contImgDistribuidor') 
-      break;          
-      case "contPortPlaca":
-        contIMPlaca.style.display='block'
-        showRepuesto('contPortPlaca')
-      break;
-      case "contPortManta":
-        var contBotManta = document.getElementById('container01')
-        contBotManta.style.display='block'
-        contIMmanta.style.display='block'
-        showRepuesto('contPortManta', 'videoTrain03')  
-      break;
-      case "contImpresor":
-        showRepuesto('contImpresor', 'videoTrain01')
-      break;
-      case "imagen1":
-        muestraPerfiles('imagen1')
-      break;
-      case "imagen2":
-        muestraPerfiles('imagen2')
-      break; 
-      case "imagen3":
-        muestraPerfiles('imagen3')
-      break;
-      case "imagen4":
-        muestraPerfiles('imagen4')
-      break; 
-      case "cont-variable":
-        abrirSeccionVariable('cont-variable')
-      break; 
-      case "cont-plana":
-        abrirSeccionPlanas('cont-plana')
-      break; 
-      case "cont-secador":
-        abrirSeccionCurado('cont-secador')
-      break;
-      case "bateria-entintado-II":
-        changeButtonStyles('bateria-entintado-II', 'contene-7')
-      break; 
-      case "bancada-torre-II":
-        changeButtonStyles('bancada-torre-II')
-      break; 
-      case "conteneMantaut":
-        ElementosMa('conteneMantaut')
-      break; 
-      case "rotatek-1":
-        location.reload()
-      break; 
-      case "frente":
-        muestraTorresI('frente')
-      break;  
-      case "pantalla-frente":
-        muestraTorres('frente')
-      break; 
-      case "sitema-humedad":
-        changeButtonStyles('sitema-humedad')
-      break; 
-      case "pre-prensa":
-        var mostrar = document.getElementById('pre-prensa')
-        var contImg = document.getElementById('imgs-prepress')
-        mostrar.style.display='block'
-        contImg.style.style='block'
-
-        var contImgsTeoria = document.getElementsByClassName('imgTeoria') // Obtén elementos por su
-        for (var i = 0; i < contImgsTeoria.length; i++) {
-          var teorImage = contImgsTeoria[i] // Accede al elemento actual
-          teorImage.style.display = 'block' // muestra el elemento  
-        } 
-        const vidTeoria = document.querySelectorAll('.vidTeoria')
-        // Reproducir todos los videos simultáneamente
-        vidTeoria.forEach(video => {
-          video.style.display='block'
-          video.play()
-        })
-        // Paso 1: Crear un array con todas las imágenes en el contenedor padre
-        const imagenesArray = document.querySelectorAll('#imgs-prepress .imgTeoria .vidTeoria')
-        // Paso 2: Recorrer las imágenes
-        for (let i = 0; i < imagenesArray.length; i++) {
-          // Paso 3: Verificar y modificar el estilo de visualización
-          const imagenActual = imagenesArray[i]            
-          // Verificar si el estilo de visualización es 'none'
-          if (getComputedStyle(imagenActual).display === 'none') {
-              // Cambiar el estilo de visualización a 'flex'
-              imagenActual.style.display = 'flex'
-          }
-        }
-      break; 
-      case "densitometria":
-        var mostraDensit = document.getElementById('densitometria')
-        var contDensit = document.getElementById('imgs-densito')
-        mostraDensit.style.display='block'
-        contDensit.style.style='block'
-        var contImgsDensito = document.getElementsByClassName('imgDensito') // Obtén elementos por su
-        for (var i = 0; i < contImgsDensito.length; i++) {
-          var teorImage = contImgsDensito[i] // Accede al elemento actual
-          teorImage.style.display = 'block' // muestra el elemento  
-        }            
-      break;  
-      case "vidColor":
-      var mostrario = document.getElementById('pre-prensa')
-      var videos = document.getElementById('vidColor')
-      mostrario.style.display='flex'
-      videos.style.style='flex'
-      videoElements.forEach(vide => {
-        if (vide.id === 'prisma-vid') {
-          vide.style.display = 'block'
-          vide.currentTime = 0;
-          vide.loop = true;               
-          vide.play()      
-        } else {
-          vide.style.display = 'none'
-        }
-        })
-      break; 
-      case "vidColor-II":
-      var mostrari = document.getElementById('pre-prensa')
-      var videos = document.getElementById('vidColor-II')
-      mostrari.style.display='flex'
-      videos.style.style='flex'
-      videoElements.forEach(vid => {
-        if (vid.id === 'color-vid') {
-          vid.style.display = 'block'
-          vid.currentTime = 0;
-          vid.loop = true;                            
-          vid.play()      
-        } else {
-          vid.style.display = 'none'
-        }
-        })
-      break; 
-      case "mantilla1" :
-        muestraAngulos('mantilla1')
-      break;
-      case "mantilla2" :
-        for (var i = 0; i < allContenedores.length; i++) {
-          var elemento = document.getElementById(allContenedores[i]) 
-            elemento.style.display='none'
-          }
-        muestraAngulos('mantilla2')
-      break;
-      case "mantilla3" :
-        for (var i = 0; i < allContenedores.length; i++) {
-          var elemento = document.getElementById(allContenedores[i]) 
-            elemento.style.display='none'
-          }
-        muestraAngulos('mantilla3')
-      break; 
-      case "mantilla4" :
-        for (var i = 0; i < allContenedores.length; i++) {
-          var elemento = document.getElementById(allContenedores[i]) 
-            elemento.style.display='none'
-          }
-        muestraAngulos('mantilla4')
-      break;
-      case 'forward':
-        muestraLados('forward')
-        var contImpresor = document.getElementById('contImpresor')
-        contImpresor.style.display = 'block'
-
-        var boton01 = document.getElementById('bot-inic')
-        boton01.style.display = 'block'
-      break;
-      case 'comands':
-        muestraLados('comands')
-        var contImpresor = document.getElementById('contImpresor')
-        contImpresor.style.display = 'block'
-
-        var boton01 = document.getElementById('bot-inic')
-        boton01.style.display = 'block'
-      break; 
-      case 'service':
-        muestraLados('service')
-        var contImpresor = document.getElementById('contImpresor')
-        contImpresor.style.display = 'block'
-
-        var boton01 = document.getElementById('bot-inic')
-        boton01.style.display = 'block'
-      break;
-      case 'back':
-        muestraLados('back')
-        var contImpresor = document.getElementById('contImpresor')
-        contImpresor.style.display = 'block'
-
-        var boton01 = document.getElementById('bot-inic')
-        boton01.style.display = 'block'        
-      break; 
-      case 'desbobinador':
-        var contiene = document.getElementById('pantalla-inicial')
-        contiene.style.display = 'flex'
-   
-        var container = document.getElementById("desbobinadorId")
-        var computedStyle = getComputedStyle(container)
-      
-        var displayValue = computedStyle.getPropertyValue("display")
-        if (displayValue.toLowerCase() === "none") {
-          // Cambia el valor de 'display' a 'flex'
-          container.style.display = "flex";
-        }
-      break;
-      case 'cont-titulo-operacion':
-        abrirSeccionOperativa()        
-      break;
-      case 'cont-titulo-admin':
-        abrirSeccionAdministrativa()        
-      break; 
-      case 'cont-titulo-comercial':
-        abrirSeccionComercial()        
-      break; 
-      case 'cont-titulo-calidad':
-        abrirSeccionCalidad()        
-      break;      
-    default:
-    }
-  }  
-
   idsArrayEliminados.pop();
-
-
-  // Recorre el array idsArrayEliminados y elimina los elementos undefined
-  for (var i = 0; i < idsArrayEliminados.length; i--) {
-    if (idsArrayEliminados[i] === 'undefined') {
-      idsArrayEliminados.splice(i, 1);
-    }
-  }
-
-
-  console.log('ARRAY PRIMARIO',idsArray); 
-  console.log('ARRAY SECUNDARIO',idsArrayEliminados);
-
+  console.log('DESPUES DE HABER ELIMINADO = ', idsArrayEliminados);
 
 }
 function listaEntrenamientosII(btnList) {
@@ -6687,6 +6327,7 @@ function aumentoBotonesBody() {
   contiRebobinador.style.display = 'none'
   const buttonsIds = ['butt-7', 'butt-5', 'butt-3', 'butt-111'];
   container1.style.display = 'none'
+
   // Función para aumentar el tamaño de un botón y luego restaurarlo
   function aumentarYRestaurar(index) {
     if (index < buttonsIds.length) {
@@ -6709,6 +6350,7 @@ function aumentoBotonesBody() {
   // Iniciar el proceso con el primer botón
   aumentarYRestaurar(0);
 }
+
 function tamaño100(){
   document.body.style.zoom = "100%"
 

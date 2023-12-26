@@ -129,7 +129,7 @@
         </div> 
       </div>  
       <!---///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-      <div class="oblicuos-XI" id="agrupaOblicuos-XII">
+      <div class="oblicuos-XI" id="agrupaOblicuos-XXIV">
         <div id="contFrente-V-admin" class="contOblicuosTorre">
           <button  class="Bot-inicio3" id="butt-113">Operaciones y Logística</button>        
           <button class="Bot-inicio3333-fondo" id="butt-7112"></button>  
@@ -293,8 +293,8 @@
     <video id="videoBackground" style="display: none;" loop muted autoplay>
       <source src="./assets/Rotatek.mp4" type="video/mp4">  
     </video>
-    <video id="videoBackgroundII" src="./assets/matrix.mp4" autoplay loop>
-      <!-- <source src="./assets/matrix.mp4" type="video/mp4"> -->  
+    <video id="videoBackgroundII" autoplay loop muted>
+      <source src="./assets/matrix.mp4" type="video/mp4">
     </video>
     <div class="links-inicialesI" id="links-inicialesI" style="position: absolute;left: 187px;top: 0.1px; font-family: 'GothamRounded', sans-serif;display: none;">
       
@@ -335,14 +335,14 @@
     <div class="contene-1" id="container1" style="display: none;">
       <button class="boton-a" id="bot-atras31" style="text-align: center;width: 47px;position: absolute;left: 211px;top: 5px;display: none;" onclick="irContenedorAnterior('')"></button>
       <button class="boton-a" id="bot-inic" style="text-align: center;margin-left: 267px;" onclick="VolveraInicio()">PANEL INICIO</button>
-      <button class="boton-a" id="toggleVideoButton" style="margin-left: 477px;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
+      <button class="boton-a" id="toggleVideoButton" style="margin-left: 477px;">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
       <button class="boton-a" id="bot-atras32" style="text-align: center;width: 47px;position: relative;left: 685px;top: 5px;;display: none" onclick="irContenedorSiguiente('rotatek-1')"></button>
     </div><br>
     <div class="segundo-bloque " id="pantalla-inicial"> 
       
       <div class="desbobinador mostrar-cont" id="desbobinadorId">
 
-        <button class="boton-b btn-bloque" id="boton1" onclick="cierraContenedores('desbobinador')">DESBOBINADOR</button><br>
+        <button class="boton-b btn-bloque" id="boton1" onclick="cierraContenedores('desbobinadorId')">DESBOBINADOR</button><br>
         <div class="contene-7" id="cont-Verticales1">
           <div class="linea-vertical"></div>
           <button id="boton2" class="boton-c aumentarc" onclick="lubricacion('boton2','boton1')">Lubricacion<div class="linea-horizontal"></div></button>
@@ -356,7 +356,7 @@
 
       <div class="uTeñido mostrar-cont" id="uTeñidos" style="display: flex;">  
         <button class="boton-b btn-bloque" id="boton7" onclick="cierraContenedores('uTeñido')">UNIDAD TEÑIDO</button><br>       
-        <div class="contene-7">
+        <div class="contene-7" id="cont-Verticales2">
           <div class="linea-vertical"></div>
           <button class="boton-c" id="boton8" onclick="UnidadTeñido('boton8','boton7')">Sistema neumático<div class="linea-horizontal"></div></button>
           <button class="boton-c" id="boton9" onclick="UnidadTeñido('boton9','boton7')">Rodillería<div class="linea-horizontal"></div></button>
@@ -366,8 +366,8 @@
         </div>
       </div>
 
-      <div class="alimentador mostrar-cont" id="alimentadorId">
-        <button class="boton-b btn-bloque" id="boton13" onclick="cierraContenedores('alimentador')">ALIMENTADOR</button><br>  
+      <div class="alimentadorId mostrar-cont" id="alimentadorId">
+        <button class="boton-b btn-bloque" id="boton13" onclick="cierraContenedores('alimentadorId')">ALIMENTADOR</button><br>  
         
         <div class="contene-7">
           <div class="linea-vertical" id="verticales-alimentador"></div>
@@ -379,9 +379,9 @@
         </div>          
       </div>
 
-      <div class="unidProceso mostrar-cont" id="uniProceso">  
+      <div class="unidProceso mostrar-cont" id="unidProceso">  
         <button class="boton-b btn-bloque" id="boton19" onclick="cierraContenedores('unidProceso')">UNIDAD DE PROCESO</button><br>  
-        <div class="contene-7">
+        <div class="contene-7" id="cont-Verticales7">
           <div class="linea-vertical"></div>
           <button class="boton-c" id="boton20">Rodillos de transporte<div class="linea-horizontal"></div></button>
           <button class="boton-c" id="boton21">Función y ensamble<div class="linea-horizontal"></div></button>
@@ -462,7 +462,7 @@
     <div class="contene-2" id="container01">
       <button class="boton-a" id="bot-atras" style="text-align: center;width: 47px;position: relative;top: 5px;" onclick="irContenedorAnterior('contPortPlaca')"></button>
       <button class="boton-a" id="bot-inicial" style="text-align: center;;position: relative" onclick="VolveraInicio()">PANEL INICIO</button>
-      <button class="boton-a" id="iniciar" style="position: relative;">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
+      <button class="boton-a" id="iniciar" style="position: relative;" onclick="botoGrand()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
       <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position:relative;top: 5px;" onclick="irContenedorSiguiente('contPortPlaca')"></button>
     </div><br>
     <div id="pantalla-tintero">       
