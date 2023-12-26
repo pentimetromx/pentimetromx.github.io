@@ -141,7 +141,6 @@ var arrayButtsIniciales = ['bot-atras','bot-inicial','iniciar','bot-atras12']
 let currentIndex = 0;
 let actualtIndex = 0;
 let nowIndex = 0;
-
 idsArray.push("cont-titulo") 
 idsArrayEliminados.push('cont-titulo')
 
@@ -3461,18 +3460,22 @@ function irContenedorAnterior() {
     break;
     default:
   } 
-  idsArray.pop();
-  console.log('DESPUES DE HABER ELIMINADO = ', idsArray);
-  idsArrayEliminados.push(idsArray[idsArray.length - 1])
+  let elementoEliminado = idsArray.pop();
+  // Verificar si el elemento ya existe en el segundo array
+  if (!idsArrayEliminados.includes(elementoEliminado)) {
+    // Si no existe, hacer push
+    idsArrayEliminados.push(elementoEliminado);
+  } 
   console.log('ELEMENTOS SEGUNDOARRAY = ', idsArrayEliminados);
-
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function irContenedorSiguiente() {
-  console.log('ALMACENADOS = ',idsArrayEliminados)
-  var previousElementID = idsArrayEliminados[idsArrayEliminados.length - 2];
+  console.log('SIGUIENTE = ',idsArrayEliminados)
+  var previousElementID = idsArrayEliminados[idsArrayEliminados.length - 1];
   // Ahora 'previousElementID' contiene el último elemento del array
   console.log('ULTIMO ELEMENTO = ',previousElementID);
+
+
  switch (previousElementID ) {  
     case "cont-titulo":
     location.reload()
@@ -3490,7 +3493,7 @@ function irContenedorSiguiente() {
       abrirSeccionCalidad()        
     break;     
     case "pantalla-inicial":        
-    abrirSeccionContinua('pantalla-inicial')     
+    abrirSeccionContinua('pantalla-inicial')
     break; 
     case "pantalla-tintero":
       var botonesInicio = document.getElementById('container01')                  
@@ -3668,19 +3671,91 @@ function irContenedorSiguiente() {
       var boton01 = document.getElementById('bot-inic')
       boton01.style.display = 'block'        
     break; 
-    case 'desbobinador':
-    var contiene = document.getElementById('pantalla-inicial')
-    contiene.style.display = 'flex'
-
-    var container = document.getElementById("desbobinadorId")
-    var computedStyle = getComputedStyle(container)
-  
-    var displayValue = computedStyle.getPropertyValue("display")
-    if (displayValue.toLowerCase() === "none") {
-      // Cambia el valor de 'display' a 'flex'
-      container.style.display = "flex";
-    }
-  break;
+    case 'desbobinadorId':
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i])
+        if (elemento) {
+          elemento.style.display = 'none'
+        }
+      }   
+      // Obtén el elemento padre 'pantalla-inicial'
+      var pantallaAbuelo = document.getElementById('pantalla-inicial')
+      var pantallaInicial = document.getElementById('desbobinadorId')
+      var  pantallaInicialElem = document.getElementById('cont-Verticales1')
+      pantallaAbuelo.style.display = 'flex'      
+      pantallaInicial.style.display = 'flex'
+      pantallaInicialElem.style.display = 'flex' 
+      video.style.display = 'none'
+      aumentarTamanosDeBotones()
+    break;
+    case 'uTeñido':
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i])
+        if (elemento) {
+          elemento.style.display = 'none'
+        }
+      }   
+      // Obtén el elemento padre 'pantalla-inicial'
+      var pantallaAbuelo = document.getElementById('pantalla-inicial')
+      var pantallaInicial1 = document.getElementById('uTeñidos')
+      var  pantallaInicialElem1 = document.getElementById('cont-Verticales2')
+      pantallaAbuelo.style.display = 'flex'      
+      pantallaInicial1.style.display = 'flex'
+      pantallaInicialElem1.style.display = 'flex' 
+      video.style.display = 'none'
+      aumentarTamanosDeBotones()
+    break;
+    case 'alimentadorId':
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i])
+        if (elemento) {
+          elemento.style.display = 'none'
+        }
+      }   
+      // Obtén el elemento padre 'pantalla-inicial'
+      var pantallaAbuelo = document.getElementById('pantalla-inicial')
+      var pantallaInicial2 = document.getElementById('alimentadorId')
+      var  pantallaInicialElem2 = document.getElementById('verticales-alimentador')
+      pantallaAbuelo.style.display = 'flex'      
+      pantallaInicial2.style.display = 'flex'
+      pantallaInicialElem2.style.display = 'flex' 
+      video.style.display = 'none'
+      aumentarTamanosDeBotones()
+    break;
+    case 'unidProceso':
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i])
+        if (elemento) {
+          elemento.style.display = 'none'
+        }
+      }   
+      // Obtén el elemento padre 'pantalla-inicial'
+      var pantallaAbuelo = document.getElementById('pantalla-inicial')
+      var pantallaInicial2 = document.getElementById('unidProceso')
+      var  pantallaInicialElem2 = document.getElementById('cont-Verticales7')
+      pantallaAbuelo.style.display = 'flex'      
+      pantallaInicial2.style.display = 'flex'
+      pantallaInicialElem2.style.display = 'flex' 
+      video.style.display = 'none'
+      aumentarTamanosDeBotones()
+    break;
+    case 'rebobinador':
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i])
+        if (elemento) {
+          elemento.style.display = 'none'
+        }
+      }   
+      // Obtén el elemento padre 'pantalla-inicial'
+      var pantallaAbuelo = document.getElementById('pantalla-inicial')
+      var pantallaInicial2 = document.getElementById('rebobinador')
+      var  pantallaInicialElem2 = document.getElementById('cont-Verticales7')
+      pantallaAbuelo.style.display = 'flex'      
+      pantallaInicial2.style.display = 'flex'
+      pantallaInicialElem2.style.display = 'flex' 
+      video.style.display = 'none'
+      aumentarTamanosDeBotones()
+    break;
     case 'pantalla-frente':
       muestraTorresI('pantalla-frente')
     break;
@@ -3695,6 +3770,7 @@ function irContenedorSiguiente() {
     break;
     default:
   } 
+
   idsArrayEliminados.pop();
   console.log('DESPUES DE HABER ELIMINADO = ', idsArrayEliminados);
 
