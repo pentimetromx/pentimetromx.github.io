@@ -792,7 +792,7 @@ function showRepuesto(elementId) {
       if (element) {
         element.style.display = 'none'
       }
-    })
+     })
     
       conteHijosTintero.forEach(elementCont => {
         var element = document.getElementById(elementCont)
@@ -813,63 +813,63 @@ function showRepuesto(elementId) {
         idsArray.push(elementId);
         console.log(idsArray);
       }
-   break;
+    break;
     case 'contImgEntintador':
       allContenedores.forEach(elemen => {
-        var element = document.getElementById(elemen)
-        if (element) {
-          element.style.display = 'none'
-        }
+      var element = document.getElementById(elemen)
+      if (element) {
+      element.style.display = 'none'
+      }
       })
       conteHijosTintero.forEach(elementId => {
-        var element = document.getElementById(elementId)
-        if (element) {
-          element.style.display = 'none'
-        }
+      var element = document.getElementById(elementId)
+      if (element) {
+      element.style.display = 'none'
+      }
       })
       if (imgsForma) {
-        imgsForma.style.display = 'block'
-        // Recorre el arreglo y muestra las imágenes
-        var imagenesForma = document.querySelectorAll('.imag-distri')
-        imagenesForma.forEach(function(imagen) {
-          imagen.style.display = 'block'
-        })
+      imgsForma.style.display = 'block'
+      // Recorre el arreglo y muestra las imágenes
+      var imagenesForma = document.querySelectorAll('.imag-distri')
+      imagenesForma.forEach(function(imagen) {
+        imagen.style.display = 'block'
+      })
       } 
       container1.style.display = 'flex'
       // 4. Verificar si el elemento está definido y si ya existe en arrayIds
-  if (typeof elementId !== 'undefined') {
-    const index = idsArray.indexOf(elementId);
-    if (index !== -1) {
+      if (typeof elementId !== 'undefined') {
+      const index = idsArray.indexOf(elementId);
+      if (index !== -1) {
       // 4. Si el elemento ya existe, moverlo a la última posición
       idsArray.splice(index, 1); // Elimina el elemento en la posición actual
-    }
-    // 5. Agregar el elemento al final de arrayIds
-    idsArray.push(elementId);
-    console.log(idsArray);
-  }    
+      }
+      // 5. Agregar el elemento al final de arrayIds
+      idsArray.push(elementId);
+      console.log(idsArray);
+      }    
     break;
     case 'contPortPlaca':     
       conteHijosTintero.forEach(elementId => {
-        var element = document.getElementById(elementId)
-        if (element) {
-          element.style.display = 'none'
-        }
+      var element = document.getElementById(elementId)
+      if (element) {
+      element.style.display = 'none'
+      }
       }) 
       var contenedorPrincipal = document.getElementById('contPerfilesPlancha')
       var hijosDelContenedor = contenedorPrincipal.children;
       for (var i = 0; i < hijosDelContenedor.length; i++) {
-        var hijo = hijosDelContenedor[i]  
-        hijo.style.display = 'none'
+      var hijo = hijosDelContenedor[i]  
+      hijo.style.display = 'none'
       }
       
       contPortaPlancha.style.display='block'
       videoElements.forEach(video => {
       if (video.id !== 'video-placa') {
-        video.style.display = 'none'   
-        } else {
-        video.style.display = 'block'
-        video.currentTime = 0;
-        video.play()   
+      video.style.display = 'none'   
+      } else {
+      video.style.display = 'block'
+      video.currentTime = 0;
+      video.play()   
       }})
       var contOblicuoPlaca = document.getElementById('agrupaOblicuos-placa')
       contOblicuoPlaca.style.display='block'  
@@ -881,12 +881,12 @@ function showRepuesto(elementId) {
      imagenesPlancha.forEach(function (imagen) {
       var elementosPortPlaca = imagen.querySelectorAll('portPlaca')
       elementosPortPlaca.forEach(function (elemento) {
-        elemento.style.display = 'flex'
+      elemento.style.display = 'flex'
       })
-    })
+      })
       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
-        idsArray.push(elementId);
-        console.log(idsArray);
+      idsArray.push(elementId);
+      console.log(idsArray);
       }
     break;       
     case 'contPortManta':
@@ -974,25 +974,20 @@ function showRepuesto(elementId) {
     default: 
   }  
 } 
-function muestraPerfiles(elementId){
+function ladosPlancha(elementId){
   var video = document.getElementById('video-placa')
   var imgPlancha = document.querySelectorAll('.imagesTorre') 
   var imagesPlancha = document.getElementById('contPerfilesPlancha')
   var imgsPlancha = document.getElementById('imagenes-plancha')
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   var elementosExcluidos = ['contPortPlaca', 'agrupaOblicuos-placa'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)          
-  // Bucle para recorrer todos los elementos
-  for (var i = 0; i < allContenedores.length; i++) {
-    var elemento = document.getElementById(allContenedores[i]);
-    // Verificar si el elemento no está en la lista de elementos excluidos
-    if (!elementosExcluidos.includes(allContenedores[i])) {
-      // Ocultar el elemento
-      if (elemento) {
-          elemento.style.display = 'none';
-      }
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]);  
+    if (elemento) {
+      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'block' : 'none';
     }
   }
-
   switch (elementId) {
     case 'imagen1':    
       // Detener el video
@@ -1077,7 +1072,7 @@ function muestraPerfiles(elementId){
     default:
   }
 }
-function muestraAngulos(elementId){
+function ladosMantilla(elementId){
 var contPadManta = document.getElementById('contPerfilesManta')
 var contChildManta = document.getElementById('imagenes-manta')
 var imgsManta = document.querySelectorAll('.imgMant')
@@ -1181,38 +1176,25 @@ var imgsManta = document.querySelectorAll('.imgMant')
     default:
   }
 }
-function muestraLados(elementId){
-  var contPadImpresor = document.getElementById('contPerfilesImpresor') 
-  var contButtOblicuos = document.getElementById('agrupaOblicuos-XXIII')
-  var contAbueloOblicuos = document.getElementById('contImpresor')
+function ladosImpresor(elementId){
   var contChildImpresor = document.getElementById('imagenes-impresor')
   var imgsImpresor = document.querySelectorAll('.imgImpresor')
   var imgImpresorI = document.getElementById('impresor')
   imgImpresorI.style.display = 'none'
-
+  var elementosExcluidos = ['contImpresor',,'contPerfilesImpresor','agrupaOblicuos-XXIII'];                                                      /// OCULTA TODO MENOS (2 ELEMENTOS)          
+  for (var i = 0; i < allContenedores.length; i++) {
+    var elemento = document.getElementById(allContenedores[i]);  
+    if (elemento) {
+      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'block' : 'none';
+    }
+  }
   switch (elementId) {
     case 'forward':
-      for (var i = 0; i < allContenedores.length; i++) {
-        var elemento = document.getElementById(allContenedores[i])
-        if (elemento) {
-          elemento.style.display = 'none'
-        }
-      } 
-      contAbueloOblicuos.style.display = 'block'
-      if (contButtOblicuos) {
-        // Loop through the child elements of the parent
-        for (var i = 0; i < contButtOblicuos.children.length; i++) {
-          var child = contButtOblicuos.children[i];
-          child.style.display = 'block'; // or any other display value based on your layout needs
-        }
-      }
-      
-      
       videoElements.forEach(video => {
       if (video.id == 'video-impresor') {
       video.style.display = 'none'   
-      }}) 
-      contPadImpresor.style.display='flex'
+      }})       
       contChildImpresor.style.display='flex'      
       imgsImpresor.forEach(function (imagen) {
       if (imagen.id === 'impresor' || imagen.id === 'impresor1') {
@@ -1230,11 +1212,8 @@ function muestraLados(elementId){
       videoElements.forEach(video => {
       if (video.id == 'video-impresor') {
         video.style.display = 'none'   
-        }}) 
-
-        contPadImpresor.style.display='flex'
-        contChildImpresor.style.display='flex'
-    
+        }})         
+        contChildImpresor.style.display='flex'    
         imgsImpresor.forEach(function (imagen) {
           if (imagen.id === 'impresor2' || imagen.id === 'impresor3') {
             imagen.style.display = 'block'
@@ -1251,11 +1230,8 @@ function muestraLados(elementId){
       videoElements.forEach(video => {
       if (video.id == 'video-impresor') {
         video.style.display = 'none'   
-        }}) 
-
-        contPadImpresor.style.display='flex'
-        contChildImpresor.style.display='flex'
-    
+        }})         
+        contChildImpresor.style.display='flex'    
         imgsImpresor.forEach(function (imagen) {
           if (imagen.id === 'impresor4' || imagen.id === 'impresor5') {
             imagen.style.display = 'block'
@@ -1272,11 +1248,8 @@ function muestraLados(elementId){
       videoElements.forEach(video => {
       if (video.id == 'video-impresor') {
         video.style.display = 'none'   
-        }}) 
-
-        contPadImpresor.style.display='flex'
-        contChildImpresor.style.display='flex'
-    
+        }})         
+        contChildImpresor.style.display='flex'    
         imgsImpresor.forEach(function (imagen) {
           if (imagen.id === 'impresor6' || imagen.id === 'impresor7') {
             imagen.style.display = 'block'
@@ -3163,7 +3136,13 @@ function muestraVidColor(elementId){
 }
 function irContenedorAnterior() {
   var previousElementID = idsArray[idsArray.length - 2];
-  // Ahora 'previousElementID' contiene el último elemento del array
+  // Recorre el array y oculta los elementos por su ID
+  for (var i = 0; i < allContenedores.length; i++) {
+    var elemento = document.getElementById(allContenedores[i])
+    if (elemento) {
+      elemento.style.display = 'none'
+    }
+  }
  switch (previousElementID ) {  
     case "cont-titulo":
     location.reload()
@@ -3211,16 +3190,16 @@ function irContenedorAnterior() {
       showRepuesto('contImpresor', 'videoTrain01')
     break;
     case "imagen1":
-      muestraPerfiles('imagen1')
+      ladosPlancha('imagen1')
     break;
     case "imagen2":
-      muestraPerfiles('imagen2')
+      ladosPlancha('imagen2')
     break; 
     case "imagen3":
-      muestraPerfiles('imagen3')
+      ladosPlancha('imagen3')
     break;
     case "imagen4":
-      muestraPerfiles('imagen4')
+      ladosPlancha('imagen4')
     break; 
     case "cont-variable":
       abrirSeccionVariable('cont-variable')
@@ -3304,31 +3283,31 @@ function irContenedorAnterior() {
       })
     break; 
     case "mantilla1" :
-      muestraAngulos('mantilla1')
+      ladosMantilla('mantilla1')
     break;
     case "mantilla2" :
       for (var i = 0; i < allContenedores.length; i++) {
         var elemento = document.getElementById(allContenedores[i]) 
           elemento.style.display='none'
         }
-      muestraAngulos('mantilla2')
+      ladosMantilla('mantilla2')
     break;
     case "mantilla3" :
       for (var i = 0; i < allContenedores.length; i++) {
         var elemento = document.getElementById(allContenedores[i]) 
           elemento.style.display='none'
         }
-      muestraAngulos('mantilla3')
+      ladosMantilla('mantilla3')
     break; 
     case "mantilla4" :
       for (var i = 0; i < allContenedores.length; i++) {
         var elemento = document.getElementById(allContenedores[i]) 
           elemento.style.display='none'
         }
-      muestraAngulos('mantilla4')
+      ladosMantilla('mantilla4')
     break;
     case 'forward':
-      muestraLados('forward')
+      ladosImpresor('forward')
       var contImpresor = document.getElementById('contImpresor')
       contImpresor.style.display = 'block'
 
@@ -3336,7 +3315,7 @@ function irContenedorAnterior() {
       boton01.style.display = 'block'
     break;
     case 'comands':
-      muestraLados('comands')
+      ladosImpresor('comands')
       var contImpresor = document.getElementById('contImpresor')
       contImpresor.style.display = 'block'
 
@@ -3344,7 +3323,7 @@ function irContenedorAnterior() {
       boton01.style.display = 'block'
     break; 
     case 'service':
-      muestraLados('service')
+      ladosImpresor('service')
       var contImpresor = document.getElementById('contImpresor')
       contImpresor.style.display = 'block'
 
@@ -3352,7 +3331,7 @@ function irContenedorAnterior() {
       boton01.style.display = 'block'
     break;
     case 'back':
-      muestraLados('back')
+      ladosImpresor('back')
       var contImpresor = document.getElementById('contImpresor')
       contImpresor.style.display = 'block'
 
@@ -3464,10 +3443,16 @@ function irContenedorAnterior() {
     // Si no existe, hacer push
     idsArrayEliminados.push(elementoEliminado);
   } 
+  console.log('1.', idsArray)
 }
 function irContenedorSiguiente() {
   var previousElementID = idsArrayEliminados[idsArrayEliminados.length - 1];
-  // Ahora 'previousElementID' contiene el último elemento del array
+  for (var i = 0; i < allContenedores.length; i++) {
+    var elemento = document.getElementById(allContenedores[i])
+    if (elemento) {
+      elemento.style.display = 'none'
+    }
+  }
  switch (previousElementID ) {  
     case "cont-titulo":
     location.reload()
@@ -3515,16 +3500,16 @@ function irContenedorSiguiente() {
       showRepuesto('contImpresor', 'videoTrain01')
     break;
     case "imagen1":
-      muestraPerfiles('imagen1')
+      ladosPlancha('imagen1')
     break;
     case "imagen2":
-      muestraPerfiles('imagen2')
+      ladosPlancha('imagen2')
     break; 
     case "imagen3":
-      muestraPerfiles('imagen3')
+      ladosPlancha('imagen3')
     break;
     case "imagen4":
-      muestraPerfiles('imagen4')
+      ladosPlancha('imagen4')
     break; 
     case "cont-variable":
       abrirSeccionVariable('cont-variable')
@@ -3608,31 +3593,31 @@ function irContenedorSiguiente() {
       })
     break; 
     case "mantilla1" :
-      muestraAngulos('mantilla1')
+      ladosMantilla('mantilla1')
     break;
     case "mantilla2" :
       for (var i = 0; i < allContenedores.length; i++) {
         var elemento = document.getElementById(allContenedores[i]) 
           elemento.style.display='none'
         }
-      muestraAngulos('mantilla2')
+      ladosMantilla('mantilla2')
     break;
     case "mantilla3" :
       for (var i = 0; i < allContenedores.length; i++) {
         var elemento = document.getElementById(allContenedores[i]) 
           elemento.style.display='none'
         }
-      muestraAngulos('mantilla3')
+      ladosMantilla('mantilla3')
     break; 
     case "mantilla4" :
       for (var i = 0; i < allContenedores.length; i++) {
         var elemento = document.getElementById(allContenedores[i]) 
           elemento.style.display='none'
         }
-      muestraAngulos('mantilla4')
+      ladosMantilla('mantilla4')
     break;
     case 'forward':
-      muestraLados('forward')
+      ladosImpresor('forward')
       var contImpresor = document.getElementById('contImpresor')
       contImpresor.style.display = 'block'
 
@@ -3640,7 +3625,7 @@ function irContenedorSiguiente() {
       boton01.style.display = 'block'
     break;
     case 'comands':
-      muestraLados('comands')
+      ladosImpresor('comands')
       var contImpresor = document.getElementById('contImpresor')
       contImpresor.style.display = 'block'
 
@@ -3648,7 +3633,7 @@ function irContenedorSiguiente() {
       boton01.style.display = 'block'
     break; 
     case 'service':
-      muestraLados('service')
+      ladosImpresor('service')
       var contImpresor = document.getElementById('contImpresor')
       contImpresor.style.display = 'block'
 
@@ -3656,7 +3641,7 @@ function irContenedorSiguiente() {
       boton01.style.display = 'block'
     break;
     case 'back':
-      muestraLados('back')
+      ladosImpresor('back')
       var contImpresor = document.getElementById('contImpresor')
       contImpresor.style.display = 'block'
 
@@ -3763,6 +3748,8 @@ function irContenedorSiguiente() {
     default:
   } 
   idsArrayEliminados.pop();
+  console.log('2.', idsArrayEliminados)
+
 }
 function listaEntrenamientosII(btnList) {
   var elementos = ['canvasContainer2','canvasContainer3','canvasContainer4','canvasContainer5','contChecks','contImagGraf','contImagNeg']
