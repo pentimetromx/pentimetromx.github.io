@@ -2716,13 +2716,20 @@ elemento.visible {
     width: 70%; 
     margin: 0;
   } 
-  .segundo-bloque{
+  #pantalla-inicial{
     display: flex;
     display: none;
     position: absolute;
     margin-left: 7px;
     top: 97px;
   }
+  #rotatek-1{
+    display: flex; 
+    flex-direction: column; 
+    align-items:center;
+    margin-left: 247px;  
+  }
+  
 
 }
 
