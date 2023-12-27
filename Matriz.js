@@ -3162,10 +3162,8 @@ function muestraVidColor(elementId){
   } */ 
 }
 function irContenedorAnterior() {
-  console.log('ALMACENADOS = ',idsArray)
   var previousElementID = idsArray[idsArray.length - 2];
   // Ahora 'previousElementID' contiene el último elemento del array
-  console.log('ULTIMO ELEMENTO = ',previousElementID);
  switch (previousElementID ) {  
     case "cont-titulo":
     location.reload()
@@ -3466,16 +3464,10 @@ function irContenedorAnterior() {
     // Si no existe, hacer push
     idsArrayEliminados.push(elementoEliminado);
   } 
-  console.log('ELEMENTOS SEGUNDOARRAY = ', idsArrayEliminados);
 }
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function irContenedorSiguiente() {
-  console.log('SIGUIENTE = ',idsArrayEliminados)
   var previousElementID = idsArrayEliminados[idsArrayEliminados.length - 1];
   // Ahora 'previousElementID' contiene el último elemento del array
-  console.log('ULTIMO ELEMENTO = ',previousElementID);
-
-
  switch (previousElementID ) {  
     case "cont-titulo":
     location.reload()
@@ -3770,10 +3762,7 @@ function irContenedorSiguiente() {
     break;
     default:
   } 
-
   idsArrayEliminados.pop();
-  console.log('DESPUES DE HABER ELIMINADO = ', idsArrayEliminados);
-
 }
 function listaEntrenamientosII(btnList) {
   var elementos = ['canvasContainer2','canvasContainer3','canvasContainer4','canvasContainer5','contChecks','contImagGraf','contImagNeg']
