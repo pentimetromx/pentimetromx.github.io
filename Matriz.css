@@ -1884,10 +1884,17 @@ header {
 /* Utilizamos CSS Grid para crear la grilla de imágenes */
 .image-grid {
   position: relative;
-  top: 77px;
-  left: -157px;
   display: flex;
   flex-direction: column;
+  top: 77px;
+  left: -157px;
+}
+#imgs-prepress{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top: 77px;
+  left: -157px;
 }
 .vidTeoria{
   height: 120px;
@@ -1928,10 +1935,10 @@ header {
 }
 .conte-botDensitoII{
   position: absolute;
-  left: 1034px;
-  top: 9px;
   display: flex;
   flex-direction: column;
+  left: 1034px;
+  top: 9px;
 }
 .conte-botDensito{
   display: flex;

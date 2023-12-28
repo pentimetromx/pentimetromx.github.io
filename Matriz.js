@@ -1,4 +1,4 @@
-const coleccion = document.querySelectorAll('.desbobinador, .desbobinador-I, .uTeñido, .alimentadorId, .unidProceso, .rebobinador, .contTorrImp')
+const coleccion = document.querySelectorAll('.desbobinador, .desbobinador-I, .uTeñido, .alimentadorId, .unidpre-prensaProceso, .rebobinador, .contTorrImp')
 var btnsIniciales = document.querySelectorAll('.btn-bloque')
 let firstClick = true;
 
@@ -36,7 +36,7 @@ var imgTorreI = document.getElementById('imgTorre')
 var contInicial = document.getElementById('container1')
 var botonMa = document.getElementById('bot-mantaut')
 var imagPasoApaso = document.querySelectorAll('.img1')
-var allContenedores = ['links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','container1','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
+var allContenedores = ['conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','container1','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado']
@@ -242,13 +242,13 @@ function ElementosMa(elementId) {
   /* linkListI.style.display = "none"; */ 
   showButtonsMAconRetraso()
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    arrayIdButtsMA .forEach(function (elto) {                                                                                              /// RESTAURA GRIS A BOTONES
+    arrayIdButtsMA .forEach(function (elto) {                                                                                          /// RESTAURA GRIS A BOTONES
       var elemento = document.getElementById(elto)    
       if (elemento) {
         elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)'    }
     })
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  idsMAhijos .forEach(function (elto) {                                                                                                   ///OCULTA ELEMENTOS MA
+  idsMAhijos .forEach(function (elto) {                                                                                                ///OCULTA ELEMENTOS MA
     var elemento = document.getElementById(elto)    
     if (elemento) {
       elemento.style.display = 'none'
@@ -2861,80 +2861,32 @@ function abrirPilarMA(){
   }    
 }
 function abrirPrepress(elementId) {
-  var linksIniciales = ['links-inicialesI', 'links-iniciales']
-  var arrayImgPress = []
-  var contImgsPrepress = document.getElementById('imgs-prepress')
-  var videoBackground = document.getElementById('videoBackground')
-  var prePrensaElemento = document.getElementById('pre-prensa')
-
-  // Ocultar todos los elementos
-  for (var i = 0; i < allContenedores.length; i++) {
-    var elemento = document.getElementById(allContenedores[i])
+  var elementosExcluidos = ['conte-botDensitoII','imgs-prepress','pre-prensa','container01'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)          
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
-      elemento.style.display = 'none'
+      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
-  document.body.style.zoom = "100%";
-  // Paso 1: Crear un array con todas las imágenes en el contenedor padre
-  const imagenesArray = document.querySelectorAll('#imgs-prepress .imgTeoria')
-  // Paso 2: Recorrer las imágenes
-  for (let i = 0; i < imagenesArray.length; i++) {
-      // Paso 3: Verificar y modificar el estilo de visualización
-      const imagenActual = imagenesArray[i]      
-      // Verificar si el estilo de visualización es 'none'
-      if (getComputedStyle(imagenActual).display === 'none') {
-          // Cambiar el estilo de visualización a 'flex'
-          imagenActual.style.display = 'flex'
-      }
+  for (var i = 0; i < linksIniciales.length; i++) {
+    var elemento = document.getElementById(linksIniciales[i]);
+    elemento.style.display = 'flex'
   }
-  container1.style.display = 'flex'
-  contImgsPrepress.style.display = 'block'
-  arrayImgPress.forEach(image => {
-    if(image) {
-      image.style.display = 'block'
-    }
-  })
-  videoBackground.pause()
-  videoBackground.style.display = 'none' // Oculta el video
-
-  videoElements.forEach(video => {
+  document.body.style.zoom = "100%"
+  // Crear un array con los IDs de los videos
+  const videoIds = ["vidCicodelia", "vid01", "vid02", "vid03"]
+  // Reproducir los videos simultáneamente
+  videoIds.forEach(function (videoId) {
+    const video = document.getElementById(videoId);
+    // Asegurarse de que el elemento de video existe antes de intentar reproducirlo
     if (video) {
-      video.pause()      
-      video.style.display = 'none'
+      video.style.display = 'block'
+      video.currentTime = 0
+      video.play();
     }
-    })
-  var contBotEspeciales = document.getElementById('conte-botDensitoII')
-  contBotEspeciales.style.display='block'
-  var botEspecial = document.getElementById('conte-botDensitoII')
-  // Obtén todos los botones y guárdalos en un array
-  var botones = botEspecial.querySelectorAll('button')    
-  // Recorre el array de botones y muestra cada botón
-  for (var i = 0; i < botones.length; i++) {
-      botones[i].style.display = 'flex'
-  }
-  // Mostrar el elemento "pre-prensa"
-  if (prePrensaElemento) {
-    prePrensaElemento.style.display = 'block'
-    prePrensaElemento.style.zIndex = '0'
-
-    // Establecer el mismo z-index para linksIniciales
-    for (var j = 0; j < linksIniciales.length; j++) {
-      var linkInicial = document.getElementById(linksIniciales[j])
-      if (linkInicial) {
-        linkInicial.style.zIndex = '1'
-      }
-    }
-  }
+  });
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  var vidDensitometria = document.getElementById('vidCicodelia')
-  vidDensitometria.style.display = 'block'
-  vidDensitometria.pause()
-  setTimeout(function() {
-    vidDensitometria.currentTime = '0'
-    vidDensitometria.play();
-  }, 77);
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  linkList.style.display = "none";   
   // 4. Verificar si el elemento está definido y si ya existe en arrayIds
   if (typeof elementId !== 'undefined') {
     const index = idsArray.indexOf(elementId);
