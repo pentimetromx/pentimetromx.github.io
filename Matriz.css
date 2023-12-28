@@ -2,16 +2,6 @@
   font-family: "GothamRounded"; /* Nombre de la familia de fuentes personalizada */
   src: url('C:\Users\Juan\Documentos\programacion\programar\Pruebas\fonts\Mukta-Medium.ttf') format('ttf'), /* Ruta hacia el archivo .woff2 de la fuente */
 }
-/* @media screen and (max-width: 599px) {
-  #cont-titulo,
-  #agrupaOblicuos-XI{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 70%; 
-    margin: 0;
-  } 
-} */
 body, html {
   zoom: 100%;
   -moz-transform: scale(1.0);
@@ -899,12 +889,12 @@ width:447px ;
 #pantalla-frente,
 #pantalla-atras,
 #contLinksTorre{
+  position: absolute;
   display: flex; /* Usar flexbox para centrar la imagen */
   flex-direction: row;
   justify-content: center; /* Centrar horizontalmente */
-  position: absolute;
-  display: none;
   top: 90px;
+  display: none;
 }
 #cont-links{
   position: absolute;

@@ -1125,7 +1125,7 @@
         <button class="Bot-inicio2" id="butt-077" onclick="ladosImpresor('back')">Atras</button>
         <button class="Bot-inicio2-fondo" id="butt-088"></button>  
       </div>
-      <div id="impresor" style="position: absolute;left: 17px;top: 1px;">
+      <div id="impresorImg" style="position: absolute;display: flex;flex-direction: column; left: 17px;top: 1px;">
         <img class="image-trainings aumentar" src="./assets/medidor.jfif" alt="manta" style="width: 240px;height: 160px;border-radius: 11px;"> <br>
         <img class="image-trainings aumentar" src="./assets/impresor.jfif" alt="manta" style="width: 240px;height: 160px;border-radius: 11px;"> <br> 
         <img class="image-trainings aumentar" src="./assets/impresor1.jfif" alt="manta1" style="width: 240px;height: 160px;border-radius: 11px;">
@@ -1239,7 +1239,7 @@
         <button class="boton-f bot-entre" onclick="applyImageEffects()">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
       </div>
       <div class="video-container" style="position: absolute; left: 147px;top: 80px;">  
-        <video class="video-training" id="videoElement1-II" src="./assets/Bateria de entintado.mp4" autoplay loop></video>
+        <video class="video-training" id="videoElement1-II" src="./assets/Bateria de entintado.mp4" autoplay loop></video>  
       </div>
     </div>
     <div id="bancada-torre-II" style="position: absolute;left: 170px;top: 6px;display: none;">
@@ -1252,12 +1252,13 @@
       </div>
       <video class="video-training" id="plate-smed" src="./assets/plate smed.mp4" style="position: absolute;left: 137px;top: 80px;width: 638px;height: 480px;" autoplay loop></video>
     </div>
+
     <div id="sitema-humedad" style="position: absolute;left: 170px;top: 6px;display: none;"> 
-      <div id="contenedor-9" class="contene-7" style="position: absolute;left:-177px;display: none;"> 
-        <button class="boton-f bot-entre" onclick="muestraHumedad()">Estacion cassets<div class="linea-horizontal"></div></button>                
-        <button class="boton-f bot-entre" onclick="muestraRodillo()">Puente guía <div class="linea-horizontal"></div></button>  
-        <button class="boton-f bot-entre" onclick="muestraRodillo()">Alojamiento del casset <div class="linea-horizontal"></div></button>  
-        <button class="boton-f bot-entre" onclick="muestraRodillo()">Expulsión y halado<div class="linea-horizontal"></div></button>                
+      <div id="contenedor-9" class="contene-7" style="position: absolute;left:-177px;"> 
+        <button class="boton-f bot-entre" id="btt1" onclick="muestraHumedad()">Estacion cassets<div class="linea-horizontal"></div></button>                
+        <button class="boton-f bot-entre" id="btt2" onclick="muestraRodillo()">Puente guía <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" id="btt3" onclick="muestraRodillo()">Alojamiento del casset <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" id="btt4" onclick="muestraRodillo()">Expulsión y halado<div class="linea-horizontal"></div></button>                
       </div> 
 
       <video class="video-training" id="bancada" src="./assets/bancada torre.mp4" style="position: absolute;left: 137px;top: 80px;width: 638px;height: 480px;" autoplay loop></video>
@@ -1267,6 +1268,7 @@
         <img class="image-isopropil" src="./assets/isopropil.png" alt="iso">
       </div>
     </div>
+
     <div id="pre-prensa" style="position: absolute;left: 170px;top: 6px;">
       <video id="vidCicodelia" class="vidTeoria video-training" style="display: none;" src="./assets/cicodelia.mp4" loop autoplay ></video>      
 
