@@ -1900,6 +1900,21 @@ header {
   height: 120px;
   width: 160px;
 }
+#cuartoContDensito,
+#tercerContDensito,
+#segundoContDensito,
+#contDensito{
+  display: flex;
+  flex-direction: row;
+  margin: 3px;
+}
+#cuartoContDensito img,
+#tercerContDensito img,
+#segundoContDensito img,
+#contDensito img{
+  height: 120px;
+  width: 160px;
+}
 .contColor{
   display: flex;
   flex-direction: row;

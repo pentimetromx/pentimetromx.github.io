@@ -36,7 +36,7 @@ var imgTorreI = document.getElementById('imgTorre')
 var contInicial = document.getElementById('container1')
 var botonMa = document.getElementById('bot-mantaut')
 var imagPasoApaso = document.querySelectorAll('.img1')
-var allContenedores = ['conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','container1','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
+var allContenedores = ['cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','container1','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado']
@@ -523,7 +523,6 @@ function cierraContenedores(elementId) {
             }
           }
         }      
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         video.style.display = 'none'        
         aumentarTamanosDeBotonesII()
       break;
@@ -2888,52 +2887,25 @@ function abrirPrepress(elementId) {
     console.log(idsArray);
   }
 }
+
+
+
 function abrirDensitometria(elementId){
-  var densiitoElemento = document.getElementById('densitometria')  
-  var linksIniciales = ['links-inicialesI', 'links-iniciales']
-  var contImgsDensito = document.getElementById('imgs-densito')
-  var videoBackground = document.getElementById('videoBackground')
-  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  for (var i = 0; i < allContenedores.length; i++) {                                                                                            /// OCULTAR TODO
-    var elemento = document.getElementById(allContenedores[i])
+  var elementosExcluidos = ['densitometria','container01','imgs-densito','contDensito','segundoContDensito','tercerContDensito','cuartoContDensito'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)          
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
-      elemento.style.display = 'none'
+      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
-  } 
-  document.body.style.zoom = "100%";
-  container1.style.display = 'flex'
-  videoBackground.pause()
-  videoBackground.style.display = 'none' // Oculta el video
-  // Mostrar el elemento "densitometria"
-  if (densiitoElemento) {
-    densiitoElemento.style.display = 'block'
-    densiitoElemento.style.zIndex = '0'
-
-    var botEspecial = document.getElementById('conte-botDensito')
-    // Obtén todos los botones y guárdalos en un array
-    var botones = botEspecial.querySelectorAll('button')    
-    // Recorre el array de botones y muestra cada botón
-    for (var i = 0; i < botones.length; i++) {
-        botones[i].style.display = 'flex'
-    }
-
-
-    // Establecer el mismo z-index para linksIniciales
-    for (var j = 0; j < linksIniciales.length; j++) {
-      var linkInicial = document.getElementById(linksIniciales[j])
-      if (linkInicial) {
-        linkInicial.style.zIndex = '1'
-      }
-    }
-  } 
-  contImgsDensito.style.display = 'block' 
-  videoElements.forEach(video => {
-  if (video) {
-    video.pause()     
-    video.style.display = 'none'
   }
-  })
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  for (var i = 0; i < linksIniciales.length; i++) {
+    var elemento = document.getElementById(linksIniciales[i]);
+    elemento.style.display = 'flex'
+  }
+  document.body.style.zoom = "100%"
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   var vidDensitometria = document.getElementById('vidCicodeliaII')
   vidDensitometria.style.display = 'block'
   vidDensitometria.pause();
@@ -2942,7 +2914,14 @@ function abrirDensitometria(elementId){
     vidDensitometria.play();
   }, 77);
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
-  linkList.style.display = "none";                                                                                                    
+  const imagenesDensito = document.querySelectorAll('.imgDensito');
+
+  // Paso 2: Recorrer el array y hacer las imágenes visibles
+  imagenesDensito.forEach((imagen) => {
+      // Hacer visible cada imagen
+      imagen.style.display = 'flex';
+  });
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
   // 4. Verificar si el elemento está definido y si ya existe en arrayIds
   if (typeof elementId !== 'undefined') {
     const index = idsArray.indexOf(elementId);
@@ -2955,6 +2934,11 @@ function abrirDensitometria(elementId){
     console.log(idsArray);
   }
 }
+
+
+
+
+
 function muestraVidPrisma(elementId) {
   allContenedores.forEach(contenedor => {
   if (contenedor === 'vidColor') {
@@ -3125,23 +3109,7 @@ function irContenedorAnterior() {
       abrirPrepress()
     break; 
     case "densitometria":
-      // Recorre el array y oculta los elementos por su ID
-      for (var i = 0; i < allContenedores.length; i++) {
-        var elemento = document.getElementById(allContenedores[i])
-        if (elemento) {
-          elemento.style.display = 'none'
-        }
-      }
-     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      var mostraDensit = document.getElementById('densitometria')
-      var contDensit = document.getElementById('imgs-densito')
-      mostraDensit.style.display='block'
-      contDensit.style.style='block'
-      var contImgsDensito = document.getElementsByClassName('imgDensito') // Obtén elementos por su
-      for (var i = 0; i < contImgsDensito.length; i++) {
-        var teorImage = contImgsDensito[i] // Accede al elemento actual
-        teorImage.style.display = 'block' // muestra el elemento  
-      }            
+      abrirDensitometria('densitometria')
     break;  
     case "vidColor":
       var mostrario = document.getElementById('pre-prensa')
@@ -3253,7 +3221,11 @@ function irContenedorAnterior() {
             hijo.style.display = 'none';
           }
         }
-      }     
+      }  
+      for (var i = 0; i < linksIniciales.length; i++) {
+        var elemento = document.getElementById(linksIniciales[i]);
+        elemento.style.display = 'flex'
+      }   
       video.style.display = 'none'
       aumentarTamanosDeBotones()
     break;
@@ -3279,60 +3251,106 @@ function irContenedorAnterior() {
             hijo.style.display = 'none';
           }
         }
+      } 
+      for (var i = 0; i < linksIniciales.length; i++) {
+        var elemento = document.getElementById(linksIniciales[i]);
+        elemento.style.display = 'flex'
       }      
       video.style.display = 'none'        
       aumentarTamanosDeBotonesII()   
     break;
     case 'alimentadorId':
-      for (var i = 0; i < allContenedores.length; i++) {
-        var elemento = document.getElementById(allContenedores[i])
+      var elementosExcluidos = ['pantalla-inicial','alimentadorId','verticales-alimentador','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
-          elemento.style.display = 'none'
+          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
-      }   
-      // Obtén el elemento padre 'pantalla-inicial'
-      var pantallaAbuelo = document.getElementById('pantalla-inicial')
-      var pantallaInicial2 = document.getElementById('alimentadorId')
-      var  pantallaInicialElem2 = document.getElementById('verticales-alimentador')
-      pantallaAbuelo.style.display = 'flex'      
-      pantallaInicial2.style.display = 'flex'
-      pantallaInicialElem2.style.display = 'flex' 
-      video.style.display = 'none'
-      aumentarTamanosDeBotones()
+      }
+      var pantallaInicial = document.getElementById('pantalla-inicial');
+      if (pantallaInicial) {
+        // Oculta todos los hijos directos de 'pantalla-inicial'
+        for (var i = 0; i < pantallaInicial.children.length; i++) {
+          var hijo = pantallaInicial.children[i];
+          if (i === 2) {
+            // Deja visible el primer hijo
+            hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
+          } else {
+            // Oculta el resto de los hijos
+            hijo.style.display = 'none';
+          }
+        }
+      } 
+      for (var i = 0; i < linksIniciales.length; i++) {
+        var elemento = document.getElementById(linksIniciales[i]);
+        elemento.style.display = 'flex'
+      }      
+      video.style.display = 'none'        
+      aumentarTamanosDeBotonesIII()
     break;
     case 'unidProceso':
-      for (var i = 0; i < allContenedores.length; i++) {
-        var elemento = document.getElementById(allContenedores[i])
+      var elementosExcluidos = ['pantalla-inicial','unidProceso','cont-Verticales7','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
-          elemento.style.display = 'none'
+          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
-      }   
-      // Obtén el elemento padre 'pantalla-inicial'
-      var pantallaAbuelo = document.getElementById('pantalla-inicial')
-      var pantallaInicial2 = document.getElementById('unidProceso')
-      var  pantallaInicialElem2 = document.getElementById('cont-Verticales7')
-      pantallaAbuelo.style.display = 'flex'      
-      pantallaInicial2.style.display = 'flex'
-      pantallaInicialElem2.style.display = 'flex' 
+      }
+      var pantallaInicial = document.getElementById('pantalla-inicial');
+      if (pantallaInicial) {
+        // Oculta todos los hijos directos de 'pantalla-inicial'
+        for (var i = 0; i < pantallaInicial.children.length; i++) {
+          var hijo = pantallaInicial.children[i];
+          if (i === 3) {
+            // Deja visible el primer hijo
+            hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
+          } else {
+            // Oculta el resto de los hijos
+            hijo.style.display = 'none';
+          }
+        }
+      } 
+      for (var i = 0; i < linksIniciales.length; i++) {
+        var elemento = document.getElementById(linksIniciales[i]);
+        elemento.style.display = 'flex'
+      } 
       video.style.display = 'none'
-      aumentarTamanosDeBotones()
+      aumentarTamanosDeBotonesIV()
     break;
     case 'rebobinador':
-      for (var i = 0; i < allContenedores.length; i++) {
-        var elemento = document.getElementById(allContenedores[i])
+      var elementosExcluidos = ['pantalla-inicial','rebobinador','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
-          elemento.style.display = 'none'
+          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
-      }   
-      // Obtén el elemento padre 'pantalla-inicial'
-      var pantallaAbuelo = document.getElementById('pantalla-inicial')
-      var pantallaInicial2 = document.getElementById('rebobinador')
-      var  pantallaInicialElem2 = document.getElementById('cont-Verticales7')
-      pantallaAbuelo.style.display = 'flex'      
-      pantallaInicial2.style.display = 'flex'
-      pantallaInicialElem2.style.display = 'flex' 
+      }
+      var pantallaInicial = document.getElementById('pantalla-inicial');
+      if (pantallaInicial) {
+        // Oculta todos los hijos directos de 'pantalla-inicial'
+        for (var i = 0; i < pantallaInicial.children.length; i++) {
+          var hijo = pantallaInicial.children[i];
+          if (i === 4) {
+            // Deja visible el primer hijo
+            hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
+          } else {
+            // Oculta el resto de los hijos
+            hijo.style.display = 'none';
+          }
+        }
+      } 
+      for (var i = 0; i < linksIniciales.length; i++) {
+        var elemento = document.getElementById(linksIniciales[i]);
+        elemento.style.display = 'flex'
+      } 
+
+
+
       video.style.display = 'none'
-      aumentarTamanosDeBotones()
+      aumentarTamanosDeBotonesV()
     break;
     case 'pantalla-frente':
       muestraTorresI('pantalla-frente')
@@ -3661,6 +3679,8 @@ function irContenedorSiguiente() {
   idsArrayEliminados.pop();
   console.log('2.', idsArrayEliminados)
 }
+
+
 function listaEntrenamientosII(btnList) {
   var elementos = ['canvasContainer2','canvasContainer3','canvasContainer4','canvasContainer5','contChecks','contImagGraf','contImagNeg']
   var elements = ['linksMA','linkLis','contImgEntrenos','largoImpresion']
@@ -3724,15 +3744,19 @@ function listaEntrenamientosII(btnList) {
       for (var i = 0; i < contiBtt.length; i++) {                                                                                             /// NARANJA A BOTON
         var botonId = contiBtt[i];
         var boton = document.getElementById(botonId);
-
         // Restablecer el color de fondo para todos los botones
         boton.style.backgroundColor = '';
-
         if (botonId === btnList) {
             // Cambiar el color de fondo a naranja para el botón seleccionado
             boton.style.backgroundColor = 'orange';
         }
       }
+
+      for (var i = 0; i < linksIniciales.length; i++) {
+        var elemento = document.getElementById(linksIniciales[i]);
+        elemento.style.display = 'flex'
+      }
+    
     break;
     case 'btt2':
      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
