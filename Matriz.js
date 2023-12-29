@@ -479,12 +479,13 @@ function cierraContenedores(elementId) {
       document.getElementById(button).style.backgroundColor = ''
     }
   } 
-  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  /* container1.style.display = 'flex' */
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   if (firstClick) {                                                                                                                       /// LOGICA PRIMER CLICK
-    if (!idsArray.includes(elementId)) {
-      idsArray.push(elementId)  
-      console.log(idsArray)
-    }
+    if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+      idsArray.push(elementId);
+      console.log(idsArray);
+    }     
     switch (elementId) {
       case 'desbobinadorId':
         // Obtén el elemento padre 'pantalla-inicial'
@@ -926,26 +927,27 @@ function showRepuesto(elementId) {
     default: 
   }  
 } 
-function ladosPlancha(elementId){
+function ladosPlancha(elementId){ 
   var video = document.getElementById('video-placa')
   var imgPlancha = document.querySelectorAll('.imagesTorre') 
   var imagesPlancha = document.getElementById('contPerfilesPlancha')
   var imgsPlancha = document.getElementById('imagenes-plancha')
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  var elementosExcluidos = ['contPortPlaca', 'agrupaOblicuos-placa','container01'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)          
+  var elementosExcluidos = ['contPortPlaca', 'agrupaOblicuos-placa','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
       // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
-      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   for (var i = 0; i < linksIniciales.length; i++) {
     var elemento = document.getElementById(linksIniciales[i]);
     elemento.style.display = 'flex'
   }
   switch (elementId) {
-    case 'imagen1':    
+    case 'imagen1':
       // Detener el video
       video.pause()
       // Ocultar el video estableciendo su estilo de visualización en 'none'
@@ -960,7 +962,6 @@ function ladosPlancha(elementId){
         }
       })
       contIMPlaca.style.display='none' 
-
       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
         idsArray.push(elementId);
         console.log(idsArray);
@@ -1030,151 +1031,139 @@ function ladosPlancha(elementId){
   }
 }
 function ladosMantilla(elementId){
-  var elementosExcluidos = ['contPerfilesManta','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01']  
-  var imgsManta = document.querySelectorAll('.imagen-container')
-  var manta = document.getElementById('manta') 
+  var contChildManta = document.getElementById('imagenes-manta')
+  var imgsManta = document.querySelectorAll('.imgMant')
+  var videoCaucho = document.getElementById('videoManta')
+  var imgsMantasI = document.getElementById('manta')
+  imgsMantasI.style.display = 'none'
 
   switch (elementId) {
     case 'mantilla1':
-      for (var i = 0; i < allContenedores.length; i++) {
-        var elemento = document.getElementById(allContenedores[i])  
-        if (elemento) {
-          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-        }
+     var elementosExcluidos = ['contPerfilesManta','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01']  
+     for (var i = 0; i < allContenedores.length; i++) {
+       var elemento = document.getElementById(allContenedores[i])  
+       if (elemento) {
+       // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+     }}
+     videoCaucho.pause()
+     videoCaucho.style.display = 'none'
+      contChildManta.style.display='flex' 
+      imgsManta.forEach(function (imagen) {
+      if (imagen.id === 'manta' || imagen.id === 'manta1') {
+        imagen.style.display = 'block'
+      }else{
+        imagen.style.display = 'none'
       }
-      for (var i = 0; i < imgsManta.length; i++) {
-        var elemento = imgsManta[i];
-      
-        if (elemento.id === 'mantilla1') {
-          // Mostrar elemento
-          elemento.style.display = 'block';
-        } else {
-          // Ocultar el resto de los elementos
-          elemento.style.display = 'none';
-        }
-      }
-      videoElements.forEach(video => {
-      if (video.id === 'videoManta') {
-      video.style.display = 'none'   
-      }}) 
-      manta.style.display = 'none'
+      })
       for (var i = 0; i < linksIniciales.length; i++) {
         var elemento = document.getElementById(linksIniciales[i]);
         elemento.style.display = 'flex'
-      }
+      }  
       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
         idsArray.push(elementId);
         console.log(idsArray);
       }
       break;
     case 'mantilla2':
+      var elementosExcluidos = ['contPerfilesManta','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01']  
       for (var i = 0; i < allContenedores.length; i++) {
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
-          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-        }
+        // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+      }}
+      videoCaucho.pause()
+      videoCaucho.style.display = 'none'
+      contChildManta.style.display='flex' 
+      imgsManta.forEach(function (imagen) {
+      if (imagen.id === 'manta2' || imagen.id === 'manta3') {
+        imagen.style.display = 'block'
+      }else{
+      imagen.style.display = 'none'
       }
-      for (var i = 0; i < imgsManta.length; i++) {
-        var elemento = imgsManta[i];
-      
-        if (elemento.id === 'mantilla2') {
-          // Mostrar elemento
-          elemento.style.display = 'block';
-        } else {
-          // Ocultar el resto de los elementos
-          elemento.style.display = 'none';
-        }
-      }
-      videoElements.forEach(video => {
-      if (video.id === 'videoManta') {
-      video.style.display = 'none'   
-      }}) 
+      })
       for (var i = 0; i < linksIniciales.length; i++) {
         var elemento = document.getElementById(linksIniciales[i]);
         elemento.style.display = 'flex'
-      }
-      manta.style.display = 'none'
+      }  
       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
         idsArray.push(elementId);
         console.log(idsArray);
       }
     break;     
     case 'mantilla3':
+      var elementosExcluidos = ['contPerfilesManta','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01']  
       for (var i = 0; i < allContenedores.length; i++) {
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
-          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-        }
+        // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+      }}
+      videoCaucho.pause()
+      videoCaucho.style.display = 'none'
+      contChildManta.style.display='flex' 
+      imgsManta.forEach(function (imagen) {
+      if (imagen.id === 'manta4' || imagen.id === 'manta5') {
+        imagen.style.display = 'block'
+      }else{
+        imagen.style.display = 'none'
       }
-      for (var i = 0; i < imgsManta.length; i++) {
-        var elemento = imgsManta[i];
-      
-        if (elemento.id === 'mantilla3') {
-          // Mostrar elemento
-          elemento.style.display = 'block';
-        } else {
-          // Ocultar el resto de los elementos
-          elemento.style.display = 'none';
-        }
-      }
-      videoElements.forEach(video => {
-      if (video.id === 'videoManta') {
-      video.style.display = 'none'   
-      }}) 
+      })
       for (var i = 0; i < linksIniciales.length; i++) {
         var elemento = document.getElementById(linksIniciales[i]);
         elemento.style.display = 'flex'
-      }
-      manta.style.display = 'none'
+      }  
       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
         idsArray.push(elementId);
         console.log(idsArray);
       }
+ 
+
     break;
     case 'mantilla4':
+      var elementosExcluidos = ['contPerfilesManta','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01']  
       for (var i = 0; i < allContenedores.length; i++) {
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
-          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-        }
+        // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+      }}
+      videoCaucho.pause()
+      videoCaucho.style.display = 'none'
+      contChildManta.style.display='flex' 
+      imgsManta.forEach(function (imagen) {
+      if (imagen.id === 'manta6' || imagen.id === 'manta7') {
+        imagen.style.display = 'block'
+      }else{
+        imagen.style.display = 'none'
       }
-      for (var i = 0; i < imgsManta.length; i++) {
-        var elemento = imgsManta[i];
-      
-        if (elemento.id === 'mantilla4') {
-          // Mostrar elemento
-          elemento.style.display = 'block';
-        } else {
-          // Ocultar el resto de los elementos
-          elemento.style.display = 'none';
-        }
-      }
-      videoElements.forEach(video => {
-      if (video.id === 'videoManta') {
-      video.style.display = 'none'   
-      }}) 
+      })
       for (var i = 0; i < linksIniciales.length; i++) {
         var elemento = document.getElementById(linksIniciales[i]);
         elemento.style.display = 'flex'
-      }
-      manta.style.display = 'none'
+      }  
       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
         idsArray.push(elementId);
         console.log(idsArray);
       }
+ 
+
     break;
     default:
   }
-}
-function ladosImpresor(elementId){
+} 
+ function ladosImpresor(elementId){
   var contChildImpresor = document.getElementById('imagenes-impresor')
   var imgsImpresor = document.querySelectorAll('.imgImpresor')
   var imgImpresorI = document.getElementById('impresorImg')
   imgImpresorI.style.display = 'none'
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  for (var i = 0; i < linksIniciales.length; i++) {
+    var elemento = document.getElementById(linksIniciales[i]);
+    elemento.style.display = 'flex'
+  }  
+
   switch (elementId) {
     case 'forward':
      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3047,15 +3036,6 @@ function muestraVidColor(elementId){
 function irContenedorAnterior() {
   var previousElementID = idsArray[idsArray.length - 2];
 
-  var elementosExcluidos = ['container01'];                                                                                    
-  for (var i = 0; i < allContenedores.length; i++) { 
-    var elemento = document.getElementById(allContenedores[i]);  
-    if (elemento) {
-      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
-      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
-    }
-  }
-
   switch (previousElementID ) {  
     case "cont-titulo":
     location.reload()
@@ -3252,38 +3232,56 @@ function irContenedorAnterior() {
       boton01.style.display = 'block'        
     break; 
     case 'desbobinadorId':
-      for (var i = 0; i < allContenedores.length; i++) {
-        var elemento = document.getElementById(allContenedores[i])
+      var elementosExcluidos = ['pantalla-inicial','desbobinadorId','cont-Verticales1','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
-          elemento.style.display = 'none'
+          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
-      }   
-      // Obtén el elemento padre 'pantalla-inicial'
-      var pantallaAbuelo = document.getElementById('pantalla-inicial')
-      var pantallaInicial = document.getElementById('desbobinadorId')
-      var  pantallaInicialElem = document.getElementById('cont-Verticales1')
-      pantallaAbuelo.style.display = 'flex'      
-      pantallaInicial.style.display = 'flex'
-      pantallaInicialElem.style.display = 'flex' 
+      }
+      var pantallaInicial = document.getElementById('pantalla-inicial');
+      if (pantallaInicial) {
+        // Oculta todos los hijos directos de 'pantalla-inicial'
+        for (var i = 0; i < pantallaInicial.children.length; i++) {
+          var hijo = pantallaInicial.children[i];
+          if (i === 0) {
+            // Deja visible el primer hijo
+            hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
+          } else {
+            // Oculta el resto de los hijos
+            hijo.style.display = 'none';
+          }
+        }
+      }     
       video.style.display = 'none'
       aumentarTamanosDeBotones()
     break;
     case 'uTeñido':
-      for (var i = 0; i < allContenedores.length; i++) {
-        var elemento = document.getElementById(allContenedores[i])
+      var elementosExcluidos = ['pantalla-inicial','uTeñidos','cont-Verticales2','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
-          elemento.style.display = 'none'
+          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
-      }   
-      // Obtén el elemento padre 'pantalla-inicial'
-      var pantallaAbuelo = document.getElementById('pantalla-inicial')
-      var pantallaInicial1 = document.getElementById('uTeñidos')
-      var  pantallaInicialElem1 = document.getElementById('cont-Verticales2')
-      pantallaAbuelo.style.display = 'flex'      
-      pantallaInicial1.style.display = 'flex'
-      pantallaInicialElem1.style.display = 'flex' 
-      video.style.display = 'none'
-      aumentarTamanosDeBotones()
+      }
+      var pantallaInicial = document.getElementById('pantalla-inicial');
+      if (pantallaInicial) {
+        // Oculta todos los hijos directos de 'pantalla-inicial'
+        for (var i = 0; i < pantallaInicial.children.length; i++) {
+          var hijo = pantallaInicial.children[i];
+          if (i === 1) {
+            // Deja visible el primer hijo
+            hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
+          } else {
+            // Oculta el resto de los hijos
+            hijo.style.display = 'none';
+          }
+        }
+      }      
+      video.style.display = 'none'        
+      aumentarTamanosDeBotonesII()   
     break;
     case 'alimentadorId':
       for (var i = 0; i < allContenedores.length; i++) {
@@ -5948,9 +5946,9 @@ function rodillosKaizen(idButton,vidElem) {
     if (elto) {
         elto.style.display = 'none'
     }
-}
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  arrayButtsKaizen.forEach(element => {                                                                                             /// BOTON NARANJA TEXTO NEGRO                                                                                                    
+   }
+   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+   arrayButtsKaizen.forEach(element => {                                                                                             /// BOTON NARANJA TEXTO NEGRO                                                                                                    
     var elemento = document.getElementById(element)
     if (elemento) {
         if (element === idButton) {
