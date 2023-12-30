@@ -104,7 +104,6 @@ transform: scale(1.1);
 .boton-f:hover {
   transform: scale(1.1);
 }
-#container1,
 #container2,
 #container3,
 #container4,
@@ -116,29 +115,38 @@ transform: scale(1.1);
   position: absolute;
   left: 27px;
 }
-.segundo-bloque{
+#container1{
+  position: relative;
+  left: 50%;
+}
+
+#pantalla-inicial{
+  position: relative;
   display: flex;
-  display: none;
-  position: absolute;
-  margin-left: 7px;
   top: 97px;
+  display: none;
+  margin-left: auto; /* Margen izquierdo automático */
+  margin-right: auto; /* Margen derecho automático */
+  max-width: 1577px; /* Ajusta según sea necesario */
 }
 .contTorrImp{
   display: flex; 
   flex-direction: column; 
   align-items:center;
-  margin-left: 247px;  
+  /* margin-left: 247px; */  
+  margin-left: 277px;
 }
 .tintero{
   display: flex; 
   flex-direction: column; 
+  margin-left: -7px;
 }
 .torre-imp{
   display: flex;
   flex-direction: row;
   position: absolute;
   top: 57px;
-  left: 733px;
+  left: 767px;
 }
 .cont-ppal{
   display: flex;
@@ -150,7 +158,6 @@ transform: scale(1.1);
 .contene-4,
 .contene-5,
 .contene-6,
-.contene-7,
 .contene-8,
 .contene-9,
 .contene-99{
@@ -170,6 +177,7 @@ transform: scale(1.1);
 }
 .desbobinador{
   display: flex;
+  margin-left: 5px;
   flex-direction: column;
 }
 .uTeñido{
@@ -253,7 +261,18 @@ transform: scale(1.1);
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 100px;
+  top: 90px;
+  padding-left: 20px;
+}
+.second-class{
+ margin-top: -17px;
+ margin-left: -13px;
+}
+.infraestruc-torre{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
   padding-left: 20px;
 }
  .linea-vertical {
@@ -2729,19 +2748,13 @@ elemento.visible {
     margin: 0;
   } 
   #pantalla-inicial{
+    position: relative;
     display: flex;
-    display: none;
-    position: absolute;
-    margin-left: 7px;
     top: 97px;
-  }
-  #rotatek-1{
-    display: flex; 
-    flex-direction: column; 
-    align-items:center;
-    margin-left: 247px;  
-  }
-  
-
+    display: none;
+    margin-left: auto; /* Margen izquierdo automático */
+    margin-right: auto; /* Margen derecho automático */
+    max-width: 1377px; /* Ajusta según sea necesario */
+  }  
 }
 
