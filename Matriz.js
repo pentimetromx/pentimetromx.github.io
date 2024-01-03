@@ -131,6 +131,7 @@ let miCanvas8 = document.getElementById('MiGrafica6').getContext('2d')
 let miCanvas9 = document.getElementById('MiGrafica7').getContext('2d')
 let miCanvas10 = document.getElementById('MiGrafica8').getContext('2d')
 let miCanvas11 = document.getElementById('MiGrafica9').getContext('2d')
+let iCtx = document.getElementById('ctx').getContext('2d')
 
 var botones = document.querySelectorAll('.butt-mautonomo')
 var linksTorre = document.getElementById('contLinksTorre')
@@ -149,15 +150,7 @@ function VolveraInicio(){
   idsArrayEliminados = []
 }
 function botoGrand() {
-/*   toggleLeft = true;
 
-  if (toggleLeft === true) { // Corrige la condición de comparación */
-    container1.style.left = '33%';
-/*   } else {
-    container1.style.position = 'absolute';
-    container1.style.left = '27px';
-  }
-  var toggleLeft = false; */
 }
 function muestraBateria(elementId) {  
   // Recorre el array y oculta los elementos por su ID
@@ -909,9 +902,6 @@ function showRepuesto(elementId) {
     default: 
   }  
 } 
-
-
-
 function ladosPlancha(elementId){ 
   var video = document.getElementById('video-placa')
   var imgPlancha = document.querySelectorAll('.imagesTorre') 
@@ -1306,9 +1296,6 @@ function mantAutonomo (idElement) {
     break;
     case 'canvasContainer2':   
        deslizarCanvas2(idElement)
-        /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/   
-       /* modificarPosicion() */
-        /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
     break;
     case 'contChecks':
       // Capturar el contenedor padre
@@ -3707,10 +3694,6 @@ function irContenedorSiguiente() {
   idsArrayEliminados.pop();
   console.log('2.', idsArrayEliminados)
 }
-
-
-
-
 function listaEntrenamientosII(btnList) {
   var elementos = ['canvasContainer2','canvasContainer3','canvasContainer4','canvasContainer5','contChecks','contImagGraf','contImagNeg']
   var elements = ['linksMA','linkLis','contImgEntrenos','largoImpresion']
@@ -3971,7 +3954,6 @@ function listaEntrenamientos(){
   contLinksMA.style.marginTop='-16px'
   contBotMA.style.marginTop='45px'
 }
-
 function toggleFullScreen(element) {
   if (!document.fullscreenElement) {
     if (element.requestFullscreen) {
@@ -3995,10 +3977,6 @@ function toggleFullScreen(element) {
     }
   }
 }
-
-
-
-
 function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) { // padre imags/videos, video padre, video directo, img directo, link, listado) 
   var linkOrange = document.getElementById(id)
   document.body.style.zoom = "67%"
@@ -5390,6 +5368,7 @@ function resultadosEmpleado(idEmpleado, functionExe) {
   var colors = ['rgb(255, 255, 0)', 'rgb(0, 255, 0)', 'orangered'] // Colores en formato RGB
   var contUserScroll = document.getElementById('contenedor-vertical')
   var contUserElementsI = document.getElementsByClassName('cont-userI') 
+
   var contUserArrayI = Array.from(contUserElementsI)  
   var contUserElements = document.getElementsByClassName('cont-user') 
   var tituloMA = document.getElementById('title-interfaz')
@@ -5397,13 +5376,12 @@ function resultadosEmpleado(idEmpleado, functionExe) {
   lineasGrid.style.display = 'block'
   tituloMA.style.display = 'flex'
 
-
   for (var i = 0; i < contUserElements.length; i++) {
     var element = contUserElements[i]
     if (element.id === idEmpleado) {
       element.style.display = 'flex'
-      element.style.top = '-133px'
-      element.style.left = '24px'
+      element.style.top = '-127px'
+      element.style.left = '-7px'
 
       // Accede al label dentro del div
       var label = element.querySelector('label')
@@ -5435,7 +5413,7 @@ function resultadosEmpleado(idEmpleado, functionExe) {
 
   switch (functionExe) {
     case 'updateAna':
-      updateAna()
+      updateAna()      
       break;
     case 'updateMario':
       updateMario()
@@ -7512,3 +7490,239 @@ function iniciarMovimiento(instrucId) {
 }
 // Número de iteraciones deseadas
 var iterations;
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Obtén el contexto del lienzo
+var canvas = document.getElementById("sinusoidalCanvas");
+var ctx = canvas.getContext("2d");
+// Configura el color y el grosor de la línea
+ctx.strokeStyle = "rgb(0, 255, 0)"; // Verde
+ctx.lineWidth = 1;
+// Dibuja la onda sinusoidal
+drawSinusoidalI();
+function drawSinusoidalI() {
+  // Ajusta la escala de la onda y el desplazamiento
+  var amplitude = 50; // Altura máxima de la onda
+  var frequency = 0.05; // Frecuencia de la onda
+  var phase = 0; // Desplazamiento horizontal
+  // Comienza el trazado de la onda
+  ctx.beginPath();
+  for (var x = 0; x < canvas.width; x++) {
+  // Calcula el valor y de la onda en función de x
+  var y = amplitude * Math.sin(frequency * x + phase);
+  // Dibuja un segmento de la onda
+  ctx.lineTo(x, canvas.height / 2 - y);
+  }
+  // Finaliza el trazado y dibuja la línea
+  ctx.stroke();
+  // Dibuja el eje horizontal con numeración y etiquetas rojas
+  drawHorizontalAxisI();
+  // Dibuja el eje vertical con numeración y etiquetas rojas
+  drawVerticalAxis();
+}
+function drawHorizontalAxisI() {
+  // Dibuja el eje horizontal
+  ctx.beginPath();
+  ctx.moveTo(0, canvas.height / 2);
+  ctx.lineTo(canvas.width, canvas.height / 2);
+  ctx.stroke();
+  // Dibuja las marcas y etiquetas en el eje horizontal
+  for (var x = 0; x <= canvas.width; x += 50) {
+  ctx.beginPath();
+  ctx.moveTo(x, canvas.height / 2 - 5);
+  ctx.lineTo(x, canvas.height / 2 + 5);
+  ctx.stroke();
+  ctx.fillStyle = "yellow"; // Etiquetas rojas
+  ctx.fillText(x - canvas.width / 2, x - 10, canvas.height / 2 + 20);
+  }
+}
+function drawVerticalAxis() {
+  // Dibuja el eje vertical
+  ctx.beginPath();
+  ctx.moveTo(canvas.width / 2, 0);
+  ctx.lineTo(canvas.width / 2, canvas.height);
+  ctx.stroke();
+  // Dibuja las marcas y etiquetas en el eje vertical
+  for (var y = 0; y <= canvas.height; y += 50) {
+  ctx.beginPath();
+  ctx.moveTo(canvas.width / 2 - 5, y);
+  ctx.lineTo(canvas.width / 2 + 5, y);
+  ctx.stroke();
+  ctx.fillStyle = "yellow"; // Etiquetas rojas
+  ctx.fillText(canvas.height / 2 - y, canvas.width / 2 - 30, y + 5);
+  }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Obtén el contexto del lienzo
+var canvasI = document.getElementById("diagonalCanvas");
+var dcx = canvasI.getContext("2d");
+// Configura el color y el grosor de la línea
+dcx.strokeStyle = "rgb(0,255,0)"; // Azul
+dcx.lineWidth = 1;
+// Dibuja la línea diagonal
+drawDiagonalLine();
+function drawDiagonalLine() {
+  // Comienza el trazado de la línea
+  dcx.beginPath();
+  // Establece el punto de inicio en (300, 0)
+  dcx.moveTo(0, 177);
+  // Dibuja la línea hasta (0, 300)
+  dcx.lineTo(300, 0);
+  // Finaliza el trazado y dibuja la línea
+  dcx.stroke();
+
+  // Dibuja el eje horizontal con numeración y etiquetas rojas
+  drawHorizontalAxisII();
+  // Dibuja el eje vertical con numeración y etiquetas rojas
+  drawVerticalAxisII();
+}
+function drawHorizontalAxisII() {
+  // Dibuja el eje horizontal
+  dcx.beginPath();
+  dcx.moveTo(0, canvasI.height / 2);
+  dcx.lineTo(canvasI.width, canvasI.height / 2);
+  dcx.stroke();
+  // Dibuja las marcas y etiquetas en el eje horizontal
+  for (var x = 0; x <= canvasI.width; x += 50) {
+  dcx.beginPath();
+  dcx.moveTo(x, canvasI.height / 2 - 5);
+  dcx.lineTo(x, canvasI.height / 2 + 5);
+  dcx.stroke();
+  dcx.fillStyle = "orangered"; // Etiquetas rojas
+  dcx.fillText(x - canvasI.width / 2, x - 10, canvasI.height / 2 + 20);
+  }
+}
+function drawVerticalAxisII() {
+  // Dibuja el eje vertical
+  dcx.beginPath();
+  dcx.moveTo(canvasI.width / 2, 0);
+  dcx.lineTo(canvasI.width / 2, canvasI.height);
+  dcx.stroke();
+  // Dibuja las marcas y etiquetas en el eje vertical
+  for (var y = 0; y <= canvasI.height; y += 50) {
+  dcx.beginPath();
+  dcx.moveTo(canvasI.width / 2 - 5, y);
+  dcx.lineTo(canvasI.width / 2 + 5, y);
+  dcx.stroke();
+  dcx.fillStyle = "orangered"; // Etiquetas rojas
+  dcx.fillText(canvasI.height / 2 - y, canvasI.width / 2 - 30, y + 5);
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Obtén el contexto del lienzo
+var canvasII = document.getElementById("dualSinusoidalCanvas");
+var cdsc = canvasII.getContext("2d");
+// Configura el color y el grosor de la primera línea
+cdsc.strokeStyle = "rgb(0, 255, 0)"; // Verde
+cdsc.lineWidth = 1;
+// Dibuja la primera onda sinusoidal
+drawSinusoidalDoubleI(50, 0.05, 0);
+// Configura el color y el grosor de la segunda línea
+cdsc.strokeStyle = "rgb(0, 0, 255)"; // Amarillo
+cdsc.lineWidth = 1;
+// Dibuja la segunda onda sinusoidal
+drawSinusoidalDoubleI(60, 0.05, Math.PI / 2); // Parámetros diferentes para la segunda onda
+// Dibuja la cuadrícula
+drawGridI(4, 7);
+function drawSinusoidalDoubleI(amplitude, frequency, phase) {
+  // Comienza el trazado de la onda
+  cdsc.beginPath();
+  for (var x = 0; x < canvasII.width; x++) {
+  // Calcula el valor y de la onda en función de x
+  var y = amplitude * Math.sin(frequency * x + phase);
+  // Dibuja un segmento de la onda
+  cdsc.lineTo(x, canvasII.height / 2 - y);
+  }
+  // Finaliza el trazado y dibuja la línea
+  cdsc.stroke();
+}
+function drawGridI(horizontalLinesI, verticalLinesI) {
+  // Configura el color y el grosor de las líneas de la cuadrícula
+  cdsc.strokeStyle = "rgb(0,255,0)"; // Gris
+  cdsc.lineWidth = 1;
+  // Dibuja líneas horizontales
+  for (var i = 1; i < horizontalLinesI; i++) {
+  var y = (i / horizontalLinesI) * canvasII.height;
+  cdsc.beginPath();
+  cdsc.moveTo(0, y);
+  cdsc.lineTo(canvasII.width, y);
+  cdsc.stroke();
+  }
+  // Dibuja líneas verticales
+  for (var j = 1; j < verticalLinesI; j++) {
+  var x = (j / verticalLinesI) * canvasII.width;
+  cdsc.beginPath();
+  cdsc.moveTo(x, 0);
+  cdsc.lineTo(x, canvasII.height);
+  cdsc.stroke();
+  }
+}        
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Obtén el contexto del lienzo
+var canvas = document.getElementById("tripleSinusoidalCanvas");
+var ctx = canvas.getContext("2d");
+// Configura el color y el grosor de la primera línea
+ctx.strokeStyle = "rgb(255, 125, 0)"; // Verde
+ctx.lineWidth = 1;
+// Dibuja la primera onda sinusoidal
+drawSinusoidalDouble(50, 0.05, 0);
+// Configura el color y el grosor de la segunda línea
+ctx.strokeStyle = "rgb(255, 0, 255)"; // Amarillo
+ctx.lineWidth = 1;
+// Dibuja la segunda onda sinusoidal
+drawSinusoidalDouble(60, 0.05, Math.PI / 2); // Parámetros diferentes para la segunda onda
+// Configura el color y el grosor de la tercera línea
+ctx.strokeStyle = "rgb(255, 255, 0)"; // Azul
+ctx.lineWidth = 1;
+// Dibuja la tercera onda senoidal
+drawSinusoidal(40, 0.1, Math.PI); // Parámetros diferentes para la tercera onda
+// Dibuja la cuadrícula
+drawGrid(4, 7);
+function drawSinusoidal(amplitude, frequency, phase) {
+// Comienza el trazado de la onda
+ctx.beginPath();
+for (var x = 0; x < canvas.width; x++) {
+// Calcula el valor y de la onda en función de x
+var y = amplitude * Math.sin(frequency * x + phase);
+// Dibuja un segmento de la onda
+ctx.lineTo(x, canvas.height / 2 - y);
+}
+// Finaliza el trazado y dibuja la línea
+ctx.stroke();
+}
+function drawSinusoidalDouble(amplitude, frequency, phase) {
+  // Comienza el trazado de la onda
+  ctx.beginPath();
+  for (var x = 0; x < canvas.width; x++) {
+  // Calcula el valor y de la onda en función de x
+  var y = amplitude * Math.sin(frequency * x + phase);
+  // Dibuja un segmento de la onda
+  ctx.lineTo(x, canvas.height / 2 - y);
+  }
+  // Finaliza el trazado y dibuja la línea
+  ctx.stroke();
+}
+function drawGrid(horizontalLines, verticalLines) {
+  // Configura el color y el grosor de las líneas de la cuadrícula
+  ctx.strokeStyle = "rgb(150, 150, 150)"; // Gris
+  ctx.lineWidth = 1;
+  // Dibuja líneas horizontales
+  for (var i = 1; i < horizontalLines; i++) {
+  var y = (i / horizontalLines) * canvas.height;
+  ctx.beginPath();
+  ctx.moveTo(0, y);
+  ctx.lineTo(canvas.width, y);
+  ctx.stroke();
+  }
+  // Dibuja líneas verticales
+  for (var j = 1; j < verticalLines; j++) {
+  var x = (j / verticalLines) * canvas.width;
+  ctx.beginPath();
+  ctx.moveTo(x, 0);
+  ctx.lineTo(x, canvas.height);
+  ctx.stroke();
+  }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ 

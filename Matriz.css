@@ -119,10 +119,10 @@ transform: scale(1.1);
   position: relative;
   left: 50%;
 }
-
 #pantalla-inicial{
   position: relative;
   display: flex;
+  flex-direction: row;
   top: 97px;
   display: none;
   margin-left: auto; /* Margen izquierdo automático */
@@ -512,7 +512,7 @@ transform: scale(1.1);
   color: rgb(0,0,0);
   border-radius: 7px;
   margin-right: 27px;
-  margin-bottom: 17px; 
+  margin-top: 7px;
   text-align: center;    
   cursor: pointer; 
   transition: transform 0.1s;
@@ -2149,11 +2149,13 @@ header {
 }
 #conte-secundario{
   position: absolute;
+  margin-left: -37px;
   display: flex;
   flex-direction:row;
   align-items: center;
-  left: -37px;
-  gap: 20px;  
+  gap: 11px; 
+  margin-left: auto;
+  margin-right: auto;
 }
 .cont-user {
   position: relative;
@@ -2161,17 +2163,9 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px; /* Espacio entre los contenedores */
+  margin-bottom: 10px; /* Espacio entre los contenedores */  
   cursor: pointer;
 }
-
-.icono-user {
-  height: 107px;
-  border-radius: 7px;
-  transition: transform 0.1s;
-  margin-bottom: 5px; /* Ajuste para espacio entre la imagen y la etiqueta */
-}
-
 .cont-user label {
   position: relative;
   margin-left: 17px;
@@ -2181,6 +2175,10 @@ header {
   font-size: 13px;
   width: 150px;
   text-align: center; /* Centrar el texto */
+}
+.cont-user img{
+  height: 107px;
+  border-radius: 11px;
 }
 #title-interfaz{
   display: flex;
@@ -2211,10 +2209,13 @@ elemento.visible {
   display: none;
   flex-direction: column;
   align-items: center;
-
   background-color: rgb(22,22,22);
   max-height: 392px; /* Establece la altura máxima para la lista */
   overflow-y: auto; /* Agrega una barra de desplazamiento vertical cuando sea necesario */
+}
+.contenedor-vertical img{
+  height: 107px;
+  border-radius: 9px;
 }
 #resultados{
   font-size: 11px;
@@ -2734,6 +2735,21 @@ elemento.visible {
   border: 2px solid orange;
   border-radius: 13px;
 }
+
+#diagonalCanvas,
+#tripleSinusoidalCanvas,
+#sinusoidalCanvas,
+#dualSinusoidalCanvas{
+  position: relative;
+  border: 1px solid #1ef805;
+  border-radius: 11px;
+}
+.sinusoidales{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px; 
+}
+
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 @media screen and (max-width: 599px) {                                                                                             /* INICIA RESPONSIVE DESIGN */
   #cont-titulo-operacion,
@@ -2746,15 +2762,24 @@ elemento.visible {
     align-items: center;
     width: 70%; 
     margin: 0;
-  } 
+  }
+  #rotatek-1,
   #pantalla-inicial{
     position: relative;
     display: flex;
+    flex-direction: row;
     top: 97px;
-    display: none;
-    margin-left: auto; /* Margen izquierdo automático */
-    margin-right: auto; /* Margen derecho automático */
-    max-width: 1377px; /* Ajusta según sea necesario */
-  }  
-}
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: auto; /* Agrega una barra de desplazamiento vertical cuando sea necesario */
 
+  }
+  .sinusoidales{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px; 
+    overflow-y: auto; /* Agrega una barra de desplazamiento vertical cuando sea necesario */
+  }
+}
