@@ -2008,7 +2008,7 @@ header {
   flex-direction: column;
   position: absolute;
   left: 397px;
-  top: 77px;
+  top: 67px;
   width: 737px;
   border-radius: 20px;
   border: 5px solid orange;   
@@ -2745,9 +2745,11 @@ elemento.visible {
   border-radius: 11px;
 }
 .sinusoidales{
+  display: none;
   margin-left: auto;
   margin-right: auto;
   margin-top: 100px; 
+  /* transform: rotate(90deg); */
 }
 
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -2783,3 +2785,54 @@ elemento.visible {
     overflow-y: auto; /* Agrega una barra de desplazamiento vertical cuando sea necesario */
   }
 }
+
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.contCicodelicos {                                  /* CUADRO DE BOTONES ILUMINADOS TRANSITAN EN PANTALLA */
+  position: absolute;  /* Establece la posición del elemento como absoluta en relación con el primer elemento padre que tiene una posición diferente de estática. */
+  left: -200px;  /* Define la posición inicial del elemento a -200px desde el borde izquierdo del contenedor principal. */
+  top: 50%;  /* Coloca el elemento en el 50% de la altura del contenedor principal. */
+  transform: translateY(-17%);  /* Aplica una transformación para centrar verticalmente el elemento utilizando translateY. */
+  animation: ocultarMostrar 4.5s linear forwards;  /* Asigna la animación llamada 'ocultarMostrar' con una duración de 4.5 segundos, un timing function lineal y 
+  la propiedad forwards para que se quede en el último estado después de la animación. */
+}
+/* Definición de la animación 'ocultarMostrar' */
+@keyframes ocultarMostrar {
+  0% {
+    left: -530px;  /* Estado inicial de la animación: el elemento está desplazado a la izquierda en -530px. */
+  }
+  100% {
+    left: 1427px;  /* Estado final de la animación: el elemento se desplaza a la derecha en 1277px. */
+  }
+}
+#botonesContainer {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(13, 40px);
+  grid-template-rows: repeat(4, 40px);
+  gap: 2px;
+  display: none;
+}
+.botoneras {
+  width: 40px;
+  height: 40px;
+  border: 1px solid 'rgb(255, 215, 0)';
+  border-radius: 11px;
+  background-color: 'rgb(125,125,125)';
+  cursor: pointer;
+}
+.verde { background-color: green; }
+.amarillo { background-color:rgb(255, 215, 0); }
+.rojo { background-color: red; }
+.azul { background-color: blue; }
+.violeta { background-color: violet; }
+.magenta { background-color: rgb(255,0,255); }
+.gris { background-color:rgb(33,33,33); }
+.verdesat { background-color: rgb(0,255,0); }
+.cyan { background-color: cyan; }
+.purpura { background-color: purple; }
+.anaranjado { background-color: orangered; }
+
+
+
+

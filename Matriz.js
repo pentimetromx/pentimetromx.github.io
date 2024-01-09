@@ -98,10 +98,10 @@ const seccionMandos = document.getElementById('pantalla-mandos')
 const pantallas = ['pantalla-frente', 'pantalla-mandos','pantalla-servicio','pantalla-atras']
 
 const contieneLinks = document.getElementById('cont-links')
-const imgsRepuestos = document.getElementById('imgsRepuestos')// HIJO IMAGENES
-const imgsRepuestosII = document.getElementById('imgsRepuestos-II')// HIJO IMAGENES 
-const imgsRepuestosIII = document.getElementById('imgsRepuestos-III')// HIJO IMAGENES      
-const imgsRepuestosIV = document.getElementById('imgsRepuestos-IV')// HIJO IMAGENES     
+const imgsRepuestos = document.getElementById('imgsRepuestos')
+const imgsRepuestosII = document.getElementById('imgsRepuestos-II') 
+const imgsRepuestosIII = document.getElementById('imgsRepuestos-III')     
+const imgsRepuestosIV = document.getElementById('imgsRepuestos-IV')     
 
 const contPadreMA = document.getElementById('conteneMantaut')
 const videoElements = document.querySelectorAll('.video-training')   
@@ -7723,6 +7723,194 @@ function drawGrid(horizontalLines, verticalLines) {
   ctx.stroke();
   }
 }
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+var intervalId; // Declara la variable en un ámbito accesible                                   /// BOTONERA CICODELICA  PARE/SIGA
+function iniciarEventos() {
+  var contSinusoidales = document.getElementById('contMetrics')
+  var contCicodelicos = document.getElementById('botonesContainer')   
+  var colores = ['verde', 'rojo', 'amarillo', 'azul', 'violeta','magenta','gris','verdesat','cyan','purpura','anaranjado'] 
+  // Inicia cada botón con un índice de inicio diferente
+  var botones = document.querySelectorAll('#botonesContainer .botoneras')
+  botones.forEach(function (boton, index) {
+    boton.dataset.indiceInicio = index;
+  });
+  function cambiarColor() {
+    botones.forEach(function (boton) {
+      var indiceInicio = parseInt(boton.dataset.indiceInicio)
+      var indiceColor = (indiceInicio + 1) % colores.length
+
+      // Cambia la clase de color del botón
+      boton.classList.remove(...colores);
+      boton.classList.add(colores[indiceColor])
+
+      // Actualiza el índice de inicio para el próximo color
+      boton.dataset.indiceInicio = indiceColor
+    });
+  }
+  // Llama a la función cambiarColor cada 77 MS y guarda el ID del intervalo
+  intervalId = setInterval(cambiarColor, 77)
+  contSinusoidales.style.display = 'flex'
+  contCicodelicos.style.display = 'grid'
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function detenerEventos() {
+  clearInterval(intervalId);
+  var contCicodelicos = document.getElementById('botonesContainer')  
+  contCicodelicos.style.left = '555px'
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function iniciarTransito() {                                                                                            /// BOTON BAILARIN ALREDEDOR DE PANTALLA
+  var boton = document.getElementById("buttSolitario");
+  var stopFlag = false;
+  var anchoPantalla = window.innerWidth;
+  var altoPantalla = window.innerHeight - 37;
+  var duracion = 1000;
+
+  // 1. Array de colores
+  var colores = ['verde', 'rojo', 'amarillo', 'azul', 'violeta', 'magenta', 'gris', 'verdesat', 'cyan', 'purpura', 'anaranjado'];
+  // 2. Elemento del botón
+  var boton = document.getElementById("buttSolitario");
+  // 3. Función para cambiar el color del botón con un intervalo
+  function cambiarColorConIntervalo() {
+    var i = 0;
+    setInterval(function () {
+      // Cambiar el color del botón
+      boton.style.backgroundColor = colores[i];      
+      // Incrementar el índice para el próximo color
+      i = (i + 1) % colores.length;
+    }, 77); // Intervalo de 0.1 segundos (100 milisegundos)
+  }
+  // Llamar a la función para iniciar el cambio de colores
+  cambiarColorConIntervalo();
+
+  // Función para mover el botón y reiniciar el ciclo
+  function mover(distanciaX, distanciaY, transitionProperty, nextMove) {
+    if (stopFlag) return;
+    // Aplicar la transición
+    boton.style.transition = transitionProperty;
+    boton.style.left = distanciaX + "px";
+    boton.style.top = distanciaY + "px";
+    // Esperar y luego realizar el siguiente movimiento
+    setTimeout(function () {
+      if (nextMove) {
+        nextMove();
+      } 
+    }, duracion);
+  }
+
+  // Primer movimiento: Derecha a izquierda
+  function moverDerechaIzquierda() {
+    boton.style.backgroundColor = 'rgb(0,255,0)'
+    mover(anchoPantalla - boton.offsetWidth, 0, 'left ' + duracion / 1000 + 's', moverArribaAbajo);
+  }
+
+  // Segundo movimiento: Arriba a abajo
+  function moverArribaAbajo() {
+    boton.style.backgroundColor = 'rgb(255,0,0)'
+    mover(anchoPantalla - boton.offsetWidth, altoPantalla - boton.offsetHeight, 'top ' + duracion / 1000 + 's', moverIzquierdaDerecha);
+  }
+
+  // Tercer movimiento: Izquierda a derecha
+  function moverIzquierdaDerecha() {
+    boton.style.backgroundColor = 'rgb(255,255,0)'
+    mover(0, altoPantalla - boton.offsetHeight, 'left ' + duracion / 1000 + 's', moverAbajoArriba);
+  }
+
+  // Cuarto movimiento: Abajo a arriba
+  function moverAbajoArriba() {
+    boton.style.backgroundColor = 'rgb(0,0,255)'
+    mover(0, 0, 'top ' + duracion / 1000 + 's', moverDiagonal);
+  }
+
+  // Quinto movimiento: Diagonal
+  function moverDiagonal() {
+    boton.style.backgroundColor = 'rgb(255,0,255)'
+    mover(anchoPantalla - boton.offsetWidth, altoPantalla - boton.offsetHeight, 'left ' + duracion / 1000 + 's, top ' + duracion / 1000 + 's', moverAbajoArribaII);
+  }
+
+  // Sexto movimiento: Abajo a arriba
+  function moverAbajoArribaII() {
+    boton.style.backgroundColor = 'orangered'
+    mover(anchoPantalla - boton.offsetWidth, 0, 'top ' + duracion / 1000 + 's',moverDiagonalI);
+  }
  
+
+  // séptimo movimiento: Diagonal inversa
+  function moverDiagonalI() {
+    boton.style.backgroundColor = 'white'
+    mover(0, altoPantalla - boton.offsetHeight, 'left ' + duracion / 1000 + 's, top ' + duracion / 1000 + 's', moverAbajoArribaI);
+  }
+
+  // Cuarto movimiento: Abajo a arriba
+  function moverAbajoArribaI() {
+    boton.style.backgroundColor = 'purple'
+    mover(0, 0, 'top ' + duracion / 1000 + 's', moverDerechaIzquierda);
+  }
+  
+  // Iniciar el ciclo de movimientos
+  moverDerechaIzquierda();
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Función para detener el movimiento
+function detenerMovimiento() {
+  stopFlag = true;
+  clearTimeout(timeoutId);
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+var botonSolitario = document.getElementById('buttSolitario');
+var botonSeguidor = document.getElementById('boton2');
+
+function moverEnDireccion(direccion) {
+  botonSeguidor.style.left = botonSolitario.style.left;
+
+  var posicionInicialX = 0;
+  var posicionFinalX = window.innerWidth - botonSolitario.offsetWidth;
+
+  var posicionInicialY = (window.innerHeight - 33) - botonSolitario.offsetHeight;
+  var posicionFinalY = 0;
+
+  var incrementoX = 0;
+  var incrementoY = 0;
+
+  switch (direccion) {
+    case 'derecha':
+      incrementoX = 7;
+      break;
+    case 'abajo':
+      incrementoY = 7;
+      break;
+    case 'izquierda':
+      incrementoX = -7;
+      break;
+    case 'arriba':
+      incrementoY = -7;
+      break;
+    default:
+      console.error('Dirección no válida');
+      return;
+  }
+
+  var intervalo = setInterval(function() {
+    if (
+      (direccion === 'derecha' || direccion === 'izquierda') &&
+      posicionInicialX >= posicionFinalX
+    ) {
+      clearInterval(intervalo);
+    } else if (
+      (direccion === 'abajo' || direccion === 'arriba') &&
+      posicionInicialY <= posicionFinalY
+    ) {
+      clearInterval(intervalo);
+    } else {
+      posicionInicialX += incrementoX;
+      posicionInicialY += incrementoY;
+
+      botonSolitario.style.left = posicionInicialX + 'px';
+      botonSeguidor.style.left = (posicionInicialX - 85) + 'px';
+      botonSolitario.style.top = posicionInicialY + 'px';
+      botonSeguidor.style.top = (posicionInicialY + 35) + 'px';
+    }
+  }, 17);
+}
