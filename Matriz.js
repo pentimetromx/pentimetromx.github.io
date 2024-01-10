@@ -7862,55 +7862,120 @@ function detenerMovimiento() {
 var botonSolitario = document.getElementById('buttSolitario');
 var botonSeguidor = document.getElementById('boton2');
 
-function moverEnDireccion(direccion) {
+
+function moverDerecha() {
+  botonSeguidor.style.top = botonSolitario.style.top
+  var posicionInicialX = 0
+  var posicionFinalX = window.innerWidth - botonSolitario.offsetWidth
+
+  var intervalo = setInterval(function() {
+    if (posicionInicialX >= posicionFinalX) {
+      clearInterval(intervalo)
+      moverAbajo()
+    } else {
+      // Movimiento hacia la derecha
+      posicionInicialX += 7
+      botonSolitario.style.left = posicionInicialX + 'px'
+      botonSeguidor.style.left = (posicionInicialX - 85) + 'px'
+
+    }
+  }, 17);  
+}
+function moverAbajo() {
+  botonSeguidor.style.left = botonSolitario.style.left
+  var posicionInicialY = 0;
+  var posicionFinalY =(window.innerHeight - 33) - botonSolitario.offsetHeight;
+
+  var intervalo = setInterval(function() {
+    if (posicionInicialY >= posicionFinalY) {
+      moverIzquierda()      
+      clearInterval(intervalo);
+    } else {
+      // Movimiento hacia abajo
+      posicionInicialY += 7;
+      botonSolitario.style.top = posicionInicialY + 'px';
+      botonSeguidor.style.top = (posicionInicialY - 35) + 'px';
+    }
+  }, 17);
+}
+function moverIzquierda() {
+  botonSeguidor.style.top = botonSolitario.style.top
+  var posicionInicialX = (window.innerWidth - 33) - botonSolitario.offsetWidth;
+  var posicionFinalX = 0
+
+  var intervalo = setInterval(function() {
+    if (posicionInicialX <= posicionFinalX) {
+      moverArriba()      
+      clearInterval(intervalo);
+    } else {
+      // Movimiento hacia la izquierda
+      posicionInicialX -= 7;
+      botonSolitario.style.left = posicionInicialX + 'px';
+      botonSeguidor.style.left = posicionInicialX + 95 + 'px'
+    }
+  }, 17);
+} 
+function moverArriba() {
   botonSeguidor.style.left = botonSolitario.style.left;
-
-  var posicionInicialX = 0;
-  var posicionFinalX = window.innerWidth - botonSolitario.offsetWidth;
-
   var posicionInicialY = (window.innerHeight - 33) - botonSolitario.offsetHeight;
   var posicionFinalY = 0;
 
-  var incrementoX = 0;
-  var incrementoY = 0;
-
-  switch (direccion) {
-    case 'derecha':
-      incrementoX = 7;
-      break;
-    case 'abajo':
-      incrementoY = 7;
-      break;
-    case 'izquierda':
-      incrementoX = -7;
-      break;
-    case 'arriba':
-      incrementoY = -7;
-      break;
-    default:
-      console.error('Dirección no válida');
-      return;
-  }
-
   var intervalo = setInterval(function() {
-    if (
-      (direccion === 'derecha' || direccion === 'izquierda') &&
-      posicionInicialX >= posicionFinalX
-    ) {
-      clearInterval(intervalo);
-    } else if (
-      (direccion === 'abajo' || direccion === 'arriba') &&
-      posicionInicialY <= posicionFinalY
-    ) {
+    if (posicionInicialY <= posicionFinalY) {
+      moverDerecha()      
       clearInterval(intervalo);
     } else {
-      posicionInicialX += incrementoX;
-      posicionInicialY += incrementoY;
-
-      botonSolitario.style.left = posicionInicialX + 'px';
-      botonSeguidor.style.left = (posicionInicialX - 85) + 'px';
+      // Movimiento hacia arriba
+      posicionInicialY -= 7;
       botonSolitario.style.top = posicionInicialY + 'px';
       botonSeguidor.style.top = (posicionInicialY + 35) + 'px';
     }
   }, 17);
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+const buttons = document.querySelectorAll('.button');
+
+function moverBoton(boton, index) {
+  const velocidad = 6;
+  let x = parseFloat(boton.style.left) || 0; // Obtener el valor inicial de 'left' como número
+  let y = 0;
+  let moviendoDerecha = true;
+
+  function mover() {
+    if (moviendoDerecha) {
+      if (x < window.innerWidth - boton.offsetWidth) {
+        x += velocidad;
+      } else {
+        x = window.innerWidth - boton.offsetWidth;
+        moviendoDerecha = false;
+      }
+    } else {
+      if (y < (window.innerHeight - 33) - boton.offsetHeight) {
+        y += velocidad;
+      } else {
+        y = (window.innerHeight - 33) - boton.offsetHeight;
+        x -= velocidad;
+        if (x <= 0) {
+          x = 0;
+          moviendoDerecha = true;
+        }
+      }
+    }
+
+    boton.style.left = x + 'px';
+    boton.style.top = y + 'px';
+
+    requestAnimationFrame(mover);
+  }
+
+  mover();
+}
+
+
+function iniciaMove() {
+  buttons.forEach((button, index) => {
+    moverBoton(button, index);
+  });
+}
+
