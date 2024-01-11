@@ -7937,10 +7937,9 @@ const buttons = document.querySelectorAll('.buttons')
 var contButtsAround = document.getElementById('button-container')
 contButtsAround.style.display = 'flex'
 
-
-
 function moverBoton(boton, index) {
-  const valoresLeft = ['-52px', '-104px', '-156px', '-208px', '-260px', '-312px', '-364px', '-416px','-468px','-520px','-572px','-624px','-676px','-728px','-780px'];
+  const valoresLeft = ['-52px', '-104px', '-156px', '-208px', '-260px', '-312px', '-364px', '-416px', '-468px', '-520px', '-572px', '-624px', '-676px', '-728px', '-780px', '-832px', '-884px', '-936px', '-988px', '-1040px', '-1092px', '-1144px', '-1196px', '-1248px', '-1300px', '-1352px', '-1404px', '-1456px', '-1508px', '-1560px', '-1612px', '-1664px', '-1716px', '-1768px', '-1820px', '-1872px', '-1924px', '-1976px', '-2028px', '-2080px', '-2132px', '-2184px', '-2236px', '-2288px', '-2340px', '-2392px', '-2444px', '-2496px', '-2548px', '-2600px', '-2652px', '-2704px', '-2756px', '-2808px', '-2860px', '-2912px', '-2964px', '-3016px', '-3068px', '-3120px', '-3172px', '-3224px', '-3276px', '-3328px', '-3380px', '-3432px', '-3484px', '-3536px', '-3588px']
+  
   var contButtsAround = document.getElementById('button-container')
   contButtsAround.style.display = 'flex'  
   boton.style.left = valoresLeft[index]
@@ -7955,6 +7954,7 @@ function moverBoton(boton, index) {
 
   function mover() {
     if (moviendoDerecha) {
+      boton.style.background = 'rgb(0,255,0)'
       if (x < window.innerWidth - boton.offsetWidth) {
         x += velocidad;
       } else {
@@ -7963,6 +7963,7 @@ function moverBoton(boton, index) {
         moviendoAbajo = true;
       }
     } else if (moviendoAbajo) {
+      boton.style.background = 'rgb(255,255,0)'
       if (y < (window.innerHeight) - boton.offsetHeight) {
         y += velocidad;
       } else {
@@ -7971,6 +7972,7 @@ function moverBoton(boton, index) {
         moviendoIzquierda = true;
       }
     } else if (moviendoIzquierda) {
+      boton.style.background = 'rgb(0,0,255)'
       if (x > 0) {
         x -= velocidad;
       } else {
@@ -7979,6 +7981,8 @@ function moverBoton(boton, index) {
         moviendoArriba = true;
       }
     } else if (moviendoArriba) {
+      boton.style.background = 'rgb(255,0,0)'
+
       if (y > 0) {
         y -= velocidad;
       } else {
