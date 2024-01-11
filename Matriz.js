@@ -7862,7 +7862,6 @@ function detenerMovimiento() {
 var botonSolitario = document.getElementById('buttSolitario');
 var botonSeguidor = document.getElementById('boton2');
 
-
 function moverDerecha() {
   botonSeguidor.style.top = botonSolitario.style.top
   var posicionInicialX = 0
@@ -7934,13 +7933,25 @@ function moverArriba() {
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-const buttons = document.querySelectorAll('.button');
+const buttons = document.querySelectorAll('.buttons')  
+var contButtsAround = document.getElementById('button-container')
+contButtsAround.style.display = 'flex'
+
+
 
 function moverBoton(boton, index) {
-  const velocidad = 6;
-  let x = parseFloat(boton.style.left) || 0; // Obtener el valor inicial de 'left' como número
+  const valoresLeft = ['-52px', '-104px', '-156px', '-208px', '-260px', '-312px', '-364px', '-416px','-468px','-520px','-572px','-624px','-676px','-728px','-780px'];
+  var contButtsAround = document.getElementById('button-container')
+  contButtsAround.style.display = 'flex'  
+  boton.style.left = valoresLeft[index]
+
+  const velocidad = 16;
+  let x = parseFloat(boton.style.left) || 0
   let y = 0;
   let moviendoDerecha = true;
+  let moviendoAbajo = false;
+  let moviendoIzquierda = false;
+  let moviendoArriba = false;
 
   function mover() {
     if (moviendoDerecha) {
@@ -7949,17 +7960,32 @@ function moverBoton(boton, index) {
       } else {
         x = window.innerWidth - boton.offsetWidth;
         moviendoDerecha = false;
+        moviendoAbajo = true;
       }
-    } else {
-      if (y < (window.innerHeight - 33) - boton.offsetHeight) {
+    } else if (moviendoAbajo) {
+      if (y < (window.innerHeight) - boton.offsetHeight) {
         y += velocidad;
       } else {
-        y = (window.innerHeight - 33) - boton.offsetHeight;
+        y = (window.innerHeight) - boton.offsetHeight;
+        moviendoAbajo = false;
+        moviendoIzquierda = true;
+      }
+    } else if (moviendoIzquierda) {
+      if (x > 0) {
         x -= velocidad;
-        if (x <= 0) {
-          x = 0;
-          moviendoDerecha = true;
-        }
+      } else {
+        x = 0;
+        moviendoIzquierda = false;
+        moviendoArriba = true;
+      }
+    } else if (moviendoArriba) {
+      if (y > 0) {
+        y -= velocidad;
+      } else {
+        y = 0;
+        moviendoArriba = false;
+        // Inicia el movimiento hacia la derecha para reiniciar el ciclo
+        moviendoDerecha = true;
       }
     }
 
@@ -7969,13 +7995,12 @@ function moverBoton(boton, index) {
     requestAnimationFrame(mover);
   }
 
+  // Inicia el movimiento hacia la derecha
   mover();
-}
-
+} 
 
 function iniciaMove() {
   buttons.forEach((button, index) => {
     moverBoton(button, index);
   });
 }
-
