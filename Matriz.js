@@ -7939,10 +7939,37 @@ contButtsAround.style.display = 'flex'
 
 function moverBoton(boton, index) {
   const valoresLeft = ['-52px', '-104px', '-156px', '-208px', '-260px', '-312px', '-364px', '-416px', '-468px', '-520px', '-572px', '-624px', '-676px', '-728px', '-780px', '-832px', '-884px', '-936px', '-988px', '-1040px', '-1092px', '-1144px', '-1196px', '-1248px', '-1300px', '-1352px', '-1404px', '-1456px', '-1508px', '-1560px', '-1612px', '-1664px', '-1716px', '-1768px', '-1820px', '-1872px', '-1924px', '-1976px', '-2028px', '-2080px', '-2132px', '-2184px', '-2236px', '-2288px', '-2340px', '-2392px', '-2444px', '-2496px', '-2548px', '-2600px', '-2652px', '-2704px', '-2756px', '-2808px', '-2860px', '-2912px', '-2964px', '-3016px', '-3068px', '-3120px', '-3172px', '-3224px', '-3276px', '-3328px', '-3380px', '-3432px', '-3484px', '-3536px', '-3588px']
-  
   var contButtsAround = document.getElementById('button-container')
+// Calcular la distancia total de los cuatro lados de la pantalla
+const screenWidth = window.innerWidth;
+const screenHeight = window.innerHeight;
+const totalDistance = screenWidth + screenHeight + screenWidth + screenHeight;
+
+// Obtener la cantidad de botones
+const cantidadBotones = valoresLeft.length;
+// Calcular el espacio entre botones (considerando 2px de separación)
+const espacioEntreBotones = 2;
+const espacioTotalEntreBotones = (cantidadBotones - 1) * espacioEntreBotones;
+// Calcular la distancia disponible para posicionar los botones
+const distanciaDisponible = totalDistance - espacioTotalEntreBotones;
+
+// Calcular la distancia entre cada botón
+const distanciaEntreBotones = distanciaDisponible / cantidadBotones;
+// Posicionar los botones en el lado izquierdo de la pantalla
+const nuevosValoresLeft = Array.from({ length: cantidadBotones }, (_, index) => `-${index * (distanciaEntreBotones + espacioEntreBotones)}px`);
+
+// Asignar las nuevas posiciones a los botones
+nuevosValoresLeft.forEach((valor, index) => {
+  const boton = document.getElementById(`button${index + 2}`);
+  if (boton) {
+    boton.style.left = valor;
+  }
+});
+
+
+
   contButtsAround.style.display = 'flex'  
-  boton.style.left = valoresLeft[index]
+  boton.style.left = nuevosValoresLeft[index]
 
   const velocidad = 16;
   let x = parseFloat(boton.style.left) || 0
@@ -7972,7 +7999,7 @@ function moverBoton(boton, index) {
         moviendoIzquierda = true;
       }
     } else if (moviendoIzquierda) {
-      boton.style.background = 'rgb(0,0,255)'
+      boton.style.background = 'rgb(255,0,255)'
       if (x > 0) {
         x -= velocidad;
       } else {
@@ -7981,7 +8008,7 @@ function moverBoton(boton, index) {
         moviendoArriba = true;
       }
     } else if (moviendoArriba) {
-      boton.style.background = 'rgb(255,0,0)'
+      boton.style.background = 'rgb(0,255,255)'
 
       if (y > 0) {
         y -= velocidad;
