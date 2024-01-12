@@ -2828,7 +2828,6 @@ elemento.visible {
   border-radius: 5px;
 }
 
-
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 @media screen and (max-width: 800px) {                                                                                             /* INICIA RESPONSIVE DESIGN */
   #cont-titulo-operacion,
@@ -2883,7 +2882,7 @@ elemento.visible {
     font-size: 16px; /* Ajusta el tamaño de fuente según sea necesario */
   }
   #conte-secundario{
-    /* position: absolute; */
+    position: absolute;
     display: flex;
     flex-direction:column;
     align-items: center;
