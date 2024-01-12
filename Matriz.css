@@ -2162,7 +2162,7 @@ header {
   align-items: center;
   gap: 11px; 
   width: 100%;
-  margin: 27px;
+  /* margin: 27px; */
 }
 .cont-user {
   position: relative;
@@ -2750,72 +2750,6 @@ elemento.visible {
 }
 
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-@media screen and (max-width: 720px) {                                                                                             /* INICIA RESPONSIVE DESIGN */
-  #cont-titulo-operacion,
-  #agrupaOblicuos-XVIII,
-  #agrupaOblicuos-XII,
-  #agrupaOblicuos-XI,
-  #cont-titulo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 70%; 
-    margin: 0;
-  }
-  #rotatek-1,
-  #pantalla-inicial{
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    top: 97px;
-    margin-left: auto;
-    margin-right: auto;
-    overflow-y: auto; /* Agrega una barra de desplazamiento vertical cuando sea necesario */
-
-  }
-  .sinusoidales{
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: column;
-    margin-top: 100px; 
-    overflow-y: auto; /* Agrega una barra de desplazamiento vertical cuando sea necesario */
-  }
-   #iconos{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 777px;
-    position: absolute;
-    top: 104px;
-    margin-left: auto;
-    margin-right: auto;
-    display: none;
-  }
-  #title-interfaz {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    top: -57px;
-    width: 100%;
-    text-align: center;
-    font-size: 16px; /* Ajusta el tamaño de fuente según sea necesario */
-  }
-  #conte-secundario{
-    position: absolute;
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-    gap: 11px; 
-    width: 100%;
-    margin: 27px;
-  }
-  
-}
-
-
-/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .contCicodelicos {                                  /* CUADRO DE BOTONES ILUMINADOS TRANSITAN EN PANTALLA */
   position: absolute;  /* Establece la posición del elemento como absoluta en relación con el primer elemento padre que tiene una posición diferente de estática. */
   left: -200px;  /* Define la posición inicial del elemento a -200px desde el borde izquierdo del contenedor principal. */
@@ -2893,5 +2827,72 @@ elemento.visible {
   margin: 2px;
   border-radius: 5px;
 }
+
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@media screen and (max-width: 800px) {                                                                                             /* INICIA RESPONSIVE DESIGN */
+  #cont-titulo-operacion,
+  #agrupaOblicuos-XVIII,
+  #agrupaOblicuos-XII,
+  #agrupaOblicuos-XI,
+  #cont-titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%; 
+    margin: 0;
+  }
+  #rotatek-1,
+  #pantalla-inicial{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    top: 97px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: auto; /* Agrega una barra de desplazamiento vertical cuando sea necesario */
+
+  }
+  .sinusoidales{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px; 
+    overflow-y: auto; /* Agrega una barra de desplazamiento vertical cuando sea necesario */
+  }
+   #iconos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 777px;
+    position: absolute;
+    top: 104px;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+  }
+  #title-interfaz {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: -57px;
+    width: 100%;
+    text-align: center;
+    font-size: 16px; /* Ajusta el tamaño de fuente según sea necesario */
+  }
+  #conte-secundario{
+    /* position: absolute; */
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    gap: 11px; 
+    width: 100%;
+    margin: 27px;
+  }
+  
+}
+
 
 
