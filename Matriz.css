@@ -2131,7 +2131,7 @@ header {
   display: none; /* Asegurarte de que display está presente si estás usando JavaScript para cambiarlo */
 }
 #title-interfaz{
-  position: relative;
+  position: absolute;
   display: flex;
   flex-direction: row;
   top: -57px;
@@ -2749,7 +2749,7 @@ elemento.visible {
 }
 
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-@media screen and (max-width: 599px) {                                                                                             /* INICIA RESPONSIVE DESIGN */
+@media screen and (max-width: 499px) {                                                                                             /* INICIA RESPONSIVE DESIGN */
   #cont-titulo-operacion,
   #agrupaOblicuos-XVIII,
   #agrupaOblicuos-XII,
@@ -2792,7 +2792,7 @@ elemento.visible {
     display: none;
   }
   #title-interfaz {
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
