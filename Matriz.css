@@ -2137,6 +2137,8 @@ header {
   top: -57px;
   width: 100%; /* Establecer el ancho al 100% */
   font-family: "GothamRounded", sans-serif;
+  text-align: center;
+  justify-content: center;
   color: rgb(255, 204, 0);
 }
 .cont-userI{
@@ -2147,8 +2149,6 @@ header {
   margin-top:21px;
   cursor: pointer;
 }
-
-
 .cont-userI label{
   position: relative;
   color: yellow;
@@ -2162,6 +2162,7 @@ header {
   align-items: center;
   gap: 11px; 
   width: 100%;
+  margin: 27px;
 }
 .cont-user {
   position: relative;
@@ -2808,6 +2809,7 @@ elemento.visible {
     align-items: center;
     gap: 11px; 
     width: 100%;
+    margin: 27px;
   }
   
 }
