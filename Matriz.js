@@ -7862,7 +7862,7 @@ function detenerMovimiento() {
 var botonSolitario = document.getElementById('buttSolitario');
 var botonSeguidor = document.getElementById('boton2');
 
-function moverDerecha() {
+/*function moverDerecha() {
   botonSeguidor.style.top = botonSolitario.style.top
   var posicionInicialX = 0
   var posicionFinalX = window.innerWidth - botonSolitario.offsetWidth
@@ -7930,102 +7930,154 @@ function moverArriba() {
       botonSeguidor.style.top = (posicionInicialY + 35) + 'px';
     }
   }, 17);
-}
+}*/
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const buttons = document.querySelectorAll('.buttons')  
 var contButtsAround = document.getElementById('button-container')
-contButtsAround.style.display = 'flex'
 
 function moverBoton(boton, index) {
   const valoresLeft = ['-52px', '-104px', '-156px', '-208px', '-260px', '-312px', '-364px', '-416px', '-468px', '-520px', '-572px', '-624px', '-676px', '-728px', '-780px', '-832px', '-884px', '-936px', '-988px', '-1040px', '-1092px', '-1144px', '-1196px', '-1248px', '-1300px', '-1352px', '-1404px', '-1456px', '-1508px', '-1560px', '-1612px', '-1664px', '-1716px', '-1768px', '-1820px', '-1872px', '-1924px', '-1976px', '-2028px', '-2080px', '-2132px', '-2184px', '-2236px', '-2288px', '-2340px', '-2392px', '-2444px', '-2496px', '-2548px', '-2600px', '-2652px', '-2704px', '-2756px', '-2808px', '-2860px', '-2912px', '-2964px', '-3016px', '-3068px', '-3120px', '-3172px', '-3224px', '-3276px', '-3328px', '-3380px', '-3432px', '-3484px', '-3536px', '-3588px']
-  var contButtsAround = document.getElementById('button-container')
-// Calcular la distancia total de los cuatro lados de la pantalla
-const screenWidth = window.innerWidth;
-const screenHeight = window.innerHeight;
-const totalDistance = screenWidth + screenHeight + screenWidth + screenHeight;
 
-// Obtener la cantidad de botones
-const cantidadBotones = valoresLeft.length;
-// Calcular el espacio entre botones (considerando 2px de separación)
-const espacioEntreBotones = 2;
-const espacioTotalEntreBotones = (cantidadBotones - 1) * espacioEntreBotones;
-// Calcular la distancia disponible para posicionar los botones
-const distanciaDisponible = totalDistance - espacioTotalEntreBotones;
-
-// Calcular la distancia entre cada botón
-const distanciaEntreBotones = distanciaDisponible / cantidadBotones;
-// Posicionar los botones en el lado izquierdo de la pantalla
-const nuevosValoresLeft = Array.from({ length: cantidadBotones }, (_, index) => `-${index * (distanciaEntreBotones + espacioEntreBotones)}px`);
-
-// Asignar las nuevas posiciones a los botones
-nuevosValoresLeft.forEach((valor, index) => {
-  const boton = document.getElementById(`button${index + 2}`);
+  // Calcular la distancia total de los cuatro lados de la pantalla
+  const screenWidth = window.innerWidth;
+  const screenHeight = window.innerHeight;
+  const totalDistance = screenWidth + screenHeight + screenWidth + screenHeight;
+  // Obtener la cantidad de botones
+  const cantidadBotones = valoresLeft.length;
+  // Calcular el espacio entre botones (considerando 2px de separación)
+  const espacioEntreBotones = 2;
+  const espacioTotalEntreBotones = (cantidadBotones - 1) * espacioEntreBotones;
+  // Calcular la distancia disponible para posicionar los botones
+  const distanciaDisponible = totalDistance - espacioTotalEntreBotones;
+  // Calcular la distancia entre cada botón
+  const distanciaEntreBotones = distanciaDisponible / cantidadBotones;
+  // Posicionar los botones en el lado izquierdo de la pantalla
+  const nuevosValoresLeft = Array.from({ length: cantidadBotones }, (_, index) => `-${index * (distanciaEntreBotones + espacioEntreBotones)}px`);
+  // Asignar las nuevas posiciones a los botones
+  nuevosValoresLeft.forEach((valor, index) => {
+  const boton = document.getElementById(`buttons${index + 2}`)
   if (boton) {
-    boton.style.left = valor;
-  }
-});
-
-
-
-  contButtsAround.style.display = 'flex'  
+    boton.style.left = valor
+  } 
+ });
   boton.style.left = nuevosValoresLeft[index]
-
-  const velocidad = 16;
+  const velocidad = 26
   let x = parseFloat(boton.style.left) || 0
-  let y = 0;
-  let moviendoDerecha = true;
-  let moviendoAbajo = false;
-  let moviendoIzquierda = false;
-  let moviendoArriba = false;
+  let y = 0
+  let moviendoDerecha = true
+  let moviendoAbajo = false
+  let moviendoIzquierda = false
+  let moviendoArriba = false
+  let contador = 0
+  let nuevoContador = 0
 
   function mover() {
+    contador++;  // Incrementa el primer contador cuando moviendoDerecha es true
+    contButtsAround.style.display = 'flex'
+    /////////////////////////////////////////////////////////////////////////////////////////////
+    if (contador ===20) {
+      contador = 0;  // Reinicia el primer contador cuando llega a 80 unidades
+      nuevoContador++;  // Incrementa el nuevo contador cada vez que contador llega a 80 unidades
+      console.log("Nuevo Contador:", nuevoContador)          
+    }    
+    //////////////////////////////////////////////////////////////////////////////////////////////
     if (moviendoDerecha) {
-      boton.style.background = 'rgb(0,255,0)'
       if (x < window.innerWidth - boton.offsetWidth) {
-        x += velocidad;
+        x += velocidad
+        boton.style.background = 'rgb(0,255,0)'
+        const colores = {
+          1: 'rgb(255, 0, 0)',
+          2: 'rgb(255, 255, 0)',
+          3: 'rgb(0, 0, 255)',
+          4: 'rgb(255, 145, 0)',
+          5: 'rgb(125, 125, 125)',
+          6: 'rgb(233, 2, 25)',
+          7: 'rgb(222, 53, 230)'
+        };        
+        if (nuevoContador >= 1 && nuevoContador <= 7) {
+          boton.style.background = colores[nuevoContador];
+        }
       } else {
-        x = window.innerWidth - boton.offsetWidth;
-        moviendoDerecha = false;
-        moviendoAbajo = true;
+        x = window.innerWidth - boton.offsetWidth
+        moviendoDerecha = false
+        moviendoAbajo = true        
       }
-    } else if (moviendoAbajo) {
-      boton.style.background = 'rgb(255,255,0)'
+    }  
+    else if (moviendoAbajo) {
       if (y < (window.innerHeight) - boton.offsetHeight) {
         y += velocidad;
+        boton.style.background = 'rgb(255,255,0)'
+        const colores = {
+
+          3: 'rgb(0, 255, 0)',
+          4: 'rgb(0, 255, 255)',
+          5: 'rgb(222, 53, 230)',
+          6: 'rgb(100, 255, 100)',
+          7: 'rgb(255, 255, 0)',
+          8: 'rgb(77, 0, 255)',
+          9: 'rgb(255, 145, 0)'
+        };
+        
+        if (nuevoContador >= 3 && nuevoContador <= 9) {
+          boton.style.background = colores[nuevoContador];
+        }
       } else {
-        y = (window.innerHeight) - boton.offsetHeight;
+        y = (window.innerHeight) - boton.offsetHeight
         moviendoAbajo = false;
-        moviendoIzquierda = true;
+        moviendoIzquierda = true
       }
     } else if (moviendoIzquierda) {
-      boton.style.background = 'rgb(255,0,255)'
       if (x > 0) {
-        x -= velocidad;
+        x -= velocidad
+        boton.style.background = 'rgb(255,0,255)'
+        const colores = {
+          4: 'rgb(255, 0, 0)',
+          5: 'rgb(255, 255, 0)',
+          6: 'rgb(0, 0, 255)',
+          7: 'rgb(255, 145, 0)',
+          8: 'rgb(125, 125, 125)',
+          9: 'rgb(233, 2, 25)',
+          10: 'rgb(222, 53, 230)'
+        }        
+        if (nuevoContador >= 4 && nuevoContador <= 11) {
+          boton.style.background = colores[nuevoContador];
+        }
       } else {
-        x = 0;
-        moviendoIzquierda = false;
-        moviendoArriba = true;
+        x = 0
+        moviendoIzquierda = false
+        moviendoArriba = true
       }
     } else if (moviendoArriba) {
-      boton.style.background = 'rgb(0,255,255)'
-
       if (y > 0) {
-        y -= velocidad;
-      } else {
-        y = 0;
-        moviendoArriba = false;
-        // Inicia el movimiento hacia la derecha para reiniciar el ciclo
-        moviendoDerecha = true;
+        y -= velocidad
+        boton.style.background = 'rgb(0,255,255)'
+        const colores = {
+        7: 'rgb(0, 255, 0)',
+        8: 'rgb(0, 255, 255)',
+        9: 'rgb(222, 53, 230)',
+        10: 'rgb(100, 255, 100)',
+        11: 'rgb(255, 255, 0)',
+        12: 'rgb(77, 0, 255)',
+        13: 'rgb(255, 145, 0)'
+      };      
+      if (nuevoContador >= 7 && nuevoContador <= 13) {
+        boton.style.background = colores[nuevoContador];
       }
+      if(nuevoContador >= 9){
+        nuevoContador = 0
+      }
+
+      } else {
+      y = 0
+      moviendoArriba = false
+      // Inicia el movimiento hacia la derecha para reiniciar el ciclo
+      moviendoDerecha = true
+  }
     }
-
-    boton.style.left = x + 'px';
-    boton.style.top = y + 'px';
-
+    boton.style.left = x + 'px'
+    boton.style.top = y + 'px'
     requestAnimationFrame(mover);
   }
-
   // Inicia el movimiento hacia la derecha
   mover();
 } 
