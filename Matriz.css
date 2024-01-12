@@ -2791,11 +2791,15 @@ elemento.visible {
     margin-right: auto;
     display: none;
   }
-  #title-interfaz{
+  #title-interfaz {
     position: relative;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     top: -57px;
     width: 100%;
+    text-align: center;
+    font-size: 16px; /* Ajusta el tamaño de fuente según sea necesario */
   }
   #conte-secundario{
     position: absolute;
