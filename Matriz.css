@@ -2898,7 +2898,7 @@ elemento.visible {
 
 
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-@media screen and (max-width: 720px) {                                                                                             /* INICIA RESPONSIVE DESIGN */
+@media screen and (max-width: 490px) {                                                                                             /* INICIA RESPONSIVE DESIGN */
   #cont-titulo-operacion,
   #agrupaOblicuos-XII{
     display: flex;
@@ -2927,7 +2927,7 @@ elemento.visible {
     align-items: center;
   }
   #agrupaOblicuos-XVIII{
-    position: absolute;
+    position:absolute;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -2936,7 +2936,7 @@ elemento.visible {
   #subtitulo-operacion{
     position: relative;
     text-align: center;
-    font-size: 40px;
+    font-size: 30px;
     top: 33%;
   }
   #descripcion-II{
@@ -2950,9 +2950,7 @@ elemento.visible {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-  }
-  
-  
+  }  
   .sinusoidales{
     margin-left: auto;
     margin-right: auto;
