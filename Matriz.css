@@ -136,6 +136,11 @@ transform: scale(1.1);
   height: 77px;
   background-color: #333333;
 }
+#img-Titulos{
+  position: absolute;
+  left: 384px;
+  top: 3px; 
+}
 
 #butt-Institucional{
   display: flex;
@@ -2862,7 +2867,7 @@ elemento.visible {
 }
 
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-@media screen and (max-width: 720px) {                                                                                             /* INICIA RESPONSIVE DESIGN */
+@media screen and (max-width: 400px) {                                                                                             /* INICIA RESPONSIVE DESIGN */
   #cont-titulo-operacion,
   #agrupaOblicuos-XVIII,
   #agrupaOblicuos-XII{
@@ -2976,7 +2981,8 @@ elemento.visible {
   }  
   #subtitulo-I{
     position: absolute;
-    font-size: 41px;
+    font-size: 30px;
+    text-align: center;
     top: 30%;
   }
   #descripcion-I{
@@ -3001,6 +3007,14 @@ elemento.visible {
     justify-content: center;
     align-items: center;
   }
+  #img-Titulos{
+    position: absolute;
+    left: 230px;
+    top: 3px; 
+    right: 0;
+    width: calc(100% - 230px);    
+  }
+  
   
   
 }
