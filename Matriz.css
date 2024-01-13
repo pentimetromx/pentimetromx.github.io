@@ -115,6 +115,14 @@ transform: scale(1.1);
   position: absolute;
   left: 27px;
 }
+#subtitulo-I{
+  position: relative;
+  margin-top: -127px;
+  font-family: 'Candara', sans-serif;
+  font-size: 51px;
+  font-weight: bold; color: white;
+  margin-bottom: 10px;
+}
 #container1{
   position: relative;
   left: 50%;
@@ -2847,7 +2855,7 @@ elemento.visible {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    top: 45%;
+    top: 90%;
     transform: translateY(-50%);    
     overflow: auto;
   }
@@ -2924,7 +2932,7 @@ elemento.visible {
   #franja-Blanca {
     display: flex;
     width: 100%;
-    height: 15%;
+    height: 13%;
     background-color: white;
     position: absolute;
     top: 13%;
@@ -2941,13 +2949,14 @@ elemento.visible {
     width: 100%;
     height: 70%;
   }  
-  #subtitulo{
+  #subtitulo-I{
     position: absolute;
-    top: 45%;
+    font-size: 41px;
+    top: 30%;
   }
   #descripcion-I{
     position: absolute;
-    top: 45%;
+    top: 15%;
   }
 }
 
