@@ -2913,15 +2913,12 @@ elemento.visible {
     height: 5%;
     background-color: #333333;
   }
-
   /* Apply styles for the second container (gray section with logo) */
-  #franja-gris {
+   #seccion-gris {
     position: absolute;
     display: flex;
     width: 100%;
-    height: 27px;
     background-color: #333333;
-    top: 5%;
   }
   /* Apply styles for the third container (white section with logo) */
   #franja-Blanca {
@@ -2933,7 +2930,6 @@ elemento.visible {
     top: 22%;
     left: 0;
   }
-
   #seccion-blamca {
     width: 100%;
   }
