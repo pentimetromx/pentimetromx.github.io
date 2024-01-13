@@ -2832,17 +2832,26 @@ elemento.visible {
 @media screen and (max-width: 800px) {                                                                                             /* INICIA RESPONSIVE DESIGN */
   #cont-titulo-operacion,
   #agrupaOblicuos-XVIII,
-  #agrupaOblicuos-XII,
-  #agrupaOblicuos-XI,
-  #cont-titulo{
+  #agrupaOblicuos-XII{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 70%; 
+    width: 100%;
+    height: 100%; 
     margin: 0;
-    overflow: auto; /* Puedes ajustar según sea necesario */
+    overflow: auto;
   }
-  #rotatek-1,
+  #agrupaOblicuos-XI{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    top: 45%;
+    transform: translateY(-50%);    
+    overflow: auto;
+  }
+  /* #rotatek-1,
   #pantalla-inicial{
     position: relative;
     display: flex;
@@ -2850,9 +2859,8 @@ elemento.visible {
     top: 97px;
     margin-left: auto;
     margin-right: auto;
-    overflow: auto; /* Agrega una barra de desplazamiento vertical cuando sea necesario */
-
-  }
+    overflow: auto;
+  } */
   .sinusoidales{
     margin-left: auto;
     margin-right: auto;
@@ -2892,9 +2900,59 @@ elemento.visible {
     gap: 11px; 
     width: 100%;
     margin: 27px;
-    overflow: auto; /* Puedes ajustar según sea necesario */
+    /* overflow: auto; */
   }
-  
+  /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+    /* Apply styles for the first container (header with search bar) */
+  .buscador {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 5%;
+    background-color: #333333;
+  }
+
+  /* Apply styles for the second container (gray section with logo) */
+  #franja-gris {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 27px;
+    background-color: #333333;
+    top: 5%;
+  }
+  /* Apply styles for the third container (white section with logo) */
+  #franja-Blanca {
+    display: flex;
+    width: 100%;
+    height: 15%;
+    background-color: white;
+    position: absolute;
+    top: 22%;
+    left: 0;
+  }
+
+  #seccion-blamca {
+    width: 100%;
+  }
+  /* Apply styles for the fourth container (main content) */
+  #cont-titulo {
+    position: absolute;
+    top: 35%;
+    left: 0;
+    width: 100%;
+    height: 70%;
+  }  
+  #subtitulo{
+    position: absolute;
+    top: 45%;
+  }
+  #descripcion-I{
+    position: absolute;
+    top: 45%;
+  }
 }
 
 
