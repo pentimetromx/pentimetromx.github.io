@@ -2867,7 +2867,7 @@ elemento.visible {
 }
 
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-@media screen and (max-width: 400px) {                                                                                             /* INICIA RESPONSIVE DESIGN */
+@media screen and (max-width: 720px) {                                                                                             /* INICIA RESPONSIVE DESIGN */
   #cont-titulo-operacion,
   #agrupaOblicuos-XVIII,
   #agrupaOblicuos-XII{
