@@ -2384,7 +2384,7 @@ function abrirSeccionOperativa(elementId){
     }    
   });
   contOperativa.style.display = 'flex'
-  container1.style.display = 'flex'
+  /* container1.style.display = 'flex' */
   // Retrasar la llamada a cambiarColoresConRetraso después de 100 msg
   setTimeout(function () {
     cambiarColoresConRetrasoI();
