@@ -2973,9 +2973,9 @@ elemento.visible {
 }
 
 
-
+                                                                            /* OPERACION */
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-@media screen and (max-width: 490px) {                                                                                             /* INICIA RESPONSIVE DESIGN */
+@media screen and (max-width: 490px) {                                                                                             
   #cont-titulo-operacion{
     position: absolute;
     top: 7%;
@@ -2993,7 +2993,7 @@ elemento.visible {
     position: absolute;
     text-align: center;
     font-size: 27px;
-    top: 8.7%;
+    top: 7%;
   }
   #descripcion-II{
     position: absolute; 
@@ -3026,6 +3026,7 @@ elemento.visible {
     top: 27%;
     left:60%;    
   } 
+                                                                              /* CALIDAD */
   /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
   #cont-titulo-calidad{
     position: absolute;
@@ -3044,7 +3045,7 @@ elemento.visible {
     position: absolute;
     text-align: center;
     font-size: 27px;
-    top: -5%;      
+    top: -4%;      
   }
   #descripcion-III{
     position: absolute; 
@@ -3082,6 +3083,7 @@ elemento.visible {
     top: 60%;
     left:60%;
   }
+                                                                              /* COMERCIAL */
   /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
   #cont-titulo-comercial{
     position: absolute;
@@ -3100,7 +3102,7 @@ elemento.visible {
     position: absolute;
     text-align: center;
     font-size: 27px;
-    top: -5%;      
+    top: -4%;      
   }
   #descripcion-IV{
     position: absolute; 
@@ -3139,6 +3141,7 @@ elemento.visible {
     top: 77%;
     left:60%;
   }
+                                                                              /* ADMIN */
   /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
   #cont-titulo-admin{
     position: absolute;
