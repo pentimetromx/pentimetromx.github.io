@@ -2931,6 +2931,18 @@ elemento.visible {
   text-align: center; 
   margin-top: 10px;
 }
+#butt-comercial{
+  display: flex;
+  position: relative;
+  left: 300px;
+  top: 37px; 
+  height: 19px;
+  width: 147px;
+  background: linear-gradient(45deg,#ff1837 15%, #333333 85%);
+  opacity: 50%; 
+  border-radius: 9px; 
+  box-shadow: none;
+}
 
 
 
@@ -3032,7 +3044,6 @@ elemento.visible {
     flex-direction: column;
     top: 60%;
     left:60%;
-
   }
   /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
   #cont-titulo-comercial{
@@ -3061,6 +3072,38 @@ elemento.visible {
     top: 8%;
     margin: 0 10%; /* Margen del 10% a cada lado */    
   }
+  #butt-comercial{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 13%;
+  } 
+  #agrupaOblicuos-XIX{
+    position:absolute;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    top: 27%;
+    left: 2%;
+
+  }
+  #agrupaOblicuos-XIV{
+    position:absolute;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    top: 27%;
+    left:60%;    
+  }
+  #agrupaOblicuos-XV{
+    position: absolute;
+    display: block;
+    flex-direction: column;
+    top: 77%;
+    left:60%;
+  }
+
+
 
   
   
