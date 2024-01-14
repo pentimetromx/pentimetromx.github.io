@@ -2906,15 +2906,37 @@ elemento.visible {
     position: absolute;
     text-align: center;
     font-size: 27px;
-    top: 25%;
+    top: 1%;
+  }
+  #descripcion-II{
+    position: absolute; 
+    text-align: center;
+    font-size: 18px;
+    top: -1%;
+    margin: 0 10%; /* Margen del 10% a cada lado */    
+  }
+  #butt-operacion{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 11%;
+  } 
+
+  #agrupaOblicuos-XVIII{
+    position:absolute;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    display: flex;
+    top: 17%;
+    left: 60%;
   }
   #agrupaOblicuos-XII{
     position: absolute;
     display: flex;
-    align-items: center;
-    flex-wrap: wrap; 
-    overflow: auto;
-    top: 53%;
+    flex-direction: column;
+    width: 100%;
+    top: 18%;
   } 
 
   #agrupaOblicuos-XI{
@@ -2927,26 +2949,8 @@ elemento.visible {
     transform: translateY(-50%);    
     overflow: auto;
   }
-  #agrupaOblicuos-XVIII{
-    position:absolute;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
-    display: flex;
-    top: -8%;
-  }
-  #descripcion-II{
-    position: absolute; 
-    text-align: center;
-    font-size: 18px;
-    top: 27%;
-    margin: 0 10%; /* Margen del 10% a cada lado */    
-  }
-  #butt-operacion{
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-  } 
+
+
 
 /*   #descripcion-II{
     position: absolute;
