@@ -2864,13 +2864,18 @@ elemento.visible {
   border-radius: 5px;
 }
 #subtitulo-operacion{
-  position: relative;
+/*   position: relative;
   margin-top: -45px;
   font-family: 'Candara', sans-serif; 
   font-size: 51px; 
   font-weight: bold; 
   color: white; 
-  margin-bottom: 10px;
+  margin-bottom: 10px; */
+  font-family: 'Candara', sans-serif; 
+  font-size: 51px; 
+  font-weight: bold; 
+  color: white; 
+  margin-bottom: 10px;  
 }
 #descripcion-II{
   font-family: 'Candara', sans-serif; 
@@ -2993,7 +2998,8 @@ elemento.visible {
     position: absolute;
     text-align: center;
     font-size: 27px;
-    top: 7%;
+    /* top: 5%; */
+    top: -4%;
   }
   #descripcion-II{
     position: absolute; 
@@ -3077,11 +3083,12 @@ elemento.visible {
     left:60%;    
   }
   #agrupaOblicuos-XVII{
-    position: absolute;
+/*     position: absolute;
     display: block;
     flex-direction: column;
     top: 60%;
-    left:60%;
+    left:60%; */
+    display: none;
   }
                                                                               /* COMERCIAL */
   /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -3135,11 +3142,12 @@ elemento.visible {
     left:60%;    
   }
   #agrupaOblicuos-XV{
-    position: absolute;
+/*     position: absolute;
     display: block;
     flex-direction: column;
     top: 77%;
-    left:60%;
+    left:60%; */
+    display: none;
   }
                                                                               /* ADMIN */
   /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
