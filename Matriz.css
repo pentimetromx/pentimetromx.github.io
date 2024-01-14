@@ -2949,13 +2949,19 @@ elemento.visible {
   box-shadow: none;
 }
 #subtitulo-admin{
-  position: relative;
+/*   position: relative;
   margin-top: 12px;
   font-family: 'Candara', sans-serif; 
   font-size: 51px; 
   font-weight: bold; 
   color: white; 
+  margin-bottom: 10px; */
+  font-family: 'Candara', sans-serif; 
+  font-size: 51px; 
+  font-weight: bold; 
+  color: white; 
   margin-bottom: 10px;
+
 }
 #descripcion-V{
   font-family: 'Candara', sans-serif; 
@@ -2987,18 +2993,17 @@ elemento.visible {
   }
   #container01{
     position: absolute;
-    top: 6%;
     display: flex;
     justify-content: center;
     align-items: center;
     left: 50%;
+    top: 6%;
     transform: translate(-50%);  
   } 
   #subtitulo-operacion{
     position: absolute;
     text-align: center;
     font-size: 27px;
-    /* top: 5%; */
     top: -4%;
   }
   #descripcion-II{
@@ -3083,13 +3088,15 @@ elemento.visible {
     left:60%;    
   }
   #agrupaOblicuos-XVII{
-/*     position: absolute;
+/*     position:absolute;
     display: block;
     flex-direction: column;
-    top: 60%;
-    left:60%; */
-    display: none;
+    align-items: center;
+    top: 27%;
+    left:60%;  */  
+    display: none; 
   }
+
                                                                               /* COMERCIAL */
   /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
   #cont-titulo-comercial{
@@ -3142,13 +3149,15 @@ elemento.visible {
     left:60%;    
   }
   #agrupaOblicuos-XV{
-/*     position: absolute;
+/*     position:absolute;
     display: block;
     flex-direction: column;
-    top: 77%;
-    left:60%; */
-    display: none;
+    align-items: center;
+    top: 27%;
+    left:60%; */  
+    display: none;  
   }
+
                                                                               /* ADMIN */
   /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
   #cont-titulo-admin{
@@ -3168,7 +3177,7 @@ elemento.visible {
     position: absolute;
     text-align: center;
     font-size: 27px;
-    top: 8.7%;
+    top: -4%;      
   }
   #descripcion-V{
     position: absolute; 
@@ -3183,11 +3192,33 @@ elemento.visible {
     transform: translateX(-50%);
     margin-top: 13%;
   } 
-
-
-
-  
-  
+  #agrupaOblicuos-XXI{
+    position:absolute;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    top: 27%;
+    left: 2%;
+  }
+  #agrupaOblicuos-XXIV{
+    position:absolute;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    top: 27%;
+    left:60%;    
+  }
+  #agrupaOblicuos-XIII{
+/*     position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    top: 73%;
+    transform: translateY(-50%);    
+    overflow: auto; */
+    display: none;
+  }  
 
   #agrupaOblicuos-XI{
     position: absolute;
