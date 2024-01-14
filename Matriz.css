@@ -2952,24 +2952,33 @@ elemento.visible {
     position: absolute;
     top: 7%;
   }
+  #container01{
+    position: absolute;
+    top: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    transform: translate(-50%);  
+  } 
   #subtitulo-operacion{
     position: absolute;
     text-align: center;
     font-size: 27px;
-    top: 1%;
+    top: 8.7%;
   }
   #descripcion-II{
     position: absolute; 
     text-align: center;
     font-size: 18px;
-    top: 5%;
+    top: 8%;
     margin: 0 10%; /* Margen del 10% a cada lado */    
   }
   #butt-operacion{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 17%;
+    margin-top: 13%;
   } 
   #agrupaOblicuos-XVIII{
     position:absolute;
@@ -2977,7 +2986,7 @@ elemento.visible {
     align-items: center;
     flex-wrap: wrap;
     display: flex;
-    top: 22%;
+    top: 27%;
     left: 2%;
   }
   #agrupaOblicuos-XII{
@@ -2986,7 +2995,7 @@ elemento.visible {
     align-items: center;
     flex-wrap: wrap;
     display: flex;
-    top: 22%;
+    top: 27%;
     left:60%;    
   } 
   /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -3102,7 +3111,7 @@ elemento.visible {
     top: 77%;
     left:60%;
   }
-
+  /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 
   
