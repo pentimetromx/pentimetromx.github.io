@@ -1514,7 +1514,6 @@ width:447px ;
   cursor: pointer;
   z-index: 0;
   margin-top:6px;
-
 }
 #butt-800,
 #butt-600,
@@ -2899,16 +2898,25 @@ elemento.visible {
 
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 @media screen and (max-width: 490px) {                                                                                             /* INICIA RESPONSIVE DESIGN */
-  #cont-titulo-operacion,
-  #agrupaOblicuos-XII{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 100%; 
-    margin: 0;
-    overflow: auto;
+  #cont-titulo-operacion{
+    position: absolute;
+    top: 7%;
   }
+  #subtitulo-operacion{
+    position: absolute;
+    text-align: center;
+    font-size: 27px;
+    top: 25%;
+  }
+  #agrupaOblicuos-XII{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; 
+    overflow: auto;
+    top: 53%;
+  } 
+
   #agrupaOblicuos-XI{
     position: absolute;
     display: flex;
@@ -2919,38 +2927,45 @@ elemento.visible {
     transform: translateY(-50%);    
     overflow: auto;
   }
-  #agrupaOblicuos-XII{
-    position: relative;
-    display: flex;
-    top: 30%;
-    flex-direction: row;
-    align-items: center;
-  }
   #agrupaOblicuos-XVIII{
     position:absolute;
-    display: flex;
     flex-direction: row;
     align-items: center;
-    top: 10%;
-  }
-  #subtitulo-operacion{
-    position: relative;
-    text-align: center;
-    font-size: 30px;
-    top: 33%;
+    flex-wrap: wrap;
+    display: flex;
+    top: -8%;
   }
   #descripcion-II{
-    position: absolute;
-    /* white-space: nowrap; */
-    left: 11px;
-    top: 39%;
-    width: 95%;
+    position: absolute; 
+    text-align: center;
+    font-size: 18px;
+    top: 27%;
+    margin: 0 10%; /* Margen del 10% a cada lado */    
   }
   #butt-operacion{
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-  }  
+  } 
+
+/*   #descripcion-II{
+    position: absolute;
+    left: 11px;
+    top: 39%;
+    width: 95%;
+  }
+ */
+
+
+  .oblicuosInicio {
+    flex: 1;
+    margin: 10px;
+    text-align: center;
+  }
+  /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+  
+  /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
   .sinusoidales{
     margin-left: auto;
     margin-right: auto;
