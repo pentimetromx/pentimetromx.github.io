@@ -2929,14 +2929,17 @@ elemento.visible {
     flex-wrap: wrap;
     display: flex;
     top: 22%;
-    left: 60%;
+    left: 2%;
   }
   #agrupaOblicuos-XII{
-    position: absolute;
-    display: flex;
+    position:absolute;
     flex-direction: column;
-    width: 100%;
-    top: 23%;
+    align-items: center;
+    flex-wrap: wrap;
+    display: flex;
+    top: 22%;
+    left:60%;
+    
   } 
 
   #agrupaOblicuos-XI{
