@@ -2917,6 +2917,20 @@ elemento.visible {
   border-radius: 9px; 
   box-shadow: none;
 }
+#subtitulo-comercial{
+  font-family: 'Candara', sans-serif; 
+  font-size: 51px; 
+  font-weight: bold; 
+  color: white; 
+  margin-bottom: 10px;
+}
+#descripcion-IV{
+  font-family: 'Candara', sans-serif; 
+  font-size: 20px; 
+  color: white; 
+  text-align: center; 
+  margin-top: 10px;
+}
 
 
 
@@ -2994,14 +3008,14 @@ elemento.visible {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 10%;
+    margin-top: 13%;
   } 
   #agrupaOblicuos-XX{
     position:absolute;
     display: block;
     flex-direction: column;
     align-items: center;
-    top: 22%;
+    top: 27%;
     left: 2%;
   }
   #agrupaOblicuos-XVI{
@@ -3009,18 +3023,44 @@ elemento.visible {
     display: block;
     flex-direction: column;
     align-items: center;
-    top: 22%;
+    top: 27%;
     left:60%;    
   }
   #agrupaOblicuos-XVII{
     position: absolute;
     display: block;
     flex-direction: column;
-    top: 67%;
+    top: 60%;
     left:60%;
 
   }
-  
+  /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+  #cont-titulo-comercial{
+    position: absolute;
+    top: 7%;
+  }
+  #container01{
+    position: absolute;
+    top: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    transform: translate(-50%);  
+  } 
+  #subtitulo-comercial{
+    position: absolute;
+    text-align: center;
+    font-size: 27px;
+    top: -5%;      
+  }
+  #descripcion-IV{
+    position: absolute; 
+    text-align: center;
+    font-size: 18px;
+    top: 8%;
+    margin: 0 10%; /* Margen del 10% a cada lado */    
+  }
 
   
   
@@ -3051,9 +3091,6 @@ elemento.visible {
     margin: 10px;
     text-align: center;
   }
-  /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-  
-  /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
   .sinusoidales{
     margin-left: auto;
@@ -3096,7 +3133,6 @@ elemento.visible {
     margin: 27px;
     /* overflow: auto; */
   }
-  /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
     /* Apply styles for the first container (header with search bar) */
   .buscador {
