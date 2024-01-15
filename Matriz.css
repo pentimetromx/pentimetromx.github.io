@@ -1228,6 +1228,25 @@ width:447px ;
   margin-left: auto; /* Establece el margen izquierdo automático */
   margin-right: auto; /* Establece el margen derecho automático */
 }
+#agrupaOblicuos-XV{
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  top: 53px;
+  gap: 7px;
+  margin-left: auto; /* Establece el margen izquierdo automático */
+  margin-right: auto; /* Establece el margen derecho automático */
+}
+#agrupaOblicuos-XVII{
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  top: 53px;
+  gap: 7px;
+  margin-left: auto; /* Establece el margen izquierdo automático */
+  margin-right: auto; /* Establece el margen derecho automático */
+}
+
 #agrupaOblicuos-XIV{
   position: relative;
   display: flex;
@@ -1237,29 +1256,11 @@ width:447px ;
   margin-left: auto; /* Establece el margen izquierdo automático */
   margin-right: auto; /* Establece el margen derecho automático */
 }
-#agrupaOblicuos-XV{
-  position: relative;
-  display: flex;
-  flex-direction: row-reverse;
-  /* top: 107px; */
-  gap: 7px;
-  margin-left: auto; /* Establece el margen izquierdo automático */
-  margin-right: auto; /* Establece el margen derecho automático */
-}
 #agrupaOblicuos-XVI{
   position: relative;
   display: flex;
   flex-direction: row-reverse;
   top: 24px;
-  gap: 7px;
-  margin-left: auto; /* Establece el margen izquierdo automático */
-  margin-right: auto; /* Establece el margen derecho automático */
-}
-#agrupaOblicuos-XVII{
-  position: relative;
-  display: flex;
-  flex-direction: row-reverse;
-  /* top: 107px; */
   gap: 7px;
   margin-left: auto; /* Establece el margen izquierdo automático */
   margin-right: auto; /* Establece el margen derecho automático */
@@ -2279,20 +2280,12 @@ elemento.visible {
   align-items: center;
   height: 100vh;
 }
-#cont-titulo-operacion{
-  width:100%; /* Establece el ancho que desees para tu contenedor. Puede ser un valor fijo o relativo. */
-  margin: 0 auto; /* Esto centra el contenedor horizontalmente. */
-  position: relative;
-  display: flex;
-  margin-top: 37px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+#cont-titulo-calidad,
+#cont-titulo-comercial,
+#cont-titulo-operacion,
 #cont-titulo-admin{
-  width:100%; /* Establece el ancho que desees para tu contenedor. Puede ser un valor fijo o relativo. */
-  margin: 0 auto; /* Esto centra el contenedor horizontalmente. */
+  width:100%;
+  margin: 0 auto;
   position: relative;
   display: flex;
   margin-top: 37px;
@@ -2301,29 +2294,6 @@ elemento.visible {
   align-items: center;
   height: 100vh;
 }
-#cont-titulo-comercial{
-  width:100%; /* Establece el ancho que desees para tu contenedor. Puede ser un valor fijo o relativo. */
-  margin: 0 auto; /* Esto centra el contenedor horizontalmente. */
-  position: relative;
-  display: flex;
-  margin-top: 37px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-#cont-titulo-calidad{
-  width:100%; /* Establece el ancho que desees para tu contenedor. Puede ser un valor fijo o relativo. */
-  margin: 0 auto; /* Esto centra el contenedor horizontalmente. */
-  position: relative;
-  display: flex;
-  margin-top: 37px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-/*////////////////////////////////////////////////////////////////////////////////*/
 .boton-inclinado {
   width: 167px;
   height: 77px;
@@ -3063,9 +3033,6 @@ elemento.visible {
     display: none; 
   }
   /*///////////////////////////////////////////////////////////////////// FINAL ////////////////////////////////////////////////////////////////////////////// */
-  #pantalla-inicial{
-    width: 50%;
-  }
   .sinusoidales{
     margin-left: auto;
     margin-right: auto;
