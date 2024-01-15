@@ -3037,47 +3037,49 @@ elemento.visible {
   }
   #container01{
     position: absolute;
-    top: 6%;
     display: flex;
     justify-content: center;
     align-items: center;
     left: 50%;
+    top: 6%;
     transform: translate(-50%);  
   } 
   #subtitulo-calidad{
     position: absolute;
     text-align: center;
     font-size: 27px;
-    top: -4%;      
+    margin-top: 18%;
   }
   #descripcion-III{
     position: absolute; 
     text-align: center;
     font-size: 18px;
-    top: 8%;
-    margin: 0 10%; /* Margen del 10% a cada lado */    
+    margin-top: 47%;
+    /* margin: 0 10%; */ /* Margen del 10% a cada lado */    
   }
   #butt-calidad{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 13%;
+    margin-top: 8%;
   } 
   #agrupaOblicuos-XX{
     position:absolute;
-    display: block;
     flex-direction: column;
     align-items: center;
-    top: 27%;
+    display: flex;
+    margin-top: 93%;
     left: 2%;
+/*     height: 95%; /* El espacio restante desde 27% hasta la parte inferior de la pantalla */    
   }
   #agrupaOblicuos-XVI{
-    position:absolute;
-    display: block;
+    position: absolute;
     flex-direction: column;
     align-items: center;
-    top: 27%;
-    left:60%;    
+    display: flex;
+    margin-top:31%;
+    left: 60%;
+/*     height: 95%; /* El espacio restante desde 27% hasta la parte inferior de la pantalla */    
   }
   #agrupaOblicuos-XVII{
     display: none; 
