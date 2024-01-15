@@ -1428,8 +1428,6 @@ width:447px ;
 #contArriba-V-calidad,
 #contAtras-V-calidad,
 #contMedio-V-calidad,
-
-
 #contArriba-V,
 #contArriba-V-admin,
 #contAtras-V-admin,
@@ -2949,13 +2947,6 @@ elemento.visible {
   box-shadow: none;
 }
 #subtitulo-admin{
-/*   position: relative;
-  margin-top: 12px;
-  font-family: 'Candara', sans-serif; 
-  font-size: 51px; 
-  font-weight: bold; 
-  color: white; 
-  margin-bottom: 10px; */
   font-family: 'Candara', sans-serif; 
   font-size: 51px; 
   font-weight: bold; 
@@ -2982,13 +2973,11 @@ elemento.visible {
   border-radius: 9px; 
   box-shadow: none;
 }
-
-
-                                                                            /* OPERACION */
-/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-@media screen and (max-width: 490px) {                                                                                             
+/*///////////////////////////////////////////////////////////////////// OPERACION ///////////////////////////////////////////////////////////////////////////////////////*/
+@media screen and (max-width: 490px) {
   #cont-titulo-operacion{
     position: absolute;
+    height:auto;
     top: 7%;
   }
   #container01{
@@ -3023,22 +3012,23 @@ elemento.visible {
     position:absolute;
     flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
     display: flex;
     top: 27%;
     left: 2%;
   }
   #agrupaOblicuos-XII{
-    position:absolute;
+    position: absolute;
     flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
     display: flex;
     top: 27%;
-    left:60%;    
+    left: 60%;
+    height: 73%; /* El espacio restante desde 27% hasta la parte inferior de la pantalla */    
   } 
-                                                                              /* CALIDAD */
-  /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+  #agrupaOblicuos-XII > * {
+    margin-bottom: 1px;
+}
+  /*//////////////////////////////////////////////////////////////////// CALIDAD ///////////////////////////////////////////////////////////////////////////////////*/
   #cont-titulo-calidad{
     position: absolute;
     top: 7%;
@@ -3088,17 +3078,9 @@ elemento.visible {
     left:60%;    
   }
   #agrupaOblicuos-XVII{
-/*     position:absolute;
-    display: block;
-    flex-direction: column;
-    align-items: center;
-    top: 27%;
-    left:60%;  */  
     display: none; 
   }
-
-                                                                              /* COMERCIAL */
-  /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+  /*///////////////////////////////////////////////////////////////////// COMERCIAL /////////////////////////////////////////////////////////////////////////////*/
   #cont-titulo-comercial{
     position: absolute;
     top: 7%;
@@ -3138,7 +3120,6 @@ elemento.visible {
     align-items: center;
     top: 27%;
     left: 2%;
-
   }
   #agrupaOblicuos-XIV{
     position:absolute;
@@ -3149,17 +3130,9 @@ elemento.visible {
     left:60%;    
   }
   #agrupaOblicuos-XV{
-/*     position:absolute;
-    display: block;
-    flex-direction: column;
-    align-items: center;
-    top: 27%;
-    left:60%; */  
     display: none;  
   }
-
-                                                                              /* ADMIN */
-  /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+  /*////////////////////////////////////////////////////////////////////// ADMIN /////////////////////////////////////////////////////////////////////////////*/
   #cont-titulo-admin{
     position: absolute;
     top: 7%;
@@ -3208,18 +3181,10 @@ elemento.visible {
     top: 27%;
     left:60%;    
   }
-  #agrupaOblicuos-XIII{
-/*     position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    top: 73%;
-    transform: translateY(-50%);    
-    overflow: auto; */
+   #agrupaOblicuos-XIII{
     display: none;
-  }  
-
+  }
+  /*///////////////////////////////////////////////////////////////////// FINAL ////////////////////////////////////////////////////////////////////////////// */
   #agrupaOblicuos-XI{
     position: absolute;
     display: flex;
@@ -3230,23 +3195,6 @@ elemento.visible {
     transform: translateY(-50%);    
     overflow: auto;
   }
-
-
-/*   #descripcion-II{
-    position: absolute;
-    left: 11px;
-    top: 39%;
-    width: 95%;
-  }
- */
-
-
-  .oblicuosInicio {
-    flex: 1;
-    margin: 10px;
-    text-align: center;
-  }
-
   .sinusoidales{
     margin-left: auto;
     margin-right: auto;
