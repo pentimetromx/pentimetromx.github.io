@@ -1208,7 +1208,6 @@ width:447px ;
   margin-left: auto; /* Establece el margen izquierdo automático */
   margin-right: auto; /* Establece el margen derecho automático */
 }
-
 #agrupaOblicuos-XXIV{ 
   position: relative;
   display: flex;
@@ -1218,7 +1217,8 @@ width:447px ;
   margin-left: auto; /* Establece el margen izquierdo automático */
   margin-right: auto; /* Establece el margen derecho automático */
 }
-
+#agrupaOblicuos-XVII,
+#agrupaOblicuos-XV,
 #agrupaOblicuos-XIII{ 
   position: relative;
   display: flex;
@@ -1228,25 +1228,6 @@ width:447px ;
   margin-left: auto; /* Establece el margen izquierdo automático */
   margin-right: auto; /* Establece el margen derecho automático */
 }
-#agrupaOblicuos-XV{
-  position: relative;
-  display: flex;
-  flex-direction: row-reverse;
-  top: 53px;
-  gap: 7px;
-  margin-left: auto; /* Establece el margen izquierdo automático */
-  margin-right: auto; /* Establece el margen derecho automático */
-}
-#agrupaOblicuos-XVII{
-  position: relative;
-  display: flex;
-  flex-direction: row-reverse;
-  top: 53px;
-  gap: 7px;
-  margin-left: auto; /* Establece el margen izquierdo automático */
-  margin-right: auto; /* Establece el margen derecho automático */
-}
-
 #agrupaOblicuos-XIV{
   position: relative;
   display: flex;
