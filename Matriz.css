@@ -2999,7 +2999,8 @@ elemento.visible {
     align-items: center;
     left: 50%;
     top: 6%;
-    transform: translate(-50%);  
+    transform: translate(-50%); 
+    width: 400px; 
   } 
   #subtitulo-operacion,
   #subtitulo-calidad,
