@@ -2973,8 +2973,20 @@ elemento.visible {
   border-radius: 9px; 
   box-shadow: none;
 }
-/*///////////////////////////////////////////////////////////////////// OPERACION ///////////////////////////////////////////////////////////////////////////////////////*/
 @media screen and (max-width: 490px) {
+  #agrupaOblicuos-XI{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    top: 73%;
+    transform: translateY(-50%);    
+    overflow: auto;
+  }
+  #cont-titulo-comercial,  
+  #cont-titulo-admin,
+  #cont-titulo-calidad,
   #cont-titulo-operacion{
     position: absolute;
     height:auto;
@@ -2989,222 +3001,67 @@ elemento.visible {
     top: 6%;
     transform: translate(-50%);  
   } 
-  #subtitulo-operacion{
+  #subtitulo-operacion,
+  #subtitulo-calidad,
+  #subtitulo-admin,
+  #subtitulo-comercial{
     position: absolute;
     text-align: center;
     font-size: 27px;
-    margin-top: 18%;
+    margin-top: 22%;
   }
+  #descripcion-V,
+  #descripcion-IV,
+  #descripcion-III,
   #descripcion-II{
     position: absolute; 
     text-align: center;
     font-size: 18px;
-    margin-top: 47%;
+    margin-top: 55%;
     /* margin: 0 10%; */ /* Margen del 10% a cada lado */    
   }
+  #butt-admin,
+  #butt-comercial,
+  #butt-calidad,
   #butt-operacion{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 8%;
-  } 
+    margin-top: 10%;
+  }
+  #agrupaOblicuos-XXI,
+  #agrupaOblicuos-XIX,
+  #agrupaOblicuos-XX,
   #agrupaOblicuos-XVIII{
     position:absolute;
     flex-direction: column;
     align-items: center;
     display: flex;
-    margin-top: 93%;
+    margin-top: 107%;
     left: 2%;
 /*     height: 95%; /* El espacio restante desde 27% hasta la parte inferior de la pantalla */    
   }
+  #agrupaOblicuos-XXIV,
+  #agrupaOblicuos-XIV,
+  #agrupaOblicuos-XVI,
   #agrupaOblicuos-XII{
     position: absolute;
     flex-direction: column;
     align-items: center;
     display: flex;
-    margin-top:31%;
+    margin-top:38%;
     left: 60%;
 /*     height: 95%; /* El espacio restante desde 27% hasta la parte inferior de la pantalla */    
   } 
   #agrupaOblicuos-XII > * {
     margin-bottom: 1px;
 }
-  /*//////////////////////////////////////////////////////////////////// CALIDAD ///////////////////////////////////////////////////////////////////////////////////*/
-  #cont-titulo-calidad{
-    position: absolute;
-    height:auto;
-    top: 7%;
-  }
-  #container01{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    left: 50%;
-    top: 6%;
-    transform: translate(-50%);  
-  } 
-  #subtitulo-calidad{
-    position: absolute;
-    text-align: center;
-    font-size: 27px;
-    margin-top: 18%;
-  }
-  #descripcion-III{
-    position: absolute; 
-    text-align: center;
-    font-size: 18px;
-    margin-top: 47%;
-    /* margin: 0 10%; */ /* Margen del 10% a cada lado */    
-  }
-  #butt-calidad{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 8%;
-  } 
-  #agrupaOblicuos-XX{
-    position:absolute;
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-    margin-top: 93%;
-    left: 2%;
-/*     height: 95%; /* El espacio restante desde 27% hasta la parte inferior de la pantalla */    
-  }
-  #agrupaOblicuos-XVI{
-    position: absolute;
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-    margin-top:31%;
-    left: 60%;
-/*     height: 95%; /* El espacio restante desde 27% hasta la parte inferior de la pantalla */    
-  }
+  #agrupaOblicuos-XIII,
+  #agrupaOblicuos-XV,
   #agrupaOblicuos-XVII{
     display: none; 
   }
-  /*///////////////////////////////////////////////////////////////////// COMERCIAL /////////////////////////////////////////////////////////////////////////////*/
-  #cont-titulo-comercial{
-    position: absolute;
-    height:auto;
-    top: 7%;
-  }
-  #container01{
-    position: absolute;
-    top: 6%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    left: 50%;
-    transform: translate(-50%);  
-  } 
-  #subtitulo-comercial{
-    position: absolute;
-    text-align: center;
-    font-size: 27px;
-    margin-top: 18%;
-  }
-  #descripcion-IV{
-    position: absolute; 
-    text-align: center;
-    font-size: 18px;
-    margin-top: 47%;
-    /* margin: 0 10%; */ /* Margen del 10% a cada lado */    
-  }
-  #butt-comercial{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 8%;
-  } 
-  #agrupaOblicuos-XIX{
-    position:absolute;
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-    margin-top: 93%;
-    left: 2%;
-/*     height: 95%; /* El espacio restante desde 27% hasta la parte inferior de la pantalla */    
-  }
-  #agrupaOblicuos-XIV{
-    position: absolute;
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-    margin-top:31%;
-    left: 60%;
-/*     height: 95%; /* El espacio restante desde 27% hasta la parte inferior de la pantalla */    
-  }
-  #agrupaOblicuos-XV{
-    display: none;  
-  }
-  /*////////////////////////////////////////////////////////////////////// ADMIN /////////////////////////////////////////////////////////////////////////////*/
-  #cont-titulo-admin{
-    position: absolute;
-    height:auto;
-    top: 7%;
-  }
-  #container01{
-    position: absolute;
-    top: 6%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    left: 50%;
-    transform: translate(-50%);  
-  } 
-  #subtitulo-admin{
-    position: absolute;
-    text-align: center;
-    font-size: 27px;
-    margin-top: 18%;
-  }
-  #descripcion-V{
-    position: absolute; 
-    text-align: center;
-    font-size: 18px;
-    margin-top: 47%;
-    /* margin: 0 10%; */ /* Margen del 10% a cada lado */    
-  }
-  #butt-admin{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 8%;
-  } 
-  #agrupaOblicuos-XXI{
-    position:absolute;
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-    margin-top: 93%;
-    left: 2%;
-/*     height: 95%; /* El espacio restante desde 27% hasta la parte inferior de la pantalla */    
-  }
-  #agrupaOblicuos-XXIV{
-    position: absolute;
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-    margin-top:31%;
-    left: 60%;
-/*     height: 95%; /* El espacio restante desde 27% hasta la parte inferior de la pantalla */    
-  }
-   #agrupaOblicuos-XIII{
-    display: none;
-  }
   /*///////////////////////////////////////////////////////////////////// FINAL ////////////////////////////////////////////////////////////////////////////// */
-  #agrupaOblicuos-XI{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    top: 73%;
-    transform: translateY(-50%);    
-    overflow: auto;
-  }
   .sinusoidales{
     margin-left: auto;
     margin-right: auto;
