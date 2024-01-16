@@ -2136,7 +2136,7 @@ header {
 .cont-userI label{
   position: relative;
   color: yellow;
-  font-family: "GothamRounded", sans-serif;
+  font-family: "GothamRounded", sans-serif; 
   font-size: 12px;
 }
 #iconos {
@@ -2145,7 +2145,7 @@ header {
   flex-direction: column;
   justify-content: center;
   top: 15%;
-  width: 95%;
+  width: 100%;
   height: 100%;
   display: none;
 }
@@ -2163,7 +2163,7 @@ header {
   position: absolute;
   display: flex;
   justify-content: space-between;
-  width:99%;
+  width:100%;
   height: 30%;
   top: 17%;
 }
@@ -3009,7 +3009,7 @@ elemento.visible {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 97%;
+    width: 100%;
     height: 100%;
     top: 104px;
 /*     margin-left: auto;
@@ -3032,20 +3032,28 @@ elemento.visible {
     position: absolute;
     display: flex;
     justify-content: space-between;
-    height: 30%;
-    width: 99%;
+    height: 15%;
+    width: 100%;
     top: 40%;
     overflow: auto; /* Puedes ajustar según sea necesario */
-    }
-    .cont-user {
-      position: relative;
-      display: flex;
-      flex-direction: column;  
-      gap: 3%;
-      cursor: pointer;
-      height: 80%;
-    }
-    
+  }
+  .cont-user img{
+    /* height:100%; */
+    width: 25%;
+    border-radius: 11px;
+  }
+  .cont-user label {
+    position: relative;
+    margin-left: 17px;
+    display: flex;
+    color: yellow;
+    font-family: "GothamRounded", sans-serif;
+    font-size: 13px;
+    width: 70%;
+    text-align: center; /* Centrar el texto */
+  }
+  
+      
 
 
     /* Apply styles for the first container (header with search bar) */
