@@ -320,9 +320,6 @@ transform: scale(1.1);
   margin-top: 100px;
   padding-left: 20px;
 }
-
-
-
 #contLineas{
   position: absolute;
   left: 16%;
@@ -369,7 +366,6 @@ transform: scale(1.1);
   background-color: white;
   content: "";
 }
-
 #linea-horizontal-I{
   position:absolute;
   left: 1%;
@@ -394,7 +390,6 @@ transform: scale(1.1);
   height: 2px;
   background-color: white;
 }
-
 .linea-vertical {
   position: absolute;
   left: 10px;
@@ -535,7 +530,6 @@ transform: scale(1.1);
   content: "";
   background-color: rgb(255,0,0);
 }
-
 
 .boton-c {
   position: relative;
@@ -2151,7 +2145,7 @@ header {
   flex-direction: column;
   justify-content: center;
   top: 15%;
-  width: 100%;
+  width: 95%;
   height: 100%;
   display: none;
 }
@@ -3010,15 +3004,16 @@ elemento.visible {
     margin-top: 100px; 
     overflow-y: auto; /* Agrega una barra de desplazamiento vertical cuando sea necesario */
   }
-   #iconos{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 777px;
+  #iconos{
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 97%;
+    height: 100%;
     top: 104px;
-    margin-left: auto;
-    margin-right: auto;
+/*     margin-left: auto;
+    margin-right: auto;*/
     display: none;
     overflow: auto; /* Puedes ajustar según sea necesario */
   }
