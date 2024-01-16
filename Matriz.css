@@ -3027,13 +3027,13 @@ elemento.visible {
   #title-interfaz {
     position: absolute;
     display: flex;
-    margin-top: -2%;
+    margin-top:7%;
     left: 20%;
-    width: 60%;
+    width: 100%;
     font-family: "GothamRounded", sans-serif;
     text-align: center;
     color: rgb(255, 204, 0); 
-    font-size: 16px; 
+    font-size: 12px; 
     overflow: auto; /* Puedes ajustar según sea necesario */
   }
   #conte-secundario{
