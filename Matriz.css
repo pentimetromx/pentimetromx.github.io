@@ -2168,9 +2168,7 @@ header {
 #conte-secundario{
   position: absolute;
   display: flex;
-  flex-direction:row;
-  align-items: center;
-  /* gap: 11px; */ 
+  justify-content: space-between;
   width:99%;
   height: 30%;
   top: 17%;
@@ -2178,9 +2176,7 @@ header {
 .cont-user {
   position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;  
   gap: 3%;
   cursor: pointer;
   height: 80%;
@@ -3036,17 +3032,26 @@ elemento.visible {
     text-align: center;
     color: rgb(255, 204, 0); 
     font-size: 12px; 
-    overflow: auto; /* Puedes ajustar según sea necesario */
   }
   #conte-secundario{
     position: absolute;
     display: flex;
-    flex-direction:row;
-    align-items: center;
-    gap: 11px; 
-    width: 100%;
+    justify-content: space-between;
+    height: 30%;
+    width: 99%;
     top: 27%;
+    overflow: auto; /* Puedes ajustar según sea necesario */
     }
+    .cont-user {
+      position: relative;
+      display: flex;
+      flex-direction: column;  
+      gap: 3%;
+      cursor: pointer;
+      height: 80%;
+    }
+    
+
 
     /* Apply styles for the first container (header with search bar) */
   .buscador {
