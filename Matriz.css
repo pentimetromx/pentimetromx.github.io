@@ -886,7 +886,6 @@ width:447px ;
   width: 60%;
   font-family: "GothamRounded", sans-serif;
   text-align: center;
-  /* justify-content: center; */
   color: rgb(255, 204, 0);
 }
 
@@ -3028,11 +3027,12 @@ elemento.visible {
   #title-interfaz {
     position: absolute;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    top: -57px;
-    width: 100%;
+    margin-top: -2%;
+    left: 20%;
+    width: 60%;
+    font-family: "GothamRounded", sans-serif;
     text-align: center;
+    color: rgb(255, 204, 0); 
     font-size: 16px; 
     overflow: auto; /* Puedes ajustar según sea necesario */
   }
