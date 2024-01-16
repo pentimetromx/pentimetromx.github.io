@@ -5379,9 +5379,10 @@ function resultadosEmpleado(idEmpleado, functionExe) {
   for (var i = 0; i < contUserElements.length; i++) {
     var element = contUserElements[i]
     if (element.id === idEmpleado) {
+      element.style.position = 'absolute'
       element.style.display = 'flex'
-      element.style.top = '-127px'
-      element.style.left = '-7px'
+      element.style.marginTop = '5%'
+      element.style.left = '1%'
 
       // Accede al label dentro del div
       var label = element.querySelector('label')
