@@ -5381,7 +5381,7 @@ function resultadosEmpleado(idEmpleado, functionExe) {
     if (element.id === idEmpleado) {
       element.style.position = 'absolute'
       element.style.display = 'flex'
-      element.style.marginTop = '5%'
+      element.style.marginTop = '-25%'
       element.style.left = '1%'
 
       // Accede al label dentro del div

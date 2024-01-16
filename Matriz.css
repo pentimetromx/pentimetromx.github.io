@@ -868,17 +868,6 @@ width:447px ;
   font-family: "GothamRounded", sans-serif;
   color: yellow;
 }
-#title-interfaz{
-  position: absolute;
-  display: flex;
-  margin-top: -2%;
-  left: 20%;
-  width: 60%;
-  font-family: "GothamRounded", sans-serif;
-  text-align: center;
-  color: rgb(255, 204, 0);
-}
-
 #canvasContainer4 {
   position: absolute;
   display: flex;
@@ -2166,6 +2155,16 @@ header {
   height: 100%;
   display: none;
 }
+#title-interfaz{
+  position: absolute;
+  display: flex;
+  margin-top: -2%;
+  left: 20%;
+  width: 60%;
+  font-family: "GothamRounded", sans-serif;
+  text-align: center;
+  color: rgb(255, 204, 0);
+}
 #conte-secundario{
   position: absolute;
   display: flex;
@@ -3030,7 +3029,7 @@ elemento.visible {
   #title-interfaz {
     position: absolute;
     display: flex;
-    margin-top:7%;
+    margin-top:17%;
     left: 20%;
     width: 100%;
     font-family: "GothamRounded", sans-serif;
@@ -3046,7 +3045,7 @@ elemento.visible {
     align-items: center;
     gap: 11px; 
     width: 100%;
-    top: 17%;
+    top: 27%;
     }
 
     /* Apply styles for the first container (header with search bar) */
