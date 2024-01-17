@@ -2959,8 +2959,13 @@ elemento.visible {
     display: flex;
     height: 21.5px;
     width: 43.5px;
+    font-size: 7px;
   }
-  
+  .boton-b{
+    height: 23.5px;
+    width: 60px;
+  }
+    
       
   #container01{
     position: absolute;
