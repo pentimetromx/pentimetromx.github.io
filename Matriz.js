@@ -5368,7 +5368,7 @@ function resultadosEmpleado(idEmpleado, functionExe) {
   var colors = ['rgb(255, 255, 0)', 'rgb(0, 255, 0)', 'orangered'] // Colores en formato RGB
   var contUserScroll = document.getElementById('contenedor-vertical')
   var contUserElementsI = document.getElementsByClassName('cont-userI') 
-
+  
   var contUserArrayI = Array.from(contUserElementsI)  
   var contUserElements = document.getElementsByClassName('cont-user') 
   var tituloMA = document.getElementById('title-interfaz')
@@ -5403,41 +5403,122 @@ function resultadosEmpleado(idEmpleado, functionExe) {
   }
 
   contUserArrayI.forEach(element => {
-    if (element.id === idEmpleado) {
-        element.style.backgroundColor = 'green'; // Utilizar backgroundColor en lugar de background
-        (function (element) {
-            setTimeout(function () {
-                element.style.backgroundColor = ''; // Vacío para volver al color normal
-            }, 200); // 0.2 segundos (200 milisegundos)
-        })(element); // Pasa el elemento actual como argumento a la función anónima
+    if (element.id === idEmpleado) {  
+      var originalColor = element.style.backgroundColor = '';
+      element.style.backgroundColor = 'green';
+      (function (element, originalColor) {
+        setTimeout(function () {
+          element.style.backgroundColor = originalColor;
+        }, 200);
+      })(element, originalColor);
     }
   });
 
+  switch (idEmpleado) {
+    case 'icon-carlos-I':
+      var ContIconoAna = document.getElementById('icon-carlos')
+      var contSecundarios = document.getElementById('conte-secundario')
+      contSecundarios.style.position = 'absolute'
+      contSecundarios.style.marginTop = '2%'
+      ContIconoAna.style.position = 'absolute'
+      ContIconoAna.style.display = 'flex'
+      ContIconoAna.style.height = '64%'
+      ContIconoAna.style.top = '35%'
+      ContIconoAna.style.left = '3%'
+    break;
+    case 'icon-andres-I':
+      var ContIconoAnaI = document.getElementById('icon-andres')
+      var contSecundarios = document.getElementById('conte-secundario')
+      contSecundarios.style.position = 'absolute'
+      contSecundarios.style.marginTop = '2%'
+      ContIconoAnaI.style.position = 'absolute'
+      ContIconoAnaI.style.display = 'flex'
+      ContIconoAnaI.style.height = '64%'
+      ContIconoAnaI.style.top = '-66%'
+      ContIconoAnaI.style.left = '3%'
+    break;
+    case 'icon-jorge-I':
+      var ContIconoAnaI = document.getElementById('icon-jorge')
+      var contSecundarios = document.getElementById('conte-secundario')
+      contSecundarios.style.position = 'absolute'
+      contSecundarios.style.marginTop = '2%'
+      ContIconoAnaI.style.position = 'absolute'
+      ContIconoAnaI.style.display = 'flex'
+      ContIconoAnaI.style.height = '64%'
+      ContIconoAnaI.style.top = '-66%'
+      ContIconoAnaI.style.left = '3%'
+    break;
+    case 'icon-jesus-I':
+      var ContIconoAnaI = document.getElementById('icon-jesus')
+      var contSecundarios = document.getElementById('conte-secundario')
+      contSecundarios.style.position = 'absolute'
+      contSecundarios.style.marginTop = '2%'
+      ContIconoAnaI.style.position = 'absolute'
+      ContIconoAnaI.style.display = 'flex'
+      ContIconoAnaI.style.height = '64%'
+      ContIconoAnaI.style.top = '-66%'
+      ContIconoAnaI.style.left = '3%'
+    break;
+    case 'icon-sandra-I':
+      var ContIconoAnaI = document.getElementById('icon-sandra')
+      var contSecundarios = document.getElementById('conte-secundario')
+      contSecundarios.style.position = 'absolute'
+      contSecundarios.style.marginTop = '2%'
+      ContIconoAnaI.style.position = 'absolute'
+      ContIconoAnaI.style.display = 'flex'
+      ContIconoAnaI.style.height = '64%'
+      ContIconoAnaI.style.top = '-66%'
+      ContIconoAnaI.style.left = '3%'
+    break;
+    case 'icon-mario-I':
+      var ContIconoAnaI = document.getElementById('icon-mario')
+      var contSecundarios = document.getElementById('conte-secundario')
+      contSecundarios.style.position = 'absolute'
+      contSecundarios.style.marginTop = '2%'
+      ContIconoAnaI.style.position = 'absolute'
+      ContIconoAnaI.style.display = 'flex'
+      ContIconoAnaI.style.height = '64%'
+      ContIconoAnaI.style.top = '-66%'
+      ContIconoAnaI.style.left = '3%'
+    break;
+    case 'icon-ana-I':
+      var ContIconoAnaI = document.getElementById('icon-ana')
+      var contSecundarios = document.getElementById('conte-secundario')
+      contSecundarios.style.position = 'absolute'
+      contSecundarios.style.marginTop = '2%'
+      ContIconoAnaI.style.position = 'absolute'
+      ContIconoAnaI.style.display = 'flex'
+      ContIconoAnaI.style.height = '64%'
+      ContIconoAnaI.style.top = '-66%'
+      ContIconoAnaI.style.left = '3%'
+    break;
+    default:
+    break;
+  }      
   switch (functionExe) {
     case 'updateAna':
       updateAna()      
-      break;
+    break;
     case 'updateMario':
       updateMario()
-      break;
+    break;
     case 'updateSandra':
       updateSandra()
-      break;
+    break;
     case 'updateJesus':
       updateJesus()
-      break;
+    break;
     case 'updateJorge':
       updateJorge()
-      break;
+    break;
     case 'updateAndres':
       updateAndres()
-      break;
+    break;
     case 'updateCarlos':
       updateCarlos()
-      break;
+    break;
     default:
-      // Lógica para un caso predeterminado si es necesario
-      break;
+    break;
   }
 }
 function graficosAutomaticos(idGrafico){
