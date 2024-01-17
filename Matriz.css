@@ -2954,6 +2954,13 @@ elemento.visible {
     position: absolute;
     width: 110%;
   }
+  .boton-c {
+    position: relative;
+    display: flex;
+    height: 21.5px;
+    width: 43.5px;
+  }
+  
       
   #container01{
     position: absolute;
