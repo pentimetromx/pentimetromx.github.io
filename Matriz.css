@@ -2925,11 +2925,11 @@ elemento.visible {
   #cont-titulo-operacion{
     position: absolute;
     height:auto;
-    justify-content: space-evenly;
     top: 7%;
   }
   #pantalla-inicial{
     position: absolute;
+    justify-content: space-evenly;
     height:auto;
     width: auto;
     top: 27%;
