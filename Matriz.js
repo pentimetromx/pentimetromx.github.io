@@ -7297,6 +7297,7 @@ searchForm.addEventListener('submit', function (e) {
       }             
       showRepuesto('contPortPlaca')
     break;
+    case 'pantalla inicial':
     case 'pantalla-inicial':
       abrirSeccionContinua('pantalla-inicial')
     break;
