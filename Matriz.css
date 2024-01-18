@@ -2993,16 +2993,19 @@ elemento.visible {
   .boton-b{
     position: relative;
     margin-top: -10%;
-    height: 20px;
-    width: 60px;
-    font-size: 7px;
+    height: 17px;
+    width: 55px;
+    font-size: 5px;
+    border-radius: 6px;
   }
   #toggleVideoButton{
     position: absolute;
     margin-left: 50%;
     margin-top: -27%;
     width: 120%;
-    height: 20px;
+    height: 17px;
+    font-size: 5px;
+    border-radius: 6px;
   }
    
       
