@@ -87,7 +87,6 @@ h1, h2, h3 {
   cursor: pointer;
   text-align: center;
   transition: transform 0.1s;
-
 }
 .boton-a:hover,
 .boton-b:hover,
@@ -533,7 +532,6 @@ transform: scale(1.1);
   content: "";
   background-color: rgb(255,0,0);
 }
-
 .boton-c {
   position: relative;
   display: flex;
@@ -594,6 +592,10 @@ transform: scale(1.1);
 }
 .boton-c > span {
   margin-left: 20px;
+}
+#toggleVideoButton{
+  margin-left: -237px;
+  width: 500px;
 }
 .ocultar-cont {
   display: none;
@@ -2929,18 +2931,44 @@ elemento.visible {
   }
   #pantalla-inicial{
     position: absolute;
-    justify-content: space-evenly;
-    height:auto;
-    width: auto;
+    display: flex;
+    justify-content: space-between;
+    height:100%;
+    width: 100%; 
     top: 27%;
   }
-  .contTorrImp{
-    margin-left: 22%;
-    width: calc(100% - 22%);
+  #rotatek-1{
+    position: absolute;  
+    width: calc(100% - 60%);
   }
-  .desbobinador{
+  #desbobinadorId{
+    position: absolute;
     display: flex;
-    margin-left: 5px;
+    left: -3%;
+    flex-direction: column;
+  }
+  #uTeñidos{
+    position: absolute;
+    display: flex;
+    left: 12%;
+    flex-direction: column;
+  }
+  #alimentadorId{
+    position: absolute;
+    display: flex;
+    left: 26%;
+    flex-direction: column;
+  }
+  #unidProceso{
+    position: absolute;
+    display: flex;
+    left: 39%;
+    flex-direction: column;
+  }
+  #rebobinador{
+    position: absolute;
+    display: flex;
+    left: 52%;
     flex-direction: column;
   }
   .contene-7 {
@@ -2965,10 +2993,18 @@ elemento.visible {
   .boton-b{
     position: relative;
     margin-top: -10%;
-    height: 23.5px;
+    height: 20px;
     width: 60px;
+    font-size: 7px;
   }
-    
+  #toggleVideoButton{
+    position: absolute;
+    margin-left: 50%;
+    margin-top: -27%;
+    width: 120%;
+    height: 20px;
+  }
+   
       
   #container01{
     position: absolute;
