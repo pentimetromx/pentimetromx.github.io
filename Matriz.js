@@ -7231,6 +7231,7 @@ const sugerencias = [
   'manta',
   'mantenimiento autonomo',
   'mantilla',
+  'pantalla-inicial',
   'planas',
   'plancha',
   'porta mantilla',
@@ -7295,6 +7296,9 @@ searchForm.addEventListener('submit', function (e) {
         }
       }             
       showRepuesto('contPortPlaca')
+    break;
+    case 'pantalla-inicial':
+      abrirSeccionContinua('pantalla-inicial')
     break;
     case 'preprensa':
     abrirPrepress('pre-prensa')
