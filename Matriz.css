@@ -2936,6 +2936,7 @@ elemento.visible {
     height:100%;
     width: 100%; 
     top: 27%;
+    display: none;
   }
   #rotatek-1{
     position: absolute;  
