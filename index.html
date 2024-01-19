@@ -9,7 +9,6 @@
   </head>
   <body  onload="aumentoBotonesBody()">
 
-
     <header class="buscador" id="buscador" style="position: absolute;left: 3px;top: 2px;">
       <form id="search-form">
           <input type="text" id="search-input" placeholder="Buscar..."> 
@@ -499,7 +498,6 @@
       <button class="boton-a" id="bot-atras32" style="text-align: center;width: 47px;position: relative;left: 685px;top: 5px;;display: none" onclick="irContenedorSiguiente('rotatek-1')"></button>
     </div><br>
 
-
     <div id="pantalla-inicial"> 
 
       <div class="desbobinador mostrar-cont" id="desbobinadorId">
@@ -528,7 +526,7 @@
 
       <div class="alimentadorId mostrar-cont" id="alimentadorId">
         <button class="boton-b btn-bloque" id="boton13" onclick="cierraContenedores('alimentadorId')">ALIMENTADOR</button><br> 
-        <div class="contene-7">
+        <div class="contene-7" id="cont-Verticales33">
           <div class="linea-vertical"></div>
           <button class="boton-c" id="boton14">Estructura<div class="linea-horizontal"></div></button>
           <button class="boton-c" id="boton15">Sistema planetario<div class="linea-horizontal"></div></button>
@@ -552,7 +550,7 @@
 
       <div class="rebobinador mostrar-cont" id="rebobinador">
         <button class="boton-b btn-bloque" id="boton25" onclick="cierraContenedores('rebobinador')">REBOBINADOR</button><br>                     
-        <div class="contene-7">
+        <div class="contene-7"  id="cont-Verticales8">
           <div class="linea-vertical"></div>
           <button class="boton-c" id="boton26">Estructura<div class="linea-horizontal"></div></button>
           <button class="boton-c" id="boton27">Sistema planetario<div class="linea-horizontal"></div></button>
@@ -562,7 +560,7 @@
         </div>          
       </div>          
 
-      <div class="contTorrImp" id="rotatek-1">
+      <!-- <div class="contTorrImp" id="rotatek-1"> -->
         <button id="toggleVideoButton" class="boton-i">TORRE DE IMPRESIÓN</button>            
 
         <div class="torre-imp" id="torre-imp">
@@ -612,7 +610,7 @@
           </div>
 
         </div> 
-      </div>  
+      <!-- </div> -->  
     </div>
     <div class="contene-2" id="container01" style="display: none;">
       <button class="boton-a" id="bot-atras" style="text-align: center;width: 47px;position: relative;top: 5px;" onclick="irContenedorAnterior('contPortPlaca')"></button>
