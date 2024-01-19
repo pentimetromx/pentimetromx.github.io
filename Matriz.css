@@ -2960,6 +2960,7 @@ elemento.visible {
     left: 9%;
     flex-direction: column;
     width: 18%; /* 70% - 52% = 18% */
+    height: 50%;
   }
   #cont-Verticales2{
     position: absolute;
@@ -3014,8 +3015,6 @@ elemento.visible {
     width: 55%;
     padding-left: 20px;
   }
-
-
   #alimentadorId{
     position: absolute;
     display: flex;
@@ -3125,7 +3124,7 @@ elemento.visible {
   }
   #boton7{
     position: relative;
-    margin-top: -37%;
+    margin-top: -7%;
     margin-left: 14%;
     height: 17px;
     width: 55px;
