@@ -3045,35 +3045,64 @@ elemento.visible {
   }
   #toggleVideoButton{
     position: relative;
-    top: -1%;
+    top: -5%;
     left: 67%;  
     height: 20px;
     width: 137px;
     font-size: 8px;  
   } 
-
   .torre-imp{
     position: absolute;  
     display: flex;
-    top: 20%;
-    left: 3%;
+    height: 57%;
+    top: -7%;
+    left: 67%;
   }
- 
+  .boton-d{
+    height: 20.5px;
+    width: 47.5px;
+    background: linear-gradient(45deg, rgba(0,250,0) 15%,  rgb(0,255,0,0.077) 85%);                       
+    color: rgb(0,0,0);
+    border-radius: 5px;
+    text-align: center; 
+    font-size: 7px;   
+    cursor: pointer; 
+    transition: transform 0.1s;
+  } 
+  .tintero{
+    display: flex; 
+    flex-direction: column; 
+    margin-left: -7px;
+  }    
   #tinter-o{
     position: relative;
     display: flex;
-    left: 70%;
+    margin-left: 1%;
     flex-direction: column;
   }
-
-  /*.contene-7 {
-    position: absolute;
-    flex-direction: column;
+  #bateria-entintado{
+    position: relative;
     display: flex;
-    top: 10%;
-    width: 70%;
-    padding-left: 20px;
-  }*/
+    margin-left: 1%;
+    flex-direction: column;
+
+  }
+  #tinteroButton{
+    position: absolute;
+    left: 20%;
+    top: 9%;
+  }
+  #bateriaButton{
+    position: absolute;
+    left: 20%;
+    top: 9%;
+
+  }
+  #cont-Verticales22{
+    position: absolute;
+    left: 40%;
+  }
+
   .mostrar-cont{
     position: absolute;
     width: 110%;
@@ -3088,7 +3117,7 @@ elemento.visible {
   }
   #boton1{
     position: relative;
-    margin-top: -37%;
+    margin-top: -50%;
     height: 17px;
     width: 55px;
     font-size: 5px;
@@ -3097,7 +3126,7 @@ elemento.visible {
   #boton7{
     position: relative;
     margin-top: -37%;
-    margin-left: 27%;
+    margin-left: 14%;
     height: 17px;
     width: 55px;
     font-size: 5px;
@@ -3106,7 +3135,7 @@ elemento.visible {
   #boton13{
     position: relative;
     margin-top: -37%;
-    margin-left: 40%;
+    margin-left: 27%;
     height: 17px;
     width: 55px;
     font-size: 5px;
@@ -3115,7 +3144,7 @@ elemento.visible {
   #boton19{
     position: relative;
     margin-top: -37%;
-    margin-left: 55%;
+    margin-left: 40%;
     height: 17px;
     width: 55px;
     font-size: 5px;
@@ -3130,16 +3159,6 @@ elemento.visible {
     font-size: 5px;
     border-radius: 6px;
   }
-
-
-  /*.boton-b{
-    position: relative;
-    margin-top: -10%;
-    height: 17px;
-    width: 55px;
-    font-size: 5px;
-    border-radius: 6px;
-  }*/
   #container01{
     position: absolute;
     display: flex;
