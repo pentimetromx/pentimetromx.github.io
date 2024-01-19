@@ -2910,6 +2910,20 @@ elemento.visible {
   border-radius: 9px; 
   box-shadow: none;
 }
+
+/* #sis-humedad{
+  position: relative;
+  display: flex;
+  margin-left: 10%;
+  margin-top: 20%;
+  height: 70%;
+  flex-direction: column;
+}
+#cont-Verticales6{
+  position: absolute;
+  left: 35%;
+}
+ */
 @media screen and (max-width: 420px) {
   /* @media screen and (max-width: 768px) { */  
   #agrupaOblicuos-XI{
@@ -2958,6 +2972,7 @@ elemento.visible {
     position: absolute;
     display: flex;
     left: 9%;
+    top: -3.7%;
     flex-direction: column;
     width: 18%; /* 70% - 52% = 18% */
     height: 50%;
@@ -2966,7 +2981,7 @@ elemento.visible {
     position: absolute;
     flex-direction: column;
     display: flex;
-    top: 10%;
+    top: 6%;
     width: 55%;
     padding-left: 20px;
   }
@@ -3076,16 +3091,48 @@ elemento.visible {
   #tinter-o{
     position: relative;
     display: flex;
-    margin-left: 1%;
+    margin-left: -1%;
     flex-direction: column;
+  }
+  #cont-Verticales22{
+    position: absolute;
+    left: 40%;
   }
   #bateria-entintado{
     position: relative;
     display: flex;
-    margin-left: 1%;
+    margin-left: 3%;
     flex-direction: column;
-
   }
+  #cont-Verticales3{
+    position: absolute;
+    left: 40%;
+  }
+  #bancada-torre{
+    position: relative;
+    display: flex;
+    margin-left: 17%;
+    margin-top: 20%;
+    flex-direction: column;
+  }
+  #cont-Verticales4{
+    position: absolute;
+    left: 20%;
+    top: 19%;
+  }
+  #sis-humedad{
+    position: relative;
+    display: flex;
+    margin-left: -20%;
+    margin-top: 20%;
+    flex-direction: column;
+  }
+  #cont-Verticales6{
+    position: absolute;
+    left: 20%;
+    top: 19%;
+  }
+
   #tinteroButton{
     position: absolute;
     left: 20%;
@@ -3095,12 +3142,8 @@ elemento.visible {
     position: absolute;
     left: 20%;
     top: 9%;
+  }
 
-  }
-  #cont-Verticales22{
-    position: absolute;
-    left: 40%;
-  }
 
   .mostrar-cont{
     position: absolute;
