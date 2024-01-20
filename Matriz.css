@@ -3043,7 +3043,7 @@ elemento.visible {
     border-radius: 6px;
     margin-right: 24px;
     font-size: 7px;
-    cursor: pointer;
+    cursor: pointer; 
     text-align: center;
     transition: transform 0.1s; 
   }
