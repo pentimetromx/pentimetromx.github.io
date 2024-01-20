@@ -2932,7 +2932,7 @@ elemento.visible {
     justify-content: space-between;
     height:100%;
     width: 100%; 
-    top: 27%;
+    top: 18%;
     display: none;
   }
 
@@ -2949,7 +2949,7 @@ elemento.visible {
     position: absolute;
     flex-direction: column;
     display: flex;
-    top: 4%;
+    top: 2%;
     width: 70%;
     padding-left: 20px;
   }
@@ -2965,7 +2965,7 @@ elemento.visible {
     position: absolute;
     flex-direction: column;
     display: flex;
-    top: 4%;
+    top: 2%;
     width: 55%;
     padding-left: 20px;
   }
@@ -2981,7 +2981,7 @@ elemento.visible {
     position: absolute;
     flex-direction: column;
     display: flex;
-    top: 4%;
+    top: 2%;
     width: 55%;
     padding-left: 20px;
   }
@@ -2997,14 +2997,14 @@ elemento.visible {
     position: absolute;
     flex-direction: column;
     display: flex;
-    top: 4%;
+    top: 2%;
     width: 55%;
     padding-left: 20px;
   }
   #rebobinador{
     position: absolute;
     display: flex;
-    margin-left: 40%;
+    margin-left: 48%;
     flex-direction: column;
     width: 18%; /* 70% - 52% = 18% */
     height: 50%;
@@ -3013,10 +3013,17 @@ elemento.visible {
     position: absolute;
     flex-direction: column;
     display: flex;
+    top: 2%;
+    width: 55%;
+    padding-left: 20px;
+
+/*     position: absolute;
+    flex-direction: column;
+    display: flex;
     top: 4%;
     left: 49%;
     width: 55%;
-    padding-left: 20px;
+    padding-left: 20px; */
   }
 
   .boton-e,
@@ -3068,7 +3075,7 @@ elemento.visible {
   #boton25{
     position: absolute;
     margin-top: -37%;
-    left:62%;
+    left:13%;
     height: 17px;
     width: 47px;
     font-size: 5px;
@@ -3081,8 +3088,8 @@ elemento.visible {
     display: flex;
     height: 57%;
     width: 100%;
-    top: -7%;
-    left: 62%;
+    top: 35%;
+    left: 1%;
   }
   .contTorrImp{
     position: relative;
@@ -3100,8 +3107,8 @@ elemento.visible {
   }
   #toggleVideoButton{
     position: relative;
-    top: -5%;
-    margin-left: 3%;  
+    top: 35%;
+    left: 27%;  
     height: 20px;
     width: 155px;
     font-size: 8px;  
@@ -3120,7 +3127,7 @@ elemento.visible {
   #tinter-o{
     position: relative;
     display: flex;
-    left: 1%;
+    left: 23%;
     top: 1%;
     width: 10%;
     height: 100%;
@@ -3133,7 +3140,7 @@ elemento.visible {
   #bateria-entintado{
     position: relative;
     display: flex;
-    left: 1%;
+    left: 25%;
     top: 1%;
     width: 10%;
     height: 100%;
@@ -3146,7 +3153,7 @@ elemento.visible {
   #bancada-torre{
     position: relative;
     display: flex;
-    left: 1%;
+    left: 27%;
     top: 1%;
     width: 10%;
     height: 100%;
@@ -3159,7 +3166,7 @@ elemento.visible {
   #sis-humedad{
     position: relative;
     display: flex;
-    left: 1%;
+    left: 29%;
     top: 1%;
     width: 10%;
     height: 100%;
@@ -3192,8 +3199,9 @@ elemento.visible {
   }
 /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
   .mostrar-cont{
-    position: absolute;
-    width: 110%;
+    display: flex;
+/*     position: absolute;
+    width: 110%; */
   }
   #container01{
     position: absolute;
