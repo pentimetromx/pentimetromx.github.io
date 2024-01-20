@@ -368,9 +368,6 @@ function changeButtonStyles(elementId) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
         }
       } 
-
-      document.body.style.zoom = "100%"
-
       const botonElemento = document.querySelectorAll('.boton-f')
       var delay = 100;
       for (var i = 0; i < botonElemento.length; i++) {
@@ -394,7 +391,7 @@ function changeButtonStyles(elementId) {
       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
         idsArray.push(elementId);
         console.log(idsArray);
-      }  
+      } 
     break;
     case 'fua':
     break;
@@ -496,6 +493,7 @@ function cierraContenedores(elementId) {
             if (i === 1) {
               // Deja visible el primer hijo
               hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
+              hijo.style.left = '7%'
             } else {
               // Oculta el resto de los hijos
               hijo.style.display = 'none';
@@ -2320,8 +2318,8 @@ function videosImpresor(videoId) {
 } 
 function abrirSeccionContinua(elementId) {
   var botonesIniciales = document.querySelectorAll('.btn-bloque')
-  var botonesC = document.querySelectorAll('.boton-c')  
-
+  var botonesC = document.querySelectorAll('.boton-c') 
+  toggleVideoButton.style.display = 'block'
   var elementosExcluidos = ['toggleVideoButton','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador','torre-imp','torre-imp','tinter-o','bateria-entintado'];                                                              
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
@@ -2343,7 +2341,7 @@ function abrirSeccionContinua(elementId) {
     botton.style.color = 'white'
   })
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  function eliminarEstilosEnLinea(elemento) {                                                                                     /// ELIMINAR ESTILOS EN LINEA
+  function eliminarEstilosEnLinea(elemento) {                                                                                       /// ELIMINAR ESTILOS EN LINEA
     elemento.removeAttribute('style');
   }
   arrayIdButtsMA.forEach(function (id) {
@@ -2352,20 +2350,18 @@ function abrirSeccionContinua(elementId) {
     eliminarEstilosEnLinea(elemento);
   }
   });
-
-  // 4. Verificar si el elemento está definido y si ya existe en arrayIds
+  // 4. Verificar si el elemento está definido y si ya existe en arrayIds desde ahi es que se llevan las demas                 
   if (typeof elementId !== 'undefined') {
     const index = idsArray.indexOf(elementId);
     if (index !== -1) {
       // 4. Si el elemento ya existe, moverlo a la última posición
       idsArray.splice(index, 1); // Elimina el elemento en la posición actual
     }
-    // 5. Agregar el elemento al final de arrayIds
+    // 5. Agregar el elemento al final de arrayIds   
     idsArray.push(elementId);
     console.log(idsArray);
   }
-
-  firstClick = true;  
+  firstClick = true;   
 }
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 document.addEventListener("DOMContentLoaded", function () {                                                                   // BOTON EN ROJO * 0.2 SEGUNDOS 
