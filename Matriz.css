@@ -164,14 +164,9 @@ transform: scale(1.1);
   position: relative;
   display: flex;
   flex-direction: row;
-  /* top: 97px; */
   top: 16%;
   display: none;
-/*   margin-left: auto;
-  margin-right: auto; */
-  /* max-width: 1577px; */
   max-width: 100%;
-  /* max-height: 100%; */
 }
 .contTorrImp{
   display: flex; 
@@ -2932,7 +2927,7 @@ elemento.visible {
     top: 7%;
   }
   #pantalla-inicial{
-    position: absolute;
+    position: relative;
     display: flex;
     justify-content: space-between;
     height:100%;

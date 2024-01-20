@@ -42,6 +42,8 @@ var allContenedores = ['container1','cuartoContDensito','tercerContDensito','seg
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIniciales = ['pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado']
+var allContIzquierdos = ['desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador']
+
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor']
 var allContTintero = ['pantalla-tintero','cont-links','imgTorre','vidTintero','imgsRepuestos','agrupaOblicuos-II','container2']
 var allContPantafrente = ['pantalla-frente','container2','imgsRepuestos-II','imgTorre-f','agrupaOblicuos-III']
@@ -472,8 +474,8 @@ function cierraContenedores(elementId) {
             var hijo = pantallaInicial.children[i];
             if (i === 0) {
               // Deja visible el primer hijo
-              hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
-              hijo.style.left = '7%'
+              hijo.style.display = 'block'; // O el valor deseado ('block', 'inline', etc.)
+              hijo.style.marginLeft = '1%'
             } else {
               // Oculta el resto de los hijos
               hijo.style.display = 'none';
@@ -491,13 +493,13 @@ function cierraContenedores(elementId) {
           // Oculta todos los hijos directos de 'pantalla-inicial'
           for (var i = 0; i < pantallaInicial.children.length; i++) {
             var hijo = pantallaInicial.children[i];
-            if (i === 1) {
+            if (i !== 1) {
               // Deja visible el primer hijo
-              hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
-              hijo.style.left = '7%'
+              hijo.style.display = 'none'; // O el valor deseado ('block', 'inline', etc.)
             } else {
               // Oculta el resto de los hijos
-              hijo.style.display = 'none';
+              hijo.style.marginLeft = '1%';
+              hijo.style.display = 'block';
             }
           }
         }      
@@ -513,8 +515,8 @@ function cierraContenedores(elementId) {
             var hijo = pantallaInicial.children[i];
             if (i === 2) {
               // Deja visible el primer hijo
-              hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
-              hijo.style.left = '7%'
+              hijo.style.display = 'block'; // O el valor deseado ('block', 'inline', etc.)
+              hijo.style.marginLeft = '1%'
             } else {
               // Oculta el resto de los hijos
               hijo.style.display = 'none';
@@ -532,8 +534,8 @@ function cierraContenedores(elementId) {
             var hijo = pantallaInicial.children[i];
             if (i === 3) {
               // Deja visible el primer hijo
-              hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
-              hijo.style.left = '7%'
+              hijo.style.display = 'block'; // O el valor deseado ('block', 'inline', etc.)
+              hijo.style.marginLeft = '1%'
             } else {
               // Oculta el resto de los hijos
               hijo.style.display = 'none';
@@ -550,13 +552,14 @@ function cierraContenedores(elementId) {
           // Oculta todos los hijos directos de 'pantalla-inicial'
           for (var i = 0; i < pantallaInicial.children.length; i++) {
             var hijo = pantallaInicial.children[i];
-            if (i === 4) {
+            if (i !== 4) {
               // Deja visible el primer hijo
-              hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
-              hijo.style.left = '7%'
+              hijo.style.display = 'none'; // O el valor deseado ('block', 'inline', etc.)
             } else {
               // Oculta el resto de los hijos
-              hijo.style.display = 'none';
+              hijo.style.marginLeft = '1%';
+              hijo.style.display = 'block';
+              console.log(hijo.id)
             }
           }
         }      
@@ -2332,6 +2335,15 @@ function abrirSeccionContinua(elementId) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  for (var i = 0; i < allContIzquierdos.length; i++) {                                        // ELIMINA ESTILOS APLICADOS DESDE OTRAS FUNCIONES A LOS ELEMENTOS 
+    var elemento = document.getElementById(allContIzquierdos[i]);
+    
+    if (elemento) {
+        elemento.removeAttribute('style'); // Elimina todos los estilos en línea
+    }
+ }
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   document.body.style.zoom = "100%"
   container1.style.left=''
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
