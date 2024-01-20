@@ -473,6 +473,7 @@ function cierraContenedores(elementId) {
             if (i === 0) {
               // Deja visible el primer hijo
               hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
+              hijo.style.left = '7%'
             } else {
               // Oculta el resto de los hijos
               hijo.style.display = 'none';
@@ -513,6 +514,7 @@ function cierraContenedores(elementId) {
             if (i === 2) {
               // Deja visible el primer hijo
               hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
+              hijo.style.left = '7%'
             } else {
               // Oculta el resto de los hijos
               hijo.style.display = 'none';
@@ -531,6 +533,7 @@ function cierraContenedores(elementId) {
             if (i === 3) {
               // Deja visible el primer hijo
               hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
+              hijo.style.left = '7%'
             } else {
               // Oculta el resto de los hijos
               hijo.style.display = 'none';
@@ -550,6 +553,7 @@ function cierraContenedores(elementId) {
             if (i === 4) {
               // Deja visible el primer hijo
               hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
+              hijo.style.left = '7%'
             } else {
               // Oculta el resto de los hijos
               hijo.style.display = 'none';
