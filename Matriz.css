@@ -2940,7 +2940,7 @@ elemento.visible {
   #desbobinadorId{
     position: absolute;
     display: flex;
-    margin-left: 1%;
+    margin-left: 16%;
     flex-direction: column;
     width: 18%; /* 70% - 52% = 18% */
     height: 50%;
@@ -2956,7 +2956,7 @@ elemento.visible {
   #uTeñidos{
     position: absolute;
     display: flex;
-    margin-left: 13%;
+    margin-left: 29%;
     flex-direction: column;
     width: 18%; /* 70% - 52% = 18% */
     height: 50%;
@@ -2972,7 +2972,7 @@ elemento.visible {
   #alimentadorId{
     position: absolute;
     display: flex;
-    margin-left: 25%;
+    margin-left: 42%;
     flex-direction: column;
     width: 18%; /* 70% - 52% = 18% */
     height: 50%;
@@ -2988,7 +2988,7 @@ elemento.visible {
   #unidProceso{
     position: absolute;
     display: flex;
-    margin-left: 37.2%;
+    margin-left: 55%;
     flex-direction: column;
     width: 18%; /* 70% - 52% = 18% */
     height: 50%;
@@ -3004,7 +3004,7 @@ elemento.visible {
   #rebobinador{
     position: absolute;
     display: flex;
-    margin-left: 48%;
+    margin-left: 68%;
     flex-direction: column;
     width: 18%; /* 70% - 52% = 18% */
     height: 50%;
