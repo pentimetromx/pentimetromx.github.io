@@ -2940,7 +2940,7 @@ elemento.visible {
   #desbobinadorId{
     position: absolute;
     display: flex;
-    margin-left: 16%;
+    margin-left: 1%;
     flex-direction: column;
     width: 18%; /* 70% - 52% = 18% */
     height: 50%;
@@ -2956,7 +2956,7 @@ elemento.visible {
   #uTeñidos{
     position: absolute;
     display: flex;
-    margin-left: 29%;
+    margin-left: 20%;
     flex-direction: column;
     width: 18%; /* 70% - 52% = 18% */
     height: 50%;
@@ -2972,7 +2972,7 @@ elemento.visible {
   #alimentadorId{
     position: absolute;
     display: flex;
-    margin-left: 42%;
+    margin-left: 40%;
     flex-direction: column;
     width: 18%; /* 70% - 52% = 18% */
     height: 50%;
@@ -2988,7 +2988,7 @@ elemento.visible {
   #unidProceso{
     position: absolute;
     display: flex;
-    margin-left: 55%;
+    margin-left: 59%;
     flex-direction: column;
     width: 18%; /* 70% - 52% = 18% */
     height: 50%;
@@ -3004,7 +3004,7 @@ elemento.visible {
   #rebobinador{
     position: absolute;
     display: flex;
-    margin-left: 68%;
+    margin-left: 78%;
     flex-direction: column;
     width: 18%; /* 70% - 52% = 18% */
     height: 50%;
@@ -3030,56 +3030,48 @@ elemento.visible {
   .boton-c {
     position: relative;
     display: flex;
-    height: 16.125px;
-    width: 32.625px;
-    font-size: 5px;
+    height: 26px;
+    width: 53px;
+    font-size: 8px;
   }
   /*//////////////////////////////////////////////////////////////////////////////////////  BOTONES ROJOS  ////*/
+  .boton-b{
+    height: 21px;
+    width: 67px;
+    background: linear-gradient(45deg,  rgb(255, 24, 55) 55%,  rgba(255, 24, 55, 0.33) 99%);                       
+    color: white;
+    border-radius: 6px;
+    margin-right: 24px;
+    font-size: 7px;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.1s; 
+  }
 
   #boton1{
     position: absolute;
     margin-top: -37%;
     left: 10%;
-    height: 17px;
-    width: 47px;
-    font-size: 4px;
-    border-radius: 6px;
   }
   #boton7{
     position: absolute;
     margin-top: -37%;
     left: 10%;
-    height: 17px;
-    width: 47px;
-    font-size: 5px;
-    border-radius: 6px;
   }
   #boton13{
     position: absolute;
     margin-top: -37%;
     left: 11%;
-    height: 17px;
-    width: 47px;
-    font-size: 5px;
-    border-radius: 6px;
   }
   #boton19{
     position: absolute;
     margin-top: -37%;
     left: 11%;
-    height: 17px;
-    width: 47px;
-    font-size: 5px;
-    border-radius: 6px;
   }
   #boton25{
     position: absolute;
     margin-top: -37%;
     left:13%;
-    height: 17px;
-    width: 47px;
-    font-size: 5px;
-    border-radius: 6px;
   }
 /*//////////////////////////////////////////////////////////////////////////////////////////*/
 
@@ -3108,26 +3100,26 @@ elemento.visible {
   #toggleVideoButton{
     position: relative;
     top: 35%;
-    left: 27%;  
-    height: 20px;
-    width: 155px;
-    font-size: 8px;  
+    left: 25%;  
+    height: 27px;
+    width: 211px;
+    font-size: 10px;  
   } 
   .boton-d{
-    height: 18px;
-    width: 36px;
+    height: 27px;
+    width: 60px;
     background: linear-gradient(45deg, rgba(0,250,0) 15%,  rgb(0,255,0,0.077) 85%);                       
     color: rgb(0,0,0);
     border-radius: 5px;
     text-align: center; 
-    font-size: 3px;   
+    font-size: 7px;   
     cursor: pointer; 
     transition: transform 0.1s;
   } 
   #tinter-o{
     position: relative;
     display: flex;
-    left: 23%;
+    left: 10%;
     top: 1%;
     width: 10%;
     height: 100%;
@@ -3140,7 +3132,7 @@ elemento.visible {
   #bateria-entintado{
     position: relative;
     display: flex;
-    left: 25%;
+    left: 22%;
     top: 1%;
     width: 10%;
     height: 100%;
@@ -3153,7 +3145,7 @@ elemento.visible {
   #bancada-torre{
     position: relative;
     display: flex;
-    left: 27%;
+    left: 34%;
     top: 1%;
     width: 10%;
     height: 100%;
@@ -3166,7 +3158,7 @@ elemento.visible {
   #sis-humedad{
     position: relative;
     display: flex;
-    left: 29%;
+    left: 46%;
     top: 1%;
     width: 10%;
     height: 100%;
@@ -3180,22 +3172,22 @@ elemento.visible {
   #tinteroButton{
     position: absolute;
     left: 6%;
-    top: 9%;
+    top: 8%;
   }
   #bateriaButton{
     position: absolute;
     left: 8%;
-    top: 9%;
+    top: 8%;
   }
   #bancadaButton{
     position: absolute;
     left: 9%;
-    top: 9%;
+    top: 8%;
   }
   #humedadButton{
     position: absolute;
     left: 10%;
-    top: 9%;
+    top: 8%;
   }
 /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
   .mostrar-cont{
