@@ -23,6 +23,8 @@ var contCalidad = document.getElementById('cont-titulo-calidad')
 var contOperativa = document.getElementById('cont-titulo-operacion')
 var previousElementID
 var elementoEliminado
+var contPadre = document.getElementById('conti-boton-freno')
+
 
 var linkList = document.getElementById("linkList")
 var linkListI = document.getElementById("linkListI")
@@ -36,17 +38,16 @@ var imgTorreI = document.getElementById('imgTorre')
 var contInicial = document.getElementById('container1')
 var botonMa = document.getElementById('bot-mantaut')
 var imagPasoApaso = document.querySelectorAll('.img1')
-var allContenedores = ['container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
+var allContenedores = ['container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
-var allContIniciales = ['pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado']
+var allContIniciales = ['pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado']
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor']
 var allContTintero = ['pantalla-tintero','cont-links','imgTorre','vidTintero','imgsRepuestos','agrupaOblicuos-II','container2']
 var allContPantafrente = ['pantalla-frente','container2','imgsRepuestos-II','imgTorre-f','agrupaOblicuos-III']
-var allContTorreImp = ['rotatek-1','toggleVideoButton','torre-imp','tinter-o','cont-Verticales2','bateria-entintado','cont-Verticales3','bancada-torre','cont-Verticales4','sis-humedad','cont-Verticales5']
+var allContTorreImp = ['toggleVideoButton','torre-imp','tinter-o','cont-Verticales2','bateria-entintado','cont-Verticales3','bancada-torre','cont-Verticales4','sis-humedad','cont-Verticales5']
 var allContBaterImp = ['contenedor-7','videoElement1-II','container7']
 var allContSisHumedad = ['contenedor-9','contene-10','sitema-humedad']
-var contTorre = document.getElementById('rotatek-1')
 var contVid = document.getElementById('videosTraining')
 var contIMPlaca = document.getElementById('placa')
 var contIMmanta = document.getElementById('manta')
@@ -91,7 +92,7 @@ const uniTeñido = document.getElementById('uTeñidos')
 const alimentadorId = document.getElementById('alimentadorId')
 const unidadProcess = document.getElementById('unidProceso')
 const reBobinado = document.getElementById('rebobinador')
-const rotatPanel = document.getElementById('rotatek-1')
+const rotatPanel = document.getElementById('torre-imp')
 const seccionTintero = document.getElementById('pantalla-tintero')
 const seccionFrente = document.getElementById('pantalla-frente')
 const seccionMandos = document.getElementById('pantalla-mandos')
@@ -109,7 +110,7 @@ const video = document.getElementById("videoBackground")
 const videoII = document.getElementById("videoBackgroundII")
 const imgsDistribuidor = document.getElementById('contImgDistribuidor')
 const imgsForma = document.getElementById('contImgEntintador')
-const toggleVideoButton = document.getElementById("toggleVideoButton")
+var toggleVideoButton = document.getElementById("toggleVideoButton")
 const images = document.querySelectorAll('.image-training') 
 const imageElementsi = document.querySelectorAll('.image-training')
 const contImpresor = document.getElementById('contImpresor')
@@ -367,6 +368,9 @@ function changeButtonStyles(elementId) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
         }
       } 
+
+      document.body.style.zoom = "100%"
+
       const botonElemento = document.querySelectorAll('.boton-f')
       var delay = 100;
       for (var i = 0; i < botonElemento.length; i++) {
@@ -455,8 +459,7 @@ function cierraContenedores(elementId) {
       document.getElementById(button).style.backgroundColor = ''
     }
   } 
-  /* container1.style.display = 'flex' */
- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   if (firstClick) {                                                                                                                       /// LOGICA PRIMER CLICK
     if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
       idsArray.push(elementId);
@@ -576,7 +579,7 @@ function cierraContenedores(elementId) {
         elemento.style.color = ''
       }
     })    
-    abrirSeccionContinua()    
+    abrirSeccionContinua() 
   }
 }
 function muestraRodillo (vidElem, imgCont) {
@@ -2319,7 +2322,7 @@ function abrirSeccionContinua(elementId) {
   var botonesIniciales = document.querySelectorAll('.btn-bloque')
   var botonesC = document.querySelectorAll('.boton-c')  
 
-  var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador','rotatek-1','torre-imp','tinter-o','bateria-entintado'];                                                              
+  var elementosExcluidos = ['toggleVideoButton','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador','torre-imp','torre-imp','tinter-o','bateria-entintado'];                                                              
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
@@ -3058,7 +3061,7 @@ function irContenedorAnterior() {
     case "conteneMantaut":
       ElementosMa('conteneMantaut')
     break; 
-    case "rotatek-1":
+    case "torre-imp":
       location.reload()
     break; 
     case "frente":
@@ -3420,7 +3423,7 @@ function irContenedorSiguiente() {
     case "conteneMantaut":
       ElementosMa('conteneMantaut')
     break; 
-    case "rotatek-1":
+    case "torre-imp":
       location.reload()
     break; 
     case "frente":
@@ -4148,7 +4151,7 @@ function lubricacion(buttId,btnIniId){
   var contLubrica = document.getElementById('lubricacion')
   var arrayIdButtsLubII = ['btn60', 'btn70', 'btn80']
   var botones = document.querySelectorAll('.btn-bloque')
-  var contenedor = document.getElementById('rotatek-1')
+  var contenedor = document.getElementById('torre-imp')
 
   if (contenedor.style.display === 'none' || contenedor.style.display === '') {
 
@@ -4241,9 +4244,9 @@ function lubricacion(buttId,btnIniId){
           }
         })          
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-        if (contTorre.style.display === 'none'){                                                                    /// SI ESTA OCULTO EL PADRE EJECUTA FUNCION 
+        if (contenedor.style.display === 'none'){                                                                   /// SI ESTA OCULTO EL PADRE EJECUTA FUNCION 
           showButtonsMAconRetrasoDesb()
-        }          
+        }         
       break;
       case 'boton3':
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////         
@@ -4291,8 +4294,7 @@ function lubricacion(buttId,btnIniId){
           }
         }
         // Mostrar solo el contenedor de botones
-        var contiBotonFreno = document.getElementById('conti-boton-freno')
-        contiBotonFreno.style.display = 'flex'
+        contPadre.style.display = 'flex'
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
         for (var i = 0; i < arrayIdButtsLubII.length; i++) {                                                                     /// COLOR GRIS A LOS BOTONES                                                            
           var button = arrayIdButtsLubII[i]                                                                                         
@@ -4304,7 +4306,7 @@ function lubricacion(buttId,btnIniId){
         }  
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-        if (contTorre.style.display === 'none'){                                                                    /// SI ESTA OCULTO EL PADRE EJECUTA FUNCION 
+        if (contenedor.style.display === 'none'){                                                                    /// SI ESTA OCULTO EL PADRE EJECUTA FUNCION 
           showButtonsFrenoconRetrasoDesb()
         }         
       break;
@@ -4379,7 +4381,7 @@ function lubricacion(buttId,btnIniId){
       break;
       default:
     }
-  } 
+  }
 }  
 function showButtonsMAconRetrasoDesb() {
   var botones = document.querySelectorAll('.butt-mautonomo-desb') // Selecciona todos los botones
@@ -4561,8 +4563,8 @@ function LubricaDesbobinador(idButt) {
             // Si no es 'lubri-III', ocultar el elemento
             eltoLubrica.style.display = 'none'
         }
-    }
-    if (padreLubriIII) {
+     }
+     if (padreLubriIII) {
       // Recorrer los elementos hijos del padre
       for (var i = 0; i < padreLubriIII.children.length; i++) {
           var hijo = padreLubriIII.children[i]
@@ -4576,7 +4578,7 @@ function LubricaDesbobinador(idButt) {
               hijo.style.display = 'none'
           }
       }
-    }
+     }
     break;
     case 'btn60': 
       ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4640,8 +4642,7 @@ function LubricaDesbobinador(idButt) {
         }
       }
       // Paso 5: Hacer visible solo el hijo con la clase 'conti-boton'
-      var contiBoton = document.getElementById('conti-boton-freno')
-      contiBoton.style.display = 'flex'  // Suponiendo que 'flex' es la propiedad de estilo 
+      contPadre.style.display = 'flex'  // Suponiendo que 'flex' es la propiedad de estilo 
     break;
     case 'btn80': 
       // Paso 1: Obtener el elemento padre
@@ -4657,8 +4658,7 @@ function LubricaDesbobinador(idButt) {
         }
       }
       // Paso 5: Hacer visible solo el hijo con la clase 'conti-boton'
-      var contiBoton = document.getElementById('conti-boton-freno')
-      contiBoton.style.display = 'flex'  // Suponiendo que 'flex' es la propiedad de estilo 
+      contPadre.style.display = 'flex'  // Suponiendo que 'flex' es la propiedad de estilo 
     break;    
     default:
   } 
@@ -4989,7 +4989,6 @@ function showButtonsUTeñidoconRetraso() {
 function showButtonsFrenoconRetrasoDesb() {
   var botones = document.querySelectorAll('.butt-mautonomo-freno') // Selecciona todos los botones
   var contBotonesFreno = document.getElementById('freno')
-  var contPadre = document.getElementById('conti-boton-freno')
 
   contBotonesFreno.style.display = 'flex'
   contPadre.style.display = 'flex'
@@ -7282,7 +7281,7 @@ searchForm.addEventListener('submit', function (e) {
       abrirSeccionCurado('cont-secador')
     break;
     case 'torre':      
-      cambioContenedor('rotatek-1')
+      cambioContenedor('torre-imp')
     break;
     case 'smed':      
     changeButtonStyles('bancada-torre-II')

@@ -2911,19 +2911,6 @@ elemento.visible {
   box-shadow: none;
 }
 
-/* #sis-humedad{
-  position: relative;
-  display: flex;
-  margin-left: 10%;
-  margin-top: 20%;
-  height: 70%;
-  flex-direction: column;
-}
-#cont-Verticales6{
-  position: absolute;
-  left: 35%;
-}
- */
 @media screen and (max-width: 420px) {
   /* @media screen and (max-width: 768px) { */  
   #agrupaOblicuos-XI{
@@ -2953,8 +2940,6 @@ elemento.visible {
     top: 27%;
     display: none;
   }
-
-
 
   /*//////////////////////////////////////////////////////////////////////////////////////  CONTENEDORES IZQUIERDOS  ////*/
   #desbobinadorId{
@@ -3105,6 +3090,13 @@ elemento.visible {
     left: 62%;
   }
   .contTorrImp{
+    position: relative;
+    display: flex;
+    top: -2%;
+    left: 67%;
+    height: 100%;
+  }
+  #rotatek-1{
     position: relative;
     display: flex;
     top: -2%;
@@ -3409,9 +3401,5 @@ elemento.visible {
     left: -11px;
     width: calc(100% + 11px); 
     height: auto; /* Maintain aspect ratio */
-  }
-  
+  }  
 }
-
-
-
