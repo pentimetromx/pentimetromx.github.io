@@ -718,6 +718,25 @@ width:447px ;
   margin-top: 85px;
   margin-left:20px;
 }
+#lubri-I{
+  position: relative;
+  display: flex;
+  left:577px;
+  top:-40px;
+  display: none;
+}
+#vidLub{
+  position: absolute;
+  display: flex;
+  margin-top:-130px; 
+  border-radius: 17px;
+  height: 127px;
+  display: none;
+} 
+#lubri-vid{
+  height: 127px;
+}
+
 #contImagGraf{
   display: flex;
   flex-direction: column;
@@ -2061,12 +2080,28 @@ header {
  }
 #balineras,
 #balineras-II,
-#aceitera,
 #aceitera-II{
   display: flex;
   flex-direction: column;
   display: none;
 }
+#aceitera{
+  display: flex;
+  flex-direction: column;
+  display: none;
+  margin-top: 17px;
+}
+#aceite{
+  position: absolute;
+  display: none;
+  top:-192px;
+  justify-content: center;
+  background: linear-gradient(45deg, blue 15%,  black 85%);
+  font-size: 33px;
+  width: 287px;
+  border-radius: 7px;
+}
+
 #freno-II{
   display: flex;
   flex-direction: column;
@@ -3220,7 +3255,67 @@ elemento.visible {
     position: absolute;
     left:-28%;
     top: 5%;
-  }  
+  } 
+  #lubri-I{
+    position: relative;
+    display: flex;
+    left:10%;
+    top:-27%;
+    display: none;
+  } 
+  #vidLub{
+    position: absolute;
+    display: flex;
+    margin-top:-130px;
+    left: -3%; 
+    border-radius: 17px;
+    height: 77px;
+    display: none;
+  } 
+  #lubri-vid{
+    height: 77px;
+  }
+  #aceitera{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    display: none;
+    margin-top: -8%;
+    left: -3%; 
+  } 
+  #aceitera img{
+  height: 77px;
+  width: 104px;
+  border-radius: 17px; 
+  margin-bottom: 17px;
+  }
+  #aceite{
+    position: absolute;
+    left:-2% ;
+    margin-top: 5%;
+    font-size: 17px;
+    text-align: center;
+    align-items: center;
+    width: 177px;
+    height: 27px;
+    border-radius: 7px;
+  }
+  #indicaciones{
+    position: absolute;
+    margin-top: -47%;
+    left: 20%;
+  }
+  #indicaciones label{
+    margin-top: 77px;
+    font-size: 10px;
+  }
+  .linea-vertical-II{
+    position: absolute;
+    left: 44%;
+    top: 1%px;
+    bottom: 0;
+  }
+   
 
   .mostrar-cont{
     display: flex;
