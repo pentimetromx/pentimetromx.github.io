@@ -3323,26 +3323,13 @@ elemento.visible {
     width: 104px;
     border-radius: 17px; 
     margin-bottom: 20px;
-    }
-   
+    }   
 
   #aceitera img{
   height: 77px;
   width: 104px;
   border-radius: 17px; 
   margin-bottom: 17px;
-  }
-  #aceite{
-    position: absolute;
-    left:-2% ;
-    margin-top: 5%;
-    font-size: 17px;
-    text-align: center;
-    align-items: center;
-    width: 177px;
-    height: 27px;
-    border-radius: 7px;
-    display: none;
   }
   #indicaciones{
     position: absolute;
@@ -3361,7 +3348,7 @@ elemento.visible {
   }
   #grasa{
     position: absolute;
-    left:27%;
+    left:24%;
     margin-top: -24.5%;
     font-size: 17px;
     text-align: center;
@@ -3371,6 +3358,19 @@ elemento.visible {
     border-radius: 7px;
     display: none;
   }
+  #aceite{
+    position: absolute;
+    left:-5% ;
+    margin-top: 5%;
+    font-size: 17px;
+    text-align: center;
+    align-items: center;
+    width: 177px;
+    height: 27px;
+    border-radius: 7px;
+    display: none;
+  }
+
   #indicaciones-II{
     position: absolute;
     margin-top: -36%;
