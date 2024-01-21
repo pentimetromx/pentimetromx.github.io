@@ -725,6 +725,14 @@ width:447px ;
   top:-40px;
   display: none;
 }
+#lubri-II{
+  position: relative;
+  display: none;
+  display: flex;
+  left:954px;
+  top:-496px;
+}
+
 #vidLub{
   position: absolute;
   display: flex;
@@ -2101,6 +2109,17 @@ header {
   width: 287px;
   border-radius: 7px;
 }
+#grasa{
+  position: absolute;
+  display: none;
+  top: -69px; 
+  background: linear-gradient(45deg, black 15%, blue 85%);
+  font-size: 33px; 
+  width: 287px;
+  border-radius: 7px;
+  justify-content: center;
+  align-items: center;
+}
 
 #freno-II{
   display: flex;
@@ -3263,6 +3282,14 @@ elemento.visible {
     top:-27%;
     display: none;
   } 
+  #lubri-II{
+    position: relative;
+    display: flex;
+    left:33%;
+    top:-27%;
+    display: none;
+  }
+  
   #vidLub{
     position: absolute;
     display: flex;
@@ -3283,6 +3310,22 @@ elemento.visible {
     margin-top: -8%;
     left: -3%; 
   } 
+  #aceitera-II{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-top: -31%;
+    left: 25%;
+    display: none; 
+  }
+  #aceitera-II img{
+    height: 77px;
+    width: 104px;
+    border-radius: 17px; 
+    margin-bottom: 20px;
+    }
+   
+
   #aceitera img{
   height: 77px;
   width: 104px;
@@ -3299,6 +3342,7 @@ elemento.visible {
     width: 177px;
     height: 27px;
     border-radius: 7px;
+    display: none;
   }
   #indicaciones{
     position: absolute;
@@ -3315,6 +3359,29 @@ elemento.visible {
     top: 1%px;
     bottom: 0;
   }
+  #grasa{
+    position: absolute;
+    left:27%;
+    margin-top: -24.5%;
+    font-size: 17px;
+    text-align: center;
+    align-items: center;
+    width: 177px;
+    height: 27px;
+    border-radius: 7px;
+    display: none;
+  }
+  #indicaciones-II{
+    position: absolute;
+    margin-top: -36%;
+    left: 48%;
+  }
+  #indicaciones-II label{
+    margin-top: 31%;
+    font-size: 10px;
+  }
+  
+  
    
 
   .mostrar-cont{
