@@ -4673,8 +4673,7 @@ function LubricaDesbobinador(idButt) {
       contPadre.style.display = 'flex'  // Suponiendo que 'flex' es la propiedad de estilo 
     break;    
     default:
-  } 
-  
+  }   
 } 
 function UnidadTeñido(buttId,btnIniId){
   var alimenta = document.getElementById('alimentadorId')

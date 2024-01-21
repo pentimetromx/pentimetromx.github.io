@@ -956,6 +956,11 @@ width:447px ;
   font-family: "GothamRounded", sans-serif; /* Aplica la fuente deseada */
   text-decoration-line: underline;
 }
+#conti-boton-desb{
+  left: 127px; 
+  top: 130px;
+}  
+
 #vidTintero,
 #imgTorre-s,
 #imgTorre-m{
@@ -2037,6 +2042,8 @@ header {
 #frec-lubrica{
   display: flex;
   flex-direction: column;
+  margin-left:357px;
+  margin-top: 167px;
 }  
 #frec-lubrica button{
   width: 27px;
@@ -3189,11 +3196,34 @@ elemento.visible {
     left: 10%;
     top: 8%;
   }
-/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+  /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+  #conti-boton-desb{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 70px; 
+    top: 67px;
+  }
+  #conti-boton-desb button{
+    margin-bottom: 12%;
+  }
+
+  .butt-mautonomo{
+    height: 27px;
+    width: 130px;
+    font-size: 9px;
+    text-align: right;
+    align-items:start; 
+    margin-bottom: 0;
+  }
+  #frec-lubrica{
+    position: absolute;
+    left:-28%;
+    top: -6%;
+  }  
+
   .mostrar-cont{
     display: flex;
-/*     position: absolute;
-    width: 110%; */
   }
   #container01{
     position: absolute;
