@@ -715,7 +715,7 @@ width:447px ;
   position: absolute;
   display: flex;
   flex-direction: column;
-  margin-top: 64px;
+  margin-top: 85px;
   margin-left:20px;
 }
 #contImagGraf{
@@ -958,7 +958,7 @@ width:447px ;
 }
 #conti-boton-desb{
   left: 127px; 
-  top: 130px;
+  top: 120px;
 }  
 
 #vidTintero,
@@ -2043,7 +2043,7 @@ header {
   display: flex;
   flex-direction: column;
   margin-left:357px;
-  margin-top: 167px;
+  margin-top: 120px;
 }  
 #frec-lubrica button{
   width: 27px;
@@ -3202,7 +3202,7 @@ elemento.visible {
     display: flex;
     flex-direction: column;
     left: 70px; 
-    top: 67px;
+    top: 71px;
   }
   #conti-boton-desb button{
     margin-bottom: 12%;
@@ -3219,7 +3219,7 @@ elemento.visible {
   #frec-lubrica{
     position: absolute;
     left:-28%;
-    top: -6%;
+    top: 5%;
   }  
 
   .mostrar-cont{
