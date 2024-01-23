@@ -326,7 +326,7 @@ transform: scale(1.1);
 #contLineas{
   position: absolute;
   left: 16%;
-  margin-top: 6%;
+  margin-top: 4%;
   width: 84%; /* 100% - 16% */
   height: 500px;
 }
@@ -875,7 +875,7 @@ width:447px ;
   position: absolute;
   display: flex;
   left: 17%;
-  top: 15%;
+  top: 10%;
   width: 350px;
   height: 255px;
 }
@@ -883,7 +883,7 @@ width:447px ;
   position: absolute;
   display: flex;
   left: 20%;
-  top: 47%;
+  top: 43%;
   width: 357px;
   height: 255px;
 }
@@ -891,15 +891,22 @@ width:447px ;
   position: absolute;
   display: flex;
   left: 45%;
-  top: 47%;
+  top: 43%;
   width: 357px;
   height: 255px;
+}
+#canvasContainer9 {
+  position: absolute;
+  display: flex;
+  left: 75%;
+  top: 58%;
+  width: 277px;
 }
 #canvasContainer5 {
   position: absolute;
   display: flex;
   left: 44%;
-  top: 15%;
+  top: 10%;
   width: 357px;
   height: 255px;
 }
@@ -907,15 +914,8 @@ width:447px ;
   position: absolute;
   display: flex;
   left: 74%;
-  top: 15%;
+  top: 13%;
   width: 300px;
-}
-#canvasContainer9 {
-  position: absolute;
-  display: flex;
-  left: 75%;
-  top: 47%;
-  width: 277px;
 }
 #canvasContainer2 {
   display: flex;
@@ -2066,12 +2066,40 @@ header {
   cursor: pointer;
   display: none;
 }
-#vidFreno,
+#conti-boton-freno{
+  position: absolute;
+  left: 0%;
+  top: 4%;
+  display: none;
+}
+#cont-arriba-freno {
+  position: absolute;
+  left: 20%;
+  top: 0%;
+  margin-bottom: 20px;    /*Añade un margen inferior de 20px al contenedor padre*/
+  display: none;  
+}
 #vidLub{
   display: flex;
   flex-direction: column;
   display: none;
  }
+ #vidFreno{
+  position: relative;
+  flex-direction: column;
+  display: flex;
+  top: 32px;
+  left: -37px;
+  margin-bottom: 17px;
+  width: 200px;  
+}
+ #freno-vid{
+  width:100%;
+  height: 100%;
+  border: 7px solid rgba(255,255,0,15);
+  border-radius: 17px;  
+}
+
  #lubri-III{
   position: relative;
   display: flex;
@@ -2168,12 +2196,6 @@ header {
   justify-content: center;
   align-items: center;
 }
-
-#freno-II{
-  display: flex;
-  flex-direction: column;
-  display: none;
-}
 #teñido-II img,
 #freno-II img,
 #aceitera img,
@@ -2232,7 +2254,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  top: 6%;
+  top: 10%;
   width: 100%;
   height: 100%;
   display: none;
@@ -2240,7 +2262,7 @@ header {
 #title-interfaz{
   position: absolute;
   display: flex;
-  margin-top: 2%;
+  margin-top: 0.1%;
   left: 20%;
   width: 60%;
   font-family: "GothamRounded", sans-serif;
@@ -2428,13 +2450,6 @@ elemento.visible {
   border: 1px solid rgba(255,255,0,15);
   border-radius: 7px;
 }
-#cont-arriba-freno {
-  position: absolute;
-  top: 107px;
-  left: 377px;
-  margin-bottom: 20px; /* Añade un margen inferior de 20px al contenedor padre */
-  display: none;  
-}
 #cont-arriba {
   position: absolute;
   top: 107px;
@@ -2485,14 +2500,6 @@ elemento.visible {
   justify-content: center;
   align-items: center;
 }
-#vidFreno{
-  position: relative;
-  display: flex;
-  top: 37px;
-  left: -37px;
-  margin-bottom: 17px;
-  width: 367px;  
-}
 #vidTeñido {
   position: relative;
   display: flex;
@@ -2508,12 +2515,6 @@ elemento.visible {
   left: -39px;
   margin-bottom: 17px;
   height: 247px;
-}
-#freno-vid{
-  width:100%;
-  height: 100%;
-  border: 7px solid rgba(255,255,0,15);
-  border-radius: 17px;  
 }
 #teñido-vid {
   width:100%;
@@ -2547,8 +2548,19 @@ elemento.visible {
 }
 #freno-II{
   position: relative;
-  top: 87px;
-  left: 737px;  
+  display: flex;
+  flex-direction: column;
+  top: 9%;
+  left: 48%;  
+  display: none;
+}
+#freno{
+  position: absolute;
+  left: 10%;
+  top: 18%;
+  width: 100%;
+  height: 100%;
+  display: none;
 }
 #teñido-II{
   position: relative;
@@ -3137,14 +3149,6 @@ elemento.visible {
     top: 2%;
     width: 55%;
     padding-left: 20px;
-
-/*     position: absolute;
-    flex-direction: column;
-    display: flex;
-    top: 4%;
-    left: 49%;
-    width: 55%;
-    padding-left: 20px; */
   }
 
   .boton-e,
@@ -3674,6 +3678,44 @@ elemento.visible {
     width: 350px;
     height: 2px;
   }
+  #conti-boton-freno{   
+    position: absolute;
+    display: flex;
+    left: 10%;
+    top: -9%;
+    margin-bottom: 20px;
+    display: none;    
+  }
+  #cont-arriba-freno {
+    position: absolute;
+    left: 20%;
+    top: 27%;
+    margin-bottom: 20px; /* Añade un margen inferior de 20px al contenedor padre */
+    display: none;     
+  }
+  #freno-I{
+    display: flex;
+    position: absolute;
+    top: -10px;
+    left: -8px;
+    background: linear-gradient(45deg, black 33%, gray 67%);
+    font-size: 14px;
+    width: 157px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+  }
+  #freno-II{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 1%;  
+    display: none;
+  }
+  
+  
+  
   
   
   .mostrar-cont{

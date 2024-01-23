@@ -5433,7 +5433,7 @@ function resultadosEmpleado(idEmpleado, functionExe) {
       ContIconoAna.style.position = 'absolute'
       ContIconoAna.style.display = 'flex'
       ContIconoAna.style.height = '64%'
-      ContIconoAna.style.top = '35%'
+      ContIconoAna.style.top = '-66%'
       ContIconoAna.style.left = '3%'
     break;
     case 'icon-andres-I':
@@ -5901,22 +5901,22 @@ function updateCarlos() {
     graficosAutomaticos('canvasContainer9')
   }, 700) // 0.3 segundos (300 ms + 300 ms)
   var nuevosDatos = [/* Nuevos valores de datos */ 17,99,44,0,7,5]
- // Actualiza los datos del gráfico
- chart7.data.datasets[0].data = nuevosDatos;
- // Actualiza el gráfico
- chart7.update()
- ///////////////////////////////////////////////////////////////////
- var nuevosDatosI = [/* Nuevos valores de datos */ 27,33,84,6,15,97]
- // Actualiza los datos del gráfico
- chart8.data.datasets[0].data = nuevosDatosI;
- // Actualiza el gráfico
- chart8.update()
- //////////////////////////////////////////////////////////////////
- var nuevosDatosII = [/* Nuevos valores de datos */ 15,5,55,90,100,17]
- // Actualiza los datos del gráfico
- chart9.data.datasets[0].data = nuevosDatosII;
- // Actualiza el gráfico
- chart9.update() 
+  // Actualiza los datos del gráfico
+  chart7.data.datasets[0].data = nuevosDatos;
+  // Actualiza el gráfico
+  chart7.update()
+  ///////////////////////////////////////////////////////////////////
+  var nuevosDatosI = [/* Nuevos valores de datos */ 27,33,84,6,15,97]
+  // Actualiza los datos del gráfico
+  chart8.data.datasets[0].data = nuevosDatosI;
+  // Actualiza el gráfico
+  chart8.update()
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosII = [/* Nuevos valores de datos */ 15,5,55,90,100,17]
+  // Actualiza los datos del gráfico
+  chart9.data.datasets[0].data = nuevosDatosII;
+  // Actualiza el gráfico
+  chart9.update() 
    //////////////////////////////////////////////////////////////////
    var nuevosDatosIII = [/* Nuevos valores de datos */ 20,97,27,80,7,77]
    // Actualiza los datos del gráfico
