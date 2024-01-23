@@ -480,8 +480,8 @@ transform: scale(1.1);
 }
 .linea-horizontal-VIII{
   position:absolute;
-  left: 7px;
-  top: 207px;
+  left: 14px;
+  top: 205px;
   transform: translateY(-50%);
   width: 520px;
   height: 2px;
@@ -1829,10 +1829,7 @@ margin-right: 7px;
   color: blue; /*Cambiar el color del texto a blanco*/
   cursor: pointer; /*Cambiar el cursor a una mano */
   font-size: 21px;
-  /* font-weight: bold; */  
-/*   text-decoration: none; /* Eliminar la subrayado predeterminado de los enlaces */
 }
-/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 header {
   background-color: #333;
   color: #fff;
@@ -2426,11 +2423,6 @@ elemento.visible {
  top: 325px;
 }
 
-.img-rodillo{
-  margin-right: 10px;
-  border-radius: 7px;
-  border: 1px solid rgba(255,0,255);
-}
 .img-freno{
   margin-right: 10px;
   border: 1px solid rgba(255,255,0,15);
@@ -2563,8 +2555,25 @@ elemento.visible {
   top: 87px;
   left: 737px;
 }
-#durezas,
+.img-rodillo{
+  margin-right: 10px;
+  border-radius: 7px;
+  border: 1px solid rgba(255,0,255);
+}
 
+#img-sup{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  top: -1px;
+}
+#img-inf{
+  position: absolute;
+  display: flex;
+  flex-direction: row; 
+  top: 220px;
+}
+#durezas,
 #materiales-kaizen,
 #planos-kaizen{
   position: absolute;
@@ -3570,13 +3579,10 @@ elemento.visible {
     height: 2px;
     transform: translateY(-50%);
   }
-
-
-
   #rodilleria{
     position: relative;
-    top: -107%;
-    left: 1%;
+    top: -90%;
+    left: 17%;
     height: 100%;
     width: 100%;
     display: none;
@@ -3615,8 +3621,8 @@ elemento.visible {
   }
   #rodillos-II{
     position: relative;
-    top: 63%;
-    left: 18%;
+    top: 45%;
+    left: 3%;
   }
   #rodillos-II img{
     height: 100px;
@@ -3634,16 +3640,40 @@ elemento.visible {
     flex-direction: row; 
     top: 24%;
   }
-  
-  
-  
-  
-  
-
-
-  
-
-  
+  #durezas{
+  position: absolute;
+  left: -13%;
+  top: 42%;
+  }
+  .img-rodillo{
+    margin-right: 10px;
+    border-radius: 7px;
+    border: 1px solid rgba(255,0,255);
+  }
+  #img-sup{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    top: -1px;
+    width: 170px;
+    height: 127px;  
+  }
+  #img-inf{
+    position: absolute;
+    display: flex;
+    flex-direction: row; 
+    top: 150px;
+    width: 170px;
+    height: 127px;  
+  }
+  .linea-horizontal-VIII{
+    position:fixed;
+    left: 9%;
+    top:76%;
+    transform: translateY(-50%);
+    width: 350px;
+    height: 2px;
+  }
   
   
   .mostrar-cont{
