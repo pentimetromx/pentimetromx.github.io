@@ -2037,6 +2037,12 @@ header {
   width: 100%;
   height: 100%;
 }
+#conti-boton-teñido{
+  position: absolute;
+  left: 127px;
+  top: 130px;
+  display: none;
+}
 #conti-boton-kaizen button,
 #conti-boton-rodilleria button,
 #conti-boton-teñido button,
@@ -2133,34 +2139,6 @@ header {
   content: "";
   display: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #aceitera{
   display: flex;
   flex-direction: column;
@@ -2422,6 +2400,25 @@ elemento.visible {
   border-radius: 7px;
   border: 1px solid rgba(255,0,0);
 }
+#primeras-imgs{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  top: -1px;
+}
+#segunda-imgs{
+  position: absolute;
+  display: flex;
+  flex-direction: row; 
+  top: 160px;
+}
+#tercera-imgs{
+ position: absolute; 
+ display: flex;
+ flex-direction: row; 
+ top: 325px;
+}
+
 .img-rodillo{
   margin-right: 10px;
   border-radius: 7px;
@@ -2534,10 +2531,9 @@ elemento.visible {
 }
 #rodilleria,
 #uniTeñido{
-  display: none;
   position: relative;
-  display: none;
   top: 1px;
+  display: none;
 }
 #freno-II{
   position: relative;
@@ -3434,8 +3430,6 @@ elemento.visible {
   #indicaciones-III label{
     margin-bottom: 64px;
   }
-
-
   #vertcal-line-I{
     position: absolute;
     left: 51%;
@@ -3455,8 +3449,6 @@ elemento.visible {
   #indicaciones-VI label{
     margin-bottom: 64px;
   }
-
-
   .labl-lub{
     font-size: 7px;
   }
@@ -3478,28 +3470,7 @@ elemento.visible {
     border-radius: 17px; 
     margin-bottom: 10px;
   }
-
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
   #indicaciones-II{
     position: absolute;
     margin-top: -36%;
@@ -3509,6 +3480,100 @@ elemento.visible {
     margin-top: 31%;
     font-size: 10px;
   }  
+  #conti-boton-teñido{
+    position: fixed;
+    display: flex;
+    left: 127px;
+    top: 67px;
+  }
+  #vidTeñido {
+    position: fixed;
+    top: 51%;
+    left: 38%;
+    margin-bottom: 17px;
+    height: 77px;
+  }
+  #teñido-I{
+    display: flex;
+    position: fixed;
+    top: 46%;
+    left: 38%;
+    font-size: 10px;
+    width: 147px;
+    height: 20px;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+  }
+/*   #primeras-imgs{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    top: 1%;
+    flex: 3%;
+  } */
+  .img-teñido{
+    margin-right: 10px;
+    border-radius: 7px;
+    border: 1px solid rgba(255,0,0);
+  }
+  #teñido-II img{
+    height: 71px;
+    width: 91px;  
+    border-radius: 9px;   
+    margin-bottom: 7px;  
+  }
+  #teñido-II{
+    position: fixed;
+    top: 65%;
+    left: 21%;
+  }
+
+  #primeras-imgs{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    top: -1px;
+  }
+  #segunda-imgs{
+    position: absolute;
+    display: flex;
+    flex-direction: row; 
+    top: 84px;
+  }
+  #tercera-imgs{
+   position: absolute; 
+   display: flex;
+   flex-direction: row; 
+   top: 170px;
+  }
+  .linea-horizontal-VI{
+    position:fixed;
+    left: 7px;
+    top: 76%;
+    width: 520px;
+    height: 2px;
+    transform: translateY(-50%);
+  }
+  .linea-horizontal-VII{
+    position:fixed;
+    left: 7px;
+    top: 87.6%;
+    width: 520px;
+    height: 2px;
+    transform: translateY(-50%);
+  }
+
+  
+  
+  
+
+
+  
+
+  
+  
+  
   .mostrar-cont{
     display: flex;
   }
