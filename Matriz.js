@@ -5046,6 +5046,7 @@ function showButtonsRodilleria() {
 function rodillosTeñido(botId) {
   var rodilleria = document.getElementById('rodilleria')
   var contVideoTeñido = document.getElementById('rodilleria-vid')
+  var pantaInicial = document.getElementById('pantalla-inicial')
   var padreDurezas = document.getElementById('durezas')
   var contenedoresHijos = rodilleria.children;
   for (var i = 0; i < contenedoresHijos.length; i++) {
@@ -5068,7 +5069,6 @@ function rodillosTeñido(botId) {
           container.style.display = 'none'
         }
       }
-
       padreDurezas.style.display = 'none'                                                                                             /// MUESTRA IMAGENES DUREZA
       for (var i = 0; i < arrayImgsRodilleria.length; i++) {                                                                           
         var imagen = arrayImgsRodilleria[i];

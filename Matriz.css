@@ -2043,6 +2043,11 @@ header {
   top: 130px;
   display: none;
 }
+#conti-boton-rodilleria{
+  left: 127px;
+  top: 130px;
+  display: none;
+}
 #conti-boton-kaizen button,
 #conti-boton-rodilleria button,
 #conti-boton-teñido button,
@@ -2172,7 +2177,6 @@ header {
   flex-direction: column;
   display: none;
 }
-#rodillos-II img,
 #teñido-II img,
 #freno-II img,
 #aceitera img,
@@ -2182,11 +2186,14 @@ header {
   border-radius: 17px; 
   margin-bottom: 17px;
 }
+#rodillos-II{
+  position: relative;
+  top: 87px;
+  left: 737px;
+}
 #rodillos-II img{
   height: 195px;
   width: 260px;
-  /*border-radius: 17px; 
-  margin-bottom: 17px;*/
 }
 #indicaciones{
   display: flex;
@@ -2478,7 +2485,7 @@ elemento.visible {
   display: flex;
   position: absolute;
   top: -21px;
-  left: 21px;
+  left: 10px;
   background: linear-gradient(45deg, black 33%, gray 67%);
   font-size: 33px;
   width: 287px;
@@ -2506,10 +2513,9 @@ elemento.visible {
   position: relative;
   display: flex;
   top: 37px;
-  left: -37px;
+  left: -39px;
   margin-bottom: 17px;
   height: 247px;
-
 }
 #freno-vid{
   width:100%;
@@ -2532,8 +2538,20 @@ elemento.visible {
 #rodilleria,
 #uniTeñido{
   position: relative;
-  top: 1px;
+  top: 1%;
   display: none;
+}
+#imgs-superiores{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  top: -1px;
+}
+#imgs-inferiores{
+  position: absolute;
+  display: flex;
+  flex-direction: row; 
+  top: 220px;
 }
 #freno-II{
   position: relative;
@@ -2546,11 +2564,7 @@ elemento.visible {
   left: 737px;
 }
 #durezas,
-#rodillos-II{
-  position: relative;
-  top: 87px;
-  left: 737px;
-}
+
 #materiales-kaizen,
 #planos-kaizen{
   position: absolute;
@@ -3360,7 +3374,7 @@ elemento.visible {
     width: 104px;
     border-radius: 17px; 
     margin-bottom: 20px;
-    }   
+  }   
 
   #aceitera img{
   height: 77px;
@@ -3469,8 +3483,7 @@ elemento.visible {
     width: 80px;
     border-radius: 17px; 
     margin-bottom: 10px;
-  }
-  
+  }  
   #indicaciones-II{
     position: absolute;
     margin-top: -36%;
@@ -3479,19 +3492,14 @@ elemento.visible {
   #indicaciones-II label{
     margin-top: 31%;
     font-size: 10px;
-  }  
+  } 
+
+
   #conti-boton-teñido{
     position: fixed;
     display: flex;
     left: 127px;
     top: 67px;
-  }
-  #vidTeñido {
-    position: fixed;
-    top: 51%;
-    left: 38%;
-    margin-bottom: 17px;
-    height: 77px;
   }
   #teñido-I{
     display: flex;
@@ -3505,13 +3513,13 @@ elemento.visible {
     justify-content: center;
     align-items: center;
   }
-/*   #primeras-imgs{
+  #vidTeñido {
     position: fixed;
-    display: flex;
-    flex-direction: row;
-    top: 1%;
-    flex: 3%;
-  } */
+    top: 51%;
+    left: 38%;
+    margin-bottom: 17px;
+    height: 77px;
+  }
   .img-teñido{
     margin-right: 10px;
     border-radius: 7px;
@@ -3528,7 +3536,6 @@ elemento.visible {
     top: 65%;
     left: 21%;
   }
-
   #primeras-imgs{
     position: absolute;
     display: flex;
@@ -3564,6 +3571,71 @@ elemento.visible {
     transform: translateY(-50%);
   }
 
+
+
+  #rodilleria{
+    position: relative;
+    top: -107%;
+    left: 1%;
+    height: 100%;
+    width: 100%;
+    display: none;
+  }
+  #conti-boton-rodilleria{
+    position: fixed;
+    display: flex;
+    left: 127px;
+    top: 68px;
+  }
+  #cont-arriba-rodillos{
+    position: absolute;
+    display: flex;
+    top: 7%;
+    left: 77%;
+    align-items: center; /* Centra verticalmente los elementos hijos */
+    height: auto;
+    margin-bottom: 20px; /* Añade un margen inferior de 20px al contenedor padre */
+    align-items: center; /* Centra verticalmente los elementos hijos */
+  }
+  #rodillos-I{
+    position: fixed;
+    display: flex;
+    top: 44%;
+    left: 35%;
+    font-size: 20px;
+    width: 177px;
+    border-radius: 7px;
+  }
+  #vidRodillos{
+    position: fixed;
+    display: flex;
+    top: 49%;
+    left: 35%;
+    height: 107px;
+  }
+  #rodillos-II{
+    position: relative;
+    top: 63%;
+    left: 18%;
+  }
+  #rodillos-II img{
+    height: 100px;
+    width: 150px;
+  }
+  #imgs-superiores{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    top: 7%;
+  }
+  #imgs-inferiores{
+    position: absolute;
+    display: flex;
+    flex-direction: row; 
+    top: 24%;
+  }
+  
+  
   
   
   
