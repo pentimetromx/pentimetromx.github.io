@@ -4166,30 +4166,44 @@ function lubricacion(buttId,btnIniId){
   var contenedor = document.getElementById('torre-imp')
 
   if (contenedor.style.display === 'none' || contenedor.style.display === '') {
-
     contLubrica.style.display = 'flex'  
     for (var i = 0; i < elementos.length; i++) {
       var elemento = elementos[i]
-
       // Obtener la propiedad 'display' usando window.getComputedStyle
       var estiloDisplay = window.getComputedStyle(elemento).display;
-
       // Verificar si el estilo es 'none' y convertirlo a 'flex'
       if (estiloDisplay === 'none') {
           elemento.style.display = 'flex'
       }
     }
-
     arrayGeneral.forEach(element => {
       var elemento = document.getElementById(element)
       if (elemento) {
           elemento.style.display = 'none'
       } 
     }) 
+    var contiTeñidos = document.getElementById('uTeñidos')
+    var contiFreno = document.getElementById('conti-boton-freno')
+    var contidesbobina = document.getElementById('conti-boton-desb')
+    var estiloTeñidos = window.getComputedStyle(contiTeñidos)
+    var estiloFrenos = window.getComputedStyle(contiFreno)
+    var estiloDesbobina = window.getComputedStyle(contidesbobina)
+    if (estiloTeñidos.display !== 'flex') {
+      contiTeñidos.style.display = 'none'
+      console.log(contiTeñidos)
+    }
+    if (estiloFrenos.display === 'flex') {
+      contiFreno.style.display = 'none'
+      console.log(estiloFrenos)      
+    }
+    if (estiloDesbobina.display === 'flex') {
+      contidesbobina.style.display = 'none'
+      console.log(estiloDesbobina)      
+    }
+
 
     switch (buttId) {
-      case 'boton2':
-            
+      case 'boton2':            
         for (var i = 0; i < contVidLub.length; i++) {
           var eltoId = contVidLub[i]
           var eltoLubrica = document.getElementById(eltoId)    
@@ -4261,24 +4275,8 @@ function lubricacion(buttId,btnIniId){
         }         
       break;
       case 'boton3':
-        var contiTeñidos = document.getElementById('uTeñidos');
-        var contiFreno = document.getElementById('conti-boton-freno');
-        // Obtener el estilo computado del elemento contiTeñidos
-        var estiloTeñidos = window.getComputedStyle(contiTeñidos);
-        var estiloFrenos = window.getComputedStyle(contiFreno);
-        // Verificar si el estilo actual es diferente de 'flex' y cambiar a 'none'
-        if (estiloTeñidos.display !== 'flex') {
-          contiTeñidos.style.display = 'none';
-          console.log(contiTeñidos)
-        }
-        if (estiloFrenos.display === 'flex') {
-          contiFreno.style.display = 'none';
-          console.log(estiloFrenos)
-      
-        }
-      
 
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////         
+      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////         
         for (var i = 0; i < contVidLub.length; i++) {                                                                  /// OCULTA TODOS ELEMENTOS LUBRICACION
           var eltoId = contVidLub[i]
           var eltoLubrica = document.getElementById(eltoId)    
@@ -4340,12 +4338,10 @@ function lubricacion(buttId,btnIniId){
         }         
       break;
       case 'boton4':
-        var contiTeñidos = document.getElementById('uTeñidos');
+/*         var contiTeñidos = document.getElementById('uTeñidos');
         var contiFreno = document.getElementById('conti-boton-freno');
-        // Obtener el estilo computado del elemento contiTeñidos
         var estiloTeñidos = window.getComputedStyle(contiTeñidos);
         var estiloFrenos = window.getComputedStyle(contiFreno);
-        // Verificar si el estilo actual es diferente de 'flex' y cambiar a 'none'
         if (estiloTeñidos.display !== 'flex') {
           contiTeñidos.style.display = 'none';
           console.log(contiTeñidos)
@@ -4353,7 +4349,7 @@ function lubricacion(buttId,btnIniId){
         if (estiloFrenos.display === 'flex') {
           contiFreno.style.display = 'none';
           console.log(estiloFrenos)      
-        }
+        } */
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////         
         for (var i = 0; i < contVidLub.length; i++) {                                                                  /// OCULTA TODOS ELEMENTOS LUBRICACION
           var eltoId = contVidLub[i]
@@ -4377,12 +4373,10 @@ function lubricacion(buttId,btnIniId){
         } 
       break;
       case 'boton5':
-        var contiTeñidos = document.getElementById('uTeñidos');
+/*         var contiTeñidos = document.getElementById('uTeñidos');
         var contiFreno = document.getElementById('conti-boton-freno');
-        // Obtener el estilo computado del elemento contiTeñidos
         var estiloTeñidos = window.getComputedStyle(contiTeñidos);
         var estiloFrenos = window.getComputedStyle(contiFreno);
-        // Verificar si el estilo actual es diferente de 'flex' y cambiar a 'none'
         if (estiloTeñidos.display !== 'flex') {
           contiTeñidos.style.display = 'none';
           console.log(contiTeñidos)
@@ -4390,7 +4384,7 @@ function lubricacion(buttId,btnIniId){
         if (estiloFrenos.display === 'flex') {
           contiFreno.style.display = 'none';
           console.log(estiloFrenos)      
-        }
+        } */
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////         
         for (var i = 0; i < contVidLub.length; i++) {                                                                  /// OCULTA TODOS ELEMENTOS LUBRICACION
           var eltoId = contVidLub[i]
@@ -4414,12 +4408,10 @@ function lubricacion(buttId,btnIniId){
         } 
       break;
       case 'boton6':
-        var contiTeñidos = document.getElementById('uTeñidos');
+/*         var contiTeñidos = document.getElementById('uTeñidos');
         var contiFreno = document.getElementById('conti-boton-freno');
-        // Obtener el estilo computado del elemento contiTeñidos
         var estiloTeñidos = window.getComputedStyle(contiTeñidos);
         var estiloFrenos = window.getComputedStyle(contiFreno);
-        // Verificar si el estilo actual es diferente de 'flex' y cambiar a 'none'
         if (estiloTeñidos.display !== 'flex') {
           contiTeñidos.style.display = 'none';
           console.log(contiTeñidos)
@@ -4427,7 +4419,7 @@ function lubricacion(buttId,btnIniId){
         if (estiloFrenos.display === 'flex') {
           contiFreno.style.display = 'none';
           console.log(estiloFrenos)      
-        }
+        } */
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////         
         for (var i = 0; i < contVidLub.length; i++) {                                                                  /// OCULTA TODOS ELEMENTOS LUBRICACION
           var eltoId = contVidLub[i]
@@ -8248,33 +8240,60 @@ function iniciaMove() {
     moverBoton(button, index);
   });
 }
- //////////////////////////////////////////////////////// BOTON PARPADEA INDICADOR //////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////// BOTON PARPADEA INDICADOR //////////////////////////////////////////////////////////////////////////
 
- function realizarAccion() {
-  var contiTeñidos = document.getElementById('uTeñidos');
+function realizarAccion() {
+  var contiTeñidos = document.getElementById('uTeñidos')
   var contiFreno = document.getElementById('conti-boton-freno')
+  var contidesbobina = document.getElementById('conti-boton-desb')
 
   // Obtener el estilo computado del elemento contiTeñidos
-  var estiloTeñidos = window.getComputedStyle(contiTeñidos);
+  var estiloTeñidos = window.getComputedStyle(contiTeñidos)
   var estiloFrenos = window.getComputedStyle(contiFreno)
+  var estiloDesbobina = window.getComputedStyle(contidesbobina)
 
   if (estiloTeñidos.display === 'flex' || estiloFrenos.display !== 'flex') {
     // Agregar la clase 'parpadea' al botón 1
-    document.getElementById('boton1').classList.add('parpadea');
-
+    document.getElementById('boton1').classList.add('parpadea')
     // Después de 0.277 segundos (277 milisegundos), quitar la clase 'parpadea'
     setTimeout(function() {
-      document.getElementById('boton1').classList.remove('parpadea');
-    }, 277);
+      document.getElementById('boton1').classList.remove('parpadea')
+    }, 277)  
   }
-    console.log('Display contiTeñidos:', estiloTeñidos.display);
-  console.log('Display contiFreno:', estiloFrenos.display);
+  console.log('Display contiTeñidos:', estiloTeñidos.display)
+  console.log('Display contiFreno:', estiloFrenos.display)
+  console.log('Display contiFreno:', estiloDesbobina.display)
 
 }
 // Asignar el evento a todos los botones de interés
-document.getElementById('boton2').addEventListener('click', realizarAccion);
-document.getElementById('boton3').addEventListener('click', realizarAccion);
-document.getElementById('boton4').addEventListener('click', realizarAccion);
-document.getElementById('boton5').addEventListener('click', realizarAccion);
-document.getElementById('boton6').addEventListener('click', realizarAccion);
+document.getElementById('boton2').addEventListener('click', realizarAccion)
+document.getElementById('boton3').addEventListener('click', realizarAccion)
+document.getElementById('boton4').addEventListener('click', realizarAccion)
+document.getElementById('boton5').addEventListener('click', realizarAccion)
+document.getElementById('boton6').addEventListener('click', realizarAccion)
+
+function realizarAccionII() {
+  var contiTeñidos = document.getElementById('desbobinadorId');
+  var contiFreno = document.getElementById('conti-boton-teñido')
+  // Obtener el estilo computado del elemento contiTeñidos
+  var estiloTeñidos = window.getComputedStyle(contiTeñidos);
+  var estiloFrenos = window.getComputedStyle(contiFreno)
+  if (estiloTeñidos.display === 'flex' || estiloFrenos.display !== 'flex') {
+    // Agregar la clase 'parpadea' al botón 1
+    document.getElementById('boton7').classList.add('parpadea');
+    // Después de 0.277 segundos (277 milisegundos), quitar la clase 'parpadea'
+    setTimeout(function() {
+      document.getElementById('boton7').classList.remove('parpadea');
+    }, 277);  
+  }
+  console.log('Display contiTeñidos:', estiloTeñidos.display);
+  console.log('Display contiFreno:', estiloFrenos.display);
+}
+// Asignar el evento a todos los botones de interés
+document.getElementById('boton8').addEventListener('click', realizarAccionII)
+document.getElementById('boton9').addEventListener('click', realizarAccionII)
+document.getElementById('boton10').addEventListener('click', realizarAccionII)
+document.getElementById('boton11').addEventListener('click', realizarAccionII)
+document.getElementById('boton12').addEventListener('click', realizarAccionII)
+
  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
