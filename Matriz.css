@@ -524,7 +524,7 @@ transform: scale(1.1);
   margin-bottom: 17px;
   text-align: left;
   cursor: pointer;
-  transition: transform 0.9s;
+  transition: transform 0.9s; 
 }
 .boton-d{
   height: 47px;
@@ -964,8 +964,8 @@ width:447px ;
 #conti-boton-desb{
   position: absolute;
   display: flex;
-  left: 127px; 
-  top: 120px;
+  left: 127.5px; 
+  top: 19%;
 }  
 
 #vidTintero,
@@ -2038,13 +2038,14 @@ header {
 }
 #conti-boton-teñido{
   position: absolute;
-  left: 127px;
-  top: 130px;
+  left: 9%;
+  margin-top: 10.4%;
   display: none;
 }
 #conti-boton-rodilleria{
-  left: 127px;
-  top: 130px;
+  position: absolute;
+  left: 9%;
+  margin-top: 10.4%;
   display: none;
 }
 #conti-boton-kaizen button,
@@ -2071,7 +2072,7 @@ header {
 #conti-boton-freno{
   position: absolute;
   left: 0%;
-  top: 4%;
+  top: 1%;
   display: none;
 }
 #cont-arriba-freno {
@@ -3065,18 +3066,7 @@ elemento.visible {
   }
 }
 
-
-
 @media screen and (max-width: 420px) {
-
-  .butt-mautonomo {
-    width: 100%; /* Cambiar el ancho al 100% en dispositivos móviles */
-  }
-  .butt-mautonomo:active {
-    width: 100%; /* Mantener el ancho al 100% después de hacer clic en dispositivos móviles */
-  }
-
-
 
   /* @media screen and (max-width: 768px) { */  
   #agrupaOblicuos-XI{
@@ -3106,7 +3096,6 @@ elemento.visible {
     top: 18%;
     display: none;
   }
-
   /*//////////////////////////////////////////////////////////////////////////////////////  CONTENEDORES IZQUIERDOS  ////*/
   #desbobinadorId{
     position: absolute;
@@ -3188,7 +3177,6 @@ elemento.visible {
     width: 55%;
     padding-left: 20px;
   }
-
   .boton-e,
   .boton-c {
     position: relative;
@@ -3210,7 +3198,6 @@ elemento.visible {
     text-align: center;
     transition: transform 0.1s; 
   }
-
   #boton1{
     position: absolute;
     margin-top: -37%;
@@ -3357,13 +3344,12 @@ elemento.visible {
     position: absolute;
     display: flex;
     flex-direction: column;
-    left: 70px; 
-    top: 71px;
+    left: 17%; 
+    top: 9.6%;
   }
   #conti-boton-desb button{
     margin-bottom: 12%;
   }
-
   .butt-mautonomo{
     height: 27px;
     width: 130px;
@@ -3372,9 +3358,18 @@ elemento.visible {
     align-items:start; 
     margin-bottom: 0;
   }
+  .butt-mautonomo-freno{
+    align-items: start;
+    font-size: 10px;
+    height: 27px;
+    width: 130px;
+    border-radius: 9px;
+    margin-bottom: 17px;
+  }
+  
   #frec-lubrica{
     position: absolute;
-    left:-28%;
+    left:-22%;
     top: 5%;
   } 
   #lubri-I{
@@ -3404,6 +3399,7 @@ elemento.visible {
   #lubri-vid{
     height: 77px;
   }
+ 
   #aceitera{
     position: absolute;
     display: flex;
@@ -3426,7 +3422,6 @@ elemento.visible {
     border-radius: 17px; 
     margin-bottom: 20px;
   }   
-
   #aceitera img{
   height: 77px;
   width: 104px;
@@ -3447,6 +3442,14 @@ elemento.visible {
     left: 44%;
     top: 1%px;
     bottom: 0;
+    height: 257px;
+  }
+  #vertical-lineI{
+    position: absolute;
+    left: -30px;
+    top: -126px;
+    width: 2px;
+    height: 257px;
   }
   #grasa{
     position: absolute;
@@ -3481,7 +3484,15 @@ elemento.visible {
     position: absolute;
     left: 1%;
     top: -5%;
+    height: 257px;
   }
+  #vertcal-line-I{
+    position: absolute;
+    left: 51%;
+    top: -5%;
+    height: 257px;
+  }
+
   #balineras{
     position: absolute;
     top: -10%;
@@ -3494,11 +3505,6 @@ elemento.visible {
   }
   #indicaciones-III label{
     margin-bottom: 64px;
-  }
-  #vertcal-line-I{
-    position: absolute;
-    left: 51%;
-    top: -5%;
   }
   #balineras-II{
     position: relative;
@@ -3515,7 +3521,7 @@ elemento.visible {
     margin-bottom: 64px;
   }
   .labl-lub{
-    font-size: 7px;
+    font-size: 11px;
   }
   #aceitera-II{
     display: flex;
@@ -3544,14 +3550,24 @@ elemento.visible {
     margin-top: 31%;
     font-size: 10px;
   } 
-
-
   #conti-boton-teñido{
     position: fixed;
-    display: flex;
-    left: 127px;
-    top: 67px;
+    left: 17%;
+    top: 15.2%;
   }
+  #conti-boton-rodilleria button,
+  #conti-boton-teñido button{
+    height: 27px;
+    width: 130px;
+    font-size: 10px;
+  } 
+  #conti-boton-rodilleria{
+    position: absolute;
+    left: 0.1%;
+    margin-top: 10.8%;
+    display: none;
+  }
+  
   #teñido-I{
     display: flex;
     position: fixed;
@@ -3607,17 +3623,17 @@ elemento.visible {
   }
   .linea-horizontal-VI{
     position:fixed;
-    left: 7px;
+    left: 101px;
     top: 76%;
-    width: 520px;
+    width: 277px;
     height: 2px;
     transform: translateY(-50%);
   }
   .linea-horizontal-VII{
     position:fixed;
-    left: 7px;
+    left: 101px;
     top: 87.6%;
-    width: 520px;
+    width: 277px;
     height: 2px;
     transform: translateY(-50%);
   }
@@ -3628,12 +3644,6 @@ elemento.visible {
     height: 100%;
     width: 100%;
     display: none;
-  }
-  #conti-boton-rodilleria{
-    position: fixed;
-    display: flex;
-    left: 127px;
-    top: 68px;
   }
   #cont-arriba-rodillos{
     position: absolute;
@@ -3719,8 +3729,8 @@ elemento.visible {
   #conti-boton-freno{   
     position: absolute;
     display: flex;
-    left: 10%;
-    top: -9%;
+    left: 0.5%;
+    top: -8.5%;
     margin-bottom: 20px;
     display: none;    
   }
@@ -3804,15 +3814,6 @@ elemento.visible {
     top: 130px;
     width: 220px;
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
   .mostrar-cont{
     display: flex;
   }

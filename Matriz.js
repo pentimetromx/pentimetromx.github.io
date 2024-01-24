@@ -8271,9 +8271,6 @@ function iniciaMove() {
   console.log('Display contiFreno:', estiloFrenos.display);
 
 }
- 
-
-
 // Asignar el evento a todos los botones de interés
 document.getElementById('boton2').addEventListener('click', realizarAccion);
 document.getElementById('boton3').addEventListener('click', realizarAccion);
