@@ -4394,6 +4394,7 @@ function lubricacion(buttId,btnIniId){
       default:
     }
   }
+
 }  
 function showButtonsMAconRetrasoDesb() {
   var botones = document.querySelectorAll('.butt-mautonomo-desb') // Selecciona todos los botones
@@ -8186,3 +8187,30 @@ function iniciaMove() {
     moverBoton(button, index);
   });
 }
+ //////////////////////////////////////////////////////// BOTON PARPADEA INDICADOR //////////////////////////////////////////////////////////////////////////
+ function realizarAccion() {
+  var contiTeñidos = document.getElementById('uTeñidos');
+  var contiFreno = document.getElementById('conti-boton-freno')
+
+  // Obtener el estilo computado del elemento contiTeñidos
+  var estiloTeñidos = window.getComputedStyle(contiTeñidos);
+  var estiloFrenos = window.getComputedStyle(contiFreno)
+
+  /* if (estiloTeñidos.display === 'flex' && estiloFrenos.display === 'none') { */
+  if (contiTeñidos.style.display === 'flex' && contiFreno.style.display === 'none') {
+    // Agregar la clase 'parpadea' al botón 1
+    document.getElementById('boton1').classList.add('parpadea');
+
+    // Después de 0.277 segundos (277 milisegundos), quitar la clase 'parpadea'
+    setTimeout(function() {
+      document.getElementById('boton1').classList.remove('parpadea');
+    }, 277);
+  }
+}
+// Asignar el evento a todos los botones de interés
+document.getElementById('boton2').addEventListener('click', realizarAccion);
+document.getElementById('boton3').addEventListener('click', realizarAccion);
+document.getElementById('boton4').addEventListener('click', realizarAccion);
+document.getElementById('boton5').addEventListener('click', realizarAccion);
+document.getElementById('boton6').addEventListener('click', realizarAccion);
+ ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

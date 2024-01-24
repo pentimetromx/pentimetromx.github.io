@@ -962,6 +962,8 @@ width:447px ;
   text-decoration-line: underline;
 }
 #conti-boton-desb{
+  position: absolute;
+  display: flex;
   left: 127px; 
   top: 120px;
 }  
@@ -3049,6 +3051,21 @@ elemento.visible {
   border-radius: 9px; 
   box-shadow: none;
 }
+
+/* Estilo adicional para el botón parpadeante asociada a la funcion 'realizarAccion()'  */
+.parpadea {
+  animation: parpadeo 0.05s infinite alternate;
+}
+@keyframes parpadeo {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+
 
 @media screen and (max-width: 420px) {
   /* @media screen and (max-width: 768px) { */  
