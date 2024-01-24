@@ -3068,6 +3068,16 @@ elemento.visible {
 
 
 @media screen and (max-width: 420px) {
+
+  .butt-mautonomo {
+    width: 100%; /* Cambiar el ancho al 100% en dispositivos móviles */
+  }
+  .butt-mautonomo:active {
+    width: 100%; /* Mantener el ancho al 100% después de hacer clic en dispositivos móviles */
+  }
+
+
+
   /* @media screen and (max-width: 768px) { */  
   #agrupaOblicuos-XI{
     position: absolute;
