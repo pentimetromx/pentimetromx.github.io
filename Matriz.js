@@ -1,3 +1,5 @@
+var contiBotsFreno = document.getElementById('conti-boton-freno')
+var contiBotsDesbobina = document.getElementById('conti-boton-desb')
 const coleccion = document.querySelectorAll('.desbobinador, .desbobinador-I, .uTeñido, .alimentadorId, .unidpre-prensaProceso, .rebobinador, .contTorrImp')
 var btnsIniciales = document.querySelectorAll('.btn-bloque')
 let firstClick = true;
@@ -33,23 +35,15 @@ var arrayIdButtsCheck = ['boton2','boton3','boton4','boton5','boton6','boton7','
 var contiBtt = ['archivo','btt2','btt3','btt4','btt5','btt6','btt7'] 
 var currentID = null;
 var butInicio = document.getElementById('bot-inic')
-var botGrande = document.getElementById('iniciar')
-var imgTorreI = document.getElementById('imgTorre')
 var contInicial = document.getElementById('container1')
 var botonMa = document.getElementById('bot-mantaut')
-var imagPasoApaso = document.querySelectorAll('.img1')
 var allContenedores = ['container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
-var allContIniciales = ['pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado']
 var allContIzquierdos = ['desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador']
 
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor']
 var allContTintero = ['pantalla-tintero','cont-links','imgTorre','vidTintero','imgsRepuestos','agrupaOblicuos-II','container2']
-var allContPantafrente = ['pantalla-frente','container2','imgsRepuestos-II','imgTorre-f','agrupaOblicuos-III']
-var allContTorreImp = ['toggleVideoButton','torre-imp','tinter-o','cont-Verticales2','bateria-entintado','cont-Verticales3','bancada-torre','cont-Verticales4','sis-humedad','cont-Verticales5']
-var allContBaterImp = ['contenedor-7','videoElement1-II','container7']
-var allContSisHumedad = ['contenedor-9','contene-10','sitema-humedad']
 var contVid = document.getElementById('videosTraining')
 var contIMPlaca = document.getElementById('placa')
 var contIMmanta = document.getElementById('manta')
@@ -58,18 +52,11 @@ var arrayButtsRutilantesI = ['butt-024000','butt-023000','butt-015000','butt-013
 var arrayButtsRutilantesII = ['butt-01130','butt-012','butt-016','butt-021','butt-0202','butt-011300','butt-0120']
 var arrayButtsRutilantesIII = ['butt-001130','butt-0012','butt-0016','butt-0021','butt-00202']
 
-var allContMA = ['conteneMantaut','conti-boton']
 var buttonsMA = document.getElementsByClassName("butt-mautonomo")
 var buttsToyota = ['toyota8', 'toyota7', 'toyota6', 'toyota5','toyota4','toyota3','toyota2','toyota1']
 var contienePasos = document.getElementById('puesta-punto')
 
-const grupOblicuos = document.getElementById('agrupaOblicuos-I')
-const oblicuosVI = document.getElementById('agrupaOblicuos-VI')
-
-var contOblicuosMandos = document.getElementById('agrupaOblicuos-VII')
-let contVariable = document.getElementById('cont-variable')
 let contPlana = document.getElementById('cont-plana')
-let contSecador = document.getElementById('cont-secador')
 let contiButtCasos = document.getElementById('mejoras-kai')
 
 const textToColor = document.getElementById("textToColor")
@@ -81,47 +68,26 @@ let hideTimeout;
 let contadorClicks = 0;
 
 var conteHijosTintero = ['cont-links', 'imgTorre', 'imgsRepuestos','agrupaOblicuos-II']
-var conteHijosFrente = ['imgTorre-f','imgsRepuestos-II', 'agrupaOblicuos-III']
-var conteHijosMandos = ['imgTorre-m','imgsRepuestos-III','agrupaOblicuos-IV']
-var imgesDistribuidor = ['imgs-I','imgs-II','imgs-III','imgs-IV','imgs-V']
-var imgesPlancha = ['portPlaca','portPlaca1','portPlaca2','portPlaca3','portPlaca4']
-var contImgsManta = document.getElementById('contPerfilesManta')
 var container1 = document.getElementById('container01')
 
-const coleccImgIzq = document.querySelectorAll('.rep-izquierda')
-const conteRepDistrib = document.querySelectorAll('.imgRow')
 const uniTeñido = document.getElementById('uTeñidos')
 const alimentadorId = document.getElementById('alimentadorId')
-const unidadProcess = document.getElementById('unidProceso')
 const reBobinado = document.getElementById('rebobinador')
-const rotatPanel = document.getElementById('torre-imp')
 const seccionTintero = document.getElementById('pantalla-tintero')
-const seccionFrente = document.getElementById('pantalla-frente')
-const seccionMandos = document.getElementById('pantalla-mandos')
 const pantallas = ['pantalla-frente', 'pantalla-mandos','pantalla-servicio','pantalla-atras']
-
-const contieneLinks = document.getElementById('cont-links')
 const imgsRepuestos = document.getElementById('imgsRepuestos')
-const imgsRepuestosII = document.getElementById('imgsRepuestos-II') 
-const imgsRepuestosIII = document.getElementById('imgsRepuestos-III')     
-const imgsRepuestosIV = document.getElementById('imgsRepuestos-IV')     
 
-const contPadreMA = document.getElementById('conteneMantaut')
 const videoElements = document.querySelectorAll('.video-training')   
 const video = document.getElementById("videoBackground")
-const videoII = document.getElementById("videoBackgroundII")
 const imgsDistribuidor = document.getElementById('contImgDistribuidor')
 const imgsForma = document.getElementById('contImgEntintador')
 var toggleVideoButton = document.getElementById("toggleVideoButton")
 const images = document.querySelectorAll('.image-training') 
 const imageElementsi = document.querySelectorAll('.image-training')
 const contImpresor = document.getElementById('contImpresor')
-const inputs = document.querySelectorAll('.input-class')
 const input = document.querySelectorAll('.input-class')
 const checks = document.querySelectorAll('.input-class')
-const imagesFull = document.querySelectorAll('img')
 const inpt = document.querySelectorAll('grafMini')
-const imagesPrepress = ['primerCont','segundoCont','tercerCont']
 
 let miCanvas2 = document.getElementById('MiSegundaGrafica').getContext('2d')
 let miCanvas3 = document.getElementById('MiTerceraGrafica').getContext('2d')
@@ -134,10 +100,8 @@ let miCanvas8 = document.getElementById('MiGrafica6').getContext('2d')
 let miCanvas9 = document.getElementById('MiGrafica7').getContext('2d')
 let miCanvas10 = document.getElementById('MiGrafica8').getContext('2d')
 let miCanvas11 = document.getElementById('MiGrafica9').getContext('2d')
-let iCtx = document.getElementById('ctx').getContext('2d')
 
 var botones = document.querySelectorAll('.butt-mautonomo')
-var linksTorre = document.getElementById('contLinksTorre')
 var arrayButtsIniciales = ['bot-atras','bot-inicial','iniciar','bot-atras12']
 
 let currentIndex = 0;
@@ -145,7 +109,6 @@ let actualtIndex = 0;
 let nowIndex = 0;
 idsArray.push("cont-titulo") 
 idsArrayEliminados.push('cont-titulo')
-var toggleLeft = false;
 
 function VolveraInicio(){
   location.reload()
@@ -451,15 +414,16 @@ function cambioContenedor(elementId) {
 function cierraContenedores(elementId) {
   var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80','btn600','btn700','btn800']
   var arrayButtsRojos = ['boton2','boton3','boton4','boton5','boton6','boton8','boton9','boton10','boton11','boton12']
- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   for (var i = 0; i < arrayButtsRojos.length; i++) {                                                                                  /// QUITAR ESTILOS A BOTONES
     var button = arrayButtsRojos[i]
     if (button) {
       document.getElementById(button).style.backgroundColor = ''
     }
-  } 
+  }   
    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   if (firstClick) {                                                                                                                       /// LOGICA PRIMER CLICK
+    var uTeñido = document.getElementById('uTeñidos');
+
     if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
       idsArray.push(elementId);
       console.log(idsArray);
@@ -586,6 +550,7 @@ function cierraContenedores(elementId) {
     })    
     abrirSeccionContinua() 
   }
+
 }
 function muestraRodillo (vidElem, imgCont) {
   const videoElements = document.querySelectorAll('.video-training')
@@ -2683,7 +2648,6 @@ function devolverColoresConRetrasoI() {
     cambiarColorConRetrasoI(0);
   }, 77);
 }
-
 function devolverColoresConRetrasoIII() {
   // Función para cambiar el color de un botón y programar el siguiente cambio después de 77 milisegundos
   function cambiarColorConRetrasoIII(indice) {
@@ -4151,7 +4115,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) { // padre i
     default: 
   }        
 }
-function lubricacion(buttId,btnIniId){
+function lubricacion(buttId,btnIniId){ 
   var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80',]
   var contVidLub = ['lubri-I', 'lubri-II','lubri-III', 'frec-lubrica','freno','uniTeñido'] 
   var elementos = [
@@ -4164,6 +4128,11 @@ function lubricacion(buttId,btnIniId){
   var arrayIdButtsLubII = ['btn60', 'btn70', 'btn80']
   var botones = document.querySelectorAll('.btn-bloque')
   var contenedor = document.getElementById('torre-imp')
+
+  var computedStyleUteñido = window.getComputedStyle(uTeñido);
+  if (computedStyleUteñido.display === 'flex') {
+    palpitarBoton();
+  }
 
   if (contenedor.style.display === 'none' || contenedor.style.display === '') {
     contLubrica.style.display = 'flex'  
@@ -4181,32 +4150,19 @@ function lubricacion(buttId,btnIniId){
       if (elemento) {
           elemento.style.display = 'none'
       } 
-    }) 
-    var contiTeñidos = document.getElementById('uTeñidos')
-    var contiFreno = document.getElementById('conti-boton-freno')
-    var contidesbobina = document.getElementById('conti-boton-desb')
-    var estiloTeñidos = window.getComputedStyle(contiTeñidos)
-    var estiloFrenos = window.getComputedStyle(contiFreno)
-    var estiloDesbobina = window.getComputedStyle(contidesbobina)
-    if (estiloTeñidos.display !== 'flex') {
-      contiTeñidos.style.display = 'none'
-      console.log(contiTeñidos)
-    }
-    if (estiloFrenos.display === 'flex') {
-      contiFreno.style.display = 'none'
-      console.log(estiloFrenos)      
-    }
-    if (estiloDesbobina.display === 'flex') {
-      contidesbobina.style.display = 'none'
-      console.log(estiloDesbobina)      
-    }
-
+    })
 
     switch (buttId) {
-      case 'boton2':            
+      case 'boton2':
+        
+        var computedStyleUteñido = window.getComputedStyle(uTeñido);
+        if (computedStyleUteñido.display === 'flex') {
+          palpitarBoton();
+        }
+      
         for (var i = 0; i < contVidLub.length; i++) {
           var eltoId = contVidLub[i]
-          var eltoLubrica = document.getElementById(eltoId)    
+          var eltoLubrica = document.getElementById(eltoId)         
 
           if (eltoId === 'lubri-III') {
             // Si es 'lubri-III', establecer la propiedad display a 'flex'
@@ -4219,11 +4175,9 @@ function lubricacion(buttId,btnIniId){
         if (padreLubriIII) {
           // Recorrer los elementos hijos del padre
           for (var i = 0; i < padreLubriIII.children.length; i++) {
-            var hijo = padreLubriIII.children[i]
-            
+            var hijo = padreLubriIII.children[i]            
             // Obtener el valor actual de la propiedad display
-            var displayValue = window.getComputedStyle(hijo).getPropertyValue('display')
-      
+            var displayValue = window.getComputedStyle(hijo).getPropertyValue('display')      
             // Verificar si el valor actual es 'none'
             if (displayValue === 'flex') {
                 // Cambiar la propiedad display a 'flex'
@@ -4231,14 +4185,13 @@ function lubricacion(buttId,btnIniId){
             }
           }
         }
-
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-        var container = document.getElementById('conti-boton-desb')                                                              /// MUESTRA PADRE BOTONES ...
-        var computedStyle = getComputedStyle(container)     
+        var contiBotsDesbobina = document.getElementById('conti-boton-desb')                                                              /// MUESTRA PADRE BOTONES ...
+        var computedStyle = getComputedStyle(contiBotsDesbobina)     
         var displayValue = computedStyle.getPropertyValue("display")
         if (displayValue.toLowerCase() === "none") {
           // Cambia el valor de 'display' a 'flex'
-          container.style.display = "flex";
+          contiBotsDesbobina.style.display = "flex";
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
         var contVidLub = ['btn1','btn2','btn3','btn4','btn5']                                                                          /// MUESTRA LOS BOTONES  
@@ -4247,8 +4200,7 @@ function lubricacion(buttId,btnIniId){
           var element = document.getElementById(elementId)      
           if (element) { // Verifica si el elemento existe
             element.style.color = "white";
-            element.style.background = '#333333'
-            
+            element.style.background = '#333333'            
           }
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
@@ -4268,14 +4220,14 @@ function lubricacion(buttId,btnIniId){
           if (idBoton === btnIniId) {
               boton.style.backgroundColor = 'rgb(0,255,0)'
           }
-        })          
+        })
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
         if (contenedor.style.display === 'none'){                                                                   /// SI ESTA OCULTO EL PADRE EJECUTA FUNCION 
           showButtonsMAconRetrasoDesb()
-        }         
+        }
+        ///////////////////////////////////////////////////////////////////////////////////////////////////  
       break;
       case 'boton3':
-
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////         
         for (var i = 0; i < contVidLub.length; i++) {                                                                  /// OCULTA TODOS ELEMENTOS LUBRICACION
           var eltoId = contVidLub[i]
@@ -4335,21 +4287,9 @@ function lubricacion(buttId,btnIniId){
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
         if (contenedor.style.display === 'none'){                                                                    /// SI ESTA OCULTO EL PADRE EJECUTA FUNCION 
           showButtonsFrenoconRetrasoDesb()
-        }         
+        } 
       break;
       case 'boton4':
-/*         var contiTeñidos = document.getElementById('uTeñidos');
-        var contiFreno = document.getElementById('conti-boton-freno');
-        var estiloTeñidos = window.getComputedStyle(contiTeñidos);
-        var estiloFrenos = window.getComputedStyle(contiFreno);
-        if (estiloTeñidos.display !== 'flex') {
-          contiTeñidos.style.display = 'none';
-          console.log(contiTeñidos)
-        }
-        if (estiloFrenos.display === 'flex') {
-          contiFreno.style.display = 'none';
-          console.log(estiloFrenos)      
-        } */
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////         
         for (var i = 0; i < contVidLub.length; i++) {                                                                  /// OCULTA TODOS ELEMENTOS LUBRICACION
           var eltoId = contVidLub[i]
@@ -4373,18 +4313,6 @@ function lubricacion(buttId,btnIniId){
         } 
       break;
       case 'boton5':
-/*         var contiTeñidos = document.getElementById('uTeñidos');
-        var contiFreno = document.getElementById('conti-boton-freno');
-        var estiloTeñidos = window.getComputedStyle(contiTeñidos);
-        var estiloFrenos = window.getComputedStyle(contiFreno);
-        if (estiloTeñidos.display !== 'flex') {
-          contiTeñidos.style.display = 'none';
-          console.log(contiTeñidos)
-        }
-        if (estiloFrenos.display === 'flex') {
-          contiFreno.style.display = 'none';
-          console.log(estiloFrenos)      
-        } */
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////         
         for (var i = 0; i < contVidLub.length; i++) {                                                                  /// OCULTA TODOS ELEMENTOS LUBRICACION
           var eltoId = contVidLub[i]
@@ -4408,18 +4336,6 @@ function lubricacion(buttId,btnIniId){
         } 
       break;
       case 'boton6':
-/*         var contiTeñidos = document.getElementById('uTeñidos');
-        var contiFreno = document.getElementById('conti-boton-freno');
-        var estiloTeñidos = window.getComputedStyle(contiTeñidos);
-        var estiloFrenos = window.getComputedStyle(contiFreno);
-        if (estiloTeñidos.display !== 'flex') {
-          contiTeñidos.style.display = 'none';
-          console.log(contiTeñidos)
-        }
-        if (estiloFrenos.display === 'flex') {
-          contiFreno.style.display = 'none';
-          console.log(estiloFrenos)      
-        } */
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////         
         for (var i = 0; i < contVidLub.length; i++) {                                                                  /// OCULTA TODOS ELEMENTOS LUBRICACION
           var eltoId = contVidLub[i]
@@ -4445,7 +4361,19 @@ function lubricacion(buttId,btnIniId){
       default:
     }
   }
-
+          
+    // Obtén el elemento con el id 'conti-boton'
+    var contiBoton = document.getElementById('conti-boton');        
+    // Obtiene las propiedades que necesitas
+    var leftPosition = contiBoton.offsetLeft;
+    var widthValue = contiBoton.offsetWidth;
+    var heightValue = contiBoton.offsetHeight;
+    var topPosition = contiBoton.offsetTop;        
+    // Muestra los valores en la consola
+    console.log('Left:', leftPosition);
+    console.log('Width:', widthValue);
+    console.log('Height:', heightValue);
+    console.log('Top:', topPosition);
 
 
 }  
@@ -4857,7 +4785,6 @@ function UnidadTeñido(buttId,btnIniId){
 
         }
       }
-      hideButtonsUTeñido()
       break; 
       case 'boton11' : 
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
@@ -4888,7 +4815,6 @@ function UnidadTeñido(buttId,btnIniId){
 
         }
       }
-      hideButtonsUTeñido()
       break; 
       case 'boton12' :
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
@@ -4919,7 +4845,6 @@ function UnidadTeñido(buttId,btnIniId){
 
         }
       }
-      hideButtonsUTeñido()
       break; 
       case 'btn600' :
         showButtonsUTeñidoconRetraso()
@@ -6502,7 +6427,6 @@ function aumentoBotonesBody() {
   // Iniciar el proceso con el primer botón
   aumentarYRestaurar(0);
 }
-
 function tamaño100(){
   document.body.style.zoom = "100%"
   container1.style.left=''
@@ -6557,7 +6481,6 @@ imagenesAumentar.forEach(image => {
     }
   })
 })
-
 //////////////////////////////////////////////////////////////////////////
 // Recorrer todos los botones y hacerlos visibles
 botones.forEach(function(boton) {
@@ -7760,7 +7683,6 @@ function drawVerticalAxisII() {
   dcx.fillText(canvasI.height / 2 - y, canvasI.width / 2 - 30, y + 5);
   }
 }
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Obtén el contexto del lienzo
 var canvasII = document.getElementById("dualSinusoidalCanvas");
@@ -7876,7 +7798,6 @@ function drawGrid(horizontalLines, verticalLines) {
   ctx.stroke();
   }
 }
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var intervalId; // Declara la variable en un ámbito accesible                                   /// BOTONERA CICODELICA  PARE/SIGA
 function iniciarEventos() {
@@ -7905,8 +7826,8 @@ function iniciarEventos() {
   intervalId = setInterval(cambiarColor, 77)
   contSinusoidales.style.display = 'flex'
   contCicodelicos.style.display = 'grid'
-}
 
+}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function detenerEventos() {
   clearInterval(intervalId);
@@ -8004,6 +7925,7 @@ function iniciarTransito() {                                                    
   
   // Iniciar el ciclo de movimientos
   moverDerechaIzquierda();
+  iniciarEventos()
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Función para detener el movimiento
@@ -8014,8 +7936,7 @@ function detenerMovimiento() {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var botonSolitario = document.getElementById('buttSolitario');
 var botonSeguidor = document.getElementById('boton2');
-
-/*function moverDerecha() {
+function moverDerecha() {
   botonSeguidor.style.top = botonSolitario.style.top
   var posicionInicialX = 0
   var posicionFinalX = window.innerWidth - botonSolitario.offsetWidth
@@ -8083,11 +8004,9 @@ function moverArriba() {
       botonSeguidor.style.top = (posicionInicialY + 35) + 'px';
     }
   }, 17);
-}*/
-
+}
 const buttons = document.querySelectorAll('.buttons')  
 var contButtsAround = document.getElementById('button-container')
-
 function moverBoton(boton, index) {
   const valoresLeft = ['-52px', '-104px', '-156px', '-208px', '-260px', '-312px', '-364px', '-416px', '-468px', '-520px', '-572px', '-624px', '-676px', '-728px', '-780px', '-832px', '-884px', '-936px', '-988px', '-1040px', '-1092px', '-1144px', '-1196px', '-1248px', '-1300px', '-1352px', '-1404px', '-1456px', '-1508px', '-1560px', '-1612px', '-1664px', '-1716px', '-1768px', '-1820px', '-1872px', '-1924px', '-1976px', '-2028px', '-2080px', '-2132px', '-2184px', '-2236px', '-2288px', '-2340px', '-2392px', '-2444px', '-2496px', '-2548px', '-2600px', '-2652px', '-2704px', '-2756px', '-2808px', '-2860px', '-2912px', '-2964px', '-3016px', '-3068px', '-3120px', '-3172px', '-3224px', '-3276px', '-3328px', '-3380px', '-3432px', '-3484px', '-3536px', '-3588px']
 
@@ -8234,54 +8153,40 @@ function moverBoton(boton, index) {
   // Inicia el movimiento hacia la derecha
   mover();
 } 
-
 function iniciaMove() {
+  var contiVideoJuegos = document.getElementById('cont-videojuegos')
+  contiVideoJuegos.style.display = 'block'
   buttons.forEach((button, index) => {
     moverBoton(button, index);
   });
+  iniciarTransito()
 }
 //////////////////////////////////////////////////////// BOTON PARPADEA INDICADOR //////////////////////////////////////////////////////////////////////////
+  function palpitarBoton() {
+      document.getElementById('boton1').classList.add('parpadea');
+      setTimeout(function () {
+        document.getElementById('boton1').classList.remove('parpadea');
+      }, 277);
+/*   document.getElementById('boton2').addEventListener('click', realizarAccion);
+  document.getElementById('boton3').addEventListener('click', realizarAccion);
+  document.getElementById('boton4').addEventListener('click', realizarAccion);
+  document.getElementById('boton5').addEventListener('click', realizarAccion);
+  document.getElementById('boton6').addEventListener('click', realizarAccion); */
 
-function realizarAccion() {
-  var contiTeñidos = document.getElementById('uTeñidos')
-  var contiFreno = document.getElementById('conti-boton-freno')
-  var contidesbobina = document.getElementById('conti-boton-desb')
-
-  // Obtener el estilo computado del elemento contiTeñidos
-  var estiloTeñidos = window.getComputedStyle(contiTeñidos)
-  var estiloFrenos = window.getComputedStyle(contiFreno)
-  var estiloDesbobina = window.getComputedStyle(contidesbobina)
-
-  if (estiloTeñidos.display === 'flex' || estiloFrenos.display !== 'flex') {
-    // Agregar la clase 'parpadea' al botón 1
-    document.getElementById('boton1').classList.add('parpadea')
-    // Después de 0.277 segundos (277 milisegundos), quitar la clase 'parpadea'
-    setTimeout(function() {
-      document.getElementById('boton1').classList.remove('parpadea')
-    }, 277)  
   }
-  console.log('Display contiTeñidos:', estiloTeñidos.display)
-  console.log('Display contiFreno:', estiloFrenos.display)
-  console.log('Display contiFreno:', estiloDesbobina.display)
+/*document.getElementById('boton2').addEventListener('click', realizarAccion);
+  document.getElementById('boton3').addEventListener('click', realizarAccion);
+  document.getElementById('boton4').addEventListener('click', realizarAccion);
+  document.getElementById('boton5').addEventListener('click', realizarAccion);
+  document.getElementById('boton6').addEventListener('click', realizarAccion */
 
-}
-// Asignar el evento a todos los botones de interés
-document.getElementById('boton2').addEventListener('click', realizarAccion)
-document.getElementById('boton3').addEventListener('click', realizarAccion)
-document.getElementById('boton4').addEventListener('click', realizarAccion)
-document.getElementById('boton5').addEventListener('click', realizarAccion)
-document.getElementById('boton6').addEventListener('click', realizarAccion)
-
-function realizarAccionII() {
+ function realizarAccionII() {
   var contiTeñidos = document.getElementById('desbobinadorId');
   var contiFreno = document.getElementById('conti-boton-teñido')
-  // Obtener el estilo computado del elemento contiTeñidos
   var estiloTeñidos = window.getComputedStyle(contiTeñidos);
   var estiloFrenos = window.getComputedStyle(contiFreno)
   if (estiloTeñidos.display === 'flex' || estiloFrenos.display !== 'flex') {
-    // Agregar la clase 'parpadea' al botón 1
     document.getElementById('boton7').classList.add('parpadea');
-    // Después de 0.277 segundos (277 milisegundos), quitar la clase 'parpadea'
     setTimeout(function() {
       document.getElementById('boton7').classList.remove('parpadea');
     }, 277);  
@@ -8289,11 +8194,24 @@ function realizarAccionII() {
   console.log('Display contiTeñidos:', estiloTeñidos.display);
   console.log('Display contiFreno:', estiloFrenos.display);
 }
-// Asignar el evento a todos los botones de interés
 document.getElementById('boton8').addEventListener('click', realizarAccionII)
 document.getElementById('boton9').addEventListener('click', realizarAccionII)
 document.getElementById('boton10').addEventListener('click', realizarAccionII)
 document.getElementById('boton11').addEventListener('click', realizarAccionII)
 document.getElementById('boton12').addEventListener('click', realizarAccionII)
-
  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ // Agrega un event listener al documento para escuchar eventos de teclado
+document.addEventListener('keydown', function(event) {
+  // Verifica si la combinación de teclas es Ctrl + Alt + Shift + KeyA
+  if (event.ctrlKey && event.altKey && event.shiftKey && event.key === 'a') {
+    // Ejecuta la función cuando se presiona la combinación de teclas
+    miFuncion();
+  }
+});
+
+// La función que deseas ejecutar
+function miFuncion() {
+  console.log('La combinación de teclas fue presionada. Ejecutando miFuncion.');
+  // Agrega aquí el código que deseas ejecutar con la combinación de teclas.
+}

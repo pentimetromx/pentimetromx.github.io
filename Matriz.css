@@ -226,6 +226,11 @@ transform: scale(1.1);
   display: flex;
   flex-direction: column;
 }
+#uTeñidos{
+  display: flex;
+  flex-direction: column;
+}
+
 .alimentadorId{
   display: flex;
   flex-direction: column;
@@ -3051,6 +3056,12 @@ elemento.visible {
   opacity: 50%; 
   border-radius: 9px; 
   box-shadow: none;
+}
+#cont-videojuegos{
+  position: absolute;
+  display: flex;
+  left: 2%;
+  top: 10%;
 }
 
 /* Estilo adicional para el botón parpadeante asociada a la funcion 'realizarAccion()'  */
