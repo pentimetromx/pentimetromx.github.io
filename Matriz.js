@@ -4131,7 +4131,7 @@ function lubricacion(buttId,btnIniId){
 
   var computedStyleUteñido = window.getComputedStyle(uTeñido);
   if (computedStyleUteñido.display === 'flex') {
-    palpitarBoton();
+    palpitarBotonDesbob();
   }
 
   if (contenedor.style.display === 'none' || contenedor.style.display === '') {
@@ -4157,7 +4157,7 @@ function lubricacion(buttId,btnIniId){
         
         var computedStyleUteñido = window.getComputedStyle(uTeñido);
         if (computedStyleUteñido.display === 'flex') {
-          palpitarBoton();
+          palpitarBotonDesbob();
         }
       
         for (var i = 0; i < contVidLub.length; i++) {
@@ -4664,6 +4664,7 @@ function UnidadTeñido(buttId,btnIniId){
   var botsDesplegables = ['btn600','btn700','btn800','btn06','btn07','btn08']
   arrayPadres = ['uniTeñido',`rodilleria`]
   var contenedorPadre = document.getElementById('uniTeñido')
+  var contiDesbobina = document.getElementById('desbobinadorId')
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
   botsDesplegables.forEach(boton => {                                                                                                    ///OCULTA BOTONES INICIALMENTE
     botDesplegable = document.getElementById(boton)
@@ -4671,18 +4672,27 @@ function UnidadTeñido(buttId,btnIniId){
       botDesplegable.style.display = 'none'
     }
   })
-  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////// /////////////////////////////////////////////////////////////    
   arrayPadres.forEach(unidad => {                                                                                                         ///OCULTA PADRES INICIALMENTE
     padre = document.getElementById(unidad)
     if(padre){
       padre.style.display = 'none'
     }
   })  
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  var computedStyleUteñido = window.getComputedStyle(contiDesbobina);
+  if (computedStyleUteñido.display === 'flex') {
+    palpitarBotonTeñido();
+  }
+
   if(alimenta.style.display === 'none'){                                                                                                  /// SI "ALIMENTA" ESTÁ OCULTA
 
     switch (buttId) {
       case 'boton8' :
+        var computedStyleUteñido = window.getComputedStyle(contiDesbobina);
+        if (computedStyleUteñido.display === 'flex') {
+          palpitarBotonTeñido();
+        }
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
       for (var i = 0; i < botsTorre.length; i++) {                                                                                     /// ROJO BOTON * PARAMETRO
         var currentId = botsTorre[i]
@@ -8162,44 +8172,20 @@ function iniciaMove() {
   iniciarTransito()
 }
 //////////////////////////////////////////////////////// BOTON PARPADEA INDICADOR //////////////////////////////////////////////////////////////////////////
-  function palpitarBoton() {
-      document.getElementById('boton1').classList.add('parpadea');
-      setTimeout(function () {
-        document.getElementById('boton1').classList.remove('parpadea');
-      }, 277);
-/*   document.getElementById('boton2').addEventListener('click', realizarAccion);
-  document.getElementById('boton3').addEventListener('click', realizarAccion);
-  document.getElementById('boton4').addEventListener('click', realizarAccion);
-  document.getElementById('boton5').addEventListener('click', realizarAccion);
-  document.getElementById('boton6').addEventListener('click', realizarAccion); */
-
-  }
-/*document.getElementById('boton2').addEventListener('click', realizarAccion);
-  document.getElementById('boton3').addEventListener('click', realizarAccion);
-  document.getElementById('boton4').addEventListener('click', realizarAccion);
-  document.getElementById('boton5').addEventListener('click', realizarAccion);
-  document.getElementById('boton6').addEventListener('click', realizarAccion */
-
- function realizarAccionII() {
-  var contiTeñidos = document.getElementById('desbobinadorId');
-  var contiFreno = document.getElementById('conti-boton-teñido')
-  var estiloTeñidos = window.getComputedStyle(contiTeñidos);
-  var estiloFrenos = window.getComputedStyle(contiFreno)
-  if (estiloTeñidos.display === 'flex' || estiloFrenos.display !== 'flex') {
-    document.getElementById('boton7').classList.add('parpadea');
-    setTimeout(function() {
-      document.getElementById('boton7').classList.remove('parpadea');
-    }, 277);  
-  }
-  console.log('Display contiTeñidos:', estiloTeñidos.display);
-  console.log('Display contiFreno:', estiloFrenos.display);
+function palpitarBotonDesbob() {
+    document.getElementById('boton1').classList.add('parpadea');
+    setTimeout(function () {
+      document.getElementById('boton1').classList.remove('parpadea');
+    }, 277);
 }
-document.getElementById('boton8').addEventListener('click', realizarAccionII)
-document.getElementById('boton9').addEventListener('click', realizarAccionII)
-document.getElementById('boton10').addEventListener('click', realizarAccionII)
-document.getElementById('boton11').addEventListener('click', realizarAccionII)
-document.getElementById('boton12').addEventListener('click', realizarAccionII)
- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function palpitarBotonTeñido() {
+  document.getElementById('boton7').classList.add('parpadea');
+  setTimeout(function() {
+    document.getElementById('boton7').classList.remove('parpadea');
+  }, 277);  
+}
+
 
  // Agrega un event listener al documento para escuchar eventos de teclado
 document.addEventListener('keydown', function(event) {
