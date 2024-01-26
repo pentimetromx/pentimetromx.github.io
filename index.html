@@ -532,11 +532,11 @@
         <button class="boton-b btn-bloque" id="boton13" onclick="cierraContenedores('alimentadorId')">ALIMENTADOR</button><br> 
         <div class="contene-7" id="cont-Verticales33">
           <div class="linea-vertical"></div>
-          <button class="boton-c" id="boton14">Estructura<div class="linea-horizontal"></div></button>
-          <button class="boton-c" id="boton15">Sistema planetario<div class="linea-horizontal"></div></button>
-          <button class="boton-c" id="boton16">Ajuste mecanico<div class="linea-horizontal"></div></button>
-          <button class="boton-c" id="boton17">Transmision<div class="linea-horizontal"></div></button>
-          <button class="boton-c" id="boton18">Ajuste neumatico<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton14" onclick="UnidadAlimenta('boton14','boton13')">Estructura<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton15"  onclick="UnidadAlimenta('boton15','boton13')">Sistema planetario<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton16"  onclick="UnidadAlimenta('boton16','boton13')">Ajuste mecanico<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton17"  onclick="UnidadAlimenta('boton17','boton13')">Transmision<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton18"  onclick="UnidadAlimenta('boton18','boton13')">Ajuste neumatico<div class="linea-horizontal"></div></button>
         </div>          
       </div>
 
@@ -544,11 +544,11 @@
         <button class="boton-b btn-bloque" id="boton19" onclick="cierraContenedores('unidProceso')">UNIDAD DE PROCESO</button><br>  
         <div class="contene-7" id="cont-Verticales7">
           <div class="linea-vertical"></div>
-          <button class="boton-c" id="boton20">Rodillos de transporte<div class="linea-horizontal"></div></button>
-          <button class="boton-c" id="boton21">Función y ensamble<div class="linea-horizontal"></div></button>
-          <button class="boton-c" id="boton22">Anillos perforadores<div class="linea-horizontal"></div></button>
-          <button class="boton-c" id="boton23">Zona de perforación<div class="linea-horizontal"></div></button>
-          <button class="boton-c" id="boton24">Remaliner<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton20" onclick="UnidadProceso('boton20','boton19')">Rodillos de transporte<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton21" onclick="UnidadProceso('boton21','boton19')">Función y ensamble<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton22" onclick="UnidadProceso('boton22','boton19')">Anillos perforadores<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton23" onclick="UnidadProceso('boton23','boton19')">Zona de perforación<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton24" onclick="UnidadProceso('boton24','boton19')">Remaliner<div class="linea-horizontal"></div></button>
         </div>          
       </div>
 
@@ -556,11 +556,11 @@
         <button class="boton-b btn-bloque" id="boton25" onclick="cierraContenedores('rebobinador')">REBOBINADOR</button><br>                     
         <div class="contene-7"  id="cont-Verticales8">
           <div class="linea-vertical"></div>
-          <button class="boton-c" id="boton26">Estructura<div class="linea-horizontal"></div></button>
-          <button class="boton-c" id="boton27">Sistema planetario<div class="linea-horizontal"></div></button>
-          <button class="boton-c" id="boton28">Ajuste mecanico<div class="linea-horizontal"></div></button>
-          <button class="boton-c" id="boton29">Transmision<div class="linea-horizontal"></div></button>
-          <button class="boton-c" id="boton30">Ajuste neumatico<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton26" onclick="UnidadRebonina('boton26','boton25')">Estructura<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton27" onclick="UnidadRebonina('boton27','boton25')">Sistema planetario<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton28" onclick="UnidadRebonina('boton28','boton25')">Ajuste mecanico<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton29" onclick="UnidadRebonina('boton29','boton25')">Transmision<div class="linea-horizontal"></div></button>
+          <button class="boton-c" id="boton30" onclick="UnidadRebonina('boton30','boton25')">Ajuste neumatico<div class="linea-horizontal"></div></button>
         </div>          
       </div>         
 
@@ -1148,7 +1148,6 @@
         <button class="butt-mautonomo-rodilleria image-trainings" id="btn07" onclick="rodillosTeñido('btn07')">DUREZAS</button>
         <button class="butt-mautonomo-rodilleria image-trainings" id="btn08" onclick="rodillosTeñido('btn08')">MONTAJE</button>
       </div> 
-
       <div id="cont-arriba-rodillos">
         <div id="rodillos-I">
           <label class="labl-class" for="teñido">GP TINTER</label>
@@ -1157,7 +1156,6 @@
           <video class="video-training" id="rodilleria-vid" src="./assets/tinter vid.mp4" autoplay loop muted></video>
         </div>       
       </div>
-
       <div id="rodillos-II">
 
         <div id="imgs-superiores">
@@ -1171,7 +1169,6 @@
         </div>
 
       </div>
-
       <div id="durezas" style="display: none;" >
 
         <div id="img-sup">
@@ -1186,7 +1183,6 @@
         </div>
 
       </div>
-
     </div>
     <div id="contPortPlaca" style="display: none;">
       <video class="video-training" id="video-placa" style="position: absolute;left: 340px;top:1px;" src="./assets/video-plancha-v2.mp4" loop autoplay></video>
