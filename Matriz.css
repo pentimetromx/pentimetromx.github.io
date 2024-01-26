@@ -3850,6 +3850,36 @@ elemento.visible {
     transform: translate(-50%); 
     width: 400px; 
   } 
+  #imgsRepuestos{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    margin-top: 69%;
+    margin-left: 84%;
+  }
+  #imgsRepuestos img{
+   height: 72px;
+   width: 96px;
+   margin-right: 12px; 
+  }
+  #imgTorre{
+    position: fixed;
+    display: flex;
+    left: 2%;
+    top: 17%;
+    height: 223px;
+    width: 301px;
+    border-radius: 8px;
+  }
+  #agrupaOblicuos-II{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  left: 74%;
+  top: 22%;
+} 
+
+  
   #subtitulo-operacion,
   #subtitulo-calidad,
   #subtitulo-admin,

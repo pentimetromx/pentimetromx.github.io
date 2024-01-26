@@ -5678,7 +5678,6 @@ function UnidadSisHumedad(buttId,btnIniId){
     }
   }
 }
-
 function showButtonsUTeñidoconRetraso() {
   var botones = document.querySelectorAll('.butt-mautonomo-teñido') // Selecciona los botones
   var contPadre = document.getElementById('conti-boton-teñido')
