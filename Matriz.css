@@ -547,16 +547,24 @@ transform: scale(1.1);
   position: relative;
   display: flex;
   align-items: center;
-  height: 47px;
-  width: 95px;
+  height: 26px;
+  width: 53px;
   background: linear-gradient(45deg, rgba(250, 250, 1) 15%,  rgb(27, 27, 28, 0.777) 85%);                       
   color: black;
   border-radius: 5px;
   margin-right: 21px;
   margin-bottom: 10px;
-  text-align: left;    
+  text-align: left; 
+  font-size: 8px;  
   cursor: pointer; 
   transition: transform 0.1s; 
+}
+.boton-c {
+  position: relative;
+  display: flex;
+  height: 26px;
+  width: 53px;
+  font-size: 8px;
 }
 .boton-h,
 .boton-g,
