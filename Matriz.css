@@ -559,15 +559,6 @@ transform: scale(1.1);
   cursor: pointer; 
   transition: transform 0.1s; 
 }
-/*   .boton-e,
-  .boton-c {
-    position: relative;
-    display: flex;
-    height: 47px;
-    width: 95px;
-    font-size: 12px;
-  }
- */
 .boton-h,
 .boton-g,
 .boton-f{
@@ -969,20 +960,12 @@ width:447px ;
   top: -13px;
   left: 27px;
 }
-.custom-link {
-  position: relative; /* Asegura que la posición no sea static */
-  z-index: 999;
-  text-decoration: none;
-  font-family: "GothamRounded", sans-serif; /* Aplica la fuente deseada */
-  text-decoration-line: underline;
-}
 #conti-boton-desb{
   position: absolute;
   display: flex;
   left: 127.5px; 
   top: 19%;
-}  
-
+} 
 #vidTintero,
 #imgTorre-s,
 #imgTorre-m{
@@ -1002,38 +985,36 @@ width:447px ;
   width: 637px;
   border-radius: 11px;
 }
-#linkDistribuidor{
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------- */ 
+.custom-link {
   position: absolute;
   left: 597px;
-  top: 73px;
   width: 177px;
+  z-index: 999;
+  text-decoration: none;
+  font-family: "GothamRounded", sans-serif; /* Aplica la fuente deseada */
+  text-decoration-line: underline;
+}
+#linkDistribuidor{
+  top: 73px;
   color: white;
 }
 #linkForma{
-  position: absolute;
-  left: 597px;
   top: 120px;
-  width: 177px;
   color: white;
 }
 #linkPlate{
-  position: absolute;
-  left: 597px;
   top:167px;
-  width: 177px;
 }
 #linkManta{
-  position: absolute;
-  left: 597px;
   top: 250px;
-  width: 177px;
 }
 #linkImpresor{
-  position: absolute;
   left: 597px;
-  width: 177px;    
   top: 336px;
 }
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------- */ 
+
 #butt-001{
   position: relative;
   left: 7px;
@@ -1594,10 +1575,10 @@ width:447px ;
 #imgsRepuestos-III,
 #imgsRepuestos-II{
   position: relative;
-  left: 67px;
-  top: -13PX;
   display: flex;
   flex-direction: column;
+  left: 67px;
+  top: -13PX;
 }
 #imgsRepuestos-V img,
 #imgsRepuestos-IV img,
@@ -3857,29 +3838,122 @@ elemento.visible {
     margin-top: 69%;
     margin-left: 84%;
   }
+  #imgsRepuestos-V,
+  #imgsRepuestos-IV,
+  #imgsRepuestos-III,
+  #imgsRepuestos-II{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 244%;
+    margin-left: 79%; 
+  }
+  #imgsRepuestos-V img,
+  #imgsRepuestos-IV img,
+  #imgsRepuestos-III img,
+  #imgsRepuestos-II img,
   #imgsRepuestos img{
    height: 72px;
    width: 96px;
    margin-right: 12px; 
-  }
+  }  
+  #imgTorre-a,
+  #imgTorre-f,
   #imgTorre{
     position: fixed;
     display: flex;
     left: 2%;
-    top: 17%;
+    top: 19%;
     height: 223px;
     width: 301px;
     border-radius: 8px;
   }
-  #agrupaOblicuos-II{
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  left: 74%;
-  top: 22%;
-} 
+  #vidTintero{
+  position: relative;
+  margin-left: -199%;
+  margin-top: 15.1%;
+  height: 223px;
+  width: 301px;}
 
+  /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
+  #agrupaOblicuos,
+  #agrupaOblicuos-II,
+  #agrupaOblicuos-III,
+  #agrupaOblicuos-IV,
+  #agrupaOblicuos-V{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    left: 78%;
+    top: 22%;
+  }
+  .Bot-inicio2{
+    position: relative;
+    left: 7px;
+    top: -40px;
+    background-color: #302928;
+    color: rgb(0,255,0);;
+    border-radius: 7px;
+    width: 58px;
+    height: 35px;
+    font-size: 11px;
+    text-align: center;
+    clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+    transform: skewX(-30deg);
+    cursor: pointer;
+    z-index: 1;
+  }
+  .Bot-inicio2-fondo{
+    position: relative;
+    margin-left: -1.2px;
+    margin-top: 6px;
+    background-color: rgb(0,255,0);
+    border-radius: 7px;
+    width: 60px;
+    height: 40px;
+    font-size: 14px;
+    clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%); 
+    transform: skewX(-30deg);
+    cursor: pointer;
+    z-index: 0;
+  }
+  #cont-links{
+    position: absolute;
+    top: -4px;
+    left: -470px;
+  }
+  .custom-link {
+    position: absolute;
+    left: 597px;
+    width: 177px;
+    font-size: 10px;
+    z-index: 999;
+    text-decoration: none;
+    font-family: "GothamRounded", sans-serif; /* Aplica la fuente deseada */
+    text-decoration-line: underline;
+  }
+  #linkDistribuidor{
+    top: 73px;
+    color: white;
+  }
+  #linkForma{
+    top: 97px;
+    color: white;
+  }
+  #linkPlate{
+    top:117px;
+  }
+  #linkManta{
+    top: 159px;
+  }
+  #linkImpresor{
+    top: 200px;
+  }
+  /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
   
+
+
+
   #subtitulo-operacion,
   #subtitulo-calidad,
   #subtitulo-admin,
@@ -3955,8 +4029,6 @@ elemento.visible {
     width: 100%;
     height: 100%;
     top: 104px;
-/*     margin-left: auto;
-    margin-right: auto;*/
     display: none;
     overflow: auto; /* Puedes ajustar según sea necesario */
   }

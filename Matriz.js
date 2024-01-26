@@ -226,7 +226,7 @@ function changeButtonStyles(elementId) {
 
   switch (elementId) {
     case 'pantalla-tintero':
-      var elementosExcluidos = ['pantalla-tintero','container01','cont-links','imgsRepuestos','agrupaOblicuos-II','imgTorre'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)          
+      var elementosExcluidos = ['pantalla-tintero','container01','cont-links','agrupaOblicuos-II','imgTorre'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
@@ -8947,18 +8947,32 @@ function palpitarBotonHumedad() {
     document.getElementById('humedadButton').classList.remove('parpadea');
   }, 277);  
 }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// SECCION EXTRAER DATOS DE ELEMENTOS EN EL DOM
+function obtenerGeometria(){
+  var contiBoton = document.getElementById('imgsRepuestos');
+  var topPosition = contiBoton.offsetTop;
+  var leftPosition = contiBoton.offsetLeft;
+  var widthValue = contiBoton.offsetWidth;
+  var heightValue = contiBoton.offsetHeight;
+  var positionType = window.getComputedStyle(contiBoton).position;
+  var displayType = window.getComputedStyle(contiBoton).display;
+  console.log('Top:', topPosition);
+  console.log('Left:', leftPosition);
+  console.log('Height:', heightValue);
+  console.log('Width:', widthValue);
+  console.log('Position:', positionType);
+  console.log('Display:', displayType);
+}
 
- // Agrega un event listener al documento para escuchar eventos de teclado
 document.addEventListener('keydown', function(event) {
-  // Verifica si la combinación de teclas es Ctrl + Alt + Shift + KeyA
-  if (event.ctrlKey && event.altKey && event.shiftKey && event.key === 'a') {
-    // Ejecuta la función cuando se presiona la combinación de teclas
-    miFuncion();
+  if (event.ctrlKey && event.shiftKey && event.key === 'Z') {
+    changeButtonStyles('pantalla-tintero')
   }
 });
 
-// La función que deseas ejecutar
-function miFuncion() {
-  console.log('La combinación de teclas fue presionada. Ejecutando miFuncion.');
-  // Agrega aquí el código que deseas ejecutar con la combinación de teclas.
-}
+document.addEventListener('keydown', function(event) {
+  if (event.ctrlKey && event.shiftKey && event.key === 'B') {
+      obtenerGeometria()
+  }
+});
