@@ -522,7 +522,7 @@ transform: scale(1.1);
   align-items: center;
   height: 43px;
   width: 87px;
-  background: linear-gradient(45deg, rgba(250, 250, 1) 15%,  rgb(27, 27, 28, 0.076) 85%);                       
+  background: linear-gradient(45deg, rgba(250, 250, 1) 15%,  rgb(27, 27, 28, 0.777) 85%);                       
   color: rgb(0, 0, 0);
   border-radius: 5px;
   margin-right: 21px;
@@ -547,25 +547,27 @@ transform: scale(1.1);
   position: relative;
   display: flex;
   align-items: center;
-  height: 26px;
-  width: 53px;
+  height: 43px;
+  width: 87px;
   background: linear-gradient(45deg, rgba(250, 250, 1) 15%,  rgb(27, 27, 28, 0.777) 85%);                       
   color: black;
   border-radius: 5px;
   margin-right: 21px;
   margin-bottom: 10px;
-  text-align: left; 
-  font-size: 8px;  
+  font-size: 12px;
+  text-align: left;    
   cursor: pointer; 
   transition: transform 0.1s; 
 }
-.boton-c {
-  position: relative;
-  display: flex;
-  height: 26px;
-  width: 53px;
-  font-size: 8px;
-}
+/*   .boton-e,
+  .boton-c {
+    position: relative;
+    display: flex;
+    height: 47px;
+    width: 95px;
+    font-size: 12px;
+  }
+ */
 .boton-h,
 .boton-g,
 .boton-f{
