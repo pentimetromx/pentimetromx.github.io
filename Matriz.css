@@ -174,6 +174,17 @@ transform: scale(1.1);
   background-color: blue;
   z-index: 7;
 }
+.main-text {
+  position: relative;
+  left: 31px;
+}
+.arrow {
+  position: relative;
+  color: greenyellow;
+  top: -17px;
+  left: 120px;
+}
+
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
 #container2,
 #container3,
@@ -1765,12 +1776,14 @@ margin-right: 7px;
   display: flex;
 }
 /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
 #textToColorI,
 #textToColor {
   color: white;
   transition: color 0.2s;
   cursor: pointer;
 }
+
 /* Estilo para el punto después del título */
 #titleContainerI::after,
 #titleContainer::after {
@@ -4029,7 +4042,7 @@ elemento.visible {
   #linkListI{
     position: fixed;
     left: 3%;  
-    top: 10%;    
+    top: 15%;    
     width: 257px;
     height:auto;
     list-style: none;
@@ -4039,7 +4052,49 @@ elemento.visible {
     z-index: 777;
   }
   /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
-
+  #links-iniciales{  /* PADRE LINKS INICIALES-II  */
+    position: relative;
+    top: 11%;
+    left: 7%;
+  }
+  #line {
+    position: fixed;
+    left: 35%;
+    top: 7%;
+    width: 0;
+    height: 7px;
+    transition: 0.1s;
+  }
+  #titleContainer {
+    position: fixed;
+    display: flex;
+    left: 35%;  
+    top: 12%;  
+    align-items: center;
+  }
+  #linkList {
+    position: fixed;
+    left: 37%;  
+    top: 15%;    
+    width: 257px;
+    height:auto;
+    list-style: none;
+    padding: 0;
+    background-color: blue;
+    display: none;
+    z-index: 777;
+  }
+  .main-text {
+    position: relative;
+    left: 31px;
+  }
+  .arrow {
+    position: relative;
+    color: greenyellow;
+    top: 12%;
+    left: 7%;
+  }
+    
 
 
   /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
