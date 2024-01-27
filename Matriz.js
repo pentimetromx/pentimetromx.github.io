@@ -6099,10 +6099,11 @@ function resultadosEmpleado(idEmpleado, functionExe) {
   for (var i = 0; i < contUserElements.length; i++) {
     var element = contUserElements[i]
     if (element.id === idEmpleado) {
-      element.style.position = 'absolute'
+      element.style.position = 'fixed'
+      /* element.style.marginTop = '2%' */
       element.style.display = 'flex'
-      element.style.height = '15%'
-      element.style.marginTop = '-14%'
+      element.style.height = '20%'
+      element.style.top = '10%'
       element.style.left = '3%'
 
       // Accede al label dentro del div
@@ -6121,8 +6122,7 @@ function resultadosEmpleado(idEmpleado, functionExe) {
   if (contUserScroll) {
     contUserScroll.style.display = 'flex'
   }
-
-  contUserArrayI.forEach(element => {
+-  contUserArrayI.forEach(element => {
     if (element.id === idEmpleado) {  
       var originalColor = element.style.backgroundColor = '';
       element.style.backgroundColor = 'green';
@@ -6136,15 +6136,15 @@ function resultadosEmpleado(idEmpleado, functionExe) {
 
   switch (idEmpleado) {
     case 'icon-carlos-I':
-      var ContIconoAna = document.getElementById('icon-carlos')
+      var ContIconoAnaI = document.getElementById('icon-carlos')
       var contSecundarios = document.getElementById('conte-secundario')
       contSecundarios.style.position = 'absolute'
       contSecundarios.style.marginTop = '2%'
-      ContIconoAna.style.position = 'absolute'
-      ContIconoAna.style.display = 'flex'
-      ContIconoAna.style.height = '64%'
-      ContIconoAna.style.top = '-66%'
-      ContIconoAna.style.left = '3%'
+      ContIconoAnaI.style.position = 'absolute'
+      ContIconoAnaI.style.display = 'flex'
+      ContIconoAnaI.style.height = '64%'
+      ContIconoAnaI.style.top = '-66%'
+      ContIconoAnaI.style.left = '3%'    
     break;
     case 'icon-andres-I':
       var ContIconoAnaI = document.getElementById('icon-andres')
