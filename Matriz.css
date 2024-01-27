@@ -411,13 +411,6 @@ transform: scale(1.1);
   margin-top: 100px;
   padding-left: 20px;
 }
-#contLineas{
-  position: absolute;
-  left: 16%;
-  margin-top: 4%;
-  width: 84%; /* 100% - 16% */
-  height: 500px;
-}
 #linea-vertical-III{
   position: absolute;
   left: 1%;
@@ -960,27 +953,50 @@ width:447px ;
   font-family: "GothamRounded", sans-serif;
   color: yellow;
 }
+#contLineas{
+  position: fixed;
+  left: 16%;
+  margin-top: -20%;
+  width: 84%; /* 100% - 16% */
+  height: 500px;
+  display: none;
+}
 #canvasContainer4 {
-  position: absolute;
+  position: relative;
   display: flex;
   left: 17%;
-  top: 10%;
+  top: 20%;
   width: 350px;
   height: 255px;
 }
-#canvasContainer7 {
-  position: absolute;
+#canvasContainer5 {
+  position: relative;
   display: flex;
-  left: 20%;
-  top: 43%;
+  left: 44%;
+  margin-top: -20%;
   width: 357px;
   height: 255px;
 }
-#canvasContainer8 {
-  position: absolute;
+#canvasContainer6 {
+  position: relative;
   display: flex;
-  left: 45%;
-  top: 43%;
+  left: 73%;
+  margin-top: -20%;
+  width: 330px;
+}
+#canvasContainer7 {
+  position:relative;
+  display: flex;
+  left: 20%;
+  margin-top: 4%;
+  width: 407px;
+  height: 255px;
+}
+#canvasContainer8 {
+  position: relative;
+  display: flex;
+  left: 47%;
+  margin-top: -20%;
   width: 357px;
   height: 255px;
 }
@@ -990,21 +1006,6 @@ width:447px ;
   left: 75%;
   top: 58%;
   width: 277px;
-}
-#canvasContainer5 {
-  position: absolute;
-  display: flex;
-  left: 44%;
-  top: 10%;
-  width: 357px;
-  height: 255px;
-}
-#canvasContainer6 {
-  position: absolute;
-  display: flex;
-  left: 74%;
-  top: 13%;
-  width: 300px;
 }
 #canvasContainer2 {
   display: flex;
@@ -1026,15 +1027,15 @@ width:447px ;
   border-radius: 20px;
 }
 #pantalla-servicio,
-#pantalla-tintero,
 #pantalla-mandos,
 #pantalla-frente,
 #pantalla-atras,
-#contLinksTorre{
+#contLinksTorre,
+#pantalla-tintero{
   position: absolute;
   display: flex; /* Usar flexbox para centrar la imagen */
   flex-direction: row;
-  justify-content: center; /* Centrar horizontalmente */
+  justify-content: center; 
   top: 90px;
   display: none;
 }
@@ -2346,7 +2347,7 @@ elemento.visible {
 }
 .contenedor-vertical {
   position: fixed;
-  top: 191px;
+  top: 280px;
   left: 11px;
   width: 187px;
   display: flex;
@@ -3887,15 +3888,24 @@ elemento.visible {
     margin-top: 69%;
     margin-left: 84%;
   }
+  #pantalla-servicio,
+  #pantalla-mandos,
+  #pantalla-atras,
+  #pantalla-frente{
+    position: relative;
+    display: flex;
+    top: 17%;
+    left: 0%;
+  }
   #imgsRepuestos-V,
   #imgsRepuestos-IV,
   #imgsRepuestos-III,
   #imgsRepuestos-II{
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: column;
-    margin-top: 244%;
-    margin-left: 79%; 
+    margin-top: 52%;
+    margin-left: 13%; 
   }
   #imgsRepuestos-V img,
   #imgsRepuestos-IV img,
@@ -3905,7 +3915,7 @@ elemento.visible {
    height: 72px;
    width: 96px;
    margin-right: 12px; 
-  }  
+  } 
   #imgTorre-a,
   #imgTorre-f,
   #imgTorre{
@@ -4093,9 +4103,7 @@ elemento.visible {
     color: greenyellow;
     top: 12%;
     left: 7%;
-  }
-    
-
+  }   
 
   /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
   #subtitulo-operacion,
