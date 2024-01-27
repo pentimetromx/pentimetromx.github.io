@@ -2334,8 +2334,23 @@ elemento.visible {
   font-size: 11px;
   font-weight: bold;  
 }
+#bateria-entintado-II{
+  position: relative;
+  left:-1%;
+  top: 4%;
+  display: none;
+}
 #bateria-entintado-II video{
   border-radius: 10px;
+}
+#video-entintado{
+  position: absolute; 
+  left: 147px;
+  top: 80px;
+}
+#contenedor-7{
+  position: absolute;
+  left: 0.5%;
 }
 #franja-Blanca{
   position: relative;
@@ -3873,8 +3888,26 @@ elemento.visible {
   margin-left: -199%;
   margin-top: 15.1%;
   height: 223px;
-  width: 301px;}
-
+  width: 301px;
+}
+#bateria-entintado-II{ /* PADRE DE BOTONES/VIDEO */
+  position: relative;
+  left:-3%;
+  top: 4%;
+  display: none;
+}
+#contenedor-7{  /* HIJO-PADRE DE BOTONES  */
+  position: absolute;
+  left: 0.5%;
+}
+#video-entintado{ /* HIJO-PADRE DE VIDEO */
+  position: fixed; 
+  margin-left:-9%;
+  margin-top: 17%;
+}
+#videoElement1-II{
+  height: 250px;
+}
   /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
   #agrupaOblicuos,
   #agrupaOblicuos-II,
@@ -3949,11 +3982,10 @@ elemento.visible {
   #linkImpresor{
     top: 200px;
   }
-  /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
+
   
 
-
-
+  /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
   #subtitulo-operacion,
   #subtitulo-calidad,
   #subtitulo-admin,

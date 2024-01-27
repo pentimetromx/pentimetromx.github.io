@@ -553,7 +553,7 @@ function cierraContenedores(elementId) {
 
 }
 function muestraRodillo (vidElem, imgCont) {
-  const videoElements = document.querySelectorAll('.video-training')
+  /* const videoElements = document.querySelectorAll('.video-training') */
   const container = document.getElementById(imgCont) // Captura el contenedor por su 
   const pict = container.getElementsByTagName('img') // Obtiene todas las etiquetas 'img' dentro del contenedor
   container.style.display = 'flex'
@@ -8950,7 +8950,7 @@ function palpitarBotonHumedad() {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SECCION EXTRAER DATOS DE ELEMENTOS EN EL DOM
 function obtenerGeometria(){
-  var contiBoton = document.getElementById('imgsRepuestos');
+  var contiBoton = document.getElementById('video-entintado');
   var topPosition = contiBoton.offsetTop;
   var leftPosition = contiBoton.offsetLeft;
   var widthValue = contiBoton.offsetWidth;
@@ -8966,13 +8966,14 @@ function obtenerGeometria(){
 }
 
 document.addEventListener('keydown', function(event) {
-  if (event.ctrlKey && event.shiftKey && event.key === 'Z') {
-    changeButtonStyles('pantalla-tintero')
-  }
-});
-
-document.addEventListener('keydown', function(event) {
-  if (event.ctrlKey && event.shiftKey && event.key === 'B') {
-      obtenerGeometria()
+  if (event.ctrlKey && event.shiftKey) {
+    switch (event.key) {
+      case 'Z':
+        changeButtonStyles('bateria-entintado-II', 'contene-7')
+        break;
+      case 'B':
+        obtenerGeometria();
+        break;
+    }
   }
 });
