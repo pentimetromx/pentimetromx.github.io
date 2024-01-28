@@ -238,7 +238,6 @@ transform: scale(1.1);
   background: linear-gradient(45deg,#ff1837 15%, #333333 85%);
   opacity: 50%; border-radius: 9px; box-shadow: none;
 }
-
 #container1{
   position: relative;
   left: 50%;
@@ -313,7 +312,6 @@ transform: scale(1.1);
   display: flex;
   flex-direction: column;
 }
-
 .alimentadorId{
   display: flex;
   flex-direction: column;
@@ -331,7 +329,6 @@ transform: scale(1.1);
   display: flex;
   flex-direction: column;
 }
-
 #videosTraining{
   display: flex;
   flex-direction: row;
@@ -792,7 +789,6 @@ width:447px ;
   left:954px;
   top:-496px;
 }
-
 #vidLub{
   position: absolute;
   display: flex;
@@ -804,7 +800,6 @@ width:447px ;
 #lubri-vid{
   height: 127px;
 }
-
 #contImagGraf{
   display: flex;
   flex-direction: column;
@@ -911,7 +906,6 @@ width:447px ;
   cursor: pointer;
   padding-left: 27px;
 }
-
 .butt-mautonomo-freno::before {
   content: "";
   position: absolute;
@@ -1776,22 +1770,18 @@ margin-right: 7px;
 .imagen-container{
   display: flex;
 }
-/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
-
 #textToColorI,
 #textToColor {
   color: white;
   transition: color 0.2s;
   cursor: pointer;
 }
-
 /* Estilo para el punto después del título */
 #titleContainerI::after,
 #titleContainer::after {
   content: " ";
   color: transparent;
 }
-
 #linkListI li,
 #linkList li {
   margin: 5px 0;
@@ -3419,8 +3409,7 @@ elemento.visible {
     width: 130px;
     border-radius: 9px;
     margin-bottom: 17px;
-  }
-  
+  }  
   #frec-lubrica{
     position: absolute;
     left:-22%;
@@ -3452,8 +3441,7 @@ elemento.visible {
   } 
   #lubri-vid{
     height: 77px;
-  }
- 
+  } 
   #aceitera{
     position: absolute;
     display: flex;
@@ -4103,7 +4091,14 @@ elemento.visible {
     color: greenyellow;
     top: 12%;
     left: 7%;
-  }   
+  }  
+  #videoElement2{
+    position: absolute; 
+    left:26%;
+    margin-top: 17%;
+    height:225px;
+  }
+   
 
   /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
   #subtitulo-operacion,

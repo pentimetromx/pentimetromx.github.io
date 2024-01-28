@@ -8969,7 +8969,7 @@ document.addEventListener('keydown', function(event) {
   if (event.ctrlKey && event.shiftKey) {
     switch (event.key) {
       case 'Z':
-        resultadosMA()
+        muestraRodillo()
       break;
       case 'B':
         obtenerGeometria();
