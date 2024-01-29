@@ -290,9 +290,9 @@ function changeButtonStyles(elementId) {
       console.log(idsArray);
     }
 
-    setTimeout(function () {
+/*     setTimeout(function () {
       ejecutarLogica()
-    }, 477);
+    }, 477); */
     
 
     break;

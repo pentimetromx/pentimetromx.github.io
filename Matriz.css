@@ -4329,10 +4329,10 @@ elemento.visible {
   transition: transform 0.8s ease-in-out;
 }
 .move-down {
-  transform: translateY(42%);
+  transform: translateY(42%) translateX(230%)
 }
 .move-down-I {
-  transform: translateY(97%);
+  transform: translateY(97%) translateX(-34%)
 }
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
