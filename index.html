@@ -616,7 +616,7 @@
     <div class="contene-2" id="container01" style="display: none;">
       <button class="boton-a" id="bot-atras" style="text-align: center;width: 47px;position: relative;top: 5px;" onclick="irContenedorAnterior('contPortPlaca')"></button>
       <button class="boton-a" id="bot-inicial" style="text-align: center;;position: relative" onclick="VolveraInicio()">PANEL INICIO</button>
-      <button class="boton-a" id="iniciar" style="position: relative;">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
+      <button class="boton-a" id="iniciar" style="position: relative;" onclick="ejecutarLogica()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
       <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position:relative;top: 5px;"></button>
     </div><br>
 
@@ -792,12 +792,12 @@
           <img class="image-training image-trainings image-trainings1" id="imageElement7" src="./assets/Rodamiento entintador.png" alt="Rodamiento entintador"><br>
         </div>
 
-        <div class="images-training" id="images-distribuidor" style="position: absolute;top: -80px;">
-          <img class="image-training image-trainings" id="imageElement1" style="width: 157px;" src="./assets/Distri-2.jpg" alt="Entintador"><br>
-          <img class="image-training image-trainings" id="imageElement2" style="width: 157px;" src="./assets/Distri-6.jpg" alt="Rodamiento entintador"><br>
-          <img class="image-training image-trainings" id="imageElement3" style="width: 157px;" src="./assets/Distri-7.jpg" alt="Lupa"><br>
-          <img class="image-training image-trainings" id="imageElement4" style="width: 157px;" src="./assets/DIstri-12.jpg" alt="Tornillo lupa"><br>
-          <img class="image-training image-trainings" id="imageElement5" style="width: 157px;" src="./assets/Distri-11.jpg" alt="Tuerca lupa"><br>
+        <div class="images-training" id="images-distribuidor">
+          <img class="image-training image-trainings" id="imageElement1" src="./assets/Distri-2.jpg" alt="Entintador"><br>
+          <img class="image-training image-trainings" id="imageElement2" src="./assets/Distri-6.jpg" alt="Rodamiento entintador"><br>
+          <img class="image-training image-trainings" id="imageElement3" src="./assets/Distri-7.jpg" alt="Lupa"><br>
+          <img class="image-training image-trainings" id="imageElement4" src="./assets/DIstri-12.jpg" alt="Tornillo lupa"><br>
+          <img class="image-training image-trainings" id="imageElement5" src="./assets/Distri-11.jpg" alt="Tuerca lupa"><br>
        </div>
 
        <div class="images-training" id="images-smed"  style="position: absolute;top: -80px;">
@@ -1384,7 +1384,7 @@
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement6')">Montaje tomador <div class="linea-horizontal"></div></button>  
         <button class="boton-f bot-entre" onclick="applyImageEffects()">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
       </div>
-      <div id="video-entintado">  
+      <div id="video-entintado" class="transition-imgs">  
         <video class="video-training" id="videoElement1-II" src="./assets/Bateria de entintado.mp4" autoplay loop></video>  
       </div> 
     </div>

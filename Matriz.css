@@ -343,6 +343,10 @@ transform: scale(1.1);
   position: absolute;
   left: 377px;
 }
+#images-distribuidor img{
+  width: 157px;    
+}
+
 .videos-training video{
   position: absolute;
   top: 100px;
@@ -4095,9 +4099,32 @@ elemento.visible {
   #videoElement2{
     position: absolute; 
     left:26%;
+    top: 20%;
+    height:225px;
+  }
+  #videoElement3{
+    position: absolute; 
+    left:26%;
     margin-top: 17%;
     height:225px;
   }
+  #videoElement4{
+    position: absolute; 
+    left:26%;
+    margin-top: 17%;
+    height:227px;
+    width:300px;
+  } 
+  #images-distribuidor{
+    position: fixed;
+    top: 51%;
+    left: 37%;    
+  }
+  #images-distribuidor img{
+    width: 100px;   
+  }
+
+
    
 
   /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
@@ -4292,3 +4319,20 @@ elemento.visible {
     height: auto; /* Maintain aspect ratio */
   }  
 }
+
+
+
+.contene-7 {
+  transition: transform 0.5s ease-in-out;
+}
+.transition-imgs {
+  transition: transform 0.5s ease-in-out;
+}
+.move-down {
+  transform: translateY(42%);
+}
+.move-down-I {
+  transform: translateY(125%);
+}
+
+
