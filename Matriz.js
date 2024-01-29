@@ -289,6 +289,12 @@ function changeButtonStyles(elementId) {
       idsArray.push(elementId);
       console.log(idsArray);
     }
+
+    setTimeout(function () {
+      ejecutarLogica()
+    }, 477);
+    
+
     break;
     case 'bancada-torre-II': 
     var elementosExcluidos = ['container01','cont-links','agrupaOblicuos-II','contenedor-7','videoElement1-II','bancada-torre-II'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)          
@@ -8977,24 +8983,21 @@ document.addEventListener('keydown', function(event) {
     }
   }
 });
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
-
-/* document.getElementById('iniciar').addEventListener('click', function() {
+document.getElementById('iniciar').addEventListener('click', function() {
   var container = document.getElementById('contenedor-7')
   var containerI = document.getElementById('video-entintado')
 
   container.classList.toggle('move-down')
   containerI.classList.toggle('move-down-I')
-}); */
+});
 
 function ejecutarLogica() {
   var anchoPantalla = window.innerWidth
   if (anchoPantalla < 700) {
     var container = document.getElementById('contenedor-7')
     var containerI = document.getElementById('video-entintado')
-
     container.classList.toggle('move-down')
     containerI.classList.toggle('move-down-I')
   }
