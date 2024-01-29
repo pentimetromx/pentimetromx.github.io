@@ -289,9 +289,9 @@ function changeButtonStyles(elementId) {
       idsArray.push(elementId);
       console.log(idsArray);
     }
-      setTimeout(function () {
-          ejecutarLogica()
-      }, 477);  
+       /*setTimeout(function () {
+        ejecutarLogica()
+      }, 477); */  
     break;
     case 'bancada-torre-II': 
     var elementosExcluidos = ['container01','cont-links','agrupaOblicuos-II','contenedor-7','videoElement1-II','bancada-torre-II'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)          
@@ -8951,15 +8951,16 @@ function palpitarBotonHumedad() {
   }, 277);  
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// SECCION EXTRAER DATOS DE ELEMENTOS EN EL DOM
+// SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria(){
-  var contiBoton = document.getElementById('contenedor-7');
+  var contiBoton = document.getElementById('cont-titulo');
   var topPosition = contiBoton.offsetTop;
   var leftPosition = contiBoton.offsetLeft;
   var widthValue = contiBoton.offsetWidth;
   var heightValue = contiBoton.offsetHeight;
   var positionType = window.getComputedStyle(contiBoton).position;
   var displayType = window.getComputedStyle(contiBoton).display;
+  console.log(contiBoton.id);
   console.log('Top:', topPosition);
   console.log('Left:', leftPosition);
   console.log('Height:', heightValue);
@@ -8967,12 +8968,14 @@ function obtenerGeometria(){
   console.log('Position:', positionType);
   console.log('Display:', displayType);
 }
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// COMBINACION TECLAS EJECUTA FUNCION
 document.addEventListener('keydown', function(event) {
   if (event.ctrlKey && event.shiftKey) {
     switch (event.key) {
       case 'Z':
-        changeButtonStyles('bateria-entintado-II', 'contene-7')
+        /* muestraRodillo('videoElement2','images-distribuidor'); */
+        abrirSeccionContinua('pantalla-inicial')
       break;
       case 'B':
         obtenerGeometria();
@@ -8980,8 +8983,10 @@ document.addEventListener('keydown', function(event) {
     }
   }
 });
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// EVENTOS DINAMICOS MOVER CONTENEDORES
 document.getElementById('iniciar').addEventListener('click', function() {
   var container = document.getElementById('contenedor-7')
   var containerI = document.getElementById('video-entintado')
@@ -9000,24 +9005,17 @@ function ejecutarLogica() {
 }
 document.getElementById('iniciar').addEventListener('click', ejecutarLogica)
 
-
-
-
 // Guardar posiciones originales
 var contene7 = document.getElementById('contenedor-7');
 var transitionImgs = document.getElementById('video-entintado');
-
 var originalPosContene7 = contene7.getBoundingClientRect();
 var originalPosTransitionImgs = transitionImgs.getBoundingClientRect();
-
 // Función para eliminar transiciones y restaurar posiciones originales
 function resetearElementos() {
   var elementos = [contene7, transitionImgs];
-
   elementos.forEach(function(elemento) {
     elemento.style.transition = 'none';
   });
-
   // Agrega un pequeño retraso antes de restablecer la transición para asegurarte de que se aplique correctamente
   setTimeout(function() {
     elementos.forEach(function(elemento) {
@@ -9026,3 +9024,4 @@ function resetearElementos() {
     });
   }, 10);
 }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
