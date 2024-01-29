@@ -289,12 +289,9 @@ function changeButtonStyles(elementId) {
       idsArray.push(elementId);
       console.log(idsArray);
     }
-
-/*     setTimeout(function () {
-      ejecutarLogica()
-    }, 477); */
-    
-
+      setTimeout(function () {
+          ejecutarLogica()
+      }, 477);  
     break;
     case 'bancada-torre-II': 
     var elementosExcluidos = ['container01','cont-links','agrupaOblicuos-II','contenedor-7','videoElement1-II','bancada-torre-II'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)          
@@ -8988,7 +8985,6 @@ document.addEventListener('keydown', function(event) {
 document.getElementById('iniciar').addEventListener('click', function() {
   var container = document.getElementById('contenedor-7')
   var containerI = document.getElementById('video-entintado')
-
   container.classList.toggle('move-down')
   containerI.classList.toggle('move-down-I')
 });
@@ -9003,3 +8999,30 @@ function ejecutarLogica() {
   }
 }
 document.getElementById('iniciar').addEventListener('click', ejecutarLogica)
+
+
+
+
+// Guardar posiciones originales
+var contene7 = document.getElementById('contenedor-7');
+var transitionImgs = document.getElementById('video-entintado');
+
+var originalPosContene7 = contene7.getBoundingClientRect();
+var originalPosTransitionImgs = transitionImgs.getBoundingClientRect();
+
+// Función para eliminar transiciones y restaurar posiciones originales
+function resetearElementos() {
+  var elementos = [contene7, transitionImgs];
+
+  elementos.forEach(function(elemento) {
+    elemento.style.transition = 'none';
+  });
+
+  // Agrega un pequeño retraso antes de restablecer la transición para asegurarte de que se aplique correctamente
+  setTimeout(function() {
+    elementos.forEach(function(elemento) {
+      elemento.style.transition = '';
+      elemento.style.transform = 'translate(0)';
+    });
+  }, 10);
+}
