@@ -197,6 +197,12 @@ function ElementosMa(elementId) {
       elemento.style.display = 'none'
     }
   })
+  if (window.innerWidth < 900) {
+    setTimeout(function () {
+      moverMA()
+    }, 677);
+  } 
+
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   // 4. Verificar si el elemento está definido y si ya existe en arrayIds
   if (typeof elementId !== 'undefined') {
@@ -216,6 +222,7 @@ function showButtonsMAconRetraso() {
     if (i < botones.length) {
       var boton = botones[i]
       boton.style.display = 'inline-block'
+      boton.style.marginTop = '10px';      
       setTimeout(function() {
         mostrarBotonConRetraso(i + 1)
       }, 50) // 100 milisegundos de retraso entre botones
@@ -8984,7 +8991,8 @@ document.addEventListener('keydown', function(event) {
     switch (event.key) {
       case 'Z':
         /* muestraRodillo('videoElement2','images-distribuidor'); */
-        changeButtonStyles('bateria-entintado-II', 'contene-7')
+        /* changeButtonStyles('bateria-entintado-II', 'contene-7') */
+        ElementosMa('conteneMantaut')
       break;
       case 'B':
         obtenerGeometria();
@@ -8992,8 +9000,6 @@ document.addEventListener('keydown', function(event) {
     }
   }
 });
-
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // EVENTOS DINAMICOS MOVER CONTENEDORES
 document.getElementById('iniciar').addEventListener('click', function() {
@@ -9012,6 +9018,23 @@ function ejecutarLogica() {
     containerI.classList.toggle('move-down-I')
   }
 }
+function ejecutarLogica() {
+  var anchoPantalla = window.innerWidth
+  if (anchoPantalla < 700) {
+    var container = document.getElementById('contenedor-7')
+    var containerI = document.getElementById('video-entintado')
+    container.classList.toggle('move-down')
+    containerI.classList.toggle('move-down-I')
+  }
+}
+function moverMA(){
+  var anchoPantalla = window.innerWidth
+  if (anchoPantalla < 700) {
+    var container = document.getElementById('conti-boton')
+    container.classList.toggle('move-down-II')
+  }
+}
+
 /* document.getElementById('iniciar').addEventListener('click', ejecutarLogica) */
 
 /* // Guardar posiciones originales

@@ -4316,7 +4316,19 @@ elemento.visible {
     left: -11px;
     width: calc(100% + 11px); 
     height: auto; /* Maintain aspect ratio */
-  }  
+  } 
+  .conti-boton{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-top: 73%;
+    margin-left:67%;
+  }
+  
+  #resultados{
+    font-size: 8px;
+    text-align: left;
+  }   
 }
 
 
@@ -4334,4 +4346,10 @@ elemento.visible {
   transform: translateY(-127%) translateX(-34%)
 }
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+.conti-boton{
+  transition: transform 0.7s ease-in-out;
+}
+.move-down-II {
+  transform: translateY(-50%) translateX(-210%)
+}
 
