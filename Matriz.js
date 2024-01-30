@@ -289,9 +289,9 @@ function changeButtonStyles(elementId) {
       idsArray.push(elementId);
       console.log(idsArray);
     }
-       /*setTimeout(function () {
+      setTimeout(function () {
         ejecutarLogica()
-      }, 477); */  
+      }, 677); 
     break;
     case 'bancada-torre-II': 
     var elementosExcluidos = ['container01','cont-links','agrupaOblicuos-II','contenedor-7','videoElement1-II','bancada-torre-II'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)          
@@ -8975,7 +8975,7 @@ document.addEventListener('keydown', function(event) {
     switch (event.key) {
       case 'Z':
         /* muestraRodillo('videoElement2','images-distribuidor'); */
-        abrirSeccionContinua('pantalla-inicial')
+        changeButtonStyles('bateria-entintado-II', 'contene-7')
       break;
       case 'B':
         obtenerGeometria();
