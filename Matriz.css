@@ -3926,7 +3926,7 @@ elemento.visible {
   #bateria-entintado-II{ /* PADRE DE BOTONES/VIDEO */
     position: relative;
     left:-3%;
-    top: 4%;
+    top: 27%;
     display: none;
   }
   #contenedor-7{  /* HIJO-PADRE DE BOTONES  */
@@ -3934,9 +3934,12 @@ elemento.visible {
     left: 0.5%;
   }
   #video-entintado{ /* HIJO-PADRE DE VIDEO */
+/*     position: absolute; 
+    left:29%;
+    margin-top: 1%; */
     position: absolute; 
     left:29%;
-    margin-top: 1%;
+    margin-top: 36%;
   }
   #bateria-entintado-II video{
     border-radius: 10px;
@@ -4040,7 +4043,7 @@ elemento.visible {
   #linkListI{
     position: fixed;
     left: 3%;  
-    top: 16%;    
+    top: 15.5%;    
     width: 257px;
     height:auto;
     list-style: none;
@@ -4073,7 +4076,7 @@ elemento.visible {
   #linkList {
     position: fixed;
     left: 37%;  
-    top: 16%;    
+    top: 15.5%;    
     width: 257px;
     height:auto;
     list-style: none;
@@ -4325,10 +4328,10 @@ elemento.visible {
   transition: transform 0.8s ease-in-out;
 }
 .move-down {
-  transform: translateY(42%) translateX(230%)
+  transform: translateY(-44%) translateX(230%)
 }
 .move-down-I {
-  transform: translateY(97%) translateX(-34%)
+  transform: translateY(-127%) translateX(-34%)
 }
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 

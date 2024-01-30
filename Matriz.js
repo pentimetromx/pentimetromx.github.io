@@ -167,7 +167,8 @@ function muestraBateria(elementId) {
   }
 }
 function ElementosMa(elementId) {
-  var elementosExcluidos = ['conteneMantaut', 'container01']         
+  var elementosExcluidos = ['conteneMantaut', 'container01']  
+  document.getElementById('linkList').style.display = 'none'
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
@@ -289,9 +290,11 @@ function changeButtonStyles(elementId) {
       idsArray.push(elementId);
       console.log(idsArray);
     }
-      setTimeout(function () {
-        ejecutarLogica()
-      }, 677); 
+      if (window.innerWidth < 900) {
+        setTimeout(function () {
+          ejecutarLogica()
+        }, 677);
+      } 
     break;
     case 'bancada-torre-II': 
     var elementosExcluidos = ['container01','cont-links','agrupaOblicuos-II','contenedor-7','videoElement1-II','bancada-torre-II'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)          
@@ -2296,6 +2299,7 @@ function abrirSeccionContinua(elementId) {
   var botonesC = document.querySelectorAll('.boton-c') 
   toggleVideoButton.style.display = 'block'
   var elementosExcluidos = ['toggleVideoButton','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador','torre-imp','torre-imp','tinter-o','bateria-entintado'];                                                              
+  document.getElementById('linkList').style.display = 'none'
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
@@ -2676,7 +2680,8 @@ function devolverColoresConRetrasoIII() {
 }
 function abrirSeccionVariable(elementId){
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  var elementosExcluidos = ['container01','cont-variable'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)          
+  var elementosExcluidos = ['container01','cont-variable'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)   
+  document.getElementById('linkList').style.display = 'none'
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
@@ -2707,7 +2712,8 @@ function abrirSeccionVariable(elementId){
 } 
 function abrirSeccionPlanas(elementId){
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  var elementosExcluidos = ['container01','cont-plana'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)          
+  var elementosExcluidos = ['container01','cont-plana'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)
+  document.getElementById('linkList').style.display = 'none'
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
@@ -2734,7 +2740,8 @@ function abrirSeccionPlanas(elementId){
   }
 }
 function abrirSeccionCurado(elementId){
-  var elementosExcluidos = ['cont-secador','container01'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)          
+  var elementosExcluidos = ['cont-secador','container01'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)  
+  document.getElementById('linkList').style.display = 'none'
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
@@ -2799,7 +2806,8 @@ function abrirPilarMA(){
   }    
 }
 function abrirPrepress(elementId) {
-  var elementosExcluidos = ['conte-botDensitoII','imgs-prepress','pre-prensa','container01'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)          
+  var elementosExcluidos = ['conte-botDensitoII','imgs-prepress','pre-prensa','container01'];                                /// OCULTA TODO MENOS (2 ELEMENTOS) 
+  document.getElementById('linkList').style.display = 'none'         
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
@@ -2839,7 +2847,8 @@ function abrirPrepress(elementId) {
   }
 }
 function abrirDensitometria(elementId){
-  var elementosExcluidos = ['densitometria','container01','imgs-densito','contDensito','segundoContDensito','tercerContDensito','cuartoContDensito'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)          
+  var elementosExcluidos = ['densitometria','container01','imgs-densito','contDensito','segundoContDensito','tercerContDensito','cuartoContDensito'] /// OCULTA TODO MENOS (2 ELEMENTOS)          
+  document.getElementById('linkList').style.display = 'none'
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
@@ -9003,9 +9012,9 @@ function ejecutarLogica() {
     containerI.classList.toggle('move-down-I')
   }
 }
-document.getElementById('iniciar').addEventListener('click', ejecutarLogica)
+/* document.getElementById('iniciar').addEventListener('click', ejecutarLogica) */
 
-// Guardar posiciones originales
+/* // Guardar posiciones originales
 var contene7 = document.getElementById('contenedor-7');
 var transitionImgs = document.getElementById('video-entintado');
 var originalPosContene7 = contene7.getBoundingClientRect();
@@ -9023,5 +9032,5 @@ function resetearElementos() {
       elemento.style.transform = 'translate(0)';
     });
   }, 10);
-}
+} */
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
