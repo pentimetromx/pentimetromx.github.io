@@ -616,7 +616,7 @@
     <div class="contene-2" id="container01" style="display: none;">
       <button class="boton-a" id="bot-atras" style="text-align: center;width: 47px;position: relative;top: 5px;" onclick="irContenedorAnterior('contPortPlaca')"></button>
       <button class="boton-a" id="bot-inicial" style="text-align: center;;position: relative" onclick="VolveraInicio()">PANEL INICIO</button>
-      <button class="boton-a" id="iniciar" style="position: relative;" onclick="ejecutarLogica()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
+      <button class="boton-a" id="iniciar" style="position: relative;" onclick="obtenerGeometria()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
       <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position:relative;top: 5px;" onclick="resetearElementos()"></button>
     </div><br>
 
@@ -1361,15 +1361,17 @@
       <img class="maq-seccion aumentar" src="./assets/info print.jpg" alt="IBM4000">
 
     </div>
+
     <div id="cont-plana" class="secciones" style="display: none;">
 
       <img class="maq-seccion aumentar" src="./assets/sor-m.jpg" alt="GTO52">
       <img class="maq-seccion aumentar" src="./assets/GTO 52.jpg" alt="GTO52">
       <img class="maq-seccion aumentar" src="./assets/pinza heidelberg.jpg" alt="GTO52">
     </div>
-    <div id="cont-secador" style="position: absolute;left: 170px;top: 6px;display: none;">
-      <video class="video-training" id="curado-uv" src="./assets/secador.mp4" style="position: absolute;left: 117px;top: 80px;width: 620px;height: 465px;" autoplay loop></video>
-      <div id="imgsSecador" style="position:absolute;left:-157px;top: 77px;">
+    
+    <div id="cont-secador">
+      <video class="video-training" id="curado-uv" src="./assets/secador.mp4" autoplay loop></video>
+      <div id="imgsSecador">
         <img class="maq-seccion aumentar" src="./assets/secado uv3.png" alt="">
 
       </div>

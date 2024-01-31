@@ -166,6 +166,15 @@ function muestraBateria(elementId) {
     console.log(idsArray);
   }
 }
+function setInitialPosition() {
+  var contiBoton = document.querySelector('.conti-boton')
+  // Aplica los estilos al elemento
+  contiBoton.style.position = 'absolute';
+  contiBoton.style.display = 'flex';
+  contiBoton.style.top = '257px';
+  contiBoton.style.left = '270px';
+  contiBoton.style.transform = ''; // Restablecer la transformación
+}
 function ElementosMa(elementId) {
   var elementosExcluidos = ['conteneMantaut', 'container01']  
   document.getElementById('linkList').style.display = 'none'
@@ -197,11 +206,8 @@ function ElementosMa(elementId) {
       elemento.style.display = 'none'
     }
   })
-  if (window.innerWidth < 900) {
-    setTimeout(function () {
-      moverMA()
-    }, 677);
-  } 
+
+  /* setInitialPosition() */
 
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   // 4. Verificar si el elemento está definido y si ya existe en arrayIds
@@ -215,7 +221,15 @@ function ElementosMa(elementId) {
     idsArray.push(elementId);
     console.log(idsArray);
   } 
+
+/*   if (window.innerWidth < 900) {
+    setTimeout(function () {
+      moverMA()
+    }, 677);
+  } */
+
 }
+
 function showButtonsMAconRetraso() {
   var botones = document.querySelectorAll('.butt-mautonomo') // Selecciona todos los botones
   function mostrarBotonConRetraso(i) {
@@ -1477,6 +1491,7 @@ function mantAutonomo (idElement) {
 }}
 function deslizaContenedor(idElement, idButton) {
   var contLinkMant = document.getElementById('linksMA')
+  var contiBoton = document.getElementById('conti-boton')
   var elementoAnterior = null;
   var elementoActual = null;
   var botones = ['btn10','btn11','btn12','btn17']
@@ -1526,7 +1541,6 @@ function deslizaContenedor(idElement, idButton) {
   if (!arrayPosicionnador.includes(idElement)) {
     arrayPosicionnador.push(idElement)
   }
-
   switch (idElement) {
     case 'conti-boton-kaizen':
       var contenedor = document.getElementById('conti-boton-kaizen')
@@ -1545,9 +1559,10 @@ function deslizaContenedor(idElement, idButton) {
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  var contenedor = document.getElementById(idElement)                                                                   /// MUESTRA CONTENEDOR PROPIO (PARAMETRO)
 
+
   if (idElement !== 'troubleshooting' && contenedor) {
     contenedor.style.display = 'flex'
-    contenedor.style.left = '257px'
+    contenedor.style.left = '257px'   
   } else{
     var contenedorPadre = document.getElementById(idElement)
     // Verifica si el contenedor padre existe
@@ -1567,6 +1582,7 @@ function deslizaContenedor(idElement, idButton) {
   for (var i = 1; i < arrayPosicionnador.length; i++) {
     var elementoActual = document.getElementById(arrayPosicionnador[i])
     var elementoAnterior = document.getElementById(arrayPosicionnador[i - 1])
+    console.log(arrayPosicionnador.children)
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  if (elementoActual && elementoAnterior) {                                                                                 /// OBTIENE POSICION ELEMENTO ANTERIOR
     var estiloAnterior = window.getComputedStyle(elementoAnterior)
@@ -8968,14 +8984,17 @@ function palpitarBotonHumedad() {
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
-function obtenerGeometria(){
-  var contiBoton = document.getElementById('cont-titulo');
-  var topPosition = contiBoton.offsetTop;
-  var leftPosition = contiBoton.offsetLeft;
-  var widthValue = contiBoton.offsetWidth;
-  var heightValue = contiBoton.offsetHeight;
-  var positionType = window.getComputedStyle(contiBoton).position;
-  var displayType = window.getComputedStyle(contiBoton).display;
+function obtenerGeometria() {
+  var contiBoton = document.getElementById('conti-boton');
+  var rect = contiBoton.getBoundingClientRect();
+
+  var topPosition = rect.top
+  var leftPosition = rect.left
+  var widthValue = rect.width
+  var heightValue = rect.height
+  var positionType = window.getComputedStyle(contiBoton).position
+  var displayType = window.getComputedStyle(contiBoton).display
+
   console.log(contiBoton.id);
   console.log('Top:', topPosition);
   console.log('Left:', leftPosition);
@@ -8984,7 +9003,7 @@ function obtenerGeometria(){
   console.log('Position:', positionType);
   console.log('Display:', displayType);
 }
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // COMBINACION TECLAS EJECUTA FUNCION
 document.addEventListener('keydown', function(event) {
   if (event.ctrlKey && event.shiftKey) {
@@ -8992,7 +9011,8 @@ document.addEventListener('keydown', function(event) {
       case 'Z':
         /* muestraRodillo('videoElement2','images-distribuidor'); */
         /* changeButtonStyles('bateria-entintado-II', 'contene-7') */
-        ElementosMa('conteneMantaut')
+        /* ElementosMa('conteneMantaut') */
+        cierraContenedores('desbobinadorId')
       break;
       case 'B':
         obtenerGeometria();
@@ -9027,33 +9047,11 @@ function ejecutarLogica() {
     containerI.classList.toggle('move-down-I')
   }
 }
-function moverMA(){
-  var anchoPantalla = window.innerWidth
+ function moverMA() {
+  setInitialPosition()
+  var anchoPantalla = window.innerWidth;
   if (anchoPantalla < 700) {
     var container = document.getElementById('conti-boton')
     container.classList.toggle('move-down-II')
   }
 }
-
-/* document.getElementById('iniciar').addEventListener('click', ejecutarLogica) */
-
-/* // Guardar posiciones originales
-var contene7 = document.getElementById('contenedor-7');
-var transitionImgs = document.getElementById('video-entintado');
-var originalPosContene7 = contene7.getBoundingClientRect();
-var originalPosTransitionImgs = transitionImgs.getBoundingClientRect();
-// Función para eliminar transiciones y restaurar posiciones originales
-function resetearElementos() {
-  var elementos = [contene7, transitionImgs];
-  elementos.forEach(function(elemento) {
-    elemento.style.transition = 'none';
-  });
-  // Agrega un pequeño retraso antes de restablecer la transición para asegurarte de que se aplique correctamente
-  setTimeout(function() {
-    elementos.forEach(function(elemento) {
-      elemento.style.transition = '';
-      elemento.style.transform = 'translate(0)';
-    });
-  }, 10);
-} */
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
