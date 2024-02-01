@@ -2961,48 +2961,60 @@ function muestraVidPrisma(elementId) {
     vidPrisma.style.display = 'flex'
     vidPrisma.currentTime = '0'
     vidPrisma.play()
-
-
-
   }  
 }
 function muestraVidColor(elementId){
-  allContenedores.forEach(contenedor => {
+  var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  if (screenWidth > 900) {
+    allContenedores.forEach(contenedor => {
     if (contenedor === 'vidColor') {
-      contenedor.style.display = 'none'         
+      if(contenedor.style.display !== 'none'){
+        contenedor.style.display = 'none'
+      }             
     }  
-    })
 
-  var contImgsTeoria = document.getElementsByClassName('imgTeoria') // Obtén elementos por su
-  for (var i = 0; i < contImgsTeoria.length; i++) {
-    var teorImage = contImgsTeoria[i] // Accede al elemento actual
-    teorImage.style.display = 'none' // Oculta el elemento  
-  }
-  videoElements.forEach(video => {
-  if (video.id === 'color-vid') {
-    video.style.display = 'block'
-    video.play()      
-  } else {
-    video.style.display = 'none'
-  }
-  })
-  const videos = document.querySelectorAll('.vidTeoria') 
-  // Reproducir todos los videos simultáneamente
-      videos.forEach(video => {
-          video.pause()
-          video.style.display='none'
-      })
-  /* // 4. Verificar si el elemento está definido y si ya existe en arrayIds
-  if (typeof elementId !== 'undefined') {
-    const index = idsArray.indexOf(elementId);
-    if (index !== -1) {
-      // 4. Si el elemento ya existe, moverlo a la última posición
-      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+
+    })
+    var contImgsTeoria = document.getElementsByClassName('imgTeoria') // Obtén elementos por su
+    for (var i = 0; i < contImgsTeoria.length; i++) {
+      var teorImage = contImgsTeoria[i] // Accede al elemento actual
+      teorImage.style.display = 'none' // Oculta el elemento  
     }
-    // 5. Agregar el elemento al final de arrayIds
-    idsArray.push(elementId);
-    console.log(idsArray);
-  } */ 
+    videoElements.forEach(video => {
+    if (video.id === 'color-vid') {
+      video.style.display = 'block'
+      video.play()      
+    } else {
+      video.style.display = 'none'
+    }
+    })
+    const videos = document.querySelectorAll('.vidTeoria') 
+    // Reproducir todos los videos simultáneamente
+        videos.forEach(video => {
+            video.pause()
+            video.style.display='none'
+        })
+    /* // 4. Verificar si el elemento está definido y si ya existe en arrayIds
+    if (typeof elementId !== 'undefined') {
+      const index = idsArray.indexOf(elementId);
+      if (index !== -1) {
+        // 4. Si el elemento ya existe, moverlo a la última posición
+        idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+      }
+      // 5. Agregar el elemento al final de arrayIds
+      idsArray.push(elementId);
+      console.log(idsArray);
+    } */ 
+  }else{
+    var contiVidPrisma = document.getElementById('vidColor-II')
+    var vidPrisma = document.getElementById('color-vid')
+    contiVidPrisma.style.display = 'flex'
+    vidPrisma.style.display = 'flex'
+    vidPrisma.currentTime = '0'
+    vidPrisma.play()
+
+
+  }  
 }
 function irContenedorAnterior() {
   var previousElementID = idsArray[idsArray.length - 2];

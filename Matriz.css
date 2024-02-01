@@ -3151,6 +3151,14 @@ elemento.visible {
   width: 638px;
   height: 480px;
 }
+#color-vid{
+  position: absolute;
+  left: 137px;
+  top: 80px;
+  width: 638px;
+  height: 480px;
+}
+
 
 
 
@@ -4485,6 +4493,13 @@ elemento.visible {
     z-index: -1; 
   }
   #prisma-vid{
+    position: fixed;
+    left: 12%;
+    top: 57%;
+    width: 320px;
+    height: 240px;
+  }
+  #color-vid{
     position: fixed;
     left: 12%;
     top: 57%;
