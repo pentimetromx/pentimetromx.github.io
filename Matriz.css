@@ -334,7 +334,7 @@ transform: scale(1.1);
   flex-direction: row;
   justify-content: space-between;
 }
-.video-training {
+.video-training{
   display: none;
   border-radius: 11px;
 }
@@ -1943,24 +1943,12 @@ header {
   width: 240px;
   height: 180px;
 }
-/* Utilizamos CSS Grid para crear la grilla de imágenes */
-.image-grid {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  top: 77px;
-  left: -157px;
-}
 #imgs-prepress{
   position: relative;
   display: flex;
   flex-direction: column;
   top: 77px;
   left: -157px;
-}
-.vidTeoria{
-  height: 120px;
-  width: 160px;
 }
 #cuartoContDensito,
 #tercerContDensito,
@@ -2001,6 +1989,11 @@ header {
   display: none;
   z-index: -1; 
 }
+.vidTeoria{
+  height: 120px;
+  width: 160px;
+}
+
 #vidCicodelia{
   position: fixed;
   left: 17px;
@@ -3115,8 +3108,6 @@ elemento.visible {
   left: 2%;
   top: 10%;
 }
-
-/* Estilo adicional para el botón parpadeante asociada a la funcion 'realizarAccion()'  */
 .parpadea {
   animation: parpadeo 0.05s infinite alternate;
 }
@@ -3128,6 +3119,21 @@ elemento.visible {
     opacity: 0;
   }
 }
+#imgs-densito{
+  position: absolute;
+  top: 27px;
+  display: none;
+}
+/* Utilizamos CSS Grid para crear la grilla de imágenes */
+.image-grid {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top: 77px;
+  left: -157px;
+}
+
+
 
 @media screen and (max-width: 420px) {
 
@@ -4374,10 +4380,7 @@ elemento.visible {
     top: 6px;
     display: none;
   }  
-/*   #cont-secador video {
-    border-radius: 9px;
-  }
- */  
+
   #imgsSecador{
     position: fixed;
     display: flex;
@@ -4385,17 +4388,50 @@ elemento.visible {
     top: 19%;
     left:11% ;
   } 
-  #curado-uv{
+  #curado-uv {
     position: fixed;
     display: flex;
-    left: 3%;
+    left: 10%;
     top: 40%;
-    width: 397px;
-    border-radius: 7px;
-    /* height: 465px; */
+    width: 333px;
+    border-radius: 5%; 
+
   }
-    
-    
+  .video-training{
+    display: none;
+  }
+  #cuartoContDensito,
+  #tercerContDensito,
+  #segundoContDensito,
+  #contDensito{
+    display: flex;
+    flex-direction: row;
+    margin: 1px;
+  }
+  #cuartoContDensito img,
+  #tercerContDensito img,
+  #segundoContDensito img,
+  #contDensito img{
+    height: 43px;
+    width: 60px;
+  }
+  #imgs-densito{
+    position: fixed;
+    top: 27%;
+    left: 4%;
+    display: none;
+  }
+  #vidCicodeliaII{
+    position: fixed;
+    left: 20px;
+    top: 28%;
+    height: 28%;
+    width: 89%;
+    object-fit: fill; /* Elimina la relación de aspecto original */
+    display: none;
+    z-index: -1; 
+  }
+  
 }
 
 

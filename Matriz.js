@@ -8985,7 +8985,7 @@ function palpitarBotonHumedad() {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('conti-boton');
+  var contiBoton = document.getElementById('imgs-densito');
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
@@ -9012,7 +9012,8 @@ document.addEventListener('keydown', function(event) {
         /* muestraRodillo('videoElement2','images-distribuidor'); */
         /* changeButtonStyles('bateria-entintado-II', 'contene-7') */
         /* ElementosMa('conteneMantaut') */
-        cierraContenedores('desbobinadorId')
+        /* abrirPrepress('pre-prensa') */
+        abrirDensitometria('densitometria')
       break;
       case 'B':
         obtenerGeometria();
