@@ -4424,8 +4424,8 @@ elemento.visible {
   #vidCicodeliaII{
     position: fixed;
     left: 20px;
-    top: 28%;
-    height: 28%;
+    top: 27%;
+    height: 25%;
     width: 89%;
     object-fit: fill; /* Elimina la relación de aspecto original */
     display: none;
