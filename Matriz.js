@@ -9012,8 +9012,8 @@ document.addEventListener('keydown', function(event) {
         /* muestraRodillo('videoElement2','images-distribuidor'); */
         /* changeButtonStyles('bateria-entintado-II', 'contene-7') */
         /* ElementosMa('conteneMantaut') */
-        /* abrirPrepress('pre-prensa') */
-        abrirDensitometria('densitometria')
+        abrirPrepress('pre-prensa')
+        /* abrirDensitometria('densitometria') */
       break;
       case 'B':
         obtenerGeometria();

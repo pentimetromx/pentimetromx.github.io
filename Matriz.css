@@ -1949,6 +1949,7 @@ header {
   flex-direction: column;
   top: 77px;
   left: -157px;
+  display: none;
 }
 #cuartoContDensito,
 #tercerContDensito,
@@ -1981,8 +1982,8 @@ header {
 }
 #vidCicodeliaII{
   position: fixed;
-  left: 17px;
-  top: 93px;
+  left: 1.5%;
+  top: 22%;
   height: 477px; 
   object-fit: fill; /* Elimina la relación de aspecto original */
   width: 973px;
@@ -1993,11 +1994,10 @@ header {
   height: 120px;
   width: 160px;
 }
-
 #vidCicodelia{
   position: fixed;
-  left: 17px;
-  top: 77px;
+  left: 5%;
+  top: 22%;
   height: 487px; 
   object-fit: fill; /* Elimina la relación de aspecto original */
   width: 973px;
@@ -3111,6 +3111,18 @@ elemento.visible {
 .parpadea {
   animation: parpadeo 0.05s infinite alternate;
 }
+#densitometria{
+  position: absolute;
+  left: 170px;
+  top: 17%;
+  display: none;
+}
+#pre-prensa{
+  position: absolute;
+  left: 17%;
+  top: 10%;
+}
+
 @keyframes parpadeo {
   from {
     opacity: 1;
@@ -4421,6 +4433,11 @@ elemento.visible {
     left: 4%;
     display: none;
   }
+  #pre-prensa{
+    position: absolute;
+    left: 170px;
+    top: 6px;
+  }
   #vidCicodeliaII{
     position: fixed;
     left: 20px;
@@ -4431,7 +4448,36 @@ elemento.visible {
     display: none;
     z-index: -1; 
   }
-  
+  #imgs-prepress{
+    position: fixed;
+    top: 29%;
+    left: 6%;
+    display: none;
+  }
+  .contColor{
+    display: flex;
+    flex-direction: row;
+    margin: 1px;
+  }
+  .contColor img{
+    height: 43px;
+    width: 60px;
+  }
+  .vidTeoria{
+    height: 43px;
+    width: 60px;
+  }
+  #vidCicodelia{
+    position: fixed;
+    left: 26px;
+    top: 29%;
+    height: 25%;
+    width: 89%;
+    object-fit: fill; /* Elimina la relación de aspecto original */
+    display: none;
+    z-index: -1; 
+  }
+      
 }
 
 
