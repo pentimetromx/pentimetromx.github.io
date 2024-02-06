@@ -4170,8 +4170,8 @@ elemento.visible {
   #videoElement2{
     position: absolute; 
     left:3%;
-    top: 21%;
-    height:225px;
+    top: 19%;
+    height:197px;
   }
   #videoElement3{
     position: absolute; 
@@ -4188,13 +4188,13 @@ elemento.visible {
   } 
   #images-distribuidor{
     position: fixed;
+    display: flex;
+    flex-direction: column;
     top: 20%;
-    left: 72%; 
-    gap: 1px;
+    left: 67.5%; 
   }
   #images-distribuidor img{
     width: 90px;  
-    margin-bottom: 1px; 
   }  
   /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
   #subtitulo-operacion,
@@ -4532,9 +4532,27 @@ elemento.visible {
 .move-up {
   transform: translateY(-177px) translateX(310px); 
 }
+.move-right {
+  transform: translateY(0px) translateX(310px); 
+}
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 #video-entintado{
   transition: transform 1.6s ease; /* Ajusta la duración según tus necesidades */
 }
 .move-up-left {
   transform: translateY(-313px) translateX(-101px); 
+}
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+#videoElement2{
+  transition: transform 1.6s ease;
+}
+.move-to-right{
+  transform: translateY(0px) translateX(140px);
+}
+
+#images-distribuidor{
+  transition: transform 1.6s ease;
+}
+.move-down-left{
+  transform: translateY(102px) translateX(-272px);  
 }
