@@ -564,7 +564,8 @@
         </div>          
       </div>         
 
-      <button id="toggleVideoButton" class="boton-i">TORRE DE IMPRESIÓN</button>         
+      <button id="toggleVideoButton" class="boton-i">TORRE DE IMPRESIÓN</button>  
+             
       <div class="torre-imp" id="torre-imp">
         <div class="tintero" id="tinter-o">
           <button class="boton-d" id="tinteroButton" onclick="changeButtonStyles('pantalla-tintero')">TINTERO</button>
@@ -616,8 +617,8 @@
     <div class="contene-2" id="container01" style="display: none;">
       <button class="boton-a" id="bot-atras" style="text-align: center;width: 47px;position: relative;top: 5px;" onclick="irContenedorAnterior('contPortPlaca')"></button>
       <button class="boton-a" id="bot-inicial" style="text-align: center;;position: relative" onclick="VolveraInicio()">PANEL INICIO</button>
-      <button class="boton-a" id="iniciar" style="position: relative;" onclick="obtenerGeometria()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
-      <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position:relative;top: 5px;" onclick="resetearElementos()"></button>
+      <button class="boton-a" id="iniciar" style="position: relative;" onclick="soloEnsayo()">ESTRUCTURA DE MAQUINA ROTATIVA  RK 200</button>
+      <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position:relative;top: 5px;" onclick="obtenerGeometria()"></button>
     </div><br>
 
     <div id="pantalla-tintero">       
@@ -1385,7 +1386,7 @@
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement6')">Montaje tomador <div class="linea-horizontal"></div></button>  
         <button class="boton-f bot-entre" onclick="applyImageEffects()">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
       </div>
-      <div id="video-entintado" class="transition-imgs">  
+      <div id="video-entintado">  
         <video class="video-training" id="videoElement1-II" src="./assets/Bateria de entintado.mp4" autoplay loop></video>  
       </div> 
     </div>

@@ -329,6 +329,11 @@ transform: scale(1.1);
   display: flex;
   flex-direction: column;
 }
+#bateria-entintado{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
 #videosTraining{
   display: flex;
   flex-direction: row;
@@ -780,7 +785,7 @@ width:447px ;
   position: relative;
   display: flex;
   left:577px;
-  top:-40px;
+  top:11%;
   display: none;
 }
 #lubri-II{
@@ -788,7 +793,7 @@ width:447px ;
   display: none;
   display: flex;
   left:954px;
-  top:-496px;
+  top:-52.5%;
 }
 #vidLub{
   position: absolute;
@@ -1042,7 +1047,8 @@ width:447px ;
 #conti-boton-desb{
   position: absolute;
   display: flex;
-  left: 127.5px; 
+  flex-direction: column;
+  left: 155px; 
   top: 19%;
 } 
 #vidTintero,
@@ -2057,16 +2063,29 @@ header {
 }
 #conti-boton-teñido{
   position: absolute;
-  left: 9%;
+  display: flex;
+  flex-direction: column;
+  left: 11%;
   margin-top: 10.4%;
   display: none;
 }
 #conti-boton-rodilleria{
   position: absolute;
-  left: 9%;
+  display: flex;
+  flex-direction: column;
+  left: 11%;
   margin-top: 10.4%;
   display: none;
 }
+#conti-boton-freno{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 1.5%;
+  top: 1%;
+  display: none;
+}
+
 #cont-secador{
   position: relative;
   display: flex;
@@ -2093,7 +2112,9 @@ header {
   display: flex;
   flex-direction: column;
   margin-left:357px;
-  margin-top: 120px;
+  margin-top: 50px;
+  z-index: 3;
+
 }  
 #frec-lubrica button{
   width: 27px;
@@ -2101,12 +2122,6 @@ header {
   border-radius: 13px;
   background-color: rgba(217, 255, 0, 1);
   cursor: pointer;
-  display: none;
-}
-#conti-boton-freno{
-  position: absolute;
-  left: 0%;
-  top: 1%;
   display: none;
 }
 #cont-arriba-freno {
@@ -3159,9 +3174,6 @@ elemento.visible {
   height: 480px;
 }
 
-
-
-
 @media screen and (max-width: 420px) {
 
   /* @media screen and (max-width: 768px) { */  
@@ -3331,6 +3343,10 @@ elemento.visible {
   .torre-imp{
     position: absolute;  
     display: flex;
+  }  
+  .torre-imp{
+    position: absolute;  
+    display: flex;
     height: 57%;
     width: 100%;
     top: 32%;
@@ -3464,7 +3480,7 @@ elemento.visible {
   #frec-lubrica{
     position: absolute;
     left:-22%;
-    top: 5%;
+    top: 15%;
   } 
   #lubri-I{
     position: relative;
@@ -3989,16 +4005,14 @@ elemento.visible {
   }
   #contenedor-7{  /* HIJO-PADRE DE BOTONES  */
     position: absolute;
+    margin-top: -171%;
     left: 0.5%;
   }
   #video-entintado{ /* HIJO-PADRE DE VIDEO */
-/*     position: absolute; 
-    left:29%;
-    margin-top: 1%; */
     position: absolute; 
     left:29%;
-    margin-top: 36%;
-  }
+    margin-top: -135%;
+    }
   #bateria-entintado-II video{
     border-radius: 10px;
     height: 250px;
@@ -4047,7 +4061,7 @@ elemento.visible {
   }
   #cont-links{
     position: absolute;
-    top: -4px;
+    top: 12px;
     left: -470px;
   }
   .custom-link {
@@ -4505,31 +4519,20 @@ elemento.visible {
     top: 57%;
     width: 320px;
     height: 240px;
-  }
-  
+  } 
       
 }
-
-
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-.contene-7 {
-  transition: transform 0.7s ease-in-out;
-}
-.transition-imgs {
-  transition: transform 0.8s ease-in-out;
-}
-.move-down {
-  transform: translateY(-44%) translateX(230%)
-}
-.move-down-I {
-  transform: translateY(-127%) translateX(-34%)
-}
-/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-#conti-boton{
-  transition: transform 0.7s ease-in-out;
-}
-.move-down-II {
-  transform: translateY(-50%) translateX(-210%)
-}
- 
 
+#contenedor-7 {
+  transition: transform 1.6s ease;
+}
+.move-up {
+  transform: translateY(-177px) translateX(310px); 
+}
+#video-entintado{
+  transition: transform 1.6s ease; /* Ajusta la duración según tus necesidades */
+}
+.move-up-left {
+  transform: translateY(-313px) translateX(-101px); 
+}

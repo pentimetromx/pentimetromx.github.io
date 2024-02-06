@@ -35,7 +35,7 @@ var currentID = null;
 var butInicio = document.getElementById('bot-inic')
 var contInicial = document.getElementById('container1')
 var botonMa = document.getElementById('bot-mantaut')
-var allContenedores = ['container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
+var allContenedores = ['container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIzquierdos = ['desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador']
@@ -227,7 +227,6 @@ function ElementosMa(elementId) {
   } */
 
 }
-
 function showButtonsMAconRetraso() {
   var botones = document.querySelectorAll('.butt-mautonomo') // Selecciona todos los botones
   function mostrarBotonConRetraso(i) {
@@ -243,10 +242,88 @@ function showButtonsMAconRetraso() {
   mostrarBotonConRetraso(0) // Comienza desde el primer botón
 }
 function changeButtonStyles(elementId) {
+  var contieneBloqueSiete = document.getElementById('contenedor-7')
+  var contiVidBateria = document.getElementById('video-entintado')
 
   switch (elementId) {
     case 'pantalla-tintero':
-      var elementosExcluidos = ['pantalla-tintero','container01','cont-links','agrupaOblicuos-II','imgTorre'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)          
+      var elementosExcluidos = ['pantalla-inicial','pantalla-tintero','container01','cont-links','agrupaOblicuos-II','imgTorre']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }  
+      toggleVideoButton.style.display = 'none'
+      var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      if (screenWidth < 500) {
+/*         var contBloqueTintero = document.getElementById('torre-imp');
+        var estiloComputado = window.getComputedStyle(contBloqueTintero);
+        if (estiloComputado.display !== 'flex' || estiloComputado.display !== 'block') {
+          contBloqueTintero.style.display = 'flex';
+        }     
+          var contBloqueTorre = document.getElementById('tinter-o');
+          var estiloComputado = window.getComputedStyle(contBloqueTorre);
+          if (estiloComputado.display !== 'flex' || estiloComputado.display !== 'block') {
+            contBloqueTorre.style.display = 'flex';
+        } 
+        var contBloqueTorre = document.getElementById('bateria-entintado');
+        var estiloComputado = window.getComputedStyle(contBloqueTorre);
+        if (estiloComputado.display !== 'flex' || estiloComputado.display !== 'block') {
+          contBloqueTorre.style.display = 'flex';
+         }*/
+
+        videoElements.forEach(video => {
+        if (video.id === 'vidTintero') {
+          video.style.top = '17px'
+          video.style.display = 'block'
+          video.play();
+      
+          // Después de 977 milisegundos, ocultar el video
+          setTimeout(function () {
+            video.style.display = 'none'
+          }, 977);
+        } else {
+          video.style.display = 'none'
+        }
+        });
+        for (var i = 0; i < linksIniciales.length; i++) {
+          var elemento = document.getElementById(linksIniciales[i])
+          elemento.style.display = 'flex'
+        }
+    
+
+      }
+
+
+      videoElements.forEach(video => {
+      if (video.id === 'vidTintero') {
+        video.style.top = '17px'
+        video.style.display = 'block'
+        video.play();
+    
+        // Después de 977 milisegundos, ocultar el video
+        setTimeout(function () {
+          video.style.display = 'none'
+        }, 977);
+      } else {
+        video.style.display = 'none'
+      }
+      });
+      for (var i = 0; i < linksIniciales.length; i++) {
+        var elemento = document.getElementById(linksIniciales[i])
+        elemento.style.display = 'flex'
+      }
+      if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray);
+      } 
+    break;    
+    case 'bateria-entintado-II': 
+      var elementosExcluidos = ['container01','cont-links','agrupaOblicuos-II','contenedor-7','videoElement1-II','bateria-entintado-II']; 
+    
+      /// OCULTA TODO MENOS (2 ELEMENTOS)          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
@@ -254,19 +331,62 @@ function changeButtonStyles(elementId) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
         }
       }
-      videoElements.forEach(video => {
-        if (video.id === 'vidTintero') {
-          video.style.display = 'block';
-          video.play();
-      
-          // Después de 977 milisegundos, ocultar el video
-          setTimeout(function () {
-            video.style.display = 'none';
-          }, 977);
-        } else {
-          video.style.display = 'none';
+      toggleVideoButton.style.display = 'none'     
+      var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      if (screenWidth < 500) {    
+
+        contieneBloqueSiete.classList.remove('move-up');
+        contiVidBateria.classList.remove('move-up-left')
+              
+        var elementosExcluidos = ['pantalla-inicial','container01','cont-links','agrupaOblicuos-II','contenedor-7','videoElement1-II','bateria-entintado-II'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)          
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i]);  
+          if (elemento) {
+            // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
+          }
         }
-      });
+        const buttonElements = document.querySelectorAll('.boton-f')
+        var delay = 100;
+        for (var i = 0; i < buttonElements.length; i++) {
+          setTimeout(function(index) {
+            buttonElements[index].style.display = 'block'
+          }, delay * i,i)
+        }     
+        contVid.style.display='block' 
+        videoElements.forEach(video => {
+          if (video.id === 'videoElement1-II') {
+            video.play()      
+          } else {
+            video.style.display = 'none'
+          }
+        })
+        for (var i = 0; i < linksIniciales.length; i++) {
+          var elemento = document.getElementById(linksIniciales[i]);
+          elemento.style.display = 'flex'
+        }
+        contieneBloqueSiete.style.display = 'block'
+        setTimeout(function () {
+            ejecutarLogica()
+        }, 477);
+      }
+      //////////////////////////////////////////////////////////////////////////////////////////
+      const buttonElements = document.querySelectorAll('.boton-f')
+      var delay = 100;
+      for (var i = 0; i < buttonElements.length; i++) {
+        setTimeout(function(index) {
+          buttonElements[index].style.display = 'block'
+        }, delay * i,i)
+      }     
+             contVid.style.display='block' 
+            videoElements.forEach(video => {
+              if (video.id === 'videoElement1-II') {
+                video.style.display = 'block'
+                video.play()      
+              } else {
+                video.style.display = 'none'
+              }
+            })
       for (var i = 0; i < linksIniciales.length; i++) {
         var elemento = document.getElementById(linksIniciales[i]);
         elemento.style.display = 'flex'
@@ -274,46 +394,7 @@ function changeButtonStyles(elementId) {
       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
         idsArray.push(elementId);
         console.log(idsArray);
-      }     
-    break;
-    case 'bateria-entintado-II': 
-    var elementosExcluidos = ['container01','cont-links','agrupaOblicuos-II','contenedor-7','videoElement1-II','bateria-entintado-II'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)          
-    for (var i = 0; i < allContenedores.length; i++) { 
-      var elemento = document.getElementById(allContenedores[i]);  
-      if (elemento) {
-        // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
-        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
       }
-    }
-    const buttonElements = document.querySelectorAll('.boton-f')
-    var delay = 100;
-    for (var i = 0; i < buttonElements.length; i++) {
-      setTimeout(function(index) {
-        buttonElements[index].style.display = 'block'
-      }, delay * i,i)
-    }     
-    contVid.style.display='block' 
-    videoElements.forEach(video => {
-      if (video.id === 'videoElement1-II') {
-        video.style.display = 'block'
-        video.play()      
-      } else {
-        video.style.display = 'none'
-      }
-    })
-    for (var i = 0; i < linksIniciales.length; i++) {
-      var elemento = document.getElementById(linksIniciales[i]);
-      elemento.style.display = 'flex'
-    }
-    if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
-      idsArray.push(elementId);
-      console.log(idsArray);
-    }
-      if (window.innerWidth < 900) {
-        setTimeout(function () {
-          ejecutarLogica()
-        }, 677);
-      } 
     break;
     case 'bancada-torre-II': 
     var elementosExcluidos = ['container01','cont-links','agrupaOblicuos-II','contenedor-7','videoElement1-II','bancada-torre-II'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)          
@@ -323,7 +404,7 @@ function changeButtonStyles(elementId) {
         // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
       }
-    }    
+    } 
     const botonElement = document.querySelectorAll('.boton-g')
     var delay = 100;
     for (var i = 0; i < botonElement.length; i++) {
@@ -350,16 +431,16 @@ function changeButtonStyles(elementId) {
     }
     break;
     case 'sitema-humedad':     
-      var elementosExcluidos = ['container01','contenedor-7','bancada-torre-II','contenedor-9','sitema-humedad'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)          
+      var elementosExcluidos = ['container01','contenedor-7','bancada-torre-II','contenedor-9','sitema-humedad']                                                     /// OCULTA TODO MENOS (2 ELEMENTOS)          
       for (var i = 0; i < allContenedores.length; i++) { 
-        var elemento = document.getElementById(allContenedores[i]);  
+        var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
           // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       } 
       const botonElemento = document.querySelectorAll('.boton-f')
-      var delay = 100;
+      var delay = 100
       for (var i = 0; i < botonElemento.length; i++) {
         setTimeout(function(index) {
           botonElemento[index].style.display = 'block'
@@ -389,6 +470,7 @@ function changeButtonStyles(elementId) {
     break;
     default:
   }
+  
   var button = document.querySelector('.boton-a')
   // Guardar estilos originales
   var originalBackgroundColor = button.style.backgroundColor;
@@ -403,7 +485,7 @@ function changeButtonStyles(elementId) {
   }, 300)
   // Retardo de 0.2 segundos antes de ejecutar esta parte
   setTimeout(function() {
-  }, 200) 
+  }, 200)
 } 
 function cambioContenedor(elementId) {
   var elementsToHide = document.querySelectorAll('.alimentador, .uTeñido, .desbobinador,.unidProceso,.rebobinador,.links-inicialesI,.links-iniciales') 
@@ -2328,6 +2410,14 @@ function abrirSeccionContinua(elementId) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
+
+  var bloqueTintero = document.getElementById('tinter-o');
+  // Restablecer estilos por defecto
+  bloqueTintero.style.position = '';
+  bloqueTintero.style.display = '';
+  bloqueTintero.style.left = '';
+  bloqueTintero.style.top = '';
+
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   for (var i = 0; i < allContIzquierdos.length; i++) {                                        // ELIMINA ESTILOS APLICADOS DESDE OTRAS FUNCIONES A LOS ELEMENTOS 
     var elemento = document.getElementById(allContIzquierdos[i]);
@@ -2553,27 +2643,26 @@ function cambiarColoresConRetraso() {
   }, 7);
 }
 function devolverColoresConRetraso() {
-  // Función para cambiar el color de un botón y programar el siguiente cambio después de 77 milisegundos
-  function cambiarColorConRetraso(indice) {
-    // Cambiar el color del botón en el índice dado a rojo
-    document.getElementById(arrayButtsRutilantes[indice]).style.backgroundColor = '';
+// Función para cambiar el color de un botón y programar el siguiente cambio después de 77 milisegundos
+function cambiarColorConRetraso(indice) {
+  // Cambiar el color del botón en el índice dado a rojo
+  document.getElementById(arrayButtsRutilantes[indice]).style.backgroundColor = '';
 
-    // Incrementar el índice
-    indice++;
+  // Incrementar el índice
+  indice++;
 
-    // Verificar si hay más botones
-    if (indice < arrayButtsRutilantes.length) {
-      // Programar el cambio de color para el siguiente botón después de 77 milisegundos
-      setTimeout(function () {
-        cambiarColorConRetraso(indice);
-      }, 37);
-    }
+  // Verificar si hay más botones
+  if (indice < arrayButtsRutilantes.length) {
+    // Programar el cambio de color para el siguiente botón después de 77 milisegundos
+    setTimeout(function () {
+      cambiarColorConRetraso(indice);
+    }, 37);
   }
-
-  // Iniciar el proceso cambiando el color del primer botón después de 77 milisegundos
-  setTimeout(function () {
-    cambiarColorConRetraso(0);
-  }, 77);
+}
+// Iniciar el proceso cambiando el color del primer botón después de 77 milisegundos
+setTimeout(function () {
+  cambiarColorConRetraso(0);
+}, 77);
 }
 function cambiarColoresConRetrasoIII() {
   function cambiarColorConRetrasoIII(indice) {
@@ -2971,9 +3060,7 @@ function muestraVidColor(elementId){
       if(contenedor.style.display !== 'none'){
         contenedor.style.display = 'none'
       }             
-    }  
-
-
+    } 
     })
     var contImgsTeoria = document.getElementsByClassName('imgTeoria') // Obtén elementos por su
     for (var i = 0; i < contImgsTeoria.length; i++) {
@@ -3012,8 +3099,6 @@ function muestraVidColor(elementId){
     vidPrisma.style.display = 'flex'
     vidPrisma.currentTime = '0'
     vidPrisma.play()
-
-
   }  
 }
 function irContenedorAnterior() {
@@ -4441,6 +4526,9 @@ function LubricaDesbobinador(idButt) {
   var arrayLabels = ['labl1', 'labl2', 'labl3']
   var arrayLabels = ['labl1', 'labl2', 'labl3']
   var contFreno = document.getElementById('freno')
+/*   var contiPantaInicial = document.getElementById('pantalla-inicial')
+  contiPantaInicial.style.display = 'none'
+ */
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   var arrayIdButtsCheck = ['lub-diario', 'lub-semanal', 'lub-mensual']                                                  /// COLOR VERDE A LOS BOTONES REDONDOS                   
   for (var i = 0; i < arrayIdButtsCheck.length; i++) {
@@ -9008,7 +9096,7 @@ function palpitarBotonHumedad() {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('imgs-densito');
+  var contiBoton = document.getElementById('contenedor-7');
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
@@ -9026,21 +9114,25 @@ function obtenerGeometria() {
   console.log('Position:', positionType);
   console.log('Display:', displayType);
 }
+function soloEnsayo(){
+  var contieneBloqueSiete = document.getElementById('contenedor-7')
+  var contVideo = document.getElementById('video-entintado') 
+
+
+  contieneBloqueSiete.classList.add('move-up')
+  contVideo.classList.add('move-up-left')
+}
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // COMBINACION TECLAS EJECUTA FUNCION
 document.addEventListener('keydown', function(event) {
   if (event.ctrlKey && event.shiftKey) {
     switch (event.key) {
       case 'Z':
-        /* muestraRodillo('videoElement2','images-distribuidor'); */
-        /* changeButtonStyles('bateria-entintado-II', 'contene-7') */
-        /* ElementosMa('conteneMantaut') */
-        abrirPrepress('pre-prensa')
-        /* abrirDensitometria('densitometria') */
+        changeButtonStyles('bateria-entintado-II', 'contene-7')
       break;
       case 'B':
         obtenerGeometria();
-        break;
+      break;
     }
   }
 });
@@ -9054,22 +9146,12 @@ document.getElementById('iniciar').addEventListener('click', function() {
 });
 
 function ejecutarLogica() {
-  var anchoPantalla = window.innerWidth
-  if (anchoPantalla < 700) {
-    var container = document.getElementById('contenedor-7')
-    var containerI = document.getElementById('video-entintado')
-    container.classList.toggle('move-down')
-    containerI.classList.toggle('move-down-I')
-  }
-}
-function ejecutarLogica() {
-  var anchoPantalla = window.innerWidth
-  if (anchoPantalla < 700) {
-    var container = document.getElementById('contenedor-7')
-    var containerI = document.getElementById('video-entintado')
-    container.classList.toggle('move-down')
-    containerI.classList.toggle('move-down-I')
-  }
+  var contVideo = document.getElementById('video-entintado')
+  var container = document.getElementById('contenedor-7')
+
+  container.classList.add('move-up');
+  contVideo.classList.add('move-up-left')
+
 }
  function moverMA() {
   setInitialPosition()
