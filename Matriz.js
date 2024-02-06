@@ -325,22 +325,23 @@ function changeButtonStyles(elementId) {
         
       /// OCULTA TODO MENOS (2 ELEMENTOS)          
       for (var i = 0; i < allContenedores.length; i++) { 
-        var elemento = document.getElementById(allContenedores[i]);  
+        var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
           // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
         }
       }
       toggleVideoButton.style.display = 'none'     
-      var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
       if (screenWidth < 500) {    
 
-        contieneBloqueSiete.classList.remove('move-up');
+        contieneBloqueSiete.classList.remove('move-up')  
+        contieneBloqueSiete.classList.remove('move-right')        
         contiVidBateria.classList.remove('move-up-left')
               
         var elementosExcluidos = ['pantalla-inicial','container01','cont-links','agrupaOblicuos-II','contenedor-7','videoElement1-II','bateria-entintado-II'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)          
         for (var i = 0; i < allContenedores.length; i++) { 
-          var elemento = document.getElementById(allContenedores[i]);  
+          var elemento = document.getElementById(allContenedores[i]) 
           if (elemento) {
             // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
@@ -663,6 +664,7 @@ function muestraRodillo (vidElem, imgCont) {
   const container = document.getElementById(imgCont)
   const pict = container.getElementsByTagName('img')
   var contibotsDistri = document.getElementById('contenedor-7')
+  var contiVidBateria = document.getElementById('video-entintado')
 
   container.style.display = 'flex'
   for (var i = 0; i < images.length; i ++) {
@@ -675,24 +677,22 @@ function muestraRodillo (vidElem, imgCont) {
       buttRepuest.style.display='block'
 
       var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-      if (screenWidth < 500) {   
+      if (screenWidth < 500) {  
+        
+      contibotsDistri.classList.remove('move-right')
+      contibotsDistri.classList.remove('move-up')
 
-      contibotsDistri.style.marginTop = '-126%'
-      contibotsDistri.style.left = '-72%'
-
-      setTimeout(function () {
+        setTimeout(function () {
         transicionElementosI()
-      }, 477);
-
+      }, 1477);
 
       }
-
 
       // Recorre las imágenes y las muestra
       for (let i = 0; i < pict.length; i++) {
         pict[i].style.display = 'block' // Muestra cada imagen
       }
-      setTimeout(() => {
+      setTimeout(() => { // en este punto se inicia la secuencia de actividades propias de la funcion asincrona para asegurar la transicion
         applyImageEffects1()
       }, 200) // Retardo de 0.9 segundos (900 milisegundos)
 
@@ -9152,7 +9152,7 @@ document.addEventListener('keydown', function(event) {
   if (event.ctrlKey && event.shiftKey) {
     switch (event.key) {
       case 'Z':
-        muestraRodillo('videoElement2','images-distribuidor')
+        changeButtonStyles('bateria-entintado-II', 'contene-7')
       break;
       case 'B':
         obtenerGeometria();
@@ -9179,8 +9179,8 @@ function transicionElementosI() {
   var contImgsDistribuidor = document.getElementById('images-distribuidor')
   contImgsDistribuidor.classList.add('move-down-left')
 
-  var contVideo = document.getElementById('videoElement2')
-  contVideo.classList.add('move-to-right')
+ /* var contVideo = document.getElementById('videoElement2')
+  contVideo.classList.add('move-to-right') */
 
   var container = document.getElementById('contenedor-7')
   container.classList.add('move-right');

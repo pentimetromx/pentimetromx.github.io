@@ -4533,7 +4533,7 @@ elemento.visible {
   transform: translateY(-177px) translateX(310px); 
 }
 .move-right {
-  transform: translateY(0px) translateX(310px); 
+  transform: translateY(12px); 
 }
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 #video-entintado{
@@ -4543,16 +4543,15 @@ elemento.visible {
   transform: translateY(-313px) translateX(-101px); 
 }
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-#videoElement2{
+/* #videoElement2{
   transition: transform 1.6s ease;
 }
 .move-to-right{
   transform: translateY(0px) translateX(140px);
-}
-
+}*/
 #images-distribuidor{
-  transition: transform 1.6s ease;
+  transition: transform 1.6s ease
 }
 .move-down-left{
-  transform: translateY(102px) translateX(-272px);  
-}
+  transform: translateY(95px)  
+} 
