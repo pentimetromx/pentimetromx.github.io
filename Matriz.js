@@ -244,7 +244,6 @@ function showButtonsMAconRetraso() {
 function changeButtonStyles(elementId) {
   var contieneBloqueSiete = document.getElementById('contenedor-7')
   var contiVidBateria = document.getElementById('video-entintado')
-
   switch (elementId) {
     case 'pantalla-tintero':
       var elementosExcluidos = ['pantalla-inicial','pantalla-tintero','container01','cont-links','agrupaOblicuos-II','imgTorre']  
@@ -660,9 +659,10 @@ function cierraContenedores(elementId) {
 
 }
 function muestraRodillo (vidElem, imgCont) {
-  /* const videoElements = document.querySelectorAll('.video-training') */
-  const container = document.getElementById(imgCont) // Captura el contenedor por su 
-  const pict = container.getElementsByTagName('img') // Obtiene todas las etiquetas 'img' dentro del contenedor
+  const container = document.getElementById(imgCont)
+  const pict = container.getElementsByTagName('img')
+  var contibotsDistri = document.getElementById('contenedor-7')
+
   container.style.display = 'flex'
   for (var i = 0; i < images.length; i ++) {
     var pic = images[i]
@@ -672,6 +672,14 @@ function muestraRodillo (vidElem, imgCont) {
     case 'videoElement2':
       var buttRepuest = document.getElementById('butt-repuestos')
       buttRepuest.style.display='block'
+
+      var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      if (screenWidth < 500) {   
+
+      contibotsDistri.style.marginTop = '-113%'
+      contibotsDistri.style.left = '-72%'
+      }
+
 
       // Recorre las imágenes y las muestra
       for (let i = 0; i < pict.length; i++) {
@@ -9128,7 +9136,7 @@ document.addEventListener('keydown', function(event) {
   if (event.ctrlKey && event.shiftKey) {
     switch (event.key) {
       case 'Z':
-        changeButtonStyles('bateria-entintado-II', 'contene-7')
+        muestraRodillo('videoElement2','images-distribuidor')
       break;
       case 'B':
         obtenerGeometria();

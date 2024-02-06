@@ -4169,8 +4169,8 @@ elemento.visible {
   }  
   #videoElement2{
     position: absolute; 
-    left:26%;
-    top: 20%;
+    left:3%;
+    top: 21%;
     height:225px;
   }
   #videoElement3{
@@ -4188,11 +4188,13 @@ elemento.visible {
   } 
   #images-distribuidor{
     position: fixed;
-    top: 44%;
-    left: 44%;    
+    top: 20%;
+    left: 72%; 
+    gap: 1px;
   }
   #images-distribuidor img{
-    width: 100px;   
+    width: 90px;  
+    margin-bottom: 1px; 
   }  
   /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
   #subtitulo-operacion,
