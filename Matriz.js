@@ -677,17 +677,13 @@ function muestraRodillo (vidElem, imgCont) {
       buttRepuest.style.display='block'
       var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
       if (screenWidth < 500) { 
-/*       contibotsDistri.classList.remove('move-right')
-      contibotsDistri.classList.remove('move-up') */
-/*       contibotsDistri.classList.remove('move-up');
-      contibotsDistri.classList.remove('move-right') */
-/*       contibotsDistri.style.position = '';
-      contibotsDistri.style.top = '';
-      contibotsDistri.style.left = ''; */
-      contibotsDistri.style.left = '0.7%'
-        setTimeout(function () {
-        transicionElementosI()
-      }, 477);
+        contibotsDistri.style.removeProperty('left');
+        contibotsDistri.style.removeProperty('top');
+        contibotsDistri.style.position = 'fixed'
+        contibotsDistri.style.left = '-77%'
+        contibotsDistri.style.marginTop = '27%'
+        moveElementFunction() 
+
       }
       // Recorre las imágenes y las muestra
       for (let i = 0; i < pict.length; i++) {
@@ -735,14 +731,12 @@ function muestraRodillo (vidElem, imgCont) {
 
       var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
       if (screenWidth < 500) { 
-
         contibotsDistri.style.removeProperty('left');
-
+        contibotsDistri.style.removeProperty('top');
+        contibotsDistri.style.position = 'fixed'
         contibotsDistri.style.left = '-77%'
-        contibotsDistri.style.marginTop = '-177%'
-
-
-        moveElementFunction()
+        contibotsDistri.style.marginTop = '56%'
+        moveElementFunction() 
       }
 
     break;
@@ -9198,35 +9192,19 @@ function transicionElementosI() {
   container.classList.add('move-right');
 }
 
-
-/* function moveElementFunction() {
-  var contibotsDistri = document.getElementById('contenedor-7');
-  var currentLeft = contibotsDistri.offsetLeft;
-  function moveElement() {
-    currentLeft += 1;
-    contibotsDistri.style.left = currentLeft + 'px';
-  }
-  // Establecer un intervalo para llamar a la función cada 100 milisegundos
-  setInterval(moveElement, 3);
-}
- */
-
 function moveElementFunction() {
   var contibotsDistri = document.getElementById('contenedor-7');
   var currentLeft = contibotsDistri.offsetLeft;
   var screenWidth = window.innerWidth;
   var stopPosition = screenWidth * 0.007; // 33% del ancho de la pantalla
-
   function moveElement() {
-    currentLeft += 1;
+    currentLeft += 5;
     contibotsDistri.style.left = currentLeft + 'px';
-
     // Detener el intervalo cuando el elemento llega al 33% del ancho de la pantalla
     if (currentLeft >= stopPosition) {
       clearInterval(intervalId);
     }
   }
-
   // Establecer un intervalo para llamar a la función cada 3 milisegundos
   var intervalId = setInterval(moveElement, 3);
 }
