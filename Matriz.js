@@ -675,19 +675,20 @@ function muestraRodillo (vidElem, imgCont) {
     case 'videoElement2':
       var buttRepuest = document.getElementById('butt-repuestos')
       buttRepuest.style.display='block'
-
       var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-      if (screenWidth < 500) {  
-        
-      contibotsDistri.classList.remove('move-right')
-      contibotsDistri.classList.remove('move-up')
-
+      if (screenWidth < 500) { 
+/*       contibotsDistri.classList.remove('move-right')
+      contibotsDistri.classList.remove('move-up') */
+/*       contibotsDistri.classList.remove('move-up');
+      contibotsDistri.classList.remove('move-right') */
+/*       contibotsDistri.style.position = '';
+      contibotsDistri.style.top = '';
+      contibotsDistri.style.left = ''; */
+      contibotsDistri.style.left = '0.7%'
         setTimeout(function () {
         transicionElementosI()
-      }, 1477);
-
+      }, 477);
       }
-
       // Recorre las imágenes y las muestra
       for (let i = 0; i < pict.length; i++) {
         pict[i].style.display = 'block' // Muestra cada imagen
@@ -710,10 +711,10 @@ function muestraRodillo (vidElem, imgCont) {
     case 'videoElement3':
       var contimgCase = document.getElementById('images-entintador')
       var buttRepuest = document.getElementById('butt-repuestos')
-      buttRepuest.style.display='block' 
-      
+      buttRepuest.style.display='block'       
       contimgCase.style.display = 'flex'
       var imagesCase = document.getElementsByClassName('image-trainings1')
+
       // Recorre las imágenes y las muestra
       for (let i = 0; i < imagesCase.length; i++) {
         imagesCase[i].style.display = 'flex' // Muestra cada imagen
@@ -721,7 +722,6 @@ function muestraRodillo (vidElem, imgCont) {
       setTimeout(() => {
         applyImageEffects()
       }, 200) // Retardo de 0.9 segundos (900 milisegundos)
-
       for (const video of videoElements) {
         if (video.id === vidElem) {
           video.style.display = 'block' // Muestra el video
@@ -732,6 +732,19 @@ function muestraRodillo (vidElem, imgCont) {
           video.pause() // Pausa el video
         }
       }
+
+      var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      if (screenWidth < 500) { 
+
+        contibotsDistri.style.removeProperty('left');
+
+        contibotsDistri.style.left = '-77%'
+        contibotsDistri.style.marginTop = '-177%'
+
+
+        moveElementFunction()
+      }
+
     break;
     case 'videoElement4' :
       var buttRepuest = document.getElementById('butt-repuestos')
@@ -9168,7 +9181,6 @@ document.getElementById('iniciar').addEventListener('click', function() {
   container.classList.toggle('move-down')
   containerI.classList.toggle('move-down-I')
 });
-
 function transicionElementos() {
   var contVideo = document.getElementById('video-entintado')
   var container = document.getElementById('contenedor-7')
@@ -9185,3 +9197,40 @@ function transicionElementosI() {
   var container = document.getElementById('contenedor-7')
   container.classList.add('move-right');
 }
+
+
+/* function moveElementFunction() {
+  var contibotsDistri = document.getElementById('contenedor-7');
+  var currentLeft = contibotsDistri.offsetLeft;
+  function moveElement() {
+    currentLeft += 1;
+    contibotsDistri.style.left = currentLeft + 'px';
+  }
+  // Establecer un intervalo para llamar a la función cada 100 milisegundos
+  setInterval(moveElement, 3);
+}
+ */
+
+function moveElementFunction() {
+  var contibotsDistri = document.getElementById('contenedor-7');
+  var currentLeft = contibotsDistri.offsetLeft;
+  var screenWidth = window.innerWidth;
+  var stopPosition = screenWidth * 0.007; // 33% del ancho de la pantalla
+
+  function moveElement() {
+    currentLeft += 1;
+    contibotsDistri.style.left = currentLeft + 'px';
+
+    // Detener el intervalo cuando el elemento llega al 33% del ancho de la pantalla
+    if (currentLeft >= stopPosition) {
+      clearInterval(intervalId);
+    }
+  }
+
+  // Establecer un intervalo para llamar a la función cada 3 milisegundos
+  var intervalId = setInterval(moveElement, 3);
+}
+
+
+
+
