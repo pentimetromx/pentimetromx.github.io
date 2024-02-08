@@ -364,6 +364,14 @@ transform: scale(1.1);
   padding-left: 20px;
   margin-top: 1px;
 } 
+#images-distribuidor{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap; 
+  padding-left: 20px;
+  margin-top: 1px;
+}
 .image-training {
   display: none;
   cursor: pointer;
@@ -4186,11 +4194,11 @@ elemento.visible {
     width:300px;
   } 
   #images-distribuidor{
-    position: fixed;
+    position: absolute;
     display: flex;
     flex-direction: column;
-    top: 20%;
-    left: 67.5%; 
+    margin-left: -357%;
+    margin-top: -359%;
   }
   #images-distribuidor img{
     width: 90px;  
@@ -4528,12 +4536,18 @@ elemento.visible {
 #contenedor-7 {
   transition: transform 1.6s ease;
 }
-.move-up {
-  transform: translateY(-177px) translateX(310px); 
-}
 .move-right {
-  transform: translateY(15px) translateX(2px)
+  transform: translateY(12px)
 }
+
+#contene-images{
+  transition: transform 1.6s ease;
+}
+
+.move-down-left {
+  transform: translateY(97px) translateX(17px);
+}
+
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 #video-entintado{
   transition: transform 1.6s ease; /* Ajusta la duración según tus necesidades */
@@ -4548,9 +4562,6 @@ elemento.visible {
 .move-to-right{
   transform: translateY(0px) translateX(140px);
 }*/
-#images-distribuidor{
-  transition: transform 1.6s ease
+.move-up {
+  transform: translateY(-177px) translateX(310px); 
 }
-.move-down-left{
-  transform: translateY(95px);  
-} 

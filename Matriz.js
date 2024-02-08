@@ -1,4 +1,8 @@
 var contiBotsFreno = document.getElementById('conti-boton-freno')
+var contibotsDistri = document.getElementById('contenedor-7')
+var contImgsDistribuidor = document.getElementById("images-distribuidor")
+var padreImgsDistribuidor = document.getElementById("contene-images") 
+
 var contiBotsDesbobina = document.getElementById('conti-boton-desb')
 const coleccion = document.querySelectorAll('.desbobinador, .desbobinador-I, .uTeñido, .alimentadorId, .unidpre-prensaProceso, .rebobinador, .contTorrImp')
 var btnsIniciales = document.querySelectorAll('.btn-bloque')
@@ -242,7 +246,6 @@ function showButtonsMAconRetraso() {
   mostrarBotonConRetraso(0) // Comienza desde el primer botón
 }
 function changeButtonStyles(elementId) {
-  var contieneBloqueSiete = document.getElementById('contenedor-7')
   var contiVidBateria = document.getElementById('video-entintado')
   switch (elementId) {
     case 'pantalla-tintero':
@@ -321,7 +324,7 @@ function changeButtonStyles(elementId) {
     break;    
     case 'bateria-entintado-II': 
       var elementosExcluidos = ['container01','cont-links','agrupaOblicuos-II','contenedor-7','videoElement1-II','bateria-entintado-II']; 
-      contieneBloqueSiete.style = '';
+      contibotsDistri.style = '';
         
       /// OCULTA TODO MENOS (2 ELEMENTOS)          
       for (var i = 0; i < allContenedores.length; i++) { 
@@ -335,8 +338,8 @@ function changeButtonStyles(elementId) {
       var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
       if (screenWidth < 500) {   
 
-        contieneBloqueSiete.classList.remove('move-up')  
-        contieneBloqueSiete.classList.remove('move-right')        
+        contibotsDistri.classList.remove('move-up')  
+        contibotsDistri.classList.remove('move-right')        
         contiVidBateria.classList.remove('move-up-left')
               
         var elementosExcluidos = ['pantalla-inicial','container01','cont-links','agrupaOblicuos-II','contenedor-7','videoElement1-II','bateria-entintado-II'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)          
@@ -366,7 +369,7 @@ function changeButtonStyles(elementId) {
           var elemento = document.getElementById(linksIniciales[i]);
           elemento.style.display = 'flex'
         }
-        contieneBloqueSiete.style.display = 'block'
+        contibotsDistri.style.display = 'block'
         setTimeout(function () {
           transicionElementos()
         }, 477);
@@ -663,7 +666,6 @@ function cierraContenedores(elementId) {
 function muestraRodillo (vidElem, imgCont) {
   const container = document.getElementById(imgCont)
   const pict = container.getElementsByTagName('img')
-  var contibotsDistri = document.getElementById('contenedor-7')
   var contiVidBateria = document.getElementById('video-entintado')
   var contiVidElement3 = document.getElementById('videoElement3')
 
@@ -674,32 +676,26 @@ function muestraRodillo (vidElem, imgCont) {
   }
   switch(vidElem) {
     case 'videoElement2':
+
       var buttRepuest = document.getElementById('butt-repuestos')
       buttRepuest.style.display='block'
       var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
       if (screenWidth < 500) { 
+/*         // Muestra el contenedor padre
+        contImgsDistribuidor.style.display = "block";  
+        // Obtén todos los hijos del contenedor
+        var children = contImgsDistribuidor.children;  
+        // Itera sobre los hijos y muéstralos
+        for (var i = 0; i < children.length; i++) {
+          children[i].style.display = "block";
+        }  */  
         
-/*         contibotsDistri.classList.remove('move-up')  
-        contibotsDistri.classList.remove('move  -right') */
+        contibotsDistri.classList.remove("move-right");
 
-/*         contibotsDistri.style.removeProperty('left');
-        contibotsDistri.style.removeProperty('top'); */
-/*         contibotsDistri.style.position = 'fixed'
-        contibotsDistri.style.left = '-2.5%'
-        contibotsDistri.style.marginTop = '55%' */
-
+        
         transicionElementosI()
       }
 
-      var contImgsDistribuidor = document.getElementById("images-distribuidor");
-      // Muestra el contenedor padre
-      contImgsDistribuidor.style.display = "block";  
-      // Obtén todos los hijos del contenedor
-      var children = contImgsDistribuidor.children;  
-      // Itera sobre los hijos y muéstralos
-      for (var i = 0; i < children.length; i++) {
-        children[i].style.display = "block";
-      }
 
       // Recorre las imágenes y las muestra
       for (let i = 0; i < pict.length; i++) {
@@ -9145,7 +9141,7 @@ function moverMA() {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('contenedor-7');
+  var contiBoton = document.getElementById('images-distribuidor')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
@@ -9164,9 +9160,8 @@ function obtenerGeometria() {
   console.log('Display:', displayType);
 }
 function soloEnsayo(){
-  var contieneBloqueSiete = document.getElementById('contenedor-7')
   var contVideo = document.getElementById('video-entintado') 
-  contieneBloqueSiete.classList.add('move-up')
+  contibotsDistri.classList.add('move-up')
   contVideo.classList.add('move-up-left')
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -9186,24 +9181,18 @@ document.addEventListener('keydown', function(event) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // EVENTOS DINAMICOS MOVER CONTENEDORES
 document.getElementById('iniciar').addEventListener('click', function() {
-  var container = document.getElementById('contenedor-7')
   var containerI = document.getElementById('video-entintado')
-  container.classList.toggle('move-down')
+  contibotsDistri.classList.toggle('move-down')
   containerI.classList.toggle('move-down-I')
 });
 function transicionElementos() {
   var contVideo = document.getElementById('video-entintado')
-  var container = document.getElementById('contenedor-7')
-  container.classList.add('move-up');
+  contibotsDistri.classList.add('move-up');
   contVideo.classList.add('move-up-left')
 }
 function transicionElementosI() {
-/*   var contImgsDistribuidor = document.getElementById('images-distribuidor')
-  contImgsDistribuidor.classList.add('move-down-left') */
-
- /* var contVideo = document.getElementById('videoElement2')
-  contVideo.classList.add('move-to-right') */
-
-  var container = document.getElementById('contenedor-7')
-  container.classList.add('move-right');
+  contibotsDistri.classList.remove('move-up');
+  contibotsDistri.classList.add('move-right')
+  padreImgsDistribuidor.classList.remove('move-down-left')
+  padreImgsDistribuidor.classList.add('move-down-left')
 }
