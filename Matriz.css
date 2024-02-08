@@ -4532,7 +4532,7 @@ elemento.visible {
   transform: translateY(-177px) translateX(310px); 
 }
 .move-right {
-  transform: translateY(12px) translateX(90px); 
+  transform: translateY(15px) translateX(2px)
 }
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 #video-entintado{
@@ -4552,5 +4552,5 @@ elemento.visible {
   transition: transform 1.6s ease
 }
 .move-down-left{
-  transform: translateY(95px)  
+  transform: translateY(95px);  
 } 

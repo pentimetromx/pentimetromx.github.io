@@ -333,7 +333,7 @@ function changeButtonStyles(elementId) {
       }
       toggleVideoButton.style.display = 'none'     
       var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
-      if (screenWidth < 500) {    
+      if (screenWidth < 500) {   
 
         contieneBloqueSiete.classList.remove('move-up')  
         contieneBloqueSiete.classList.remove('move-right')        
@@ -665,6 +665,7 @@ function muestraRodillo (vidElem, imgCont) {
   const pict = container.getElementsByTagName('img')
   var contibotsDistri = document.getElementById('contenedor-7')
   var contiVidBateria = document.getElementById('video-entintado')
+  var contiVidElement3 = document.getElementById('videoElement3')
 
   container.style.display = 'flex'
   for (var i = 0; i < images.length; i ++) {
@@ -677,21 +678,37 @@ function muestraRodillo (vidElem, imgCont) {
       buttRepuest.style.display='block'
       var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
       if (screenWidth < 500) { 
-        contibotsDistri.style.removeProperty('left');
-        contibotsDistri.style.removeProperty('top');
-        contibotsDistri.style.position = 'fixed'
-        contibotsDistri.style.left = '-77%'
-        contibotsDistri.style.marginTop = '27%'
-        moveElementFunction() 
+        
+/*         contibotsDistri.classList.remove('move-up')  
+        contibotsDistri.classList.remove('move  -right') */
 
+/*         contibotsDistri.style.removeProperty('left');
+        contibotsDistri.style.removeProperty('top'); */
+/*         contibotsDistri.style.position = 'fixed'
+        contibotsDistri.style.left = '-2.5%'
+        contibotsDistri.style.marginTop = '55%' */
+
+        transicionElementosI()
       }
+
+      var contImgsDistribuidor = document.getElementById("images-distribuidor");
+      // Muestra el contenedor padre
+      contImgsDistribuidor.style.display = "block";  
+      // Obtén todos los hijos del contenedor
+      var children = contImgsDistribuidor.children;  
+      // Itera sobre los hijos y muéstralos
+      for (var i = 0; i < children.length; i++) {
+        children[i].style.display = "block";
+      }
+
       // Recorre las imágenes y las muestra
       for (let i = 0; i < pict.length; i++) {
         pict[i].style.display = 'block' // Muestra cada imagen
       }
-      setTimeout(() => { // en este punto se inicia la secuencia de actividades propias de la funcion asincrona para asegurar la transicion
+
+/*       setTimeout(() => {
         applyImageEffects1()
-      }, 200) // Retardo de 0.9 segundos (900 milisegundos)
+      }, 200) */
 
       for (const video of videoElements) {
         if (video.id === vidElem) {
@@ -735,8 +752,9 @@ function muestraRodillo (vidElem, imgCont) {
         contibotsDistri.style.removeProperty('top');
         contibotsDistri.style.position = 'fixed'
         contibotsDistri.style.left = '-77%'
-        contibotsDistri.style.marginTop = '56%'
-        moveElementFunction() 
+        contibotsDistri.style.marginTop = '56%'        
+        /* moveElementFunction() */
+
       }
 
     break;
@@ -9148,8 +9166,6 @@ function obtenerGeometria() {
 function soloEnsayo(){
   var contieneBloqueSiete = document.getElementById('contenedor-7')
   var contVideo = document.getElementById('video-entintado') 
-
-
   contieneBloqueSiete.classList.add('move-up')
   contVideo.classList.add('move-up-left')
 }
@@ -9182,8 +9198,8 @@ function transicionElementos() {
   contVideo.classList.add('move-up-left')
 }
 function transicionElementosI() {
-  var contImgsDistribuidor = document.getElementById('images-distribuidor')
-  contImgsDistribuidor.classList.add('move-down-left')
+/*   var contImgsDistribuidor = document.getElementById('images-distribuidor')
+  contImgsDistribuidor.classList.add('move-down-left') */
 
  /* var contVideo = document.getElementById('videoElement2')
   contVideo.classList.add('move-to-right') */
@@ -9191,24 +9207,3 @@ function transicionElementosI() {
   var container = document.getElementById('contenedor-7')
   container.classList.add('move-right');
 }
-
-function moveElementFunction() {
-  var contibotsDistri = document.getElementById('contenedor-7');
-  var currentLeft = contibotsDistri.offsetLeft;
-  var screenWidth = window.innerWidth;
-  var stopPosition = screenWidth * 0.007; // 33% del ancho de la pantalla
-  function moveElement() {
-    currentLeft += 5;
-    contibotsDistri.style.left = currentLeft + 'px';
-    // Detener el intervalo cuando el elemento llega al 33% del ancho de la pantalla
-    if (currentLeft >= stopPosition) {
-      clearInterval(intervalId);
-    }
-  }
-  // Establecer un intervalo para llamar a la función cada 3 milisegundos
-  var intervalId = setInterval(moveElement, 3);
-}
-
-
-
-
