@@ -666,8 +666,8 @@ function cierraContenedores(elementId) {
 function muestraRodillo (vidElem, imgCont) {
   const container = document.getElementById(imgCont)
   const pict = container.getElementsByTagName('img')
-  var contiVidBateria = document.getElementById('video-entintado')
-  var contiVidElement3 = document.getElementById('videoElement3')
+/*   var contiVidBateria = document.getElementById('video-entintado')
+  var contiVidElement3 = document.getElementById('videoElement3') */
 
   container.style.display = 'flex'
   for (var i = 0; i < images.length; i ++) {
@@ -676,24 +676,13 @@ function muestraRodillo (vidElem, imgCont) {
   }
   switch(vidElem) {
     case 'videoElement2':
-
       var buttRepuest = document.getElementById('butt-repuestos')
       buttRepuest.style.display='block'
       var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-      if (screenWidth < 500) { 
-/*         // Muestra el contenedor padre
-        contImgsDistribuidor.style.display = "block";  
-        // Obtén todos los hijos del contenedor
-        var children = contImgsDistribuidor.children;  
-        // Itera sobre los hijos y muéstralos
-        for (var i = 0; i < children.length; i++) {
-          children[i].style.display = "block";
-        }  */  
-        
-        contibotsDistri.classList.remove("move-right");
 
+      if (screenWidth < 500) { 
         
-        transicionElementosI()
+        transicionElementosI() 
       }
 
 
@@ -9141,7 +9130,7 @@ function moverMA() {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('images-distribuidor')
+  var contiBoton = document.getElementById('contene-images')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top

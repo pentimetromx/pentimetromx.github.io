@@ -687,6 +687,7 @@ transform: scale(1.1);
   overflow: hidden;
   margin-top: -107px;
   margin-left: -13px;
+  display: none;
 }
 #butt-repuestos::before,
 #butt-repuestos::after {
@@ -698,8 +699,7 @@ transform: scale(1.1);
   background-color: rgba(255, 24, 55);
 }
 #butt-repuestos::before {left: 0;}
-#butt-repuestos::after {
-  right: 0;
+#butt-repuestos::after {right: 0;
 }
 #contene-images{
   display: flex;
@@ -4528,8 +4528,26 @@ elemento.visible {
     top: 57%;
     width: 320px;
     height: 240px;
-  } 
-      
+  }
+  #butt-repuestos {
+    display: flex;
+    position: absolute;
+    height: 27px;
+    width: 133px;
+    font-size: 7px;  
+    margin-left: -71px;
+  }
+  #contene-images{
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    position: absolute;
+    left: 80%;
+    margin-top: -144%;
+  }
+
+
+
 }
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
@@ -4545,7 +4563,7 @@ elemento.visible {
 }
 
 .move-down-left {
-  transform: translateY(97px) translateX(17px);
+  transform: translateY(163px) translateX(17px);
 }
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
