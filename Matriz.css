@@ -359,18 +359,12 @@ transform: scale(1.1);
 .images-training{ 
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  flex-wrap: wrap; 
-  padding-left: 20px;
-  margin-top: 1px;
 } 
 #images-distribuidor{
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  flex-wrap: wrap; 
-  padding-left: 20px;
-  margin-top: 1px;
+  justify-content: center;
+  align-items: center;
 }
 .image-training {
   display: none;
@@ -673,7 +667,10 @@ transform: scale(1.1);
   display: none;
 } 
 /*/////////////////////////////////////////////// */
-#butt-repuestos {
+ #butt-repuestos {
+/*   position: relative;
+  display: flex; */
+
   display: flex;
   justify-content: center; 
   align-items: center;
@@ -689,6 +686,7 @@ transform: scale(1.1);
   margin-left: -13px;
   display: none;
 }
+ 
 #butt-repuestos::before,
 #butt-repuestos::after {
   content: "";
@@ -702,13 +700,13 @@ transform: scale(1.1);
 #butt-repuestos::after {right: 0;
 }
 #contene-images{
+  position: absolute;
   display: flex;
   flex-direction: column; 
-  align-items: flex-start;
-  position: absolute;
-  left: 1033px;
-  margin-top: 137px;
-  margin-right: 17px;
+  justify-content: center;
+  align-items: center;
+  left: 80%;
+  top: 27%;
 }
 #contTextos{
   display: flex;
@@ -4192,13 +4190,10 @@ elemento.visible {
     margin-top: 17%;
     height:227px;
     width:300px;
-  } 
+  }
   #images-distribuidor{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    margin-left: -357%;
-    margin-top: -359%;
+    position: relative;
+    margin-top: -10px;
   }
   #images-distribuidor img{
     width: 90px;  
@@ -4529,24 +4524,26 @@ elemento.visible {
     width: 320px;
     height: 240px;
   }
-  #butt-repuestos {
-    display: flex;
-    position: absolute;
-    height: 27px;
-    width: 133px;
-    font-size: 7px;  
-    margin-left: -71px;
-  }
   #contene-images{
+    position: absolute;
     display: flex;
     flex-direction: column; 
-    align-items: flex-start;
-    position: absolute;
-    left: 80%;
-    margin-top: -144%;
+    justify-content: center;
+    align-items: center;
+    left: 66%;
+    margin-top: -19%;
   }
-
-
+  #butt-repuestos{
+      display: flex;
+      font-family: "GothamRounded", sans-serif;
+      font-size: 7px;
+      color: white;
+      height: 27px;
+      width: 133px;
+      border-radius: 9px;
+      background-color: rgba(83, 82, 82, 0.678);
+    }
+    
 
 }
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */

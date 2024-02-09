@@ -1,18 +1,20 @@
-var contiBotsFreno = document.getElementById('conti-boton-freno')
-var contibotsDistri = document.getElementById('contenedor-7')
+var arrayAllPneumatica = ['vid-pneumatic','bailarina','padre-neumat','pneumatico','control-neumatico','imag1','imag2','imag3','imag4','contImaginario','vid-basculante','rodillo-infeed','puesta-punto','contImgEntrenos']
+const coleccion = document.querySelectorAll('.desbobinador, .desbobinador-I, .uTeñido, .alimentadorId, .unidpre-prensaProceso, .rebobinador, .contTorrImp')
+var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 var contImgsDistribuidor = document.getElementById("images-distribuidor")
 var padreImgsDistribuidor = document.getElementById("contene-images") 
-
 var contiBotsDesbobina = document.getElementById('conti-boton-desb')
-const coleccion = document.querySelectorAll('.desbobinador, .desbobinador-I, .uTeñido, .alimentadorId, .unidpre-prensaProceso, .rebobinador, .contTorrImp')
+var contiBotsFreno = document.getElementById('conti-boton-freno')
+var contibotsDistri = document.getElementById('contenedor-7')
 var btnsIniciales = document.querySelectorAll('.btn-bloque')
+var buttRepuest = document.getElementById('butt-repuestos')
+
 let firstClick = true;
 
 var arrayIdButtsMA = ['resultados','troubleshoot','def1','def2','adtBut','fua1','lup','kaizen']
 var arrayButtsKaizen = ['btn10','btn11','btn12','btn17']
 var arrayButtsPlanos = ['btn13','btn14','btn15']
 var arrayImgsRodilleria = document.querySelectorAll ('.durezas')
-var arrayAllPneumatica = ['vid-pneumatic','bailarina','padre-neumat','pneumatico','control-neumatico','imag1','imag2','imag3','imag4','contImaginario','vid-basculante','rodillo-infeed','puesta-punto','contImgEntrenos']
 var arrayButtsInstructivos = ['contBotCasos','contBotInfeed']
 var enlacesIDs = ['link1', 'link2', 'link3', 'link4','link5'] 
 var arrayPosicionnador = []
@@ -258,7 +260,6 @@ function changeButtonStyles(elementId) {
         }
       }  
       toggleVideoButton.style.display = 'none'
-      var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
       if (screenWidth < 500) {
 /*         var contBloqueTintero = document.getElementById('torre-imp');
         var estiloComputado = window.getComputedStyle(contBloqueTintero);
@@ -335,7 +336,6 @@ function changeButtonStyles(elementId) {
         }
       }
       toggleVideoButton.style.display = 'none'     
-      var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
       if (screenWidth < 500) {   
 
         contibotsDistri.classList.remove('move-up')  
@@ -666,9 +666,6 @@ function cierraContenedores(elementId) {
 function muestraRodillo (vidElem, imgCont) {
   const container = document.getElementById(imgCont)
   const pict = container.getElementsByTagName('img')
-/*   var contiVidBateria = document.getElementById('video-entintado')
-  var contiVidElement3 = document.getElementById('videoElement3') */
-
   container.style.display = 'flex'
   for (var i = 0; i < images.length; i ++) {
     var pic = images[i]
@@ -676,25 +673,14 @@ function muestraRodillo (vidElem, imgCont) {
   }
   switch(vidElem) {
     case 'videoElement2':
-      var buttRepuest = document.getElementById('butt-repuestos')
-      buttRepuest.style.display='block'
-      var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-
-      if (screenWidth < 500) { 
-        
-        transicionElementosI() 
-      }
-
-
+      buttRepuest.style.display='flex'
       // Recorre las imágenes y las muestra
       for (let i = 0; i < pict.length; i++) {
         pict[i].style.display = 'block' // Muestra cada imagen
       }
-
-/*       setTimeout(() => {
-        applyImageEffects1()
-      }, 200) */
-
+      /*       setTimeout(() => {
+              applyImageEffects1()
+            }, 200) */
       for (const video of videoElements) {
         if (video.id === vidElem) {
           video.style.display = 'block' // Muestra el video
@@ -705,10 +691,21 @@ function muestraRodillo (vidElem, imgCont) {
           video.pause() // Pausa el video
         }
       }
+
+      if (screenWidth < 500) { 
+        padreImgsDistribuidor.style.display = 'flex'      
+        // Obtener todos los hijos del contenedor
+        var hijos = padreImgsDistribuidor.children;
+        // Hacer visibles los elementos hijos
+        for (var i = 0; i < hijos.length; i++) {
+            hijos[i].style.display = 'flex'; // Puedes cambiar 'block' por 'inline' u otra propiedad según tus necesidades
+        } 
+        transicionElementosI() 
+      }
+
     break;
     case 'videoElement3':
       var contimgCase = document.getElementById('images-entintador')
-      var buttRepuest = document.getElementById('butt-repuestos')
       buttRepuest.style.display='block'       
       contimgCase.style.display = 'flex'
       var imagesCase = document.getElementsByClassName('image-trainings1')
@@ -730,21 +727,12 @@ function muestraRodillo (vidElem, imgCont) {
           video.pause() // Pausa el video
         }
       }
-
-      var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
       if (screenWidth < 500) { 
-        contibotsDistri.style.removeProperty('left');
-        contibotsDistri.style.removeProperty('top');
-        contibotsDistri.style.position = 'fixed'
-        contibotsDistri.style.left = '-77%'
-        contibotsDistri.style.marginTop = '56%'        
         /* moveElementFunction() */
-
       }
 
     break;
     case 'videoElement4' :
-      var buttRepuest = document.getElementById('butt-repuestos')
       buttRepuest.style.display='block' 
       
       for (const video of videoElements) {
@@ -761,7 +749,6 @@ function muestraRodillo (vidElem, imgCont) {
     break;  
     case 'plate-smed' :
       var contimgCase = document.getElementById('images-smed')
-      var buttRepuest = document.getElementById('butt-repuestos')
       buttRepuest.style.display='block'
       contimgCase.style.display = 'flex'
 
@@ -3028,7 +3015,6 @@ function abrirDensitometria(elementId){
   }
 }
 function muestraVidPrisma(elementId) {
-  var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
   if (screenWidth > 900) {
       allContenedores.forEach(contenedor => {
     if (contenedor === 'vidColor') {
@@ -3078,7 +3064,6 @@ function muestraVidPrisma(elementId) {
   }  
 }
 function muestraVidColor(elementId){
-  var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
   if (screenWidth > 900) {
     allContenedores.forEach(contenedor => {
     if (contenedor === 'vidColor') {
@@ -9137,10 +9122,10 @@ function obtenerGeometria() {
   var leftPosition = rect.left
   var widthValue = rect.width
   var heightValue = rect.height
-  var positionType = window.getComputedStyle(contiBoton).position
-  var displayType = window.getComputedStyle(contiBoton).display
+  var positionType = window.getComputedStyle(buttRepuest).position
+  var displayType = window.getComputedStyle(buttRepuest).display
 
-  console.log(contiBoton.id);
+  console.log(buttRepuest.id);
   console.log('Top:', topPosition);
   console.log('Left:', leftPosition);
   console.log('Height:', heightValue);
