@@ -91,16 +91,13 @@ h1, h2, h3 {
 .boton-a:hover,
 .boton-b:hover,
 .boton-c:hover,
+.boton-e:hover,
 .boton-f:hover,
 .boton-g:hover,
 .boton-h:hover{
 transform: scale(1.1);
 }
 .boton-d:hover {
-  transform: scale(1.1);
-}
-.boton-e:hover,
-.boton-f:hover {
   transform: scale(1.1);
 }
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
@@ -365,6 +362,19 @@ transform: scale(1.1);
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+#images-smed{
+  position: absolute;
+  display: none;
+  top: -33px;
+  left: -7px;
+}
+#images-smed img{
+  cursor: pointer;
+  height: 80px;
+  width: 117px;
+  transition: transform 0.1s ease, filter 0.1s ease;
+  border-radius: 11px;
 }
 .image-training {
   display: none;
@@ -668,9 +678,6 @@ transform: scale(1.1);
 } 
 /*/////////////////////////////////////////////// */
  #butt-repuestos {
-/*   position: relative;
-  display: flex; */
-
   display: flex;
   justify-content: center; 
   align-items: center;
@@ -3993,7 +4000,7 @@ elemento.visible {
     width: 301px;
     border-radius: 8px;
   }
-    #vidTintero{
+  #vidTintero{
     position: relative;
     margin-left: -199%;
     margin-top: 15.1%;
@@ -4005,22 +4012,29 @@ elemento.visible {
     position: relative;
     left:-3%;
     top: 27%;
-    display: none;
   }
+  #bateria-entintado-II video{
+    border-radius: 10px;
+    height: 250px;
+  }
+
   #contenedor-7{  /* HIJO-PADRE DE BOTONES  */
     position: absolute;
-    margin-top: -170%;
+    margin-top: -161%;
     left: 0.5%;
+  }
+  #images-entintador{
+    position: relative;
+    margin-top: 25px;
+  }
+  #images-entintador img{ 
+    width: 90px;
   }
   #video-entintado{ /* HIJO-PADRE DE VIDEO */
     position: absolute; 
     left:29%;
     margin-top: -135%;
     }
-  #bateria-entintado-II video{
-    border-radius: 10px;
-    height: 250px;
-  }
   /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
   #agrupaOblicuos,
   #agrupaOblicuos-II,
@@ -4170,9 +4184,15 @@ elemento.visible {
     color: greenyellow;
     top: 12%;
     left: 7%;
-  }  
+  } 
+  .videos-training video{
+    position: relative;
+    top: 10%;
+    left: 5%;
+  }   
   #videoElement2{
     position: absolute; 
+    display: flex;
     left:3%;
     top: 19%;
     height:197px;
@@ -4180,15 +4200,15 @@ elemento.visible {
   #videoElement3{
     position: absolute; 
     left: 2%;
-    margin-top: 17%;
-    height:225px;
+    top: 19%;
+    height:197px;
   }
   #videoElement4{
     position: absolute; 
-    left:26%;
-    margin-top: 17%;
-    height:227px;
-    width:300px;
+    left: 2%;
+    top: 19%;
+    height:197px;
+    width: 262px;
   }
   #images-distribuidor{
     position: relative;
@@ -4534,35 +4554,42 @@ elemento.visible {
     justify-content: center;
     align-items: center;
     left: 66%;
-    margin-top: -19%;
+    margin-top: -25%;
   }
   #butt-repuestos{
-      display: flex;
-      font-family: "GothamRounded", sans-serif;
-      font-size: 7px;
-      color: white;
-      height: 27px;
-      width: 133px;
-      border-radius: 9px;
-      background-color: rgba(83, 82, 82, 0.678);
-    }
-    
-
+    display: flex;
+    font-family: "GothamRounded", sans-serif;
+    font-size: 7px;
+    color: white;
+    height: 27px;
+    width: 133px;
+    border-radius: 9px;
+    background-color: rgba(83, 82, 82, 0.678);
+    margin-bottom: 17px;
+  }
 }
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 #contenedor-7 {
+  position: absolute;
+  margin-top: -161%;
+  left: 0.5%;
   transition: transform 1.6s ease;
 }
 .move-right {
-  transform: translateY(12px)
+  transform: translateY(6px)
+  
 }
-
 #contene-images{
   transition: transform 1.6s ease;
 }
-
 .move-down-left {
+  transform: translateY(163px) translateX(17px);
+}
+#images-entintador{
+  transition: transform 1.6s ease;
+}
+.move-down{
   transform: translateY(163px) translateX(17px);
 }
 
@@ -4574,12 +4601,6 @@ elemento.visible {
   transform: translateY(-313px) translateX(-101px); 
 }
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-/* #videoElement2{
-  transition: transform 1.6s ease;
-}
-.move-to-right{
-  transform: translateY(0px) translateX(140px);
-}*/
 .move-up {
   transform: translateY(-177px) translateX(310px); 
 }
