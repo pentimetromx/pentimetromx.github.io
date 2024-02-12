@@ -4009,10 +4009,11 @@ elemento.visible {
   }
   /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
   #bateria-entintado-II{ /* PADRE DE BOTONES/VIDEO */
-    position: relative;
+    position: fixed;
     left:3%;
-    top: -87%;
+    top: 18%;
     height: 100vh;
+    width: 100vh;
   }
   #bateria-entintado-II video{
     border-radius: 10px;
@@ -4572,7 +4573,7 @@ elemento.visible {
   }
   #contenedor-7-II{
     position: absolute;
-    top: 4%;
+    top: -1%;
     left: 68%;
     transition: transform 1.6s ease;
   }
@@ -4611,7 +4612,7 @@ elemento.visible {
   }
   /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
   .move-up{
-    transform: translateY(184px) translateX(-310px); 
+    transform: translateY(184px) translateX(-511px); 
   }
   
 
