@@ -4211,7 +4211,8 @@ elemento.visible {
   }
   #images-distribuidor img{
     width: 90px;  
-  }  
+  } 
+  #contenedor-7-ii button, 
   #contenedor-7 button{
     height: 50px;
  }
@@ -4561,22 +4562,33 @@ elemento.visible {
     border-radius: 9px;
     background-color: rgba(83, 82, 82, 0.678);
     margin-bottom: 17px;
+    display: none;  
   }
-  #contenedor-7 {
+  #contenedor-7{
     position: absolute;
     top: 4%;
     left: 68%;
     transition: transform 1.6s ease;
   }
+  #contenedor-7-II{
+    position: absolute;
+    top: 4%;
+    left: 68%;
+    transition: transform 1.6s ease;
+  }
+
   .clase-contenedor-7{
     position: absolute;
     margin-top: 87%;
     margin-left: 3%;
   }
   .move-right {
-    transform: translateY(6px)
-    
+    transform: translateY(6px)    
   }  
+/*   .mueve-derecha {
+    transform: translateY(184px) translateX(-310px); 
+  } */  
+
   #contene-images{
     transition: transform 1.6s ease;
   }
@@ -4598,7 +4610,7 @@ elemento.visible {
     transform: translateY(291px) translateX(101px); 
   }
   /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-  .move-up {
+  .move-up{
     transform: translateY(184px) translateX(-310px); 
   }
   
