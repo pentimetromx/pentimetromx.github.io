@@ -9,6 +9,7 @@ var contibotsDistri = document.getElementById('contenedor-7')
 var btnsIniciales = document.querySelectorAll('.btn-bloque')
 var buttRepuest = document.getElementById('butt-repuestos')
 var contVideo = document.getElementById('video-entintado')
+var contiBateriaEntinta = document.getElementById('bateria-entintado-II')
 
 let firstClick = true;
 
@@ -349,7 +350,7 @@ function changeButtonStyles(elementId) {
       if (screenWidth < 500) {   
         contibotsDistri.classList.remove('move-up')  
         contibotsDistri.classList.remove('move-right')        
-        contVideo.classList.remove('move-up-left')              
+        contVideo.classList.remove('move-up-left')             
         var elementosExcluidos = ['links-iniciales','links-inicialesI','pantalla-inicial','container01','cont-links','agrupaOblicuos-II','contenedor-7','video-entintado','videoElement1-II','bateria-entintado-II'];
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i]) 
@@ -358,8 +359,6 @@ function changeButtonStyles(elementId) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
           }
         }
-        contibotsDistri.style.marginTop = '-161%'
-
         contVid.style.display='block' 
         videoElements.forEach(video => {
           if (video.id === 'videoElement1-II') {
@@ -370,7 +369,7 @@ function changeButtonStyles(elementId) {
         })
         setTimeout(function () {
           transicionElementos()
-        }, 477); 
+        }, 333); 
       }
       //////////////////////////////////////////////////////////////////////////////////////////
       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
@@ -626,7 +625,7 @@ function cierraContenedores(elementId) {
 
 }
 function muestraRodillo (vidElem, imgCont) {
-  switch(vidElem) {
+  switch(vidElem){
     case 'videoElement2':
     /// OCULTA TODO MENOS LO NECESARIO          
     var elementosExcluidos = ['container01','links-iniciales','links-inicialesI','contene-images','images-distribuidor','bateria-entintado-II','contenedor-7','videosTraining','videos-training','videoElement2']; 
@@ -637,7 +636,7 @@ function muestraRodillo (vidElem, imgCont) {
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
       }
     }
-   document.getElementById('butt-repuestos').style.display = 'block'; 
+   document.getElementById('butt-repuestos').style.display = 'flex'; 
    // VISIBLES BOTONES  
     const container = document.getElementById(imgCont)
     const pict = container.getElementsByTagName('img')
@@ -648,12 +647,12 @@ function muestraRodillo (vidElem, imgCont) {
     }
     //EFECTO BOTONES
     setTimeout(() => {
-      applyImageEffects1()
+      applyImageEffects1() 
     }, 177)
     // REPRODUCE VIDEO
     for (const video of videoElements) {
       if (video.id === vidElem) {
-        video.style.display = 'block'
+        video.style.display = 'flex'
         video.currentTime = 0;           
         video.play() // Reproduce el video
       } else {
@@ -671,16 +670,22 @@ function muestraRodillo (vidElem, imgCont) {
           }
         }
 
-        padreImgsDistribuidor.classList.remove('move-down-left')      
+/*         padreImgsDistribuidor.classList.remove('move-down-left')      
         padreImgsDistribuidor.classList.remove('move-down')
         contibotsDistri.classList.remove('move-right') 
         contibotsDistri.classList.remove('move-up')
         contVideo.classList.remove('move-up-left') 
 
         contibotsDistri.style.position = 'absolute'
-        contibotsDistri.style.marginTop = '10%'
+        contibotsDistri.style.marginTop = '10%' */
 
-        transicionElementosI() 
+        contiBateriaEntinta.style.position ='relative'
+        contiBateriaEntinta.style.left = '3%'
+        contiBateriaEntinta.style.top = '13%'        
+
+        transicionElementosI()
+
+
       }
     break;
     case 'videoElement3':
@@ -693,7 +698,8 @@ function muestraRodillo (vidElem, imgCont) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
         }
       }
-      buttRepuest.style.display='block'
+
+      buttRepuest.style.display='flex'
       var imagesCase = document.getElementsByClassName('image-trainings1')      
       for (let i = 0; i < imagesCase.length; i++) {
         imagesCase[i].style.display = 'flex' // Muestra cada imagen
@@ -704,7 +710,7 @@ function muestraRodillo (vidElem, imgCont) {
       }, 200) 
       for (const video of videoElements) {
       if (video.id === vidElem) {
-        video.style.display = 'block' 
+        video.style.display = 'flex' 
         video.currentTime = 0;           
         video.play()
       } else {
@@ -713,7 +719,7 @@ function muestraRodillo (vidElem, imgCont) {
       }
       }
       if (screenWidth < 500) {
-        var elementosExcluidos = ['container01','links-iniciales','links-inicialesI','contene-images','images-entintador','bateria-entintado-II','contenedor-7','videosTraining','videos-training','videoElement2']; 
+        var elementosExcluidos = ['container01','links-iniciales','links-inicialesI','contene-images','bateria-entintado-II','contenedor-7','videosTraining','videos-training','videoElement2']; 
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i]) 
           if (elemento) {
@@ -721,17 +727,24 @@ function muestraRodillo (vidElem, imgCont) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
           }
         }
+        /*contibotsDistri.style.marginTop = '0%'
+        contibotsDistri.style.left = '0%' */
+        /* contibotsDistri.style.display = 'flex' */
 
-        padreImgsDistribuidor.classList.remove('move-down-left')      
+        /*padreImgsDistribuidor.classList.remove('move-down-left')     
         padreImgsDistribuidor.classList.remove('move-down')
         contibotsDistri.classList.remove('move-right') 
         contibotsDistri.classList.remove('move-up')
-        contVideo.classList.remove('move-up-left') 
+        contVideo.classList.remove('move-up-left') */
 
-        contibotsDistri.style.position = 'absolute'
-        contibotsDistri.style.marginTop = '10%'
+        contiBateriaEntinta.style.position ='relative'
+        contiBateriaEntinta.style.left = '3%'
+        contiBateriaEntinta.style.top = '13%'        
 
-        transicionElementosI() 
+/*         var miElemento = document.getElementById('bateria-entintado-II');
+        restablecerEstilos(miElemento);
+
+        transicionElementosIII() */
       }
     break;
     case 'videoElement4' :
@@ -765,16 +778,20 @@ function muestraRodillo (vidElem, imgCont) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
           }
         }
-        padreImgsDistribuidor.classList.remove('move-down-left')      
+/*         padreImgsDistribuidor.classList.remove('move-down-left')      
         padreImgsDistribuidor.classList.remove('move-down')
         contibotsDistri.classList.remove('move-right') 
         contibotsDistri.classList.remove('move-up')
-        contVideo.classList.remove('move-up-left') 
+        contVideo.classList.remove('move-up-left') */ 
 
-        contibotsDistri.style.position = 'absolute'
+        contiBateriaEntinta.style.position ='relative'
+        contiBateriaEntinta.style.left = '3%'
+        contiBateriaEntinta.style.top = '13%' 
+
+/*         contibotsDistri.style.position = 'absolute'
         contibotsDistri.style.marginTop = '10%'
 
-        transicionElementosI() 
+        transicionElementosI()  */
       }
 
     break;  
@@ -9146,7 +9163,7 @@ function moverMA() {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('images-smed')
+  var contiBoton = document.getElementById('videoElement1-II')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
@@ -9198,4 +9215,18 @@ function transicionElementosI() {
 }
 function transicionElementosII() {
   padreImgsDistribuidor.classList.add('move-down')
+}
+function transicionElementosIII() {
+  contiBateriaEntinta.classList.add('clase-contenedor-7')
+}  
+
+function restablecerEstilos(elemento) {
+  // Eliminar estilos en línea
+  elemento.removeAttribute('style');
+
+  // Asegurarse de que no haya clases que apliquen estilos no deseados
+  elemento.className = '';
+
+  // Agregar la clase que define el lugar desde CSS
+  elemento.classList.add('clase-contenedor-7');  // Ajusta el nombre de la clase según tu caso
 }

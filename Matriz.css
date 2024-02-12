@@ -2400,7 +2400,7 @@ elemento.visible {
   position: relative;
   left:-1%;
   top: 4%;
-  display: none;
+  /* display: none; */
 }
 #bateria-entintado-II video{
   border-radius: 10px;
@@ -3342,7 +3342,7 @@ elemento.visible {
     margin-top: -37%;
     left:13%;
   }
-/*//////////////////////////////////////////////////////////////////////////////////////////*/
+ /*//////////////////////////////////////////////////////////////////////////////////////////*/
   #toggleVideoButton{
     position: relative;
     top:33%;
@@ -4010,18 +4010,13 @@ elemento.visible {
   /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
   #bateria-entintado-II{ /* PADRE DE BOTONES/VIDEO */
     position: relative;
-    left:-3%;
-    top: 27%;
+    left:3%;
+    top: -87%;
+    height: 100vh;
   }
   #bateria-entintado-II video{
     border-radius: 10px;
     height: 250px;
-  }
-
-  #contenedor-7{  /* HIJO-PADRE DE BOTONES  */
-    position: absolute;
-    margin-top: -161%;
-    left: 0.5%;
   }
   #images-entintador{
     position: relative;
@@ -4031,9 +4026,9 @@ elemento.visible {
     width: 90px;
   }
   #video-entintado{ /* HIJO-PADRE DE VIDEO */
-    position: absolute; 
-    left:29%;
-    margin-top: -135%;
+    position: relative; 
+    left:-0.5%;
+    top: 4%;
     }
   /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
   #agrupaOblicuos,
@@ -4274,7 +4269,7 @@ elemento.visible {
   } 
   #agrupaOblicuos-XII > * {
     margin-bottom: 1px;
-}
+ }
   #agrupaOblicuos-XIII,
   #agrupaOblicuos-XV,
   #agrupaOblicuos-XVII{
@@ -4567,40 +4562,47 @@ elemento.visible {
     background-color: rgba(83, 82, 82, 0.678);
     margin-bottom: 17px;
   }
+  #contenedor-7 {
+    position: absolute;
+    top: 4%;
+    left: 68%;
+    transition: transform 1.6s ease;
+  }
+  .clase-contenedor-7{
+    position: absolute;
+    margin-top: 87%;
+    margin-left: 3%;
+  }
+  .move-right {
+    transform: translateY(6px)
+    
+  }  
+  #contene-images{
+    transition: transform 1.6s ease;
+  }
+  .move-down-left {
+    transform: translateY(163px) translateX(17px);
+  }
+  #images-entintador{
+    transition: transform 1.6s ease;
+  }
+  .move-down{
+    transform: translateY(163px) translateX(17px);
+  }
+  
+  /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+  #video-entintado{
+    transition: transform 1.6s ease; /* Ajusta la duración según tus necesidades */
+  }
+  .move-up-left {
+    transform: translateY(291px) translateX(101px); 
+  }
+  /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+  .move-up {
+    transform: translateY(184px) translateX(-310px); 
+  }
+  
+
 }
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
-#contenedor-7 {
-  position: absolute;
-  margin-top: -161%;
-  left: 0.5%;
-  transition: transform 1.6s ease;
-}
-.move-right {
-  transform: translateY(6px)
-  
-}
-#contene-images{
-  transition: transform 1.6s ease;
-}
-.move-down-left {
-  transform: translateY(163px) translateX(17px);
-}
-#images-entintador{
-  transition: transform 1.6s ease;
-}
-.move-down{
-  transform: translateY(163px) translateX(17px);
-}
-
-/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-#video-entintado{
-  transition: transform 1.6s ease; /* Ajusta la duración según tus necesidades */
-}
-.move-up-left {
-  transform: translateY(-313px) translateX(-101px); 
-}
-/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-.move-up {
-  transform: translateY(-177px) translateX(310px); 
-}
