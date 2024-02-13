@@ -7,6 +7,7 @@ var contiBotsDesbobina = document.getElementById('conti-boton-desb')
 var contiBotsFreno = document.getElementById('conti-boton-freno')
 var contibotsDistri = document.getElementById('contenedor-7')
 var contibotsDistriII = document.getElementById('contenedor-7-II')
+var contibotsDistriIII = document.getElementById('contenedor-7-III')
 
 var btnsIniciales = document.querySelectorAll('.btn-bloque')
 var buttRepuest = document.getElementById('butt-repuestos')
@@ -45,7 +46,7 @@ var currentID = null;
 var butInicio = document.getElementById('bot-inic')
 var contInicial = document.getElementById('container1')
 var botonMa = document.getElementById('bot-mantaut')
-var allContenedores = ['contenedor-7','contenedor-7-II','buttRepuest','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
+var allContenedores = ['contenedor-7','contenedor-7-II','contenedor-7-III','buttRepuest','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIzquierdos = ['desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador']
@@ -254,7 +255,7 @@ function showButtonsMAconRetraso() {
 function changeButtonStyles(elementId) {
   switch (elementId) {
     case 'pantalla-tintero':
-      var elementosExcluidos = ['pantalla-inicial','pantalla-tintero','container01','links-inicialesI','links-iniciales','agrupaOblicuos-II','imgTorre','video-entintado','videoElement1-II']  
+      var elementosExcluidos = ['cont-links','pantalla-inicial','pantalla-tintero','container01','links-inicialesI','links-iniciales','agrupaOblicuos-II','imgTorre','video-entintado','videoElement1-II']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -262,22 +263,6 @@ function changeButtonStyles(elementId) {
         }
       }  
       if (screenWidth < 500) {
-/*         var contBloqueTintero = document.getElementById('torre-imp');
-        var estiloComputado = window.getComputedStyle(contBloqueTintero);
-        if (estiloComputado.display !== 'flex' || estiloComputado.display !== 'block') {
-          contBloqueTintero.style.display = 'flex';
-        }     
-          var contBloqueTorre = document.getElementById('tinter-o');
-          var estiloComputado = window.getComputedStyle(contBloqueTorre);
-          if (estiloComputado.display !== 'flex' || estiloComputado.display !== 'block') {
-            contBloqueTorre.style.display = 'flex';
-        } 
-        var contBloqueTorre = document.getElementById('bateria-entintado');
-        var estiloComputado = window.getComputedStyle(contBloqueTorre);
-        if (estiloComputado.display !== 'flex' || estiloComputado.display !== 'block') {
-          contBloqueTorre.style.display = 'flex';
-         }*/
-
         videoElements.forEach(video => {
         if (video.id === 'vidTintero') {
           video.style.top = '17px'
@@ -295,8 +280,7 @@ function changeButtonStyles(elementId) {
         for (var i = 0; i < linksIniciales.length; i++) {
           var elemento = document.getElementById(linksIniciales[i])
           elemento.style.display = 'flex'
-        }
-    
+        }    
 
       }
 
@@ -315,18 +299,13 @@ function changeButtonStyles(elementId) {
       }
       });
 
-      for (var i = 0; i < linksIniciales.length; i++) {
-        var elemento = document.getElementById(linksIniciales[i])
-        elemento.style.display = 'flex'
-      }
-
       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
         idsArray.push(elementId);
         console.log(idsArray);
       } 
     break;    
     case 'bateria-entintado-II': 
-      var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','video-entintado','videoElement1-II','bateria-entintado-II','contenedor-7'];         
+      var elementosExcluidos = ['contenedor-7','container01','links-inicialesI','links-iniciales','video-entintado','videoElement1-II','bateria-entintado-II'];         
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
@@ -342,18 +321,19 @@ function changeButtonStyles(elementId) {
         }
       })
       contibotsDistri.style.marginTop = '1%'
-      const buttonElements = document.querySelectorAll('.boton-f')
-      var delay = 100;
+/*       const buttonElements = document.querySelectorAll('.boton-f')
+      var delay = 10;
       for (var i = 0; i < buttonElements.length; i++) {
         setTimeout(function(index) {
           buttonElements[index].style.display = 'flex'
-        }, delay * i,i)
-      }  
+      }, delay * i,i)} */
+
       if (screenWidth < 500) {   
-        contibotsDistri.classList.remove('move-up')  
+        /*contibotsDistri.classList.remove('move-up')  
         contibotsDistri.classList.remove('move-right')        
-        contVideo.classList.remove('move-up-left')             
-        var elementosExcluidos = ['links-iniciales','links-inicialesI','pantalla-inicial','container01','cont-links','agrupaOblicuos-II','contenedor-7','video-entintado','videoElement1-II','bateria-entintado-II'];
+        contVideo.classList.remove('move-up-left') */
+
+        var elementosExcluidos = ['links-iniciales','links-inicialesI','container01','contenedor-7','video-entintado','videoElement1-II','bateria-entintado-II'];
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i]) 
           if (elemento) {
@@ -361,6 +341,9 @@ function changeButtonStyles(elementId) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
           }
         }
+
+        contibotsDistri.classList.remove('move-up','move-right');
+
         contVid.style.display='block' 
         videoElements.forEach(video => {
           if (video.id === 'videoElement1-II') {
@@ -369,9 +352,7 @@ function changeButtonStyles(elementId) {
             video.style.display = 'none'
           }
         })
-        setTimeout(function () {
-          transicionElementos()
-        }, 333); 
+        desplegarBotones()
       }
       //////////////////////////////////////////////////////////////////////////////////////////
       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
@@ -454,6 +435,20 @@ function changeButtonStyles(elementId) {
     default:
   }  
 } 
+
+function desplegarBotones(){
+  const buttonElements = document.querySelectorAll('.boton-f')
+  var delay = 10;
+  for (var i = 0; i < buttonElements.length; i++) {
+    setTimeout(function(index) {
+      buttonElements[index].style.display = 'flex'
+  }, delay * i,i)}
+
+  setTimeout(function () {
+    transicionElementos()
+  }, 477);
+}
+
 function cambioContenedor(elementId) {
   var elementsToHide = document.querySelectorAll('.alimentador, .uTeñido, .desbobinador,.unidProceso,.rebobinador,.links-inicialesI,.links-iniciales') 
   var torreImpresion = document.getElementById('torre-imp') // PADRE TORRE IMPRESION  */
@@ -690,7 +685,7 @@ function muestraRodillo (vidElem, imgCont) {
     break;
     case 'videoElement3':
       /// OCULTA TODO MENOS LO NECESARIO          
-      var elementosExcluidos = ['container01','links-iniciales','links-inicialesI','contene-images','images-entintador','bateria-entintado-II','contenedor-7','videosTraining','videos-training','videoElement2']; 
+      var elementosExcluidos = ['container01','links-iniciales','links-inicialesI','contene-images','images-entintador','bateria-entintado-II','contenedor-7-III','videosTraining','videos-training','videoElement3']; 
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
@@ -719,7 +714,7 @@ function muestraRodillo (vidElem, imgCont) {
       }
       }
       if (screenWidth < 500) {
-        var elementosExcluidos = ['container01','links-iniciales','links-inicialesI','contene-images','bateria-entintado-II','contenedor-7','videosTraining','videos-training','videoElement2']; 
+        var elementosExcluidos = ['container01','links-iniciales','links-inicialesI','contene-images',,'images-entintador','bateria-entintado-II','contenedor-7','videosTraining','videos-training','videoElement2']; 
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i]) 
           if (elemento) {
@@ -742,10 +737,7 @@ function muestraRodillo (vidElem, imgCont) {
         contiBateriaEntinta.style.left = '3%'
         contiBateriaEntinta.style.top = '13%'        
 
-/*         var miElemento = document.getElementById('bateria-entintado-II');
-        restablecerEstilos(miElemento);
-
-        transicionElementosIII() */
+        transicionElementosIII()
       }
     break;
     case 'videoElement4' :
@@ -9164,7 +9156,7 @@ function moverMA() {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('videoElement1-II')
+  var contiBoton = document.getElementById('contenedor-7')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
@@ -9202,10 +9194,10 @@ document.addEventListener('keydown', function(event) {
 });
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // EVENTOS DINAMICOS MOVER CONTENEDORES
-/* document.getElementById('iniciar').addEventListener('click', function() {
+document.getElementById('iniciar').addEventListener('click', function() {
   contibotsDistri.classList.toggle('move-down')
   contVideo.classList.toggle('move-down-I')
-}); */
+});
 function transicionElementos() {
   contibotsDistri.classList.add('move-up')
   contVideo.classList.add('move-up-left')
@@ -9218,9 +9210,9 @@ function transicionElementosII() {
   padreImgsDistribuidor.classList.add('move-down')
 }
 function transicionElementosIII() {
-  contiBateriaEntinta.classList.add('clase-contenedor-7')
-}  
-
+  contibotsDistriIII.classList.add('move-up')
+  /* contiBateriaEntinta.classList.add('clase-contenedor-7') */
+} 
 function restablecerEstilos(elemento) {
   // Eliminar estilos en línea
   elemento.removeAttribute('style');
