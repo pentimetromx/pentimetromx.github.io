@@ -3186,7 +3186,6 @@ elemento.visible {
 }
 
 @media screen and (max-width: 420px) {
-
   /* @media screen and (max-width: 768px) { */  
   #agrupaOblicuos-XI{
     position: absolute;
@@ -4208,7 +4207,7 @@ elemento.visible {
   }
   #images-distribuidor{
     position: relative;
-    margin-top: -10px;
+    margin-top: -300px;
   }
   #images-distribuidor img{
     width: 90px;  
@@ -4574,8 +4573,8 @@ elemento.visible {
   }
   #contenedor-7-II{
     position: absolute;
-    top: -1%;
-    left: 68%;
+    top: 4%;
+    left: 39.7%;
     transition: transform 1.6s ease;
   }
   #contenedor-7-III{
@@ -4597,14 +4596,11 @@ elemento.visible {
   #contene-images{
     transition: transform 1.6s ease;
   }
-  .move-down-left {
-    transform: translateY(163px) translateX(17px);
-  }
   #images-entintador{
     transition: transform 1.6s ease;
   }
   .move-down{
-    transform: translateY(163px) translateX(17px);
+    transform: translateY(463px);
   }
   
   #video-entintado{

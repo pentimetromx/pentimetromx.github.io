@@ -430,6 +430,30 @@ function changeButtonStyles(elementId) {
     default:
   }  
 } 
+function desplegarBotones(){
+  const buttonElements = document.querySelectorAll('.boton-f')
+  var delay = 100;
+  for (var i = 0; i < buttonElements.length; i++) {
+    setTimeout(function(index) {
+      buttonElements[index].style.display = 'flex'
+  }, delay * i,i)}
+
+  setTimeout(function () {
+    transicionElementos()
+  }, 477);
+}
+function desplegarBotonesII(){
+  const buttonElements = document.querySelectorAll('.boton-f')
+  var delay = 100;
+  for (var i = 0; i < buttonElements.length; i++) {
+    setTimeout(function(index) {
+      buttonElements[index].style.display = 'flex'
+  }, delay * i,i)}
+
+  setTimeout(function () {
+    transicionElementosI()
+  }, 477);
+}
 
 function desplegarBotones(){
   const buttonElements = document.querySelectorAll('.boton-f')
@@ -443,7 +467,6 @@ function desplegarBotones(){
     transicionElementos()
   }, 477);
 }
-
 function cambioContenedor(elementId) {
   var elementsToHide = document.querySelectorAll('.alimentador, .uTeñido, .desbobinador,.unidProceso,.rebobinador,.links-inicialesI,.links-iniciales') 
   var torreImpresion = document.getElementById('torre-imp') // PADRE TORRE IMPRESION  */
@@ -644,8 +667,6 @@ function muestraRodillo (vidElem, imgCont) {
     // REPRODUCE VIDEO
     for (const video of videoElements) {
       if (video.id === vidElem) {
-        video.style.display = 'flex'
-        video.style.height = '166px'
         video.currentTime = 0;           
         video.play() // Reproduce el video
       } else {
@@ -662,20 +683,14 @@ function muestraRodillo (vidElem, imgCont) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
           }
         }
-        padreImgsDistribuidor.classList.remove('move-down-left')      
-        padreImgsDistribuidor.classList.remove('move-down')
-        contibotsDistri.classList.remove('move-right') 
-        contibotsDistri.classList.remove('move-up')
-        contVideo.classList.remove('move-up-left')
-        contibotsDistriII.classList.remove('move-up')
 
-/*         contiBateriaEntinta.style.position ='relative'
-        contiBateriaEntinta.style.left = '3%'
-        contiBateriaEntinta.style.top = '9%'  
- */
+        contibotsDistriII.classList.remove('move-up','move-right')
+        contImgsDistribuidor.classList.remove('move-up-left')
+
+
         setTimeout(function () {
           transicionElementosI()
-        }, 333);        
+        }, 333);      
       }
     break;
     case 'videoElement3':
@@ -9151,7 +9166,7 @@ function moverMA() {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('contenedor-7')
+  var contiBoton = document.getElementById('contenedor-7-II')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
@@ -9199,7 +9214,7 @@ function transicionElementos() {
 }
 function transicionElementosI() {
   contibotsDistriII.classList.add('move-up')
-  padreImgsDistribuidor.classList.add('move-down-left')
+  padreImgsDistribuidor.classList.add('move-down')
 }
 function transicionElementosII() {
   padreImgsDistribuidor.classList.add('move-down')
