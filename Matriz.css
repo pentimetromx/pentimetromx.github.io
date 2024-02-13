@@ -4552,6 +4552,7 @@ elemento.visible {
     align-items: center;
     left: 66%;
     margin-top: -25%;
+    transition: transform 1.6s ease;
   }
   #butt-repuestos{
     display: flex;
@@ -4593,14 +4594,11 @@ elemento.visible {
   .move-right {
     transform: translateY(6px)    
   }  
-  #contene-images{
-    transition: transform 1.6s ease;
-  }
   #images-entintador{
     transition: transform 1.6s ease;
   }
-  .move-down{
-    transform: translateY(463px);
+  .move-down-right{
+    transform: translateY(433px) translateX(26px);
   }
   
   #video-entintado{

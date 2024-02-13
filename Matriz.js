@@ -651,7 +651,8 @@ function muestraRodillo (vidElem, imgCont) {
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
       }
     }
-   document.getElementById('butt-repuestos').style.display = 'flex'; 
+   buttRepuest.style.display = 'block'
+
    // VISIBLES BOTONES  
     const container = document.getElementById(imgCont)
     const pict = container.getElementsByTagName('img')
@@ -683,10 +684,11 @@ function muestraRodillo (vidElem, imgCont) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
           }
         }
-
         contibotsDistriII.classList.remove('move-up','move-right')
         contImgsDistribuidor.classList.remove('move-up-left')
-
+        buttRepuest.style.position = 'absolute'
+        buttRepuest.style.marginTop = '-807px'
+        buttRepuest.style.marginLeft = '5px'
 
         setTimeout(function () {
           transicionElementosI()
@@ -9214,7 +9216,7 @@ function transicionElementos() {
 }
 function transicionElementosI() {
   contibotsDistriII.classList.add('move-up')
-  padreImgsDistribuidor.classList.add('move-down')
+  padreImgsDistribuidor.classList.add('move-down-right')
 }
 function transicionElementosII() {
   padreImgsDistribuidor.classList.add('move-down')
