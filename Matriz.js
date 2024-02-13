@@ -321,18 +321,14 @@ function changeButtonStyles(elementId) {
         }
       })
       contibotsDistri.style.marginTop = '1%'
-/*       const buttonElements = document.querySelectorAll('.boton-f')
+      const buttonElements = document.querySelectorAll('.boton-f')
       var delay = 10;
       for (var i = 0; i < buttonElements.length; i++) {
         setTimeout(function(index) {
           buttonElements[index].style.display = 'flex'
-      }, delay * i,i)} */
+      }, delay * i,i)}
 
       if (screenWidth < 500) {   
-        /*contibotsDistri.classList.remove('move-up')  
-        contibotsDistri.classList.remove('move-right')        
-        contVideo.classList.remove('move-up-left') */
-
         var elementosExcluidos = ['links-iniciales','links-inicialesI','container01','contenedor-7','video-entintado','videoElement1-II','bateria-entintado-II'];
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i]) 
@@ -341,9 +337,8 @@ function changeButtonStyles(elementId) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
           }
         }
-
-        contibotsDistri.classList.remove('move-up','move-right');
-
+        contibotsDistri.classList.remove('move-up','move-right')
+        contVideo.classList.remove('move-up-left')
         contVid.style.display='block' 
         videoElements.forEach(video => {
           if (video.id === 'videoElement1-II') {
@@ -438,7 +433,7 @@ function changeButtonStyles(elementId) {
 
 function desplegarBotones(){
   const buttonElements = document.querySelectorAll('.boton-f')
-  var delay = 10;
+  var delay = 100;
   for (var i = 0; i < buttonElements.length; i++) {
     setTimeout(function(index) {
       buttonElements[index].style.display = 'flex'
