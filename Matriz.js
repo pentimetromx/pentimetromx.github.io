@@ -2,6 +2,8 @@ var arrayAllPneumatica = ['vid-pneumatic','bailarina','padre-neumat','pneumatico
 const coleccion = document.querySelectorAll('.desbobinador, .desbobinador-I, .uTeñido, .alimentadorId, .unidpre-prensaProceso, .rebobinador, .contTorrImp')
 var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 var contImgsDistribuidor = document.getElementById("images-distribuidor")
+var contImgsEntintador = document.getElementById("images-entintador")
+
 var padreImgsDistribuidor = document.getElementById("contene-images") 
 var contiBotsDesbobina = document.getElementById('conti-boton-desb')
 var contiBotsFreno = document.getElementById('conti-boton-freno')
@@ -682,11 +684,14 @@ function muestraRodillo (vidElem, imgCont) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
           }
         }
+        contImgsDistribuidor.style.marginTop = ''
+        buttRepuest.style.marginTop = ''
         contibotsDistriII.classList.remove('move-up-II')
-        padreImgsDistribuidor.classList.remove('move-down-right')
-        buttRepuest.style.position = 'absolute'
-        buttRepuest.style.marginTop = '-807px'
-        buttRepuest.style.marginLeft = '27px'
+        contImgsDistribuidor.classList.remove('move-down-right')
+/*         buttRepuest.style.position = 'absolute'
+        buttRepuest.style.marginTop = '222px'
+        buttRepuest.style.marginLeft = '37px' */
+        contImgsDistribuidor.style.marginTop = '-456px'
 
         videoElements.forEach(video => {
           if (video.id === 'videoElement2') {
@@ -735,19 +740,16 @@ function muestraRodillo (vidElem, imgCont) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
           }
         }
+        contImgsEntintador.style.marginTop = ''
         contibotsDistriIII.classList.remove('move-up-III')
-        padreImgsDistribuidor.classList.remove('move-down-right-II')      
-
+        contImgsEntintador.classList.remove('move-down-right-III')     
         contiBateriaEntinta.style.position ='relative'
         contiBateriaEntinta.style.left = '3%'
         contiBateriaEntinta.style.top = '13%'
-        padreImgsDistribuidor.style.marginTop = '/177px'
-        
+        contImgsEntintador.style.marginTop = '-456px'
         buttRepuest.style.position = 'absolute'
         buttRepuest.style.marginTop = '-207px'
         buttRepuest.style.marginLeft = '47px'
-
-        
         videoElements.forEach(video => {
           if (video.id === 'videoElement3') {
             video.play()      
@@ -755,7 +757,7 @@ function muestraRodillo (vidElem, imgCont) {
             video.style.display = 'none'
           }
         })
-        desplegarBotonesIII()       
+        desplegarBotonesIII()      
       }
     break;
     case 'videoElement4' :
@@ -9205,7 +9207,8 @@ document.addEventListener('keydown', function(event) {
         changeButtonStyles('bateria-entintado-II', 'contene-7')
       break;
       case 'B':
-        obtenerGeometria();
+        /* obtenerGeometria(); */
+        muestraRodillo('videoElement2','images-distribuidor')
       break;
     }
   }
@@ -9222,11 +9225,11 @@ function transicionElementos() {
 }
 function transicionElementosII() {
   contibotsDistriII.classList.add('move-up-II')
-  padreImgsDistribuidor.classList.add('move-down-right')      
+  contImgsDistribuidor.classList.add('move-down-right')      
 }
 function transicionElementosIII() {
   contibotsDistriIII.classList.add('move-up-III')
-  padreImgsDistribuidor.classList.add('move-down-right-II')      
+  contImgsEntintador.classList.add('move-down-right-III')      
 } 
 function restablecerEstilos(elemento) {
   // Eliminar estilos en línea
@@ -9238,3 +9241,4 @@ function restablecerEstilos(elemento) {
   // Agregar la clase que define el lugar desde CSS
   elemento.classList.add('clase-contenedor-7');  // Ajusta el nombre de la clase según tu caso
 }
+

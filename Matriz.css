@@ -4211,6 +4211,7 @@ elemento.visible {
     position: relative;
     margin-top: -300px;
     left: 17%;
+    transition: transform 1.6s ease;
   }
   #images-distribuidor img{
     width: 90px;  
@@ -4599,23 +4600,23 @@ elemento.visible {
   }
   /* primer evento   */
   .move-up-left {
-    transform: translateY(291px) translateX(101px); 
+    transform: translateY(277px) translateX(101px); 
   }
   .move-up{
-    transform: translateY(184px) translateX(-294px); 
+    transform: translateY(167px) translateX(-294px); 
   }
   /* segundo evento   */
   .move-up-II{
     transform: translateY(187px) translateX(-281px); 
   }
   .move-down-right{
-    transform: translateY(397px) translateX(13px);
+    transform: translateY(637px) translateX(-7px);
   }
   /* segundo evento   */
-  .move-up-II{
-    transform: translateY(187px) translateX(-281px); 
+  .move-up-III{
+    transform: translateY(222px) translateX(-281px); 
   }
-  .move-down-right{
+  .move-down-right-III{
     transform: translateY(397px) translateX(13px);
   }
 
