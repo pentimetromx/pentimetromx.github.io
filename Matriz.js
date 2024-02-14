@@ -454,8 +454,7 @@ function desplegarBotonesII(){
     transicionElementosI()
   }, 477);
 }
-
-function desplegarBotones(){
+function desplegarBotonesIII(){
   const buttonElements = document.querySelectorAll('.boton-f')
   var delay = 100;
   for (var i = 0; i < buttonElements.length; i++) {
@@ -464,7 +463,7 @@ function desplegarBotones(){
   }, delay * i,i)}
 
   setTimeout(function () {
-    transicionElementos()
+    transicionElementosII()
   }, 477);
 }
 function cambioContenedor(elementId) {
@@ -652,7 +651,6 @@ function muestraRodillo (vidElem, imgCont) {
       }
     }
    buttRepuest.style.display = 'block'
-
    // VISIBLES BOTONES  
     const container = document.getElementById(imgCont)
     const pict = container.getElementsByTagName('img')
@@ -684,20 +682,25 @@ function muestraRodillo (vidElem, imgCont) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
           }
         }
-        contibotsDistriII.classList.remove('move-up','move-right')
-        contImgsDistribuidor.classList.remove('move-up-left')
+        contibotsDistriII.classList.remove('move-up-II')
+        padreImgsDistribuidor.classList.remove('move-down-right')
         buttRepuest.style.position = 'absolute'
         buttRepuest.style.marginTop = '-807px'
-        buttRepuest.style.marginLeft = '5px'
+        buttRepuest.style.marginLeft = '27px'
 
-        setTimeout(function () {
-          transicionElementosI()
-        }, 333);      
+        videoElements.forEach(video => {
+          if (video.id === 'videoElement2') {
+            video.play()      
+          } else {
+            video.style.display = 'none'
+          }
+        })
+        desplegarBotonesII()
       }
     break;
     case 'videoElement3':
       /// OCULTA TODO MENOS LO NECESARIO          
-      var elementosExcluidos = ['container01','links-iniciales','links-inicialesI','contene-images','images-entintador','bateria-entintado-II','contenedor-7-III','videosTraining','videos-training','videoElement3']; 
+      var elementosExcluidos = ['container01','links-iniciales','links-inicialesI','contene-images','images-entintador','bateria-entintado-II','contenedor-7-III','videosTraining','videos-training','videoElement2']; 
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
@@ -705,13 +708,11 @@ function muestraRodillo (vidElem, imgCont) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
         }
       }
-
       buttRepuest.style.display='flex'
       var imagesCase = document.getElementsByClassName('image-trainings1')      
       for (let i = 0; i < imagesCase.length; i++) {
         imagesCase[i].style.display = 'flex' // Muestra cada imagen
       }
-
         setTimeout(() => {
         applyImageEffects()
       }, 200) 
@@ -726,7 +727,7 @@ function muestraRodillo (vidElem, imgCont) {
       }
       }
       if (screenWidth < 500) {
-        var elementosExcluidos = ['container01','links-iniciales','links-inicialesI','contene-images',,'images-entintador','bateria-entintado-II','contenedor-7','videosTraining','videos-training','videoElement2']; 
+        var elementosExcluidos = ['container01','links-iniciales','links-inicialesI','contene-images','images-entintador','bateria-entintado-II','contenedor-7-III','videosTraining','videos-training','videoElement3']; 
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i]) 
           if (elemento) {
@@ -734,22 +735,23 @@ function muestraRodillo (vidElem, imgCont) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
           }
         }
-
-        /*contibotsDistri.style.marginTop = '0%'
-        contibotsDistri.style.left = '0%' */
-        /* contibotsDistri.style.display = 'flex' */
-
-        /*padreImgsDistribuidor.classList.remove('move-down-left')     
-        padreImgsDistribuidor.classList.remove('move-down')
-        contibotsDistri.classList.remove('move-right') 
-        contibotsDistri.classList.remove('move-up')
-        contVideo.classList.remove('move-up-left') */
-
         contiBateriaEntinta.style.position ='relative'
         contiBateriaEntinta.style.left = '3%'
-        contiBateriaEntinta.style.top = '13%'        
+        contiBateriaEntinta.style.top = '13%'
+        
+        buttRepuest.style.position = 'absolute'
+        buttRepuest.style.marginTop = '-207px'
+        buttRepuest.style.marginLeft = '47px'
 
-        transicionElementosIII()
+        
+        videoElements.forEach(video => {
+          if (video.id === 'videoElement3') {
+            video.play()      
+          } else {
+            video.style.display = 'none'
+          }
+        })
+        desplegarBotonesII()       
       }
     break;
     case 'videoElement4' :
@@ -9168,7 +9170,7 @@ function moverMA() {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('contenedor-7-II')
+  var contiBoton = document.getElementById('butt-repuestos')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
@@ -9215,7 +9217,7 @@ function transicionElementos() {
   contVideo.classList.add('move-up-left')
 }
 function transicionElementosI() {
-  contibotsDistriII.classList.add('move-up')
+  contibotsDistriII.classList.add('move-up-II')
   padreImgsDistribuidor.classList.add('move-down-right')
 }
 function transicionElementosII() {
