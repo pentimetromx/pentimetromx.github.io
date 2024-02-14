@@ -4559,16 +4559,20 @@ elemento.visible {
     transition: transform 1.6s ease;
   }
   #butt-repuestos{
+    position: fixed;
     display: flex;
     font-family: "GothamRounded", sans-serif;
     font-size: 7px;
     color: white;
     height: 27px;
     width: 133px;
+    margin-top: -107px;
+    margin-left: 7px;
     border-radius: 9px;
     background-color: rgba(83, 82, 82, 0.678);
     margin-bottom: 17px;
     display: none;  
+    transition: transform 1.6s ease;
   }
   #contenedor-7{
     position: absolute;
@@ -4610,7 +4614,10 @@ elemento.visible {
     transform: translateY(187px) translateX(-281px); 
   }
   .move-down-right{
-    transform: translateY(637px) translateX(-7px);
+    transform: translateY(587px) translateX(17px);
+  }
+  .move-button{
+    transform: translateY(144px) translateX(25px);
   }
   /* segundo evento   */
   .move-up-III{
