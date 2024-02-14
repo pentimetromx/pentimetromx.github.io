@@ -688,9 +688,8 @@ function muestraRodillo (vidElem, imgCont) {
         buttRepuest.style.marginTop = ''
         contibotsDistriII.classList.remove('move-up-II')
         contImgsDistribuidor.classList.remove('move-down-right')
-        buttRepuest.classList.remove('move-button')
+        buttRepuest.classList.remove('move-button','move-button-III')
         contImgsDistribuidor.style.marginTop = '-456px'
-
         videoElements.forEach(video => {
           if (video.id === 'videoElement2') {
             video.play()      
@@ -730,7 +729,7 @@ function muestraRodillo (vidElem, imgCont) {
       }
       }
       if (screenWidth < 500) {
-        var elementosExcluidos = ['container01','links-iniciales','links-inicialesI','contene-images','images-entintador','bateria-entintado-II','contenedor-7-III','videosTraining','videos-training','videoElement3']; 
+        var elementosExcluidos = ['butt-repuestos','container01','links-iniciales','links-inicialesI','contene-images','images-entintador','bateria-entintado-II','contenedor-7-III','videosTraining','videos-training','videoElement3']; 
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i]) 
           if (elemento) {
@@ -739,15 +738,16 @@ function muestraRodillo (vidElem, imgCont) {
           }
         }
         contImgsEntintador.style.marginTop = ''
+        buttRepuest.style.marginTop = ''
         contibotsDistriIII.classList.remove('move-up-III')
-        contImgsEntintador.classList.remove('move-down-right-III')     
+        contImgsEntintador.classList.remove('move-down-right-III') 
+        buttRepuest.classList.remove('move-button','move-button-III')
         contiBateriaEntinta.style.position ='relative'
         contiBateriaEntinta.style.left = '3%'
         contiBateriaEntinta.style.top = '13%'
         contImgsEntintador.style.marginTop = '-456px'
-/*         buttRepuest.style.position = 'absolute'
-        buttRepuest.style.marginTop = '-207px'
-        buttRepuest.style.marginLeft = '47px' */
+
+
         videoElements.forEach(video => {
           if (video.id === 'videoElement3') {
             video.play()      
@@ -9208,6 +9208,10 @@ document.addEventListener('keydown', function(event) {
         /* obtenerGeometria(); */
         muestraRodillo('videoElement2','images-distribuidor')
       break;
+      case 'H':
+        /* obtenerGeometria(); */
+        muestraRodillo('videoElement3','images-entintador')
+      break;
     }
   }
 });
@@ -9228,7 +9232,9 @@ function transicionElementosII() {
 }
 function transicionElementosIII() {
   contibotsDistriIII.classList.add('move-up-III')
-  contImgsEntintador.classList.add('move-down-right-III')      
+  contImgsEntintador.classList.add('move-down-right-III') 
+  buttRepuest.classList.add('move-button-III') 
+
 } 
 function restablecerEstilos(elemento) {
   // Eliminar estilos en línea

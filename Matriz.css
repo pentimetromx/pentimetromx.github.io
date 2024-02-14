@@ -4619,12 +4619,15 @@ elemento.visible {
   .move-button{
     transform: translateY(144px) translateX(25px);
   }
-  /* segundo evento   */
+  /* tercer evento   */
   .move-up-III{
     transform: translateY(222px) translateX(-281px); 
   }
   .move-down-right-III{
-    transform: translateY(397px) translateX(13px);
+    transform: translateY(427px) translateX(1px);
+  }
+  .move-button-III{
+    transform: translateY(137px) translateX(21px);
   }
 
 }
