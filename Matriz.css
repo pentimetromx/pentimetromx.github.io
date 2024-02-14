@@ -4557,6 +4557,8 @@ elemento.visible {
     left: 66%;
     margin-top: -25%;
     transition: transform 1.6s ease;
+    z-index: -1;
+
   }
   #butt-repuestos{
     position: fixed;
