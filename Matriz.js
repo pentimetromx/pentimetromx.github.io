@@ -337,7 +337,7 @@ function changeButtonStyles(elementId) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
           }
         }
-        contibotsDistri.classList.remove('move-up','move-right')
+        contibotsDistri.classList.remove('move-up')
         contVideo.classList.remove('move-up-left')
         contVid.style.display='block' 
         videoElements.forEach(video => {
@@ -451,7 +451,7 @@ function desplegarBotonesII(){
   }, delay * i,i)}
 
   setTimeout(function () {
-    transicionElementosI()
+    transicionElementosII()
   }, 477);
 }
 function desplegarBotonesIII(){
@@ -463,7 +463,7 @@ function desplegarBotonesIII(){
   }, delay * i,i)}
 
   setTimeout(function () {
-    transicionElementosII()
+    transicionElementosIII()
   }, 477);
 }
 function cambioContenedor(elementId) {
@@ -735,9 +735,8 @@ function muestraRodillo (vidElem, imgCont) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
           }
         }
-        contibotsDistriIII.classList.remove('move-up-II')
-        padreImgsDistribuidor.classList.remove('move-down-right')
-      
+        contibotsDistriIII.classList.remove('move-up-III')
+        padreImgsDistribuidor.classList.remove('move-down-right-II')      
 
         contiBateriaEntinta.style.position ='relative'
         contiBateriaEntinta.style.left = '3%'
@@ -756,7 +755,7 @@ function muestraRodillo (vidElem, imgCont) {
             video.style.display = 'none'
           }
         })
-        desplegarBotonesII()       
+        desplegarBotonesIII()       
       }
     break;
     case 'videoElement4' :
@@ -9221,16 +9220,13 @@ function transicionElementos() {
   contibotsDistri.classList.add('move-up')
   contVideo.classList.add('move-up-left')
 }
-function transicionElementosI() {
-  contibotsDistriIII.classList.add('move-up-II')
-  padreImgsDistribuidor.classList.add('move-down-right')
-}
 function transicionElementosII() {
-  padreImgsDistribuidor.classList.add('move-down')
+  contibotsDistriII.classList.add('move-up-II')
+  padreImgsDistribuidor.classList.add('move-down-right')      
 }
 function transicionElementosIII() {
-  contibotsDistriIII.classList.add('move-up')
-  /* contiBateriaEntinta.classList.add('clase-contenedor-7') */
+  contibotsDistriIII.classList.add('move-up-III')
+  padreImgsDistribuidor.classList.add('move-down-right-II')      
 } 
 function restablecerEstilos(elemento) {
   // Eliminar estilos en línea

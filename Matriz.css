@@ -4594,29 +4594,29 @@ elemento.visible {
     margin-top: 87%;
     margin-left: 3%;
   }
-  .move-right {
-    transform: translateY(6px)    
-  }  
-  
   #video-entintado{
     transition: transform 1.6s ease;
   }
+  /* primer evento   */
   .move-up-left {
     transform: translateY(291px) translateX(101px); 
   }
   .move-up{
     transform: translateY(184px) translateX(-294px); 
   }
+  /* segundo evento   */
   .move-up-II{
-    transform: translateY(222px) translateX(-281px); 
+    transform: translateY(187px) translateX(-281px); 
   }
   .move-down-right{
-    transform: translateY(77px) translateX(5px);
+    transform: translateY(397px) translateX(13px);
+  }
+  /* segundo evento   */
+  .move-up-II{
+    transform: translateY(187px) translateX(-281px); 
+  }
+  .move-down-right{
+    transform: translateY(397px) translateX(13px);
   }
 
-
-  
-
 }
-/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-
