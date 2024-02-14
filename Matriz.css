@@ -4107,11 +4107,6 @@ elemento.visible {
     top: 200px;
   }
   /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
-  #links-inicialesI{  /* PADRE LINKS PILARES  */
-    position: relative;
-    top: 17%;
-    left: 7%;
-  }
   #lineI {
     position: fixed;
     left: 5%;
@@ -4144,6 +4139,13 @@ elemento.visible {
     position: relative;
     top: 17%;
     left: 7%;
+    z-index: 33;
+  }
+  #links-inicialesI{  /* PADRE LINKS PILARES  */
+    position: relative;
+    top: 17%;
+    left: 7%;
+    z-index: 33;
   }
   #line {
     position: fixed;
