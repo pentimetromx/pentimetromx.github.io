@@ -4608,10 +4608,10 @@ elemento.visible {
     transform: translateY(184px) translateX(-294px); 
   }
   .move-up-II{
-    transform: translateY(184px) translateX(-277px); 
+    transform: translateY(222px) translateX(-281px); 
   }
   .move-down-right{
-    transform: translateY(433px) translateX(13px);
+    transform: translateY(77px) translateX(5px);
   }
 
 

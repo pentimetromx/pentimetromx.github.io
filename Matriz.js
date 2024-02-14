@@ -735,9 +735,14 @@ function muestraRodillo (vidElem, imgCont) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
           }
         }
+        contibotsDistriIII.classList.remove('move-up-II')
+        padreImgsDistribuidor.classList.remove('move-down-right')
+      
+
         contiBateriaEntinta.style.position ='relative'
         contiBateriaEntinta.style.left = '3%'
         contiBateriaEntinta.style.top = '13%'
+        padreImgsDistribuidor.style.marginTop = '/177px'
         
         buttRepuest.style.position = 'absolute'
         buttRepuest.style.marginTop = '-207px'
@@ -9217,7 +9222,7 @@ function transicionElementos() {
   contVideo.classList.add('move-up-left')
 }
 function transicionElementosI() {
-  contibotsDistriII.classList.add('move-up-II')
+  contibotsDistriIII.classList.add('move-up-II')
   padreImgsDistribuidor.classList.add('move-down-right')
 }
 function transicionElementosII() {
