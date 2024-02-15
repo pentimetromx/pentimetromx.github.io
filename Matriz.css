@@ -366,13 +366,13 @@ transform: scale(1.1);
 #images-smed{
   position: absolute;
   display: none;
-  top: -33px;
-  left: -7px;
+  top: -77px;
+  left: 29px;
 }
 #images-smed img{
   cursor: pointer;
   height: 80px;
-  width: 117px;
+  width: 147px;
   transition: transform 0.1s ease, filter 0.1s ease;
   border-radius: 11px;
 }
@@ -3148,7 +3148,15 @@ elemento.visible {
   left: 17%;
   top: 10%;
 }
-
+#plate-smed{
+  position: absolute;
+  left: 137px;
+  top: 80px;
+/*   width: 638px;
+  height: 480px; */
+  width: 100%;
+  height: 100%;  
+}
 @keyframes parpadeo {
   from {
     opacity: 1;
@@ -3421,6 +3429,12 @@ elemento.visible {
     width: 10%;
     height: 100%;
     flex-direction: column;
+  }
+  #bancada-torre-II{
+    position: absolute;
+    left: 170px;
+    top: 6px;
+    display: none;
   }
   #cont-Verticales4{
     position: absolute;
@@ -4218,6 +4232,7 @@ elemento.visible {
   #images-distribuidor img{
     width: 90px;  
   } 
+  #contenedor-7-IV button, 
   #contenedor-7-III button, 
   #contenedor-7-II button, 
   #contenedor-7 button{
@@ -4468,9 +4483,6 @@ elemento.visible {
     border-radius: 5%; 
 
   }
-  .video-training{
-    display: none;
-  }
   #cuartoContDensito,
   #tercerContDensito,
   #segundoContDensito,
@@ -4587,17 +4599,35 @@ elemento.visible {
   #contenedor-7-II{
     position: absolute;
     top: 4%;
-    left: 36%;
+    left: 38%;
     transition: transform 1.6s ease;
   }
   #contenedor-7-III{
     position: absolute;
-    top: -1%;
-    left: 37%;
+    top: 4%;
+    left: 38%;
     transition: transform 1.6s ease;
   }
-
-
+  #contenedor-7-IV{
+    position: absolute;
+    top: 4%;
+    left: 38%;
+    transition: transform 1.6s ease;
+  }
+  #images-smed{
+    position: absolute;
+    display: none;
+    top: -77px;
+    left: 29px;
+  }
+  #plate-smed{
+    position: relative;
+    margin-left: -117%;
+    top: 4%;
+    /* width: 247px; */ 
+    width: 100%;
+    height: 100%;
+  }
   .clase-contenedor-7{
     position: absolute;
     margin-top: 87%;
@@ -4625,7 +4655,7 @@ elemento.visible {
   }
   /* tercer evento   */
   .move-up-III{
-    transform: translateY(222px) translateX(-281px); 
+    transform: translateY(191px) translateX(-281px); 
   }
   .move-down-right-III{
     transform: translateY(427px) translateX(1px);
@@ -4635,3 +4665,4 @@ elemento.visible {
   }
 
 }
+ 
