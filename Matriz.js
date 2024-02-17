@@ -50,7 +50,7 @@ var currentID = null;
 var butInicio = document.getElementById('bot-inic')
 var contInicial = document.getElementById('container1')
 var botonMa = document.getElementById('bot-mantaut')
-var allContenedores = ['plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
+var allContenedores = ['contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIzquierdos = ['desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador']
@@ -658,7 +658,7 @@ function muestraRodillo (vidElem, imgCont) {
   switch(vidElem){
     case 'videoElement2':
     /// OCULTA TODO MENOS LO NECESARIO          
-    var elementosExcluidos = ['butt-repuestos','container01','links-iniciales','links-inicialesI','contene-images','images-distribuidor','bateria-entintado-II','contenedor-7','videosTraining','videos-training','videoElement2']; 
+    var elementosExcluidos = ['sector-distribuidor','butt-repuestos','conti-video-distribuidor','videoElement2','images-distribuidor','conti-boton-repuestos','contenedor-7-V','container01','links-iniciales','links-inicialesI','videosTraining']; 
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]) 
       if (elemento) {
@@ -678,7 +678,6 @@ function muestraRodillo (vidElem, imgCont) {
     setTimeout(() => {
       applyImageEffects1() 
     }, 277)
-    buttRepuest.style.top =''
 
     // REPRODUCE VIDEO
     for (const video of videoElements) {
@@ -717,7 +716,7 @@ function muestraRodillo (vidElem, imgCont) {
     break;
     case 'videoElement3':
       /// OCULTA TODO MENOS LO NECESARIO          
-      var elementosExcluidos = ['butt-repuestos','container01','links-iniciales','links-inicialesI','contene-images','images-entintador','bateria-entintado-II','contenedor-7','videosTraining','videos-training','videoElement2']; 
+      var elementosExcluidos = ['sector-entintador','conti-boton-repuestos-I','butt-repuestos-I','conti-video-entintador','videoElement3','images-entintador','conti-boton-repuestos','contenedor-7-VI','container01','links-iniciales','links-inicialesI','videosTraining']; 
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
@@ -728,7 +727,6 @@ function muestraRodillo (vidElem, imgCont) {
       setTimeout(() => {
         applyImageEffects()
       }, 277) 
-      buttRepuest.style.top =''
 
       for (const video of videoElements) {
       if (video.id === vidElem) {
@@ -772,7 +770,7 @@ function muestraRodillo (vidElem, imgCont) {
     break;
     case 'plate-smed' :
       /// OCULTA TODO MENOS LO NECESARIO          
-      var elementosExcluidos = ['bancada-torre-II','plate-smed','butt-repuestos','container01','links-iniciales','links-inicialesI','contene-images','images-smed','bateria-entintado-II','contenedor-7','videosTraining','videos-training']; 
+      var elementosExcluidos = ['sector-smed','conti-boton-repuestos-II','butt-repuestos-II','conti-video-smed','plate-smed','images-smed','contenedor-7-VII','container01','links-iniciales','links-inicialesI','videosTraining']; 
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
@@ -783,8 +781,6 @@ function muestraRodillo (vidElem, imgCont) {
       setTimeout(() => {
         applyImageEffects3()
       }, 277) 
-      buttRepuest.style.top =''
-      buttRepuest.style.top ='-40px' 
            
       for (const video of videoElements) {
         if (video.id === vidElem) {
@@ -9220,7 +9216,7 @@ function moverMA() {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('plate-smed')
+  var contiBoton = document.getElementById('pantalla-inicial')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
@@ -9248,7 +9244,7 @@ document.addEventListener('keydown', function(event) {
   if (event.ctrlKey && event.shiftKey) {
     switch (event.key) {
       case 'Z':
-        changeButtonStyles('bateria-entintado-II', 'contene-7')
+        abrirSeccionContinua('pantalla-inicial')
       break;
       case 'B':
         /* obtenerGeometria(); */
@@ -9292,4 +9288,3 @@ function restablecerEstilos(elemento) {
   // Agregar la clase que define el lugar desde CSS
   elemento.classList.add('clase-contenedor-7');  // Ajusta el nombre de la clase según tu caso
 }
-

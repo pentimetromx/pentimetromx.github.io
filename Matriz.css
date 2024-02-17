@@ -77,7 +77,24 @@ h1, h2, h3 {
   text-align: center;
   transition: transform 0.1s; 
 }
-.boton-i{
+#toggleVideoButton{
+  position: absolute;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+  left: 59%;
+  width: 500px;
+  height: 47px;
+  background-color: rgb(255, 24, 55);
+  color: white;
+  border-radius: 7px;
+  margin-right: 24px;
+  transition: transform 0.1s;
+
+}
+
+/*.boton-i{
   height: 47px;
   width: 120px;
   background-color: rgb(255, 24, 55);
@@ -87,7 +104,7 @@ h1, h2, h3 {
   cursor: pointer;
   text-align: center;
   transition: transform 0.1s;
-}
+}*/
 .boton-a:hover,
 .boton-b:hover,
 .boton-c:hover,
@@ -239,14 +256,6 @@ transform: scale(1.1);
   position: relative;
   left: 50%;
 }
-#pantalla-inicial{
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  top: 16%;
-  display: none;
-  max-width: 100%;
-}
 .contTorrImp{
   display: flex; 
   flex-direction: column; 
@@ -263,12 +272,17 @@ transform: scale(1.1);
   display: flex;
   flex-direction: row;
   position: absolute;
-  top: 57px;
-  left: 767px;
+  top: 7%;
+  left:59%;
 }
-.cont-ppal{
+#sis-humedad,
+#bancada-torre,
+#bateria-entintado,
+#tinter-o{
+  position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  top: 22%;
 }
 .contene-1,
 .contene-3,
@@ -293,43 +307,45 @@ transform: scale(1.1);
   transform: translate(-50%);  
   display: none;
 }
+#pantalla-inicial{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  top: 16%;
+  left: 1%;
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+#cont-Verticales1,
+#cont-Verticales2,
+#cont-Verticales33,
+#cont-Verticales8,
+#cont-Verticales7{
+  position: absolute;
+  flex-direction: column;
+  display: flex;
+  margin-top:63%;
+  width: 55%;
+  padding-left: 20px;
+}
+.rebobinador,
+.unidProceso,
+.alimentadorId,
+.uTeñido,
 .desbobinador{
-  display: flex;
-  margin-left: 5px;
+  position: absolute;
   flex-direction: column;
-}
-.mostrar-cont {
   display: flex;
+  margin-right: 177px;
 }
-.uTeñido{
-  display: flex;
-  flex-direction: column;
-}
-#uTeñidos{
-  display: flex;
-  flex-direction: column;
-}
-.alimentadorId{
-  display: flex;
-  flex-direction: column;
-}
-.unidProceso{
-  display: flex;
-  flex-direction: column;
-}
-.rebobinador{
-  display: flex;
-  flex-direction: column;
-}
-#tinter-o{
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-#bateria-entintado{
-  position: relative;
-  display: flex;
-  flex-direction: column;
+#desbobinadorId,
+#uTeñidos,
+#alimentadorId,
+#unidProceso,
+#rebobinador{
+position: relative;
+margin-right: 5px;
 }
 #videosTraining{
   display: flex;
@@ -343,10 +359,7 @@ transform: scale(1.1);
 #videoElement3,
 #videoElement2{
   position: absolute;
-  left: 377px;
-}
-#images-distribuidor img{
-  width: 157px;    
+  display: flex;
 }
 .videos-training video{
   position: absolute;
@@ -357,25 +370,6 @@ transform: scale(1.1);
   display: flex;
   flex-direction: column;
 } 
-#images-distribuidor{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-#images-smed{
-  position: absolute;
-  display: none;
-  top: -77px;
-  left: 29px;
-}
-#images-smed img{
-  cursor: pointer;
-  height: 80px;
-  width: 147px;
-  transition: transform 0.1s ease, filter 0.1s ease;
-  border-radius: 11px;
-}
 .image-training {
   display: none;
   cursor: pointer;
@@ -407,16 +401,15 @@ transform: scale(1.1);
 .bot-entre{
   display: flex;
 }
-.contene-7 {
+#cont-Verticales22,
+#cont-Verticales3,
+#cont-Verticales4,
+#cont-Verticales6{
+  position: absolute;
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 90px;
-  padding-left: 20px;
-}
-.second-class{
- margin-top: -17px;
- margin-left: -13px;
+  padding-left: 10px;
+  top: 133%;
 }
 .infraestruc-torre{
   position: relative;
@@ -668,44 +661,11 @@ transform: scale(1.1);
 .boton-c > span {
   margin-left: 20px;
 }
-#toggleVideoButton{
-  position: absolute;
-  left: 60%;
-  width: 500px;
-}
 .ocultar-cont {
   display: none;
 } 
 /*/////////////////////////////////////////////// */
- #butt-repuestos{
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-  font-family: "GothamRounded", sans-serif;
-  color: white;
-  height: 27px;
-  width: 222px;
-  border-radius: 9px;
-  background-color: rgba(83, 82, 82, 0.678);
-  position: relative;
-  overflow: hidden;
-  margin-top: -107px;
-  margin-left: -13px;
-  display: none;
-}
- 
-#butt-repuestos::before,
-#butt-repuestos::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 27px;
-  height: 27px;
-  background-color: rgba(255, 24, 55);
-}
-#butt-repuestos::before {left: 0;}
-#butt-repuestos::after {right: 0;
-}
+
 #contene-images{
   position: absolute;
   display: flex;
@@ -3128,6 +3088,107 @@ elemento.visible {
   border-radius: 9px; 
   box-shadow: none;
 }
+
+
+#plate-smed{
+  position: absolute;
+  display: flex;
+}
+
+#sector-smed,
+#sector-entintador,
+#sector-distribuidor{
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  top: 15%;
+  left: 1%;
+}
+#contenedor-7-VII,
+#contenedor-7-VI,
+#contenedor-7-V{
+  position: absolute;
+  transition: transform 1.6s ease;
+  left:-1%;
+}
+#conti-video-smed,
+#conti-video-entintador,
+#conti-video-distribuidor{
+  position: absolute;
+  display: flex;
+  left: 28%;
+}
+#images-smed,
+#images-entintador,
+#images-distribuidor{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  display: none;
+  left: 78%;
+  top: 9%;
+}
+#images-smed img{
+  height: 80px;
+  width: 147px;
+  transition: transform 0.1s ease, filter 0.1s ease;
+  display: none;
+  border-radius: 11px;
+}
+
+#images-distribuidor img{
+  width: 157px;    
+}
+#conti-boton-repuestos-II,
+#conti-boton-repuestos-I,
+#conti-boton-repuestos{
+  position: absolute;
+  display: flex;
+  top: 0%;
+  left: 75.5%;
+}
+#butt-repuestos-II,
+#butt-repuestos-I,
+#butt-repuestos{
+  position:absolute;
+  display: flex;
+  justify-content: center; 
+  font-family: "GothamRounded", sans-serif;
+  color: white;
+  height: 27px;
+  width: 222px;
+  border-radius: 9px;
+  background-color: rgba(83, 82, 82, 0.678);
+  overflow: hidden;
+  display: none;
+}
+#butt-repuestos-II::after,
+#butt-repuestos-II::before,
+#butt-repuestos-I::after,
+#butt-repuestos-I::before,
+#butt-repuestos::before,
+#butt-repuestos::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 27px;
+  height: 27px;
+  background-color: rgba(255, 24, 55);
+}
+
+
+#butt-repuestos-II::before {left: 0;}
+#butt-repuestos-II::after {right: 0;}
+#butt-repuestos-I::before {left: 0;}
+#butt-repuestos-I::after {right: 0;}
+#butt-repuestos::before {left: 0;}
+#butt-repuestos::after {right: 0;}
+
+
+
 #cont-videojuegos{
   position: absolute;
   display: flex;
@@ -3147,15 +3208,6 @@ elemento.visible {
   position: absolute;
   left: 17%;
   top: 10%;
-}
-#plate-smed{
-  position: absolute;
-  left: 137px;
-  top: 80px;
-/*   width: 638px;
-  height: 480px; */
-  width: 100%;
-  height: 100%;  
 }
 @keyframes parpadeo {
   from {
@@ -3358,10 +3410,6 @@ elemento.visible {
     width: 211px;
     font-size: 10px;  
   } 
-  .torre-imp{
-    position: absolute;  
-    display: flex;
-  }  
   .torre-imp{
     position: absolute;  
     display: flex;
@@ -4623,10 +4671,6 @@ elemento.visible {
   #plate-smed{
     position: relative;
     margin-left: -117%;
-    top: 4%;
-    /* width: 247px; */ 
-    width: 100%;
-    height: 100%;
   }
   .clase-contenedor-7{
     position: absolute;
