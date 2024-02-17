@@ -91,20 +91,7 @@ h1, h2, h3 {
   border-radius: 7px;
   margin-right: 24px;
   transition: transform 0.1s;
-
 }
-
-/*.boton-i{
-  height: 47px;
-  width: 120px;
-  background-color: rgb(255, 24, 55);
-  color: white;
-  border-radius: 7px;
-  margin-right: 24px;
-  cursor: pointer;
-  text-align: center;
-  transition: transform 0.1s;
-}*/
 .boton-a:hover,
 .boton-b:hover,
 .boton-c:hover,
@@ -255,12 +242,6 @@ transform: scale(1.1);
 #container1{
   position: relative;
   left: 50%;
-}
-.contTorrImp{
-  display: flex; 
-  flex-direction: column; 
-  align-items:center;
-  margin-left: 277px; 
 }
 .tintero{
   display: flex; 
@@ -3104,6 +3085,7 @@ elemento.visible {
   width: 100%;
   top: 15%;
   left: 1%;
+  display: none;
 }
 #contenedor-7-VII,
 #contenedor-7-VI,
@@ -3274,87 +3256,27 @@ elemento.visible {
     top: 24%;
     display: none;
   }
-  /*//////////////////////////////////////////////////////////////////////////////////////  CONTENEDORES IZQUIERDOS  ////*/
-  #desbobinadorId{
-    position: absolute;
-    display: flex;
-    margin-left: 1%;
-    flex-direction: column;
-    width: 18%; /* 70% - 52% = 18% */
-    height: 50%;
-  }
-  #cont-Verticales1{
-    position: absolute;
-    flex-direction: column;
-    display: flex;
-    top: 2%;
-    width: 70%;
-    padding-left: 20px;
-  }
-  #uTeñidos{
-    position: absolute;
-    display: flex;
-    margin-left: 20%;
-    flex-direction: column;
-    width: 18%; /* 70% - 52% = 18% */
-    height: 50%;
-  }
-  #cont-Verticales2{
-    position: absolute;
-    flex-direction: column;
-    display: flex;
-    top: 2%;
-    width: 55%;
-    padding-left: 20px;
-  }
-  #alimentadorId{
-    position: absolute;
-    display: flex;
-    margin-left: 40%;
-    flex-direction: column;
-    width: 18%; /* 70% - 52% = 18% */
-    height: 50%;
-  }
-  #cont-Verticales33{
-    position: absolute;
-    flex-direction: column;
-    display: flex;
-    top: 2%;
-    width: 55%;
-    padding-left: 20px;
-  }
-  #unidProceso{
-    position: absolute;
-    display: flex;
-    margin-left: 59%;
-    flex-direction: column;
-    width: 18%; /* 70% - 52% = 18% */
-    height: 50%;
-  }
+  #desbobinadorId,
+  #uTeñidos,
+  #alimentadorId,
+  #unidProceso,
+  #rebobinador{
+  position: relative;
+  padding-right: 77px;
+}
+  #cont-Verticales1,
+  #cont-Verticales2,
+  #cont-Verticales33,
+  #cont-Verticales8,
   #cont-Verticales7{
     position: absolute;
     flex-direction: column;
     display: flex;
-    top: 2%;
+    margin-top:19%;
     width: 55%;
     padding-left: 20px;
-  }
-  #rebobinador{
-    position: absolute;
-    display: flex;
-    margin-left: 78%;
-    flex-direction: column;
-    width: 18%; /* 70% - 52% = 18% */
-    height: 50%;
-  }
-  #cont-Verticales8{
-    position: absolute;
-    flex-direction: column;
-    display: flex;
-    top: 2%;
-    width: 55%;
-    padding-left: 20px;
-  }
+ }
+
   .boton-e,
   .boton-c {
     position: relative;
@@ -3403,27 +3325,39 @@ elemento.visible {
   }
  /*//////////////////////////////////////////////////////////////////////////////////////////*/
   #toggleVideoButton{
-    position: relative;
-    top:33%;
+    position: absolute;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+    top:34%;
     left: 25%;  
     height: 27px;
     width: 211px;
-    font-size: 10px;  
-  } 
+    font-size: 10px;     
+    justify-content: center;
+    background-color: rgb(255, 24, 55);
+    color: white;
+    transition: transform 0.1s;
+  
+  }
+  #sis-humedad,
+  #bancada-torre,
+  #bateria-entintado,
+  #tinter-o{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    top: 6%;
+    margin-right: 25%;
+ }
+
   .torre-imp{
     position: absolute;  
     display: flex;
     height: 57%;
     width: 100%;
-    top: 32%;
-    left: 1%;
-  }
-  .contTorrImp{
-    position: relative;
-    display: flex;
-    top: -2%;
-    left: 67%;
-    height: 100%;
+    top:36%;
+    left: 3%;
   }
   #rotatek-1{
     position: relative;
@@ -3432,7 +3366,27 @@ elemento.visible {
     left: 67%;
     height: 100%;
   }
+  #cont-Verticales22,
+  #cont-Verticales3,
+  #cont-Verticales4,
+  #cont-Verticales6{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2px;
+    top: 9%;
+  }
+  #bancada-torre-II{
+    position: absolute;
+    left: 170px;
+    top: 6px;
+    display: none;
+  }
   .boton-d{
+    position: absolute;
+    display: flex;
+    margin-left: 12%;
+    margin-top: 13%;
     height: 27px;
     width: 60px;
     background: linear-gradient(45deg, rgba(0,250,0) 15%,  rgb(0,255,0,0.077) 85%);                       
@@ -3443,85 +3397,7 @@ elemento.visible {
     cursor: pointer; 
     transition: transform 0.1s;
   } 
-  #tinter-o{
-    position: relative;
-    display: flex;
-    left: 10%;
-    top: 1%;
-    width: 10%;
-    height: 100%;
-    flex-direction: column;
-  }
-  #cont-Verticales22{
-    position: absolute;
-    left: 6%;
-  }
-  #bateria-entintado{
-    position: relative;
-    display: flex;
-    left: 22%;
-    top: 1%;
-    width: 10%;
-    height: 100%;
-    flex-direction: column;
-  }
-  #cont-Verticales3{
-    position: absolute;
-    left: 6%;
-  }
-  #bancada-torre{
-    position: relative;
-    display: flex;
-    left: 34%;
-    top: 1%;
-    width: 10%;
-    height: 100%;
-    flex-direction: column;
-  }
-  #bancada-torre-II{
-    position: absolute;
-    left: 170px;
-    top: 6px;
-    display: none;
-  }
-  #cont-Verticales4{
-    position: absolute;
-    left: 6%;
-  }
-  #sis-humedad{
-    position: relative;
-    display: flex;
-    left: 46%;
-    top: 1%;
-    width: 10%;
-    height: 100%;
-    flex-direction: column;
-  }
-  #cont-Verticales6{
-    position: absolute;
-    left: 6%;
-  }
-  /*//////////////////////////////////////////////////////////////////////////////////////  BOTONES VERDES  ////*/
-  #tinteroButton{
-    position: absolute;
-    left: 6%;
-    top: 8%;
-  }
-  #bateriaButton{
-    position: absolute;
-    left: 8%;
-    top: 8%;
-  }
-  #bancadaButton{
-    position: absolute;
-    left: 9%;
-    top: 8%;
-  }
-  #humedadButton{
-    position: absolute;
-    left: 10%;
-    top: 8%;
-  }
+
   /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
   #conti-boton-desb{
     position: absolute;
@@ -3673,7 +3549,6 @@ elemento.visible {
     top: -5%;
     height: 257px;
   }
-
   #balineras{
     position: absolute;
     top: -10%;

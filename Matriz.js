@@ -9216,7 +9216,7 @@ function moverMA() {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('pantalla-inicial')
+  var contiBoton = document.getElementById('tinteroButton')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
