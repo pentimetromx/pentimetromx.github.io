@@ -691,7 +691,7 @@ function muestraRodillo (vidElem, imgCont) {
       }
       } 
       if (screenWidth < 500) { 
-        var elementosExcluidos = ['sector-distribuidor','butt-repuestos','container01','links-iniciales','links-inicialesI','contene-images','images-distribuidor','bateria-entintado-II','contenedor-7-II','videosTraining','videos-training','conti-video-distribuidor','videoElement2']; 
+        var elementosExcluidos = ['sector-distribuidor','conti-boton-repuestos','butt-repuestos','container01','links-iniciales','links-inicialesI','contene-images','images-distribuidor','bateria-entintado-II','contenedor-7-II','videosTraining','videos-training','conti-video-distribuidor','videoElement2']; 
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i]) 
           if (elemento) {
@@ -9284,7 +9284,7 @@ function restablecerEstilos(elemento) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('conti-video-distribuidor')
+  var contiBoton = document.getElementById('butt-repuestos')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
