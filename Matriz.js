@@ -817,15 +817,15 @@ function muestraRodillo (vidElem, imgCont) {
 
     break;  
     case 'videoElement5' :
-      var contimgCase = document.getElementById('images-smed')
-      buttRepuest.style.display='block'
-      contimgCase.style.display = 'flex'
-
-      var imagesCase = document.getElementsByClassName('img-propil')
-      // Recorre las imágenes y las muestra
-      for (let i = 0; i < imagesCase.length; i++) {
-        imagesCase[i].style.display = 'flex' // Muestra cada imagen
+      var elementosExcluidos = ['sector-smed','contenedor-7-VII','container01','links-iniciales','links-inicialesI']; 
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i]) 
+        if (elemento) {
+          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
+        }
       }
+
       setTimeout(() => {
         applyImageEffects()
       }, 200) // Retardo de 0.9 segundos (900 milisegundos)      
@@ -841,10 +841,29 @@ function muestraRodillo (vidElem, imgCont) {
         }
       }
 
-    break;        
+    break; 
+    case 'videoElement6' :
+      var elementosExcluidos = ['sector-smed','contenedor-7-VII','container01','links-iniciales','links-inicialesI']; 
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i]) 
+        if (elemento) {
+          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
+        }
+      }
+    break;  
+    case 'videoElement7' :
+      var elementosExcluidos = ['sector-smed','contenedor-7-VII','container01','links-iniciales','links-inicialesI']; 
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i]) 
+        if (elemento) {
+          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
+        }
+      }
+    break;
     default:
   }
-
 }
 function muestraHumedad() {
   var contImgsIsopropil = document.getElementById('imgsIsopropil')

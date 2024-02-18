@@ -498,7 +498,7 @@
       <div class="desbobinador" id="desbobinadorId">
         <button class="boton-b btn-bloque" id="boton1" onclick="cierraContenedores('desbobinadorId')">DESBOBINADOR</button><br>
         <div class="contene-7" id="cont-Verticales1">
-          <div class="linea-vertical"></div>
+          <div class="linea-vertical-33"></div>
           <button id="boton2" class="boton-c aumentarc" onclick="lubricacion('boton2','boton1')">Lubricacion<div class="linea-horizontal"></div></button>
           <button id="boton3" class="boton-c aumentarc" onclick="lubricacion('boton3','boton1')">Freno<div class="linea-horizontal"></div></button>
           <button id="boton4" class="boton-c aumentarc" onclick="lubricacion('boton4')">Bailarina<div class="linea-horizontal"></div></button>
@@ -510,7 +510,7 @@
       <div class="uTeñido" id="uTeñidos">  
         <button class="boton-b btn-bloque" id="boton7" onclick="cierraContenedores('uTeñido')">UNIDAD TEÑIDO</button><br>       
         <div class="contene-7" id="cont-Verticales2">
-          <div class="linea-vertical"></div>
+          <div class="linea-vertical-33"></div>
           <button class="boton-c" id="boton8" onclick="UnidadTeñido('boton8','boton7')">Sistema neumático<div class="linea-horizontal"></div></button>
           <button class="boton-c" id="boton9" onclick="UnidadTeñido('boton9','boton7')">Rodillería<div class="linea-horizontal"></div></button>
           <button class="boton-c" id="boton10" onclick="UnidadTeñido('boton10','boton7')">Circuito de alimentación<div class="linea-horizontal"></div></button>
@@ -522,7 +522,7 @@
       <div class="alimentadorId" id="alimentadorId">
         <button class="boton-b btn-bloque" id="boton13" onclick="cierraContenedores('alimentadorId')">ALIMENTADOR</button><br> 
         <div class="contene-7" id="cont-Verticales33">
-          <div class="linea-vertical"></div>
+          <div class="linea-vertical-33"></div>
           <button class="boton-c" id="boton14" onclick="UnidadAlimenta('boton14','boton13')">Estructura<div class="linea-horizontal"></div></button>
           <button class="boton-c" id="boton15"  onclick="UnidadAlimenta('boton15','boton13')">Sistema planetario<div class="linea-horizontal"></div></button>
           <button class="boton-c" id="boton16"  onclick="UnidadAlimenta('boton16','boton13')">Ajuste mecanico<div class="linea-horizontal"></div></button>
@@ -534,7 +534,7 @@
       <div class="unidProceso" id="unidProceso">  
         <button class="boton-b btn-bloque" id="boton19" onclick="cierraContenedores('unidProceso')">UNIDAD DE PROCESO</button><br>  
         <div class="contene-7" id="cont-Verticales7">
-          <div class="linea-vertical"></div>
+          <div class="linea-vertical-33"></div>
           <button class="boton-c" id="boton20" onclick="UnidadProceso('boton20','boton19')">Rodillos de transporte<div class="linea-horizontal"></div></button>
           <button class="boton-c" id="boton21" onclick="UnidadProceso('boton21','boton19')">Función y ensamble<div class="linea-horizontal"></div></button>
           <button class="boton-c" id="boton22" onclick="UnidadProceso('boton22','boton19')">Anillos perforadores<div class="linea-horizontal"></div></button>
@@ -546,7 +546,7 @@
       <div class="rebobinador" id="rebobinador">
         <button class="boton-b btn-bloque" id="boton25" onclick="cierraContenedores('rebobinador')">REBOBINADOR</button><br>                     
         <div class="contene-7"  id="cont-Verticales8">
-          <div class="linea-vertical"></div>
+          <div class="linea-vertical-33"></div>
           <button class="boton-c" id="boton26" onclick="UnidadRebonina('boton26','boton25')">Estructura<div class="linea-horizontal"></div></button>
           <button class="boton-c" id="boton27" onclick="UnidadRebonina('boton27','boton25')">Sistema planetario<div class="linea-horizontal"></div></button>
           <button class="boton-c" id="boton28" onclick="UnidadRebonina('boton28','boton25')">Ajuste mecanico<div class="linea-horizontal"></div></button>
@@ -679,7 +679,7 @@
 
       </div>
     </div>
-    <div id="pantalla-frente" style="display: none;">  
+    <div id="pantalla-frente">  
 
       <div id="imgsRepuestos-II">
         <img src="./assets/eje.jpg" alt="eje">
@@ -704,7 +704,7 @@
     <div id="pantalla-mandos" style="display: none;">
 
       <div id="imgsRepuestos-III">
-        <img class="image-trainings rep-izquierda" src="./assets/sprocket.jpg" alt="ejes">
+        <img class="image-trainings image-training rep-izquierda" src="./assets/sprocket.jpg" alt="ejes">
         <img class="image-trainings rep-izquierda" src="./assets/cadena.jpg" alt="ejes">
         <img class="image-trainings rep-izquierda" src="./assets/acople cardan.jpg" alt="ejes">
         <img class="image-trainings rep-izquierda" src="./assets/acople.jpg" alt="ejes">
@@ -777,17 +777,19 @@
     </div> 
     
     <div id="sector-distribuidor">
-      <div id="contenedor-7-V" class="contene-7"> 
+      <div id="contenedor-7-V" class="contene-botones"> 
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement2','images-distribuidor')">Montaje distribuidor<div class="linea-horizontal"></div></button>                
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement3','images-entintador')">Montaje entintador delantero <div class="linea-horizontal"></div></button>  
         <button class="boton-f bot-entre" onclick="muestraRodillo('plate-smed','images-entintador')">Montaje entintador medio <div class="linea-horizontal"></div></button>  
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement5')">Montaje entintador trasero<div class="linea-horizontal"></div></button>                
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement6')">Montaje tomador <div class="linea-horizontal"></div></button>  
-        <button class="boton-f bot-entre">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement7')">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
       </div>
+
       <div id="conti-video-distribuidor">
         <video class="video-training" id="videoElement2" src="./assets/Montaje distribuidor.mp4" height="400px" loop></video>
       </div>
+
       <div id="images-distribuidor" class="images-training">
         <img class="image-training image-trainings" id="imageElement" src="./assets/Distri-2.jpg" alt="Entintador"><br>
         <img class="image-training image-trainings" id="imageElement2" src="./assets/Distri-6.jpg" alt="Rodamiento entintador"><br>
@@ -795,20 +797,22 @@
         <img class="image-training image-trainings" id="imageElement4" src="./assets/DIstri-12.jpg" alt="Tornillo lupa"><br>
         <img class="image-training image-trainings" id="imageElement5" src="./assets/Distri-11.jpg" alt="Tuerca lupa"><br>
       </div>
+
       <div id="conti-boton-repuestos">
         <button class="butt-partes" id="butt-repuestos">PARTES  /  REPUESTOS</button>
       </div>
+
     </div>
 
 
     <div id="sector-entintador">
-      <div id="contenedor-7-VI" class="contene-7"> 
+      <div id="contenedor-7-VI" class="contene-botones"> 
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement2','images-distribuidor')">Montaje distribuidor<div class="linea-horizontal"></div></button>                
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement3','images-entintador')">Montaje entintador delantero <div class="linea-horizontal"></div></button>  
         <button class="boton-f bot-entre" onclick="muestraRodillo('plate-smed','images-entintador')">Montaje entintador medio <div class="linea-horizontal"></div></button>  
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement5')">Montaje entintador trasero<div class="linea-horizontal"></div></button>                
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement6')">Montaje tomador <div class="linea-horizontal"></div></button>  
-        <button class="boton-f bot-entre">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement7')">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
       </div>
       <div id="conti-video-entintador">
         <video class="video-training" id="videoElement3" src="./assets/Montaje entintador.mp4" height="400px" loop></video>
@@ -824,41 +828,29 @@
     </div>
 
     <div id="sector-smed">
-      <div id="contenedor-7-VII" class="contene-7"> 
+      <div id="contenedor-7-VII" class="contene-botones"> 
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement2','images-distribuidor')">Montaje distribuidor<div class="linea-horizontal"></div></button>                
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement3','images-entintador')">Montaje entintador delantero <div class="linea-horizontal"></div></button>  
         <button class="boton-f bot-entre" onclick="muestraRodillo('plate-smed','images-entintador')">Montaje entintador medio <div class="linea-horizontal"></div></button>  
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement5')">Montaje entintador trasero<div class="linea-horizontal"></div></button>                
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement6')">Montaje tomador <div class="linea-horizontal"></div></button>  
-        <button class="boton-f bot-entre">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement7')">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
       </div>
       <div id="conti-video-smed">
         <video class="video-training" id="plate-smed" src="./assets/plate smed.mp4" height="400px" autoplay loop></video>
       </div>
       <div id="images-smed" class="images-training" >   
-        <img class="image-training image-trainings image-trainings1" id="imageElement6" src="./assets/Entintador.png" alt="Entintador"><br>
-        <img class="image-training image-trainings image-trainings1" id="imageElement7" src="./assets/Rodamiento entintador.png" alt="Rodamiento entintador"><br>
+        <img class="image-training image-trainings image-trainings1" id="imageElement11" src="./assets/dobladora.png" alt="Entintador"><br>
+        <img class="image-training image-trainings image-trainings1" id="imageElement22" src="./assets/instrumento.png" alt="Rodamiento entintador"><br>
+        <img class="image-training image-trainings image-trainings1" id="imageElement33" src="./assets/vinil.png" alt="Rodamiento entintador"><br>
+        <img class="image-training image-trainings image-trainings1" id="imageElement44" src="./assets/rodillos prensa.png" alt="Rodamiento entintador"><br>
+        <img class="image-training image-trainings image-trainings1" id="imageElement55" src="./assets/medidor.jfif" alt="Rodamiento entintador"><br>
       </div>
       <div id="conti-boton-repuestos-II">
         <button class="butt-partes" id="butt-repuestos-II">PARTES  /  REPUESTOS</button>
       </div>      
     </div>
 
-
-       
-<!--     <div id="contene-images">
-
-      <button class="butt-partes" id="butt-repuestos">PARTES  /  REPUESTOS</button>
-
-      <div id="images-smed" class="images-training">
-        <img class="image-trainings img-propil" id="imageElement11" src="./assets/multimetro.png" alt="Entintador"><br>
-        <img class="image-trainings img-propil" id="imageElement22" src="./assets/plancha litografica.png" alt="Rodamiento entintador"><br>
-        <img class="image-trainings img-propil" id="imageElement33" src="./assets/instrumento.png" alt="Lupa"><br>
-        <img class="image-trainings img-propil" id="imageElement44" src="./assets/rodillos prensa.png" alt="Tornillo lupa"><br>
-        <img class="image-trainings img-propil" id="imageElement55" src="./assets/vinil.png" alt="Tuerca lupa"><br>
-      </div> 
-
-    </div> --> 
     <div id="conteneMantaut" class="mantAuto">
 
       <div class="conti-boton" id="conti-boton">
@@ -1428,37 +1420,37 @@
 
     <div id="bateria-entintado-II">
 
-      <div id="contenedor-7-IV" class="contene-7"> 
+      <div id="contenedor-7-IV" class="contene-botones"> 
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement2','images-distribuidor')">Montaje distribuidor<div class="linea-horizontal"></div></button>                
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement3','images-entintador')">Montaje entintador delantero <div class="linea-horizontal"></div></button>  
         <button class="boton-f bot-entre" onclick="muestraRodillo('plate-smed','images-entintador')">Montaje entintador medio <div class="linea-horizontal"></div></button>  
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement5')">Montaje entintador trasero<div class="linea-horizontal"></div></button>                
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement6')">Montaje tomador <div class="linea-horizontal"></div></button>  
-        <button class="boton-f bot-entre">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement7')">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
       </div>
-      <div id="contenedor-7-III" class="contene-7"> 
+      <div id="contenedor-7-III" class="contene-botones"> 
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement2','images-distribuidor')">Montaje distribuidor<div class="linea-horizontal"></div></button>                
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement3','images-entintador')">Montaje entintador delantero <div class="linea-horizontal"></div></button>  
         <button class="boton-f bot-entre" onclick="muestraRodillo('plate-smed','images-entintador')">Montaje entintador medio <div class="linea-horizontal"></div></button>  
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement5')">Montaje entintador trasero<div class="linea-horizontal"></div></button>                
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement6')">Montaje tomador <div class="linea-horizontal"></div></button>  
-        <button class="boton-f bot-entre">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement7')">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
       </div>
-      <div id="contenedor-7-II" class="contene-7"> 
+      <div id="contenedor-7-II" class="contene-botones"> 
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement2','images-distribuidor')">Montaje distribuidor<div class="linea-horizontal"></div></button>                
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement3','images-entintador')">Montaje entintador delantero <div class="linea-horizontal"></div></button>  
         <button class="boton-f bot-entre" onclick="muestraRodillo('plate-smed','images-entintador')">Montaje entintador medio <div class="linea-horizontal"></div></button>  
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement5')">Montaje entintador trasero<div class="linea-horizontal"></div></button>                
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement6')">Montaje tomador <div class="linea-horizontal"></div></button>  
-        <button class="boton-f bot-entre">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement7')">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
       </div>      
-      <div id="contenedor-7" class="contene-7"> 
+      <div id="contenedor-7" class="contene-botones"> 
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement2','images-distribuidor')">Montaje distribuidor<div class="linea-horizontal"></div></button>                
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement3','images-entintador')">Montaje entintador delantero <div class="linea-horizontal"></div></button>  
         <button class="boton-f bot-entre" onclick="muestraRodillo('plate-smed','images-entintador')">Montaje entintador medio <div class="linea-horizontal"></div></button>  
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement5')">Montaje entintador trasero<div class="linea-horizontal"></div></button>                
         <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement6')">Montaje tomador <div class="linea-horizontal"></div></button>  
-        <button class="boton-f bot-entre">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
+        <button class="boton-f bot-entre" onclick="muestraRodillo('videoElement7')">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
       </div>
       <div id="video-entintado">  
         <video class="video-training" id="videoElement1-II" src="./assets/Bateria de entintado.mp4" autoplay loop></video>  

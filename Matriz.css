@@ -464,13 +464,23 @@ margin-right: 5px;
 }
 .linea-vertical {
   position: absolute;
-  left: 10px;
+  left: 0.5px;
   top: 0;
   bottom: 0;
   width: 2px;
   background-color: white;
   content: "";
 }
+.linea-vertical-33 {
+  position: absolute;
+  left: 7px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: white;
+  content: "";
+}
+
 .linea-vertical-II{
   position: absolute;
   left: 340px;
@@ -1627,6 +1637,12 @@ width:447px ;
   border-radius: 20px;
   padding: 7px;
 }
+.contene-botones{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: -0.1%;
+}
 
 #contPortManta,
 #contImpresor,
@@ -2339,8 +2355,8 @@ elemento.visible {
 }
 #bateria-entintado-II{
   position: relative;
-  left:-1%;
-  top: 4%;
+  left:0.6%;
+  top: 13.1%;
   display: none;
 }
 #bateria-entintado-II video{
@@ -2350,7 +2366,7 @@ elemento.visible {
 #video-entintado{
   position: absolute; 
   left: 357px;
-  top: 80px;
+  top: 27px;
 }
 #contenedor-7{
   position: absolute;
@@ -3092,7 +3108,6 @@ elemento.visible {
 #contenedor-7-V{
   position: absolute;
   transition: transform 1.6s ease;
-  left:-1%;
 }
 #conti-video-smed,
 #conti-video-entintador,
@@ -3373,7 +3388,6 @@ elemento.visible {
     position: absolute;
     display: flex;
     flex-direction: column;
-    padding-left: 2px;
     top: 9%;
   }
   #bancada-torre-II{
@@ -3905,14 +3919,15 @@ elemento.visible {
     display: flex;
     top: 17%;
     left: 0%;
+    display: none;
   }
   #imgsRepuestos-V,
   #imgsRepuestos-IV,
   #imgsRepuestos-III,
   #imgsRepuestos-II{
     position: absolute;
-    display: flex;
     flex-direction: column;
+    display: flex;
     margin-top: 55%;
     margin-left: 13%; 
   }
@@ -3965,10 +3980,16 @@ elemento.visible {
     width: 90px;
   }
   #video-entintado{ /* HIJO-PADRE DE VIDEO */
-    position: relative; 
+    position: relative;
+    transition: transform 1.6s ease;
     left:-0.5%;
     top: 4%;
-    }
+    height: 37%;
+  }
+/*   #video-entintado{
+    transition: transform 1.6s ease;
+  } */
+  
   /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
   #agrupaOblicuos,
   #agrupaOblicuos-II,
@@ -4513,28 +4534,13 @@ elemento.visible {
     display: none;  
     transition: transform 1.6s ease;
   }
+  #contenedor-7-II,
+  #contenedor-7-III,
+  #contenedor-7-IV,
   #contenedor-7{
     position: absolute;
     top: 4%;
-    left: 38%;
-    transition: transform 1.6s ease;
-  }
-  #contenedor-7-II{
-    position: absolute;
-    top: 4%;
-    left: 38%;
-    transition: transform 1.6s ease;
-  }
-  #contenedor-7-III{
-    position: absolute;
-    top: 4%;
-    left: 38%;
-    transition: transform 1.6s ease;
-  }
-  #contenedor-7-IV{
-    position: absolute;
-    top: 4%;
-    left: 38%;
+    left: 43%;
     transition: transform 1.6s ease;
   }
   #images-smed{
@@ -4552,15 +4558,12 @@ elemento.visible {
     margin-top: 87%;
     margin-left: 3%;
   }
-  #video-entintado{
-    transition: transform 1.6s ease;
-  }
   /* primer evento   */
   .move-up-left {
     transform: translateY(277px) translateX(101px); 
   }
   .move-up{
-    transform: translateY(167px) translateX(-294px); 
+    transform: translateY(167px) translateX(-307px); 
   }
   /* segundo evento   */
   .move-up-II{
