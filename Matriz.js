@@ -3,6 +3,7 @@ const coleccion = document.querySelectorAll('.desbobinador, .desbobinador-I, .uT
 var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 var contImgsDistribuidor = document.getElementById("images-distribuidor")
 var contImgsEntintador = document.getElementById("images-entintador")
+var contiVidDistribuidor = document.getElementById('conti-video-distribuidor')
 
 var padreImgsDistribuidor = document.getElementById("contene-images") 
 var contiBotsDesbobina = document.getElementById('conti-boton-desb')
@@ -690,7 +691,7 @@ function muestraRodillo (vidElem, imgCont) {
       }
       } 
       if (screenWidth < 500) { 
-        var elementosExcluidos = ['butt-repuestos','container01','links-iniciales','links-inicialesI','contene-images','images-distribuidor','bateria-entintado-II','contenedor-7-II','videosTraining','videos-training','videoElement2']; 
+        var elementosExcluidos = ['sector-distribuidor','butt-repuestos','container01','links-iniciales','links-inicialesI','contene-images','images-distribuidor','bateria-entintado-II','contenedor-7-II','videosTraining','videos-training','conti-video-distribuidor','videoElement2']; 
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i]) 
           if (elemento) {
@@ -700,6 +701,10 @@ function muestraRodillo (vidElem, imgCont) {
         }
         contImgsDistribuidor.style.marginTop = ''
         buttRepuest.style.marginTop = ''
+        
+        contiBateriaEntinta.style.height= '222px'
+        contiBateriaEntinta.style.width = '222px'
+
         contibotsDistriII.classList.remove('move-up-II')
         contImgsDistribuidor.classList.remove('move-down-right')
         buttRepuest.classList.remove('move-button','move-button-III')
@@ -9232,10 +9237,54 @@ function moverMA() {
   }
 }
 
+// COMBINACION TECLAS EJECUTA FUNCION
+document.addEventListener('keydown', function(event) {
+  if (event.ctrlKey && event.shiftKey) {
+    switch (event.key) {
+      case 'Z':
+          changeButtonStyles('bateria-entintado-II', 'contene-7')
+          muestraRodillo('videoElement2','images-distribuidor')
+      
+      break;
+    }
+  }
+});
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// EVENTOS DINAMICOS MOVER CONTENEDORES
+document.getElementById('iniciar').addEventListener('click', function() {
+  contibotsDistri.classList.toggle('move-down')
+  contVideo.classList.toggle('move-down-I')
+});
+function transicionElementos() {
+  contibotsDistri.classList.add('move-up')
+  contVideo.classList.add('move-up-left')
+}
+function transicionElementosII() {
+  contibotsDistriII.classList.add('move-up-II')
+  contImgsDistribuidor.classList.add('move-down-right') 
+  buttRepuest.classList.add('move-button') 
+  contiVidDistribuidor.classList.add('move-video')    
+}
+function transicionElementosIII() {
+  contibotsDistriIII.classList.add('move-up-III')
+  contImgsEntintador.classList.add('move-down-right-III') 
+  buttRepuest.classList.add('move-button-III') 
+
+} 
+function restablecerEstilos(elemento) {
+  // Eliminar estilos en línea
+  elemento.removeAttribute('style');
+
+  // Asegurarse de que no haya clases que apliquen estilos no deseados
+  elemento.className = '';
+
+  // Agregar la clase que define el lugar desde CSS
+  elemento.classList.add('clase-contenedor-7');  // Ajusta el nombre de la clase según tu caso
+}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('tinteroButton')
+  var contiBoton = document.getElementById('conti-video-distribuidor')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
@@ -9258,52 +9307,3 @@ function soloEnsayo(){
   contVideo.classList.add('move-up-left')
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// COMBINACION TECLAS EJECUTA FUNCION
-document.addEventListener('keydown', function(event) {
-  if (event.ctrlKey && event.shiftKey) {
-    switch (event.key) {
-      case 'Z':
-        abrirSeccionContinua('pantalla-inicial')
-      break;
-      case 'B':
-        /* obtenerGeometria(); */
-        muestraRodillo('videoElement2','images-distribuidor')
-      break;
-      case 'H':
-        /* obtenerGeometria(); */
-        muestraRodillo('videoElement3','images-entintador')
-      break;
-    }
-  }
-});
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// EVENTOS DINAMICOS MOVER CONTENEDORES
-document.getElementById('iniciar').addEventListener('click', function() {
-  contibotsDistri.classList.toggle('move-down')
-  contVideo.classList.toggle('move-down-I')
-});
-function transicionElementos() {
-  contibotsDistri.classList.add('move-up')
-  contVideo.classList.add('move-up-left')
-}
-function transicionElementosII() {
-  contibotsDistriII.classList.add('move-up-II')
-  contImgsDistribuidor.classList.add('move-down-right') 
-  buttRepuest.classList.add('move-button')     
-}
-function transicionElementosIII() {
-  contibotsDistriIII.classList.add('move-up-III')
-  contImgsEntintador.classList.add('move-down-right-III') 
-  buttRepuest.classList.add('move-button-III') 
-
-} 
-function restablecerEstilos(elemento) {
-  // Eliminar estilos en línea
-  elemento.removeAttribute('style');
-
-  // Asegurarse de que no haya clases que apliquen estilos no deseados
-  elemento.className = '';
-
-  // Agregar la clase que define el lugar desde CSS
-  elemento.classList.add('clase-contenedor-7');  // Ajusta el nombre de la clase según tu caso
-}

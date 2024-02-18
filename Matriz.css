@@ -3115,6 +3115,7 @@ elemento.visible {
   position: absolute;
   display: flex;
   left: 28%;
+  transition: transform 1.6s ease;
 }
 #images-smed,
 #images-entintador,
@@ -4567,13 +4568,16 @@ elemento.visible {
   }
   /* segundo evento   */
   .move-up-II{
-    transform: translateY(187px) translateX(-281px); 
+    transform: translateY(207px) translateX(-97px); 
   }
   .move-down-right{
-    transform: translateY(587px) translateX(17px);
+    transform: translateY(477px) translateX(222px);
   }
   .move-button{
-    transform: translateY(144px) translateX(25px);
+    transform: translateY(144px) translateX(1px);   
+  }
+  .move-video{
+    transform: translateX(-107px);  
   }
   /* tercer evento   */
   .move-up-III{
