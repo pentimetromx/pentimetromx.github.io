@@ -3973,8 +3973,10 @@ elemento.visible {
   }
   #images-entintador{
     position: relative;
-    margin-top: 25px;
-    left: 25%;
+    display: flex;
+    height: 200px;
+    margin-top: -397px;
+    left: 73%;
     transition: transform 1.6s ease;
   }
   #images-entintador img{ 
@@ -4519,6 +4521,13 @@ elemento.visible {
     z-index: -1;
 
   }
+  #conti-boton-repuestos-I{
+    position: absolute;
+    display: flex;
+    top: -28%;
+    left: 68%;
+  }
+  #butt-repuestos-I,
   #butt-repuestos{
     position: fixed;
     display: flex;
@@ -4559,6 +4568,18 @@ elemento.visible {
     margin-top: 87%;
     margin-left: 3%;
   }
+  #conti-video-entintador{
+    position: absolute;
+    display: flex;
+    left: 111%;
+    transition: transform 1.6s ease;
+  }
+  #contenedor-7-VI{
+    position: absolute;
+    display: flex;
+    top: 80%;
+  }
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/  
   /* primer evento   */
   .move-up-left {
     transform: translateY(277px) translateX(101px); 
@@ -4581,14 +4602,19 @@ elemento.visible {
   }
   /* tercer evento   */
   .move-up-III{
-    transform: translateY(191px) translateX(-281px); 
+    transform: translateY(-397px) translateX(3px); 
   }
   .move-down-right-III{
-    transform: translateY(427px) translateX(1px);
+    transform: translateY(557px) translateX(-120px);
   }
   .move-button-III{
-    transform: translateY(137px) translateX(21px);
+    transform: translateY(494px) translateX(-127px);
   }
+  .move-vid-entintador{
+    transform: translateX(-367px) translateY(-20px);
+  }
+
+
 
 }
  
