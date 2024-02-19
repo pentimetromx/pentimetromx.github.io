@@ -342,15 +342,14 @@ function changeButtonStyles(elementId) {
           var elemento = document.getElementById(allContenedores[i]) 
           if (elemento) {
             // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+            elemento.style.marginTop = ''
+            elemento.style.marginLeft = ''
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
           }
         }
-        contibotsDistri.style.marginTop = ''
-        contibotsDistri.style.left = ''
+        /*contibotsDistri.style.marginTop = ''
         contVideo.style.marginTop = ''
-        contVideo.style.left = ''
-        contVid.style.marginTop = ''
-        contVid.style.left = ''
+        contVid.style.marginTop = ''*/
 
         contibotsDistri.classList.remove('move-up')
         contVideo.classList.remove('move-up-left')
@@ -709,14 +708,10 @@ function muestraRodillo (vidElem, imgCont) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
           }
         }
-        contImgsDistribuidor.style.marginTop = ''
+/*         contImgsDistribuidor.style.marginTop = ''
         contiVidDistribuidor.style.marginTop = ''
         contibotsDistriII.style.marginTop = ''
-        buttRepuest.style.marginTop = '' 
-        
-        contImgsDistribuidor.style.marginTop = '-456px'
-        contiBateriaEntinta.style.height= '222px'
-        contiBateriaEntinta.style.width = '222px'
+        buttRepuest.style.marginTop = '' */ 
 
         contibotsDistriII.classList.remove('move-up-II')
         contImgsDistribuidor.classList.remove('move-down-right')
@@ -730,7 +725,7 @@ function muestraRodillo (vidElem, imgCont) {
             video.style.display = 'none'
           }
         })
-        desplegarBotonesII()
+        /* desplegarBotonesII() */
       }
     break;
     case 'videoElement3':
@@ -766,10 +761,10 @@ function muestraRodillo (vidElem, imgCont) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
           }
         }
-        contibotsDistriIII.style.marginTop = ''        
+/*         contibotsDistriIII.style.marginTop = ''        
         contImgsEntintador.style.marginTop = ''
         contiVidEntintador.style.marginTop = ''
-        buttRepuestI.style.marginTop = ''
+        buttRepuestI.style.marginTop = '' */
 
         contibotsDistriIII.classList.remove('move-up-III')
         contImgsEntintador.classList.remove('move-down-right-III') 
@@ -9256,8 +9251,8 @@ document.addEventListener('keydown', function(event) {
     switch (event.key) {
       case 'Z':
           changeButtonStyles('bateria-entintado-II', 'contene-7')
-          muestraRodillo('videoElement2','images-distribuidor')
-          muestraRodillo('videoElement3','images-entintador')
+/*           muestraRodillo('videoElement2','images-distribuidor')
+          muestraRodillo('videoElement3','images-entintador') */
       
       break;
     }
@@ -9299,7 +9294,7 @@ function restablecerEstilos(elemento) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('contenedor-7')
+  var contiBoton = document.getElementById('contenedor-7-VI')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
