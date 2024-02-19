@@ -345,6 +345,13 @@ function changeButtonStyles(elementId) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
           }
         }
+        contibotsDistri.style.marginTop = ''
+        contibotsDistri.style.left = ''
+        contVideo.style.marginTop = ''
+        contVideo.style.left = ''
+        contVid.style.marginTop = ''
+        contVid.style.left = ''
+
         contibotsDistri.classList.remove('move-up')
         contVideo.classList.remove('move-up-left')
         contVid.style.display='block' 
@@ -713,7 +720,7 @@ function muestraRodillo (vidElem, imgCont) {
 
         contibotsDistriII.classList.remove('move-up-II')
         contImgsDistribuidor.classList.remove('move-down-right')
-        buttRepuest.classList.remove('move-button','move-button-III')
+        buttRepuest.classList.remove('move-button')
         contiVidDistribuidor.classList.remove('move-video')    
 
         videoElements.forEach(video => {
@@ -9292,7 +9299,7 @@ function restablecerEstilos(elemento) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('conti-boton-repuestos-I')
+  var contiBoton = document.getElementById('contenedor-7')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top

@@ -3982,17 +3982,13 @@ elemento.visible {
   #images-entintador img{ 
     width: 90px;
   }
-  #video-entintado{ /* HIJO-PADRE DE VIDEO */
+  #video-entintado{
     position: relative;
     transition: transform 1.6s ease;
     left:-0.5%;
-    top: 4%;
+    top: -57%;
     height: 37%;
   }
-/*   #video-entintado{
-    transition: transform 1.6s ease;
-  } */
-  
   /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
   #agrupaOblicuos,
   #agrupaOblicuos-II,
@@ -4549,7 +4545,7 @@ elemento.visible {
   #contenedor-7-IV,
   #contenedor-7{
     position: absolute;
-    top: 4%;
+    top: -70%;
     left: 43%;
     transition: transform 1.6s ease;
   }
@@ -4582,10 +4578,10 @@ elemento.visible {
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/  
   /* primer evento   */
   .move-up-left {
-    transform: translateY(277px) translateX(101px); 
+    transform: translateY(444px); 
   }
   .move-up{
-    transform: translateY(167px) translateX(-307px); 
+    transform: translateY(533px); 
   }
   /* segundo evento   */
   .move-up-II{
