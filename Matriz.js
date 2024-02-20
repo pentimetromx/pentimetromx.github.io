@@ -4,7 +4,13 @@ var screenWidth = window.innerWidth || document.documentElement.clientWidth || d
 var contImgsDistribuidor = document.getElementById("images-distribuidor")
 var contImgsEntintador = document.getElementById("images-entintador")
 var contiVidDistribuidor = document.getElementById('conti-video-distribuidor')
-var contiVidEntintador = document.getElementById('conti-video-entintador')  
+var contiVidEntintador = document.getElementById('conti-video-entintador') 
+
+var contImgsSmed = document.getElementById('images-smed')  
+var contiVidSmed = document.getElementById('conti-video-smed')
+var contibotsDistriV = document.getElementById('contenedor-7-VII')
+var buttRepuestIII = document.getElementById('conti-boton-repuestos-II')
+
 
 var padreImgsDistribuidor = document.getElementById("contene-images") 
 var contiBotsDesbobina = document.getElementById('conti-boton-desb')
@@ -98,9 +104,7 @@ const videoElements = document.querySelectorAll('.video-training')
 const video = document.getElementById("videoBackground")
 const imgsDistribuidor = document.getElementById('contImgDistribuidor')
 const imgsForma = document.getElementById('contImgEntintador')
-/* var toggleVideoButton = document.getElementById("toggleVideoButton") */
 const images = document.querySelectorAll('.image-training') 
-const imageElementsi = document.querySelectorAll('.image-training')
 const contImpresor = document.getElementById('contImpresor')
 const input = document.querySelectorAll('.input-class')
 const checks = document.querySelectorAll('.input-class')
@@ -345,10 +349,6 @@ function changeButtonStyles(elementId) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
           }
         }
-        /*contibotsDistri.style.marginTop = ''
-        contVideo.style.marginTop = ''
-        contVid.style.marginTop = ''*/
-
         contibotsDistri.classList.remove('move-up')
         contVideo.classList.remove('move-up-left')
         contVid.style.display='block' 
@@ -814,9 +814,14 @@ function muestraRodillo (vidElem, imgCont) {
             video.style.display = 'none' 
             video.pause() 
           }
-          }    
+          }
+          
+          contImgsSmed.classList.remove('move-images-III')  
+          contiVidSmed.classList.remove('move-vid-smed')
+          contibotsDistriV.classList.remove('move-butts-III')
+          buttRepuestIII.classList.remove('move-repuest-III')
 
-        /* desplegarBotonesIV() */    
+          desplegarBotonesIV()  
       }
 
     break;  
@@ -7591,7 +7596,7 @@ images.forEach(image => {
   })
 })
 // Iterar a través de las imágenes y agregar eventos de mouse
-imageElementsi.forEach((image, index) => {
+images.forEach((image, index) => {
   // Añadir el evento de aumento de tamaño al hacer clic
   image.addEventListener('click', () => {
     // Guardar el tamaño original para volver a él después
@@ -9273,11 +9278,10 @@ function transicionElementosIII() {
   contiVidEntintador.classList.add('move-vid-entintador') 
 } 
 function transicionElementosIV(){
-  contibotsDistriIV.classList.add('move-butts-III')
+  contibotsDistriV.classList.add('move-butts-III')
   contImgsSmed.classList.add('move-images-III') 
-  buttRepuestII.classList.add('move-repuest-III')
+  buttRepuestIII.classList.add('move-repuest-III')
   contiVidSmed.classList.add('move-vid-smed') 
-
 }
 
 function restablecerEstilos(elemento) {
