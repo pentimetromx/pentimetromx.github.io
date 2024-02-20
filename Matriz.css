@@ -4601,7 +4601,7 @@ elemento.visible {
     transition: transform 1.6s ease;
   }
   #images-distribuidor img{
-    margin-bottom: 7px;    
+    margin-bottom: 1px;    
     height: 50px;
   }
 
@@ -4629,10 +4629,10 @@ elemento.visible {
     transform: translateY(-727px); 
   }
   .move-repuest{
-    transform: translateY(290px) translateX(-109px); 
+    transform: translateY(303px) translateX(-109px); 
   }
   .move-images{
-    transform: translateY(847px) translateX(-107px); 
+    transform: translateY(870px) translateX(-107px); 
   }  
   /* tercer evento //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
   .move-repuest-II{
