@@ -783,8 +783,7 @@ function muestraRodillo (vidElem, imgCont) {
       }
       setTimeout(() => {
         applyImageEffects3()
-      }, 277) 
-           
+      }, 277)            
       for (const video of videoElements) {
         if (video.id === vidElem) {
           video.style.display = 'flex'
@@ -794,8 +793,7 @@ function muestraRodillo (vidElem, imgCont) {
           video.style.display = 'none' 
           video.pause() 
         }
-        }
-      
+        }      
       if (screenWidth < 500) {
         var elementosExcluidos = ['sector-smed','conti-boton-repuestos-II','butt-repuestos-II','conti-video-smed','plate-smed','images-smed','contenedor-7-VII','container01','links-iniciales','links-inicialesI','videosTraining'];
         for (var i = 0; i < allContenedores.length; i++) { 
@@ -814,16 +812,13 @@ function muestraRodillo (vidElem, imgCont) {
             video.style.display = 'none' 
             video.pause() 
           }
-          }
-          
+          }          
           contImgsSmed.classList.remove('move-images-III')  
           contiVidSmed.classList.remove('move-vid-smed')
           contibotsDistriV.classList.remove('move-butts-III')
           buttRepuestIII.classList.remove('move-repuest-III')
-
           desplegarBotonesIV()  
       }
-
     break;  
     case 'videoElement5' :
       var elementosExcluidos = ['sector-smed','contenedor-7-VII','container01','links-iniciales','links-inicialesI']; 

@@ -4624,8 +4624,7 @@ elemento.visible {
     top: -42.5%;
     left: 43%;
     transition: transform 1.6s ease;
-    }
-  
+    }  
     .smed-style {
       cursor: pointer;
       border-radius: 11px;
@@ -4644,9 +4643,7 @@ elemento.visible {
     } 
     .smed-style:hover {
       transform: scale(1.1);
-    }
-
-  
+    }  
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/  
   /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
   .move-up-left {
@@ -4686,7 +4683,7 @@ elemento.visible {
     transform: translateY(613px); 
   }
   .move-images-III{
-    transform: translateY(-644px);
+    transform: translateY(-190%);
   }
   .move-butts-III{
     transform: translateY(790px);
@@ -4694,7 +4691,5 @@ elemento.visible {
   .move-vid-smed{
     transform: translateX(-407px);
   }
-
-
 }
  
