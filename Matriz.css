@@ -3085,13 +3085,11 @@ elemento.visible {
   border-radius: 9px; 
   box-shadow: none;
 }
-
-
 #plate-smed{
   position: absolute;
   display: flex;
+  height:400px;
 }
-
 #sector-smed,
 #sector-entintador,
 #sector-distribuidor{
@@ -3125,7 +3123,6 @@ elemento.visible {
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  display: none;
   left: 78%;
   top: 9%;
 }
@@ -3133,7 +3130,6 @@ elemento.visible {
   height: 80px;
   width: 147px;
   transition: transform 0.1s ease, filter 0.1s ease;
-  display: none;
   border-radius: 11px;
 }
 
@@ -4551,17 +4547,6 @@ elemento.visible {
     left: 42%;
     transition: transform 1.6s ease;
   } 
-
-  #images-smed{
-    position: absolute;
-    display: none;
-    top: -77px;
-    left: 29px;
-  }
-  #plate-smed{
-    position: relative;
-    margin-left: -117%;
-  }
   .clase-contenedor-7{
     position: absolute;
     margin-top: 87%;
@@ -4604,13 +4589,41 @@ elemento.visible {
     margin-bottom: 1px;    
     height: 50px;
   }
-
   #conti-boton-repuestos{
     position: absolute;
     display: flex;
     /* top: -20%; */
     left: 66%;
   }
+  #conti-video-smed{
+  position: relative;
+  display: flex;
+  transition: transform 1.6s ease;
+}
+#plate-smed{
+  position: absolute;
+  display: flex;
+  height:193px;
+}
+#contenedor-7-VII{
+  position: absolute;
+  left: 2%;
+  transition: transform 1.6s ease;
+}
+#images-smed{
+  position: absolute;
+  top: 7%;
+  left: 9%;
+}
+#images-smed img{
+  height: 80px;
+  width: 147px;
+  border-radius: 11px;
+  transition: transform 0.1s ease, filter 0.1s ease;
+}
+
+
+
 
   
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/  
@@ -4647,7 +4660,19 @@ elemento.visible {
   .move-vid-entintador{
     transform: translateX(-347px) translateY(30px);
   }
-
+  /* cuarto evento //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
+  .move-repuest-III{
+    transform: translateY(555px) translateX(-111px); 
+  }
+  .move-images-III{
+    transform: translateY(617px) translateX(-105px);
+  }
+  .move-butts-III{
+    transform: translateY(-537px) translateX(-1px);
+  }
+  .move-vid-smed{
+    transform: translateX(-347px) translateY(30px);
+  }
 
 
 }

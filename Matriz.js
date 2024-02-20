@@ -799,12 +799,13 @@ function muestraRodillo (vidElem, imgCont) {
         }
       
       if (screenWidth < 500) {
-        var elementosExcluidos = ['bancada-torre-II','plate-smed','butt-repuestos','container01','links-iniciales','links-inicialesI','contene-images','images-smed','bateria-entintado-II','contenedor-7','videosTraining','videos-training'];        for (var i = 0; i < allContenedores.length; i++) { 
-          var elemento = document.getElementById(allContenedores[i]) 
-          if (elemento) {
-            // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
-            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
-          }
+        var elementosExcluidos = ['sector-smed','conti-boton-repuestos-II','butt-repuestos-II','conti-video-smed','plate-smed','images-smed','contenedor-7-VII','container01','links-iniciales','links-inicialesI','videosTraining'];
+        for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i]) 
+        if (elemento) {
+          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
+        }
         }
         for (const video of videoElements) {
           if (video.id === vidElem) {
@@ -817,7 +818,7 @@ function muestraRodillo (vidElem, imgCont) {
           }
           }    
 
-        /* desplegarBotonesIV() */     
+        /* desplegarBotonesIV() */    
       }
 
     break;  
@@ -9243,8 +9244,8 @@ document.addEventListener('keydown', function(event) {
     switch (event.key) {
       case 'Z':
           changeButtonStyles('bateria-entintado-II', 'contene-7')
-          muestraRodillo('videoElement2','images-distribuidor')
-/*           muestraRodillo('videoElement2','images-distribuidor')
+          muestraRodillo('plate-smed','images-entintador')
+          /*muestraRodillo('videoElement2','images-distribuidor')
           muestraRodillo('videoElement3','images-entintador') */
       
       break;
@@ -9272,8 +9273,15 @@ function transicionElementosIII() {
   contImgsEntintador.classList.add('move-images-II') 
   buttRepuestI.classList.add('move-repuest-II')
   contiVidEntintador.classList.add('move-vid-entintador') 
-
 } 
+function transicionElementosIV(){
+  contibotsDistriIV.classList.add('move-butts-III')
+  contImgsSmed.classList.add('move-images-III') 
+  buttRepuestII.classList.add('move-repuest-III')
+  contiVidSmed.classList.add('move-vid-smed') 
+
+}
+
 function restablecerEstilos(elemento) {
   // Eliminar estilos en línea
   elemento.removeAttribute('style');
@@ -9287,7 +9295,7 @@ function restablecerEstilos(elemento) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('conti-boton-repuestos-I')
+  var contiBoton = document.getElementById('images-smed')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
