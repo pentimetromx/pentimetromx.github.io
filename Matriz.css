@@ -4614,15 +4614,15 @@ elemento.visible {
 
   
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/  
-  /* primer evento   */
+  /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
   .move-up-left {
     transform: translateY(457px); 
   }
   .move-up{
     transform: translateY(-677px); 
   }
-  /* segundo evento   */
-  .move-butts {
+  /* segundo evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
+  .move-butts{
     transform: translateY(577px); 
   }
   .move-video{
@@ -4634,18 +4634,18 @@ elemento.visible {
   .move-images{
     transform: translateY(847px) translateX(-107px); 
   }  
-  /* tercer evento   */
-  .move-up-III{
-    transform: translateY(-397px) translateX(3px); 
+  /* tercer evento //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
+  .move-repuest-II{
+    transform: translateY(555px) translateX(-111px); 
   }
-  .move-down-right-III{
-    transform: translateY(557px) translateX(-120px);
+  .move-images-II{
+    transform: translateY(617px) translateX(-105px);
   }
-  .move-button-III{
-    transform: translateY(494px) translateX(-127px);
+  .move-butts-II{
+    transform: translateY(-537px) translateX(-1px);
   }
   .move-vid-entintador{
-    transform: translateX(-367px) translateY(-20px);
+    transform: translateX(-347px) translateY(30px);
   }
 
 

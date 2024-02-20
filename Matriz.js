@@ -726,7 +726,7 @@ function muestraRodillo (vidElem, imgCont) {
     break;
     case 'videoElement3':
       /// OCULTA TODO MENOS LO NECESARIO          
-      var elementosExcluidos = ['sector-entintador','conti-boton-repuestos-I','butt-repuestos-I','conti-video-entintador','videoElement3','images-entintador','conti-boton-repuestos','contenedor-7-VI','container01','links-iniciales','links-inicialesI','videosTraining']; 
+      var elementosExcluidos = ['sector-entintador','conti-boton-repuestos-I','butt-repuestos-I','conti-video-entintador','videoElement3','images-entintador','contenedor-7-VI','container01','links-iniciales','links-inicialesI','videosTraining']; 
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
@@ -749,7 +749,7 @@ function muestraRodillo (vidElem, imgCont) {
       }
       }
       if (screenWidth < 500) {
-        var elementosExcluidos = ['sector-entintador','conti-boton-repuestos-I','butt-repuestos-I','conti-video-entintador','videoElement3','images-entintador','conti-boton-repuestos','contenedor-7-VI','container01','links-iniciales','links-inicialesI','videosTraining']; 
+        var elementosExcluidos = ['sector-entintador','conti-boton-repuestos-I','butt-repuestos-I','conti-video-entintador','videoElement3','images-entintador','contenedor-7-VI','container01','links-iniciales','links-inicialesI','videosTraining']; 
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i]) 
           if (elemento) {
@@ -757,14 +757,10 @@ function muestraRodillo (vidElem, imgCont) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
           }
         }
-/*         contibotsDistriIII.style.marginTop = ''        
-        contImgsEntintador.style.marginTop = ''
-        contiVidEntintador.style.marginTop = ''
-        buttRepuestI.style.marginTop = '' */
 
-        contibotsDistriIII.classList.remove('move-up-III')
-        contImgsEntintador.classList.remove('move-down-right-III') 
-        buttRepuestI.classList.remove('move-button-III')
+        contibotsDistriIII.classList.remove('move-butts-II')
+        contImgsEntintador.classList.remove('move-images-II') 
+        buttRepuestI.classList.remove('move-repuest-II')
         contiVidEntintador.classList.remove('move-vid-entintador')
 
         videoElements.forEach(video => {
@@ -9272,9 +9268,9 @@ function transicionElementosII() {
   contiVidDistribuidor.classList.add('move-video')    
 }
 function transicionElementosIII() {
-  contibotsDistriIII.classList.add('move-up-III')
-  contImgsEntintador.classList.add('move-down-right-III') 
-  buttRepuestI.classList.add('move-button-III')
+  contibotsDistriIII.classList.add('move-butts-II')
+  contImgsEntintador.classList.add('move-images-II') 
+  buttRepuestI.classList.add('move-repuest-II')
   contiVidEntintador.classList.add('move-vid-entintador') 
 
 } 
@@ -9291,7 +9287,7 @@ function restablecerEstilos(elemento) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('conti-boton-repuestos')
+  var contiBoton = document.getElementById('conti-boton-repuestos-I')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
