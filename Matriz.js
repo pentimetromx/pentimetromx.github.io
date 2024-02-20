@@ -342,8 +342,6 @@ function changeButtonStyles(elementId) {
           var elemento = document.getElementById(allContenedores[i]) 
           if (elemento) {
             // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
-            elemento.style.marginTop = ''
-            elemento.style.marginLeft = ''
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
           }
         }
