@@ -6,11 +6,11 @@ var contImgsEntintador = document.getElementById("images-entintador")
 var contiVidDistribuidor = document.getElementById('conti-video-distribuidor')
 var contiVidEntintador = document.getElementById('conti-video-entintador') 
 
-var contImgsSmed = document.getElementById('images-smed')  
+var contImgsSmed = document.getElementById('images-smed') 
+var contImageneSmed = document.getElementById('imgsIsopropil') 
 var contiVidSmed = document.getElementById('conti-video-smed')
 var contibotsDistriV = document.getElementById('contenedor-7-VII')
 var buttRepuestIII = document.getElementById('conti-boton-repuestos-II')
-
 
 var padreImgsDistribuidor = document.getElementById("contene-images") 
 var contiBotsDesbobina = document.getElementById('conti-boton-desb')
@@ -19,13 +19,16 @@ var contibotsDistri = document.getElementById('contenedor-7')
 var contibotsDistriII = document.getElementById('contenedor-7-V')
 var contibotsDistriIII = document.getElementById('contenedor-7-VI')
 var contibotsDistriIV = document.getElementById('contenedor-7-IV')
-
+var contibotsDistriVI = document.getElementById('contenedor-8')
 
 var btnsIniciales = document.querySelectorAll('.btn-bloque')
 var buttRepuest = document.getElementById('butt-repuestos')
 var buttRepuestI = document.getElementById('butt-repuestos-I')
+var buttRepuestV = document.getElementById('conti-boton-repuestos-III')
 
 var contVideo = document.getElementById('video-entintado')
+var contVideoSmed = document.getElementById('conti-video-bancada')
+
 var contiBateriaEntinta = document.getElementById('bateria-entintado-II')
 
 let firstClick = true;
@@ -60,7 +63,7 @@ var currentID = null;
 var butInicio = document.getElementById('bot-inic')
 var contInicial = document.getElementById('container1')
 var botonMa = document.getElementById('bot-mantaut')
-var allContenedores = ['conti-video-smed-I','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
+var allContenedores = ['conti-video-bancada','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIzquierdos = ['desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador']
@@ -365,7 +368,7 @@ function changeButtonStyles(elementId) {
     break;
     case 'bancada-torre-II': 
       /* var buttRepuesto = document.getElementById('butt-repuestos-III') */
-      var elementosExcluidos = ['conti-boton-repuestos-III','butt-repuestos-III','bancada-torre-II','container01','links-inicialesI','links-iniciales','conti-video-smed-I','plate-smed-I','contenedor-8','imgsIsopropil'];
+      var elementosExcluidos = ['conti-boton-repuestos-III','butt-repuestos-III','bancada-torre-II','container01','links-inicialesI','links-iniciales','conti-video-bancada','plate-smed-I','contenedor-8','imgsIsopropil'];
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
@@ -377,10 +380,10 @@ function changeButtonStyles(elementId) {
       var delay = 100;
       for (var i = 0; i < botonElement.length; i++) {
         setTimeout(function(index) {
-          botonElement[index].style.display = 'block'
+          botonElement[index].style.display = 'flex'
         }, delay * i,i)
       }
-      contVid.style.display='block' 
+      contVid.style.display='flex' 
       //EFECTO BOTONES
       setTimeout(() => {
         applyImageEffects4() 
@@ -395,7 +398,7 @@ function changeButtonStyles(elementId) {
     })
 
     if (screenWidth < 500) {   
-      var elementosExcluidos = ['conti-boton-repuestos-III','butt-repuestos-III','bancada-torre-II','container01','links-inicialesI','links-iniciales','conti-video-smed-I','plate-smed-I','contenedor-8','imgsIsopropil'];
+      var elementosExcluidos = ['conti-boton-repuestos-III','butt-repuestos-III','bancada-torre-II','container01','links-inicialesI','links-iniciales','conti-video-bancada','plate-smed-I','contenedor-8','imgsIsopropil'];
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
@@ -404,7 +407,32 @@ function changeButtonStyles(elementId) {
         }
       }
 
-
+      const botonElement = document.querySelectorAll('.boton-g, .image-isopropil')
+      var delay = 100;
+      for (var i = 0; i < botonElement.length; i++) {
+        setTimeout(function(index) {
+          botonElement[index].style.display = 'flex'
+        }, delay * i,i)
+      }
+      contVid.style.display='flex' 
+      //EFECTO BOTONES
+      setTimeout(() => {
+        applyImageEffects4() 
+      }, 277)
+      videoElements.forEach(video => {
+        if (video.id === 'plate-smed-I') {
+          video.style.display = 'flex'
+          video.play()      
+        } else {
+          video.style.display = 'none'
+        }
+      })
+      contibotsDistriVI.classList.remove('move-butts-IV')
+      contVideoSmed.classList.remove('move-vid-smed-II')
+      contImageneSmed.classList.remove('move-images-IV')
+      buttRepuestV.classList.remove('move-repuest-IV')
+      /* contVid.style.display='block' */ 
+      desplegarBotonesV()  
      }
 
       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
@@ -413,7 +441,7 @@ function changeButtonStyles(elementId) {
       }
     break;
     case 'sitema-humedad':     
-      var elementosExcluidos = ['container01','contenedor-7','bancada-torre-II','contenedor-9','sitema-humedad']                                                     /// OCULTA TODO MENOS (2 ELEMENTOS)          
+      var elementosExcluidos = ['container01','sitema-humedad','links-inicialesI','links-iniciales']                                                     /// OCULTA TODO MENOS (2 ELEMENTOS)          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -421,11 +449,6 @@ function changeButtonStyles(elementId) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       } 
-
-      for (var i = 0; i < linksIniciales.length; i++) {
-        var elemento = document.getElementById(linksIniciales[i]);
-        elemento.style.display = 'flex'
-      }
       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
         idsArray.push(elementId);
         console.log(idsArray);
@@ -486,6 +509,19 @@ function desplegarBotonesIV(){
     transicionElementosIV()
   }, 477);
 }
+function desplegarBotonesV(){
+  const buttonElements = document.querySelectorAll('.boton-f')
+  var delay = 100;
+  for (var i = 0; i < buttonElements.length; i++) {
+    setTimeout(function(index) {
+      buttonElements[index].style.display = 'flex'
+  }, delay * i,i)}
+
+  setTimeout(function () {
+    transicionElementosV()
+  }, 477);
+}
+
 function cambioContenedor(elementId) {
   var elementsToHide = document.querySelectorAll('.alimentador, .uTeñido, .desbobinador,.unidProceso,.rebobinador,.links-inicialesI,.links-iniciales') 
   var torreImpresion = document.getElementById('torre-imp') // PADRE TORRE IMPRESION  */
@@ -964,8 +1000,6 @@ function applyImageEffects4() { // aumento secuencial imagenes repuestos
         applyEffect()
       }, 177) }}applyEffect()
 } */
-
-
 function alternarVisibilidad(docId) {
   var elementosParaAlternar = document.querySelectorAll('.bot-entre, .video-training,.image-training, .butt-partes, .documentos')
   for (var i = 0; i < elementosParaAlternar.length; i++) {
@@ -9290,6 +9324,12 @@ function transicionElementosIV(){
   buttRepuestIII.classList.add('move-repuest-III')
   contiVidSmed.classList.add('move-vid-smed') 
 }
+function transicionElementosV(){
+  contibotsDistriVI.classList.add('move-butts-IV')
+  contVideoSmed.classList.add('move-vid-smed-II')
+  contImageneSmed.classList.add('move-images-IV')
+  buttRepuestV.classList.add('move-repuest-IV')
+}
 
 function restablecerEstilos(elemento) {
   // Eliminar estilos en línea
@@ -9308,19 +9348,19 @@ document.addEventListener('keydown', function(event) {
     switch (event.key) {
       case 'Z':
         /* changeButtonStyles('bancada-torre-II') */ 
-        changeButtonStyles('bancada-torre-II')
+        /* changeButtonStyles('bancada-torre-II') */
+        /* muestraRodillo('plate-smed','images-entintador') */
+        changeButtonStyles('sitema-humedad')
         /*muestraRodillo('videoElement2','images-distribuidor')
-        muestraRodillo('videoElement3','images-entintador') */
-      
+        muestraRodillo('videoElement3','images-entintador') */      
       break;
     }
   }
 });
 
-
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('imgsIsopropil')
+  var contiBoton = document.getElementById('conti-video-smed')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top

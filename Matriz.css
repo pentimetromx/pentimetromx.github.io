@@ -3099,7 +3099,7 @@ elemento.visible {
   position: absolute;
   transition: transform 1.6s ease;
 }
-#conti-video-smed-I,
+#conti-video-bancada,
 #conti-video-smed,
 #conti-video-entintador,
 #conti-video-distribuidor{
@@ -3239,8 +3239,6 @@ elemento.visible {
   top: 17%;
   height: 437px;
 }
-
-
 
 @media screen and (max-width: 420px) {
   /* @media screen and (max-width: 768px) { */  
@@ -3389,14 +3387,6 @@ elemento.visible {
     display: flex;
     flex-direction: column;
     top: 9%;
-  }
-  #bancada-torre-II{
-    position: relative;
-    left: 2%;
-    top: 14%;
-    height: 100vh;
-    width: 100vh;
-    display: none;
   }
   .boton-d{
     position: absolute;
@@ -4499,7 +4489,14 @@ elemento.visible {
     z-index: -1;
 
   }
-  #butt-repuestos-III,
+#sitema-humedad{
+  position: relative;
+  top: 6px;
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+
   #butt-repuestos-II,
   #butt-repuestos-I,
   #butt-repuestos{
@@ -4518,7 +4515,6 @@ elemento.visible {
     display: none;  
     transition: transform 1.6s ease;
   }
-  #contenedor-8,
   #contenedor-7-II,
   #contenedor-7-III,
   #contenedor-7-IV{
@@ -4538,8 +4534,6 @@ elemento.visible {
     margin-top: 87%;
     margin-left: 3%;
   }
-
-
 /*////////////  ENTINTADOR //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
   #conti-video-entintador{
     position: absolute;
@@ -4571,36 +4565,6 @@ elemento.visible {
     left: 68%;
   }
   /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-  /*////////////  SMED ///// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-  #conti-video-smed-I,
-  #conti-video-smed{
-  position: absolute;
-  display: flex;
-  left: 111%;
-  transition: transform 1.6s ease;
-  }
-  #imgsIsopropil{
-    position: relative;  
-    display: flex;
-    flex-direction: column;
-    width: 200px;
-    height: 400px;
-  }
-  #imgsIsopropil img{
-    position: absolute;
-    display: flex;
-    margin-bottom: 1px;  
-    width: 157px;
-  }
-  #conti-boton-repuestos-III{
-    position: absolute;
-    display: flex;
-  }
-
-
-
-
-
   #contenedor-7-V{
     position: absolute;
     display: flex;
@@ -4623,7 +4587,6 @@ elemento.visible {
     transition: transform 1.6s ease;  
   }
   #images-distribuidor img{
-    /* margin-bottom: 1px; */    
     width: 107px;
   }
   #conti-boton-repuestos{
@@ -4632,11 +4595,10 @@ elemento.visible {
     top: -10%;
     left: 66%;
   }
-  #plate-smed-I,
   #plate-smed{
-  position: absolute;
-  display: flex;
-  height:193px;
+    position: absolute;
+    display: flex;
+    height:193px;
   }
   #contenedor-7-VII{
   position: absolute;
@@ -4678,18 +4640,119 @@ elemento.visible {
     width: 177px;
     height: 150px;
   }
+  #conti-video-smed{
+    position: absolute;
+    display: flex;
+    left: 117%;
+    height: 200px;
+    width: 200px;
+    transition: transform 1.6s ease;
+  }
+
+
+  /*////////////  SMED ///// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+  #bancada-torre-II{
+    position: relative;
+    display: flex;
+    left: 2%;
+    top: 14%;
+    height: 100%;
+    width: 100%;
+    display: none;
+  }
+  #contenedor-8{
+    position: absolute;
+    top: -200%;
+    transition: transform 1.6s ease;
+  }
+  #conti-video-bancada{
+  position: absolute;
+  display: flex;
+  top: -70%;
+  height: 200px;
+  transition: transform 1.6s ease;
+  }
+  #imgsIsopropil{
+    position: absolute; 
+    left: 42%;
+    top: 177%; 
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 400px;
+    transition: transform 1.6s ease;
+  }
+  #imgsIsopropil img{
+    position: relative;
+    left: -10%;
+    display: flex;
+  }
+  #conti-boton-repuestos-III{
+    position: absolute;
+    display: flex;
+    left: 46%;
+    top: 97%;
+    height: 33px;
+    width: 144px;
+    transition: transform 1.6s ease;
+  }
+  #butt-repuestos-III{
+    position: absolute;
+    display: flex;
+    font-family: "GothamRounded", sans-serif;
+    font-size: 7px;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */    
+    text-align: center;
+    color: white;
+    height: 27px;
+    width: 133px;
+    /* margin-top: -107px; */
+    margin-left: 7px;
+    border-radius: 9px;
+    background-color: rgba(83, 82, 82, 0.678);
+    /* margin-bottom: 17px; */
+    display: none;  
+  }  
   .image-isopropil{
     cursor: pointer;
-    height: 114px;
-    width: 155px;
-    margin-bottom: 27px;  
+    height: 90px;
+    width: 114px;
+    margin-bottom: 7px;  
     transition: transform 0.1s ease, filter 0.1s ease;
     border-radius: 11px;
   }
   .image-isopropil:hover {
     transform: scale(2);
   }
-
+  #plate-smed-I{
+  position: absolute;
+  display: flex;
+  height:207px;
+  }
+  #contenedor-9{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  #sitio-en-construccion {
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 30%;
+    background-color: #fff; /* Fondo blanco */
+    color: #333; /* Texto color gris oscuro */
+    border: 3px solid #ccc; /* Borde 3px color gris */
+    border-radius: 5px; /* Radio en el borde de 5px */
+    text-align: center;
+    font-family: 'GothamRounded', sans-serif;
+    animation: aumentarTamano 1s infinite alternate; /* Animación cada 1 segundo */
+}
+@keyframes aumentarTamano {
+    to {
+        transform: scale(2); /* Aumenta el tamaño 2x */
+    }
+}
   /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
   .move-up-left {
     transform: translateY(457px); 
@@ -4734,7 +4797,21 @@ elemento.visible {
     transform: translateY(790px);
   }
   .move-vid-smed{
-    transform: translateX(-333px);
+    transform: translateX(-187%);
   }
+  /* quinto evento //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
+  .move-repuest-IV{
+    transform: translateY(-1377%); 
+  }
+  .move-images-IV{
+    transform: translateY(-247%);
+  }
+  .move-butts-IV{
+    transform: translateY(543%);
+  }
+  .move-vid-smed-II{
+    transform: translateY(260%);
+  }
+  
 }
  
