@@ -4570,30 +4570,32 @@ elemento.visible {
     top: -28%;
     left: 68%;
   }
-/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-/*////////////  SMED ///// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-#conti-video-smed-I,
-#conti-video-smed{
-position: absolute;
-display: flex;
-left: 111%;
-transition: transform 1.6s ease;
-}
-#imgsIsopropil{
-  position: absolute;  
-  display: flex;
-  flex-direction: column;
-  width: 200px;
-  height: 400px;
-}
-#imgsIsopropil img{
-  margin-bottom: 1px;  
-  width: 157px;
-}
-#conti-boton-repuestos-III{
+  /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+  /*////////////  SMED ///// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+  #conti-video-smed-I,
+  #conti-video-smed{
   position: absolute;
   display: flex;
-}
+  left: 111%;
+  transition: transform 1.6s ease;
+  }
+  #imgsIsopropil{
+    position: relative;  
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 400px;
+  }
+  #imgsIsopropil img{
+    position: absolute;
+    display: flex;
+    margin-bottom: 1px;  
+    width: 157px;
+  }
+  #conti-boton-repuestos-III{
+    position: absolute;
+    display: flex;
+  }
 
 
 
