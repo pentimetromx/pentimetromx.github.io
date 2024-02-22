@@ -60,11 +60,10 @@ var currentID = null;
 var butInicio = document.getElementById('bot-inic')
 var contInicial = document.getElementById('container1')
 var botonMa = document.getElementById('bot-mantaut')
-var allContenedores = ['contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
+var allContenedores = ['plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','linksMA','contImgEntrenos','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIzquierdos = ['desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador']
-
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor']
 var allContTintero = ['pantalla-tintero','cont-links','imgTorre','vidTintero','imgsRepuestos','agrupaOblicuos-II','container2']
 var contVid = document.getElementById('videosTraining')
@@ -74,14 +73,11 @@ var arrayButtsRutilantes = ['butt-113','butt-12','butt-16','butt-21','butt-22','
 var arrayButtsRutilantesI = ['butt-024000','butt-023000','butt-015000','butt-013000','butt-7112000']
 var arrayButtsRutilantesII = ['butt-01130','butt-012','butt-016','butt-021','butt-0202','butt-011300','butt-0120']
 var arrayButtsRutilantesIII = ['butt-001130','butt-0012','butt-0016','butt-0021','butt-00202']
-
 var buttonsMA = document.getElementsByClassName("butt-mautonomo")
 var buttsToyota = ['toyota8', 'toyota7', 'toyota6', 'toyota5','toyota4','toyota3','toyota2','toyota1']
 var contienePasos = document.getElementById('puesta-punto')
-
 let contPlana = document.getElementById('cont-plana')
 let contiButtCasos = document.getElementById('mejoras-kai')
-
 const textToColor = document.getElementById("textToColor")
 const textToColorI = document.getElementById("textToColorI")
 const line = document.getElementById("line")
@@ -368,7 +364,8 @@ function changeButtonStyles(elementId) {
       }
     break;
     case 'bancada-torre-II': 
-    var elementosExcluidos = ['container01','cont-links','agrupaOblicuos-II','contenedor-7','videoElement1-II','bancada-torre-II'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)          
+    var buttRepuesto = document.getElementById('butt-repuestos-III')
+    var elementosExcluidos = ['conti-boton-repuestos-III','butt-repuestos-III','bancada-torre-II','container01','links-inicialesI','links-iniciales','contVid-smed-I','plate-smed-I','contenedor-8','imgsIsopropil'];                                                       /// OCULTA TODO MENOS (2 ELEMENTOS)          
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]);  
       if (elemento) {
@@ -382,20 +379,20 @@ function changeButtonStyles(elementId) {
       setTimeout(function(index) {
         botonElement[index].style.display = 'block'
       }, delay * i,i)
-    } 
+    }
     contVid.style.display='block' 
+    //EFECTO BOTONES
+    setTimeout(() => {
+      applyImageEffects4() 
+    }, 277)
     videoElements.forEach(video => {
-      if (video.id === 'plate-smed') {
+      if (video.id === 'plate-smed-I') {
         video.style.display = 'block'
         video.play()      
       } else {
         video.style.display = 'none'
       }
     })
-    for (var i = 0; i < linksIniciales.length; i++) {
-      var elemento = document.getElementById(linksIniciales[i]);
-      elemento.style.display = 'flex'
-    }
     if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
       idsArray.push(elementId);
       console.log(idsArray);
@@ -410,22 +407,7 @@ function changeButtonStyles(elementId) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       } 
-      const botonElemento = document.querySelectorAll('.boton-f')
-      var delay = 100
-      for (var i = 0; i < botonElemento.length; i++) {
-        setTimeout(function(index) {
-          botonElemento[index].style.display = 'block'
-        }, delay * i,i)
-      } 
-      contVid.style.display='block' 
-      videoElements.forEach(video => {
-        if (video.id === 'bancada') {
-          video.style.display = 'block'
-          video.play()      
-        } else {
-          video.style.display = 'none'
-        }
-      })
+
       for (var i = 0; i < linksIniciales.length; i++) {
         var elemento = document.getElementById(linksIniciales[i]);
         elemento.style.display = 'flex'
@@ -755,12 +737,6 @@ function muestraRodillo (vidElem, imgCont) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
           }
         }
-
-        contibotsDistriIII.classList.remove('move-butts-II')
-        contImgsEntintador.classList.remove('move-images-II') 
-        buttRepuestI.classList.remove('move-repuest-II')
-        contiVidEntintador.classList.remove('move-vid-entintador')
-
         videoElements.forEach(video => {
           if (video.id === 'videoElement3') {
             video.play()      
@@ -768,6 +744,10 @@ function muestraRodillo (vidElem, imgCont) {
             video.style.display = 'none'
           }
         })
+        contibotsDistriIII.classList.remove('move-butts-II')
+        contImgsEntintador.classList.remove('move-images-II') 
+        buttRepuestI.classList.remove('move-repuest-II')
+        contiVidEntintador.classList.remove('move-vid-entintador')
         desplegarBotonesIII()      
       }
     break;
@@ -940,6 +920,22 @@ function applyImageEffects3() { // aumento secuencial imagenes repuestos
         applyEffect()
       }, 177) }}applyEffect()
 }
+function applyImageEffects4() { // aumento secuencial imagenes repuestos
+  const imageElements = document.querySelectorAll('#isopropil1,#isopropil2,#isopropil3')
+  let currentIndex = 0;
+  function applyEffect() {
+    if (currentIndex < imageElements.length) {
+      const currentImage = imageElements[currentIndex]
+      currentImage.style.transition = 'transform 0.1s'
+      currentImage.style.transform = 'scale(2.0)'
+      setTimeout(() => {
+        currentImage.style.transition = 'transform 0.7s'
+        currentImage.style.transform = 'scale(1)'
+        currentIndex++;
+        applyEffect()
+      }, 177) }}applyEffect()
+}
+
 function alternarVisibilidad(docId) {
   var elementosParaAlternar = document.querySelectorAll('.bot-entre, .video-training,.image-training, .butt-partes, .documentos')
   for (var i = 0; i < elementosParaAlternar.length; i++) {
@@ -9241,8 +9237,8 @@ document.addEventListener('keydown', function(event) {
   if (event.ctrlKey && event.shiftKey) {
     switch (event.key) {
       case 'Z':
-          changeButtonStyles('bateria-entintado-II', 'contene-7')
-          muestraRodillo('plate-smed','images-entintador')
+        /* changeButtonStyles('bancada-torre-II') */ 
+        muestraRodillo('plate-smed','images-entintador')
           /*muestraRodillo('videoElement2','images-distribuidor')
           muestraRodillo('videoElement3','images-entintador') */
       
@@ -9292,7 +9288,7 @@ function restablecerEstilos(elemento) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('images-smed')
+  var contiBoton = document.getElementById('bancada-torre-II')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top

@@ -357,21 +357,11 @@ margin-right: 5px;
   transition: transform 0.1s ease, filter 0.1s ease;
   border-radius: 11px;
 }
-#imgsIsopropil {
-  display: flex;
-  position: relative;
-  top: 61px;
-  left: 837px;
-  flex-direction: column;
-}
-.image-isopropil {
-  display: none;
+.image-isopropil{
   cursor: pointer;
   height: 152px;
   width: 207px;
   margin-bottom: 27px;  
-  /* transition: transform 0.3s ease-in-out; */
-
   transition: transform 0.1s ease, filter 0.1s ease;
   border-radius: 11px;
 }
@@ -3084,11 +3074,13 @@ elemento.visible {
   border-radius: 9px; 
   box-shadow: none;
 }
+#plate-smed-I,
 #plate-smed{
   position: absolute;
   display: flex;
   height:400px;
 }
+#bancada-torre-II,
 #sector-smed,
 #sector-entintador,
 #sector-distribuidor{
@@ -3100,12 +3092,14 @@ elemento.visible {
   left: 1%;
   display: none;
 }
+#contenedor-8,
 #contenedor-7-VII,
 #contenedor-7-VI,
 #contenedor-7-V{
   position: absolute;
   transition: transform 1.6s ease;
 }
+#conti-video-smed-I,
 #conti-video-smed,
 #conti-video-entintador,
 #conti-video-distribuidor{
@@ -3114,6 +3108,7 @@ elemento.visible {
   left: 28%;
   transition: transform 1.6s ease;
 }
+#imgsIsopropil,
 #images-smed,
 #images-entintador,
 #images-distribuidor{
@@ -3131,10 +3126,11 @@ elemento.visible {
   transition: transform 0.1s ease, filter 0.1s ease;
   border-radius: 11px;
 }
-
+#imgsIsopropil img,
 #images-distribuidor img{
   width: 157px;    
 }
+#conti-boton-repuestos-III,
 #conti-boton-repuestos-II,
 #conti-boton-repuestos-I,
 #conti-boton-repuestos{
@@ -3143,6 +3139,7 @@ elemento.visible {
   top: 0%;
   left: 75.5%;
 }
+#butt-repuestos-III,
 #butt-repuestos-II,
 #butt-repuestos-I,
 #butt-repuestos{
@@ -3158,6 +3155,8 @@ elemento.visible {
   overflow: hidden;
   display: none;
 }
+#butt-repuestos-III::after,
+#butt-repuestos-III::before,
 #butt-repuestos-II::after,
 #butt-repuestos-II::before,
 #butt-repuestos-I::after,
@@ -3171,17 +3170,14 @@ elemento.visible {
   height: 27px;
   background-color: rgba(255, 24, 55);
 }
-
-
+#butt-repuestos-III::before {left: 0;}
+#butt-repuestos-III::after {right: 0;}
 #butt-repuestos-II::before {left: 0;}
 #butt-repuestos-II::after {right: 0;}
 #butt-repuestos-I::before {left: 0;}
 #butt-repuestos-I::after {right: 0;}
 #butt-repuestos::before {left: 0;}
 #butt-repuestos::after {right: 0;}
-
-
-
 #cont-videojuegos{
   position: absolute;
   display: flex;
@@ -3237,6 +3233,14 @@ elemento.visible {
   width: 638px;
   height: 480px;
 }
+#contVid-smed{
+  position: absolute;
+  left: 27%;
+  top: 17%;
+  height: 437px;
+}
+
+
 
 @media screen and (max-width: 420px) {
   /* @media screen and (max-width: 768px) { */  
@@ -3286,7 +3290,7 @@ elemento.visible {
     margin-top:19%;
     width: 55%;
     padding-left: 20px;
- }
+  }
 
   .boton-e,
   .boton-c {
@@ -3387,9 +3391,11 @@ elemento.visible {
     top: 9%;
   }
   #bancada-torre-II{
-    position: absolute;
-    left: 170px;
-    top: 6px;
+    position: relative;
+    left: 2%;
+    top: 14%;
+    height: 100vh;
+    width: 100vh;
     display: none;
   }
   .boton-d{
@@ -3966,17 +3972,6 @@ elemento.visible {
     border-radius: 10px;
     height: 250px;
   }
-  #images-entintador{
-    position: relative;
-    display: flex;
-    height: 200px;
-    margin-top: -397px;
-    left: 73%;
-    transition: transform 1.6s ease;
-  }
-  #images-entintador img{ 
-    width: 90px;
-  }
   #video-entintado{
     position: relative;
     display: flex;
@@ -4162,10 +4157,7 @@ elemento.visible {
     height:197px;
     width: 262px;
   }
-  #images-distribuidor img{
-    width: 90px;  
-  } 
-  #contenedor-7-IV button, 
+ #contenedor-7-IV button, 
   #contenedor-7-III button, 
   #contenedor-7-II button, 
   #contenedor-7 button{
@@ -4507,12 +4499,7 @@ elemento.visible {
     z-index: -1;
 
   }
-  #conti-boton-repuestos-I{
-    position: absolute;
-    display: flex;
-    top: -28%;
-    left: 68%;
-  }
+  #butt-repuestos-III,
   #butt-repuestos-II,
   #butt-repuestos-I,
   #butt-repuestos{
@@ -4531,12 +4518,11 @@ elemento.visible {
     display: none;  
     transition: transform 1.6s ease;
   }
+  #contenedor-8,
   #contenedor-7-II,
   #contenedor-7-III,
   #contenedor-7-IV{
     position: absolute;
-    top: -70%;
-    left: 43%;
     transition: transform 1.6s ease;
   }
   #contenedor-7{
@@ -4552,6 +4538,9 @@ elemento.visible {
     margin-top: 87%;
     margin-left: 3%;
   }
+
+
+/*////////////  ENTINTADOR //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
   #conti-video-entintador{
     position: absolute;
     display: flex;
@@ -4564,6 +4553,52 @@ elemento.visible {
     top: 80%;
     left: 3%;
   }
+  #images-entintador{
+    position: relative;
+    display: flex;
+    height: 200px;
+    margin-top: -397px;
+    left: 73%;
+    transition: transform 1.6s ease;
+  }
+  #images-entintador img{ 
+    width: 90px;
+  }
+  #conti-boton-repuestos-I{
+    position: absolute;
+    display: flex;
+    top: -28%;
+    left: 68%;
+  }
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////  SMED ///// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+#conti-video-smed-I,
+#conti-video-smed{
+position: absolute;
+display: flex;
+left: 111%;
+transition: transform 1.6s ease;
+}
+#imgsIsopropil{
+  position: absolute;  
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 400px;
+}
+#imgsIsopropil img{
+  margin-bottom: 1px;  
+  width: 157px;
+}
+#conti-boton-repuestos-III{
+  position: absolute;
+  display: flex;
+}
+
+
+
+
+
   #contenedor-7-V{
     position: absolute;
     display: flex;
@@ -4583,11 +4618,11 @@ elemento.visible {
     margin-top: -167%;
     left: 72%;
     height: 377px;
-    transition: transform 1.6s ease;
+    transition: transform 1.6s ease;  
   }
   #images-distribuidor img{
-    margin-bottom: 1px;    
-    height: 50px;
+    /* margin-bottom: 1px; */    
+    width: 107px;
   }
   #conti-boton-repuestos{
     position: absolute;
@@ -4595,12 +4630,7 @@ elemento.visible {
     top: -10%;
     left: 66%;
   }
-  #conti-video-smed{
-  position: relative;
-  display: flex;
-  transition: transform 1.6s ease;
-  left:127%;
-  }
+  #plate-smed-I,
   #plate-smed{
   position: absolute;
   display: flex;
@@ -4623,28 +4653,41 @@ elemento.visible {
     display: flex;
     top: -42.5%;
     left: 43%;
-    transition: transform 1.6s ease;
-    }  
-    .smed-style {
-      cursor: pointer;
-      border-radius: 11px;
-      overflow: hidden; /* Evita imagen desbordada*/
-    }  
-    #images-smed .image-container {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }  
-    #images-smed img {
-      height: 60px;
-      width: 110px;
-      border-radius: 11px;
-      transition: transform 0.3s ease, filter 0.3s ease;
-    } 
-    .smed-style:hover {
-      transform: scale(1.1);
-    }  
-/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/  
+    transition: transform 1.6s ease; 
+  }  
+  #images-smed .image-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+    border-radius: 11px;
+  }  
+  #images-smed img {
+    height: 60px;
+    width: 110px;
+    border-radius: 11px;
+    transform: scale(1.1);
+
+    /* transition: transform 0.3s ease, filter 0.3s ease; */
+  } 
+  #contVid-smed{
+    position: absolute;
+    display: flex;
+    width: 177px;
+    height: 150px;
+  }
+  .image-isopropil{
+    cursor: pointer;
+    height: 114px;
+    width: 155px;
+    margin-bottom: 27px;  
+    transition: transform 0.1s ease, filter 0.1s ease;
+    border-radius: 11px;
+  }
+  .image-isopropil:hover {
+    transform: scale(2);
+  }
+
   /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
   .move-up-left {
     transform: translateY(457px); 
@@ -4689,7 +4732,7 @@ elemento.visible {
     transform: translateY(790px);
   }
   .move-vid-smed{
-    transform: translateX(-407px);
+    transform: translateX(-333px);
   }
 }
  
