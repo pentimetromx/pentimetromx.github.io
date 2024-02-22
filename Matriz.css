@@ -4489,14 +4489,6 @@ elemento.visible {
     z-index: -1;
 
   }
-#sitema-humedad{
-  position: relative;
-  top: 6px;
-  height: 100%;
-  width: 100%;
-  display: none;
-}
-
   #butt-repuestos-II,
   #butt-repuestos-I,
   #butt-repuestos{
@@ -4730,15 +4722,23 @@ elemento.visible {
   display: flex;
   height:207px;
   }
+  #sitema-humedad{
+    position: relative;
+    top: 8%;
+    height: 100%;
+    width: 100%;
+    display: none;
+  } 
   #contenedor-9{
     position: relative;
     display: flex;
     flex-direction: column;
+    left: 2%;
   }
-  #sitio-en-construccion {
+  #sitio-en-construccion{
     position: absolute;
     display: flex;
-    top: 50%;
+    top: 27%;
     left: 30%;
     background-color: #fff; /* Fondo blanco */
     color: #333; /* Texto color gris oscuro */
@@ -4747,12 +4747,12 @@ elemento.visible {
     text-align: center;
     font-family: 'GothamRounded', sans-serif;
     animation: aumentarTamano 1s infinite alternate; /* Animación cada 1 segundo */
-}
-@keyframes aumentarTamano {
+  }
+  @keyframes aumentarTamano{
     to {
-        transform: scale(2); /* Aumenta el tamaño 2x */
+      transform: scale(2); /* Aumenta el tamaño 2x */
     }
-}
+  }
   /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
   .move-up-left {
     transform: translateY(457px); 
