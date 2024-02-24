@@ -4810,7 +4810,7 @@ elemento.visible {
     position: absolute;
     display: flex;
     flex-direction: column;
-    left: 26%;
+    left: 25%;
     margin-top: -5.5%; 
     width: 100vh;
     height:100vh;
