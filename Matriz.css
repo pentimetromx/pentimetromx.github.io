@@ -2055,10 +2055,11 @@ header {
 #curado-uv{
   position: absolute;
   display: flex;
-  left: 24%;
-  top: -51%;
-  width: 620px;
-  height: 465px;
+  left: 30%;
+  top: -41%;
+  width: 460px;
+  height: 350px;
+  border-radius: 19px;
 }
 #conti-boton-kaizen button,
 #conti-boton-rodilleria button,
@@ -4416,11 +4417,13 @@ elemento.visible {
     left:1% ;
   }
   #cont-secador{
-    position: absolute;
+    position: relative;
     display: flex;
     flex-direction: column;
-    left: 170px;
-    top: 6px;
+    height: 100%;
+    width: 100%;
+    left: 1%;
+    top: 13%;
     display: none;
   }  
 
@@ -4431,13 +4434,18 @@ elemento.visible {
     top: 19%;
     left:11% ;
   } 
-  #curado-uv {
-    position: fixed;
+  #video-container{
+    position: absolute;
     display: flex;
-    left: 10%;
-    top: 40%;
-    width: 333px;
-    border-radius: 11px;
+  }
+  #curado-uv{
+    position: absolute;
+    display: flex;  
+    width: 315px;
+    height: 225px;
+    left: 9%;
+    top: 37%;
+    border-radius: 19px;
   }
   
   #cuartoContDensito,
@@ -4696,7 +4704,7 @@ elemento.visible {
   }
   #contenedor-8{
     position: absolute;
-    top: -196%;
+    top: -195%;
     transition: transform 1.6s ease;
   }
   #conti-video-bancada{
@@ -4709,7 +4717,7 @@ elemento.visible {
   #imgsIsopropil{
     position: absolute; 
     left: 42%;
-    top: 177%; 
+    top: 174%; 
     display: flex;
     flex-direction: column;
     width: 200px;
@@ -4725,7 +4733,7 @@ elemento.visible {
     position: absolute;
     display: flex;
     left: 44%;
-    top: 97%;
+    top: 95%;
     height: 33px;
     width: 144px;
     transition: transform 1.6s ease;
