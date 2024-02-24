@@ -1668,14 +1668,14 @@ height: 398px;
   height: 477px;
 }
 #contImgEntintador,
-#contImgDistribuidor {
+#contImgDistribuidor{
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: absolute;
-  top: 333px;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 15%;
+  left: 22.5%;
+  /* transform: translate(-50%, -50%); */
   display: none;
 }
 .imgRow {
@@ -4852,6 +4852,32 @@ elemento.visible {
     display: none;
     border-radius: 11px;
   }
+  #contImgEntintador,
+  #contImgDistribuidor{
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    width: 100vh;
+    height: 100vh;
+    top: 5%;
+    left: 2.5%;
+    /* transform: translate(-50%, -50%); */
+    display: none;
+}
+.imgRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.imgRow img{
+  height: 57px;
+  width: 77px;
+  margin: 0 10px;
+  border-radius: 7px;
+}
+
+
   
 
   /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
