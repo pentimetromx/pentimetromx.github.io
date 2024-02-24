@@ -4437,9 +4437,9 @@ elemento.visible {
     left: 10%;
     top: 40%;
     width: 333px;
-    border-radius: 5%; 
-
+    border-radius: 11px;
   }
+  
   #cuartoContDensito,
   #tercerContDensito,
   #segundoContDensito,
@@ -4840,6 +4840,11 @@ elemento.visible {
     width: 157px;
     height: 106px;
   } 
+  .video-training{
+    display: none;
+    border-radius: 11px;
+  }
+  
 
   /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
   .move-up-left {
