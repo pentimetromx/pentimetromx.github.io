@@ -3246,7 +3246,7 @@ elemento.visible {
   position: relative;
   display: flex;
   flex-direction: row;
-  left: 1%;  
+  left: 29.5%;  
   display: none;
 }
 #conti-img-planas,
@@ -3279,6 +3279,7 @@ elemento.visible {
 #conti-videos-infoprint video{
   position: relative; 
   display: flex;
+  border: 1px solid black;
 }
 
  @media screen and (max-width: 420px) {
@@ -4799,7 +4800,7 @@ elemento.visible {
     position: relative;
     display: flex;
     flex-direction: row;
-    left: -4%;
+    left: -6%;
     width: 100vh;
     height: 100vh;  
     display: none;

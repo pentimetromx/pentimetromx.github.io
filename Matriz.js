@@ -2998,7 +2998,7 @@ function abrirSeccionVariable(elementId){
   container1.style.left=''
   videoElements.forEach(video => {
     if (video.id === 'video-infoprint-I' || video.id === 'video-infoprint-II' || video.id === 'video-infoprint-III') {
-      video.style.width = '270px'
+      video.style.width = '268px'
       video.style.display = 'block'
       video.play();
     } else {
@@ -3017,7 +3017,7 @@ function abrirSeccionVariable(elementId){
       container1.style.left=''    
       videoElements.forEach(video => {
         if (video.id === 'video-infoprint-I' || video.id === 'video-infoprint-II' || video.id === 'video-infoprint-III') {
-          video.style.width = '217px'
+          video.style.width = '213px'
           video.style.display = 'block'
           video.play();
         } else {
@@ -3052,7 +3052,7 @@ function abrirSeccionPlanas(elementId){
   container1.style.left=''
   videoElements.forEach(video => {
     if (video.id === 'video-planas-I' || video.id === 'video-planas-II' || video.id === 'video-planas-III' || video.id === 'video-background-planas') {
-      video.style.width = '270px'
+      video.style.width = '268px'
       video.style.display = 'block'
       video.play();
     } else {
@@ -3071,7 +3071,7 @@ function abrirSeccionPlanas(elementId){
       container1.style.left=''    
       videoElements.forEach(video => {
         if (video.id === 'video-planas-I' || video.id === 'video-planas-II' || video.id === 'video-planas-III' || video.id === 'video-background-planas') {
-          video.style.width = '217px'
+          video.style.width = '213px'
           video.style.display = 'block'
           video.play();
         } else {
