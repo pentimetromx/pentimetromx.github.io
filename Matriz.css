@@ -4810,7 +4810,7 @@ elemento.visible {
     position: absolute;
     display: flex;
     flex-direction: column;
-    left: 27%;
+    left: 26%;
     margin-top: -5.5%; 
     width: 100vh;
     height:100vh;
@@ -4830,7 +4830,7 @@ elemento.visible {
     position: absolute;
     display: flex;
     flex-direction: column;
-    left: 4%;
+    left: 3%;
     gap: 5px;
   }
   #conti-img-planas img,
