@@ -4586,7 +4586,7 @@ elemento.visible {
   #contenedor-7-VI{
     position: absolute;
     display: flex;
-    top: 80%;
+    top: 79%;
     left: 3%;
   }
   #images-entintador{
@@ -4645,7 +4645,7 @@ elemento.visible {
   #contenedor-7-VII{
   position: absolute;
   left: 2%;
-  top: -110%;
+  top: -107%;
   transition: transform 1.6s ease;
   }
   #images-smed {
@@ -4657,7 +4657,7 @@ elemento.visible {
   #conti-boton-repuestos-II{
     position: absolute;
     display: flex;
-    top: -42.5%;
+    top: -40%;
     left: 43%;
     transition: transform 1.6s ease; 
   }  
