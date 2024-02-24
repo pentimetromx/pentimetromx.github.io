@@ -4696,13 +4696,13 @@ elemento.visible {
   }
   #contenedor-8{
     position: absolute;
-    top: -200%;
+    top: -196%;
     transition: transform 1.6s ease;
   }
   #conti-video-bancada{
   position: absolute;
   display: flex;
-  top: -70%;
+  top: -68%;
   height: 200px;
   transition: transform 1.6s ease;
   }
@@ -4724,7 +4724,7 @@ elemento.visible {
   #conti-boton-repuestos-III{
     position: absolute;
     display: flex;
-    left: 46%;
+    left: 44%;
     top: 97%;
     height: 33px;
     width: 144px;
