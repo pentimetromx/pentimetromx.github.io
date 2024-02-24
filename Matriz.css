@@ -4477,8 +4477,8 @@ elemento.visible {
   #vidCicodeliaII{
     position: fixed;
     left: 20px;
-    top: 27%;
-    height: 25%;
+    top: 29%;
+    height: 22%;
     width: 89%;
     object-fit: fill; /* Elimina la relación de aspecto original */
     display: none;
@@ -4506,8 +4506,8 @@ elemento.visible {
   #vidCicodelia{
     position: fixed;
     left: 26px;
-    top: 29%;
-    height: 25%;
+    top: 30%;
+    height: 23%;
     width: 89%;
     object-fit: fill; /* Elimina la relación de aspecto original */
     display: none;
