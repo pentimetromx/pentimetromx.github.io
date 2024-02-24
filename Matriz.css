@@ -4009,7 +4009,7 @@ elemento.visible {
     position: relative;
     display: flex;
     left:-0.5%;
-    top: -57%;
+    top: -52%;
     height: 37%;
     transition: transform 1.6s ease;
   }
@@ -4567,7 +4567,7 @@ elemento.visible {
     position: absolute;
     flex-direction: column;
     display: flex;
-    top:100%;
+    top:95%;
     left: 42%;
     transition: transform 1.6s ease;
   } 
@@ -4610,7 +4610,7 @@ elemento.visible {
   #contenedor-7-V{
     position: absolute;
     display: flex;
-    top: -80%;
+    top: -77%;
     left: 2%;
     transition: transform 1.6s ease;
   }
@@ -4634,7 +4634,7 @@ elemento.visible {
   #conti-boton-repuestos{
     position: absolute;
     display: flex;
-    top: -10%;
+    top: -8%;
     left: 66%;
   }
   #plate-smed{
