@@ -1029,55 +1029,55 @@ function showRepuesto(elementId) {
   var imgsContra = document.getElementById('impresorImg')
   switch (elementId) {
     case 'contImgDistribuidor': 
-    var elementosExcluidos = ['contImgDistribuidor','container01','links-iniciales','links-inicialesI'];         
-    for (var i = 0; i < allContenedores.length; i++) { 
-      var elemento = document.getElementById(allContenedores[i]) 
-      if (elemento) {
-        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
+      var elementosExcluidos = ['contImgDistribuidor','container01','links-iniciales','links-inicialesI'];         
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i]) 
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
+        }
       }
-    }
+      if (screenWidth < 500) {
+        var elementosExcluidos = ['contImgDistribuidor','container01','links-iniciales','links-inicialesI'];         
+        for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i]) 
+          if (elemento) {
+          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
+        }}
+      }  
+        
+
       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
         idsArray.push(elementId);
         console.log(idsArray);
       }
     break;
     case 'contImgEntintador':
-      allContenedores.forEach(elemen => {
-      var element = document.getElementById(elemen)
-      if (element) {
-      element.style.display = 'none'
+      var elementosExcluidos = ['contImgEntintador','container01','links-iniciales','links-inicialesI'];         
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i]) 
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
+        }
       }
-      })
-      conteHijosTintero.forEach(elementId => {
-      var element = document.getElementById(elementId)
-      if (element) {
-      element.style.display = 'none'
-      }
-      })
-      if (imgsForma) {
-      imgsForma.style.display = 'block'
-      // Recorre el arreglo y muestra las imágenes
-      var imagenesForma = document.querySelectorAll('.imag-distri')
-      imagenesForma.forEach(function(imagen) {
-        imagen.style.display = 'block'
-      })
+      if (screenWidth < 500) {
+        var elementosExcluidos = ['contImgEntintador','container01','links-iniciales','links-inicialesI'];         
+        for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i]) 
+        if (elemento) {
+          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
+        }}
       } 
-      container1.style.display = 'flex'
-      // 4. Verificar si el elemento está definido y si ya existe en arrayIds
-      if (typeof elementId !== 'undefined') {
-      const index = idsArray.indexOf(elementId);
-      if (index !== -1) {
-      // 4. Si el elemento ya existe, moverlo a la última posición
-      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+
+      if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+        idsArray.push(elementId);
+        console.log(idsArray);
       }
-      // 5. Agregar el elemento al final de arrayIds
-      idsArray.push(elementId);
-      console.log(idsArray);
-      }    
     break;
     case 'contPortPlaca':  
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-     var elementosExcluidos = ['contPortPlaca', 'agrupaOblicuos-placa','container01'];                                                              /// OCULTA TODO MENOS (2 ELEMENTOS)          
+     var elementosExcluidos = ['contPortPlaca', 'agrupaOblicuos-placa','container01','links-iniciales','links-inicialesI'];                                                              /// OCULTA TODO MENOS (2 ELEMENTOS)          
      for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]);  
       if (elemento) {
@@ -1093,10 +1093,6 @@ function showRepuesto(elementId) {
       video.currentTime = 0;
       video.play()   
       }})
-      for (var i = 0; i < linksIniciales.length; i++) {
-        var elemento = document.getElementById(linksIniciales[i]);
-        elemento.style.display = 'flex'
-      }    
       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
       idsArray.push(elementId);
       console.log(idsArray);
@@ -1104,7 +1100,7 @@ function showRepuesto(elementId) {
     break;       
     case 'contPortManta':
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      var elementosExcluidos = ['contPortManta', 'container01','agrupaOblicuos-IX'];                                                              /// OCULTA TODO MENOS (2 ELEMENTOS)          
+      var elementosExcluidos = ['contPortManta', 'container01','agrupaOblicuos-IX','links-iniciales','links-inicialesI'];                                                              /// OCULTA TODO MENOS (2 ELEMENTOS)          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
@@ -1121,10 +1117,6 @@ function showRepuesto(elementId) {
         video.currentTime = 0;
         video.play()   
       }})
-      for (var i = 0; i < linksIniciales.length; i++) {
-        var elemento = document.getElementById(linksIniciales[i]);
-        elemento.style.display = 'flex'
-      }    
       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
       idsArray.push(elementId);
       console.log(idsArray);
@@ -1132,7 +1124,7 @@ function showRepuesto(elementId) {
     break;
     case 'contImpresor':
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      var elementosExcluidos = ['agrupaOblicuos-IX','contImpresor','container01'];                                                              /// OCULTA TODO MENOS (2 ELEMENTOS)          
+      var elementosExcluidos = ['agrupaOblicuos-XXIII','impresorImg','contImpresor','container01','links-iniciales','links-inicialesI'];                                                              /// OCULTA TODO MENOS (2 ELEMENTOS)          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
@@ -1149,11 +1141,7 @@ function showRepuesto(elementId) {
         video.currentTime = 0;
         video.play()   
       }})
-      for (var i = 0; i < linksIniciales.length; i++) {
-        var elemento = document.getElementById(linksIniciales[i]);
-        elemento.style.display = 'flex'
-      }
-      imgsContra.style.display = 'flex'
+      /* imgsContra.style.display = 'flex' */
       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
         idsArray.push(elementId);
         console.log(idsArray);
@@ -1274,11 +1262,10 @@ function ladosMantilla(elementId){
 
   switch (elementId) {
     case 'mantilla1':
-     var elementosExcluidos = ['contPerfilesManta','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01']  
+     var elementosExcluidos = ['contPerfilesManta','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
      for (var i = 0; i < allContenedores.length; i++) {
        var elemento = document.getElementById(allContenedores[i])  
        if (elemento) {
-       // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
      }}
      videoCaucho.pause()
@@ -1291,48 +1278,61 @@ function ladosMantilla(elementId){
         imagen.style.display = 'none'
       }
       })
-      for (var i = 0; i < linksIniciales.length; i++) {
-        var elemento = document.getElementById(linksIniciales[i]);
-        elemento.style.display = 'flex'
+      if (screenWidth < 500) {   
+        var elementosExcluidos = ['contPerfilesManta','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i]) 
+          if (elemento) {
+            // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
+          }
+        }
       }  
+
       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
         idsArray.push(elementId);
         console.log(idsArray);
       }
       break;
     case 'mantilla2':
-      var elementosExcluidos = ['contPerfilesManta','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01']  
+      var elementosExcluidos = ['contPerfilesManta','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
       for (var i = 0; i < allContenedores.length; i++) {
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
-        // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
       }}
       videoCaucho.pause()
       videoCaucho.style.display = 'none'
-      contChildManta.style.display='flex' 
-      imgsManta.forEach(function (imagen) {
-      if (imagen.id === 'manta2' || imagen.id === 'manta3') {
-        imagen.style.display = 'block'
-      }else{
-      imagen.style.display = 'none'
-      }
-      })
-      for (var i = 0; i < linksIniciales.length; i++) {
-        var elemento = document.getElementById(linksIniciales[i]);
-        elemento.style.display = 'flex'
-      }  
-      if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
-        idsArray.push(elementId);
-        console.log(idsArray);
-      }
+       contChildManta.style.display='flex' 
+       imgsManta.forEach(function (imagen) {
+       if (imagen.id === 'manta2' || imagen.id === 'manta3') {
+         imagen.style.display = 'block'
+       }else{
+         imagen.style.display = 'none'
+       }
+       })
+       if (screenWidth < 500) {   
+         var elementosExcluidos = ['contPerfilesManta','imagenes-manta','contPortManta','agrupaOblicuos-X','container01','links-inicialesI','links-iniciales']  
+         for (var i = 0; i < allContenedores.length; i++) { 
+           var elemento = document.getElementById(allContenedores[i]) 
+           if (elemento) {
+             // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
+           }
+         }
+       }  
+ 
+       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+         idsArray.push(elementId);
+         console.log(idsArray);
+       }
+ 
     break;     
     case 'mantilla3':
-      var elementosExcluidos = ['contPerfilesManta','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01']  
+      var elementosExcluidos = ['contPerfilesManta','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
       for (var i = 0; i < allContenedores.length; i++) {
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
-        // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
       }}
       videoCaucho.pause()
@@ -1345,23 +1345,16 @@ function ladosMantilla(elementId){
         imagen.style.display = 'none'
       }
       })
-      for (var i = 0; i < linksIniciales.length; i++) {
-        var elemento = document.getElementById(linksIniciales[i]);
-        elemento.style.display = 'flex'
-      }  
       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
         idsArray.push(elementId);
         console.log(idsArray);
-      }
- 
-
+      } 
     break;
     case 'mantilla4':
-      var elementosExcluidos = ['contPerfilesManta','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01']  
+      var elementosExcluidos = ['contPerfilesManta','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
       for (var i = 0; i < allContenedores.length; i++) {
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
-        // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
       }}
       videoCaucho.pause()
@@ -1374,16 +1367,10 @@ function ladosMantilla(elementId){
         imagen.style.display = 'none'
       }
       })
-      for (var i = 0; i < linksIniciales.length; i++) {
-        var elemento = document.getElementById(linksIniciales[i]);
-        elemento.style.display = 'flex'
-      }  
       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
         idsArray.push(elementId);
         console.log(idsArray);
       }
- 
-
     break;
     default:
   }
@@ -9376,7 +9363,8 @@ document.addEventListener('keydown', function(event) {
         /* changeButtonStyles('bancada-torre-II') */
         /* muestraRodillo('plate-smed','images-entintador') */
         /* abrirSeccionVariable('cont-variable') */
-        showRepuesto ('contImgDistribuidor')        /*muestraRodillo('videoElement2','images-distribuidor')
+        showRepuesto('contPortManta', 'videoTrain03')
+        /*muestraRodillo('videoElement2','images-distribuidor')
         muestraRodillo('videoElement3','images-entintador') */      
       break;
     }
@@ -9385,7 +9373,7 @@ document.addEventListener('keydown', function(event) {
 
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('contenedor-9')
+  var contiBoton = document.getElementById('agrupaOblicuos-IX')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top

@@ -1218,8 +1218,8 @@
 
       </div>
     </div>
-    <div id="contPortPlaca" style="display: none;">
-      <video class="video-training" id="video-placa" style="position: absolute;left: 340px;top:1px;" src="./assets/video-plancha-v2.mp4" loop autoplay></video>
+    <div id="contPortPlaca">
+      <video class="video-training" id="video-placa" src="./assets/video-plancha-v2.mp4" loop autoplay></video>
       <div id="agrupaOblicuos-placa">
         <button class="Bot-inicio2" id="butt-010" onclick="ladosPlancha('imagen1')">Frente</button>
         <button class="Bot-inicio2-fondo" id="butt-020" ></button> 
@@ -1230,10 +1230,11 @@
         <button class="Bot-inicio2" id="butt-07" onclick="ladosPlancha('imagen4')">Atras</button>
         <button class="Bot-inicio2-fondo" id="butt-080"></button>  
       </div>
-      <div id="placa" style="position: absolute;left: 17px;top: 10px;">
-        <img class="image-trainings aumentar" src="./assets/comparador caratula.png" alt="placa" style="width: 240px;height: 150px;border-radius: 11px;"><br> 
-        <img class="image-trainings aumentar" src="./assets/anodizado.jpg" alt="placa" style="width: 240px;height: 150px;border-radius: 21px;"><br>
-        <img class="image-trainings aumentar" src="./assets/plancha.jfif" alt="placa" style="width: 240px;height: 150px;border-radius: 11px;"> <br>
+
+      <div id="placa">
+        <img class="image-trainings aumentar" src="./assets/comparador caratula.png"><br> 
+        <img class="image-trainings aumentar" src="./assets/anodizado.jpg" alt="placa"><br>
+        <img class="image-trainings aumentar" src="./assets/plancha.jfif" alt="placa">
       </div>
     </div>
     <div id="contPerfilesPlancha" style="display: none;">
@@ -1256,8 +1257,8 @@
         </div>
       </div>
     </div>
-    <div id="contPortManta" style="display: none;">
-      <video class="video-training" id="videoManta" style="position: absolute;left: 340px;top:1px;"  src="./assets/video-portaManta-v2.mp4" loop autoplay></video>
+    <div id="contPortManta">
+      <video class="video-training" id="videoManta" src="./assets/video-portaManta-v2.mp4" loop autoplay></video>
       <div id="agrupaOblicuos-IX">
         <button class="Bot-inicio2" id="butt-01" onclick="ladosMantilla('mantilla1')">Frente</button>
         <button class="Bot-inicio2-fondo" id="butt-02"></button> 
@@ -1268,19 +1269,20 @@
         <button class="Bot-inicio2" id="butt-07" onclick="ladosMantilla('mantilla4')">Atras</button>
         <button class="Bot-inicio2-fondo" id="butt-08"></button>  
       </div>
-      <div id="manta" style="position: absolute;left: 17px;top: -1px;">
-        <img class="image-trainings aumentar" src="./assets/calibrador.png" alt="calibra" style="width: 240px;height: 160px;border-radius: 11px;"> <br>
-        <img class="image-trainings aumentar" src="./assets/mantilla3.jfif" alt="manta" style="width: 240px;height: 160px;border-radius: 11px;"> <br>
-        <img class="image-trainings aumentar" src="./assets/mantilla2.png" alt="manta1" style="width: 240px;height: 160px;border-radius: 11px;">
+      <div id="manta">
+        <img class="image-trainings aumentar" src="./assets/calibrador.png" alt="calibra"> <br>
+        <img class="image-trainings aumentar" src="./assets/mantilla3.jfif" alt="manta"> <br>
+        <img class="image-trainings aumentar" src="./assets/mantilla2.png" alt="manta1">
       </div>     
     </div>
     <div id="contPerfilesManta">
       <div id="imagenes-manta">
 
         <div class="imagen-container" id="mantilla1">
-          <img src="./assets/mantillaII.jpg" class="imagesTorre imgMant aumentar" id="manta" alt="porte plancha">
-          <img src="./assets/mantilla.jpg" class="imagesTorre imgMant aumentar" id="manta1" style="margin-left: 17px;" alt="porte plancha">
+          <img src="./assets/mantillaII.jpg" class="imagesTorre imgMant aumentar" id="manta" style="margin-left: -17px;" alt="porte plancha">
+          <img src="./assets/mantilla.jpg" class="imagesTorre imgMant aumentar" id="manta1" style="margin-left: 520px;" alt="porte plancha">
         </div>
+
 
         <div class="imagen-container" id="mantilla2">
           <img src="./assets/mantilla estructura.jpg" class="imagesTorre imgMant aumentar" id="manta2" alt="porte plancha">
@@ -1298,8 +1300,8 @@
         </div>
       </div>       
     </div>
-    <div id="contImpresor" style="display: none;">
-      <video class="video-training" id="video-impresor" style="position: absolute;left: 340px;top:-1px;" src="./assets/video-impresor.mp4" loop muted autoplay></video>
+    <div id="contImpresor">
+      <video class="video-training" id="video-impresor" src="./assets/video-impresor.mp4" loop muted autoplay></video>
       <div id="agrupaOblicuos-XXIII">
         <button class="Bot-inicio2" id="butt-011" onclick="ladosImpresor('forward')">Frente</button>
         <button class="Bot-inicio2-fondo" id="butt-022"></button> 
@@ -1310,10 +1312,10 @@
         <button class="Bot-inicio2" id="butt-077" onclick="ladosImpresor('back')">Atras</button>
         <button class="Bot-inicio2-fondo" id="butt-088"></button>  
       </div>
-      <div id="impresorImg" style="position: absolute;display: flex;flex-direction: column; left: 17px;top: 1px;">
-        <img class="image-trainings aumentar" src="./assets/medidor.jfif" alt="manta" style="width: 240px;height: 160px;border-radius: 11px;"> <br>
-        <img class="image-trainings aumentar" src="./assets/impresor.jfif" alt="manta" style="width: 240px;height: 160px;border-radius: 11px;"> <br> 
-        <img class="image-trainings aumentar" src="./assets/impresor1.jfif" alt="manta1" style="width: 240px;height: 160px;border-radius: 11px;">
+      <div id="impresorImg">
+        <img class="image-trainings aumentar" src="./assets/medidor.jfif" alt="manta"> <br>
+        <img class="image-trainings aumentar" src="./assets/impresor.jfif" alt="manta"> <br> 
+        <img class="image-trainings aumentar" src="./assets/impresor1.jfif" alt="manta1">
       </div> 
     </div>
     <div id="contPerfilesImpresor">
@@ -1339,7 +1341,7 @@
     </div>
     <div id="contImgDistribuidor">
       <div class="imgRow" id="imgs-I">
-        <img src="./assets/Distri-0.jpg    " class="imag-distri image-trainings aumentar" alt="imgDistrib-4">
+        <img src="./assets/Distri-0.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-4">
         <img src="./assets/Distri-14.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-17">
         <img src="./assets/DIstri-3.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-3">
         <img src="./assets/Distri-2.jpg" class="imag-distri image-trainings aumentar" alt="imgDistrib-2">
