@@ -297,7 +297,7 @@ function changeButtonStyles(elementId) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
           }
           contLinksTintero.style.marginTop = '-3.7%'
-          contOblicuos.style.marginLeft = '-1%'
+          contOblicuos.style.marginLeft = '-1.7%'
         }
       }
   

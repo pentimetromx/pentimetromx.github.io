@@ -4003,7 +4003,6 @@ elemento.visible {
    width: 96px;
    margin-right: 12px; 
   } 
-  #imgTorre-a,
   #imgTorre{
     position: absolute;
     display: flex;
@@ -4027,7 +4026,7 @@ elemento.visible {
 
   #vidTintero{
     position: relative;
-    margin-left: -137%;
+    margin-left: -135%;
     /* margin-top: 0.8%; */
     margin-top: 0.8%;
     height: 224px;
