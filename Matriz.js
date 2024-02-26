@@ -318,6 +318,7 @@ function changeButtonStyles(elementId) {
       videoElements.forEach(video => {
         if (video.id === 'videoElement1-II') {
           video.style.display = 'block'
+          video.currentTime = 0
           video.play()      
         } else {
           video.style.display = 'none'

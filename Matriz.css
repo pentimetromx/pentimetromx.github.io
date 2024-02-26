@@ -3310,6 +3310,26 @@ elemento.visible {
   display: flex;
   border: 1px solid black;
 }
+#sitio-en-construccion{
+  position: absolute;
+  display: flex;
+  top: 44%;
+  left: 44%;
+  background-color: #fff; /* Fondo blanco */
+  color: #333; /* Texto color gris oscuro */
+  border: 3px solid #ccc; /* Borde 3px color gris */
+  border-radius: 5px; /* Radio en el borde de 5px */
+  text-align: center;
+  font-family: 'GothamRounded', sans-serif;
+  animation: aumentarTamano 1s infinite alternate; /* Animación cada 1 segundo */
+  display: none;
+}
+@keyframes aumentarTamano{
+  to {
+    transform: scale(3); /* Aumenta el tamaño 2x */
+  }
+}
+
 
  @media screen and (max-width: 420px) {
   /* @media screen and (max-width: 768px) { */  
@@ -4026,7 +4046,8 @@ elemento.visible {
 
   #vidTintero{
     position: relative;
-    margin-left: -132.5%;
+    /* margin-left: -132.5%; */
+    margin-left: -131.5%;
     margin-top: 0.8%;
     height: 224px;
     width: 308px;
