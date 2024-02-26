@@ -4904,7 +4904,7 @@ elemento.visible {
     justify-content: center;
     display: flex;
     flex-direction: row;
-    top: 90px;
+    top: 19%;
     height: 100%;
     width: 100%;
     display: none;
@@ -4923,7 +4923,7 @@ elemento.visible {
     display: flex;
     flex-direction: column; 
     left: 27%;
-    top: 46%;  
+    top: 42%;  
   }  
   #contPortManta video,
   #contImpresor video,
@@ -4953,20 +4953,28 @@ elemento.visible {
   #imagenes-impresor,
   #imagenes-manta,
   #imagenes-plancha{
-    position: absolute;
+    position: relative;
     display: flex;
     flex-direction: column;
-/*     flex-wrap: wrap;
-    justify-content: flex-start; */
     left: 10%;
     top: 27%;
     display: none;
   }
   .imagen-container{
     position: absolute;
+    left: 5%;
     display: flex;
     flex-direction: column;
-    left: 2.5%;
+    align-items: flex-end;
+  }
+  #imagen1,
+  #imagen2,
+  #imagen3,
+  #imagen4{
+    position: relative;
+    display: flex;
+    margin-top: 20%;
+    margin-left: 13%;
   }
   .imagesTorre{
     height: 190px;

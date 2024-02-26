@@ -1155,6 +1155,12 @@ function ladosPlancha(elementId){
   var imgPlancha = document.querySelectorAll('.imagesTorre') 
   var imagesPlancha = document.getElementById('contPerfilesPlancha')
   var imgsPlancha = document.getElementById('imagenes-plancha')
+  var contImagen = document.getElementById('imagen1')
+  var contImagen2 = document.getElementById('imagen2')
+  var contImagen3 = document.getElementById('imagen3')
+  var contImagen4 = document.getElementById('imagen4')
+
+
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   var elementosExcluidos = ['contPortPlaca', 'agrupaOblicuos-placa','container01','links-iniciales','links-inicialesI']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
   for (var i = 0; i < allContenedores.length; i++) { 
@@ -1181,6 +1187,10 @@ function ladosPlancha(elementId){
         }
       })
       contIMPlaca.style.display='none' 
+      if (screenWidth < 500) {  
+        contImagen.style.left = '-27%'
+        contImagen.style.top = '1%'
+      }  
       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
         idsArray.push(elementId);
         console.log(idsArray);
@@ -1201,6 +1211,10 @@ function ladosPlancha(elementId){
         }
       })
       contIMPlaca.style.display='none' 
+      if (screenWidth < 500) {  
+        contImagen2.style.left = '-27%'
+        contImagen2.style.top = '-8%'
+      }  
       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
         idsArray.push(elementId);
         console.log(idsArray);
@@ -1221,6 +1235,10 @@ function ladosPlancha(elementId){
         }
       })
       contIMPlaca.style.display='none' 
+      if (screenWidth < 500) {  
+        contImagen3.style.left = '-27%'
+        contImagen3.style.top = '-17%'
+      }
       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
         idsArray.push(elementId);
         console.log(idsArray);
@@ -1241,6 +1259,10 @@ function ladosPlancha(elementId){
         }
       })
       contIMPlaca.style.display='none' 
+      if (screenWidth < 500) {  
+        contImagen4.style.left = '-27%'
+        contImagen4.style.top = '-26%'
+      }
       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
         idsArray.push(elementId);
         console.log(idsArray);
@@ -9359,7 +9381,7 @@ document.addEventListener('keydown', function(event) {
         /* changeButtonStyles('bancada-torre-II') */
         /* muestraRodillo('plate-smed','images-entintador') */
         /* abrirSeccionVariable('cont-variable') */
-        showRepuesto('contPortManta', 'videoTrain03')
+        showRepuesto('contPortPlaca')        
         /*muestraRodillo('videoElement2','images-distribuidor')
         muestraRodillo('videoElement3','images-entintador') */      
       break;
@@ -9369,7 +9391,7 @@ document.addEventListener('keydown', function(event) {
 
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('agrupaOblicuos-IX')
+  var contiBoton = document.getElementById('imagen1')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
