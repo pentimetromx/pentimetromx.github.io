@@ -89,7 +89,6 @@ let hoverTimeout;
 let hideTimeout;
 let contadorClicks = 0;
 
-var conteHijosTintero = ['cont-links', 'imgTorre', 'imgsRepuestos','agrupaOblicuos-II']
 var container1 = document.getElementById('container01')
 
 const uniTeñido = document.getElementById('uTeñidos')
@@ -273,28 +272,6 @@ function changeButtonStyles(elementId) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }  
-      if (screenWidth < 500) {
-        videoElements.forEach(video => {
-        if (video.id === 'vidTintero') {
-          video.style.top = '17px'
-          video.style.display = 'block'
-          video.play();
-      
-          // Después de 977 milisegundos, ocultar el video
-          setTimeout(function () {
-            video.style.display = 'none'
-          }, 977);
-        } else {
-          video.style.display = 'none'
-        }
-        });
-        for (var i = 0; i < linksIniciales.length; i++) {
-          var elemento = document.getElementById(linksIniciales[i])
-          elemento.style.display = 'flex'
-        }    
-
-      }
-
       videoElements.forEach(video => {
       if (video.id === 'vidTintero') {
         video.style.top = '17px'
@@ -309,6 +286,17 @@ function changeButtonStyles(elementId) {
         video.style.display = 'none'
       }
       });
+      var elementosExcluidos = ['cont-links','pantalla-inicial','pantalla-tintero','container01','links-inicialesI','links-iniciales','agrupaOblicuos-II','imgTorre','video-entintado','videoElement1-II']  
+      var contLinksTintero = document.getElementById('cont-links')
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i]) 
+        if (elemento) {
+          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
+        }
+        contLinksTintero.style.marginTop = '-3.7%'
+      }
+  
 
       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
         idsArray.push(elementId);
@@ -367,12 +355,10 @@ function changeButtonStyles(elementId) {
       }
     break;
     case 'bancada-torre-II': 
-      /* var buttRepuesto = document.getElementById('butt-repuestos-III') */
       var elementosExcluidos = ['conti-boton-repuestos-III','butt-repuestos-III','bancada-torre-II','container01','links-inicialesI','links-iniciales','conti-video-bancada','plate-smed-I','contenedor-8','imgsIsopropil'];
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
-          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
         }
       } 
@@ -384,18 +370,19 @@ function changeButtonStyles(elementId) {
         }, delay * i,i)
       }
       contVid.style.display='flex' 
-      //EFECTO BOTONES
-      setTimeout(() => {
-        applyImageEffects4() 
-      }, 277)
       videoElements.forEach(video => {
         if (video.id === 'plate-smed-I') {
+          video.currentTime = 0
           video.style.display = 'block'
           video.play()      
         } else {
           video.style.display = 'none'
         }
-    })
+      })
+      //EFECTO BOTONES
+      setTimeout(() => {
+        applyImageEffects4() 
+      }, 277)
 
     if (screenWidth < 500) {   
       var elementosExcluidos = ['conti-boton-repuestos-III','butt-repuestos-III','bancada-torre-II','container01','links-inicialesI','links-iniciales','conti-video-bancada','plate-smed-I','contenedor-8','imgsIsopropil'];
@@ -9382,7 +9369,7 @@ document.addEventListener('keydown', function(event) {
         /* changeButtonStyles('bancada-torre-II') */
         /* muestraRodillo('plate-smed','images-entintador') */
         /* abrirSeccionVariable('cont-variable') */
-        ladosImpresor('forward')        
+        changeButtonStyles('pantalla-tintero')        
         /*muestraRodillo('videoElement2','images-distribuidor')
         muestraRodillo('videoElement3','images-entintador') */      
       break;
@@ -9392,7 +9379,7 @@ document.addEventListener('keydown', function(event) {
 
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('imagen1')
+  var contiBoton = document.getElementById('agrupaOblicuos-II')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
