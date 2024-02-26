@@ -4952,7 +4952,7 @@ elemento.visible {
 
   #imagenes-impresor,
   #imagenes-manta,
-  #imagenes-plancha{
+  #imagenes-plancha{ /*  */
     position: relative;
     display: flex;
     flex-direction: column;
@@ -4960,31 +4960,63 @@ elemento.visible {
     top: 27%;
     display: none;
   }
-  .imagen-container{
+  .imagen-container{ /*  */
     position: absolute;
     left: 5%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    gap: 11px;
+  }
+  .contImPresor{
+    position: absolute;
+    left: -17%;
+    top: 0.8%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 11px;
   }
   #imagen1,
   #imagen2,
   #imagen3,
-  #imagen4{
+  #imagen4{       /*  */
     position: relative;
     display: flex;
     margin-top: 20%;
     margin-left: 13%;
   }
+  #mantilla1,
+  #mantilla2,
+  #mantilla3,
+  #mantilla4{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 77%;
+    margin-top: 25%;
+    left: -17%;
+  }
+  #forward,
+  #comands,
+  #service,
+  #back{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 77%;
+    margin-top: 25%;
+    left: -17%;
+  }
+
+
   .imagesTorre{
     height: 190px;
     width: 252px;
     border-radius: 10px;   
   }
-  
-
-  
-
 
   /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
   .move-up-left {

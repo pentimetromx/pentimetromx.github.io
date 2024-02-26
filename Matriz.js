@@ -1290,7 +1290,7 @@ function ladosMantilla(elementId){
      videoCaucho.style.display = 'none'
       contChildManta.style.display='flex' 
       imgsManta.forEach(function (imagen) {
-      if (imagen.id === 'manta' || imagen.id === 'manta1') {
+      if (imagen.id === 'manta0' || imagen.id === 'manta1') {
         imagen.style.display = 'block'
       }else{
         imagen.style.display = 'none'
@@ -1305,6 +1305,7 @@ function ladosMantilla(elementId){
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
           }
         }
+        imgsMantasI.style.marginlef = '-22%'
       }  
 
       if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
@@ -1330,7 +1331,7 @@ function ladosMantilla(elementId){
        }
        })
        if (screenWidth < 500) {   
-         var elementosExcluidos = ['contPerfilesManta','imagenes-manta','contPortManta','agrupaOblicuos-X','container01','links-inicialesI','links-iniciales']  
+         var elementosExcluidos = ['contPerfilesManta','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
          for (var i = 0; i < allContenedores.length; i++) { 
            var elemento = document.getElementById(allContenedores[i]) 
            if (elemento) {
@@ -9381,7 +9382,7 @@ document.addEventListener('keydown', function(event) {
         /* changeButtonStyles('bancada-torre-II') */
         /* muestraRodillo('plate-smed','images-entintador') */
         /* abrirSeccionVariable('cont-variable') */
-        showRepuesto('contPortPlaca')        
+        ladosImpresor('forward')        
         /*muestraRodillo('videoElement2','images-distribuidor')
         muestraRodillo('videoElement3','images-entintador') */      
       break;
