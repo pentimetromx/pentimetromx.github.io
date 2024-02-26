@@ -4907,7 +4907,7 @@ elemento.visible {
     justify-content: center;
     display: flex;
     flex-direction: row;
-    top: 19%;
+    top: 17%;
     height: 100%;
     width: 100%;
     display: none;
@@ -4941,7 +4941,7 @@ elemento.visible {
   #video-impresor{
     position: absolute;
     left: 10%;
-    top:1%;
+    margin-top:-3%;
   }
   #agrupaOblicuos-placa, 
   #agrupaOblicuos-XXIII, 
