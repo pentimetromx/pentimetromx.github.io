@@ -2437,7 +2437,7 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
 
   switch (elementId) {    
     case 'pantalla-frente':
-      var elementosExcluidos = ['pantalla-frente','container01'];          
+      var elementosExcluidos = ['pantalla-frente','container01','links-inicialesI','links-iniciales','agrupaOblicuos'];          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
@@ -2445,10 +2445,18 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
         }
       }
-      for (var i = 0; i < linksIniciales.length; i++) {
-        var elemento = document.getElementById(linksIniciales[i]);
-        elemento.style.display = 'flex'
-      }      
+      if (screenWidth < 500) {  
+        var agrupaOblicuos = document.getElementById('agrupaOblicuos') 
+        var elementosExcluidos = ['pantalla-frente','container01','links-inicialesI','links-iniciales','agrupaOblicuos'];          
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i]) 
+          if (elemento) {
+            // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
+          }
+        }
+        agrupaOblicuos.style.left = '77%'
+      }
       // 4. Verificar si el elemento está definido y si ya existe en arrayIds
       if (typeof elementId !== 'undefined') {
         const index = idsArray.indexOf(elementId);
@@ -2462,32 +2470,36 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
       } 
     break; 
     case 'pantalla-mandos':
-      var elementosExcluidos = ['pantalla-mandos','container01'];          
+      var elementosExcluidos = ['pantalla-mandos',,'container01','links-inicialesI','links-iniciales','agrupaOblicuos-III'];          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
-          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
         }
       }
-      for (var i = 0; i < linksIniciales.length; i++) {
-        var elemento = document.getElementById(linksIniciales[i]);
-        elemento.style.display = 'flex'
-      }      
-      // 4. Verificar si el elemento está definido y si ya existe en arrayIds
+      if (screenWidth < 500) {  
+        var agrupaOblicuosIII = document.getElementById('agrupaOblicuos-III') 
+        var elementosExcluidos = ['pantalla-mandos',,'container01','links-inicialesI','links-iniciales','agrupaOblicuos-III'];          
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i]) 
+          if (elemento) {
+            // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
+          }
+        }
+        agrupaOblicuosIII.style.left = '77%'
+      }
       if (typeof elementId !== 'undefined') {
         const index = idsArray.indexOf(elementId);
         if (index !== -1) {
-          // 4. Si el elemento ya existe, moverlo a la última posición
           idsArray.splice(index, 1); // Elimina el elemento en la posición actual
         }
-        // 5. Agregar el elemento al final de arrayIds
         idsArray.push(elementId);
         console.log(idsArray);
       } 
     break;
     case 'pantalla-servicio': 
-    var elementosExcluidos = ['pantalla-servicio','container01'];          
+    var elementosExcluidos = ['pantalla-servicio','container01','links-inicialesI','links-iniciales','agrupaOblicuos-IV'];          
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]);  
       if (elemento) {
@@ -2495,24 +2507,30 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
       }
     }
-    for (var i = 0; i < linksIniciales.length; i++) {
-      var elemento = document.getElementById(linksIniciales[i]);
-      elemento.style.display = 'flex'
-    }      
-    // 4. Verificar si el elemento está definido y si ya existe en arrayIds
+    if (screenWidth < 500) {  
+      var agrupaOblicuosIV = document.getElementById('agrupaOblicuos-IV') 
+      var elementosExcluidos = ['pantalla-servicio','container01','links-inicialesI','links-iniciales','agrupaOblicuos-IV'];          
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i]) 
+        if (elemento) {
+          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
+        }
+      }
+      agrupaOblicuosIV.style.left = '77%'
+    }
     if (typeof elementId !== 'undefined') {
       const index = idsArray.indexOf(elementId);
       if (index !== -1) {
         // 4. Si el elemento ya existe, moverlo a la última posición
         idsArray.splice(index, 1); // Elimina el elemento en la posición actual
       }
-      // 5. Agregar el elemento al final de arrayIds
       idsArray.push(elementId);
       console.log(idsArray);
     } 
     break;
     case 'pantalla-atras':
-      var elementosExcluidos = ['pantalla-atras','container01'];          
+      var elementosExcluidos = ['pantalla-atras','container01','links-inicialesI','links-iniciales','agrupaOblicuos-V'];          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
@@ -2520,15 +2538,24 @@ function muestraTorresI (elementId) {  // BOTON OBLICUO
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
         }
       }
-      for (var i = 0; i < linksIniciales.length; i++) {
-        var elemento = document.getElementById(linksIniciales[i]);
-        elemento.style.display = 'flex'
-      }      
-      // 4. Verificar si el elemento está definido y si ya existe en arrayIds
+      if (screenWidth < 500) {  
+        var agrupaOblicuosV = document.getElementById('agrupaOblicuos-V') 
+        var elementosExcluidos = ['pantalla-atras','container01','links-inicialesI','links-iniciales','agrupaOblicuos-V'];          
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i]) 
+          if (elemento) {
+            // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
+          }
+        }
+        agrupaOblicuosV.style.left = '77%'
+      }
+  
+
+
       if (typeof elementId !== 'undefined') {
         const index = idsArray.indexOf(elementId);
         if (index !== -1) {
-          // 4. Si el elemento ya existe, moverlo a la última posición
           idsArray.splice(index, 1); // Elimina el elemento en la posición actual
         }
         // 5. Agregar el elemento al final de arrayIds

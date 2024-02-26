@@ -4004,17 +4004,27 @@ elemento.visible {
    margin-right: 12px; 
   } 
   #imgTorre-a,
-  #imgTorre-f,
   #imgTorre{
     position: absolute;
     display: flex;
     left: 2%;
-    /* top: 21%; */
     margin-top: 3%;
     height: 223px;
     width: 301px;
     border-radius: 8px;
   }
+  #imgTorre-a,
+  #imgTorre-f{
+    position: absolute;
+    display: flex;
+    left: 2%;
+    margin-top: -0.3%;
+    height: 223px;
+    width: 301px;
+    border-radius: 8px;
+
+  }
+
   #vidTintero{
     position: relative;
     margin-left: -139%;
@@ -4051,7 +4061,7 @@ elemento.visible {
     position: absolute;
     display: flex;
     flex-direction: column;
-    left: 45.5%;
+    left: 44%;
     margin-top: 1%;
   }
   .Bot-inicio2{
