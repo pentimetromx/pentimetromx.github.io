@@ -4046,18 +4046,8 @@ elemento.visible {
 
   #vidTintero{
     position: relative;
-    /* margin-left: -132.5%; */
-    /* margin-left: -131.5%; */
-    /* margin-left: -130%; */
-    /* margin-left: -130.7%; */
-    /* margin-left: -131.5%; */
-    /* margin-left: -132%; */
-    /* margin-left: -132.5%; */
-    /* margin-left: -133.8%; */
-    /* margin-left: -134%; */
-    /* margin-left: -134.3%; */
     margin-left: -135%;
-    margin-top: 0.8%;
+    margin-top: 1%;
     height: 224px;
     width: 308px;
   }
