@@ -739,15 +739,15 @@ width:447px ;
   position: relative;
   display: flex;
   left:577px;
-  top:11%;
+  top:-59%;
   display: none;
 }
 #lubri-II{
   position: relative;
-  display: none;
   display: flex;
+  display: none;
   left:954px;
-  top:-52.5%;
+  top:-123%;
 }
 #vidLub{
   position: absolute;
@@ -2052,16 +2052,16 @@ header {
   position: absolute;
   display: flex;
   flex-direction: column;
-  left: 11%;
-  margin-top: 10.4%;
+  left: 12%;
+  margin-top: -49.1%;
   display: none;
 }
 #conti-boton-rodilleria{
   position: absolute;
-  display: flex;
   flex-direction: column;
-  left: 11%;
-  margin-top: 10.4%;
+  display: flex;
+  left: 12.3%;
+  margin-top: -49%;
   display: none;
 }
 #conti-boton-freno{
@@ -2097,12 +2097,12 @@ header {
   margin-bottom: 38px;
 }
 #frec-lubrica{
+  position: relative;
   display: flex;
   flex-direction: column;
-  margin-left:357px;
-  margin-top: 50px;
+  left: 27%;
+  margin-top: -48.5%;
   z-index: 3;
-
 }  
 #frec-lubrica button{
   width: 27px;
@@ -2139,12 +2139,12 @@ header {
   border: 7px solid rgba(255,255,0,15);
   border-radius: 17px;  
 }
-
  #lubri-III{
   position: relative;
   display: flex;
-  left:577px;
-  top: 50px;
+  left:46%;
+  top: -88%;
+  display: none;
 }
  #vertcal-line-II{
   position: absolute;
@@ -2246,9 +2246,11 @@ header {
   margin-bottom: 17px;
 }
 #rodillos-II{
-  position: relative;
-  top: 87px;
-  left: 737px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  margin-top: -50%;
+  left: 57%;
 }
 #rodillos-II img{
   height: 195px;
@@ -2507,14 +2509,14 @@ elemento.visible {
 }
 #cont-arriba {
   position: absolute;
-  top: 107px;
+  margin-top: -40%;
   left: 377px;
   margin-bottom: 20px; /* Añade un margen inferior de 20px al contenedor padre */
   display: none;
 }
 #cont-arriba-rodillos{
   position: absolute;
-  top: 107px;
+  margin-top: -48%;
   left: 377px;
   margin-bottom: 20px; /* Añade un margen inferior de 20px al contenedor padre */
   display: none;  
@@ -2630,9 +2632,9 @@ elemento.visible {
   top: 325px;
 }
 #teñido-II{
-  position: relative;
-  top: 87px;
-  left: 737px;
+  position: absolute;
+  margin-top:-47%;
+  left:58%;
 }
 .img-rodillo{
   margin-right: 10px;
@@ -3330,6 +3332,12 @@ elemento.visible {
   }
 }
 
+#miDiv {
+  width: 300px;
+  height: 500px;
+  background-color: #e0e0e0;
+}
+
 
  @media screen and (max-width: 420px) {
   /* @media screen and (max-width: 768px) { */  
@@ -3524,8 +3532,8 @@ elemento.visible {
   }  
   #frec-lubrica{
     position: absolute;
-    left:-22%;
-    top: 15%;
+    left:61%;
+    top: 49.5%;
   } 
   #lubri-I{
     position: relative;
@@ -3633,6 +3641,7 @@ elemento.visible {
     left:0.5%;
     top: 65%;
     width: 420px;
+    display: none;
   } 
   #vertcal-line-II{
     position: absolute;
@@ -3707,9 +3716,8 @@ elemento.visible {
     position: absolute;
     display: flex;
     flex-direction: column;
-    position: fixed;
     left: 25%;
-    top: 16%;
+    margin-top: -143%;
 
   }
   #conti-boton-rodilleria button,
@@ -3720,10 +3728,10 @@ elemento.visible {
   } 
   #conti-boton-rodilleria{
     position: absolute;
-    display: flex;
     flex-direction: column;
+    display: flex;
     left: 8%;
-    top: 1%;
+    top: 36.2%;
     display: none;
   }
   
@@ -3758,8 +3766,8 @@ elemento.visible {
     margin-bottom: 7px;  
   }
   #teñido-II{
-    position: fixed;
-    top: 65%;
+    position: absolute;
+    margin-top: -70.3%;
     left: 21%;
   }
   #primeras-imgs{
@@ -3831,8 +3839,12 @@ elemento.visible {
     height: 107px;
   }
   #rodillos-II{
-    position: relative;
-    top: 45%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 655px;
+    gap: 10px;
+    top: 75%;
     left: 3%;
   }
   #rodillos-II img{

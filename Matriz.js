@@ -4295,6 +4295,13 @@ function listaEntrenamientosII(btnList) {
     break;    
     default:
   }
+  if(screenWidth < 500){
+    var vinculosTrouble = document.getElementById('linkLis')
+    vinculosTrouble.style.position = 'absolute'    
+    vinculosTrouble.style.marginLeft = '-64%'
+    vinculosTrouble.style.marginTop = '13%'
+
+  }
 }   
 function listaEntrenamientos(){
   var videoBackground = document.getElementById('videoBackground')
@@ -4770,9 +4777,6 @@ function LubricaDesbobinador(idButt) {
   var arrayLabels = ['labl1', 'labl2', 'labl3']
   var arrayLabels = ['labl1', 'labl2', 'labl3']
   var contFreno = document.getElementById('freno')
-/*   var contiPantaInicial = document.getElementById('pantalla-inicial')
-  contiPantaInicial.style.display = 'none'
- */
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   var arrayIdButtsCheck = ['lub-diario', 'lub-semanal', 'lub-mensual']                                                  /// COLOR VERDE A LOS BOTONES REDONDOS                   
   for (var i = 0; i < arrayIdButtsCheck.length; i++) {
@@ -4860,7 +4864,6 @@ function LubricaDesbobinador(idButt) {
           }
       }
     }
-
     break; 
     case 'btn3':
       for (var i = 0; i < contVidLub.length; i++) {
@@ -5041,27 +5044,25 @@ function UnidadTeñido(buttId,btnIniId){
   var contenedorPadre = document.getElementById('uniTeñido')
   var contiDesbobina = document.getElementById('desbobinadorId')
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-  botsDesplegables.forEach(boton => {                                                                                                    ///OCULTA BOTONES INICIALMENTE
+  botsDesplegables.forEach(boton => {                                                                                           ///OCULTA BOTONES INICIALMENTE
     botDesplegable = document.getElementById(boton)
     if(botDesplegable){
       botDesplegable.style.display = 'none'
     }
   })
   ///////////////////////////////////////////////////////////////////////////////////////////////////////// /////////////////////////////////////////////////////////////    
-  arrayPadres.forEach(unidad => {                                                                                                         ///OCULTA PADRES INICIALMENTE
+  arrayPadres.forEach(unidad => {                                                                                                ///OCULTA PADRES INICIALMENTE
     padre = document.getElementById(unidad)
     if(padre){
       padre.style.display = 'none'
     }
   })  
-
   var computedStyleUteñido = window.getComputedStyle(contiDesbobina);
   if (computedStyleUteñido.display === 'flex') {
     palpitarBotonTeñido();
   }
 
-  if(alimenta.style.display === 'none'){                                                                                                  /// SI "ALIMENTA" ESTÁ OCULTA
-
+  if(alimenta.style.display === 'none'){                                                                                         /// SI "ALIMENTA" ESTÁ OCULTA
     switch (buttId) {
       case 'boton8' :
         var computedStyleUteñido = window.getComputedStyle(contiDesbobina);
@@ -5106,8 +5107,7 @@ function UnidadTeñido(buttId,btnIniId){
         if(botDesplegable){
           botDesplegable.style.backgroundColor = '#333333'
          }
-       })      
-
+       })     
       showButtonsUTeñidoconRetraso()
       break;
       case 'boton9' :
@@ -6232,7 +6232,6 @@ function lubricaDiario(butId,labelId){
   var contLubricadorII = document.getElementById('lubri-II')
   var arrayIdButtsLub = ['lub-diario', 'lub-semanal', 'lub-mensual']
   var arrayLabels = ['labl1', 'labl2', 'labl3']
-
   for (var i = 0; i < arrayIdButtsLub.length; i++) {
     var button = arrayIdButtsLub[i]
     if (button === butId) {
@@ -9391,6 +9390,12 @@ function restablecerEstilos(elemento) {
   // Agregar la clase que define el lugar desde CSS
   elemento.classList.add('clase-contenedor-7');  // Ajusta el nombre de la clase según tu caso
 }
+
+function aplicarBlur() {
+  var miDiv = document.getElementById("miDiv")
+  miDiv.style.filter = "blur(5px)"
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // COMBINACION TECLAS EJECUTA FUNCION
 document.addEventListener('keydown', function(event) {
@@ -9401,7 +9406,10 @@ document.addEventListener('keydown', function(event) {
         /* changeButtonStyles('bancada-torre-II') */
         /* muestraRodillo('plate-smed','images-entintador') */
         /* abrirSeccionVariable('cont-variable') */
-        changeButtonStyles('pantalla-tintero')        
+        cierraContenedores('uTeñido')
+        UnidadTeñido('boton9','boton7')
+        UnidadTeñido('boton9','boton7')
+        
         /*muestraRodillo('videoElement2','images-distribuidor')
         muestraRodillo('videoElement3','images-entintador') */      
       break;
@@ -9410,7 +9418,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('agrupaOblicuos-II')
+  var contiBoton = document.getElementById('cont-arriba-rodillos')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
