@@ -4047,7 +4047,7 @@ elemento.visible {
   #vidTintero{
     position: relative;
     margin-left: -135%;
-    margin-top: 1%;
+    margin-top: 2%;
     height: 224px;
     width: 308px;
   }
