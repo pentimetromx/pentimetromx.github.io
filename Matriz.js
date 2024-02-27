@@ -210,7 +210,6 @@ function ElementosMa(){
     ElementosMaII('conteneMantaut')
   }, 300) // 100 milisegundos de retraso entre botones
 }
-
 function ElementosMaII(elementId) {
   var elementosExcluidos = ['conteneMantaut', 'container01','links-inicialesI','links-iniciales']  
   document.getElementById('linkList').style.display = 'none'
@@ -221,7 +220,6 @@ function ElementosMaII(elementId) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }
-
   document.body.style.zoom = "100%"
   container1.style.left=''
   showButtonsMAconRetraso()
@@ -4092,8 +4090,7 @@ function listaEntrenamientosII(btnList) {
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   for (var i = 0; i < arrayElementMA.length; i++) {                                                                                /// OCULTAR ELTOS M.A VISIBLES
     var id = arrayElementMA[i];
-    var elemento = document.getElementById(id);
-  
+    var elemento = document.getElementById(id);  
     if (elemento) {
       elemento.style.display = 'none'
     }
@@ -9411,7 +9408,6 @@ document.addEventListener('keydown', function(event) {
     }
   }
 });
-
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
   var contiBoton = document.getElementById('agrupaOblicuos-II')
