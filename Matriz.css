@@ -3332,13 +3332,6 @@ elemento.visible {
   }
 }
 
-#miDiv {
-  width: 300px;
-  height: 500px;
-  background-color: #e0e0e0;
-}
-
-
  @media screen and (max-width: 420px) {
   /* @media screen and (max-width: 768px) { */  
   #agrupaOblicuos-XI{

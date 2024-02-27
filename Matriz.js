@@ -3248,7 +3248,7 @@ function abrirDensitometria(elementId){
     idsArray.push(elementId);
     console.log(idsArray);
   }
-}
+} 
 function muestraVidPrisma(elementId) {
   if (screenWidth > 900) {
       allContenedores.forEach(contenedor => {
@@ -9389,11 +9389,6 @@ function restablecerEstilos(elemento) {
 
   // Agregar la clase que define el lugar desde CSS
   elemento.classList.add('clase-contenedor-7');  // Ajusta el nombre de la clase según tu caso
-}
-
-function aplicarBlur() {
-  var miDiv = document.getElementById("miDiv")
-  miDiv.style.filter = "blur(5px)"
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
