@@ -165,7 +165,7 @@ transform: scale(1.1);
   display: flex;
   align-items: center;
 }
-#linkList {
+#linkList{
   display: none;
   list-style: none;
   width: 237px;
@@ -175,7 +175,7 @@ transform: scale(1.1);
   left: 777px;
   top: 32px;
   background-color: blue;
-  z-index: 7;
+  z-index: 10;
 }
 .main-text {
   position: relative;
@@ -4047,7 +4047,7 @@ elemento.visible {
   #vidTintero{
     position: relative;
     margin-left: -135%;
-    margin-top: 2%;
+    margin-top: 1.5%;
     height: 224px;
     width: 308px;
   }
