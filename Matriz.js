@@ -194,8 +194,25 @@ function setInitialPosition() {
   contiBoton.style.left = '270px';
   contiBoton.style.transform = ''; // Restablecer la transformación
 }
-function ElementosMa(elementId) {
-  var elementosExcluidos = ['conteneMantaut', 'container01']  
+function ElementosMa(){
+  var botones = document.querySelectorAll('.butt-mautonomo') // Selecciona todos los botones
+  function mostrarBotonConRetraso(i) {
+    if (i < botones.length) {
+      var boton = botones[i]
+      boton.style.display = 'none'
+      setTimeout(function() {
+        mostrarBotonConRetraso(i + 1)
+      }, 1) // 100 milisegundos de retraso entre botones
+    }
+  }  
+  mostrarBotonConRetraso(0)
+  setTimeout(function() {
+    ElementosMaII('conteneMantaut')
+  }, 300) // 100 milisegundos de retraso entre botones
+}
+
+function ElementosMaII(elementId) {
+  var elementosExcluidos = ['conteneMantaut', 'container01','links-inicialesI','links-iniciales']  
   document.getElementById('linkList').style.display = 'none'
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
@@ -204,13 +221,9 @@ function ElementosMa(elementId) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }
-  for (var i = 0; i < linksIniciales.length; i++) {
-    var elemento = document.getElementById(linksIniciales[i])
-    elemento.style.display = 'flex'
-  }
+
   document.body.style.zoom = "100%"
   container1.style.left=''
-  /* linkListI.style.display = "none"; */ 
   showButtonsMAconRetraso()
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     arrayIdButtsMA .forEach(function (elto) {                                                                                          /// RESTAURA GRIS A BOTONES
@@ -225,9 +238,6 @@ function ElementosMa(elementId) {
       elemento.style.display = 'none'
     }
   })
-
-  /* setInitialPosition() */
-
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   // 4. Verificar si el elemento está definido y si ya existe en arrayIds
   if (typeof elementId !== 'undefined') {
@@ -240,13 +250,6 @@ function ElementosMa(elementId) {
     idsArray.push(elementId);
     console.log(idsArray);
   } 
-
-/*   if (window.innerWidth < 900) {
-    setTimeout(function () {
-      moverMA()
-    }, 677);
-  } */
-
 }
 function showButtonsMAconRetraso() {
   var botones = document.querySelectorAll('.butt-mautonomo') // Selecciona todos los botones
