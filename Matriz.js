@@ -4355,6 +4355,10 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) { // padre i
   document.body.style.zoom = "67%"
   var container1 = document.getElementById('container01')
   container1.style.left ='31%'
+  if(screenWidth < 500){
+    document.body.style.zoom = "100%"          
+  }       
+
   switch (id) {
     case 'link1':
       /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
@@ -4379,19 +4383,22 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) { // padre i
       }
       /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       arrayAllPneumatica.forEach(function (elementoId) {                                                                                 /// MUESTRA PARAMETROS
-          var elemento = document.getElementById(elementoId);
-          if (elemento) {
-              // Comparar elementos del array con los parámetros de la función
-              var hacerVisible = (elementoId === padreId || elementoId === idCont || elementoId === idButt || elementoId === idImg || elementoId === id || elementoId === contImgs);
-              // Hacer visible u ocultar el elemento según la comparación
-              elemento.style.display = hacerVisible ? 'flex' : 'none';
-          }
+        var elemento = document.getElementById(elementoId);
+        if (elemento) {
+          // Comparar elementos del array con los parámetros de la función
+          var hacerVisible = (elementoId === padreId || elementoId === idCont || elementoId === idButt || elementoId === idImg || elementoId === id || elementoId === contImgs);
+          // Hacer visible u ocultar el elemento según la comparación
+          elemento.style.display = hacerVisible ? 'flex' : 'none';
+        }
       });
 
-            // Utiliza una variable local para almacenar la referencia a container1
-            var container1 = document.getElementById('container1');
-            if (container1) {
-              container1.style.left = '31%';}
+      // Utiliza una variable local para almacenar la referencia a container1
+      var container1 = document.getElementById('container1');
+      if (container1) {
+        container1.style.left = '31%';}
+        if(screenWidth < 500){
+          document.body.style.zoom = "100%"          
+        }       
     break;
     case 'link2':
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
@@ -4418,6 +4425,9 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) { // padre i
       var vidPneumat = document.getElementById('vid-pneumatic')
       vidPneumat.currentTime = '0'
       vidPneumat.play()
+      if(screenWidth < 500){
+        document.body.style.zoom = "100%"        
+      }       
     break;
     case 'link3':
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  

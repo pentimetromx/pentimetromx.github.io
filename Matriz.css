@@ -5083,6 +5083,24 @@ elemento.visible {
   .colorClick:hover {
     color: orange;
   }
+  #control-neumatico{
+    position: absolute;
+    left: 37%;
+    top: 50%;
+/*     width: 677px;
+    height: 727px; */
+    width: 249px;
+    height: 333px;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid orange;
+    border-radius: 20px;
+    display: none;
+    overflow: auto;
+    background-color: #000;
+  }
+  
+
   
   /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
   .move-up-left {
