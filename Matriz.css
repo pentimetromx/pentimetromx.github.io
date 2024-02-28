@@ -5104,6 +5104,10 @@ elemento.visible {
     display: flex;
     height: 100vh;
   }
+#imgs-entrenos{
+
+}
+
   #imag1, /* contenedor padre ID */
   #imag2{
     position: relative;
@@ -5113,8 +5117,8 @@ elemento.visible {
     border: 2px solid orange;
     border-radius: 13px;
     height: 254px;
-    left: -717%;
-    top: 36%;
+    left: -709%;
+    top: 34%;
   }
   .img1{   /* contebedor padre CLASE */
     display: flex;
@@ -5130,14 +5134,6 @@ elemento.visible {
   h5{
     font-size: 8px;
   }
-  
-
-/*   .img-1{
-    position: absolute;
-    display: flex;
-    max-width: 100%;
-  } 
- */  
   /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
   .move-up-left {
     transform: translateY(457px); 
