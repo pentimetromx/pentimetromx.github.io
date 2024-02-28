@@ -1800,6 +1800,8 @@ margin-right: 7px;
 }
 #linkLis{
   position: absolute;
+  display:block; 
+  background-color:#333333;
   width: 477px;
 } 
 #linksMA{
@@ -4459,15 +4461,6 @@ elemento.visible {
     top: 97px;
     left:1px;
   }
-  #troubleshooting{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    left: 37%;
-    top: 21%;
-    width: 207px;
-    border-radius: 20px;    
-  }  
   #resultados{
     font-size: 8px;
     text-align: left;
@@ -5061,8 +5054,36 @@ elemento.visible {
     top: 190px;
     display: none;
   }
+  #linkLis{
+    position: absolute;
+    display:block; 
+    background-color:#333333;
+    width: 477px;
+    height: 356px;
+    left: 3.8%;
+    top:120%;
+  }  
+  .linksTraining li a {
+    color: blue; /*Cambiar el color del texto a blanco*/
+    cursor: pointer; /*Cambiar el cursor a una mano */
+    font-size: 14px;
+  }
+  #troubleshooting{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 40%;
+    top: 21%;
+    width: 207px;
+    border-radius: 20px;    
+  }  
+  .colorClick {
+    color: blue;
+  }
+  .colorClick:hover {
+    color: orange;
+  }
   
-
   /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
   .move-up-left {
     transform: translateY(457px); 

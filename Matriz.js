@@ -9401,10 +9401,7 @@ document.addEventListener('keydown', function(event) {
         /* changeButtonStyles('bancada-torre-II') */
         /* muestraRodillo('plate-smed','images-entintador') */
         /* abrirSeccionVariable('cont-variable') */
-        cierraContenedores('uTeñido')
-        UnidadTeñido('boton9','boton7')
-        UnidadTeñido('boton9','boton7')
-        
+        ElementosMa('conteneMantaut') 
         /*muestraRodillo('videoElement2','images-distribuidor')
         muestraRodillo('videoElement3','images-entintador') */      
       break;
@@ -9413,7 +9410,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('cont-arriba-rodillos')
+  var contiBoton = document.getElementById('linkLis')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
