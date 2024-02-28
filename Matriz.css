@@ -2848,12 +2848,6 @@ elemento.visible {
   border: solid 1px orange;
   border-radius: 11px;
 }
-.img-1{
-  height: 200px;
-  width: 277px;
-  border: 1px solid orange;
-  border-radius: 7px;
-}
 #bailarina{
   display: flex;
   position: relative;
@@ -2887,7 +2881,7 @@ elemento.visible {
 #img3 h4 {
   margin: 0; /* Elimina el margen predeterminado de los títulos */
 }
-#imag1,
+#imag1,       /* contenedor */
 #imag2{
   position: relative;
   background-color: #000;
@@ -2896,6 +2890,14 @@ elemento.visible {
   border-radius: 13px;
   margin-left: -10px;
 }
+.img-1{
+  height: 200px;
+  width: 277px;
+  border: 1px solid orange;
+  border-radius: 7px;
+}
+
+
 #pneumatico {
   border: 2px solid orange;
   border-radius: 13px;
@@ -5084,9 +5086,9 @@ elemento.visible {
     color: orange;
   }
   #control-neumatico{
-    position: absolute;
+    position: relative;
     left: 37%;
-    top: 50%;
+    top: 23%;
     width: 249px;
     height: 333px;
     display: flex;
@@ -5097,33 +5099,45 @@ elemento.visible {
     overflow: auto;
     background-color: #000;
   }
-  #imag1,
+  #contImgEntrenos{
+    position: relative;
+    display: flex;
+    height: 100vh;
+  }
+  #imag1, /* contenedor padre ID */
   #imag2{
     position: relative;
+    display: flex;
+    flex-direction: column;
     background-color: #000;
-    padding: 7px;
     border: 2px solid orange;
     border-radius: 13px;
-    left: -425%;
-    margin-top: 61%;
-
+    height: 254px;
+    left: -717%;
+    top: 36%;
   }
-  .img1{
+  .img1{   /* contebedor padre CLASE */
     display: flex;
-    position: absolute;
     flex-direction: column;
-    gap: 4px;
-    display: none;
+    /* align-items: flex-start; */
   }
-  .img-1{
-    height: 200px;
-    width: 277px;
-    border: 1px solid orange;
+  .img1 img{
+    width: 124px;
+    height: 101px;
     border-radius: 7px;
+    border: 2px solid orange;
   }
-        
-
+  h5{
+    font-size: 8px;
+  }
   
+
+/*   .img-1{
+    position: absolute;
+    display: flex;
+    max-width: 100%;
+  } 
+ */  
   /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
   .move-up-left {
     transform: translateY(457px); 
