@@ -9420,7 +9420,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('linkLis')
+  var contiBoton = document.getElementById('imag1')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top

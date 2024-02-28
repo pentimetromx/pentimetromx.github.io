@@ -5087,8 +5087,6 @@ elemento.visible {
     position: absolute;
     left: 37%;
     top: 50%;
-/*     width: 677px;
-    height: 727px; */
     width: 249px;
     height: 333px;
     display: flex;
@@ -5099,7 +5097,31 @@ elemento.visible {
     overflow: auto;
     background-color: #000;
   }
-  
+  #imag1,
+  #imag2{
+    position: relative;
+    background-color: #000;
+    padding: 7px;
+    border: 2px solid orange;
+    border-radius: 13px;
+    left: -425%;
+    margin-top: 61%;
+
+  }
+  .img1{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    gap: 4px;
+    display: none;
+  }
+  .img-1{
+    height: 200px;
+    width: 277px;
+    border: 1px solid orange;
+    border-radius: 7px;
+  }
+        
 
   
   /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
