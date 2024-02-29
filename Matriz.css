@@ -1798,20 +1798,25 @@ margin-right: 7px;
 #linkList li:hover a {
   color: black;
 }
+#linksMA{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  left: 97%;
+  margin-top: 1%;
+  width: 477px;
+  display: none;
+}
+
 #linkLis{
   position: absolute;
-  display:block; 
+  left: 0%;
+  display:flex; 
+  flex-direction: column;
   background-color:#333333;
   width: 477px;
 } 
-#linksMA{
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  left: 10%;
-  margin-top: 1%;
-  display: none;
-}
+
 .imgs-entrenos{
   position: absolute;
   left: 997px;
@@ -1832,7 +1837,7 @@ margin-right: 7px;
   height: 180px;
   border-radius: 7px;
 }
-@keyframes iridescent {
+@keyframes iridescent{
   0% {
     background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff);
     background-size: 200% 200%;
@@ -1845,13 +1850,13 @@ margin-right: 7px;
     background-position: 100% 0;
   }
 }
-.iridescent-element {
+.iridescent-element{
   width: 200px;
   height: 200px;
   animation: iridescent 4s infinite;
 }
-.linksTraining li a {
-  color: blue; /*Cambiar el color del texto a blanco*/
+.linksTraining li a{
+  color: white; /*Cambiar el color del texto a blanco*/
   cursor: pointer; /*Cambiar el cursor a una mano */
   font-size: 21px;
 }
@@ -2842,7 +2847,7 @@ elemento.visible {
 }
 
 .colorClick {
-  color: blue;
+  color:white;
 }
 .colorClick:hover {
   color: orange;
@@ -5060,7 +5065,7 @@ elemento.visible {
     display: none;
   }
   .linksTraining li a {
-    color: blue; /*Cambiar el color del texto a blanco*/
+    color: white; /*Cambiar el color del texto a blanco*/
     cursor: pointer; /*Cambiar el cursor a una mano */
     font-size: 14px;
   }
@@ -5079,24 +5084,27 @@ elemento.visible {
   .colorClick:hover {
     color: orange;
   }
+  #linksMA{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    width: 277px;
+    left: 144%;
+    top: 40%;
+    display: none;
+  }   
   #linkLis{
     position: absolute;
-    display:block; 
+    display:flex; 
+    flex-direction: column;
     background-color:#333333;
-    width: 477px;
+    width: 277px;
     height: 356px;
     left: 3.8%;
     top:-167%;
     /* display: none; */
   } 
-  #linksMA{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    left: 10%;
-    top: 37%;
-    /* display: none; */
-  }   
   #largoImpresion{
     position: relative;
     display: flex; 
