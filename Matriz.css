@@ -2015,6 +2015,7 @@ header {
 }
 #largoImpresion h2 {
   font-family: "GothamRounded", sans-serif;
+  display: none;
 }
 #largoImpresion p {
   font-family: "GothamRounded", sans-serif;
@@ -5086,6 +5087,7 @@ elemento.visible {
     height: 356px;
     left: 3.8%;
     top:-167%;
+    /* display: none; */
   } 
   #linksMA{
     position: absolute;
@@ -5093,7 +5095,7 @@ elemento.visible {
     flex-direction: column;
     left: 10%;
     top: 37%;
-    display: none;
+    /* display: none; */
   }   
   #largoImpresion{
     position: relative;
@@ -5104,6 +5106,7 @@ elemento.visible {
     margin-top: 44%;
     width: 249px;
     height: 333px;
+    display: none;
   } 
   #control-neumatico{
     position: relative;
