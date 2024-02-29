@@ -5090,7 +5090,7 @@ elemento.visible {
     flex-direction: column;
     height: 100px;
     width: 277px;
-    left: 122%;
+    left: 128%;
     top: -34%;
     display: none;
   }   
@@ -5143,6 +5143,7 @@ elemento.visible {
     flex-direction: column;
     background-color: #000;
     border: 2px solid orange;
+    z-index: 2;
     border-radius: 13px;
     height: 254px;
     left: -728%;
