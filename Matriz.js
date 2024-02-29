@@ -4063,7 +4063,7 @@ function irContenedorSiguiente() {
 }
 function listaEntrenamientosII(btnList) {
 
-  /*var elementos = ['canvasContainer2','canvasContainer3','canvasContainer4','canvasContainer5','contChecks','contImagGraf','contImagNeg']
+  var elementos = ['canvasContainer2','canvasContainer3','canvasContainer4','canvasContainer5','contChecks','contImagGraf','contImagNeg']
   var elements = ['linksMA','linkLis','contImgEntrenos','largoImpresion']
   var buttsPpalesMA = ['troubleshoot','def1','def2','adtBut','fua1','lup','kaizen']
   var links = document.getElementById('linksMA')
@@ -4085,7 +4085,7 @@ function listaEntrenamientosII(btnList) {
   enlacesIDs.forEach(function (id) {                                                                                                      // VINCULOS COLOR AZUL
   var enlace = document.getElementById(id)
   if (enlace) {
-    enlace.style.color = 'blue'
+    enlace.style.color = 'white'
   }
   })                                                                                                                    
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4095,17 +4095,7 @@ function listaEntrenamientosII(btnList) {
     if (elemento) {
       elemento.style.display = 'none'
     }
-  }*/
-/*   if(screenWidth < 500){
-    var elementosExcluidos = ['conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos','linksMA','linkLis']  
-    for (var i = 0; i < allContenedores.length; i++) { 
-      var elemento = document.getElementById(allContenedores[i])  
-      if (elemento) {
-        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-      }
-    } 
-  } */
-
+  }
   switch(btnList){                                                                                                                      
     case 'archivo':  
     var elementosExcluidos = ['conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos','linksMA','linkLis']  
@@ -4114,7 +4104,19 @@ function listaEntrenamientosII(btnList) {
       if (elemento) {
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
       }
-    }    
+    }
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    for (var i = 0; i < contiBtt.length; i++) {                                                                                            /// NARANJA A BOTON
+      var botonId = contiBtt[i];
+      var boton = document.getElementById(botonId);
+      // Restablecer el color de fondo para todos los botones
+      boton.style.backgroundColor = '';
+      if (botonId === btnList) {
+          // Cambiar el color de fondo a naranja para el botón seleccionado
+          boton.style.backgroundColor = 'orange';
+      }
+    }
+
     
      /*var alMenosUnoVisible = elementos.some(function(id) {
       var elemento = document.getElementById(id)
@@ -4148,7 +4150,7 @@ function listaEntrenamientosII(btnList) {
             // Cambiar el color de fondo a naranja para el botón seleccionado
             boton.style.backgroundColor = 'orange';
         }
-      }*/ 
+      }*/
       
       if(screenWidth < 500){
         var elementosExcluidos = ['largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales']  
@@ -4158,11 +4160,17 @@ function listaEntrenamientosII(btnList) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
           }
         } 
-        var contiLinks = document.getElementById('linksMA')
-        contiLinks.style.display = 'block'
-        contiLinks.style.marginTop = '-97%'
-        contiLinks.style.marginLeft = '-17%'
-
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        for (var i = 0; i < contiBtt.length; i++) {                                                                                            /// NARANJA A BOTON
+          var botonId = contiBtt[i];
+          var boton = document.getElementById(botonId);
+          // Restablecer el color de fondo para todos los botones
+          boton.style.backgroundColor = '';
+          if (botonId === btnList) {
+              // Cambiar el color de fondo a naranja para el botón seleccionado
+              boton.style.backgroundColor = 'orange';
+          }
+        }
       }
     break;
     case 'btt2':
