@@ -5093,7 +5093,7 @@ elemento.visible {
     height: 333px;
     display: flex;
     flex-direction: column;
-    border: 3px solid orange;
+    border: 2px solid orange;
     border-radius: 20px;
     display: none;
     overflow: auto;
@@ -5104,10 +5104,6 @@ elemento.visible {
     display: flex;
     height: 100vh;
   }
-#imgs-entrenos{
-  
-}
-
   #imag1, /* contenedor padre ID */
   #imag2{
     position: relative;
@@ -5118,7 +5114,7 @@ elemento.visible {
     border-radius: 13px;
     height: 254px;
     left: -728%;
-    top: 33%;
+    top: 35%;
   }
   .img1{   /* contebedor padre CLASE */
     display: flex;

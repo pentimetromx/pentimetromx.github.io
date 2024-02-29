@@ -4392,9 +4392,9 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) { // padre i
       });
 
        // Utiliza una variable local para almacenar la referencia a container1
-      if (container1) {
+/*       if (container1) {
         container1.style.position = 'absolute'
-        container1.style.marginlef = '77%';}
+        container1.style.marginlef = '77%';} */
          
         if(screenWidth < 500){
           document.body.style.zoom = "100%"          
