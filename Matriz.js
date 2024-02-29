@@ -4392,10 +4392,11 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) { // padre i
         }
       });
 
-      // Utiliza una variable local para almacenar la referencia a container1
+/*       // Utiliza una variable local para almacenar la referencia a container1
       var container1 = document.getElementById('container1');
       if (container1) {
         container1.style.left = '31%';}
+ */        
         if(screenWidth < 500){
           document.body.style.zoom = "100%"          
         }       

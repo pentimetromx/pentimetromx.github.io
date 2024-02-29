@@ -5105,7 +5105,7 @@ elemento.visible {
     height: 100vh;
   }
 #imgs-entrenos{
-
+  
 }
 
   #imag1, /* contenedor padre ID */
@@ -5117,7 +5117,7 @@ elemento.visible {
     border: 2px solid orange;
     border-radius: 13px;
     height: 254px;
-    left: -709%;
+    left: -722%;
     top: 34%;
   }
   .img1{   /* contebedor padre CLASE */
