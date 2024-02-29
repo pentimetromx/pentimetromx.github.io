@@ -3993,7 +3993,7 @@ elemento.visible {
     align-items: center;
     left: 50%;
     top: 6%;
-    transform: translate(-50%); 
+    /* transform: translate(-50%); */ 
     width: 400px; 
   } 
   #imgsRepuestos{
@@ -5117,8 +5117,8 @@ elemento.visible {
     border: 2px solid orange;
     border-radius: 13px;
     height: 254px;
-    left: -726%;
-    top: 36%;
+    left: -728%;
+    top: 33%;
   }
   .img1{   /* contebedor padre CLASE */
     display: flex;
