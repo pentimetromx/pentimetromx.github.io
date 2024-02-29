@@ -4062,10 +4062,9 @@ function irContenedorSiguiente() {
   console.log('2.', idsArrayEliminados)
 }
 function listaEntrenamientosII(btnList) {
-
-  var elementos = ['canvasContainer2','canvasContainer3','canvasContainer4','canvasContainer5','contChecks','contImagGraf','contImagNeg']
+/*   var elementos = ['canvasContainer2','canvasContainer3','canvasContainer4','canvasContainer5','contChecks','contImagGraf','contImagNeg']
   var elements = ['linksMA','linkLis','contImgEntrenos','largoImpresion']
-  var buttsPpalesMA = ['troubleshoot','def1','def2','adtBut','fua1','lup','kaizen']
+ */  var buttsPpalesMA = ['troubleshoot','def1','def2','adtBut','fua1','lup','kaizen']
   var links = document.getElementById('linksMA')
   contienePasos.style.display = 'none'   
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
