@@ -4390,11 +4390,6 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) { // padre i
           elemento.style.display = hacerVisible ? 'flex' : 'none';
         }
       });
-
-       // Utiliza una variable local para almacenar la referencia a container1
-/*       if (container1) {
-        container1.style.position = 'absolute'
-        container1.style.marginlef = '77%';} */
          
         if(screenWidth < 500){
           document.body.style.zoom = "100%"          
@@ -9420,7 +9415,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('container01')
+  var contiBoton = document.getElementById('control-neumatico')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top

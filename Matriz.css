@@ -1808,7 +1808,9 @@ margin-right: 7px;
   position: absolute;
   display: flex;
   flex-direction: column;
-  left: 47px;
+  left: 10%;
+  margin-top: 1%;
+  display: none;
 }
 .imgs-entrenos{
   position: absolute;
@@ -5056,15 +5058,6 @@ elemento.visible {
     top: 190px;
     display: none;
   }
-  #linkLis{
-    position: absolute;
-    display:block; 
-    background-color:#333333;
-    width: 477px;
-    height: 356px;
-    left: 3.8%;
-    top:120%;
-  }  
   .linksTraining li a {
     color: blue; /*Cambiar el color del texto a blanco*/
     cursor: pointer; /*Cambiar el cursor a una mano */
@@ -5085,10 +5078,37 @@ elemento.visible {
   .colorClick:hover {
     color: orange;
   }
+  #linkLis{
+    position: absolute;
+    display:block; 
+    background-color:#333333;
+    width: 477px;
+    height: 356px;
+    left: 3.8%;
+    top:-167%;
+  } 
+  #linksMA{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 10%;
+    top: 37%;
+    display: none;
+  }   
+  #largoImpresion{
+    position: relative;
+    display: flex; 
+    flex-direction: column;
+    color: white;
+    font-family: "GothamRounded", sans-serif; 
+    margin-top: 44%;
+    width: 249px;
+    height: 333px;
+  } 
   #control-neumatico{
     position: relative;
     left: 37%;
-    top: 23%;
+    top: -46%;
     width: 249px;
     height: 333px;
     display: flex;
@@ -5100,9 +5120,9 @@ elemento.visible {
     background-color: #000;
   }
   #contImgEntrenos{
-    position: relative;
+    position: absolute;
     display: flex;
-    height: 100vh;
+    height: 33%;
   }
   #imag1, /* contenedor padre ID */
   #imag2{
@@ -5114,7 +5134,7 @@ elemento.visible {
     border-radius: 13px;
     height: 254px;
     left: -728%;
-    top: 35%;
+    top: -80%;
   }
   .img1{   /* contebedor padre CLASE */
     display: flex;
