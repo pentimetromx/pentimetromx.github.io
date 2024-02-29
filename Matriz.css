@@ -5117,13 +5117,12 @@ elemento.visible {
     border: 2px solid orange;
     border-radius: 13px;
     height: 254px;
-    left: -722%;
-    top: 34%;
+    left: -726%;
+    top: 36%;
   }
   .img1{   /* contebedor padre CLASE */
     display: flex;
     flex-direction: column;
-    /* align-items: flex-start; */
   }
   .img1 img{
     width: 124px;

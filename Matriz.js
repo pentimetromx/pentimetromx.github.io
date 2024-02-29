@@ -4353,7 +4353,6 @@ function toggleFullScreen(element) {
 function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) { // padre imags/videos, video padre, video directo, img directo, link, listado) 
   var linkOrange = document.getElementById(id)
   document.body.style.zoom = "67%"
-  var container1 = document.getElementById('container01')
   container1.style.left ='31%'
   if(screenWidth < 500){
     document.body.style.zoom = "100%"          
@@ -4392,11 +4391,10 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) { // padre i
         }
       });
 
-/*       // Utiliza una variable local para almacenar la referencia a container1
-      var container1 = document.getElementById('container1');
+       // Utiliza una variable local para almacenar la referencia a container1
       if (container1) {
-        container1.style.left = '31%';}
- */        
+        container1.style.marginlef = '31%';}
+         
         if(screenWidth < 500){
           document.body.style.zoom = "100%"          
         }       
