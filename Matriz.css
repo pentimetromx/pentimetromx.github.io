@@ -5123,6 +5123,7 @@ elemento.visible {
     position: absolute;
     display: flex;
     height: 33%;
+    display: none;
   }
   #imag1, /* contenedor padre ID */
   #imag2{
