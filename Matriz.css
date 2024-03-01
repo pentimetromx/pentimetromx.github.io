@@ -2033,6 +2033,12 @@ header {
   color: white;
   font-family: "GothamRounded", sans-serif; 
 }
+#padre-neumat{
+  display: flex;
+  flex-direction: row;
+  gap: 3px; 
+  display: none;
+}
 #troubleshooting{
   display: flex;
   flex-direction: column;
@@ -5152,6 +5158,13 @@ elemento.visible {
     position: absolute;
     display: flex;
     height: 33%;
+    display: none;
+  }
+  #padre-neumat{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    gap: 3px; 
     display: none;
   }
   #imag1, /* contenedor padre ID */

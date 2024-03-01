@@ -63,7 +63,7 @@ var currentID = null;
 var butInicio = document.getElementById('bot-inic')
 var contInicial = document.getElementById('container1')
 var botonMa = document.getElementById('bot-mantaut')
-var allContenedores = ['largoImpresion','contImgEntrenos','imag1','linksMA','linkLis','sitio-en-construccion','curado-uv','video-container','conti-video-background','video-background-planas','conti-videos-planas','conti-img-planas','conti-videos-infoprint','video-infoprint-I','video-infoprint-II','video-infoprint-III','contenedor-9','conti-video-bancada','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
+var allContenedores = ['imag3','imag4','contImaginario','bailarina','pneumatico','padre-neumat','contBotInfeed','largoImpresion','contImgEntrenos','imag1','imag2','linksMA','linkLis','sitio-en-construccion','curado-uv','video-container','conti-video-background','video-background-planas','conti-videos-planas','conti-img-planas','conti-videos-infoprint','video-infoprint-I','video-infoprint-II','video-infoprint-III','contenedor-9','conti-video-bancada','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','conteneMantaut','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIzquierdos = ['desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador']
@@ -1747,8 +1747,7 @@ function mantAutonomo (idElement) {
         /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
     break;
   default:
-}}
-function deslizaContenedor(idElement, idButton) {
+}}function deslizaContenedor(idElement, idButton) {
   var contLinkMant = document.getElementById('linksMA')
   var contiBoton = document.getElementById('conti-boton')
   var elementoAnterior = null;
@@ -4062,9 +4061,7 @@ function irContenedorSiguiente() {
   console.log('2.', idsArrayEliminados)
 }
 function listaEntrenamientosII(btnList) {
-/*   var elementos = ['canvasContainer2','canvasContainer3','canvasContainer4','canvasContainer5','contChecks','contImagGraf','contImagNeg']
-  var elements = ['linksMA','linkLis','contImgEntrenos','largoImpresion']
- */  var buttsPpalesMA = ['troubleshoot','def1','def2','adtBut','fua1','lup','kaizen']
+  var buttsPpalesMA = ['troubleshoot','def1','def2','adtBut','fua1','lup','kaizen']
   var links = document.getElementById('linksMA')
   contienePasos.style.display = 'none'   
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4115,42 +4112,6 @@ function listaEntrenamientosII(btnList) {
           boton.style.backgroundColor = 'orange';
       }
     }
-
-    
-     /*var alMenosUnoVisible = elementos.some(function(id) {
-      var elemento = document.getElementById(id)
-      var estilo = window.getComputedStyle(elemento)
-      return estilo.display !== 'none'
-      })    
-      if (alMenosUnoVisible) {
-        console.log(arrayPosicionnador)
-      } else {
-       listaEntrenamientos()
-      }
-      var todosOcultos = elements.every(function (id) {
-      var elemento = document.getElementById(id)
-      var estilo = window.getComputedStyle(elemento)
-      return estilo.display === 'none'
-      })
-      if (todosOcultos) {
-      // Mostrar los elementos si todos están ocultos
-      elements.forEach(function (id) {
-        var elemento = document.getElementById(id)
-        elemento.style.display = 'flex' // O el valor apropiado
-      })
-      } 
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      for (var i = 0; i < contiBtt.length; i++) {                                                                                            /// NARANJA A BOTON
-        var botonId = contiBtt[i];
-        var boton = document.getElementById(botonId);
-        // Restablecer el color de fondo para todos los botones
-        boton.style.backgroundColor = '';
-        if (botonId === btnList) {
-            // Cambiar el color de fondo a naranja para el botón seleccionado
-            boton.style.backgroundColor = 'orange';
-        }
-      }*/
-      
       if(screenWidth < 500){
         var elementosExcluidos = ['largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales']  
         for (var i = 0; i < allContenedores.length; i++) { 
@@ -4391,16 +4352,22 @@ function toggleFullScreen(element) {
     }
   }
 }
-function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) { // padre imags/videos, video padre, video directo, img directo, link, listado) 
+function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
   var linkOrange = document.getElementById(id)
   document.body.style.zoom = "67%"
   /* container1.style.left ='31%' */
   if(screenWidth < 500){
     document.body.style.zoom = "100%"          
   }       
-
   switch (id) {
     case 'link1':
+      var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','linksMA','linkLis','largoImpresion','imag1','contImgEntrenos','largoImpresion','control-neumatico','contBotInfeed']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }   
       /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
       linkOrange.style.color = 'orange'                                                                                                       ///  LINK NARANJA
       // Cambiar otros enlaces a azul
@@ -4409,147 +4376,125 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) { // padre i
         if (botones[i].id !== id) {
         botones[i].style.color = ''
       }}
-      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
-      for (var i = 0; i < arrayButtsInstructivos.length; i++) {                                                                     /// MUESTRA BOTON PARAMETRO
-        var currentId = arrayButtsInstructivos[i];
-        var element = document.getElementById(currentId);      
-        if (currentId === idButt) {
-          // Muestra el elemento cuyo nombre coincide con idButt
-          element.style.display = 'flex';
-        } else {
-          // Oculta los demás elementos
-          element.style.display = 'none';
-        }
-      }
-      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      arrayAllPneumatica.forEach(function (elementoId) {                                                                                 /// MUESTRA PARAMETROS
-        var elemento = document.getElementById(elementoId);
-        if (elemento) {
-          // Comparar elementos del array con los parámetros de la función
-          var hacerVisible = (elementoId === padreId || elementoId === idCont || elementoId === idButt || elementoId === idImg || elementoId === id || elementoId === contImgs);
-          // Hacer visible u ocultar el elemento según la comparación
-          elemento.style.display = hacerVisible ? 'flex' : 'none';
-        }
-      });
          
-        if(screenWidth < 500){
-          document.body.style.zoom = "100%"          
-        }       
+      if(screenWidth < 500){
+        var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','linksMA','linkLis','largoImpresion','imag1','contImgEntrenos','largoImpresion','control-neumatico','contBotInfeed']  
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i])  
+          if (elemento) {
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          }
+        }   
+      }       
     break;
     case 'link2':
-      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
-      linkOrange.style.color = 'orange'                                                                                                         /// LINK NARANJA
+      var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','imag2','pneumatico']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }   
+      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+      linkOrange.style.color = 'orange'                                                                                                       ///  LINK NARANJA
       // Cambiar otros enlaces a azul
       var botones = document.getElementsByClassName('colorClick')
       for (var i = 0; i < botones.length; i++) {
         if (botones[i].id !== id) {
         botones[i].style.color = ''
-      }}
-      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
-      var botAumeto = document.getElementById('contBotInfeed')                                                                       /// MUESTRA BOTON PARAMETRO
-      botAumeto.style.display = 'flex'
-      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
-      arrayAllPneumatica.forEach(function (elementoId) {                                                                                    /// MUESTRA PARAMETROS
-        var elemento = document.getElementById(elementoId);
-        if (elemento) {
-          // Comparar elementos del array con los parámetros de la función
-          var hacerVisible = (elementoId === padreId || elementoId === idCont || elementoId === idButt || elementoId === idImg || elementoId === id || elementoId === contImgs);
-          // Hacer visible u ocultar el elemento según la comparación
-          elemento.style.display = hacerVisible ? 'flex' : 'none';
-      }
-      });
-      var vidPneumat = document.getElementById('vid-pneumatic')
-      vidPneumat.currentTime = '0'
-      vidPneumat.play()
+      }}         
       if(screenWidth < 500){
-        document.body.style.zoom = "100%"        
+        var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','imag2','pneumatico']  
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i])  
+          if (elemento) {
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          }
+        }   
       }       
     break;
     case 'link3':
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
-    linkOrange.style.color = 'orange'                                                                                                          ///  LINK NARANJA
-    // Cambiar otros enlaces a azul
-    var botones = document.getElementsByClassName('colorClick')
-    for (var i = 0; i < botones.length; i++) {
-      if (botones[i].id !== id) {
-      botones[i].style.color = ''
-    }}
-      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
-      var botAumeto = document.getElementById('contBotInfeed')                                                                       /// MUESTRA BOTON PARAMETRO
-      botAumeto.style.display = 'flex'    
+      var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','contImaginario','imag3','bailarina']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }   
       /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
-      arrayAllPneumatica.forEach(function (elementoId) {                                                                                 /// MUESTRA PARAMETROS
-      var elemento = document.getElementById(elementoId);
-      // Verificar si el elemento existe
-      if (elemento) {
-          // Comparar elementos del array con los parámetros de la función
-          var hacerVisible = (elementoId === padreId || elementoId === idCont || elementoId === idButt || elementoId === idImg || elementoId === id || elementoId === contImgs);
-          // Hacer visible u ocultar el elemento según la comparación
-          elemento.style.display = hacerVisible ? 'flex' : 'none';
-      }
-      var vidBasculante = document.getElementById('vid-basculante')
-      vidBasculante.currentTime = '0'
-      vidBasculante.play()
-  });
-    break;
-    case 'link4':  
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
-    linkOrange.style.color = 'orange'                                                                                                           ///  LINK NARANJA
-    // Cambiar otros enlaces a azul
-    var botones = document.getElementsByClassName('colorClick')
-    for (var i = 0; i < botones.length; i++) {
-      if (botones[i].id !== id) {
-      botones[i].style.color = ''
-    }}
-      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
-      var botAumeto = document.getElementById('contBotInfeed')                                                                       /// MUESTRA BOTON PARAMETRO
-      botAumeto.style.display = 'flex'    
-      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
-      arrayAllPneumatica.forEach(function (elementoId) {                                                                                     /// MUESTRA PARAMETROS
-      var elemento = document.getElementById(elementoId);
-      // Verificar si el elemento existe
-      if (elemento) {
-          // Comparar elementos del array con los parámetros de la función
-          var hacerVisible = (elementoId === padreId || elementoId === idCont || elementoId === idButt || elementoId === idImg || elementoId === id || elementoId === contImgs);
-          // Hacer visible u ocultar el elemento según la comparación
-          elemento.style.display = hacerVisible ? 'flex' : 'none';
-      }
-    });
-
-    iniciarMovimiento('rodillo-infeed')                               
-    break;  
-    case 'link5':
-      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
-      linkOrange.style.color = 'orange'                                                                                                         /// LINK NARANJA  NARANJA          
+      linkOrange.style.color = 'orange'                                                                                                       ///  LINK NARANJA
       // Cambiar otros enlaces a azul
       var botones = document.getElementsByClassName('colorClick')
       for (var i = 0; i < botones.length; i++) {
         if (botones[i].id !== id) {
         botones[i].style.color = ''
-      }}
-      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
-      for (var i = 0; i < arrayButtsInstructivos.length; i++) {                                                                     /// MUESTRA BOTON PARAMETRO
-        var currentId = arrayButtsInstructivos[i];
-        var element = document.getElementById(currentId);      
-        if (currentId === idButt) {
-          // Muestra el elemento cuyo nombre coincide con idButt
-          element.style.display = 'flex';
-        } else {
-          // Oculta los demás elementos
-          element.style.display = 'none';
-        }
-      }
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
-    arrayAllPneumatica.forEach(function (elementoId) {                                                                                     /// MUESTRA PARAMETROS
-      var elemento = document.getElementById(elementoId);
-      // Verificar si el elemento existe
+      }}         
+      if(screenWidth < 500){
+        var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','contImaginario','imag3','bailarina']  
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i])  
+          if (elemento) {
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          }
+        }   
+      }      
+      var vidBasculante = document.getElementById('vid-basculante')
+      vidBasculante.currentTime = '0'
+      vidBasculante.play()
+  
+    break;
+    case 'link4':  
+    var elementosExcluidos = ['containr01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','imag4','rodillo-infeed']  
+    for (var i = 0; i < allContenedores.length; i++) { 
+      var elemento = document.getElementById(allContenedores[i])  
       if (elemento) {
-          // Comparar elementos del array con los parámetros de la función
-          var hacerVisible = (elementoId === padreId || elementoId === idCont || elementoId === idButt || elementoId === idImg || elementoId === id || elementoId === contImgs);
-          // Hacer visible u ocultar el elemento según la comparación
-          elemento.style.display = hacerVisible ? 'flex' : 'none';
+        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
       }
-    });
+    }   
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+    linkOrange.style.color = 'orange'                                                                                                       ///  LINK NARANJA
+    // Cambiar otros enlaces a azul
+    var botones = document.getElementsByClassName('colorClick')
+    for (var i = 0; i < botones.length; i++) {
+      if (botones[i].id !== id) {
+      botones[i].style.color = ''
+    }}         
+    if(screenWidth < 500){
+      var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','imag2','pneumatico']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }   
+    }     
+    iniciarMovimiento('rodillo-infeed')                               
+    break;  
+    case 'link5':
+      var elementosExcluidos = ['containr01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','puesta-punto']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }   
+      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+      linkOrange.style.color = 'orange'                                                                                                       ///  LINK NARANJA
+      // Cambiar otros enlaces a azul
+      var botones = document.getElementsByClassName('colorClick')
+      for (var i = 0; i < botones.length; i++) {
+        if (botones[i].id !== id) {
+        botones[i].style.color = ''
+      }}         
+      if(screenWidth < 500){
+        var elementosExcluidos = ['containr01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','puesta-punto']  
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i])  
+          if (elemento) {
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          }
+        }   
+      }     
     iniciarMovimiento('puesta-punto')
     break;  
     default: 
@@ -7611,13 +7556,6 @@ function tamaño100(){
       element.style.display = 'none';
     } 
   }
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  enlacesIDs.forEach(function (id) {                                                                                                      // VINCULOS COLOR AZUL
-    var enlace = document.getElementById(id)
-    if (enlace) {
-      enlace.style.color = 'blue'
-    }
-  })                                                                                                                    
 }
 // Obtén todas las imágenes con la clase "aumentar"
 const imagenesAumentar = document.querySelectorAll('img.aumentar')
@@ -9456,7 +9394,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('linksMA')
+  var contiBoton = document.getElementById('conti-boton')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
