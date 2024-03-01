@@ -4361,7 +4361,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
   }       
   switch (id) {
     case 'link1':
-      var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','linksMA','linkLis','largoImpresion','imag1','contImgEntrenos','largoImpresion','control-neumatico','contBotInfeed']  
+      var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','linksMA','linkLis','imag1','contImgEntrenos','largoImpresion','control-neumatico','contBotInfeed']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -4388,7 +4388,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
       }       
     break;
     case 'link2':
-      var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','imag2','pneumatico']  
+      var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','imag2','pneumatico','contBotInfeed']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -4404,17 +4404,20 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
         botones[i].style.color = ''
       }}         
       if(screenWidth < 500){
-        var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','imag2','pneumatico']  
+        var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','imag2','pneumatico','contBotInfeed']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
           }
         }   
-      }       
+      } 
+      var vidFesto = document.getElementById('vid-pneumatic')
+      vidFesto.currentTime = '0'
+      vidFesto.play()
     break;
     case 'link3':
-      var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','contImaginario','imag3','bailarina']  
+      var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','contImaginario','imag3','bailarina','contBotInfeed']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -4430,7 +4433,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
         botones[i].style.color = ''
       }}         
       if(screenWidth < 500){
-        var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','contImaginario','imag3','bailarina']  
+        var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','contImaginario','imag3','bailarina','contBotInfeed']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
@@ -4444,7 +4447,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
   
     break;
     case 'link4':  
-    var elementosExcluidos = ['containr01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','imag4','rodillo-infeed']  
+    var elementosExcluidos = ['containr01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','imag4','rodillo-infeed','contBotInfeed']  
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i])  
       if (elemento) {
@@ -4460,7 +4463,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
       botones[i].style.color = ''
     }}         
     if(screenWidth < 500){
-      var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','imag2','pneumatico']  
+      var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','imag2','pneumatico','contBotInfeed']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -4471,7 +4474,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
     iniciarMovimiento('rodillo-infeed')                               
     break;  
     case 'link5':
-      var elementosExcluidos = ['containr01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','puesta-punto']  
+      var elementosExcluidos = ['containr01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','puesta-punto','contBotInfeed']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -4487,7 +4490,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
         botones[i].style.color = ''
       }}         
       if(screenWidth < 500){
-        var elementosExcluidos = ['containr01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','puesta-punto']  
+        var elementosExcluidos = ['containr01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','puesta-punto','contBotInfeed']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
@@ -9394,7 +9397,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('conti-boton')
+  var contiBoton = document.getElementById('largoImpresion')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
