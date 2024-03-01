@@ -5131,25 +5131,26 @@ elemento.visible {
     display: none;
   }
 
-  #pneumatico {
+/*   #pneumatico {
     position: relative;
     flex-direction: column;
-    left: 37%;
-    top: -44.5%;
+    left:37%;
+    top:0%;
     width: 249px;
     height: 333px;
     border: 2px solid orange;
     border-radius: 13px;
     overflow: auto;
     display: none;
-  }
+  } */
   #vid-pneumatic{
     width: 100%;
     height: 100%;
     object-fit: cover;
     border: 2px solid orange;
     border-radius: 13px;
-  }  
+  }
+  #pneumatico,
   #control-neumatico{
     position: absolute;
     display: flex;
@@ -5195,9 +5196,11 @@ elemento.visible {
     border-radius: 7px;
     border: 2px solid orange;
   }
+  h4,
   h5{
     font-size: 8px;
   }
+  #padre-2,
   #padre-1{
     position: relative;
     display: flex;        /* Establece el modelo de diseño flexible */
