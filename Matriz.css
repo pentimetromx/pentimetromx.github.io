@@ -5100,9 +5100,9 @@ elemento.visible {
     flex-direction: column;
     background-color:#333333;
     width: 277px;
-    height: 356px;
+    height: 360px;
     left: 3.8%;
-    top:-167%;
+    top:-165%;
   } 
   #largoImpresion{
     position: relative;
@@ -5133,8 +5133,7 @@ elemento.visible {
     object-fit: cover;
     border: 2px solid orange;
     border-radius: 13px;
-  }
-  
+  }  
   #control-neumatico{
     position: relative;
     left: 37%;
