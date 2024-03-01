@@ -1749,7 +1749,8 @@ function mantAutonomo (idElement) {
   default:
 }}function deslizaContenedor(idElement, idButton) {
   var contLinkMant = document.getElementById('linksMA')
-  var contiBoton = document.getElementById('conti-boton')
+  var contiPadreTraining = document.getElementById('padre-1')
+  var contiLargoPrint = document.getElementById('largoImpresion')
   var elementoAnterior = null;
   var elementoActual = null;
   var botones = ['btn10','btn11','btn12','btn17']
@@ -1799,6 +1800,8 @@ function mantAutonomo (idElement) {
   if (!arrayPosicionnador.includes(idElement)) {
     arrayPosicionnador.push(idElement)
   }
+  contiPadreTraining.style.display = 'none'
+  contiLargoPrint.style.display = 'none'
   switch (idElement) {
     case 'conti-boton-kaizen':
       var contenedor = document.getElementById('conti-boton-kaizen')
@@ -1814,7 +1817,7 @@ function mantAutonomo (idElement) {
     break;
     default:
   }   
- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  var contenedor = document.getElementById(idElement)                                                                   /// MUESTRA CONTENEDOR PROPIO (PARAMETRO)
 
 

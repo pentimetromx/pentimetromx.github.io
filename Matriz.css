@@ -4474,6 +4474,7 @@ elemento.visible {
     position: absolute;
     display: flex;
     flex-direction: column;
+    z-index: 2;
     top: 97px;
     left:1px;
   }
@@ -5204,8 +5205,8 @@ elemento.visible {
     align-items: center;
     width: 777px;
     height: 337px;
-    top: 47%;
-    left:0%;
+    top: 54%;
+    left:2%;
   }
   /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
   .move-up-left {
