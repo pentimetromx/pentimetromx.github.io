@@ -1600,13 +1600,36 @@
     </div>
     <div id="largoImpresion">
 
-      <div id="contImgEntrenos" class="imgs-entrenos" style="display: flex;">
+      <div id="padre-1">
 
         <div id="imag1" class="img1">
           <img class="img-presion" src="./assets/neumatica.jpg" alt="neuma1">
           <h5>PRESIÓN NEUMÁTICA 90 PSI</h5>          
           <img class="img-presion" src="./assets/neumatica2.jpg" alt="neuma2">
         </div>
+
+        <div id="control-neumatico">
+          <h1 class="casos-h1" >Estándar 1: Presión Nominal</h1>
+          <p class="parrafo-casos">
+            La presión nominal para un cilindro neumático debe cumplir con las especificaciones del fabricante y no exceder los límites establecidos para garantizar un rendimiento óptimo y seguro.
+          </p>
+          <h1 class="casos-h1" >Estándar 2: Tolerancias de Presión</h1>
+          <p class="parrafo-casos">
+            Las tolerancias de presión deben cumplir con las normativas internacionales para garantizar la precisión y consistencia en la operación del cilindro, evitando daños y asegurando una vida útil prolongada.
+          </p>
+          <h1 class="casos-h1" >Estándar 3: Seguridad de Operación</h1>
+          <p class="parrafo-casos">
+            Se deben seguir prácticas seguras de operación para evitar presiones excesivas que puedan comprometer la integridad del cilindro, asegurando un entorno de trabajo seguro y protegiendo a los operadores.
+          </p>
+          <h1 class="casos-h1" >Estándar 4: Mantenimiento Preventivo</h1>
+          <p class="parrafo-casos">
+            Se recomienda realizar un mantenimiento preventivo periódico para verificar y ajustar la presión neumática, asegurando un funcionamiento eficiente del cilindro y evitando posibles fallas y desgastes prematuros.
+          </p>
+        </div>  
+        
+      </div>
+
+      <div id="contImgEntrenos" class="imgs-entrenos" style="display: flex;">
         
         <div id="padre-neumat">
           <div class="img1" id="imag2" >
@@ -1651,15 +1674,17 @@
       </div>
 
       <div id="linksMA">
-        <h2 style="margin-left: 20px;width: 517px;color: orange;">Largo de impresión ajustes preliminares</h2>  
-        <ol class="linksTraining" id="linkLis">
-          <li><a href="#" id="link1" class="colorClick"data-imagen="imag11" onclick="imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')">Asegurar PSI neumática</a></li><br>
-          <li><a href="#" id="link2" class="colorClick"data-imagen="imag22" onclick="imagenesPasoApaso('contImgEntrenos','padre-neumat','pneumatico','imag2','link2','vid-pneumatic')">Optimización al freno de bobina</a></li><br> 
-          <li><a href="#" id="link3" class="colorClick"data-imagen="imag33" onclick="imagenesPasoApaso('contImgEntrenos','bailarina','vid-basculante','imag3','link3','contImaginario')">Ajuste parámetros en basculante</a></li><br>  
-          <li><a href="#" id="link4" class="colorClick"data-imagen="imag44" onclick="imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag4','link4','rodillo-infeed')">Calibración / Limpieza / Rugosidad <br>en INFEED</a></li><br>
-          <li><a href="#" id="link5" class="colorClick"data-imagen="imag55" onclick="imagenesPasoApaso('','','contBotInfeed','','link5','puesta-punto',)">Paso a paso puesta a punto</a></li><br>
-        </ol> 
-      </div>
+        <div style="position: absolute;top: 0%;left: 0%;">
+          <h2 style="margin-left: 20px;width: 517px;color: orange;">Largo de impresión ajustes preliminares</h2>  
+          <ol class="linksTraining" id="linkLis">
+            <li><a href="#" id="link1" class="colorClick"data-imagen="imag11" onclick="imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')">Asegurar PSI neumática</a></li><br>
+            <li><a href="#" id="link2" class="colorClick"data-imagen="imag22" onclick="imagenesPasoApaso('contImgEntrenos','padre-neumat','pneumatico','imag2','link2','vid-pneumatic')">Optimización al freno de bobina</a></li><br> 
+            <li><a href="#" id="link3" class="colorClick"data-imagen="imag33" onclick="imagenesPasoApaso('contImgEntrenos','bailarina','vid-basculante','imag3','link3','contImaginario')">Ajuste parámetros en basculante</a></li><br>  
+            <li><a href="#" id="link4" class="colorClick"data-imagen="imag44" onclick="imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag4','link4','rodillo-infeed')">Calibración / Limpieza / Rugosidad <br>en INFEED</a></li><br>
+            <li><a href="#" id="link5" class="colorClick"data-imagen="imag55" onclick="imagenesPasoApaso('','','contBotInfeed','','link5','puesta-punto',)">Paso a paso puesta a punto</a></li><br>
+          </ol> 
+        </div>        
+      </div>  
 
     </div>  
 
@@ -1755,24 +1780,6 @@
       <p class="parrafo-casos">
         Lleva un registro detallado de todas las actividades de mantenimiento. Un historial documentado facilita el seguimiento del rendimiento y ayuda en la planificación de futuras intervenciones
       </p>     
-    </div>
-    <div id="control-neumatico">
-      <h1 class="casos-h1" >Estándar 1: Presión Nominal</h1>
-      <p class="parrafo-casos">
-        La presión nominal para un cilindro neumático debe cumplir con las especificaciones del fabricante y no exceder los límites establecidos para garantizar un rendimiento óptimo y seguro.
-      </p>
-      <h1 class="casos-h1" >Estándar 2: Tolerancias de Presión</h1>
-      <p class="parrafo-casos">
-        Las tolerancias de presión deben cumplir con las normativas internacionales para garantizar la precisión y consistencia en la operación del cilindro, evitando daños y asegurando una vida útil prolongada.
-      </p>
-      <h1 class="casos-h1" >Estándar 3: Seguridad de Operación</h1>
-      <p class="parrafo-casos">
-        Se deben seguir prácticas seguras de operación para evitar presiones excesivas que puedan comprometer la integridad del cilindro, asegurando un entorno de trabajo seguro y protegiendo a los operadores.
-      </p>
-      <h1 class="casos-h1" >Estándar 4: Mantenimiento Preventivo</h1>
-      <p class="parrafo-casos">
-        Se recomienda realizar un mantenimiento preventivo periódico para verificar y ajustar la presión neumática, asegurando un funcionamiento eficiente del cilindro y evitando posibles fallas y desgastes prematuros.
-      </p>
     </div>
     <div id="iconos">     
       <h1 id="title-interfaz">Interfaz de seguimiento Mantenimiento Autonomo</h1>

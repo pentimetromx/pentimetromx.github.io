@@ -1807,9 +1807,9 @@ margin-right: 7px;
   width: 477px;
   display: none;
 }
-
 #linkLis{
   position: absolute;
+  top: 0%;
   left: 0%;
   display:flex; 
   flex-direction: column;
@@ -5090,14 +5090,26 @@ elemento.visible {
   .colorClick:hover {
     color: orange;
   }
+  #largoImpresion{
+    position: relative;
+    display: flex; 
+    flex-direction: column;
+    color: white;
+    font-family: "GothamRounded", sans-serif; 
+    top: 2%;
+    left: 2%;
+    width: 249px;
+    height: 333px;
+    display: none;
+  } 
   #linksMA{
     position: absolute;
     display: flex;
     flex-direction: column;
-    height: 100px;
+    height: 222px;
     width: 277px;
-    left: 128%;
-    top: -34%;
+    left:57%;
+    top:0%;
     display: none;
   }   
   #linkLis{
@@ -5107,20 +5119,17 @@ elemento.visible {
     background-color:#333333;
     width: 277px;
     height: 360px;
-    left: 3.8%;
-    top:-165%;
+    left: 0%;
+    top:0%;
   } 
-  #largoImpresion{
-    position: relative;
-    display: flex; 
-    flex-direction: column;
-    color: white;
-    font-family: "GothamRounded", sans-serif; 
-    margin-top: 44%;
-    width: 249px;
-    height: 333px;
+
+  #contImgEntrenos{
+    position: absolute;
+    display: flex;
+    height: 33%;
     display: none;
-  } 
+  }
+
   #pneumatico {
     position: relative;
     flex-direction: column;
@@ -5141,24 +5150,19 @@ elemento.visible {
     border-radius: 13px;
   }  
   #control-neumatico{
-    position: relative;
-    left: 37%;
-    top: -44.5%;
-    width: 249px;
-    height: 333px;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid orange;
-    border-radius: 20px;
-    display: none;
-    overflow: auto;
-    background-color: #000;
-  }
-  #contImgEntrenos{
     position: absolute;
     display: flex;
-    height: 33%;
-    display: none;
+    flex-direction: column;
+    width: 249px;
+    height: 333px;
+    border: 2px solid orange;
+    border-radius: 20px;
+    background-color: #000;
+    overflow: auto;
+    top: 0%;
+    left: 0%;
+    margin-left: 140px;
+    z-index: 3;
   }
   #padre-neumat{
     position: absolute;
@@ -5169,16 +5173,16 @@ elemento.visible {
   }
   #imag1, /* contenedor padre ID */
   #imag2{
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: column;
+    top: 0%;
+    left: 0%;
     background-color: #000;
     border: 2px solid orange;
     z-index: 2;
     border-radius: 13px;
     height: 254px;
-    left: -728%;
-    top: -79%;
   }
   .img1{   /* contebedor padre CLASE */
     display: flex;
@@ -5192,6 +5196,16 @@ elemento.visible {
   }
   h5{
     font-size: 8px;
+  }
+  #padre-1{
+    position: relative;
+    display: flex;        /* Establece el modelo de diseño flexible */
+    justify-content: space-between;  /* Distribuye los elementos a lo largo del contenedor */
+    align-items: center;
+    width: 777px;
+    height: 337px;
+    top: 47%;
+    left:0%;
   }
   /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
   .move-up-left {
