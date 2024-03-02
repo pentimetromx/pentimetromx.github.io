@@ -4360,6 +4360,7 @@ function toggleFullScreen(element) {
     }
   }
 }
+
 function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
   var linkOrange = document.getElementById(id)
   var contiLinksMA = document.getElementById('linksMA')
@@ -4421,9 +4422,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
           }
         }   
-      } 
-      var imgZapata = document.getElementById('imag2')
-      imgZapata.style.height = '277px'
+      }
       var linksTraining = document.getElementById('linkLis')
       linksTraining.style.marginlef = '64px'
       var vidFesto = document.getElementById('vid-pneumatic')
@@ -4517,6 +4516,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
     default: 
   }        
 }
+
 
 function lubricacion(buttId,btnIniId){ 
   var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80',]
@@ -9431,6 +9431,14 @@ function obtenerGeometria() {
   console.log('Display:', displayType);
 }
 function soloEnsayo(){
-  contibotsDistri.classList.add('move-up')
-  contVideo.classList.add('move-up-left')
+  var elementosExcluidos = ['padre-2','imag2','pneumatico']  
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    }
+  }  
+
+  
+
 }
