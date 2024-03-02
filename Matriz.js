@@ -1153,7 +1153,6 @@ function ladosPlancha(elementId){
   var contImagen3 = document.getElementById('imagen3')
   var contImagen4 = document.getElementById('imagen4')
 
-
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   var elementosExcluidos = ['contPortPlaca', 'agrupaOblicuos-placa','container01','links-iniciales','links-inicialesI']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
   for (var i = 0; i < allContenedores.length; i++) { 
@@ -4125,7 +4124,7 @@ function listaEntrenamientosII(btnList) {
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
-            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'  
           }
         } 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4140,6 +4139,7 @@ function listaEntrenamientosII(btnList) {
           }
         }
       }
+      links.style.top = '4%'
     break;
     case 'btt2':
      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4360,15 +4360,14 @@ function toggleFullScreen(element) {
     }
   }
 }
-
 function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
   var linkOrange = document.getElementById(id)
   var contiLinksMA = document.getElementById('linksMA')
   document.body.style.zoom = "67%"
-  /* container1.style.left ='31%' */
+
   if(screenWidth < 500){
     document.body.style.zoom = "100%"          
-  }       
+  }      
   switch (id) {
     case 'link1':
       var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','linksMA','linkLis','imag1','contImgEntrenos','largoImpresion','control-neumatico','contBotInfeed','padre-1']  
@@ -4388,8 +4387,8 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
       }}
          
       if(screenWidth < 500){
-        contiLinksMA.style.marginTop = '-135.5%'
-        var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','linksMA','linkLis','largoImpresion','imag1','contImgEntrenos','largoImpresion','control-neumatico','contBotInfeed','padre-1']  
+        /* contiLinksMA.style.marginTop = '30%' */
+        var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','linksMA','linkLis','largoImpresion','imag1','contImgEntrenos','largoImpresion','control-neumatico','contBotInfeed','padre-1','padre-1']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
@@ -9403,8 +9402,20 @@ document.addEventListener('keydown', function(event) {
         /* changeButtonStyles('bancada-torre-II') */
         /* muestraRodillo('plate-smed','images-entintador') */
         /* abrirSeccionVariable('cont-variable') */
-        ElementosMa('conteneMantaut') 
-        /*muestraRodillo('videoElement2','images-distribuidor')
+        ElementosMa('conteneMantaut')
+
+        setTimeout(function() {
+          deslizaContenedor('troubleshooting','troubleshoot')
+        }, 1000) // 100 milisegundos de retraso entre botones
+
+        setTimeout(function() {
+          listaEntrenamientosII('archivo')
+        }, 1500) // 100 milisegundos de retraso entre 
+
+        setTimeout(function() {
+        imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')
+      }, 2000) // 100 milisegundos de retraso entre 
+      /*muestraRodillo('videoElement2','images-distribuidor')
         muestraRodillo('videoElement3','images-entintador') */      
       break;
     }
@@ -9412,7 +9423,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('linksMA')
+  var contiBoton = document.getElementById('padre-1')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
