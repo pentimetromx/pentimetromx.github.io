@@ -5135,7 +5135,7 @@ elemento.visible {
     height: 222px;
     width: 277px;
     left:57%;
-    top:0%;
+    margin-top:-2%;
     z-index: 3;
     display: none;
   }   
@@ -5171,7 +5171,7 @@ elemento.visible {
     align-items: center;
     width: 777px;
     height: 400px;
-    top: -35%;
+    top: -37%;
     left:2%;
     display: none;
     z-index: 4;
@@ -5193,13 +5193,6 @@ elemento.visible {
     display: none;
     z-index: 3;
   }
-  #padre-neumat{
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    gap: 3px; 
-    display: none;
-  }
   #imag1, /* contenedor padre ID */
   #imag2{
     position: absolute;
@@ -5213,6 +5206,13 @@ elemento.visible {
     border-radius: 13px;
     height: 344px;
     width:122px;
+  }
+  #padre-neumat{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    gap: 3px; 
+    display: none;
   }
   .img1{   /* contebedor padre CLASE */
     display: flex;
