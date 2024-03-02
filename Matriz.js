@@ -4067,7 +4067,11 @@ function irContenedorSiguiente() {
 function listaEntrenamientosII(btnList) {
   var buttsPpalesMA = ['troubleshoot','def1','def2','adtBut','fua1','lup','kaizen']
   var links = document.getElementById('linksMA')
-  contienePasos.style.display = 'none'   
+  contienePasos.style.display = 'none'
+  
+  var contiLinksMA = document.getElementById('linksMA')
+  contiLinksMA.style.marginTop = ''
+
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   if(document.body.style.zoom !== "100%"){                                                                  ///PAMTALLA !== 100% ENTONCES DEVOLVER GRIS A BOTONES
     for (var i = 0; i < buttsPpalesMA.length; i++) {                                                                                                                                                                        
@@ -4358,6 +4362,7 @@ function toggleFullScreen(element) {
 }
 function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
   var linkOrange = document.getElementById(id)
+  var contiLinksMA = document.getElementById('linksMA')
   document.body.style.zoom = "67%"
   /* container1.style.left ='31%' */
   if(screenWidth < 500){
@@ -4382,6 +4387,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
       }}
          
       if(screenWidth < 500){
+        contiLinksMA.style.marginTop = '-135.5%'
         var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','linksMA','linkLis','largoImpresion','imag1','contImgEntrenos','largoImpresion','control-neumatico','contBotInfeed','padre-1']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
@@ -4511,6 +4517,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
     default: 
   }        
 }
+
 function lubricacion(buttId,btnIniId){ 
   var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80',]
   var contVidLub = ['lubri-I', 'lubri-II','lubri-III', 'frec-lubrica','freno','uniTeñido'] 
@@ -9405,7 +9412,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('control-neumatico')
+  var contiBoton = document.getElementById('linksMA')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
