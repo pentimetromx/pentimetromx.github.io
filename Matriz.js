@@ -4363,6 +4363,7 @@ function toggleFullScreen(element) {
 function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
   var linkOrange = document.getElementById(id)
   var contiLinksMA = document.getElementById('linksMA')
+  var contiPadre2 = document.getElementById('padre-2')
   document.body.style.zoom = "67%"
 
   if(screenWidth < 500){
@@ -4420,7 +4421,8 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
           if (elemento) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
           }
-        }   
+        }  
+        contiPadre2.style.marginTop = '9%'
       }
       var linksTraining = document.getElementById('linkLis')
       linksTraining.style.marginlef = '64px'
@@ -9413,8 +9415,8 @@ document.addEventListener('keydown', function(event) {
         }, 1500) // 100 milisegundos de retraso entre 
 
         setTimeout(function() {
-        imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')
-      }, 2000) // 100 milisegundos de retraso entre 
+         imagenesPasoApaso('contImgEntrenos','bailarina','vid-basculante','imag3','link3','contImaginario')
+        }, 2000) // 100 milisegundos de retraso entre 
       /*muestraRodillo('videoElement2','images-distribuidor')
         muestraRodillo('videoElement3','images-entintador') */      
       break;
@@ -9423,7 +9425,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('padre-1')
+  var contiBoton = document.getElementById('contImaginario')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
