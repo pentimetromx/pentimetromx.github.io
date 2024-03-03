@@ -2922,14 +2922,27 @@ elemento.visible {
 .colorClick:hover {
   color: orange;
 }
+#imag4{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: auto;
+  top: -9%;
+  left: 52.5%;
+  gap: 7px;
+  display: none;
+}
 #imag4 img{
   border: solid 1px orange;
   border-radius: 11px;
+  width: 210px;
+  height: 180px;
 }
 #bailarina{
   display: flex;
   position: relative;
-  left: 4px;
+  left: -2px;
   margin-top: 37px;
   display: none;
   height: 570px;
@@ -2953,7 +2966,7 @@ elemento.visible {
   flex-direction: row;
   align-items: flex-start;
   top: 7px;
-  left: 7px;
+  left: 2px;
   gap: 14px;
 }
 h4{
@@ -5183,13 +5196,11 @@ h4{
     align-items: flex-start;
     height: 407px;
     width: 397px;
-/*     height: auto;
-    width: auto;   
- */    display: none; 
+    display: none; 
     border-radius: 21px; 
     background-color:black;
     border: solid 2px orange;
-    top: -30%;
+    top: -26%;
     left:1%;
     z-index: 3;
   }
@@ -5205,22 +5216,17 @@ h4{
     width: auto;   
   }
   .img-1{
-  /*     height: 200px;
-    width: 277px; */
     height: 85px;
     width: 116px;
     border: 1px solid orange;
     border-radius: 7px;
   }
-    
   #bailarina{
     display: flex;
     position: relative;
-    left: 4px;
-    margin-top: 37px;
+    left: 12px;
+    margin-top: 33px;
     display: none;
-/*     height: 570px;
-    width: 881px; */  
     height: 252px;
     width: 371px;
     border-radius: 11px;
@@ -5242,7 +5248,6 @@ h4{
     font-family: "GothamRounded", sans-serif;
     margin: 0;
   }
-
   #padre-2,
   #padre-1{
     position: relative;
