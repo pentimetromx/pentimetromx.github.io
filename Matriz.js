@@ -4422,7 +4422,6 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
           }
         }  
-        contiPadre2.style.marginTop = '9%'
       }
       var linksTraining = document.getElementById('linkLis')
       linksTraining.style.marginlef = '64px'

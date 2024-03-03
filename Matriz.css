@@ -5246,8 +5246,8 @@ h4{
   #padre-2,
   #padre-1{
     position: relative;
-    display: flex;        /* Establece el modelo de diseño flexible */
-    flex-direction: row;  /* Distribuye los elementos a lo largo del contenedor */
+    display: flex;
+    flex-direction: row;
     align-items: center;
     height: 407px;
     width: 397px;
@@ -5264,7 +5264,7 @@ h4{
     position: absolute;
     display: flex;
     flex-direction: column;
-    width: 251px;
+    width: 246px;
     height: 361px;
     border: 1px solid orange;
     border-radius: 20px;
