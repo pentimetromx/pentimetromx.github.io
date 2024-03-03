@@ -914,7 +914,7 @@ width:447px ;
   height: 500px;
   display: none;
 }
-#canvasContainer4 {
+#canvasContainer4{
   position: relative;
   display: flex;
   left: 17%;
@@ -922,7 +922,7 @@ width:447px ;
   width: 350px;
   height: 255px;
 }
-#canvasContainer5 {
+#canvasContainer5{
   position: relative;
   display: flex;
   left: 44%;
@@ -930,14 +930,14 @@ width:447px ;
   width: 357px;
   height: 255px;
 }
-#canvasContainer6 {
+#canvasContainer6{
   position: relative;
   display: flex;
   left: 73%;
   margin-top: -20%;
   width: 330px;
 }
-#canvasContainer7 {
+#canvasContainer7{
   position:relative;
   display: flex;
   left: 20%;
@@ -945,7 +945,7 @@ width:447px ;
   width: 407px;
   height: 255px;
 }
-#canvasContainer8 {
+#canvasContainer8{
   position: relative;
   display: flex;
   left: 47%;
@@ -953,14 +953,14 @@ width:447px ;
   width: 357px;
   height: 255px;
 }
-#canvasContainer9 {
+#canvasContainer9{
   position: absolute;
   display: flex;
   left: 75%;
   top: 58%;
   width: 277px;
 }
-#canvasContainer2 {
+#canvasContainer2{
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -5380,6 +5380,15 @@ h4{
     overflow: auto; 
     background-color: #000;
     z-index: 3;
+  }
+  #canvasContainer2{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left:0%;
+    top:20%;
+    width: 350px;
+    border-radius: 20px;
   }
   
   /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */

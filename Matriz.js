@@ -9402,32 +9402,26 @@ document.addEventListener('keydown', function(event) {
   if (event.ctrlKey && event.shiftKey) {
     switch (event.key) {
       case 'Z':
-        /* changeButtonStyles('bancada-torre-II') */ 
-        /* changeButtonStyles('bancada-torre-II') */
-        /* muestraRodillo('plate-smed','images-entintador') */
-        /* abrirSeccionVariable('cont-variable') */
         ElementosMa('conteneMantaut')
 
         setTimeout(function() {
-          deslizaContenedor('troubleshooting','troubleshoot')
-        }, 1000) // 100 milisegundos de retraso entre botones
+          /* deslizaContenedor('troubleshooting','troubleshoot') */
+        }, 1000)
 
         setTimeout(function() {
-          listaEntrenamientosII('archivo')
-        }, 1500) // 100 milisegundos de retraso entre 
+          /* deslizaContenedor('canvasContainer2','def1') */
+        }, 1500) 
 
         setTimeout(function() {
-          imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')          
-        }, 2000) // 100 milisegundos de retraso entre 
-      /*muestraRodillo('videoElement2','images-distribuidor')
-        muestraRodillo('videoElement3','images-entintador') */      
+          /* imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico') */
+        }, 2000)      
       break;
     }
   }
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('contImaginario-II')
+  var contiBoton = document.getElementById('canvasContainer2')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
