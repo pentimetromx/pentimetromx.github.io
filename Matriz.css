@@ -2828,7 +2828,7 @@ elemento.visible {
 #puesta-punto > * {
   margin-left: 17px;
 }
-#puesta-punto {
+#puesta-punto{
   position: absolute;
   left: 1000px;
   top: 91px;
@@ -2842,12 +2842,26 @@ elemento.visible {
   overflow: auto;
   background-color: #000;
 }
-#rodillo-infeed {
+#contImaginario-II{
+  position: relative;
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
+  height:780px;
+  width:922px;
+  display: none; 
+  border-radius: 21px; 
+  background-color:black;
+  border: solid 2px orange;
+  top: -9%;
+  left:51%;
+}
+#rodillo-infeed{
   position: absolute;
-  left: 1227px;
-  top: 91px;
+  left:25%;
+  top:2%;
   width: 677px;
-  height: 727px;
+  height: 747px;
   display: flex;
   flex-direction: column;
   border: 3px solid orange;
@@ -2856,6 +2870,18 @@ elemento.visible {
   overflow: auto;
   background-color: #000;
 }
+#imag4{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: auto;
+  top:2%;
+  left:1%;
+  gap: 7px;
+  display: none;
+}
+
 #butt-17{
   position: absolute;
   background-color: rgba(0, 0, 0, 0.423);
@@ -2921,17 +2947,6 @@ elemento.visible {
 }
 .colorClick:hover {
   color: orange;
-}
-#imag4{
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  height: auto;
-  width: auto;
-  top: -9%;
-  left: 52.5%;
-  gap: 7px;
-  display: none;
 }
 #imag4 img{
   border: solid 1px orange;
@@ -4701,7 +4716,6 @@ h4{
     margin-top: 87%;
     margin-left: 3%;
   }
-/*////////////  ENTINTADOR //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
   #conti-video-entintador{
     position: absolute;
     display: flex;
@@ -4731,7 +4745,6 @@ h4{
     top: -28%;
     left: 68%;
   }
-  /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
   #contenedor-7-V{
     position: absolute;
     display: flex;
@@ -4815,9 +4828,6 @@ h4{
     width: 200px;
     transition: transform 1.6s ease;
   }
-
-
-  /*////////////  SMED ///// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
   #bancada-torre-II{
     position: relative;
     display: flex;
@@ -5319,7 +5329,56 @@ h4{
   h4,
   h5{
     font-size: 8px;
-  }  
+  }
+  #contImaginario-II{ 
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    height: 317px;
+    width: 397px;
+    display: none; 
+    border-radius: 21px; 
+    background-color:black;
+    border: solid 2px orange;
+    top: -22%;
+    left:1%;
+    z-index: 3;
+  }
+  #rodillo-infeed{
+    position: absolute;
+    top: 1%;
+    left:25%;
+    width: 284px;
+    height: 305px;    
+    display: flex;
+    flex-direction: column;
+    border: 3px solid orange;
+    border-radius: 20px;
+    display: none;
+    overflow: auto;
+    background-color: #000;
+    z-index: 3;
+  }
+  #imag4{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+    top: 1%;
+    left:2%;
+    gap: 7px;
+    display: none;
+    z-index: 3;
+  }
+  #imag4 img{
+    border: solid 1px orange;
+    border-radius: 11px;
+    width: 79px;
+    height: 69px;    
+  }
+  
   /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
   .move-up-left {
     transform: translateY(457px); 
