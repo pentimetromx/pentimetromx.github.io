@@ -1742,6 +1742,7 @@ width:447px ;
 .image-trainings{
   transition: transform 0.1s ease, filter 0.1s ease;
   border-radius: 11px;
+  transform: translateZ(0);
 }
 .contImPresor{
   display: flex;
@@ -2167,7 +2168,6 @@ h6{
   top: 1%;
   display: none;
 }
-
 #cont-secador{
   position: relative;
   display: flex;
@@ -2252,7 +2252,6 @@ h6{
   content: "";
   display: none;
 } 
-
 #indicaciones-III{
   display: flex;
   flex-direction: column;
