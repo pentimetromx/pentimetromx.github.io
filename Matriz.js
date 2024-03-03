@@ -9459,11 +9459,15 @@ function soloEnsayo(){
 
 }
 
+
 document.addEventListener('DOMContentLoaded', function () {
   const mobileButton = document.querySelector('.mobile-button');
 
-  mobileButton.addEventListener('click', function () {
-    // Agregar clase 'clicked' al hacer clic
+  mobileButton.addEventListener('touchstart', function (event) {
+    // Evitar que se propague el evento táctil
+    event.stopPropagation();
+
+    // Agregar clase 'clicked' al tocar
     mobileButton.classList.add('clicked');
 
     // Retirar clase 'clicked' después de 1 segundo
