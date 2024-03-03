@@ -5184,7 +5184,6 @@ h4{
     left: 0%;
     top:0%;
   } 
-
   #contImgEntrenos{
     position: absolute;
     display: flex;
@@ -5387,11 +5386,13 @@ h4{
     border: 3px solid orange;
     border-radius: 20px;
     display: none;
-    overflow: auto;
+    overflow: auto; 
     background-color: #000;
     z-index: 3;
   }
-  
+  .mobile-button.clicked {
+    transform: scale(2);
+  }  
   
   /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
   .move-up-left {

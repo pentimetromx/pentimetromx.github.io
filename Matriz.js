@@ -9458,3 +9458,17 @@ function soloEnsayo(){
   
 
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  const mobileButton = document.querySelector('.mobile-button');
+
+  mobileButton.addEventListener('click', function () {
+    // Agregar clase 'clicked' al hacer clic
+    mobileButton.classList.add('clicked');
+
+    // Retirar clase 'clicked' después de 1 segundo
+    setTimeout(function () {
+      mobileButton.classList.remove('clicked');
+    }, 1000);
+  });
+});
