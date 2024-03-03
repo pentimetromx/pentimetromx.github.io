@@ -5292,8 +5292,7 @@ h4{
     color: white;
     font-size: 11px;
     font-family: "GothamRounded", sans-serif; 
-  }
-  
+  }  
   #imag1, /* contenedor padre ID */
   #imag2{
     position: absolute;
@@ -5378,6 +5377,22 @@ h4{
     width: 79px;
     height: 69px;    
   }
+  #puesta-punto{
+    position: relative;
+    left: 2%;
+    top: -17%;
+    width: 400px;
+    height: 305px;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid orange;
+    border-radius: 20px;
+    display: none;
+    overflow: auto;
+    background-color: #000;
+    z-index: 3;
+  }
+  
   
   /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
   .move-up-left {

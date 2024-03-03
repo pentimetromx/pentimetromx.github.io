@@ -9418,7 +9418,7 @@ document.addEventListener('keydown', function(event) {
         }, 1500) // 100 milisegundos de retraso entre 
 
         setTimeout(function() {
-          imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag4','link4','rodillo-infeed')        
+          imagenesPasoApaso('','','contBotInfeed','','link5','puesta-punto',)
         }, 2000) // 100 milisegundos de retraso entre 
       /*muestraRodillo('videoElement2','images-distribuidor')
         muestraRodillo('videoElement3','images-entintador') */      
