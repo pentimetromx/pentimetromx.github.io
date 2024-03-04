@@ -914,6 +914,12 @@ width:447px ;
   height: 500px;
   display: none;
 }
+/* #conteneMantaut{
+  position: relative;
+  display: flex;
+  top: 0%;
+  left: 0%;
+} */
 #canvasContainer4{
   position: relative;
   display: flex;
@@ -5388,6 +5394,7 @@ h4{
     left:0%;
     top:20%;
     width: 350px;
+    height: 377px;
     border-radius: 20px;
   }
   
