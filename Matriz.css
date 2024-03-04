@@ -688,13 +688,12 @@ height: 270px;
 width:447px ;
 }
 #contChecks{
+  position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; 
-  position: absolute;
+  /* justify-content: flex-start; */ 
   left: 830px;
   top: 77px;
-  display: none;
   border-radius: 20px;
 }
 .inpt-class{
@@ -914,12 +913,13 @@ width:447px ;
   height: 500px;
   display: none;
 }
-/* #conteneMantaut{
+#conteneMantaut{
   position: relative;
   display: flex;
-  top: 0%;
+  top: 5%;
   left: 0%;
-} */
+  display: none;
+} 
 #canvasContainer4{
   position: relative;
   display: flex;
@@ -967,9 +967,9 @@ width:447px ;
   width: 277px;
 }
 #canvasContainer2{
+  position: absolute;
   display: flex;
   flex-direction: column;
-  position: absolute;
   left: 457px;
   top: 72px;
   width: 350px;
