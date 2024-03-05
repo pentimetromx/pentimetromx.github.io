@@ -687,15 +687,6 @@ margin-right: 5px;
 height: 270px;
 width:447px ;
 }
-#contChecks{
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  /* justify-content: flex-start; */ 
-  left: 830px;
-  top: 77px;
-  border-radius: 20px;
-}
 .inpt-class{
   width: 200px;
   border-radius: 7px;
@@ -769,20 +760,6 @@ width:447px ;
 #contImagGraf img{
   width:117px;
   height:489px;
-  border-radius: 17px;
-}
-#contImagNeg {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  left: 1057px;
-  top: 77px;
-  display: none; 
-  border-radius: 20px; 
-}
-#contImagNeg img{
-  width:117px;
-  height:490px;
   border-radius: 17px;
 }
 .butt-mautonomo{
@@ -918,8 +895,51 @@ width:447px ;
   display: flex;
   top: 5%;
   left: 0%;
-  display: none;
 } 
+#canvasContainer2{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 20%;
+  margin-top: 5%;
+  width: 350px;
+  border-radius: 20px;
+}
+#canvasContainer3{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 20%;
+  margin-top: 5%;
+  width: 200px;
+  height: 490px;
+  border-radius: 20px;
+}
+#contChecks{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  left: 20%;
+  margin-top: 6%;
+  border-radius: 20px;
+  display: none;
+}
+#contImagNeg {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 20%;
+  margin-top: 6%;
+  display: none; 
+  border-radius: 20px; 
+}
+#contImagNeg img{
+  width:117px;
+  height:490px;
+  border-radius: 17px;
+}
+
 #canvasContainer4{
   position: relative;
   display: flex;
@@ -966,25 +986,7 @@ width:447px ;
   top: 58%;
   width: 277px;
 }
-#canvasContainer2{
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  left: 457px;
-  top: 72px;
-  width: 350px;
-  border-radius: 20px;
-}
-#canvasContainer3{
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  left: 947px;
-  top: 77px;
-  width: 200px;
-  height: 490px;
-  border-radius: 20px;
-}
+
 #pantalla-servicio,
 #pantalla-mandos,
 #pantalla-frente,
@@ -1820,7 +1822,7 @@ margin-right: 7px;
   height: 222px;
   width: 450px;
   left:104%;
-  top:0%;
+  margin-top:16%;
   display: none;
 }
 #linkLis{
@@ -2236,6 +2238,17 @@ h6{
   width: 460px;
   height: 350px;
   border-radius: 19px;
+}
+#conti-boton-kaizen{
+  position: relative;  
+  display: flex;
+  flex-direction: column;
+  left: 16.7%;
+  margin-top: 20.6%;
+/*   height: 200px;
+  width: 300px;
+  z-index: 1; */
+
 }
 #conti-boton-kaizen button,
 #conti-boton-rodilleria button,
