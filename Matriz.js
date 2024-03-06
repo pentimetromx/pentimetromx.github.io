@@ -1,3 +1,7 @@
+var continer2 = document.getElementById('canvasContainer2')
+var grafica2 = document.getElementById('MiGrafica')
+
+
 var arrayAllPneumatica = ['contImaginario-II','vid-pneumatic','bailarina','padre-neumat','pneumatico','control-neumatico','imag1','imag2','imag3','imag4','contImaginario','vid-basculante','rodillo-infeed','puesta-punto','contImgEntrenos']
 const coleccion = document.querySelectorAll('.desbobinador, .desbobinador-I, .uTeñido, .alimentadorId, .unidpre-prensaProceso, .rebobinador, .contTorrImp')
 var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
@@ -9345,9 +9349,9 @@ document.addEventListener('keydown', function(event) {
     switch (event.key) {
       case 'Z':
         ElementosMaII('conteneMantaut')
-/*       setTimeout(function() {
-        deslizaContenedor('conti-boton-kaizen','kaizen')
-        }, 1000) */
+        setTimeout(function() {
+          soloEnsayo()
+        }, 1000) 
 
 /*         setTimeout(function() {
         rodillosKaizen('btn17','')        
@@ -9362,7 +9366,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('btn17')
+  var contiBoton = document.getElementById('MiGrafica')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
@@ -9380,15 +9384,50 @@ function obtenerGeometria() {
   console.log('Position:', positionType);
   console.log('Display:', displayType);
 }
-function soloEnsayo(){
-  var elementosExcluidos = ['padre-2','imag2','pneumatico']  
-  for (var i = 0; i < allContenedores.length; i++) { 
-    var elemento = document.getElementById(allContenedores[i])  
+
+
+
+/* function soloEnsayo() {
+  var elementosExcluidos = ['container01', 'links-inicialesI', 'links-iniciales', 'conteneMantaut', 'canvasContainer2', 'MiGrafica'];
+
+  for (var i = 0; i < allContenedores.length; i++) {
+    var elemento = document.getElementById(allContenedores[i]);
+
     if (elemento) {
-      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
-  }  
+  }
+  continer2.classList.remove('move-grafica');
 
-  
+  setTimeout(function () {
+    ensayoTransicion();
+  }, 477);
 
+  setTimeout(function () {
+    continer2.classList.add('move-grafica');
+    continer2.style.left = '100px'; 
+  }, 500); 
+} */
+
+function soloEnsayo() {
+  var elementosExcluidos = ['container01', 'links-inicialesI', 'links-iniciales', 'conteneMantaut', 'canvasContainer2', 'MiGrafica'];
+
+  for (var i = 0; i < allContenedores.length; i++) {
+    var elemento = document.getElementById(allContenedores[i]);
+
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
+    }
+  }
+
+  // Eliminar la clase 'move-grafica' si ya existe
+  continer2.classList.remove('move-grafica');
+
+  // Establecer la posición inicial antes de iniciar la transición
+  continer2.style.left = '1200px';
+
+  setTimeout(function () {
+    continer2.classList.add('move-grafica');
+    continer2.style.left = '100px'; // Ajusta el valor de la posición final aquí
+  }, 500); // Retrasa la adición de la clase move-grafica
 }

@@ -896,7 +896,7 @@ width:447px ;
   top: 5%;
   left: 0%;
 } 
-#canvasContainer2{
+/* #canvasContainer2{
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -905,6 +905,18 @@ width:447px ;
   width: 350px;
   height: 333px;
   border-radius: 20px;
+} */
+
+#canvasContainer2 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 1200px; /* Inicializa con la posición inicial */
+  margin-top: 5%;
+  width: 350px;
+  height: 333px;
+  border-radius: 20px;
+  transition: left 1.6s ease; /* Usa la propiedad left para la transición */
 }
 #canvasContainer3{
   position: absolute;
@@ -5477,6 +5489,11 @@ h4{
   .move-vid-smed-II{
     transform: translateY(260%);
   }
-  
+
+  /* sexto evento////////////////////////////////////////////////// */
+
+  .move-grafica {
+    left: 100px; /* Este valor se ajustará durante la transición */
+  }
+
 }
- 
