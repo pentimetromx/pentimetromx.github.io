@@ -42,6 +42,7 @@ var destino = 257
 var idsArray = [];
 var idsArrayEliminados = []
 var idsMA = ['control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','casos-kaizen','mejoras-kai','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','planos-kaizen','materiales-kaizen','kaizenCont','conti-boton-planos', 'conti-boton-kaizen','troubleshooting','canvasContainer2','contChecks','canvasContainer3', 'contImagNeg',,'contImagGraf','canvasContainer4','canvasContainer5','canvasContainer6','canvasContainer7','canvasContainer8', 'canvasContainer9']
+var contenedoresMA = ['troubleshooting','canvasContainer2','contChecks','canvasContainer3','contImagNeg','contImagGraf','kaizenCont']
 var idsMAhijos = ['contBotCasos','materiales-kaizen','troubleshooting','canvasContainer2','contChecks','canvasContainer3','contImagNeg','contImagGraf']
 var lineasGrid = document.getElementById('contLineas')
 var contAdministrar = document.getElementById('cont-titulo-admin')
@@ -191,29 +192,6 @@ function setInitialPosition() {
   contiBoton.style.left = '270px';
   contiBoton.style.transform = ''; // Restablecer la transformación
 }
-/* function ElementosMa(){
-  var elementosExcluidos = ['container01','links-inicialesI','links-iniciales']  
-  for (var i = 0; i < allContenedores.length; i++) { 
-    var elemento = document.getElementById(allContenedores[i])  
-    if (elemento) {
-      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-    }
-  }  
-  var botones = document.querySelectorAll('.butt-mautonomo')
-  function mostrarBotonConRetraso(i) {
-    if (i < botones.length) {
-      var boton = botones[i]
-      boton.style.display = 'none'
-      setTimeout(function() {
-        mostrarBotonConRetraso(i + 1)
-      }, 1)
-    }
-  }  
-  mostrarBotonConRetraso(0)
-  setTimeout(function() {
-    ElementosMaII('conteneMantaut')
-  }, 300)
-} */
 function ElementosMaII(elementId) {
   var elementosExcluidos = ['conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales']  
   /* document.getElementById('linkList').style.display = 'none' */
@@ -1764,6 +1742,13 @@ function deslizaContenedor(identificador, idButton) {
     }
   })
 
+   contenedoresMA.forEach(element => {
+    var elementos = document.getElementById(element)
+    if(elementos){
+      elementos.removeAttribute('style');
+    }
+  })
+
   if (document.body.style.zoom !== "100%") {                                                                                         
     document.body.style.zoom = "100%";
   }
@@ -1857,31 +1842,16 @@ function deslizaContenedor(identificador, idButton) {
   }
 }
 function mostrarTroublesshIntervalo() {
-  console.log('Inicio de la función')
-  
-  // Selecciona el contenedor
   var contenedor = document.getElementById('troubleshooting')
-  
-  // Obtiene todos los elementos hijos del contenedor
   var elementos = contenedor.children;
-  
-  // Variable para mantener el índice actual
   var index = 0;
-  
-  // Función para hacer visible cada elemento con intervalo de 150 ms
   function hacerVisibleSiguienteElemento() {
     if (index < elementos.length) {
-      // Muestra el elemento actual
-      elementos[index].style.display = 'block' // Puedes cambiar 'block' por 'flex' si prefieres
-      
-      // Incrementa el índice para pasar al siguiente elemento
+      elementos[index].style.display = 'block'
       index++;
-      
-      // Programa la siguiente visibilidad después de 150 ms
       setTimeout(hacerVisibleSiguienteElemento, 33)
     }
   }
-  
   // Inicia la primera visibilidad
   hacerVisibleSiguienteElemento()
 }
@@ -1935,6 +1905,27 @@ function deslizaContenedorII(idElement, idButton) {
   var contLinkMant = document.getElementById('linksMA')
   var elementoAnterior = null;
   var elementoActual = null;
+  
+  if(screenWidth < 500){
+    destino = 22;
+    var troubble = document.getElementById('troubleshooting')
+    var canvas2 = document.getElementById('canvasContainer2')
+    var canvas3 = document.getElementById('canvasContainer3')
+    var contiboton = document.getElementById('conti-boton')
+    var imagGraf = document.getElementById('contImagGraf')
+    var imgNeg = document.getElementById('contImagNeg')
+    var checks = document.getElementById('contChecks')
+    var grafica = document.getElementById('MiGrafica')
+    var kaizen = document.getElementById('kaizenCont')
+    contiboton.style.top = '50%'
+    imagGraf.style.top = '347%'
+    troubble.style.top = '347%' 
+    canvas3.style.top = '347%'
+    canvas2.style.top = '347%'
+    checks.style.top = '347%'
+    kaizen.style.top = '347%'
+    imgNeg.style.top = '347%'
+  } 
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
    if (idElement === 'kaizenCont') {
     for (const video of videoElements) {
@@ -1946,23 +1937,38 @@ function deslizaContenedorII(idElement, idButton) {
       }
     }
   }
+  if (idElement === 'canvasContainer2') {
+    var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','canvasContainer2','MiGrafica']  
+    for (var i = 0; i < allContenedores.length; i++) { 
+      var elemento = document.getElementById(allContenedores[i])  
+      if (elemento) {
+        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+      }
+    }
+  }
+  if (idElement === 'troubleshooting') {
+    var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','troubleshooting']  
+    for (var i = 0; i < allContenedores.length; i++) { 
+      var elemento = document.getElementById(allContenedores[i])  
+      if (elemento) {
+        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+      }
+    }
+  }
 
-
-  if (contLinkMant !== null && contImgEntrenos !== null) {
+/*   if (contLinkMant !== null && contImgEntrenos !== null) {
     contLinkMant.style.display = 'none'
     contImgEntrenos.style.display = 'none'
-  }
+  } */
 
   // Verificar si el elemento ya está en el array
   if (!arrayPosicionnador.includes(idElement)) {
     arrayPosicionnador.push(idElement)
   }
 
-  var contenedor = document.getElementById(idElement)
-  
+  var contenedor = document.getElementById(idElement)  
   contenedor.style.display = 'flex'
   contenedor.style.left = '257px'
-
   var inicio = 1100;
   var velocidad = 500;
   var duracion = Math.abs(destino - inicio) / velocidad * 100;
@@ -1993,7 +1999,6 @@ function deslizaContenedorII(idElement, idButton) {
       destino = posicionAnterior + anchoAnterior;
     }
   }
-  console.log('El valor final de destino es:', destino)
   console.log(arrayPosicionnador)
   // Cambiar el color de fondo del botón al hacer clic
   var boton = document.getElementById(idButton)
@@ -2001,7 +2006,6 @@ function deslizaContenedorII(idElement, idButton) {
     originalButtonColors[idButton] = boton.style.backgroundColor; // Guarda el color original 
   }
   boton.style.backgroundColor = 'orange'
- /* boton.onclick = null;*/      
   setTimeout(function () {    
   }, 300)
 }
@@ -4097,7 +4101,6 @@ function listaEntrenamientosII(btnList) {
           }
         }
       }
-      links.style.top = '4%'
     break;
     case 'btt2':
       var elementosExcluidos = ['conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos']  
@@ -9341,14 +9344,14 @@ document.addEventListener('keydown', function(event) {
   if (event.ctrlKey && event.shiftKey) {
     switch (event.key) {
       case 'Z':
-        ElementosMaII('conteneMantaut')        
-        setTimeout(function() {
+        ElementosMaII('conteneMantaut')
+/*       setTimeout(function() {
         deslizaContenedor('conti-boton-kaizen','kaizen')
-        }, 1000)
+        }, 1000) */
 
-        setTimeout(function() {
+/*         setTimeout(function() {
         rodillosKaizen('btn17','')        
-        }, 1500) 
+        }, 1500)  */
 
         /*setTimeout(function() {
 
