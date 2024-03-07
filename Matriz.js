@@ -1,4 +1,6 @@
-var continer2 = document.getElementById('canvasContainer2')
+var anchoPantalla = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+var contenedor2 = document.getElementById('canvasContainer2')
+var troublesh = document.getElementById('troubleshooting')
 var grafica2 = document.getElementById('MiGrafica')
 
 
@@ -1860,7 +1862,12 @@ function mostrarTroublesshIntervalo() {
   hacerVisibleSiguienteElemento()
 }
 function deslizAutomatic(){
-  var conteneKaizen = document.getElementById('kaizenCont')
+  var elementosExcluidos = ['container01', 'links-inicialesI', 'links-iniciales', 'conteneMantaut', 'conti-boton','troubleshooting','canvascontainer2','MiGrafica','canvascontainer3','kaizenCont','vidElem'];
+  for (var i = 0; i < allContenedores.length; i++) {
+    var elemento = document.getElementById(allContenedores[i]);
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
+    }}  
   arrayPosicionnador = []
   destino = 277;
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1868,40 +1875,31 @@ function deslizAutomatic(){
     var elemento = document.getElementById(elto)    
     if (elemento) {
       elemento.style.display = 'none'
-    }
-  })
+    }})
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   arrayIdButtsMA.forEach(function (elto) {                                                                                            /// RESTAURA GRIS A BOTONES
     var elemento = document.getElementById(elto)    
     if (elemento) {
       elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)'
       elemento.style.color = ''
-    }
-  })
-
-    deslizaContenedorII('troubleshooting', 'troubleshoot')  
-      setTimeout(function() {
-        deslizaContenedorII('canvasContainer2', 'def1')  
-          setTimeout(function() {
-            deslizaContenedorII('contChecks', 'def2')  
-            setTimeout(function() {
-              deslizaContenedorII('canvasContainer3', 'adtBut')  
-              setTimeout(function() {
-                deslizaContenedorII('contImagNeg', 'fua1')  
-                setTimeout(function() {
-                  deslizaContenedorII('contImagGraf', 'lup')
-                  setTimeout(function() {
-                    conteneKaizen.style.display = 'flex'
-                    deslizaContenedorII('kaizenCont', 'kaizen')                  
-            }, 300)
-          }, 300)
-        }, 300)
-      }, 300)
-    }, 300)
-  }, 300)
-
-  document.body.style.zoom = "67%";
+    }}) 
+  document.body.style.zoom = "67%";  
   container1.style.left = '33%'
+  desencadenar('troubleshooting')
+    setTimeout(function() {
+      desencadenar('canvasContainer2') 
+    }, 277) 
+      setTimeout(function() {
+        desencadenar('contChecks')
+      }, 677) 
+        setTimeout(function() {
+          desencadenar('canvasContainer3')
+        }, 1077) 
+            setTimeout(function() {
+              desencadenar('kaizenCont')
+            }, 1477)  
+
+
   console.log(arrayPosicionnador)
 }
 function deslizaContenedorII(idElement, idButton) {
@@ -9330,7 +9328,6 @@ function transicionElementosV(){
   contImageneSmed.classList.add('move-images-IV')
   buttRepuestV.classList.add('move-repuest-IV')
 }
-
 function restablecerEstilos(elemento) {
   // Eliminar estilos en línea
   elemento.removeAttribute('style');
@@ -9341,6 +9338,9 @@ function restablecerEstilos(elemento) {
   // Agregar la clase que define el lugar desde CSS
   elemento.classList.add('clase-contenedor-7');  // Ajusta el nombre de la clase según tu caso
 }
+/* function transicionMA() {
+  troublesh.classList.add('move-grafica') 
+} */
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // COMBINACION TECLAS EJECUTA FUNCION
@@ -9350,30 +9350,29 @@ document.addEventListener('keydown', function(event) {
       case 'Z':
         ElementosMaII('conteneMantaut')
         setTimeout(function() {
-          soloEnsayo()
-        }, 1000) 
-
-/*         setTimeout(function() {
-        rodillosKaizen('btn17','')        
-        }, 1500)  */
-
-        /*setTimeout(function() {
-
-        }, 2000) */     
+          deslizAutomatic('troubleshooting','troubleshoot')
+        },577) 
       break;
+      case 'H':
+
+      break;
+      case 'J':
+
+      break;
+
     }
   }
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function obtenerGeometria() {
-  var contiBoton = document.getElementById('MiGrafica')
+  var contiBoton = document.getElementById('troubleshooting')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
   var leftPosition = rect.left
   var widthValue = rect.width
   var heightValue = rect.height
-  var positionType = window.getComputedStyle(buttRepuest).position
+  var positionType = window.getComputedStyle(buttRepuest).position 
   var displayType = window.getComputedStyle(buttRepuest).display
 
   console.log(contiBoton.id);
@@ -9381,53 +9380,90 @@ function obtenerGeometria() {
   console.log('Left:', leftPosition);
   console.log('Height:', heightValue);
   console.log('Width:', widthValue);
-  console.log('Position:', positionType);
+  console.log('Position:', positionType); 
   console.log('Display:', displayType);
 }
+let contFriends = []
 
+function desencadenar(idElemento) {
+  var vidkaizen = document.getElementById('vidElem')
+  var troublesh = document.getElementById(idElemento);
 
-
-/* function soloEnsayo() {
-  var elementosExcluidos = ['container01', 'links-inicialesI', 'links-iniciales', 'conteneMantaut', 'canvasContainer2', 'MiGrafica'];
-
-  for (var i = 0; i < allContenedores.length; i++) {
-    var elemento = document.getElementById(allContenedores[i]);
-
-    if (elemento) {
-      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
-    }
+  switch(idElemento){
+    case 'troubleshooting' :
+      if (troublesh) {
+        console.log(contFriends)
+        troublesh.style.display = 'flex';
+        troublesh.style.left = '100%'; 
+        troublesh.classList.add('move-grafica');
+        setTimeout(function () {
+          troublesh.style.left = '207px';
+        }, 277);
+        console.log(troublesh.id);
+      } else {
+        console.error('Elemento con ID ' + idElemento + ' no encontrado.');
+      }    
+    break;
+    case 'canvasContainer2' :
+      if (troublesh) {
+        console.log(contFriends)
+        troublesh.style.display = 'flex';
+        troublesh.style.left = '100%'; 
+        troublesh.classList.add('move-grafica');
+        setTimeout(function () {
+          troublesh.style.left = '414px';
+        }, 277);
+        console.log(troublesh.id);
+      } else {
+        console.error('Elemento con ID ' + idElemento + ' no encontrado.');
+      }    
+    break;
+    case 'contChecks' :
+      if (troublesh) {
+        console.log(contFriends)
+        troublesh.style.display = 'flex';
+        troublesh.style.left = '100%'; 
+        troublesh.classList.add('move-grafica');
+        setTimeout(function () {
+          troublesh.style.left = '777px';
+        }, 277);
+        console.log(troublesh.id);
+      } else {
+        console.error('Elemento con ID ' + idElemento + ' no encontrado.');
+      }    
+    break;
+    case 'canvasContainer3' :
+      if (troublesh) {
+        console.log(contFriends)
+        troublesh.style.display = 'flex';
+        troublesh.style.left = '100%'; 
+        troublesh.classList.add('move-grafica');
+        setTimeout(function () {
+          troublesh.style.left = '817px';
+        }, 277);
+        console.log(troublesh.id);
+      } else {
+        console.error('Elemento con ID ' + idElemento + ' no encontrado.');
+      }    
+    break;
+    case 'kaizenCont' :
+      if (troublesh) {
+        vidkaizen.style.display = 'flex'
+        vidkaizen.currentTime = 0
+        vidkaizen.play()
+        console.log(contFriends)
+        troublesh.style.display = 'flex';
+        troublesh.style.left = '100%'; 
+        troublesh.classList.add('move-grafica');
+        setTimeout(function () {
+          troublesh.style.left = '1033px';
+        }, 277);
+        console.log(troublesh.id);
+      } else {
+        console.error('Elemento con ID ' + idElemento + ' no encontrado.');
+      }    
+    break;
+    default:
   }
-  continer2.classList.remove('move-grafica');
-
-  setTimeout(function () {
-    ensayoTransicion();
-  }, 477);
-
-  setTimeout(function () {
-    continer2.classList.add('move-grafica');
-    continer2.style.left = '100px'; 
-  }, 500); 
-} */
-
-function soloEnsayo() {
-  var elementosExcluidos = ['container01', 'links-inicialesI', 'links-iniciales', 'conteneMantaut', 'canvasContainer2', 'MiGrafica'];
-
-  for (var i = 0; i < allContenedores.length; i++) {
-    var elemento = document.getElementById(allContenedores[i]);
-
-    if (elemento) {
-      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
-    }
-  }
-
-  // Eliminar la clase 'move-grafica' si ya existe
-  continer2.classList.remove('move-grafica');
-
-  // Establecer la posición inicial antes de iniciar la transición
-  continer2.style.left = '1200px';
-
-  setTimeout(function () {
-    continer2.classList.add('move-grafica');
-    continer2.style.left = '100px'; // Ajusta el valor de la posición final aquí
-  }, 500); // Retrasa la adición de la clase move-grafica
 }
+

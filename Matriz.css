@@ -896,41 +896,31 @@ width:447px ;
   top: 5%;
   left: 0%;
 } 
-/* #canvasContainer2{
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  left: 20%;
-  margin-top: 5%;
-  width: 350px;
-  height: 333px;
-  border-radius: 20px;
-} */
-
 #canvasContainer2 {
   position: absolute;
   display: flex;
   flex-direction: column;
-  left: 1200px; /* Inicializa con la posición inicial */
-  margin-top: 5%;
+  margin-top: 4%;
   width: 350px;
   height: 333px;
   border-radius: 20px;
-  transition: left 1.6s ease; /* Usa la propiedad left para la transición */
+  transition: left 1.007s ease; /* Usa la propiedad left para la transición */
 }
 #canvasContainer3{
   position: absolute;
   display: flex;
   flex-direction: column;
   left: 20%;
-  margin-top: 5%;
+  margin-top: 4.2%;
   width: 200px;
   height: 490px;
   border-radius: 20px;
+  transition: left 1.007s ease; /* Usa la propiedad left para la transición */
 }
 #MiGrafica{
   position: absolute;
   display: flex;
+  transition: left 1.007s ease; /* Usa la propiedad left para la transición */
 }
 #contChecks{
   position: absolute;
@@ -938,8 +928,9 @@ width:447px ;
   flex-direction: column;
   justify-content: flex-start;
   left: 20%;
-  margin-top: 6%;
+  margin-top: 4%;
   border-radius: 20px;
+  transition: left 1.007s ease; /* Usa la propiedad left para la transición */
   display: none;
 }
 #contImagNeg {
@@ -2159,7 +2150,6 @@ header {
   gap: 7px;
   display: none;
 }
-
 h6{
   color: white;
   font-size: 16px;
@@ -2175,7 +2165,7 @@ h6{
 .img1{
   display: flex;
   position: absolute;
-  flex-direction: column;
+  flex-direction: column; 
   gap: 4px;
   display: none;
 }
@@ -2194,22 +2184,34 @@ h6{
   display: flex;
   flex-direction: column;
   position: absolute;
-  left: 257px;
+  /* left: 257px; */
+  left: 1200px;
   top: 77px;
   width: 207px;
   border-radius: 20px;
+  transition: left 1.007s ease; /* Usa la propiedad left para la transición */
   z-index: 2;
 }
 #kaizenCont{
+  position: relative;
   display: flex;
   flex-direction: column;
-  position: absolute;
   left: 397px;
-  top: 67px;
-  width: 737px;
+  top: 1px;
+  width: 717px;
+  height: 497px;
   border-radius: 20px;
-  border: 5px solid orange;   
+  border: 5px solid orange;  
+  transition: left 1.007s ease; /* Usa la propiedad left para la transición */
   display: none;
+}
+#vidElem{
+  position: relative;
+  display: flex;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: auto;
 }
 #kaizenCont video{
   border-radius: 15px;
@@ -5489,10 +5491,8 @@ h4{
   .move-vid-smed-II{
     transform: translateY(260%);
   }
-
   /* sexto evento////////////////////////////////////////////////// */
-
-  .move-grafica {
+  .move-grafica{
     left: 100px; /* Este valor se ajustará durante la transición */
   }
 
