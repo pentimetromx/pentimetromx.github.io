@@ -1867,9 +1867,17 @@ function deslizAutomatic(){
     var elemento = document.getElementById(allContenedores[i]);
     if (elemento) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
-    }}  
-  arrayPosicionnador = []
-  destino = 277;
+    }}
+    
+    for (var i = 0; i < contiBtt.length; i++) {
+      var elemento = document.getElementById(contiBtt[i]);
+      if (elemento) {
+        elemento.style.backgroundColor = ''
+     }
+    } 
+
+    arrayPosicionnador = []   
+    destino = 277;
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   idsMA.forEach(function (elto) {                                                                                                            /// OCULTA TODO M.A
     var elemento = document.getElementById(elto)    
@@ -1904,7 +1912,6 @@ function deslizAutomatic(){
 }
 function deslizaContenedorII(idElement, idButton) {
   var originalButtonColors = {}; // Objeto para almacenar los colores originales de los 
-  var contLinkMant = document.getElementById('linksMA')
   var elementoAnterior = null;
   var elementoActual = null;
   
@@ -1957,12 +1964,6 @@ function deslizaContenedorII(idElement, idButton) {
       }
     }
   }
-
-/*   if (contLinkMant !== null && contImgEntrenos !== null) {
-    contLinkMant.style.display = 'none'
-    contImgEntrenos.style.display = 'none'
-  } */
-
   // Verificar si el elemento ya está en el array
   if (!arrayPosicionnador.includes(idElement)) {
     arrayPosicionnador.push(idElement)
@@ -4064,12 +4065,15 @@ function listaEntrenamientosII(btnList) {
   }
   })                                                                                                                    
   switch(btnList){                                                                                                                      
-    case 'archivo':  
+    case 'archivo': 
+    var troubleTable = document.getElementById('troubleshooting') 
+    troubleTable.removeAttribute('style')
     var elementosExcluidos = ['conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos','linksMA','linkLis']  
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i])  
       if (elemento) {
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        /* elemento.removeAttribute('style'); */
       }
     }
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4282,8 +4286,10 @@ function toggleFullScreen(element) {
   }
 }
 function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
-  var linkOrange = document.getElementById(id)
-  var contiPadre2 = document.getElementById('padre-2')
+  var linkOrange = document.getElementById(id)      
+  /* var troubleTable = document.getElementById('troubleshooting') */ 
+  /* troubleTable.style.marginLeft = '1%' */
+
   container1.style.left = '33%'
   document.body.style.zoom = "67%"
 
@@ -4298,7 +4304,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
-      }   
+      }    
       /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
       linkOrange.style.color = 'orange'                                                                                                       ///  LINK NARANJA
       // Cambiar otros enlaces a azul
@@ -4309,7 +4315,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
       }}
          
       if(screenWidth < 500){
-        /* contiLinksMA.style.marginTop = '30%' */
+        /* troubleTable.style.marginLeft = '27%' */
         var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','linksMA','linkLis','largoImpresion','imag1','contImgEntrenos','largoImpresion','control-neumatico','contBotInfeed','padre-1','troubleshooting']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
@@ -9350,7 +9356,7 @@ document.addEventListener('keydown', function(event) {
       case 'Z':
         ElementosMaII('conteneMantaut')
         setTimeout(function() {
-          deslizAutomatic('troubleshooting','troubleshoot')
+          /* deslizAutomatic('troubleshooting','troubleshoot') */
         },577) 
       break;
       case 'H':

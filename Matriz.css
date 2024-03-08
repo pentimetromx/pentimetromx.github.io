@@ -900,6 +900,7 @@ width:447px ;
   position: absolute;
   display: flex;
   flex-direction: column;
+  left: 19%;
   margin-top: 4%;
   width: 350px;
   height: 333px;
@@ -2184,9 +2185,8 @@ h6{
   display: flex;
   flex-direction: column;
   position: absolute;
-  /* left: 257px; */
-  left: 1200px;
-  top: 77px;
+  left: 19%;
+  top: 22%;
   width: 207px;
   border-radius: 20px;
   transition: left 1.007s ease; /* Usa la propiedad left para la transición */
@@ -5420,6 +5420,12 @@ h4{
     background-color: #000;
     z-index: 3;
   }
+  #conteneMantaut{
+    position: relative;
+    display: flex;
+    top: 5%;
+    left: 0%;
+  }   
   #canvasContainer2{
     position: absolute;
     display: flex;
@@ -5429,7 +5435,7 @@ h4{
     width: 350px;
     height: 377px;
     border-radius: 20px;
-    display: none;
+    /* display: none; */
   }
   
   /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
