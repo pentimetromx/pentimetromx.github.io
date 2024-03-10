@@ -807,23 +807,6 @@ width:447px ;
   cursor: pointer;
   padding-left: 27px;
 }
-.butt-mautonomo-kaizen{
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: left;
-  font-family: "GothamRounded", sans-serif;
-  color: white;
-  height: 27px;
-  width: 157px;
-  border-radius: 9px;
-  background-color: rgba(83, 82, 82, 0.678);
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 17px;
-  cursor: pointer;
-  padding-left: 27px;
-}
 .butt-mautonomo-planos{
   display: none;
   flex-direction: column;
@@ -868,6 +851,24 @@ width:447px ;
   height: 27px;
   background-color: rgba(255,0,255, 1);
 }
+
+.butt-mautonomo-kaizen{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  font-family: "GothamRounded", sans-serif;
+  color: white;
+  height: 27px;
+  width: 157px;
+  border-radius: 9px;
+  background-color: rgba(83, 82, 82, 0.678);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 17px;
+  cursor: pointer;
+  padding-left: 27px;
+}
 .butt-mautonomo-planos::before,
 .butt-mautonomo-kaizen::before{
   content: "";
@@ -878,6 +879,7 @@ width:447px ;
   height: 27px;
   background-color: rgb(255, 174, 0);
 }
+
 .labl-class{
   font-family: "GothamRounded", sans-serif;
   color: yellow;
@@ -896,7 +898,7 @@ width:447px ;
   top: 5%;
   left: 0%;
 } 
-#canvasContainer2 {
+#canvasContainer2{
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -934,7 +936,7 @@ width:447px ;
   transition: left 1.007s ease; /* Usa la propiedad left para la transición */
   display: none;
 }
-#contImagNeg {
+#contImagNeg{
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -995,7 +997,6 @@ width:447px ;
   top: 58%;
   width: 277px;
 }
-
 #pantalla-servicio,
 #pantalla-mandos,
 #pantalla-frente,
@@ -2196,8 +2197,8 @@ h6{
   position: relative;
   display: flex;
   flex-direction: column;
-  left: 397px;
-  top: 1px;
+  left: 31%;
+  top: -15%;
   width: 717px;
   height: 497px;
   border-radius: 20px;
@@ -2242,6 +2243,16 @@ h6{
   top: 1%;
   display: none;
 }
+#conti-boton-planos{
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  width:150px;  
+  left:89.5%;
+  top: -62%;  
+  z-index: 7;
+}
 #cont-secador{
   position: relative;
   display: flex;
@@ -2264,10 +2275,9 @@ h6{
   flex-direction: column;
   left: 16.7%;
   margin-top: 20.6%;
-/*   height: 200px;
-  width: 300px;
-  z-index: 1; */
-
+  /* top:1%; */
+  /* z-index: 7; */
+  
 }
 #conti-boton-kaizen button,
 #conti-boton-rodilleria button,
@@ -3435,6 +3445,40 @@ h4{
   animation: aumentarTamano 1s infinite alternate; /* Animación cada 1 segundo */
   display: none;
 }
+#kaizen-propuestos{  
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Cambiado de justify-content a align-items */
+  width: 1000px;
+  height: 600px;
+  margin: 10px;
+  left: 29%;
+  top: -88%;
+  display: none;
+}
+#segundo-hijo{
+  top: 42%;
+}
+.kaizen-propuestos-child-I,
+.kaizen-propuestos-child-II{
+  position: absolute; 
+  display: flex; 
+  flex-direction: row;
+  left:4px; 
+  gap: 3px;   
+}
+.kaizen-propuestos-nieto-I,
+.kaizen-propuestos-nieto-II{
+  position: relative; 
+  display: flex; 
+  flex-direction: column;
+  left:4px; 
+  border: 2px solid orange; 
+  border-radius: 11px;
+}
+
+
 @keyframes aumentarTamano{
   to {
     transform: scale(3); /* Aumenta el tamaño 2x */
@@ -5430,13 +5474,92 @@ h4{
     position: absolute;
     display: flex;
     flex-direction: column;
-    left:0%;
-    top:20%;
+    left:37%;
+    top:30%;
     width: 350px;
     height: 377px;
     border-radius: 20px;
-    /* display: none; */
   }
+  #canvasContainer3{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left:41%;
+    top:34%;  
+    width: 200px;
+    height: 490px;
+    border-radius: 20px;
+    transition: left 1.007s ease; /* Usa la propiedad left para la transición */
+  } 
+  #contImagNeg{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left:41%;
+    top:34%;  
+    display: none; 
+    border-radius: 20px; 
+  }
+  #contImagGraf{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left:41%;
+    top:49%;  
+    display: none;
+  }
+  #conti-boton-kaizen{
+    position: relative;  
+    display: flex;
+    flex-direction: column;
+    left:50%;
+    top: -17%;
+  } 
+  #conti-boton-kaizen button{
+    margin-bottom: 9px;
+    font-size: 10px;
+  }
+  #contChecks{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    left:41%;
+    top:34%;   
+    border-radius: 20px;
+    transition: left 1.007s ease; /* Usa la propiedad left para la transición */
+    display: none;
+  }
+/*   #kaizen-propuestos{
+    position: absolute; 
+    display: flex; 
+    flex-direction: column; 
+    left:1.5%; 
+    top: 70%; 
+    display: none;
+    gap: 5px;
+  } */
+/*   #kaizen-propuestos-child-I,
+  #kaizen-propuestos-child-II{
+    position: relative; 
+    display: flex; 
+    flex-direction: row;
+    left:4px; 
+    top:4px;
+    gap: 3px;   
+  } */
+  #kaizen-propuestos-nieto-I,
+  #kaizen-propuestos-nieto-II{
+    position: relative; 
+    display: flex; 
+    flex-direction: column;
+    left:4px; 
+    top:4px;
+    border: 2px solid orange; 
+    border-radius: 11px;
+  }
+
+
   
   /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
   .move-up-left {
