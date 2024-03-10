@@ -2865,13 +2865,13 @@ elemento.visible {
 #casos-kaizen,
 #toyota-kaizen-antes{
   position: absolute;
-  left: 394px;
-  top: 71px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   max-width: 751px;
   margin: 0 auto;
+  left: 394px;
+  top: 71px;
   display: none;
 }
 .imgs-Antes {
@@ -3488,8 +3488,6 @@ h4{
   height: 197px; 
   border-radius: 7px;
 } 
-
-
 
 
 @keyframes aumentarTamano{
@@ -5594,6 +5592,31 @@ h4{
     height: 80px; 
     border-radius: 7px;
   } 
+  #casos-kaizen,
+  #toyota-kaizen-antes{
+    position: relative;
+    display: flex;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #000;
+    border-radius: 7px;
+    max-width: 257px;
+    left: 17%;
+    top: -27%;
+    display: none;
+  }
+  .imgs-Antes {
+    width: calc(33.333% - 10px); /* Calcula el ancho, considerando el margen de 10px entre las imágenes */
+    margin-bottom: 10px;
+    margin: 5px;
+    width: 72px;
+    height: 57px;
+    border: solid orange;
+    border-radius: 7px;
+  }
+  
+
 
   
   /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */

@@ -9408,7 +9408,7 @@ document.addEventListener('keydown', function(event) {
               deslizaContenedor('conti-boton-kaizen','kaizen')
             },977) 
                   setTimeout(function() {
-                    rodillosKaizen('btn17','')
+                    rodillosKaizen('btn12','vidElem')
                   },1177) 
                         setTimeout(function() {
                           /* deslizAutomatic('troubleshooting','troubleshoot')  */                       
