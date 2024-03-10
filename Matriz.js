@@ -9405,10 +9405,10 @@ document.addEventListener('keydown', function(event) {
           deslizaContenedor('troubleshooting','troubleshoot')
         },577) 
             setTimeout(function() {
-              /* listaEntrenamientosII('archivo') */
+              deslizaContenedor('conti-boton-kaizen','kaizen')
             },977) 
                   setTimeout(function() {
-                    /* deslizaContenedor('conti-boton-kaizen','kaizen') */
+                    rodillosKaizen('btn17','')
                   },1177) 
                         setTimeout(function() {
                           /* deslizAutomatic('troubleshooting','troubleshoot')  */                       

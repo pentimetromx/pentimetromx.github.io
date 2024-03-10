@@ -1955,9 +1955,6 @@ header {
   content: "\25B6"; /* Código HTML para el triángulo de reproducción hacia la derecha */
   font-size: 2em; /* Aumentar el tamaño al doble */
 }
-.aumentar{
-  cursor: pointer;
-}
 #imgsSecador img{
   width: 240px;
   height: 180px;
@@ -3477,6 +3474,22 @@ h4{
   border: 2px solid orange; 
   border-radius: 11px;
 }
+.kaizen-propuestos-nieto-I h1,
+.kaizen-propuestos-nieto-II h1{
+  font-size: 17px;
+}
+
+.aumentar{
+  cursor: pointer;
+}
+.imagen-kaizen,
+.imagen-colectora{
+  width: 284px;
+  height: 197px; 
+  border-radius: 7px;
+} 
+
+
 
 
 @keyframes aumentarTamano{
@@ -5530,35 +5543,57 @@ h4{
     transition: left 1.007s ease; /* Usa la propiedad left para la transición */
     display: none;
   }
-/*   #kaizen-propuestos{
-    position: absolute; 
-    display: flex; 
-    flex-direction: column; 
-    left:1.5%; 
-    top: 70%; 
+  /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+  #kaizen-propuestos{  
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Cambiado de justify-content a align-items */
+    width: 80px;
+    height: 600px;
+    margin: 10px;
+    left: 37%;
+    top: -17%;
     display: none;
-    gap: 5px;
-  } */
-/*   #kaizen-propuestos-child-I,
-  #kaizen-propuestos-child-II{
-    position: relative; 
+  }
+  #segundo-hijo{
+    top: 19%;
+  }
+  .kaizen-propuestos-child-I,
+  .kaizen-propuestos-child-II{
+    position: absolute; 
     display: flex; 
     flex-direction: row;
     left:4px; 
-    top:4px;
     gap: 3px;   
-  } */
-  #kaizen-propuestos-nieto-I,
-  #kaizen-propuestos-nieto-II{
+  }
+  .kaizen-propuestos-nieto-I,
+  .kaizen-propuestos-nieto-II{
     position: relative; 
     display: flex; 
     flex-direction: column;
     left:4px; 
-    top:4px;
     border: 2px solid orange; 
     border-radius: 11px;
+    width: 71px;
+    height: 103px; 
   }
-
+  .kaizen-propuestos-nieto-I h1,
+  .kaizen-propuestos-nieto-II h1{
+    font-size: 8px;
+  }
+  .aumentar{
+    cursor: pointer;
+  }
+  .imagen-kaizen,
+  .imagen-colectora{
+    position: absolute;
+    display: flex;
+    top: 22%;
+    width: 71px;
+    height: 80px; 
+    border-radius: 7px;
+  } 
 
   
   /* primer evento ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   */
