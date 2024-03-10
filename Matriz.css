@@ -2191,30 +2191,18 @@ h6{
   z-index: 2;
 }
 #kaizenCont{
-  position: relative;
-  display: flex;
+  transition: left 1.007s ease; /* Usa la propiedad left para la transición */
+  border: 5px solid orange;  
   flex-direction: column;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  display: none;
+  height: 497px;
+  width: 717px;
   left: 31%;
   top: -15%;
-  width: 717px;
-  height: 497px;
-  border-radius: 20px;
-  border: 5px solid orange;  
-  transition: left 1.007s ease; /* Usa la propiedad left para la transición */
-  display: none;
-}
-#vidElem{
-  position: relative;
-  display: flex;
-  left: 0%;
-  top: 0%;
-  width: 100%;
-  height: auto;
-}
-#kaizenCont video{
-  border-radius: 15px;
-  width: 100%;
-  height: 100%;
 }
 #conti-boton-teñido{
   position: absolute;
@@ -2861,6 +2849,7 @@ elemento.visible {
   box-sizing: border-box;
   border: solid orange;
   border-radius: 7px;
+  cursor: pointer;
 }
 #casos-kaizen,
 #toyota-kaizen-antes{
@@ -5619,6 +5608,56 @@ h4{
     height: 57px;
     border: solid orange;
     border-radius: 7px;
+  }
+  #conti-boton-planos{
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    width:150px;  
+    left:51.7%;
+    top: 14%;  
+    z-index: 7;
+  }
+  #materiales-kaizen,  
+  #planos-kaizen{
+    position: absolute;
+    left:37%;
+    top: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: #000;
+    border-radius: 15px;
+    width: 261px;
+    height: 150px;
+    margin: 0 auto;
+    display: none;
+  }
+  .imgs-kaizen,
+  .imgs-Planos {
+    width: calc(47% - 7px);
+    height: calc(47% - 7px);
+    margin: 5px;
+    box-sizing: border-box;
+    border: solid orange;
+    border-radius: 7px;
+    cursor: pointer;
+  }
+  #kaizenCont{
+    transition: left 1.007s ease; /* Usa la propiedad left para la transición */
+    border: 5px solid orange;  
+    flex-direction: column;
+    border-radius: 20px;
+    position: fixed;
+    overflow: hidden;
+    display: flex;
+    display: none;
+    height: 177px;
+    width: 257px;
+    left: 36%;
+    top: 42%;
+    z-index: 999;
   }
   
 

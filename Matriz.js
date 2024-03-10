@@ -7190,6 +7190,8 @@ function rodillosKaizen(idButton,vidElem) {
   var casosKaizen = document.getElementById('casos-kaizen')
   var bton12 = document.getElementById('btn12')
   var btnCasos = ['caso1','caso2','caso3']
+  var contiButts = document.getElementById('conti-boton-planos')
+  contiButts.removeAttribute('style')
 
   contBotKaizen.removeAttribute('style')
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -7287,7 +7289,14 @@ function rodillosKaizen(idButton,vidElem) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
           }
         } 
-        contBotKaizen.style.marginTop = '20.6%'     
+
+        contBotKaizen.style.marginTop = '20.6%'
+        if (screenWidth < 500){
+          /* contiButts.style.top = '7%' */
+          contiButts.removeAttribute('style')
+          contBotKaizen.removeAttribute('style')
+        }
+     
       } else if (contadorClicks === 2) {
           miBot.innerText = 'DESPUES';
           miBot.style.backgroundColor = 'green' 
@@ -7304,7 +7313,14 @@ function rodillosKaizen(idButton,vidElem) {
           contBotKaizen.style.marginTop = '-19%' 
           // Reiniciar la variable a cero después del segundo clic
           contadorClicks = 0;
+          if (screenWidth < 500){
+            /* contiButts.style.top = '7%' */
+            contiButts.removeAttribute('style')
+            contBotKaizen.removeAttribute('style')
+          }
+  
         }
+
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
       // Paso 2: Recorrer la colección y hacer visibles los botones con un intervalo de 0.3 segundos              /// BOTONES CON AUMENTO Y TRANSICION
       for (var i = 0; i < buttsTerceros.length; i++) {
