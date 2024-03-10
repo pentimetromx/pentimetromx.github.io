@@ -5546,52 +5546,57 @@ h4{
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Cambiado de justify-content a align-items */
-    width: 80px;
-    height: 600px;
-    margin: 10px;
-    left: 37%;
+    background-color: #000;
+    border-radius: 11px;
+    width: 260px;
+    height: 233px;
+    left: 34%;
     top: -17%;
     display: none;
   }
   #segundo-hijo{
-    top: 19%;
+    width: calc(100% - 15px); /* 100% del padre menos 20px */
+    top: 50%;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */    
+  }
+  #primer-hijo{
+    width: calc(100% - 15px); /* 100% del padre menos 20px */
+    top: 4%;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */    
   }
   .kaizen-propuestos-child-I,
   .kaizen-propuestos-child-II{
     position: absolute; 
-    display: flex; 
+    display: flex;        
+    justify-content: space-evenly; /* o space-evenly para un espacio aún más uniforme */    
     flex-direction: row;
-    left:4px; 
-    gap: 3px;   
   }
   .kaizen-propuestos-nieto-I,
   .kaizen-propuestos-nieto-II{
     position: relative; 
     display: flex; 
     flex-direction: column;
-    left:4px; 
-    border: 2px solid orange; 
+    border: 1px solid orange; 
     border-radius: 11px;
     width: 71px;
     height: 103px; 
+  }
+  .kaizen-propuestos-nieto-II img,  
+  .kaizen-propuestos-nieto-I img {
+    top: 22%;
+    width: 71px;
+    height: 80px;
+    border-radius: inherit; /* Hereda el borde redondeado del contenedor */
+    cursor: pointer;
   }
   .kaizen-propuestos-nieto-I h1,
   .kaizen-propuestos-nieto-II h1{
     font-size: 8px;
   }
-  .aumentar{
-    cursor: pointer;
-  }
-  .imagen-kaizen,
-  .imagen-colectora{
-    position: absolute;
-    display: flex;
-    top: 22%;
-    width: 71px;
-    height: 80px; 
-    border-radius: 7px;
-  } 
   #casos-kaizen,
   #toyota-kaizen-antes{
     position: relative;
@@ -5603,7 +5608,7 @@ h4{
     border-radius: 7px;
     max-width: 257px;
     left: 17%;
-    top: -27%;
+    top: -37%;
     display: none;
   }
   .imgs-Antes {

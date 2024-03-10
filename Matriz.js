@@ -1879,7 +1879,8 @@ function deslizAutomatic(){
      }
     } 
 
-    arrayPosicionnador = []   
+    arrayPosicionnador = []  
+    troublesh.removeAttribute('style') 
     destino = 277;
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   idsMA.forEach(function (elto) {                                                                                                            /// OCULTA TODO M.A
