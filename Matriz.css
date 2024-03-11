@@ -2202,7 +2202,7 @@ h6{
   height: 497px;
   width: 717px;
   left: 31%;
-  top: -109%;
+  top: -52%;
 }
 #conti-boton-teñido{
   position: absolute;
@@ -2229,14 +2229,14 @@ h6{
   display: none;
 }
 #conti-boton-planos{
-  position: relative; 
+  position: absolute; 
   display: flex;
   flex-direction: column;
   height: 150px;
   width:150px;  
   left:89.5%;
-  top: -62%;  
-  z-index: 7;
+  top: 37%;  
+  /* z-index: 7; */
 }
 #cont-secador{
   position: relative;
@@ -2259,8 +2259,8 @@ h6{
   display: flex;
   flex-direction: column;
   left: 16.7%;
-  margin-top: 37.6%;
-  /* top:1%; */
+  /* margin-top: 37.6%; */
+  top:-8%;
   /* z-index: 7; */
   
 }
@@ -3440,7 +3440,7 @@ h4{
   height: 600px;
   margin: 10px;
   left: 29%;
-  top: -88%;
+  top: -52.5%;
   display: none;
 }
 #segundo-hijo{
@@ -5513,7 +5513,7 @@ h4{
     display: flex;
     flex-direction: column;
     left:50%;
-    top: -17%;
+    top: -4.8%;
   } 
   #conti-boton-kaizen button{
     margin-bottom: 9px;
@@ -5540,7 +5540,7 @@ h4{
     width: 260px;
     height: 233px;
     left: 34%;
-    top: -17%;
+    top: -6%;
     display: none;
   }
   #segundo-hijo{
@@ -5597,7 +5597,7 @@ h4{
     border-radius: 7px;
     max-width: 257px;
     left: 17%;
-    top: -37%;
+    top: -25%;
     display: none;
   }
   .imgs-Antes {
@@ -5616,7 +5616,7 @@ h4{
     height: 150px;
     width:150px;  
     left:51.7%;
-    top: 14%;  
+    top: 25%;  
     z-index: 7;
   }
   #materiales-kaizen,  
