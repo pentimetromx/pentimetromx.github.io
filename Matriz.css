@@ -2903,6 +2903,15 @@ elemento.visible {
   font-size: 21px;
   color: whitesmoke;
 }
+#mejoras-kai{
+  position: absolute;
+  left: 957px;
+  top: 117px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  display: none;
+}
 #butt-17{
   position: absolute;
   background-color: rgba(0, 0, 0, 0.423);
@@ -5592,21 +5601,20 @@ h4{
     display: flex;
     margin-bottom: 10px;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background-color: #000;
     border-radius: 7px;
     max-width: 257px;
+    max-height:200px ;
     left: 17%;
     top: -25%;
     display: none;
   }
   .imgs-Antes {
     width: calc(33.333% - 10px); /* Calcula el ancho, considerando el margen de 10px entre las imágenes */
-    margin-bottom: 10px;
     margin: 5px;
-    width: 72px;
-    height: 57px;
-    border: solid orange;
+    height: 60px;
+    border: 1px solid rgb(255, 0, 255);    
     border-radius: 7px;
   }
   #conti-boton-planos{
@@ -5646,7 +5654,7 @@ h4{
   }
   #kaizenCont{
     transition: left 1.007s ease; /* Usa la propiedad left para la transición */
-    border: 5px solid orange;  
+    border: 1px solid orange;  
     flex-direction: column;
     border-radius: 20px;
     position: fixed;
@@ -5659,6 +5667,39 @@ h4{
     top: 42%;
     z-index: 999;
   }
+  #toyota1,
+  #toyota2,
+  #toyota3,
+  #toyota4,
+  #toyota5,
+  #toyota6,
+  #toyota7,
+  #toyota8{
+    position: absolute;
+    top: 41%;
+    left: 38%;
+    border: orange solid 1px;
+    border-radius: 9px;
+    width: 247px;
+  }
+  #mejoras-kai{
+    position: absolute;
+    top: 67.5%;
+    left: 54%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    display: none;
+  }
+  .caso-estudio{
+    display: flex;
+    width: 112px;
+    border: orange solid 2px;
+    border-radius: 7px;
+    transition: transform 0.9s;
+  }
+    
+    
   
 
 

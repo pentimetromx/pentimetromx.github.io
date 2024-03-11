@@ -7176,19 +7176,14 @@ function ocultarIndicaciones(idIndicador) {
 }
 function rodillosKaizen(idButton,vidElem) {
   var buttsTerceros = document.getElementsByClassName('butt-mautonomo-planos') 
-  var contImagenAntes = document.getElementById('toyota-kaizen-antes')
-  var kaizenPropuestos = document.getElementById('kaizen-propuestos')
+  /* var kaizenPropuestos = document.getElementById('kaizen-propuestos') */
   var contMateriales = document.getElementById('materiales-kaizen')
   var contplanosKaizen = document.getElementById('planos-kaizen')
   var videoKaizen = document.getElementById('videoElem')
   var imgsPlanos = document.getElementsByClassName('imgs-Planos')
-  var contieneKaizen = document.getElementById('kaizenCont')
   var contBotKaizen = document.getElementById('conti-boton-kaizen')
-  var contToyota = document.getElementById('toyota-kaizen')  
   var conPlanos = document.getElementById('planos-kaizen')
-  var casosKaizen = document.getElementById('casos-kaizen')
   var bton12 = document.getElementById('btn12')
-  var btnCasos = ['caso1','caso2','caso3']
   var contiButts = document.getElementById('conti-boton-planos') 
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   if (bton12 !== null) {                                                                                                             /// DEVUELVE ESTILO A BOTON
@@ -7198,7 +7193,7 @@ function rodillosKaizen(idButton,vidElem) {
   }
   switch(idButton){
     case 'btn10':
-      var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-planos','conti-boton-kaizen']  
+      var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','toyota-kaizen']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -7218,28 +7213,11 @@ function rodillosKaizen(idButton,vidElem) {
           }
         }
       }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      if(vidElem === ''){                                                                                                                 ///OCULTA PADRE Y VIDEO
-        for (const video of videoElements) {
-          if (video) {
-            video.style.display = 'none' // Muestra el video
-            video.pause() // Reproduce el video
-          } 
-        }
-        contieneKaizen.style.display = 'none'
-      }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      for (var i = 0; i < arrayButtsPlanos.length; i++) {                                                                            /// OCULTA TERCEROS BOTONES
-        var elemento = document.getElementById(arrayButtsPlanos[i])
-        if (elemento) {
-          elemento.style.display = 'none'
-        }
-      }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      kaizenPropuestos.style.display = 'none'
-      contImagenAntes.style.display = 'none'
-      contToyota.style.display = 'flex'                                                                                         /// MUESTRA CASOS DE ESTUDIO
       transicionImagenes()
+
+      if(screenWidth < 500){
+        
+      }
     break;
     case 'btn11':
       var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-planos','conti-boton-kaizen']  
@@ -7249,16 +7227,6 @@ function rodillosKaizen(idButton,vidElem) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }  
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      if(vidElem === ''){                                                                                                                 ///OCULTA PADRE Y VIDEO
-        contieneKaizen.style.display = 'none'                                                                                        
-        for (const video of videoElements) {
-          if (video) {
-            video.style.display = 'none' // Muestra el video
-            video.pause() // Reproduce el video
-          } 
-        }
-      }
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       for (var i = 0; i < arrayButtsPlanos.length; i++) {                                                                            /// OCULTA TERCEROS BOTONES
         var elemento = document.getElementById(arrayButtsPlanos[i])
@@ -7368,7 +7336,6 @@ function rodillosKaizen(idButton,vidElem) {
         }
       }
       contplanosKaizen.style.display = 'flex'
-      contImagenAntes.style.display = 'none'
     break;  
     case 'btn14':
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -7388,7 +7355,6 @@ function rodillosKaizen(idButton,vidElem) {
           element.style.display = 'inline-block'
         }
       })
-      contImagenAntes.style.display = 'none'
       contMateriales.style.display = 'flex'
     break;  
     case 'btn15':
@@ -7416,7 +7382,6 @@ function rodillosKaizen(idButton,vidElem) {
           element.style.display = 'inline-block'
         }
       })
-      contImagenAntes.style.display = 'none'
     break;
     case 'btn17':
       var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','kaizen-propuestos']  
@@ -7426,8 +7391,6 @@ function rodillosKaizen(idButton,vidElem) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       } 
-/*       contiButts.style.display = 'flex'
-      contiButts.style.top = '33%'  */
     break;       
     default:
   }
@@ -9421,7 +9384,7 @@ document.addEventListener('keydown', function(event) {
               deslizaContenedor('conti-boton-kaizen','kaizen')
             },977) 
                   setTimeout(function() {
-
+                    rodillosKaizen('btn10','')
                   },1177) 
                         setTimeout(function() {
                           /* deslizAutomatic('troubleshooting','troubleshoot')  */                       
@@ -9442,7 +9405,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('conti-boton-planos')
+  var contiBoton = document.getElementById('toyota-kaizen-antes')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
