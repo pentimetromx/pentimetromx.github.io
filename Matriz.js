@@ -7191,9 +7191,8 @@ function rodillosKaizen(idButton,vidElem) {
   var bton12 = document.getElementById('btn12')
   var btnCasos = ['caso1','caso2','caso3']
   var contiButts = document.getElementById('conti-boton-planos')
-  contiButts.removeAttribute('style')
-
-  contBotKaizen.removeAttribute('style')
+/*   contiButts.removeAttribute('style')
+  contBotKaizen.removeAttribute('style') */
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   if (bton12 !== null) {                                                                                                             /// DEVUELVE ESTILO A BOTON
     bton12.style.backgroundColor = '' // Elimina el fondo
@@ -7289,12 +7288,12 @@ function rodillosKaizen(idButton,vidElem) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
           }
         } 
-
         contBotKaizen.style.marginTop = '20.6%'
+
         if (screenWidth < 500){
           /* contiButts.style.top = '7%' */
           contiButts.removeAttribute('style')
-          contBotKaizen.removeAttribute('style')
+          /* contBotKaizen.removeAttribute('style') */
         }
      
       } else if (contadorClicks === 2) {
@@ -7310,13 +7309,14 @@ function rodillosKaizen(idButton,vidElem) {
           videoKaizen.style.display = 'flex'
           videoKaizen.currentTime = 0
           videoKaizen.play() 
-          contBotKaizen.style.marginTop = '-19%' 
+          contBotKaizen.style.marginTop = '20.6%'
+
           // Reiniciar la variable a cero después del segundo clic
           contadorClicks = 0;
           if (screenWidth < 500){
             /* contiButts.style.top = '7%' */
             contiButts.removeAttribute('style')
-            contBotKaizen.removeAttribute('style')
+            /* contBotKaizen.removeAttribute('style') */
           }
   
         }
@@ -9445,7 +9445,7 @@ document.addEventListener('keydown', function(event) {
   }
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
-function obtenerGeometria() {
+function Geometria() {
   var contiBoton = document.getElementById('conti-boton-planos')
   var rect = contiBoton.getBoundingClientRect();
 
