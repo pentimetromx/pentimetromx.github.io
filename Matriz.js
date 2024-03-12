@@ -67,7 +67,7 @@ var currentID = null;
 var butInicio = document.getElementById('bot-inic')
 var contInicial = document.getElementById('container1')
 var botonMa = document.getElementById('bot-mantaut')
-var allContenedores = ['vidElem','kaizen-propuestos','canvasContainer3','troubleshooting','conti-boton','canvasContainer2','contChecks','conteneMantaut','MiGrafica','contImaginario-II','contImaginario-III','padre-1','padre-2','imag3','imag4','contImaginario','bailarina','pneumatico','padre-neumat','contBotInfeed','largoImpresion','contImgEntrenos','imag1','imag2','linksMA','linkLis','sitio-en-construccion','curado-uv','video-container','conti-video-background','video-background-planas','conti-videos-planas','conti-img-planas','conti-videos-infoprint','video-infoprint-I','video-infoprint-II','video-infoprint-III','contenedor-9','conti-video-bancada','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria']
+var allContenedores = ['contLineas','title-interfaz','vidElem','kaizen-propuestos','canvasContainer3','troubleshooting','conti-boton','canvasContainer2','contChecks','conteneMantaut','MiGrafica','contImaginario-II','contImaginario-III','padre-1','padre-2','imag3','imag4','contImaginario','bailarina','pneumatico','padre-neumat','contBotInfeed','largoImpresion','contImgEntrenos','imag1','imag2','linksMA','linkLis','sitio-en-construccion','curado-uv','video-container','conti-video-background','video-background-planas','conti-videos-planas','conti-img-planas','conti-videos-infoprint','video-infoprint-I','video-infoprint-II','video-infoprint-III','contenedor-9','conti-video-bancada','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria', 'cont-user','cont-userI']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIzquierdos = ['desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador']
@@ -6408,49 +6408,24 @@ function antesImagenes(){
   contImagenAntes.style.display = 'flex'
 }
 function resultadosMA(){
-  var iconosElement = document.getElementById('iconos')    
-  var title = document.getElementById('title-interfaz')
-  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  for (var i = 0; i < allContenedores.length; i++) {                                                                                          /// OCULTA TODO !!!
-    var elemento = document.getElementById(allContenedores[i])
+  var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','iconos','conte-secundario','title-interfaz']  
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
-      elemento.style.display = 'none'
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   } 
   if (document.body.style.zoom !== "100%") {
     document.body.style.zoom = "100%";
   }
-  video.pause()
-  video.style.display = 'none' 
-  container1.style.left=''
-  container1.style.display='flex' 
-  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   const iconos = document.querySelectorAll('.icono-user')                                                               /// AUMENTA TAMANO SECUENCIAL DE IMAGENES
   iconos.forEach((icono, index) => {
     // Aplica la función de aumentarTamaño con un retraso entre cada imagen
+    icono.removeAttribute('style')
     setTimeout(() => {
       aumentarTamaño(icono, 1.8, 0.5)
     }, index * 0.2 * 100) // Aumenta cada imagen con un retraso de 0.2 segundos
-  })
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  var estilos = window.getComputedStyle(lineasGrid)                                                                        /// OBTENER 'window.getComputedStyle' 
-  var display = estilos.getPropertyValue('display')
-  if (display === 'none') {
-    contSecundario = document.getElementById('conte-secundario')
-    contSecundario.style.display = 'flex'
-    /* contUsuarios.style.display = 'block' */
-    if (iconosElement.style.display === 'none' || iconosElement.style.display === '') {
-      // Si está oculto o no tiene un estilo "display" (por defecto), mostrarlo
-      iconosElement.style.display = 'block'
-    } else {
-      // Si está visible, ocultarlo
-      iconosElement.style.display = 'none'
-    }
-    title.style.display = 'flex'
-   } else {
-    /* location.reload() */
-    graficosAutomaticos('canvasContainer4')
-  }
+  }) 
 
 }
 function aumentarTamaño(element, factor, tiempo) {
@@ -6499,6 +6474,7 @@ function resultadosEmpleado(idEmpleado, functionExe) {
   var colors = ['rgb(255, 255, 0)', 'rgb(0, 255, 0)', 'orangered'] // Colores en formato RGB
   var contUserScroll = document.getElementById('contenedor-vertical')
   var contUserElementsI = document.getElementsByClassName('cont-userI') 
+  var contSecundario = document.getElementById('conte-secundario')
   
   var contUserArrayI = Array.from(contUserElementsI)  
   var contUserElements = document.getElementsByClassName('cont-user') 
@@ -6510,6 +6486,7 @@ function resultadosEmpleado(idEmpleado, functionExe) {
   for (var i = 0; i < contUserElements.length; i++) {
     var element = contUserElements[i]
     if (element.id === idEmpleado) {
+      contSecundario.style.display = 'flex'
       element.style.position = 'fixed'
       /* element.style.marginTop = '2%' */
       element.style.display = 'flex'
@@ -6533,7 +6510,7 @@ function resultadosEmpleado(idEmpleado, functionExe) {
   if (contUserScroll) {
     contUserScroll.style.display = 'flex'
   }
--  contUserArrayI.forEach(element => {
+    contUserArrayI.forEach(element => {
     if (element.id === idEmpleado) {  
       var originalColor = element.style.backgroundColor = '';
       element.style.backgroundColor = 'green';
@@ -6547,9 +6524,18 @@ function resultadosEmpleado(idEmpleado, functionExe) {
 
   switch (idEmpleado) {
     case 'icon-carlos-I':
+/*       var elementosExcluidos = ['container01','links-inicialesI','links-iniciales']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      } */
+
+
       var ContIconoAnaI = document.getElementById('icon-carlos')
       var contSecundarios = document.getElementById('conte-secundario')
-      contSecundarios.style.position = 'absolute'
+      contSecundarios.style.display = 'flex'
       contSecundarios.style.marginTop = '2%'
       ContIconoAnaI.style.position = 'absolute'
       ContIconoAnaI.style.display = 'flex'
@@ -7338,6 +7324,16 @@ function rodillosKaizen(idButton,vidElem) {
       contplanosKaizen.style.display = 'flex'
     break;  
     case 'btn14':
+      var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','materiales-kaizen','conteneMantaut','conti-boton-kaizen','conti-boton','conti-boton-planos']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }  
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       if(vidElem === ''){                                                                                                                 ///OCULTA PADRE Y VIDEO
         contieneKaizen.style.display = 'none'                                                                                        
@@ -9384,16 +9380,20 @@ document.addEventListener('keydown', function(event) {
               deslizaContenedor('conti-boton-kaizen','kaizen')
             },977) 
                   setTimeout(function() {
-                    rodillosKaizen('btn10','')
+                    /* rodillosKaizen('btn10','') */
                   },1177) 
                         setTimeout(function() {
-                          /* deslizAutomatic('troubleshooting','troubleshoot')  */                       
+                          /* resultadosMA() */
                         },1177) 
+                              setTimeout(function() {
+                                /* deslizAutomatic('troubleshooting','troubleshoot')  */                       
+                              },1177) 
+
 
 
 
       break;
-      case 'H':                  
+      case 'H':                                
 
       break;
       case 'J':
@@ -9405,7 +9405,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('toyota-kaizen-antes')
+  var contiBoton = document.getElementById('conte-secundario')
   var rect = contiBoton.getBoundingClientRect();
 
   var topPosition = rect.top
