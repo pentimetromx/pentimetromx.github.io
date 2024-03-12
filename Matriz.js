@@ -6524,14 +6524,6 @@ function resultadosEmpleado(idEmpleado, functionExe) {
 
   switch (idEmpleado) {
     case 'icon-carlos-I':
-/*       var elementosExcluidos = ['container01','links-inicialesI','links-iniciales']  
-      for (var i = 0; i < allContenedores.length; i++) { 
-        var elemento = document.getElementById(allContenedores[i])  
-        if (elemento) {
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-        }
-      } */
-
 
       var ContIconoAnaI = document.getElementById('icon-carlos')
       var contSecundarios = document.getElementById('conte-secundario')
@@ -7580,64 +7572,6 @@ botones.forEach(function(boton) {
 var id = boton.getAttribute('id')
 alternarVisibilidad(id)
 }) 
-/// LOGICA PARA CAMBIO DE COLOR EN BOTONES ALINICIO 
-/*document.addEventListener('DOMContentLoaded', () => {
-  const botonesB = document.querySelectorAll('.boton-b')
-  const botonesC = document.querySelectorAll('.boton-c')
-  const botonesD = document.querySelectorAll('.boton-d')
-  const botonesE = document.querySelectorAll('.boton-e')
-
-  async function cambioColorTemporal(boton) {
-  const originalColor = boton.getAttribute('data-original-color')
-  
-  // Cambia el color de fondo del botón a blanco y espera 80 milisegundos
-  boton.style.backgroundColor = 'white'
-  await new Promise(resolve => setTimeout(resolve, 80))
-  
-  // Cambia el color a azul y espera nuevamente
-  boton.style.backgroundColor = 'blue'
-  await new Promise(resolve => setTimeout(resolve, 80))  
-  boton.style.backgroundColor = 'green'
-  await new Promise(resolve => setTimeout(resolve, 80))
-  boton.style.backgroundColor = 'red'
-  await new Promise(resolve => setTimeout(resolve, 80))
-  boton.style.backgroundColor = 'yellow'
-  await new Promise(resolve => setTimeout(resolve, 80))
-  boton.style.backgroundColor = 'black'
-  await new Promise(resolve => setTimeout(resolve, 80))    
-
-  // Restaura el color original del botón
-  boton.style.backgroundColor = originalColor;
-  }
-
-  function recorrerYCambiarColores(botones) {
-    let indiceActual = 0;
-
-    async function recorrerBotones() {
-      await cambioColorTemporal(botones[indiceActual])
-
-      indiceActual = (indiceActual + 1) % botones.length;
-
-      if (indiceActual === 0) {
-        clearInterval(intervalId)
-      }
-    }
-
-    const intervalId = setInterval(recorrerBotones, 30)
-  }
-
-  // Llama a la función para los botones con ID 'boton-b'
-  recorrerYCambiarColores(botonesB)
-
-  // Llama a la función para los botones 'boton-c'
-  recorrerYCambiarColores(botonesC)
-
-  // Llama a la función para los botones con ID 'boton-d'
-  recorrerYCambiarColores(botonesD)
-
-    // Llama a la función para los botones con ID 'boton-e'
-    recorrerYCambiarColores(botonesE)
-})*/
 document.addEventListener("DOMContentLoaded", function() {
   toggleVideoButton.addEventListener("click", function() {
     video.pause()
@@ -9362,10 +9296,6 @@ function restablecerEstilos(elemento) {
   // Agregar la clase que define el lugar desde CSS
   elemento.classList.add('clase-contenedor-7');  // Ajusta el nombre de la clase según tu caso
 }
-/* function transicionMA() {
-  troublesh.classList.add('move-grafica') 
-} */
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // COMBINACION TECLAS EJECUTA FUNCION
 document.addEventListener('keydown', function(event) {
@@ -9383,7 +9313,7 @@ document.addEventListener('keydown', function(event) {
                     /* rodillosKaizen('btn10','') */
                   },1177) 
                         setTimeout(function() {
-                          /* resultadosMA() */
+                          resultadosMA()
                         },1177) 
                               setTimeout(function() {
                                 /* deslizAutomatic('troubleshooting','troubleshoot')  */                       
@@ -9407,14 +9337,12 @@ document.addEventListener('keydown', function(event) {
 function Geometria() {
   var contiBoton = document.getElementById('conte-secundario')
   var rect = contiBoton.getBoundingClientRect();
-
   var topPosition = rect.top
   var leftPosition = rect.left
   var widthValue = rect.width
   var heightValue = rect.height
   var positionType = window.getComputedStyle(buttRepuest).position 
   var displayType = window.getComputedStyle(buttRepuest).display
-
   console.log(contiBoton.id);
   console.log('Top:', topPosition);
   console.log('Left:', leftPosition);
