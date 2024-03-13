@@ -7290,16 +7290,6 @@ function rodillosKaizen(idButton,vidElem) {
         }
       }  
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      if(vidElem === ''){                                                                                                                 ///OCULTA PADRE Y VIDEO
-        contieneKaizen.style.display = 'none'                                                                                        
-        for (const video of videoElements) {
-          if (video) {
-            video.style.display = 'none' // Muestra el video
-            video.pause() // Reproduce el video
-          } 
-        }
-      }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       Array.from(buttsTerceros).forEach(elemento => {                                                                                /// MOSTRAR BOTONES TERCEROS
         var element = document.getElementById(elemento.id) // Aquí asumo que cada elemento tiene un atributo 'id'
         if (element) {
@@ -7324,19 +7314,6 @@ function rodillosKaizen(idButton,vidElem) {
         }
       }  
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      if(vidElem === ''){                                                                                                                 ///OCULTA PADRE Y VIDEO
-        contieneKaizen.style.display = 'none'                                                                                        
-        for (const video of videoElements) {
-          if (video) {
-            video.style.display = 'none' // Muestra el video
-            video.pause() // Reproduce el video
-          } 
-        }
-      }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       Array.from(buttsTerceros).forEach(elemento => {                                                                                /// MOSTRAR BOTONES TERCEROS
         var element = document.getElementById(elemento.id) // Aquí asumo que cada elemento tiene un atributo 'id'
         if (element) {
@@ -7353,16 +7330,6 @@ function rodillosKaizen(idButton,vidElem) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }  
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      if(vidElem === ''){                                                                                                                 ///OCULTA PADRE Y VIDEO
-        contieneKaizen.style.display = 'none'                                                                                        
-        for (const video of videoElements) {
-          if (video) {
-            video.style.display = 'none' // Muestra el video
-            video.pause() // Reproduce el video
-          } 
-        }
-      }
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       Array.from(buttsTerceros).forEach(elemento => {                                                                                /// MOSTRAR BOTONES TERCEROS
         var element = document.getElementById(elemento.id) // Aquí asumo que cada elemento tiene un atributo 'id'
@@ -7885,6 +7852,8 @@ var chart7 = new Chart(miCanvas6, {
       }
   }
 })
+
+
 // BARRAS VERTICALES
 var chart8 = new Chart(miCanvas7, {
   type: 'bar',
@@ -9352,6 +9321,3 @@ function Geometria() {
   console.log('Display:', displayType);
 }
 let contFriends = []
-
-
-

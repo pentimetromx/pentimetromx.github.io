@@ -887,7 +887,7 @@ width:447px ;
 #contLineas{
   position: relative;
   left: 16%;
-  margin-top: -20%;
+  margin-top: 5.3%;
   width: 84%; /* 100% - 16% */
   height: 500px;
   display: none;
@@ -995,8 +995,8 @@ width:447px ;
 #canvasContainer9{
   position: absolute;
   display: flex;
-  left: 73%;
-  top:13%;  
+  left: 67.5%;
+  top:56%;  
   width: 333px;
   height: 255px;
 
