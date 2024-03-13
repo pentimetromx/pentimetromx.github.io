@@ -1,7 +1,7 @@
-var anchoPantalla = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+var anchoPantalla = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth; 
 var contenedor2 = document.getElementById('canvasContainer2')
 var troublesh = document.getElementById('troubleshooting')
-var grafica2 = document.getElementById('MiGrafica')
+var grafica2 = document.getElementById('MiGrafica')                   
 
 
 var arrayAllPneumatica = ['contImaginario-II','vid-pneumatic','bailarina','padre-neumat','pneumatico','control-neumatico','imag1','imag2','imag3','imag4','contImaginario','vid-basculante','rodillo-infeed','puesta-punto','contImgEntrenos']
@@ -47,10 +47,12 @@ var arrayPosicionnador = []
 var destino = 257
 var idsArray = [];
 var idsArrayEliminados = []
-var idsMA = ['control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','casos-kaizen','mejoras-kai','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','planos-kaizen','materiales-kaizen','kaizenCont','conti-boton-planos', 'conti-boton-kaizen','troubleshooting','canvasContainer2','contChecks','canvasContainer3', 'contImagNeg',,'contImagGraf','canvasContainer4','canvasContainer5','canvasContainer6','canvasContainer7','canvasContainer8', 'canvasContainer9']
+var idsMA = ['control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','casos-kaizen','mejoras-kai','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','planos-kaizen','materiales-kaizen','kaizenCont','conti-boton-planos', 'conti-boton-kaizen','troubleshooting','canvasContainer2','contChecks','canvasContainer3', 'contImagNeg',,'contImagGraf','canvasContainer4','canvasContainer4-II','canvasContainer5','canvasContainer5-II','canvasContainer6','canvasContainer6-II','canvasContainer7','canvasContainer7-II','canvasContainer8','canvasContainer8-II','canvasContainer9-II','canvasContainer9']
 var contenedoresMA = ['troubleshooting','canvasContainer2','contChecks','canvasContainer3','contImagNeg','contImagGraf','kaizenCont']
 var idsMAhijos = ['contBotCasos','materiales-kaizen','troubleshooting','canvasContainer2','contChecks','canvasContainer3','contImagNeg','contImagGraf']
 var lineasGrid = document.getElementById('contLineas')
+var lineasGridII = document.getElementById('contLineas-II')
+
 var contAdministrar = document.getElementById('cont-titulo-admin')
 var contComercial = document.getElementById('cont-titulo-comercial')
 var contCalidad = document.getElementById('cont-titulo-calidad')
@@ -67,7 +69,7 @@ var currentID = null;
 var butInicio = document.getElementById('bot-inic')
 var contInicial = document.getElementById('container1')
 var botonMa = document.getElementById('bot-mantaut')
-var allContenedores = ['contLineas','title-interfaz','vidElem','kaizen-propuestos','canvasContainer3','troubleshooting','conti-boton','canvasContainer2','contChecks','conteneMantaut','MiGrafica','contImaginario-II','contImaginario-III','padre-1','padre-2','imag3','imag4','contImaginario','bailarina','pneumatico','padre-neumat','contBotInfeed','largoImpresion','contImgEntrenos','imag1','imag2','linksMA','linkLis','sitio-en-construccion','curado-uv','video-container','conti-video-background','video-background-planas','conti-videos-planas','conti-img-planas','conti-videos-infoprint','video-infoprint-I','video-infoprint-II','video-infoprint-III','contenedor-9','conti-video-bancada','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer5', 'canvasContainer6', 'canvasContainer7','canvasContainer8','canvasContainer9','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria', 'cont-user','cont-userI']
+var allContenedores = ['contLineas-II','contLineas','title-interfaz','vidElem','kaizen-propuestos','canvasContainer3','troubleshooting','conti-boton','canvasContainer2','contChecks','conteneMantaut','MiGrafica','contImaginario-II','contImaginario-III','padre-1','padre-2','imag3','imag4','contImaginario','bailarina','pneumatico','padre-neumat','contBotInfeed','largoImpresion','contImgEntrenos','imag1','imag2','linksMA','linkLis','sitio-en-construccion','curado-uv','video-container','conti-video-background','video-background-planas','conti-videos-planas','conti-img-planas','conti-videos-infoprint','video-infoprint-I','video-infoprint-II','video-infoprint-III','contenedor-9','conti-video-bancada','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer4-II','canvasContainer5','canvasContainer5-II','canvasContainer6','canvasContainer6-II','canvasContainer7','canvasContainer7-II','canvasContainer8','canvasContainer8-II','canvasContainer9','canvasContainer9-II','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria', 'cont-user','cont-userI']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIzquierdos = ['desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador']
@@ -118,11 +120,21 @@ let miCanvas4 = document.getElementById('MiCuartaGrafica').getContext('2d')
 let miCanvas5 = document.getElementById('MiQuintaGrafica').getContext('2d')
 let miCanvas = document.getElementById('MiGrafica').getContext('2d')
 let miCanvas6 = document.getElementById('MiGrafica4').getContext('2d')
+let miCanvas6II = document.getElementById('MiGrafica4-II').getContext('2d')
 let miCanvas7 = document.getElementById('MiGrafica5').getContext('2d')
+let miCanvas7II = document.getElementById('MiGrafica5-II').getContext('2d')
 let miCanvas8 = document.getElementById('MiGrafica6').getContext('2d')
+let miCanvas8II = document.getElementById('MiGrafica6-II').getContext('2d')
+
 let miCanvas9 = document.getElementById('MiGrafica7').getContext('2d')
+let miCanvas9II = document.getElementById('MiGrafica7-II').getContext('2d')
+
 let miCanvas10 = document.getElementById('MiGrafica8').getContext('2d')
+let miCanvas10II = document.getElementById('MiGrafica8-II').getContext('2d')
+
 let miCanvas11 = document.getElementById('MiGrafica9').getContext('2d')
+let miCanvas11II = document.getElementById('MiGrafica9-II').getContext('2d')
+
 
 var botones = document.querySelectorAll('.butt-mautonomo')
 var arrayButtsIniciales = ['bot-atras','bot-inicial','iniciar','bot-atras12']
@@ -139,7 +151,6 @@ function VolveraInicio(){
   idsArrayEliminados = []
 }
 function botoGrand() {
-
 }
 function muestraBateria(elementId) {  
   // Recorre el array y oculta los elementos por su ID
@@ -2255,14 +2266,7 @@ function deslizarChecks(idElement) {
   console.log(arrayPosicionnador)
   /*//////////////////////////////////////////////////////////////////////////////////////////////*/
   var contenedor1 = document.getElementById('contChecks')
-  var contenedor2 = document.getElementById('canvasContainer2')
-  var contenedor4 = document.getElementById('canvasContainer4')
-  var contenedor5 = document.getElementById('canvasContainer5')
-  var contenedor6 = document.getElementById('canvasContainer6')
-  var contenedor7 = document.getElementById('canvasContainer7')
-
-
-
+  var contenedor2 = document.getElementById('canvasContainer2')  
 
 
   if (contenedor1) {
@@ -6477,7 +6481,7 @@ function resultadosEmpleado(idEmpleado, functionExe) {
   var contSecundario = document.getElementById('conte-secundario')
   
   var contUserArrayI = Array.from(contUserElementsI)  
-  var contUserElements = document.getElementsByClassName('cont-user') 
+  var contUserElements = document.getElementsByClassName('cont-user')   
   var tituloMA = document.getElementById('title-interfaz')
   var colorIndex = 0; // Índice del color actual
   lineasGrid.style.display = 'block'
@@ -6521,6 +6525,20 @@ function resultadosEmpleado(idEmpleado, functionExe) {
       })(element, originalColor);
     }
   });
+
+
+  if(screenWidth < 500){
+    var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','iconos','contLineas-II','contenedor-vertical']  
+    for (var i = 0; i < allContenedores.length; i++) { 
+      var elemento = document.getElementById(allContenedores[i])  
+      if (elemento) {
+        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+      }
+    }  
+
+
+  }
+
 
   switch (idEmpleado) {
     case 'icon-carlos-I':
@@ -6692,11 +6710,69 @@ function updateAna() {
   // Actualiza el gráfico
   chart11.update() 
   //////////////////////////////////////////////////////////////////
-  var nuevosDatosV = [/* Nuevos valores de datos */ 5,17,33,45,51,57,67,99]
+  var nuevosDatosV = [/* Nuevos valores de datos */ 5,17,33,45,51,57,67,99]           
   // Actualiza los datos del gráfico
   chart12.data.datasets[0].data = nuevosDatosV;
   // Actualiza el gráfico
   chart12.update() 
+
+}
+function updateAnaII() {
+  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos    
+  setTimeout(function() {
+   graficosAutomaticos('canvasContainer4-II')
+ },500) // 0.3 segundos
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer7-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer5-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer6-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer8-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms) 
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer9-II')  
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+
+ var nuevosDatos = [/* Nuevos valores de datos */ 0,70,30,70,50,90]
+ // Actualiza los datos del gráfico
+ chart7II.data.datasets[0].data = nuevosDatos;
+ // Actualiza el gráfico
+ chart7II.update()
+ ///////////////////////////////////////////////////////////////////
+ var nuevosDatosI = [/* Nuevos valores de datos */ 55,5,95,30,10,10]            
+ // Actualiza los datos del gráfico
+ chart8II.data.datasets[0].data = nuevosDatosI;
+ // Actualiza el gráfico
+ chart8II.update()
+ //////////////////////////////////////////////////////////////////
+ var nuevosDatosII = [/* Nuevos valores de datos */ 30,50,60,77,20,8]        
+ // Actualiza los datos del gráfico
+ chart9II.data.datasets[0].data = nuevosDatosII;
+ // Actualiza el gráfico
+ chart9II.update() 
+ //////////////////////////////////////////////////////////////////
+ var nuevosDatosIII = [/* Nuevos valores de datos */ 5,17,8,30,44,10]
+ // Actualiza los datos del gráfico
+ chart10II.data.datasets[0].data = nuevosDatosIII;
+ // Actualiza el gráfico
+ chart10II.update()
+   //////////////////////////////////////////////////////////////////
+ var nuevosDatosIIII = [/* Nuevos valores de datos */ 11,50,20,80,10,100]
+ // Actualiza los datos del gráfico
+ chart11II.data.datasets[0].data = nuevosDatosIIII;
+ // Actualiza el gráfico
+ chart11II.update() 
+ //////////////////////////////////////////////////////////////////
+ var nuevosDatosV = [/* Nuevos valores de datos */ 5,17,33,45,51,57,67,99]
+ // Actualiza los datos del gráfico
+ chart12II.data.datasets[0].data = nuevosDatosV;
+ // Actualiza el gráfico
+ chart12II.update() 
 
 }
 function updateMario() {
@@ -7852,10 +7928,114 @@ var chart7 = new Chart(miCanvas6, {
       }
   }
 })
-
-
+var chart7II = new Chart(miCanvas6II, { 
+  type: 'bar',
+  data: {
+      labels: ['DEFECTOS IDENTIFICADOS', 'DEFECTOS CORREGIDOS', 'TIPO 1', 'TIPO 2'],
+      datasets: [
+          {
+              label: 'Participación en M.A',
+              backgroundColor: ['rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(128,128,128)', 'rgb(255, 255, 0)'],
+              data: [57, 88, 62, 33]
+          }
+      ]
+  },
+  options: {
+      scales: {
+          x: {
+              grid: {
+                  display: false
+              },
+              ticks: {
+                  color: 'rgb(255,255,255)',
+                  font: {
+                      size: 9
+                  }
+              }
+          },
+          y: {
+              grid: {
+                  display: false
+              },
+              ticks: {
+                  color: 'rgb(255,255,255)',
+                  font: {
+                      size: 10
+                  },
+                  beginAtZero: true
+              }
+          }
+      },
+      indexAxis: 'x',
+      plugins: {
+          legend: {
+              display: false
+          },
+          title: {  // Agregar un título al gráfico
+              display: true,  // Mostrar el título
+              text: 'Participacion semanal',  // Texto del título
+              font: {
+                  size: 16  // Tamaño del texto del título
+              }
+          }
+      }
+  }
+})
 // BARRAS VERTICALES
 var chart8 = new Chart(miCanvas7, {
+  type: 'bar',
+  data: {
+    labels: ['Propuestas', 'Ejecutadas','Entrenadas'],
+    datasets: [
+      {
+        label: 'Participación en M.A',
+        backgroundColor: ['rgb(255, 165, 0)', 'rgb(0, 255, 0)','rgb(125,77,157)'],
+        data: [17, 9,27]
+      }
+    ]
+  },
+  options: {
+    scales: {
+      x: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 9
+          }
+        }
+      },
+      y: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 10
+          },
+          beginAtZero: true
+        }
+      }
+    },
+    indexAxis: 'y',
+    plugins: {
+      legend: {
+        display: false
+      },
+      title: {
+        display: true,
+        text: 'Lección de un punto',
+        font: {
+          size: 16
+        }
+      }
+    }
+  }
+})
+var chart8II = new Chart(miCanvas7II, {
   type: 'bar',
   data: {
     labels: ['Propuestas', 'Ejecutadas','Entrenadas'],
@@ -7963,6 +8143,61 @@ var chart9 = new Chart(miCanvas8, {
     }
   }
 })
+var chart9II = new Chart(miCanvas8II, {
+  type: 'line',
+  data: {
+    labels: ['Mecanicas', 'Layout','Diseño','Temporales','Fijas','Transicion'],
+    datasets: [
+      {
+        label: 'Participación en M.A',
+        borderColor: 'rgb(0, 0, 255)',
+        backgroundColor: ['rgb(0,255,255)','rgb(0,255,255)','rgb(0,255,255)','rgb(0,255,255)','rgb(0,255,255)','rgb(0,255,255)'],
+        borderWidth: 1,        
+        data: [17, 9,27,55,19,33]
+      }
+    ]
+  },
+  options: {
+    scales: {
+      x: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 9
+          }
+        }
+      },
+      y: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 10
+          },
+          beginAtZero: true
+        }
+      }
+    },
+    indexAxis: 'x',
+    plugins: {
+      legend: {
+        display: false
+      },
+      title: {
+        display: true,
+        text: 'Areas De Dificil Acceso',
+        font: {
+          size: 16
+        }
+      }
+    }
+  }
+})
 var chart10 = new Chart(miCanvas9, {
   type: 'doughnut',
   data: {
@@ -8016,6 +8251,60 @@ var chart10 = new Chart(miCanvas9, {
     }
   }
 })
+var chart10II = new Chart(miCanvas9II, {
+  type: 'doughnut',
+  data: {
+    labels: ['Mecanicas', 'Layout','Diseño','Temporales','Fijas'],
+    datasets: [
+      {
+        label: 'Participación en M.A',
+        backgroundColor: ['rgb(255, 165, 0)', 'rgb(0, 255, 0)','rgb(125,77,157)','rgb(255,255,0)','rgb(255,0,0)','rgb(0,0,255)'],
+        data: [17, 9,27,55,19,33]
+      }
+    ]
+  },
+  options: {
+    scales: {
+      x: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 9
+          }
+        }
+      },
+      y: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 10
+          },
+          beginAtZero: true
+        }
+      }
+    },
+    indexAxis: 'x',
+    plugins: {
+      legend: {
+        display: false
+      },
+      title: {
+        display: true,
+        text: 'Ayudas De Trabajo',
+        font: {
+          size: 16
+        }
+      }
+    }
+  }
+})
+
 var chart11 = new Chart(miCanvas10, {
   type: 'pie',
   data: {
@@ -8069,7 +8358,117 @@ var chart11 = new Chart(miCanvas10, {
     }
   }
 })
+var chart11II = new Chart(miCanvas10II, {
+  type: 'pie',
+  data: {
+    labels: ['LUP', 'DEF 1','DEF 2','ADA','ADT'],
+    datasets: [
+      {
+        label: 'Participación en M.A',
+        backgroundColor: ['rgb(255, 165, 0)', 'rgb(0, 255, 0)','#d6919a','rgb(255,255,0)','rgb(128,128,128)','rgb(0,255,255)'],
+        data: [7, 19,17,37,9,77]
+      }
+    ]
+  },
+  options: {
+    scales: {
+      x: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 9
+          }
+        }
+      },
+      y: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 10
+          },
+          beginAtZero: true
+        }
+      }
+    },
+    indexAxis: 'x',
+    plugins: {
+      legend: {
+        display: false
+      },
+      title: {
+        display: true,
+        text: 'Ejecución ',
+        font: {
+          size: 16
+        }
+      }
+    }
+  }
+})
+
 var chart12 = new Chart(miCanvas11, {
+  type: 'line',
+  data: {
+    labels: ['S1','S2','S3','S4','S5','S6','S7','S8'],
+    datasets: [
+      {
+        label: 'Participación en M.A',
+        borderColor: 'rgb(255,165,0)', 
+        borderWidth: 1,
+        pointRadius: 0,                       
+        /* backgroundColor: ['rgb(255, 165, 0)', 'rgb(0, 255, 0)','#d6919a','rgb(255,255,0)','rgb(128,128,128)','rgb(255,255,0)','rgb(0,0,255)','rgb(177,0,255)'], */
+        /* data: [7, 19, 27, 37, 59, 77, 81, 99] */
+      }
+    ]
+  },
+  options: {
+    scales: {
+      x: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 9
+          }
+        }
+      },
+      y: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 10
+          },
+          beginAtZero: true
+        }
+      }
+    },
+    indexAxis: 'x',
+    plugins: {
+      legend: {
+        display: false
+      },
+      title: {
+        display: true,
+        text: 'Tendencia ',
+        font: {
+          size: 16
+        }
+      }
+    }
+  }
+})
+var chart12II = new Chart(miCanvas11II, {
   type: 'line',
   data: {
     labels: ['S1','S2','S3','S4','S5','S6','S7','S8'],
@@ -9276,7 +9675,7 @@ document.addEventListener('keydown', function(event) {
           deslizaContenedor('troubleshooting','troubleshoot')
         },577) 
             setTimeout(function() {
-              deslizaContenedor('conti-boton-kaizen','kaizen')
+              /* deslizaContenedor('conti-boton-kaizen','kaizen') */
             },977) 
                   setTimeout(function() {
                     /* rodillosKaizen('btn10','') */
@@ -9285,7 +9684,7 @@ document.addEventListener('keydown', function(event) {
                           resultadosMA()
                         },1177) 
                               setTimeout(function() {
-                                /* deslizAutomatic('troubleshooting','troubleshoot')  */                       
+                                resultadosEmpleado('icon-jesus','updateJesus')
                               },1177) 
 
 
