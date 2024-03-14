@@ -5713,14 +5713,14 @@ h4{
   #contLineas-II{
     position: relative;
     left: 37%;
-    margin-top: -77%;
+    margin-top: -56%;
     width: 97%; /* 100% - 32% */
     height: 30%;
     display: none;
   }
   .contenedor-vertical{  
     position: fixed;
-    top: 33%;
+    top: 42%;
     left: 2%;
     width: 30%;
     display: flex;
@@ -5852,8 +5852,6 @@ h4{
     height: 2px;
     background-color: white;  
   } 
-
-
   .contenedor-vertical img{
     position: relative;
     height: 54px;
@@ -5865,8 +5863,8 @@ h4{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* margin-top:21px; */
     left: 18px;
+    width: 87px;
     cursor: pointer;
   }
   .cont-userI label{

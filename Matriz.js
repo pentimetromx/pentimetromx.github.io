@@ -6534,6 +6534,32 @@ function resultadosEmpleado(idEmpleado, functionExe) {
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
       }
     }  
+
+    for (var i = 0; i < contUserElements.length; i++) {
+      var element = contUserElements[i]
+      if (element.id === idEmpleado) {
+        console.log(element.id)
+        console.log(idEmpleado)
+        contSecundario.style.display = 'flex'
+        element.style.position = 'fixed'
+        element.style.display = 'flex'
+        element.style.height = '15%'
+        element.style.top = '24%'
+        element.style.left = '5%'
+  
+        // Accede al label dentro del div
+        var label = element.querySelector('label')
+        if (label) {
+          setInterval(function () {
+            label.style.color = colors[colorIndex] // Cambia el color del texto
+            colorIndex = (colorIndex + 1) % colors.length; // Alterna entre los colores
+          }, 200) // Cambia el color cada 0.2 segundos (200 milisegundos)
+        }
+      } else {
+        element.style.display = 'none'
+      }
+    } 
+  
   }
 
 
