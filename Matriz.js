@@ -6510,7 +6510,7 @@ function resultadosEmpleado(idEmpleado, functionExe) {
     }
   } 
 
-  if (contUserScroll) {
+   if (contUserScroll) {
     contUserScroll.style.display = 'flex'
   }
     contUserArrayI.forEach(element => {
@@ -6544,7 +6544,7 @@ function resultadosEmpleado(idEmpleado, functionExe) {
         element.style.position = 'fixed'
         element.style.display = 'flex'
         element.style.height = '15%'
-        element.style.top = '24%'
+        element.style.top = '21.5%'
         element.style.left = '5%'
   
         // Accede al label dentro del div
@@ -6574,7 +6574,16 @@ switch (idEmpleado) {
       ContIconoAnaI.style.display = 'flex'
       ContIconoAnaI.style.height = '64%'
       ContIconoAnaI.style.top = '-66%'
-      ContIconoAnaI.style.left = '3%'    
+      ContIconoAnaI.style.left = '3%'       
+      if(screenWidth < 500){
+        contSecundarios.style.display = 'flex'
+        contSecundarios.style.marginTop = '2%'
+        ContIconoAnaI.style.position = 'absolute'
+        ContIconoAnaI.style.display = 'flex'
+        ContIconoAnaI.style.height = '44%'
+        ContIconoAnaI.style.top = '-22%'
+        ContIconoAnaI.style.left = '3%' 
+      }
     break;
     case 'icon-andres-I':
       var ContIconoAnaI = document.getElementById('icon-andres')
@@ -6586,6 +6595,15 @@ switch (idEmpleado) {
       ContIconoAnaI.style.height = '64%'
       ContIconoAnaI.style.top = '-66%'
       ContIconoAnaI.style.left = '3%'
+      if(screenWidth < 500){
+        contSecundarios.style.display = 'flex'
+        contSecundarios.style.marginTop = '2%'
+        ContIconoAnaI.style.position = 'absolute'
+        ContIconoAnaI.style.display = 'flex'
+        ContIconoAnaI.style.height = '44%'
+        ContIconoAnaI.style.top = '-22%'
+        ContIconoAnaI.style.left = '3%' 
+      }
     break;
     case 'icon-jorge-I':
       var ContIconoAnaI = document.getElementById('icon-jorge')
@@ -6597,6 +6615,15 @@ switch (idEmpleado) {
       ContIconoAnaI.style.height = '64%'
       ContIconoAnaI.style.top = '-66%'
       ContIconoAnaI.style.left = '3%'
+      if(screenWidth < 500){
+        contSecundarios.style.display = 'flex'
+        contSecundarios.style.marginTop = '2%'
+        ContIconoAnaI.style.position = 'absolute'
+        ContIconoAnaI.style.display = 'flex'
+        ContIconoAnaI.style.height = '44%'
+        ContIconoAnaI.style.top = '-22%'
+        ContIconoAnaI.style.left = '3%' 
+      }
     break;
     case 'icon-jesus-I':
       var ContIconoAnaI = document.getElementById('icon-jesus')
@@ -6608,6 +6635,15 @@ switch (idEmpleado) {
       ContIconoAnaI.style.height = '64%'
       ContIconoAnaI.style.top = '-66%'
       ContIconoAnaI.style.left = '3%'
+      if(screenWidth < 500){
+        contSecundarios.style.display = 'flex'
+        contSecundarios.style.marginTop = '2%'
+        ContIconoAnaI.style.position = 'absolute'
+        ContIconoAnaI.style.display = 'flex'
+        ContIconoAnaI.style.height = '44%'
+        ContIconoAnaI.style.top = '-22%'
+        ContIconoAnaI.style.left = '3%' 
+      }
     break;
     case 'icon-sandra-I':
       var ContIconoAnaI = document.getElementById('icon-sandra')
@@ -6619,6 +6655,15 @@ switch (idEmpleado) {
       ContIconoAnaI.style.height = '64%'
       ContIconoAnaI.style.top = '-66%'
       ContIconoAnaI.style.left = '3%'
+      if(screenWidth < 500){
+        contSecundarios.style.display = 'flex'
+        contSecundarios.style.marginTop = '2%'
+        ContIconoAnaI.style.position = 'absolute'
+        ContIconoAnaI.style.display = 'flex'
+        ContIconoAnaI.style.height = '44%'
+        ContIconoAnaI.style.top = '-22%'
+        ContIconoAnaI.style.left = '3%' 
+      }
     break;
     case 'icon-mario-I':
       var ContIconoAnaI = document.getElementById('icon-mario')
@@ -6630,6 +6675,15 @@ switch (idEmpleado) {
       ContIconoAnaI.style.height = '64%'
       ContIconoAnaI.style.top = '-66%'
       ContIconoAnaI.style.left = '3%'
+      if(screenWidth < 500){
+        contSecundarios.style.display = 'flex'
+        contSecundarios.style.marginTop = '2%'
+        ContIconoAnaI.style.position = 'absolute'
+        ContIconoAnaI.style.display = 'flex'
+        ContIconoAnaI.style.height = '44%'
+        ContIconoAnaI.style.top = '-22%'
+        ContIconoAnaI.style.left = '3%' 
+      }
     break;
     case 'icon-ana-I':
       var ContIconoAnaI = document.getElementById('icon-ana')
@@ -6641,31 +6695,47 @@ switch (idEmpleado) {
       ContIconoAnaI.style.height = '64%'
       ContIconoAnaI.style.top = '-66%'
       ContIconoAnaI.style.left = '3%'
+      if(screenWidth < 500){
+        contSecundarios.style.display = 'flex'
+        contSecundarios.style.marginTop = '2%'
+        ContIconoAnaI.style.position = 'absolute'
+        ContIconoAnaI.style.display = 'flex'
+        ContIconoAnaI.style.height = '44%'
+        ContIconoAnaI.style.top = '-22%'
+        ContIconoAnaI.style.left = '3%' 
+      }
     break;
     default:
     break;
   }      
   switch (functionExe) {
     case 'updateAna':
-      updateAna()      
+      updateAna() 
+      updateAnaII()
     break;
     case 'updateMario':
       updateMario()
+      updateMarioII()
     break;
     case 'updateSandra':
       updateSandra()
+      updateSandraII()
     break;
     case 'updateJesus':
       updateJesus()
+      updateJesusII()      
     break;
     case 'updateJorge':
       updateJorge()
+      updateJorgeII()      
     break;
     case 'updateAndres':
       updateAndres()
+      updateAndresII()      
     break;
     case 'updateCarlos':
       updateCarlos()
+      updateCarlosII()      
     break;
     default:
     break;
@@ -6754,9 +6824,9 @@ function updateAnaII() {
  setTimeout(function() {
    graficosAutomaticos('canvasContainer6-II')
  }, 700) // 0.3 segundos (300 ms + 300 ms)
- setTimeout(function() {
+ /*setTimeout(function() {
    graficosAutomaticos('canvasContainer8-II')
- }, 700) // 0.3 segundos (300 ms + 300 ms) 
+ }, 700) // 0.3 segundos (300 ms + 300 ms) */
  setTimeout(function() {
    graficosAutomaticos('canvasContainer9-II')  
  }, 700) // 0.3 segundos (300 ms + 300 ms)
@@ -6854,6 +6924,62 @@ function updateMario() {
   // Actualiza el gráfico
   chart12.update() 
 }
+function updateMarioII() {
+  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+  setTimeout(function() {
+   graficosAutomaticos('canvasContainer4-II')
+ },500) // 0.3 segundos
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer7-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer5-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer6-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+ /*setTimeout(function() {
+   graficosAutomaticos('canvasContainer8')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)*/ 
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer9-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+ var nuevosDatos = [/* Nuevos valores de datos */ 100,20,70,10,80,90]
+ // Actualiza los datos del gráfico
+ chart7II.data.datasets[0].data = nuevosDatos;
+ // Actualiza el gráfico
+ chart7II.update()
+ ///////////////////////////////////////////////////////////////////
+ var nuevosDatosI = [/* Nuevos valores de datos */ 30,25,90,110,50,77]
+ // Actualiza los datos del gráfico
+ chart8II.data.datasets[0].data = nuevosDatosI;
+ // Actualiza el gráfico
+ chart8II.update()
+ //////////////////////////////////////////////////////////////////
+ var nuevosDatosII = [/* Nuevos valores de datos */ 100,90,10,30,70,10]
+ // Actualiza los datos del gráfico
+ chart9II.data.datasets[0].data = nuevosDatosII;
+ // Actualiza el gráfico
+ chart9II.update() 
+   //////////////////////////////////////////////////////////////////
+   var nuevosDatosIII = [/* Nuevos valores de datos */ 99,11,70,47,17,80]
+   // Actualiza los datos del gráfico
+   chart10II.data.datasets[0].data = nuevosDatosIII;
+   // Actualiza el gráfico
+   chart10II.update()
+     //////////////////////////////////////////////////////////////////
+ var nuevosDatosIIII = [/* Nuevos valores de datos */ 10,80,50,20,90,40]
+ // Actualiza los datos del gráfico
+ chart11II.data.datasets[0].data = nuevosDatosIIII;
+ // Actualiza el gráfico
+ chart11II.update() 
+ //////////////////////////////////////////////////////////////////
+ var nuevosDatosV = [/* Nuevos valores de datos */ 55,67,73,70,65,80,80,91]
+ // Actualiza los datos del gráfico
+ chart12II.data.datasets[0].data = nuevosDatosV;
+ // Actualiza el gráfico
+ chart12II.update() 
+}
 function updateSandra() {
    // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
    setTimeout(function() {
@@ -6909,6 +7035,118 @@ function updateSandra() {
   chart12.data.datasets[0].data = nuevosDatosV;
   // Actualiza el gráfico
   chart12.update()  
+}
+function updateSandraII() {
+  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+  setTimeout(function() {
+   graficosAutomaticos('canvasContainer4-II')
+ },500) // 0.3 segundos
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer7-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer5-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer6-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer8-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms) 
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer9-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+var nuevosDatos = [/* Nuevos valores de datos */ 33,20,100,50,80,10]
+// Actualiza los datos del gráfico
+chart7II.data.datasets[0].data = nuevosDatos;
+// Actualiza el gráfico
+chart7II.update()
+///////////////////////////////////////////////////////////////////
+var nuevosDatosI = [/* Nuevos valores de datos */ 30,75,20,100,50,17]
+// Actualiza los datos del gráfico
+chart8II.data.datasets[0].data = nuevosDatosI;
+// Actualiza el gráfico
+chart8II.update()
+//////////////////////////////////////////////////////////////////
+var nuevosDatosII = [/* Nuevos valores de datos */ 33,50,30,90,100,5]
+// Actualiza los datos del gráfico
+chart9II.data.datasets[0].data = nuevosDatosII;
+// Actualiza el gráfico
+chart9II.update() 
+//////////////////////////////////////////////////////////////////
+ var nuevosDatosIII = [/* Nuevos valores de datos */ 9,5,70,97,37,60]
+ // Actualiza los datos del gráfico
+ chart10II.data.datasets[0].data = nuevosDatosIII;
+ // Actualiza el gráfico
+ chart10II.update()
+ //////////////////////////////////////////////////////////////////
+var nuevosDatosIIII = [/* Nuevos valores de datos */ 30,40,250,600,45,800]
+// Actualiza los datos del gráfico
+chart11II.data.datasets[0].data = nuevosDatosIIII;
+// Actualiza el gráfico
+chart11II.update() 
+ //////////////////////////////////////////////////////////////////
+ var nuevosDatosV = [/* Nuevos valores de datos */ 50,37,33,17,51,77,67,70]
+ // Actualiza los datos del gráfico
+ chart12II.data.datasets[0].data = nuevosDatosV;
+ // Actualiza el gráfico
+ chart12II.update()  
+}
+function updateSandraII() {
+  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+  setTimeout(function() {
+   graficosAutomaticos('canvasContainer4-II')
+ },500) // 0.3 segundos
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer7-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer5-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer6-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+ /*setTimeout(function() {
+   graficosAutomaticos('canvasContainer8-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)*/ 
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer9-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+var nuevosDatos = [/* Nuevos valores de datos */ 33,20,100,50,80,10]
+// Actualiza los datos del gráfico
+chart7II.data.datasets[0].data = nuevosDatos;
+// Actualiza el gráfico
+chart7II.update()
+///////////////////////////////////////////////////////////////////
+var nuevosDatosI = [/* Nuevos valores de datos */ 30,75,20,100,50,17]
+// Actualiza los datos del gráfico
+chart8II.data.datasets[0].data = nuevosDatosI;
+// Actualiza el gráfico
+chart8II.update()
+//////////////////////////////////////////////////////////////////
+var nuevosDatosII = [/* Nuevos valores de datos */ 33,50,30,90,100,5]
+// Actualiza los datos del gráfico
+chart9II.data.datasets[0].data = nuevosDatosII;
+// Actualiza el gráfico
+chart9II.update() 
+//////////////////////////////////////////////////////////////////
+ var nuevosDatosIII = [/* Nuevos valores de datos */ 9,5,70,97,37,60]
+ // Actualiza los datos del gráfico
+ chart10II.data.datasets[0].data = nuevosDatosIII;
+ // Actualiza el gráfico
+ chart10II.update()
+ //////////////////////////////////////////////////////////////////
+var nuevosDatosIIII = [/* Nuevos valores de datos */ 30,40,250,600,45,800]
+// Actualiza los datos del gráfico
+chart11II.data.datasets[0].data = nuevosDatosIIII;
+// Actualiza el gráfico
+chart11II.update() 
+ //////////////////////////////////////////////////////////////////
+ var nuevosDatosV = [/* Nuevos valores de datos */ 50,37,33,17,51,77,67,70]
+ // Actualiza los datos del gráfico
+ chart12II.data.datasets[0].data = nuevosDatosV;
+ // Actualiza el gráfico
+ chart12II.update()  
 }
 function updateJesus() {
    // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
@@ -6966,6 +7204,62 @@ function updateJesus() {
   // Actualiza el gráfico
   chart12.update()   
 }
+function updateJesusII() {
+  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+  setTimeout(function() {
+   graficosAutomaticos('canvasContainer4-II')
+ },500) // 0.3 segundos
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer7-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer5-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer6-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+ /*setTimeout(function() {
+    graficosAutomaticos('canvasContainer8-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms) */ 
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer9-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+ var nuevosDatos = [/* Nuevos valores de datos */ 10,100,10,20,50,90]
+ // Actualiza los datos del gráfico
+ chart7II.data.datasets[0].data = nuevosDatos;
+ // Actualiza el gráfico
+ chart7II.update()  
+ ///////////////////////////////////////////////////////////////////
+var nuevosDatosI = [/* Nuevos valores de datos */ 100,50,10,100,50,17]
+// Actualiza los datos del gráfico
+chart8II.data.datasets[0].data = nuevosDatosI;
+// Actualiza el gráfico
+chart8II.update()
+//////////////////////////////////////////////////////////////////
+var nuevosDatosII = [/* Nuevos valores de datos */ 10,100,50,30,10,90]
+// Actualiza los datos del gráfico
+chart9II.data.datasets[0].data = nuevosDatosII;
+// Actualiza el gráfico
+chart9II.update() 
+ //////////////////////////////////////////////////////////////////
+ var nuevosDatosIII = [/* Nuevos valores de datos */ 9,90,70,47,87,10]
+ // Actualiza los datos del gráfico
+ chart10II.data.datasets[0].data = nuevosDatosIII;
+ // Actualiza el gráfico
+ chart10II.update()
+   //////////////////////////////////////////////////////////////////
+var nuevosDatosIIII = [/* Nuevos valores de datos */ 100,8,50,70,30,10]
+// Actualiza los datos del gráfico
+chart11II.data.datasets[0].data = nuevosDatosIIII;
+// Actualiza el gráfico
+chart11II.update()
+ //////////////////////////////////////////////////////////////////
+ var nuevosDatosV = [/* Nuevos valores de datos */ 33,37,33,77,45,77,80,87]
+ // Actualiza los datos del gráfico
+ chart12II.data.datasets[0].data = nuevosDatosV;
+ // Actualiza el gráfico
+ chart12II.update()   
+}
 function updateJorge() {
    // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
    setTimeout(function() {
@@ -7021,6 +7315,62 @@ function updateJorge() {
   chart12.data.datasets[0].data = nuevosDatosV;
   // Actualiza el gráfico
   chart12.update()  
+}
+function updateJorgeII() {
+  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+  setTimeout(function() {
+   graficosAutomaticos('canvasContainer4-II')
+ },500) // 0.3 segundos
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer7-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer5-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer6-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+/*  setTimeout(function() {
+   graficosAutomaticos('canvasContainer8-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)  */
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer9-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+ var nuevosDatos = [/* Nuevos valores de datos */ 10,20,50,10,10,5]
+// Actualiza los datos del gráfico
+chart7II.data.datasets[0].data = nuevosDatos;
+// Actualiza el gráfico
+chart7II.update()
+///////////////////////////////////////////////////////////////////
+var nuevosDatosI = [/* Nuevos valores de datos */ 77,33,44,66,55,17]
+// Actualiza los datos del gráfico
+chart8II.data.datasets[0].data = nuevosDatosI;
+// Actualiza el gráfico
+chart8II.update()
+//////////////////////////////////////////////////////////////////
+var nuevosDatosII = [/* Nuevos valores de datos */ 50,5,5,10,100,77]
+// Actualiza los datos del gráfico
+chart9II.data.datasets[0].data = nuevosDatosII;
+// Actualiza el gráfico
+chart9II.update() 
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosIII = [/* Nuevos valores de datos */ 55,17,77,100,47,7]
+  // Actualiza los datos del gráfico
+  chart10II.data.datasets[0].data = nuevosDatosIII;
+  // Actualiza el gráfico
+  chart10II.update()
+    //////////////////////////////////////////////////////////////////
+var nuevosDatosIIII = [/* Nuevos valores de datos */ 44,99,17,77,10,5]
+// Actualiza los datos del gráfico
+chart11II.data.datasets[0].data = nuevosDatosIIII;
+// Actualiza el gráfico
+chart11II.update() 
+ //////////////////////////////////////////////////////////////////
+ var nuevosDatosV = [/* Nuevos valores de datos */ 100,37,55,77,77,77,81,99]
+ // Actualiza los datos del gráfico
+ chart12II.data.datasets[0].data = nuevosDatosV;
+ // Actualiza el gráfico
+ chart12II.update()  
 }
 function updateAndres() {
    // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
@@ -7078,6 +7428,62 @@ function updateAndres() {
   // Actualiza el gráfico
   chart12.update()  
 }
+function updateAndresII() {
+  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+  setTimeout(function() {
+   graficosAutomaticos('canvasContainer4-II')
+ },500) // 0.3 segundos
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer7-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer5-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer6-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+/*  setTimeout(function() {
+   graficosAutomaticos('canvasContainer8-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms) */ 
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer9-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
+// Actualiza los datos del gráfico
+chart7II.data.datasets[0].data = nuevosDatos;
+// Actualiza el gráfico
+chart7II.update()
+///////////////////////////////////////////////////////////////////
+var nuevosDatosI = [/* Nuevos valores de datos */ 7,3,4,6,5,7]
+// Actualiza los datos del gráfico
+chart8II.data.datasets[0].data = nuevosDatosI;
+// Actualiza el gráfico
+chart8II.update()
+//////////////////////////////////////////////////////////////////
+var nuevosDatosII = [/* Nuevos valores de datos */ 5,15,55,10,100,77]
+// Actualiza los datos del gráfico
+chart9II.data.datasets[0].data = nuevosDatosII;
+// Actualiza el gráfico
+chart9II.update() 
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosIII = [/* Nuevos valores de datos */ 0,17,37,50,97,27]
+  // Actualiza los datos del gráfico
+  chart10II.data.datasets[0].data = nuevosDatosIII;
+  // Actualiza el gráfico
+  chart10II.update()
+    //////////////////////////////////////////////////////////////////
+var nuevosDatosIIII = [/* Nuevos valores de datos */ 5,29,17,47,3,19]
+// Actualiza los datos del gráfico
+chart11II.data.datasets[0].data = nuevosDatosIIII;
+// Actualiza el gráfico
+chart11II.update()
+ //////////////////////////////////////////////////////////////////
+ var nuevosDatosV = [/* Nuevos valores de datos */ 77,37,55,41,33,77,50,60]
+ // Actualiza los datos del gráfico
+ chart12II.data.datasets[0].data = nuevosDatosV;
+ // Actualiza el gráfico
+ chart12II.update()  
+}
 function updateCarlos() {
    // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
    setTimeout(function() {
@@ -7133,6 +7539,62 @@ function updateCarlos() {
   chart12.data.datasets[0].data = nuevosDatosV;
   // Actualiza el gráfico
   chart12.update()  
+}
+function updateCarlosII() {
+  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+  setTimeout(function() {
+   graficosAutomaticos('canvasContainer4-II')
+ },500) // 0.3 segundos
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer7-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer5-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer6-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+/*  setTimeout(function() {
+   graficosAutomaticos('canvasContainer8-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms) */ 
+ setTimeout(function() {
+   graficosAutomaticos('canvasContainer9-II')
+ }, 700) // 0.3 segundos (300 ms + 300 ms)
+ var nuevosDatos = [/* Nuevos valores de datos */ 17,99,44,0,7,5]
+ // Actualiza los datos del gráfico
+ chart7II.data.datasets[0].data = nuevosDatos;
+ // Actualiza el gráfico
+ chart7II.update()
+ ///////////////////////////////////////////////////////////////////
+ var nuevosDatosI = [/* Nuevos valores de datos */ 27,33,84,6,15,97]
+ // Actualiza los datos del gráfico
+ chart8II.data.datasets[0].data = nuevosDatosI;
+ // Actualiza el gráfico
+ chart8II.update()
+ //////////////////////////////////////////////////////////////////
+ var nuevosDatosII = [/* Nuevos valores de datos */ 15,5,55,90,100,17]
+ // Actualiza los datos del gráfico
+ chart9II.data.datasets[0].data = nuevosDatosII;
+ // Actualiza el gráfico
+ chart9II.update() 
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosIII = [/* Nuevos valores de datos */ 20,97,27,80,7,77]
+  // Actualiza los datos del gráfico
+  chart10II.data.datasets[0].data = nuevosDatosIII;
+  // Actualiza el gráfico
+  chart10II.update()
+    //////////////////////////////////////////////////////////////////
+var nuevosDatosIIII = [/* Nuevos valores de datos */ 50,91,17,77,33,89]
+// Actualiza los datos del gráfico
+chart11II.data.datasets[0].data = nuevosDatosIIII;
+// Actualiza el gráfico
+chart11II.update() 
+ //////////////////////////////////////////////////////////////////
+ var nuevosDatosV = [/* Nuevos valores de datos */ 17,37,22,30,5,60,77,80]
+ // Actualiza los datos del gráfico
+ chart12II.data.datasets[0].data = nuevosDatosV;
+ // Actualiza el gráfico
+ chart12II.update()  
 }
 function deslizaMosaicoII(idElement) {
   var contLinkMant = document.getElementById('linksMA')
