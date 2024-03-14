@@ -2,8 +2,6 @@ var anchoPantalla = window.innerWidth || document.documentElement.clientWidth ||
 var contenedor2 = document.getElementById('canvasContainer2')
 var troublesh = document.getElementById('troubleshooting')
 var grafica2 = document.getElementById('MiGrafica')                   
-
-
 var arrayAllPneumatica = ['contImaginario-II','vid-pneumatic','bailarina','padre-neumat','pneumatico','control-neumatico','imag1','imag2','imag3','imag4','contImaginario','vid-basculante','rodillo-infeed','puesta-punto','contImgEntrenos']
 const coleccion = document.querySelectorAll('.desbobinador, .desbobinador-I, .uTeñido, .alimentadorId, .unidpre-prensaProceso, .rebobinador, .contTorrImp')
 var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
@@ -11,13 +9,11 @@ var contImgsDistribuidor = document.getElementById("images-distribuidor")
 var contImgsEntintador = document.getElementById("images-entintador")
 var contiVidDistribuidor = document.getElementById('conti-video-distribuidor')
 var contiVidEntintador = document.getElementById('conti-video-entintador') 
-
 var contImgsSmed = document.getElementById('images-smed') 
 var contImageneSmed = document.getElementById('imgsIsopropil') 
 var contiVidSmed = document.getElementById('conti-video-smed')
 var contibotsDistriV = document.getElementById('contenedor-7-VII')
 var buttRepuestIII = document.getElementById('conti-boton-repuestos-II')
-
 var padreImgsDistribuidor = document.getElementById("contene-images") 
 var contiBotsDesbobina = document.getElementById('conti-boton-desb')
 var contiBotsFreno = document.getElementById('conti-boton-freno')
@@ -26,17 +22,15 @@ var contibotsDistriII = document.getElementById('contenedor-7-V')
 var contibotsDistriIII = document.getElementById('contenedor-7-VI')
 var contibotsDistriIV = document.getElementById('contenedor-7-IV')
 var contibotsDistriVI = document.getElementById('contenedor-8')
-
 var btnsIniciales = document.querySelectorAll('.btn-bloque')
 var buttRepuest = document.getElementById('butt-repuestos')
 var buttRepuestI = document.getElementById('butt-repuestos-I')
 var buttRepuestV = document.getElementById('conti-boton-repuestos-III')
-
 var contVideo = document.getElementById('video-entintado')
 var contVideoSmed = document.getElementById('conti-video-bancada')
 
 let firstClick = true;
-
+var iterations;
 var arrayIdButtsMA = ['resultados','troubleshoot','def1','def2','adtBut','fua1','lup','kaizen']
 var arrayButtsKaizen = ['btn10','btn11','btn12','btn17']
 var arrayButtsPlanos = ['btn13','btn14','btn15']
@@ -6474,11 +6468,12 @@ function deslizaMosaico(){
     }, 300)
   //}, 50) 
 }
-function resultadosEmpleado(idEmpleado, functionExe) {
+function resultadosEmpleado(idEmpleado, functionExe,icono) {
   var colors = ['rgb(255, 255, 0)', 'rgb(0, 255, 0)', 'orangered'] // Colores en formato RGB
   var contUserScroll = document.getElementById('contenedor-vertical')
   var contUserElementsI = document.getElementsByClassName('cont-userI') 
   var contSecundario = document.getElementById('conte-secundario')
+  var iconCarlos = document.getElementById('icon-carlos-I')
   
   var contUserArrayI = Array.from(contUserElementsI)  
   var contUserElements = document.getElementsByClassName('cont-user')   
@@ -6525,7 +6520,6 @@ function resultadosEmpleado(idEmpleado, functionExe) {
     }
   });
 
-
   if(screenWidth < 500){
     var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','iconos','contLineas-II','contenedor-vertical','canvasContainer4-II','MiGrafica4-II','canvasContainer5-II','MiGrafica5-II','canvasContainer6-II','MiGrafica6-II','canvasContainer7-II','MiGrafica7-II','canvasContainer9-II','MiGrafica9-II']
     for (var i = 0; i < allContenedores.length; i++) { 
@@ -6535,7 +6529,7 @@ function resultadosEmpleado(idEmpleado, functionExe) {
       }
     }  
 
-    for (var i = 0; i < contUserElements.length; i++) {
+    for (var i = 0; i < contUserElements.length; i++) { 
       var element = contUserElements[i]
       if (element.id === idEmpleado) {
         console.log(element.id)
@@ -6546,7 +6540,6 @@ function resultadosEmpleado(idEmpleado, functionExe) {
         element.style.height = '15%'
         element.style.top = '21.5%'
         element.style.left = '5%'
-  
         // Accede al label dentro del div
         var label = element.querySelector('label')
         if (label) {
@@ -6559,13 +6552,13 @@ function resultadosEmpleado(idEmpleado, functionExe) {
         element.style.display = 'none'
       }
     } 
-  
+    if(icono === 'img1' || icono === 'img2' || icono === 'img3' || icono === 'img4'|| icono === 'img5'|| icono === 'img6'|| icono === 'img7'){ 
+      iniciarMovimiento('contenedor-vertical')
+    }
   }
-
 
 switch (idEmpleado) {
     case 'icon-carlos-I':
-
       var ContIconoAnaI = document.getElementById('icon-carlos')
       var contSecundarios = document.getElementById('conte-secundario')
       contSecundarios.style.display = 'flex'
@@ -6583,6 +6576,14 @@ switch (idEmpleado) {
         ContIconoAnaI.style.height = '44%'
         ContIconoAnaI.style.top = '-22%'
         ContIconoAnaI.style.left = '3%' 
+        // Accede al label del contenedor
+        var etqt = ContIconoAnaI.querySelector('label')
+        if (etqt) {
+          setInterval(function () {
+            etqt.style.color = colors[colorIndex] // Cambia el color del texto
+            colorIndex = (colorIndex + 1) % colors.length; // Alterna entre los colores
+          }, 200) // Cambia el color cada 0.2 segundos (200 milisegundos)
+        }
       }
     break;
     case 'icon-andres-I':
@@ -6603,6 +6604,14 @@ switch (idEmpleado) {
         ContIconoAnaI.style.height = '44%'
         ContIconoAnaI.style.top = '-22%'
         ContIconoAnaI.style.left = '3%' 
+        // Accede al label del contenedor
+        var etqt = ContIconoAnaI.querySelector('label')
+        if (etqt) {
+          setInterval(function () {
+            etqt.style.color = colors[colorIndex] // Cambia el color del texto
+            colorIndex = (colorIndex + 1) % colors.length; // Alterna entre los colores
+          }, 200) // Cambia el color cada 0.2 segundos (200 milisegundos)
+        }
       }
     break;
     case 'icon-jorge-I':
@@ -6623,6 +6632,14 @@ switch (idEmpleado) {
         ContIconoAnaI.style.height = '44%'
         ContIconoAnaI.style.top = '-22%'
         ContIconoAnaI.style.left = '3%' 
+        // Accede al label del contenedor
+        var etqt = ContIconoAnaI.querySelector('label')
+        if (etqt) {
+          setInterval(function () {
+            etqt.style.color = colors[colorIndex] // Cambia el color del texto
+            colorIndex = (colorIndex + 1) % colors.length; // Alterna entre los colores
+          }, 200) // Cambia el color cada 0.2 segundos (200 milisegundos)
+        }
       }
     break;
     case 'icon-jesus-I':
@@ -6643,6 +6660,14 @@ switch (idEmpleado) {
         ContIconoAnaI.style.height = '44%'
         ContIconoAnaI.style.top = '-22%'
         ContIconoAnaI.style.left = '3%' 
+        // Accede al label del contenedor
+        var etqt = ContIconoAnaI.querySelector('label')
+        if (etqt) {
+          setInterval(function () {
+            etqt.style.color = colors[colorIndex] // Cambia el color del texto
+            colorIndex = (colorIndex + 1) % colors.length; // Alterna entre los colores
+          }, 200) // Cambia el color cada 0.2 segundos (200 milisegundos)
+        }
       }
     break;
     case 'icon-sandra-I':
@@ -6663,6 +6688,14 @@ switch (idEmpleado) {
         ContIconoAnaI.style.height = '44%'
         ContIconoAnaI.style.top = '-22%'
         ContIconoAnaI.style.left = '3%' 
+        // Accede al label del contenedor
+        var etqt = ContIconoAnaI.querySelector('label')
+        if (etqt) {
+          setInterval(function () {
+            etqt.style.color = colors[colorIndex] // Cambia el color del texto
+            colorIndex = (colorIndex + 1) % colors.length; // Alterna entre los colores
+          }, 200) // Cambia el color cada 0.2 segundos (200 milisegundos)
+        }
       }
     break;
     case 'icon-mario-I':
@@ -6683,6 +6716,14 @@ switch (idEmpleado) {
         ContIconoAnaI.style.height = '44%'
         ContIconoAnaI.style.top = '-22%'
         ContIconoAnaI.style.left = '3%' 
+        // Accede al label del contenedor
+        var etqt = ContIconoAnaI.querySelector('label')
+        if (etqt) {
+          setInterval(function () {
+            etqt.style.color = colors[colorIndex] // Cambia el color del texto
+            colorIndex = (colorIndex + 1) % colors.length; // Alterna entre los colores
+          }, 200) // Cambia el color cada 0.2 segundos (200 milisegundos)
+        }
       }
     break;
     case 'icon-ana-I':
@@ -6703,6 +6744,14 @@ switch (idEmpleado) {
         ContIconoAnaI.style.height = '44%'
         ContIconoAnaI.style.top = '-22%'
         ContIconoAnaI.style.left = '3%' 
+        // Accede al label del contenedor
+        var etqt = ContIconoAnaI.querySelector('label')
+        if (etqt) {
+          setInterval(function () {
+            etqt.style.color = colors[colorIndex] // Cambia el color del texto
+            colorIndex = (colorIndex + 1) % colors.length; // Alterna entre los colores
+          }, 200) // Cambia el color cada 0.2 segundos (200 milisegundos)
+        }
       }
     break;
     default:
@@ -6741,6 +6790,8 @@ switch (idEmpleado) {
     break;
   }
 }
+
+
 function graficosAutomaticos(idGrafico){
 
   for (var i = 0; i < idsMA.length; i++) {
@@ -7050,65 +7101,9 @@ function updateSandraII() {
  setTimeout(function() {
    graficosAutomaticos('canvasContainer6-II')
  }, 700) // 0.3 segundos (300 ms + 300 ms)
- setTimeout(function() {
+/*  setTimeout(function() {
    graficosAutomaticos('canvasContainer8-II')
- }, 700) // 0.3 segundos (300 ms + 300 ms) 
- setTimeout(function() {
-   graficosAutomaticos('canvasContainer9-II')
- }, 700) // 0.3 segundos (300 ms + 300 ms)
-var nuevosDatos = [/* Nuevos valores de datos */ 33,20,100,50,80,10]
-// Actualiza los datos del gráfico
-chart7II.data.datasets[0].data = nuevosDatos;
-// Actualiza el gráfico
-chart7II.update()
-///////////////////////////////////////////////////////////////////
-var nuevosDatosI = [/* Nuevos valores de datos */ 30,75,20,100,50,17]
-// Actualiza los datos del gráfico
-chart8II.data.datasets[0].data = nuevosDatosI;
-// Actualiza el gráfico
-chart8II.update()
-//////////////////////////////////////////////////////////////////
-var nuevosDatosII = [/* Nuevos valores de datos */ 33,50,30,90,100,5]
-// Actualiza los datos del gráfico
-chart9II.data.datasets[0].data = nuevosDatosII;
-// Actualiza el gráfico
-chart9II.update() 
-//////////////////////////////////////////////////////////////////
- var nuevosDatosIII = [/* Nuevos valores de datos */ 9,5,70,97,37,60]
- // Actualiza los datos del gráfico
- chart10II.data.datasets[0].data = nuevosDatosIII;
- // Actualiza el gráfico
- chart10II.update()
- //////////////////////////////////////////////////////////////////
-var nuevosDatosIIII = [/* Nuevos valores de datos */ 30,40,250,600,45,800]
-// Actualiza los datos del gráfico
-chart11II.data.datasets[0].data = nuevosDatosIIII;
-// Actualiza el gráfico
-chart11II.update() 
- //////////////////////////////////////////////////////////////////
- var nuevosDatosV = [/* Nuevos valores de datos */ 50,37,33,17,51,77,67,70]
- // Actualiza los datos del gráfico
- chart12II.data.datasets[0].data = nuevosDatosV;
- // Actualiza el gráfico
- chart12II.update()  
-}
-function updateSandraII() {
-  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
-  setTimeout(function() {
-   graficosAutomaticos('canvasContainer4-II')
- },500) // 0.3 segundos
- setTimeout(function() {
-   graficosAutomaticos('canvasContainer7-II')
- }, 700) // 0.3 segundos (300 ms + 300 ms)
- setTimeout(function() {
-   graficosAutomaticos('canvasContainer5-II')
- }, 700) // 0.3 segundos (300 ms + 300 ms)
- setTimeout(function() {
-   graficosAutomaticos('canvasContainer6-II')
- }, 700) // 0.3 segundos (300 ms + 300 ms)
- /*setTimeout(function() {
-   graficosAutomaticos('canvasContainer8-II')
- }, 700) // 0.3 segundos (300 ms + 300 ms)*/ 
+ }, 700) // 0.3 segundos (300 ms + 300 ms) */ 
  setTimeout(function() {
    graficosAutomaticos('canvasContainer9-II')
  }, 700) // 0.3 segundos (300 ms + 300 ms)
@@ -7998,7 +7993,6 @@ function hideButtonsKaizenRetraso() {
   }
   mostrarConRetraso(0) // Comienza desde el primer botón
 }
-
 function showButtonsPlanosRetraso() {
   var contiButtsPlanos = document.getElementById('conti-boton-planos')
   contiButtsPlanos.style.display = 'flex'
@@ -8477,7 +8471,6 @@ var chart7II = new Chart(miCanvas6II, {
     }
   }
 });
-
 // BARRAS VERTICALES
 var chart8 = new Chart(miCanvas7, {
   type: 'bar',
@@ -8801,7 +8794,6 @@ var chart10II = new Chart(miCanvas9II, {
     }
   }
 })
-
 var chart11 = new Chart(miCanvas10, {
   type: 'pie',
   data: {
@@ -8908,7 +8900,6 @@ var chart11II = new Chart(miCanvas10II, {
     }
   }
 })
-
 var chart12 = new Chart(miCanvas11, {
   type: 'line',
   data: {
@@ -9021,8 +9012,6 @@ var chart12II = new Chart(miCanvas11II, {
     }
   }
 });
-
-
 // Aumentar el grosor de las barras
 /* chart8.options.scales.x.barThickness = 100; // Ajusta el valor a un grosor mayor */
 /* //////////////////////////////////AUMENTO Y MOVIMIENTO IMAGENES ///////////////////////////////////////////// */
@@ -9447,8 +9436,8 @@ function moveScroll(container) {
     container.scrollTop = 0;
   }
 }
-// Función para iniciar el movimiento del scroll
-function iniciarMovimiento(instrucId) {
+
+/* function iniciarMovimiento(instrucId) {
   // Obtener el elemento con ID "puesta-punto"
   var container = document.getElementById(instrucId);
   // Asegurarse de que el scroll esté en la parte superior
@@ -9457,9 +9446,33 @@ function iniciarMovimiento(instrucId) {
   iterations = 11;
   // Iniciar el movimiento del scroll
   moveScroll(container);
+} */
+
+function iniciarMovimiento(instrucId) {
+  var container = document.getElementById(instrucId);
+  container.scrollTop = 500;
+
+  var posicionFinal = 0; // Ajusta la posición final según tus necesidades
+  var duracion = 600; // Duración del desplazamiento en milisegundos (0.4 segundos)
+
+  var inicio = container.scrollTop;
+  var tiempoInicio = performance.now();
+
+  function animarScroll(timestamp) {
+      var tiempoTranscurrido = timestamp - tiempoInicio;
+      var progreso = tiempoTranscurrido / duracion;
+
+      if (progreso < 1) {
+          container.scrollTop = inicio + (posicionFinal - inicio) * progreso;
+          requestAnimationFrame(animarScroll);
+      } else {
+          container.scrollTop = posicionFinal;
+      }
+  }
+
+  requestAnimationFrame(animarScroll);
 }
-// Número de iteraciones deseadas
-var iterations;
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Obtén el contexto del lienzo
 var canvas = document.getElementById("sinusoidalCanvas");
@@ -10118,7 +10131,6 @@ function moverMA() {
     container.classList.toggle('move-down-II')
   }
 }
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // EVENTOS DINAMICOS MOVER CONTENEDORES
 document.getElementById('iniciar').addEventListener('click', function() {
@@ -10183,26 +10195,19 @@ document.addEventListener('keydown', function(event) {
                           resultadosMA()
                         },1177) 
                               setTimeout(function() {
-                                resultadosEmpleado('icon-jesus','updateJesus')
+                                /* resultadosEmpleado('icon-jesus','updateJesus') */
                               },1177) 
-
-
-
-
       break;
       case 'H':                                
-
       break;
       case 'J':
-
       break;                  
-
     }
   }
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('MiGrafica9-II')
+  var contiBoton = document.getElementById('conte-secundario')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left
