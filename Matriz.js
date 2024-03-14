@@ -47,7 +47,7 @@ var arrayPosicionnador = []
 var destino = 257
 var idsArray = [];
 var idsArrayEliminados = []
-var idsMA = ['control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','casos-kaizen','mejoras-kai','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','planos-kaizen','materiales-kaizen','kaizenCont','conti-boton-planos', 'conti-boton-kaizen','troubleshooting','canvasContainer2','contChecks','canvasContainer3', 'contImagNeg',,'contImagGraf','canvasContainer4','canvasContainer4-II','canvasContainer5','canvasContainer5-II','canvasContainer6','canvasContainer6-II','canvasContainer7','canvasContainer7-II','canvasContainer8','canvasContainer8-II','canvasContainer9-II','canvasContainer9']
+var idsMA = ['control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','casos-kaizen','mejoras-kai','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','planos-kaizen','materiales-kaizen','kaizenCont','conti-boton-planos', 'conti-boton-kaizen','troubleshooting','canvasContainer2','contChecks','canvasContainer3', 'contImagNeg',,'contImagGraf','canvasContainer4','canvasContainer4-II','canvasContainer5','canvasContainer5-II','canvasContainer6','canvasContainer6-II','canvasContainer7','canvasContainer7-II','canvasContainer8','canvasContainer8-II','canvasContainer9','canvasContainer9-II']
 var contenedoresMA = ['troubleshooting','canvasContainer2','contChecks','canvasContainer3','contImagNeg','contImagGraf','kaizenCont']
 var idsMAhijos = ['contBotCasos','materiales-kaizen','troubleshooting','canvasContainer2','contChecks','canvasContainer3','contImagNeg','contImagGraf']
 var lineasGrid = document.getElementById('contLineas')
@@ -69,7 +69,7 @@ var currentID = null;
 var butInicio = document.getElementById('bot-inic')
 var contInicial = document.getElementById('container1')
 var botonMa = document.getElementById('bot-mantaut')
-var allContenedores = ['contLineas-II','contLineas','title-interfaz','vidElem','kaizen-propuestos','canvasContainer3','troubleshooting','conti-boton','canvasContainer2','contChecks','conteneMantaut','MiGrafica','contImaginario-II','contImaginario-III','padre-1','padre-2','imag3','imag4','contImaginario','bailarina','pneumatico','padre-neumat','contBotInfeed','largoImpresion','contImgEntrenos','imag1','imag2','linksMA','linkLis','sitio-en-construccion','curado-uv','video-container','conti-video-background','video-background-planas','conti-videos-planas','conti-img-planas','conti-videos-infoprint','video-infoprint-I','video-infoprint-II','video-infoprint-III','contenedor-9','conti-video-bancada','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer4-II','canvasContainer5','canvasContainer5-II','canvasContainer6','canvasContainer6-II','canvasContainer7','canvasContainer7-II','canvasContainer8','canvasContainer8-II','canvasContainer9','canvasContainer9-II','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria', 'cont-user','cont-userI']
+var allContenedores = ['MiGrafica9-II','contLineas-II','contLineas','title-interfaz','vidElem','kaizen-propuestos','canvasContainer3','troubleshooting','conti-boton','canvasContainer2','contChecks','conteneMantaut','MiGrafica','contImaginario-II','contImaginario-III','padre-1','padre-2','imag3','imag4','contImaginario','bailarina','pneumatico','padre-neumat','contBotInfeed','largoImpresion','contImgEntrenos','imag1','imag2','linksMA','linkLis','sitio-en-construccion','curado-uv','video-container','conti-video-background','video-background-planas','conti-videos-planas','conti-img-planas','conti-videos-infoprint','video-infoprint-I','video-infoprint-II','video-infoprint-III','contenedor-9','conti-video-bancada','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','contenedor-7-II','contenedor-7-III','contenedor-7-IV','butt-repuestos','images-entintador','toggleVideoButton','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','container1','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensitoII','imgs-prepress','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','container01','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','contPortPlaca','contPerfilesPlancha','contPortManta','contPerfilesManta','contImpresor','contPerfilesImpresor','contImgDistribuidor','contImgEntintador','cont-variable','cont-plana','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer4-II','canvasContainer5','canvasContainer5-II','canvasContainer6','canvasContainer6-II','canvasContainer7','canvasContainer7-II','canvasContainer8','canvasContainer8-II','canvasContainer9','canvasContainer9-II','conte-secundario','contenedor-vertical','franja-gris','franja-Blanca','cont-titulo','videoBackground','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','rodilleria', 'cont-user','cont-userI']
 
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIzquierdos = ['desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador']
@@ -132,7 +132,7 @@ let miCanvas9II = document.getElementById('MiGrafica7-II').getContext('2d')
 let miCanvas10 = document.getElementById('MiGrafica8').getContext('2d')
 let miCanvas10II = document.getElementById('MiGrafica8-II').getContext('2d')
 
-let miCanvas11 = document.getElementById('MiGrafica9').getContext('2d')
+let miCanvas11 = document.getElementById('MiGrafica9').getContext('2d');
 let miCanvas11II = document.getElementById('MiGrafica9-II').getContext('2d')
 
 
@@ -6487,12 +6487,11 @@ function resultadosEmpleado(idEmpleado, functionExe) {
   lineasGrid.style.display = 'block'
   tituloMA.style.display = 'flex'
 
-  for (var i = 0; i < contUserElements.length; i++) {
+   for (var i = 0; i < contUserElements.length; i++) {
     var element = contUserElements[i]
     if (element.id === idEmpleado) {
       contSecundario.style.display = 'flex'
       element.style.position = 'fixed'
-      /* element.style.marginTop = '2%' */
       element.style.display = 'flex'
       element.style.height = '20%'
       element.style.top = '10%'
@@ -6509,7 +6508,7 @@ function resultadosEmpleado(idEmpleado, functionExe) {
     } else {
       element.style.display = 'none'
     }
-  }
+  } 
 
   if (contUserScroll) {
     contUserScroll.style.display = 'flex'
@@ -6528,19 +6527,17 @@ function resultadosEmpleado(idEmpleado, functionExe) {
 
 
   if(screenWidth < 500){
-    var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','iconos','contLineas-II','contenedor-vertical']  
+    var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','iconos','contLineas-II','contenedor-vertical','canvasContainer4-II','MiGrafica4-II','canvasContainer5-II','MiGrafica5-II','canvasContainer6-II','MiGrafica6-II','canvasContainer7-II','MiGrafica7-II','canvasContainer9-II','MiGrafica9-II']
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i])  
       if (elemento) {
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
       }
     }  
-
-
   }
 
 
-  switch (idEmpleado) {
+switch (idEmpleado) {
     case 'icon-carlos-I':
 
       var ContIconoAnaI = document.getElementById('icon-carlos')
@@ -7931,56 +7928,68 @@ var chart7 = new Chart(miCanvas6, {
 var chart7II = new Chart(miCanvas6II, { 
   type: 'bar',
   data: {
-      labels: ['DEFECTOS IDENTIFICADOS', 'DEFECTOS CORREGIDOS', 'TIPO 1', 'TIPO 2'],
-      datasets: [
-          {
-              label: 'Participación en M.A',
-              backgroundColor: ['rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(128,128,128)', 'rgb(255, 255, 0)'],
-              data: [57, 88, 62, 33]
-          }
-      ]
+    labels: ['DEFECTOS IDENTIFICADOS', 'DEFECTOS CORREGIDOS', 'TIPO 1', 'TIPO 2'],
+    datasets: [
+      {
+        label: 'Participación en M.A',
+        backgroundColor: ['rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(128,128,128)', 'rgb(255, 255, 0)'],
+        data: [57, 88, 62, 33]
+      }
+    ]
   },
   options: {
-      scales: {
-          x: {
-              grid: {
-                  display: false
-              },
-              ticks: {
-                  color: 'rgb(255,255,255)',
-                  font: {
-                      size: 9
-                  }
-              }
-          },
-          y: {
-              grid: {
-                  display: false
-              },
-              ticks: {
-                  color: 'rgb(255,255,255)',
-                  font: {
-                      size: 10
-                  },
-                  beginAtZero: true
-              }
+    scales: {
+      x: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 5
           }
+        }
       },
-      indexAxis: 'x',
-      plugins: {
-          legend: {
-              display: false
+      y: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 6
           },
-          title: {  // Agregar un título al gráfico
-              display: true,  // Mostrar el título
-              text: 'Participacion semanal',  // Texto del título
-              font: {
-                  size: 16  // Tamaño del texto del título
-              }
-          }
+          beginAtZero: true
+        }
       }
+    },
+    indexAxis: 'x',
+    plugins: {
+      legend: {
+        display: false
+      },
+      title: {
+        display: true,
+        text: 'Participacion semanal',
+        font: {
+          size: 10
+        }
+      },
+      datalabels: {
+        color: 'rgb(255,255,255)',
+        font: {
+          size: 5 // Tamaño de la fuente para las etiquetas del conjunto de datos
+        },
+        anchor: 'end',
+        align: 'end',
+        formatter: function(value, context) {
+          return value; // Puedes personalizar el formato del valor si es necesario
+        }
+      }
+    }
   }
-})
+});
+
 // BARRAS VERTICALES
 var chart8 = new Chart(miCanvas7, {
   type: 'bar',
@@ -8460,14 +8469,14 @@ var chart12 = new Chart(miCanvas11, {
       },
       title: {
         display: true,
-        text: 'Tendencia ',
+        text: 'Tendencia',
         font: {
           size: 16
         }
       }
     }
   }
-})
+});
 var chart12II = new Chart(miCanvas11II, {
   type: 'line',
   data: {
@@ -8477,9 +8486,9 @@ var chart12II = new Chart(miCanvas11II, {
         label: 'Participación en M.A',
         borderColor: 'rgb(255,165,0)', 
         borderWidth: 1,
-        pointRadius: 0,                       
-        /* backgroundColor: ['rgb(255, 165, 0)', 'rgb(0, 255, 0)','#d6919a','rgb(255,255,0)','rgb(128,128,128)','rgb(255,255,0)','rgb(0,0,255)','rgb(177,0,255)'], */
-        /* data: [7, 19, 27, 37, 59, 77, 81, 99] */
+        pointRadius: 0, 
+        data: [7, 19,17,37,9,77]
+                      
       }
     ]
   },
@@ -8492,7 +8501,7 @@ var chart12II = new Chart(miCanvas11II, {
         ticks: {
           color: 'rgb(255,255,255)',
           font: {
-            size: 9
+            size: 3
           }
         }
       },
@@ -8503,7 +8512,7 @@ var chart12II = new Chart(miCanvas11II, {
         ticks: {
           color: 'rgb(255,255,255)',
           font: {
-            size: 10
+            size: 4
           },
           beginAtZero: true
         }
@@ -8516,14 +8525,16 @@ var chart12II = new Chart(miCanvas11II, {
       },
       title: {
         display: true,
-        text: 'Tendencia ',
+        text: 'Tendencia',
         font: {
-          size: 16
+          size: 4
         }
       }
     }
   }
-})
+});
+
+
 // Aumentar el grosor de las barras
 /* chart8.options.scales.x.barThickness = 100; // Ajusta el valor a un grosor mayor */
 /* //////////////////////////////////AUMENTO Y MOVIMIENTO IMAGENES ///////////////////////////////////////////// */
@@ -9703,7 +9714,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('conte-secundario')
+  var contiBoton = document.getElementById('MiGrafica9-II')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left
