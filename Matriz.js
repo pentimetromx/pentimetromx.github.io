@@ -1915,9 +1915,6 @@ function deslizAutomatic(){
             setTimeout(function() {
               desencadenar('kaizenCont')
             }, 1477)  
-
-
-  console.log(arrayPosicionnador)
 }
 function desencadenar(idElemento) {
   var vidkaizen = document.getElementById('vidElem')
@@ -2030,9 +2027,6 @@ function desencadenar(idElemento) {
     default:
   }
 }
-
-
-
 function deslizaContenedorII(idElement, idButton) {
   var originalButtonColors = {}; // Objeto para almacenar los colores originales de los 
   var elementoAnterior = null;
