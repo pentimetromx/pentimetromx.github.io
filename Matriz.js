@@ -1876,14 +1876,12 @@ function deslizAutomatic(){
     if (elemento) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }}
-    
     for (var i = 0; i < contiBtt.length; i++) {
       var elemento = document.getElementById(contiBtt[i]);
       if (elemento) {
         elemento.style.backgroundColor = ''
      }
     } 
-
     arrayPosicionnador = []  
     troublesh.removeAttribute('style') 
     destino = 277;
@@ -1921,6 +1919,7 @@ function desencadenar(idElemento) {
   var contBotsMA = document.getElementById('conti-boton')
   var troubleCont = document.getElementById('troubleshooting')
   var troublesh = document.getElementById(idElemento);
+  container1.style.left = '50%'
 
   switch(idElemento){
     case 'troubleshooting' :
