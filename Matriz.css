@@ -5710,14 +5710,6 @@ h4{
     font-size: 16px; 
   }
   /* 8888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888 */
-  #contLineas-II{
-    position: relative;
-    left: 37%;
-    margin-top: -56%;
-    width: 97%; /* 100% - 32% */
-    height: 30%;
-    display: none;
-  }
   .contenedor-vertical{  
     position: fixed;
     top: 42%;
@@ -5746,6 +5738,17 @@ h4{
     background-color: white;
     content: "";
   }
+  #contLineas-II{
+    position: relative;
+    left: 37%;
+    top:1%;
+    width: 61%;
+    height: 520px;
+    border: 2px solid white;
+    border-radius: 11px;
+    display: none;
+  }
+
   #canvasContainer4-II{
     position: absolute;
     display: flex;
@@ -5764,30 +5767,66 @@ h4{
     background-color: white;
     content: "";
   }
+  #linea-horizontal-II-II{     
+    position:absolute;
+    top: 17%;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+  }
   #canvasContainer5-II{    
     position: absolute;
     display: flex;
     left: 1.4%;
-    top: 44%;  
+    top: 18%;  
     width: 197px;
     height: 144px;
+  } 
+  #linea-horizontal-III-II{  
+    position:absolute;
+    top: 38%;
+    width:100%;
+    height: 2px;
+    background-color: white;
   }  
   #canvasContainer6-II{
     position: absolute;
     display: flex;
     left: 1.4%;
-    top: 90%;  
+    top: 39%;  
     width: 197px;
     height: 144px;
   }
+  #linea-horizontal-IV-II{  
+    position:absolute;
+    top: 60%;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+  } 
   #canvasContainer7-II{
     position: absolute;
     display: flex;
     left: 2.5%;
-    top: 137%;  
-    width: 122px;
+    top: 60%;  
+    width: 177px;
     height: 97px;
   }
+  #linea-horizontal-V-II{  
+    position:absolute;   
+    top: 80%;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+  } 
+  #canvasContainer9-II{
+    position: absolute;
+    display: flex;
+    left: 3%;
+    top: 80%;  
+    width: 197px;
+    height: 144px;
+  }  
   #linea-horizontal-I-II{
     position:absolute;
     left: 1%;
@@ -5804,46 +5843,6 @@ h4{
     width: 350px;
     height: 255px;
   }
-  #linea-horizontal-II-II{     
-    position:absolute;
-    left: 1%;
-    top: 47%;
-    width: 62%;
-    height: 2px;
-    background-color: white;
-  }
-  #canvasContainer9-II{
-    position: absolute;
-    display: flex;
-    left: 3%;
-    top: 184%;  
-    width: 197px;
-    height: 144px;
-  }  
-  #linea-horizontal-III-II{  
-    position:absolute;
-    left: 1%;
-    top: 93%;
-    width: 62%;
-    height: 2px;
-    background-color: white;
-  } 
-  #linea-horizontal-IV-II{  
-    position:absolute;
-    left: 1%;
-    top: 139%;
-    width: 62%;
-    height: 2px;
-    background-color: white;
-  } 
-  #linea-horizontal-V-II{  
-    position:absolute;   
-    left: 1%;
-    top: 186%;
-    width: 62%;
-    height: 2px;
-    background-color: white;
-  } 
   #linea-horizontal-VI-II{  
     position:absolute;   
     left: 1%;

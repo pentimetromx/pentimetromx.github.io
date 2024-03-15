@@ -8429,7 +8429,7 @@ var chart7II = new Chart(miCanvas6II, {
         ticks: {
           color: 'rgb(255,255,255)',
           font: {
-            size: 5
+            size: 4
           }
         }
       },
@@ -8440,7 +8440,7 @@ var chart7II = new Chart(miCanvas6II, {
         ticks: {
           color: 'rgb(255,255,255)',
           font: {
-            size: 6
+            size: 5
           },
           beginAtZero: true
         }
@@ -8455,7 +8455,7 @@ var chart7II = new Chart(miCanvas6II, {
         display: true,
         text: 'Participacion semanal',
         font: {
-          size: 10
+          size: 14
         }
       },
       datalabels: {
@@ -8547,7 +8547,7 @@ var chart8II = new Chart(miCanvas7II, {
         ticks: {
           color: 'rgb(255,255,255)',
           font: {
-            size: 9
+            size: 4
           }
         }
       },
@@ -8558,7 +8558,7 @@ var chart8II = new Chart(miCanvas7II, {
         ticks: {
           color: 'rgb(255,255,255)',
           font: {
-            size: 10
+            size: 5
           },
           beginAtZero: true
         }
@@ -8573,7 +8573,7 @@ var chart8II = new Chart(miCanvas7II, {
         display: true,
         text: 'Lección de un punto',
         font: {
-          size: 16
+          size: 14
         }
       }
     }
@@ -8657,7 +8657,7 @@ var chart9II = new Chart(miCanvas8II, {
         ticks: {
           color: 'rgb(255,255,255)',
           font: {
-            size: 9
+            size: 4
           }
         }
       },
@@ -8668,7 +8668,7 @@ var chart9II = new Chart(miCanvas8II, {
         ticks: {
           color: 'rgb(255,255,255)',
           font: {
-            size: 10
+            size: 5
           },
           beginAtZero: true
         }
@@ -8681,9 +8681,9 @@ var chart9II = new Chart(miCanvas8II, {
       },
       title: {
         display: true,
-        text: 'Areas De Dificil Acceso',
+        text: 'Areas de dificil acceso',
         font: {
-          size: 16
+          size: 14
         }
       }
     }
@@ -8763,7 +8763,7 @@ var chart10II = new Chart(miCanvas9II, {
         ticks: {
           color: 'rgb(255,255,255)',
           font: {
-            size: 9
+            size: 4
           }
         }
       },
@@ -8774,7 +8774,7 @@ var chart10II = new Chart(miCanvas9II, {
         ticks: {
           color: 'rgb(255,255,255)',
           font: {
-            size: 10
+            size: 5
           },
           beginAtZero: true
         }
@@ -8787,9 +8787,9 @@ var chart10II = new Chart(miCanvas9II, {
       },
       title: {
         display: true,
-        text: 'Ayudas De Trabajo',
+        text: ' Ayudas de trabajo',
         font: {
-          size: 16
+          size: 14
         }
       }
     }
@@ -8981,7 +8981,7 @@ var chart12II = new Chart(miCanvas11II, {
         ticks: {
           color: 'rgb(255,255,255)',
           font: {
-            size: 3
+            size: 4
           }
         }
       },
@@ -8992,7 +8992,7 @@ var chart12II = new Chart(miCanvas11II, {
         ticks: {
           color: 'rgb(255,255,255)',
           font: {
-            size: 4
+            size: 5
           },
           beginAtZero: true
         }
@@ -9007,7 +9007,7 @@ var chart12II = new Chart(miCanvas11II, {
         display: true,
         text: 'Tendencia',
         font: {
-          size: 4
+          size: 14
         }
       }
     }
@@ -10208,7 +10208,7 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  var contiBoton = document.getElementById('conte-secundario')
+  var contiBoton = document.getElementById('contLineas-II')
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top
   var leftPosition = rect.left
