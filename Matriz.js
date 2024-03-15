@@ -6470,6 +6470,7 @@ function deslizaMosaico(){
 }
 function resultadosEmpleado(idEmpleado, functionExe,icono) {
   var colors = ['rgb(255, 255, 0)', 'rgb(0, 255, 0)', 'orangered'] // Colores en formato RGB
+  const iconosPermitidos = ['img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7'];
   var contUserScroll = document.getElementById('contenedor-vertical')
   var contUserElementsI = document.getElementsByClassName('cont-userI') 
   var contSecundario = document.getElementById('conte-secundario')
@@ -6552,9 +6553,9 @@ function resultadosEmpleado(idEmpleado, functionExe,icono) {
         element.style.display = 'none'
       }
     } 
-    if(icono === 'img1' || icono === 'img2' || icono === 'img3' || icono === 'img4'|| icono === 'img5'|| icono === 'img6'|| icono === 'img7'){ 
-      iniciarMovimiento('contenedor-vertical')
-    }
+    if (iconosPermitidos.includes(icono)) {
+        iniciarMovimiento('contenedor-vertical');
+    }    
   }
 
 switch (idEmpleado) {
