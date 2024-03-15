@@ -1921,22 +1921,45 @@ function deslizAutomatic(){
 }
 function desencadenar(idElemento) {
   var vidkaizen = document.getElementById('vidElem')
+  var contBotsMA = document.getElementById('conti-boton')
+  var troubleCont = document.getElementById('troubleshooting')
   var troublesh = document.getElementById(idElemento);
 
   switch(idElemento){
     case 'troubleshooting' :
       if (troublesh) {
-        console.log(contFriends)
         troublesh.style.display = 'flex';
         troublesh.style.left = '100%'; 
         troublesh.classList.add('move-grafica');
         setTimeout(function () {
           troublesh.style.left = '207px';
         }, 277);
-        console.log(troublesh.id);
-      } else {
-        console.error('Elemento con ID ' + idElemento + ' no encontrado.');
-      }    
+      }       
+      if(screenWidth < 500){
+        contBotsMA.style.marginTop = '15%'
+        troubleCont.style.marginTop = '7%'
+        setTimeout(function () {
+          troublesh.style.left = '25%';
+        }, 277);       
+      }
+    break;
+    case 'contChecks' :
+      if (troublesh) {
+        troublesh.style.display = 'flex';
+        troublesh.style.left = '100%'; 
+        troublesh.classList.add('move-grafica');
+        setTimeout(function () {
+          troublesh.style.left = '777px';
+        }, 277);
+      } 
+      if(screenWidth < 500){
+        contBotsMA.style.marginTop = '15%'
+        troubleCont.style.marginTop = '7%'
+        troublesh.style.marginTop = '14%';
+        setTimeout(function () {
+          troublesh.style.left = '57%';
+        }, 277);       
+      }
     break;
     case 'canvasContainer2' :
       if (troublesh) {
@@ -1948,23 +1971,16 @@ function desencadenar(idElemento) {
           troublesh.style.left = '414px';
         }, 277);
         console.log(troublesh.id);
-      } else {
-        console.error('Elemento con ID ' + idElemento + ' no encontrado.');
-      }    
-    break;
-    case 'contChecks' :
-      if (troublesh) {
-        console.log(contFriends)
-        troublesh.style.display = 'flex';
-        troublesh.style.left = '100%'; 
-        troublesh.classList.add('move-grafica');
+      } 
+      if(screenWidth < 500){
+        contBotsMA.style.marginTop = '15%'
+        troubleCont.style.marginTop = '7%'
+        troublesh.style.marginTop = '14%';
         setTimeout(function () {
-          troublesh.style.left = '777px';
-        }, 277);
-        console.log(troublesh.id);
-      } else {
-        console.error('Elemento con ID ' + idElemento + ' no encontrado.');
-      }    
+          troublesh.style.left = '61%';
+        }, 277);       
+      }
+
     break;
     case 'canvasContainer3' :
       if (troublesh) {
@@ -2001,6 +2017,9 @@ function desencadenar(idElemento) {
     default:
   }
 }
+
+
+
 function deslizaContenedorII(idElement, idButton) {
   var originalButtonColors = {}; // Objeto para almacenar los colores originales de los 
   var elementoAnterior = null;
@@ -6792,7 +6811,6 @@ switch (idEmpleado) {
   }
 }
 
-
 function graficosAutomaticos(idGrafico){
 
   for (var i = 0; i < idsMA.length; i++) {
@@ -10184,7 +10202,7 @@ document.addEventListener('keydown', function(event) {
       case 'Z':
         ElementosMaII('conteneMantaut')
         setTimeout(function() {
-          deslizaContenedor('troubleshooting','troubleshoot')
+          deslizAutomatic('troubleshooting','troubleshoot')
         },577) 
             setTimeout(function() {
               /* deslizaContenedor('conti-boton-kaizen','kaizen') */
@@ -10193,7 +10211,7 @@ document.addEventListener('keydown', function(event) {
                     /* rodillosKaizen('btn10','') */
                   },1177) 
                         setTimeout(function() {
-                          resultadosMA()
+                          /* resultadosMA() */
                         },1177) 
                               setTimeout(function() {
                                 /* resultadosEmpleado('icon-jesus','updateJesus') */
