@@ -1980,7 +1980,6 @@ function desencadenar(idElemento) {
           troublesh.style.left = '61%';
         }, 277);       
       }
-
     break;
     case 'canvasContainer3' :
       if (troublesh) {
@@ -1992,9 +1991,15 @@ function desencadenar(idElemento) {
           troublesh.style.left = '817px';
         }, 277);
         console.log(troublesh.id);
-      } else {
-        console.error('Elemento con ID ' + idElemento + ' no encontrado.');
-      }    
+      } 
+      if(screenWidth < 500){
+        contBotsMA.style.marginTop = '15%'
+        troubleCont.style.marginTop = '7%'
+        troublesh.style.marginTop = '77%';
+        setTimeout(function () {
+          troublesh.style.left = '3%';
+        }, 277);       
+      }
     break;
     case 'kaizenCont' :
       if (troublesh) {
@@ -2010,9 +2015,17 @@ function desencadenar(idElemento) {
           troublesh.style.left = '1033px';
         }, 277);
         console.log(troublesh.id);
-      } else {
-        console.error('Elemento con ID ' + idElemento + ' no encontrado.');
-      }    
+      } 
+      if(screenWidth < 500){
+        contBotsMA.style.marginTop = '15%'
+        troubleCont.style.marginTop = '7%'
+        troublesh.style.marginTop = '107%';
+        troublesh.style.width = '377px'
+        troublesh.style.height = '263px'
+        setTimeout(function () {
+          troublesh.style.left = '37%';
+        }, 277);       
+      }
     break;
     default:
   }
