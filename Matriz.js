@@ -1,7 +1,9 @@
 var anchoPantalla = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth; 
 var contenedor2 = document.getElementById('canvasContainer2')
 var troublesh = document.getElementById('troubleshooting')
-var grafica2 = document.getElementById('MiGrafica')                   
+var grafica2 = document.getElementById('MiGrafica') 
+var linkIni1 = document.getElementById('links-inicialesI')
+var linkIni2 = document.getElementById('links-iniciales') 
 var arrayAllPneumatica = ['contImaginario-II','vid-pneumatic','bailarina','padre-neumat','pneumatico','control-neumatico','imag1','imag2','imag3','imag4','contImaginario','vid-basculante','rodillo-infeed','puesta-punto','contImgEntrenos']
 const coleccion = document.querySelectorAll('.desbobinador, .desbobinador-I, .uTeñido, .alimentadorId, .unidpre-prensaProceso, .rebobinador, .contTorrImp')
 var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
@@ -146,7 +148,7 @@ function VolveraInicio(){
 }
 function botoGrand() {
 }
-function muestraBateria(elementId) {  
+function muestraBateria(elementId){  
   // Recorre el array y oculta los elementos por su ID
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])
@@ -194,7 +196,7 @@ function muestraBateria(elementId) {
     console.log(idsArray);
   }
 }
-function setInitialPosition() {
+function setInitialPosition(){
   var contiBoton = document.querySelector('.conti-boton')
   // Aplica los estilos al elemento
   contiBoton.style.position = 'absolute';
@@ -203,7 +205,7 @@ function setInitialPosition() {
   contiBoton.style.left = '270px';
   contiBoton.style.transform = ''; // Restablecer la transformación
 }
-function ElementosMaII(elementId) {
+function ElementosMaII(elementId){
   var elementosExcluidos = ['conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales']  
   /* document.getElementById('linkList').style.display = 'none' */
   for (var i = 0; i < allContenedores.length; i++) { 
@@ -235,7 +237,7 @@ function ElementosMaII(elementId) {
     console.log(idsArray);
   } 
 }
-function showButtonsMAconRetraso() {
+function showButtonsMAconRetraso(){
   var botones = document.querySelectorAll('.butt-mautonomo') // Selecciona todos los botones
   function mostrarBotonConRetraso(i) {
     if (i < botones.length) {
@@ -249,7 +251,7 @@ function showButtonsMAconRetraso() {
   }
   mostrarBotonConRetraso(0) // Comienza desde el primer botón
 }
-function changeButtonStyles(elementId) {
+function changeButtonStyles(elementId){
   switch (elementId) {
     case 'pantalla-tintero':
       var elementosExcluidos = ['cont-links','pantalla-inicial','pantalla-tintero','container01','links-inicialesI','links-iniciales','agrupaOblicuos-II','imgTorre','video-entintado','videoElement1-II']  
@@ -500,7 +502,7 @@ function desplegarBotonesV(){
     transicionElementosV()
   }, 477);
 }
-function cambioContenedor(elementId) {
+function cambioContenedor(elementId){
   var elementsToHide = document.querySelectorAll('.alimentador, .uTeñido, .desbobinador,.unidProceso,.rebobinador,.links-inicialesI,.links-iniciales') 
   var torreImpresion = document.getElementById('torre-imp') // PADRE TORRE IMPRESION  */
   var botonTorre = document.getElementById('toggleVideoButton')
@@ -531,7 +533,7 @@ function cambioContenedor(elementId) {
     console.log(idsArray);
   }
 }
-function cierraContenedores(elementId) {
+function cierraContenedores(elementId){
   var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80','btn600','btn700','btn800']
   var arrayButtsRojos = ['boton2','boton3','boton4','boton5','boton6','boton8','boton9','boton10','boton11','boton12']
   for (var i = 0; i < arrayButtsRojos.length; i++) {                                                                                  /// QUITAR ESTILOS A BOTONES
@@ -672,7 +674,7 @@ function cierraContenedores(elementId) {
   }
 
 }
-function muestraRodillo (vidElem, imgCont) {
+function muestraRodillo (vidElem, imgCont){
   switch(vidElem){
     case 'videoElement2':
     /// OCULTA TODO MENOS LO NECESARIO          
@@ -877,7 +879,7 @@ function muestraRodillo (vidElem, imgCont) {
     default:
   }
 }
-function muestraHumedad() {
+function muestraHumedad(){
   var contImgsIsopropil = document.getElementById('imgsIsopropil')
   const pict = contImgsIsopropil.getElementsByTagName('img') // Obtiene todas las etiquetas 'img' dentro del 
   contImgsIsopropil.style.display = 'flex'
@@ -1736,7 +1738,8 @@ function mantAutonomo (idElement) {
 function deslizaContenedor(identificador, idButton) { 
   var contBotKaizen = document.getElementById('conti-boton-kaizen')
   contBotKaizen.removeAttribute('style')
-
+  linkIni1.style.left = ''
+  linkIni2.style.left = ''  
   arrayIdButtsMA.forEach(element => {                                                                                                        
     var elemento = document.getElementById(element)
     if (elemento) {
@@ -1869,8 +1872,9 @@ function mostrarTroublesshIntervalo() {
   // Inicia la primera visibilidad
   hacerVisibleSiguienteElemento()
 }
+
 function deslizAutomatic(){
-  var elementosExcluidos = ['container01', 'links-inicialesI', 'links-iniciales', 'conteneMantaut', 'conti-boton','troubleshooting','canvascontainer2','MiGrafica','canvascontainer3','kaizenCont','vidElem'];
+  var elementosExcluidos = ['container01','links-inicialesI', 'links-iniciales', 'conteneMantaut', 'conti-boton','troubleshooting','canvascontainer2','MiGrafica','canvascontainer3','kaizenCont','vidElem'];
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);
     if (elemento) {
@@ -1885,6 +1889,7 @@ function deslizAutomatic(){
     arrayPosicionnador = []  
     troublesh.removeAttribute('style') 
     destino = 277;
+  
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   idsMA.forEach(function (elto) {                                                                                                            /// OCULTA TODO M.A
     var elemento = document.getElementById(elto)    
@@ -2132,7 +2137,20 @@ function resetBotns() {
   var contProblema = document.getElementById('linksMA')
   var contProblema2 = document.getElementById('contImgEntrenos')
   var contVidPlanos = document.getElementById('kaizenCont')
+  var botSpecial = document.getElementById('contBotInfeed')
+  var contImaginario = document.getElementById('contImaginario')
+  var contImaginario2 = document.getElementById('contImaginario-II')
+
+  var padre1 = document.getElementById('padre-1')
+  var padre2 = document.getElementById('padre-2')
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  botSpecial.style.display = 'none'
+  padre1.style.display = 'none'
+  padre2.style.display = 'none'
+  contImaginario.style.display = 'none'
+  contImaginario2.style.display = 'none'
+  linkIni1.style.left= ''  
+  linkIni2.style.left = ''   
   if (document.body.style.zoom !== "100%") {                                                                                                /// PANTALLA AL 100%
     document.body.style.zoom = "100%";
   }
@@ -4166,6 +4184,8 @@ function irContenedorSiguiente() {
 function listaEntrenamientosII(btnList) {
   document.body.style.zoom = "100%"; 
   container1.style.left = ''
+  linkIni1.style.left = ''
+  linkIni2.style.left = ''  
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   enlacesIDs.forEach(function (id) {                                                                                                   // VINCULOS COLOR BLANCO
   var enlace = document.getElementById(id)
@@ -4395,12 +4415,14 @@ function toggleFullScreen(element) {
   }
 }
 function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
+  linkIni1.style.left= '-24%'  
+  linkIni2.style.left = '-20%'   
+
   var linkOrange = document.getElementById(id)      
   var troubleTable = document.getElementById('troubleshooting') 
   troubleTable.style.marginLeft = '-7%'
-  container1.style.left = '33%'
+  container1.style.left = ''  
   document.body.style.zoom = "67%"
-
   if(screenWidth < 500){
     document.body.style.zoom = "100%" 
     troubleTable.style.left = '47%'
@@ -8067,23 +8089,18 @@ function aumentoBotonesBody() {
   aumentarYRestaurar(0);
 }
 function tamaño100(){
-  document.body.style.zoom = "100%"
-  container1.style.left=''
-  for(var i = 0;i < arrayAllPneumatica.length; i ++){
-    var elementPneumat = document.getElementById(arrayAllPneumatica[i])
-    if(elementPneumat){
-      elementPneumat.style.display = 'none'
+  var elementosExcluidos = ['container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','troubleshooting','linksMA','linkLis']  
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
-  }
- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
-  for (var i = 0; i < arrayButtsInstructivos.length; i++) {                                                                                    /// OCULTA BOTONES
-    var currentId = arrayButtsInstructivos[i];
-    var element = document.getElementById(currentId);      
-    if (currentId) {
-      // Muestra el elemento cuyo nombre coincide con idButt
-      element.style.display = 'none';
-    } 
-  }
+  }  
+  troublesh.removeAttribute('style')
+  document.body.style.zoom = "100%"
+  linkIni1.style.left = ''
+  linkIni2.style.left = ''  
+  container1.style.left=''
 }
 // Obtén todas las imágenes con la clase "aumentar"
 const imagenesAumentar = document.querySelectorAll('img.aumentar')
