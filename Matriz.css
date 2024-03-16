@@ -3875,12 +3875,20 @@ h4{
     margin-top: 31%;
     font-size: 10px;
   } 
+  #uniTeñido{
+    position: relative;
+    top: 1%;
+    left: 1%;
+    height: 100vh;
+    display: none;
+  }
+  
   #conti-boton-teñido{   
     position: absolute;
     display: flex;
     flex-direction: column;
     left: 25%;
-    margin-top: -129%;
+    margin-top: -133%;
 
   }
   #conti-boton-teñido button{
