@@ -10189,7 +10189,7 @@ function moverMA() {
     container.classList.toggle('move-down-II')
   }
 }
-function abrirInterfaz(){
+/*function abrirInterfaz(){
   var elementosExcluidos = ['padre-interfaz','hijo-interaz-1','hijo-interaz-2']  
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
@@ -10198,7 +10198,7 @@ function abrirInterfaz(){
     }
   }  
 
-}
+}*/
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // EVENTOS DINAMICOS MOVER CONTENEDORES
 document.getElementById('iniciar').addEventListener('click', function() {
