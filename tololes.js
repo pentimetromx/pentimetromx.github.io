@@ -29,6 +29,10 @@ let isDraggingAlpha = false;
 let startXAlpha;
 let initialLeftAlpha;
 
+function iniciarSitio(){
+  location.reload()
+}
+
 function desactivarClicsPorUnTiempo(tiempoDuracion) {
   function bloquearClic(e) {
     e.stopPropagation();
@@ -39,8 +43,7 @@ function desactivarClicsPorUnTiempo(tiempoDuracion) {
   }, tiempoDuracion);
 }
 
-
-let allContenedores = ['blur','pantalla','primer-rectangulo','almacen-displays','slider-container','reinicio','butt-inicio','texto']
+let allContenedores = ['blur','pantalla','primer-rectangulo','almacen-displays','slider-container','reinicio','butt-inicio','recarga','texto']
 
 function iniciaSitio(){
   var elementosExcluidos = ['texto']  
@@ -293,7 +296,7 @@ function hideElements() {
   document.getElementById('primer-rectangulo').style.display = 'flex';  
   document.getElementById('reinicio').style.display = 'flex';
   document.getElementById('almacen-displays').style.display = 'flex';
-
+  document.getElementById('recarga').style.display = 'flex';
 }
 
 // Función para generar colores únicos en formato HSL

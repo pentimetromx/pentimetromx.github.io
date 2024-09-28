@@ -30,7 +30,7 @@ overflow: hidden; /* Evita el desplazamiento */
     position: absolute;
     display: flex;
     top: 54vh;
-    left: 18vw;
+    left: 19vw;
     width: 77vw;
     height: 37vh;
     background-color: #e0e0e0;
@@ -68,7 +68,7 @@ overflow: hidden; /* Evita el desplazamiento */
     flex-direction: column;
     gap:16%;
     top: 55vh;
-    left: 5vw;
+    left: 3vw;
     height:33vh;
     width: 17vw;
 }
@@ -76,6 +76,19 @@ overflow: hidden; /* Evita el desplazamiento */
     font-size: 0.9em;
     flex: 1;
     font-family: "Oswald";
+}
+#recarga{
+    position: absolute;
+    display: flex;
+    top: 93vh;
+    left: 20vw;
+    height: 4vh;
+    width: 17vw;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    font-family: "Oswald";
+    font-size: 0.9em;
 }
 #reinicio{
     position: absolute;
