@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); 
+@font-face {
+  font-family: "Oswald"; /* Nombre de la familia de fuentes personalizada */
+  src: url('C:\Users\Juan\Downloads\matrix\matrix.ttf') format('ttf'), /* Ruta hacia el archivo .woff2 de la fuente */
+}
+
+/* Eliminar márgenes y rellenos globales */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box; /* Asegura que el padding y los bordes se incluyan en las medidas del ancho y alto */
+}
+
+html, body {
+width: 100%;
+height: 100%;
+overflow: hidden; /* Evita el desplazamiento */
+}
+#primer-rectangulo {
+    position: absolute;
+    display: flex;
+    left: 2vw;
+    top: 3vh;
+    width: 95vw;
+    height: 50vh;
+    background-color: rgb(0, 0, 0);
+    border-radius: 20px; /* Bordes redondos */
+}
+.slider-container {
+    position: absolute;
+    display: flex;
+    top: 54vh;
+    left: 18vw;
+    width: 77vw;
+    height: 37vh;
+    background-color: #e0e0e0;
+    position: relative;
+    border-radius: 25px;
+}
+#slider-button-azul {
+    background-color: #007bff;
+    top:14%;
+}
+#slider-button-verde {
+    background-color: #32CD32;
+    top:40%;
+}
+#slider-button-rojo{
+    background-color: #FF0000;
+    top:66%;
+}
+#slider-button-alpha {
+    background-color: #808080;
+    top:92%;
+}
+.buttons-span{
+    position: absolute;
+    left: 0;
+    width: 18%;
+    height: 21%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    cursor: pointer;
+}
+#almacen-displays{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap:16%;
+    top: 55vh;
+    left: 5vw;
+    height:33vh;
+    width: 17vw;
+}
+#almacen-displays span{
+    font-size: 0.9em;
+    flex: 1;
+    font-family: "Oswald";
+}
+#reinicio{
+    position: absolute;
+    display: flex;
+    top: 93vh;
+    left: 45vw;
+    height: 4vh;
+    width: 17vw;
+    border-radius: 5px;
+    background-color: #FF0000;
+    color: white;
+    font-family: "Oswald";
+    font-size: 0.9em;
+}
+#pantalla{
+    position: absolute;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0,0,17);
+    z-index: 3;
+}
+#razon-social{
+    position: absolute;
+    display: flex;
+    top:30vh;
+    height:15vh;
+    width:100vw;
+    background-color: rgb(0,0,17);
+}
+#imagen{
+    position: absolute;
+    display: flex;
+    border-radius: 10px;
+    top:5%;
+    left:15%;
+}
+#nombre{
+    position: absolute;
+    display: flex;
+    top: 54%;
+    left:35%;
+    font-family: "Oswald";
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgb(255,150,0);
+}
+#caballo{
+    position: absolute;
+    display: flex;
+    top:25%;
+    left:1%;
+    cursor: pointer;
+
+}
+#caballo2{
+    position: absolute;
+    display: flex;
+    top:60%;
+    left:40%;
+    cursor: pointer;
+}
+#blur{
+    position: relative;
+    display: grid;
+    left:0;
+    top: 0;
+    height:100vh;
+    width:100vw;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    background-color: RGB(0,0,10);
+    z-index: 5;
+    filter: blur(35px);
+}
+#butt-inicio{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 40vw;
+    top: 40vh;
+    height: 7vh;
+    width: 20vw;
+    background-color: #FF0000;
+    color: white;
+    font-size: 1em;
+    border-radius: 9px;
+    z-index: 7;
+    cursor: pointer;
+    display: none;
+}
+
+
+        /* Define la animación */
+        @keyframes aumentarTamano {
+            from {
+                font-size: 0.2em;
+            }
+            to {
+                font-size: 2em;
+            }
+        }
+
+        /* Aplica la animación al texto */
+        .texto-animado {
+            position: absolute;
+            display: flex;
+            top: 10vh;
+            left: 10vw;
+            background-color: 'transparent';
+            font-family: "Oswald";
+            font-size: 0.2em;
+            z-index: 7;
+            animation: aumentarTamano 3s forwards;
+        }
+
+

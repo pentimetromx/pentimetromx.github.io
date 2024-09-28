@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Los Tololes 1</title>
+  <!-- Vinculación de la hoja de estilo tololes.css -->
+  <link rel="stylesheet" href="tololes.css">
+</head>
+<body onload="iniciaSitio()">
+
+  <div id="texto" class="texto-animado">Hola MONIKILLA <br>
+  Esta aplicación es Para tí <br>
+  fué desarrollada por el bultico
+  </div>
+
+  <button id="butt-inicio" onclick="requestFullScreen()">Click Aquí</button>
+
+  <div id="blur">
+    <div class="difuminados"></div>
+    <div class="difuminados"></div>
+    <div class="difuminados"></div>
+    <div class="difuminados"></div>
+    <div class="difuminados"></div>
+    <div class="difuminados"></div>
+    <div class="difuminados"></div>
+    <div class="difuminados"></div>
+    <div class="difuminados"></div>
+    <div class="difuminados"></div>
+    <div class="difuminados"></div>
+    <div class="difuminados"></div>
+    <div class="difuminados"></div>
+    <div class="difuminados"></div>
+    <div class="difuminados"></div>
+    <div class="difuminados"></div>
+  </div>
+
+  <div id="pantalla">
+    <img id="imagen" src="./assets/imagen1.png" alt="">
+    <span id="nombre">MONI-KOLOR</span>
+    <img id="caballo" class="caballos" onclick="requestFullScreen()" src="./assets/caballo.png" alt="">
+    <img id="caballo2" class="caballos" onclick="requestFullScreen()" src="./assets/caballo2.png" alt="">
+
+    </div>
+  </div>
+
+<div id="primer-rectangulo"></div>
+<div id="almacen-displays">
+  <span id="blueValueDisplay" class="spans">Azul: 0</span>
+  <span id="greenValueDisplay" class="spans">Verde: 0</span>
+  <span id="redValueDisplay" class="spans">Rojo: 0</span>
+  <span id="alphaValueDisplay" class="spans">Opaco: 1</span>
+</div>
+<div class="slider-container">
+  <div id="slider-button-azul" class="buttons-span"></div>
+  <div id="slider-button-verde" class="buttons-span"></div>
+  <div id="slider-button-rojo" class="buttons-span"></div>
+  <div id="slider-button-alpha" class="buttons-span"></div>
+</div>
+<button id="reinicio" onclick="resetButtons()">REINICIAR</button>       
+
+<script src="tololes.js"></script>
+</body>
+</html>
+
